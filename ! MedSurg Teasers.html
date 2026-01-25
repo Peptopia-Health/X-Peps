@@ -1,0 +1,1592 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>MedSurg I | Peptopia Health</title><meta name="description" content="Interactive MedSurg MidTier Comprehensive Study Guide"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><style>:root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a25;--cyan:#00d4ff;--mag:#ff00aa;--pur:#8b5cf6;--gold:#fbbf24;--txt:#fff;--txt2:#a0a0b0;--brd:#2a2a3a;--green:#22c55e;--red:#ef4444}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:16px}.bg-fx{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 20% 20%,rgba(139,92,246,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(0,212,255,.06) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(255,0,170,.04) 0%,transparent 60%)}.grid{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);background-size:50px 50px}.wrap{max-width:900px;margin:0 auto;padding:20px;position:relative;z-index:1}p{font-size:16px;margin-bottom:10px;color:var(--txt)}ol{padding-left:20px;color:var(--txt);margin-left:7.5%;margin-right:7.5%;width:85%}li{margin:8px 0 10px;color:var(--txt);background:var(--bg3);padding:10px 14px;border-radius:8px;border:1px solid var(--brd);transition:all .3s}a{text-decoration:none;color:var(--cyan);font-size:16px;transition:color .3s}a:hover{color:var(--mag)}.title-box{background:linear-gradient(135deg,rgba(139,92,246,.3) 0%,rgba(0,212,255,.2) 100%);border:2px solid var(--pur);border-radius:15px;padding:20px;margin-bottom:30px;text-align:center;box-shadow:0 0 20px rgba(139,92,246,.3)}.doc-title{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:2px;text-shadow:0 0 10px rgba(251,191,36,.5),0 0 20px rgba(251,191,36,.3);margin-bottom:8px}.doc-sub{color:var(--txt2);font-size:1rem}#quiz-container{background:var(--bg2);border:1px solid var(--brd);border-radius:15px;padding:20px;margin-top:20px}.sec-hdr{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:700;text-align:center;text-transform:uppercase;padding:12px 20px;margin:0 0 20px;border-radius:10px;background:linear-gradient(135deg,rgba(0,212,255,.2) 0%,rgba(139,92,246,.2) 100%);border:1px solid var(--cyan);color:var(--cyan);box-shadow:0 0 10px rgba(0,212,255,.3)}.sec-hdr2{font-family:'Orbitron',sans-serif;color:var(--mag);background:linear-gradient(135deg,rgba(255,0,170,.15) 0%,rgba(255,0,170,.05) 100%);border:1px solid var(--mag);padding:8px 16px;border-radius:8px;width:fit-content;margin:25px auto 15px;font-size:1.2rem;font-weight:700;text-align:center;box-shadow:0 0 8px rgba(255,0,170,.3)}.topic-hdr{color:var(--gold);background:linear-gradient(135deg,rgba(251,191,36,.15) 0%,rgba(251,191,36,.05) 100%);border:1px solid var(--gold);padding:6px 12px;border-radius:6px;width:fit-content;font-size:1rem;font-weight:700;margin:15px 0 10px;box-shadow:0 0 6px rgba(251,191,36,.2)}.section-block{padding:20px;border-radius:12px;margin-bottom:20px;border:1px solid var(--brd);font-family:'Rajdhani',sans-serif}.section-block.pastel-1{background:linear-gradient(135deg,rgba(34,197,94,.2) 0%,rgba(34,197,94,.1) 100%);border-color:rgba(34,197,94,.4)}.section-block.pastel-2{background:linear-gradient(135deg,rgba(168,85,247,.2) 0%,rgba(168,85,247,.1) 100%);border-color:rgba(168,85,247,.4)}.section-block.pastel-3{background:linear-gradient(135deg,rgba(0,212,255,.2) 0%,rgba(0,212,255,.1) 100%);border-color:rgba(0,212,255,.4)}.section-block.pastel-4{background:linear-gradient(135deg,rgba(251,191,36,.2) 0%,rgba(251,191,36,.1) 100%);border-color:rgba(251,191,36,.4)}.section-block.pastel-5{background:linear-gradient(135deg,rgba(139,92,246,.2) 0%,rgba(139,92,246,.1) 100%);border-color:rgba(139,92,246,.4)}.section-block.pastel-6{background:linear-gradient(135deg,rgba(255,0,170,.2) 0%,rgba(255,0,170,.1) 100%);border-color:rgba(255,0,170,.4)}.question-text{font-size:1.1rem;margin-bottom:12px;color:var(--txt);background:var(--bg3);border-radius:8px;padding:12px 16px;border:1px solid var(--brd);display:inline-block;max-width:calc(100% - 50px);font-family:'Rajdhani',sans-serif}.question-divider{border-bottom:1px solid var(--brd);margin:25px 0}.answer-option,.sequence-item{background:var(--bg3);padding:12px 16px;border-radius:8px;margin-bottom:10px;border:1px solid var(--brd);cursor:pointer;transition:all .3s;color:var(--txt);display:flex;align-items:center;font-family:'Rajdhani',sans-serif;font-weight:500}.answer-option:hover,.sequence-item:hover{background:rgba(0,212,255,.1);border-color:var(--cyan)}.answer-option.selected{border:2px solid var(--pur);background:rgba(139,92,246,.2)}.answer-option.correct-feedback-background{background:rgba(34,197,94,.3);border-color:var(--green)}.answer-option.incorrect-feedback-background{background:rgba(239,68,68,.3);border-color:var(--red)}.answer-option.sequenced{background:rgba(139,92,246,.2);pointer-events:none;opacity:.6}.sequence-item.sequenced{background:rgba(139,92,246,.2);border-color:var(--pur)}.sequence-item-text{flex:1}.answer-option-letter,.answer-option-sequence-num,.question-number-box{display:inline-flex;align-items:center;justify-content:center;width:2em;height:2em;text-align:center;font-weight:bold;border-radius:50%;color:#fff}.answer-option-letter{background:#5b21b6;margin-right:10px}.answer-option-sequence-num{background:#9d174d;margin-right:10px}.question-number-box{background:#0e7490;min-width:2em;vertical-align:top}.correct-answer-label,.incorrect-feedback-label,.rationale-label,.correct-letter-highlight{padding:3px 8px;border-radius:5px;font-weight:bold}.correct-answer-label{background:var(--green);color:#000;display:inline}.incorrect-feedback-label{background:var(--red);color:#fff;display:inline}.rationale-label{background:var(--cyan);color:#000;margin-top:5px;display:inline-block}.correct-letter-highlight{background:var(--gold);color:#000;display:inline-block}.feedback-emoticon{font-size:1rem;margin:0 4px}.answer-feedback{margin:15px auto;padding:15px;border-radius:10px;background:rgba(239,68,68,.2);max-width:95%;box-shadow:0 8px 20px rgba(0,0,0,.5);border:2px solid var(--red);color:var(--txt);font-size:1rem;font-family:'Rajdhani',sans-serif}.answer-feedback.correct-feedback-container{background:rgba(34,197,94,.2);border-color:var(--green)}.answer-feedback p{margin:5px 0;color:var(--txt)}.answer-feedback .rationale-keyword-highlight{background:var(--gold);padding:2px 6px;border-radius:4px;font-weight:bold;color:#000}.scoring-section{padding:20px;margin:30px 0;text-align:center;background:var(--bg2);border:1px solid var(--brd);border-radius:12px}.score-summary{display:flex;justify-content:center;align-items:center;gap:15px;margin:0;padding:0;flex-wrap:wrap}.score-item{display:inline-block;padding:8px 16px;border-radius:8px;font-weight:bold}.score-item.scoring-correct{background:var(--green);color:#000}.score-item.scoring-incorrect{background:var(--red);color:#fff}.score-item.scoring-grade{background:var(--gold);color:#000}.score-item.scoring-grade.failing{background:var(--red);color:#fff}.check-sata-button{background:var(--gold);color:#000;padding:12px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:bold;font-family:'Orbitron',sans-serif;margin:15px auto 0;display:block;width:fit-content;transition:all .3s;box-shadow:0 0 10px rgba(251,191,36,.3)}.check-sata-button:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(251,191,36,.5)}.nav-bar{background:linear-gradient(135deg,rgba(139,92,246,.2) 0%,rgba(0,212,255,.2) 100%);border:1px solid var(--pur);border-radius:10px;padding:12px 20px;margin:20px auto 0;display:flex;justify-content:center;align-items:center;width:fit-content;flex-wrap:wrap;gap:15px}.nav-bar a{color:var(--cyan);font-weight:bold;padding:0 8px;font-family:'Orbitron',sans-serif;font-size:14px}#retest-section{background:var(--bg2);border:1px solid var(--brd);border-radius:12px;padding:20px;margin-top:30px}#retest-section h3{text-align:center;font-family:'Orbitron',sans-serif;color:var(--mag);margin-bottom:20px}@media(max-width:600px){.wrap{padding:10px}.doc-title{font-size:1.5rem}.sec-hdr{font-size:1.2rem}.question-text{max-width:100%}.score-summary{flex-direction:column;gap:10px}}.section-header{text-align:center;margin:40px 0 25px;padding:20px;background:linear-gradient(135deg,rgba(139,92,246,.25) 0%,rgba(0,212,255,.15) 100%);border:2px solid var(--pur);border-radius:15px;box-shadow:0 0 25px rgba(139,92,246,.4)}.section-icon{font-size:2rem;display:block;margin-bottom:8px}.section-title{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:3px;display:block;text-shadow:0 0 10px rgba(251,191,36,.5)}.section-count{font-family:'Rajdhani',sans-serif;font-size:0.9rem;color:var(--txt2);margin-top:5px;display:block}.question-prompt{color:#5eead4;font-weight:500;display:block;margin-top:10px}</style></head><body><div class="bg-fx"></div><div class="grid"></div><div class="wrap"><div class="title-box"><h1 class="doc-title">💉 MedSurg Teasers 💉</h1><p class="doc-sub">Study Guide - 75 Questions</p></div><div class="question-divider"></div><div id="quiz-container"><div class="sec-hdr">🩺 Practice Questions 🩺</div><div id="questions-display-area"></div><div class="question-divider"></div><div id="retest-section"><h3>🔄 Missed Questions: Retest 🔄</h3><div id="retest-questions-display-area"></div><div id="retest-score-summary" style="display:none;"><p><span class="score-item scoring-correct">✅ Retest Correct: <b id="retest-cc">0</b></span></p><p><span class="score-item scoring-incorrect">❌ Retest Incorrect: <b id="retest-ic">0</b></span></p></div></div><div class="question-divider"></div><div class="scoring-section"><div class="score-summary"><span class="score-item scoring-correct">✅ Correct: <b id="cc">0</b></span><span class="score-item scoring-incorrect">❌ Incorrect: <b id="ic">0</b></span><span class="score-item scoring-grade">📊 Grade: <b id="gp">0%</b></span></div><div class="nav-bar"><a href="https://x-peps.com/pro-nurse-portal" target="_top">↩ Pro-Nurse Portal</a><span style="color:var(--txt3)">|</span><a href="https://x-peps.com/" target="_top">🏠 Peptopia Home</a></div></div></div></div><script>
+
+const qd = {
+    "q1": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Neutropenia",
+        "question": "A client undergoing chemotherapy has an Absolute Neutrophil Count (ANC) of 800/mm³. Which priority action should the nurse take?",
+        "options": [
+            "A. Place the client in a private room and initiate neutropenic isolation precautions.",
+            "B. Prepare the client for platelet transfusion.",
+            "C. Administer live vaccines as scheduled.",
+            "D. Encourage the client to eat fresh fruits and vegetables."
+        ],
+        "c": "A",
+        "r": "Neutropenia is defined as an ANC <1,000. A neutropenic client must be placed on infection precautions, which includes a private room, to prevent transmission. Neutropenic clients must **avoid** live vaccines and fresh plants/flowers.",
+        "type": "single"
+    },
+    "q2": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "DIC",
+        "question": "True or False: Disseminated Intravascular Coagulation (DIC) is a primary disease resulting from an inability of the body to produce sufficient clotting factors.",
+        "options": [
+            "A. True.",
+            "B. False."
+        ],
+        "c": "B",
+        "r": "DIC is **always** a secondary acquired clotting disorder. It is triggered by an underlying systemic event (like sepsis, trauma, or cancer) that causes massive, abnormal clotting, which consumes factors faster than they can be replaced, resulting paradoxically in widespread bleeding.",
+        "type": "single"
+    },
+    "q3": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Hypersensitivity Reactions",
+        "question": "The primary difference between Type I Hypersensitivity reactions (e.g., Anaphylaxis) and Type IV Hypersensitivity reactions (e.g., Contact Dermatitis) is that Type I is mediated by:",
+        "options": [
+            "A. T-cells, macrophages, and cytokines.",
+            "B. IgM and IgG antibodies forming immune complexes.",
+            "C. IgE antibodies triggering mast cell degranulation.",
+            "D. IgG and IgM antibodies binding to cell-associated antigens."
+        ],
+        "c": "C",
+        "r": "**Type I** Hypersensitivity (Anaphylaxis/allergy) is rapid, IgE-mediated, involving IgE antibodies binding to mast cells, triggering degranulation and histamine release. **Type IV** is a delayed reaction mediated by T-cells (cell-mediated) and macrophages.",
+        "type": "single"
+    },
+    "q4": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Transfusion Reactions",
+        "question": "A client receiving a packed red blood cell (PRBC) transfusion reports lower back pain, feeling cold, and has developed a temperature spike. What is the nurse's immediate priority action?",
+        "options": [
+            "A. Slow the infusion rate and monitor vital signs every 15 minutes.",
+            "B. Administer prescribed Acetaminophen and continue the transfusion.",
+            "C. Stop the transfusion immediately, maintain the IV line with Normal Saline, and send blood/urine samples to the lab.",
+            "D. Call the healthcare provider for further orders while maintaining the transfusion."
+        ],
+        "c": "C",
+        "r": "Lower back pain, chills, and fever during a transfusion are classic signs of an **acute hemolytic transfusion reaction**. The priority is to stop the transfusion immediately to prevent further harm, maintain the IV access with saline for potential interventions, and send samples to the lab for confirmation.",
+        "type": "single"
+    },
+    "q5": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Sickle Cell Anemia",
+        "question": "A client with Sickle Cell Anemia presents in vaso-occlusive crisis. Which intervention is the priority?",
+        "options": [
+            "A. Administer supplemental oxygen.",
+            "B. Initiate IV fluid hydration.",
+            "C. Administer morphine sulfate for pain control.",
+            "D. Prepare for a blood transfusion."
+        ],
+        "c": "C",
+        "r": "In a vaso-occlusive (painful) crisis, the **priority** is aggressive pain management. Oxygen and hydration are supportive, but **pain** is the immediate suffering that must be addressed first in this type of crisis.",
+        "type": "single"
+    },
+    "q6": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Iron Deficiency Anemia",
+        "question": "True or False: Iron deficiency anemia can lead to sterility due to decreased oxygen-carrying capacity of the blood.",
+        "options": [
+            "A. True.",
+            "B. False."
+        ],
+        "c": "B",
+        "r": "While iron deficiency anemia causes fatigue, pallor, and other symptoms due to reduced oxygen delivery, it does not directly cause sterility. Fertility issues could arise from severe, chronic nutritional deficiencies, but **sterility** is not a typical consequence of iron deficiency anemia itself.",
+        "type": "single"
+    },
+    "q7": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Kayexelate",
+        "question": "A nurse is administering Kayexelate (sodium polystyrene sulfonate) to a client with hyperkalemia. Which action is most appropriate?",
+        "options": [
+            "A. Administer IV Calcium Gluconate immediately before Kayexelate.",
+            "B. Instruct the client to retain the enema for at least 30-60 minutes.",
+            "C. Administer a high-fiber diet concurrently to promote excretion.",
+            "D. Expect rapid onset of action within 15 minutes."
+        ],
+        "c": "B",
+        "r": "**Kayexelate** works by exchanging sodium for potassium in the GI tract. For it to be effective, the client must **retain** the enema (if given rectally) for at least 30-60 minutes to allow for potassium binding and excretion. IV Calcium Gluconate is used to protect the heart, not given with Kayexelate.",
+        "type": "single"
+    },
+    "q8": {
+        "section": "NURSING ETHICS",
+        "topic": "Nonmaleficence",
+        "question": "A client refuses a blood transfusion due to religious beliefs, despite their critically low hemoglobin. The nurse understands that respecting this decision primarily reflects the ethical principle of:",
+        "options": [
+            "A. Beneficence.",
+            "B. Nonmaleficence.",
+            "C. Autonomy.",
+            "D. Justice."
+        ],
+        "c": "C",
+        "r": "**Autonomy** is the client's right to make their own healthcare decisions, even if those decisions conflict with medical recommendations. While nonmaleficence (do no harm) and beneficence (do good) are relevant, the core principle being respected here is the client's self-determination.",
+        "type": "single"
+    },
+    "q9": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Ferritin Levels",
+        "question": "A client's lab work reveals a low Ferritin level. The nurse interprets this finding as an indicator of:",
+        "options": [
+            "A. Hemochromatosis (iron overload).",
+            "B. Iron deficiency anemia.",
+            "C. Pernicious anemia (Vitamin B12 deficiency).",
+            "D. Aplastic anemia."
+        ],
+        "c": "B",
+        "r": "**Ferritin** is the primary storage form of iron. Low ferritin levels indicate depleted iron stores, which is characteristic of **iron deficiency anemia**. Hemochromatosis would show elevated ferritin.",
+        "type": "single"
+    },
+    "q10": {
+        "section": "ONCOLOGY",
+        "topic": "Leucovorin Rescue",
+        "question": "A client is receiving high-dose Methotrexate therapy for cancer. The nurse knows that Leucovorin (folinic acid) is administered as a 'rescue' therapy primarily to:",
+        "options": [
+            "A. Enhance the cytotoxic effect of Methotrexate on cancer cells.",
+            "B. Prevent Methotrexate-induced nephrotoxicity.",
+            "C. Protect normal cells from the toxic effects of Methotrexate.",
+            "D. Increase the absorption of Methotrexate."
+        ],
+        "c": "C",
+        "r": "**Leucovorin** is a form of folic acid that 'rescues' normal cells from the antifolate effects of **Methotrexate**, which inhibits DNA synthesis. It provides the folate that normal cells need to continue functioning, while the cancer cells, which take up Methotrexate more avidly, are still affected.",
+        "type": "single"
+    },
+    "q11": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "ADCC",
+        "question": "The immune mechanism known as Antibody-Dependent Cell-mediated Cytotoxicity (ADCC) primarily involves:",
+        "options": [
+            "A. Direct killing of pathogens by antibodies alone.",
+            "B. Activation of complement to lyse target cells.",
+            "C. Natural Killer (NK) cells recognizing and destroying antibody-coated target cells.",
+            "D. Phagocytosis of antibody-antigen complexes by macrophages."
+        ],
+        "c": "C",
+        "r": "**ADCC** is a mechanism where **NK cells** recognize antibodies (IgG) bound to target cells (like virus-infected cells or tumor cells) and release cytotoxic granules to destroy them. It's a link between humoral and cellular immunity.",
+        "type": "single"
+    },
+    "q12": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Influenza Vaccine",
+        "question": "A client receiving chemotherapy asks if they can receive the annual influenza vaccine. The nurse's best response is:",
+        "options": [
+            "A. 'You should receive the live attenuated influenza vaccine (LAIV) for best protection.'",
+            "B. 'All vaccines are contraindicated during chemotherapy.'",
+            "C. 'You should receive the inactivated influenza vaccine (IIV), not the live version.'",
+            "D. 'Vaccines are only given after your chemotherapy is complete.'"
+        ],
+        "c": "C",
+        "r": "Immunocompromised clients (like those on chemotherapy) should **avoid live vaccines** (LAIV) as they could cause infection. However, they **can and should** receive **inactivated vaccines** (IIV) to protect against influenza.",
+        "type": "single"
+    },
+    "q13": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Latex Allergy",
+        "question": "A client with a known latex allergy is scheduled for surgery. Which food allergy, if reported by the client, would alert the nurse to a potential cross-reactivity with latex?",
+        "options": [
+            "A. Shellfish.",
+            "B. Peanuts.",
+            "C. Bananas.",
+            "D. Eggs."
+        ],
+        "c": "C",
+        "r": "There is a known cross-reactivity between **latex** and certain fruits, including **bananas**, avocados, kiwis, and chestnuts. This is due to similar proteins found in both latex and these foods.",
+        "type": "single"
+    },
+    "q14": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Vegetarian Diet & Anemia",
+        "question": "A strict vegetarian client is at risk for developing which type of anemia due to dietary restrictions?",
+        "options": [
+            "A. Iron deficiency anemia only.",
+            "B. Vitamin B12 deficiency anemia (pernicious anemia).",
+            "C. Folate deficiency anemia.",
+            "D. Aplastic anemia."
+        ],
+        "c": "B",
+        "r": "**Vitamin B12** is primarily found in animal products. Strict vegetarians (vegans) who do not consume any animal-derived foods are at significant risk for **B12 deficiency anemia** (pernicious anemia) unless they take supplements or consume fortified foods.",
+        "type": "single"
+    },
+    "q15": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Anaphylaxis Management",
+        "question": "(SATA) A client is experiencing anaphylaxis after a bee sting. Which interventions should the nurse anticipate? (Select All That Apply)",
+        "options": [
+            "A. Administer Epinephrine intramuscularly.",
+            "B. Position the client supine with legs elevated.",
+            "C. Administer oral Diphenhydramine (Benadryl).",
+            "D. Establish IV access and prepare for fluid resuscitation.",
+            "E. Apply ice to the sting site as the primary intervention."
+        ],
+        "c": "ABD",
+        "r": "Anaphylaxis requires immediate action: **Epinephrine IM (A)** is the first-line drug; positioning **supine with legs elevated (B)** helps with hypotension; **IV access (D)** is crucial for fluids and additional meds. Oral Benadryl (C) is too slow for anaphylaxis (IV/IM preferred). Ice (E) is supportive but not a priority.",
+        "type": "sata"
+    },
+    "q16": {
+        "section": "HEMATOLOGY",
+        "topic": "Osteomalacia",
+        "question": "True or False: Osteomalacia is characterized by soft bones due to inadequate mineralization, often caused by Vitamin D deficiency.",
+        "options": [
+            "A. True.",
+            "B. False."
+        ],
+        "c": "A",
+        "r": "**Osteomalacia** is indeed the softening of bones due to impaired bone mineralization, most commonly caused by **Vitamin D deficiency**. This leads to an inability to properly deposit calcium and phosphorus into the bone matrix.",
+        "type": "single"
+    },
+    "q17": {
+        "section": "PHARMACOLOGY",
+        "topic": "Phenytoin Toxicity",
+        "question": "A client receiving Phenytoin (Dilantin) for seizure control develops nystagmus and ataxia. The nurse should:",
+        "options": [
+            "A. Administer the next scheduled dose and monitor closely.",
+            "B. Hold the medication and notify the healthcare provider immediately.",
+            "C. Increase the dose as these are signs of subtherapeutic levels.",
+            "D. Encourage increased fluid intake to dilute the medication."
+        ],
+        "c": "B",
+        "r": "Nystagmus (involuntary eye movement) and ataxia (uncoordinated movement) are classic signs of **Phenytoin toxicity**. The nurse must **hold** the medication and notify the provider. Continuing or increasing the dose could worsen toxicity.",
+        "type": "single"
+    },
+    "q18": {
+        "section": "NURSING PROCESS",
+        "topic": "Pain Assessment Scales",
+        "question": "When assessing pain in an adult client who is alert and oriented, which pain assessment tool is most appropriate?",
+        "options": [
+            "A. FLACC scale.",
+            "B. Wong-Baker FACES scale.",
+            "C. Numerical rating scale (0-10).",
+            "D. CRIES scale."
+        ],
+        "c": "C",
+        "r": "For an alert and oriented adult, the **numerical rating scale (0-10)** is the most appropriate and commonly used tool. FLACC and CRIES are for nonverbal/pediatric populations. Wong-Baker FACES can be used for adults but is often preferred for children or those with communication barriers.",
+        "type": "single"
+    },
+    "q19": {
+        "section": "HEMATOLOGY",
+        "topic": "Russell's Traction",
+        "question": "A client is placed in Russell's traction for a femur fracture. Which nursing assessment is the priority?",
+        "options": [
+            "A. Monitoring for skin breakdown on the sacrum.",
+            "B. Assessing for signs of neurovascular compromise in the affected extremity.",
+            "C. Ensuring the client's head is elevated at 90 degrees.",
+            "D. Checking the client's dietary intake."
+        ],
+        "c": "B",
+        "r": "The **priority** in any traction is assessing for **neurovascular compromise** (circulation, sensation, movement) in the affected extremity. This includes checking pulses, color, temperature, sensation, and capillary refill. Skin breakdown is also a concern but is secondary to neurovascular status.",
+        "type": "single"
+    },
+    "q20": {
+        "section": "NEUROLOGY",
+        "topic": "Romberg's Test",
+        "question": "A positive Romberg's test, where the client sways or loses balance when standing with eyes closed, indicates a problem with:",
+        "options": [
+            "A. Cerebellar function.",
+            "B. Proprioception or vestibular function.",
+            "C. Motor cortex function.",
+            "D. Visual acuity."
+        ],
+        "c": "B",
+        "r": "**Romberg's test** assesses proprioception (sense of body position) and vestibular function. A positive test (swaying/falling with eyes closed) indicates the client is relying on vision to compensate for deficits in these sensory systems.",
+        "type": "single"
+    },
+    "q21": {
+        "section": "PAIN MANAGEMENT",
+        "topic": "Gate Control Theory",
+        "question": "The Gate Control Theory of pain suggests that non-painful input can close 'gates' in the spinal cord to painful input. Which nursing intervention is based on this theory?",
+        "options": [
+            "A. Administering opioid analgesics.",
+            "B. Applying a cold pack or massage to a painful area.",
+            "C. Positioning the client for comfort.",
+            "D. Providing distraction techniques."
+        ],
+        "c": "B",
+        "r": "The **Gate Control Theory** (Melzack & Wall) proposes that stimulating large nerve fibers (like those sensing touch, pressure, or temperature via cold/massage) can 'close the gate' to pain signals from smaller fibers, reducing pain perception. Applying a cold pack or massage directly stimulates these fibers.",
+        "type": "single"
+    },
+    "q22": {
+        "section": "NEUROLOGY",
+        "topic": "Referred Pain",
+        "question": "A client experiencing a myocardial infarction (MI) reports pain radiating to the left arm and jaw. This type of pain is best described as:",
+        "options": [
+            "A. Phantom pain.",
+            "B. Neuropathic pain.",
+            "C. Referred pain.",
+            "D. Somatic pain."
+        ],
+        "c": "C",
+        "r": "**Referred pain** is pain perceived at a location other than the site of the painful stimulus. In an MI, pain originates in the heart but is felt in the left arm, jaw, or back due to shared nerve pathways entering the spinal cord.",
+        "type": "single"
+    },
+    "q23": {
+        "section": "PHARMACOLOGY",
+        "topic": "Opioid Overdose",
+        "question": "A client admitted for opioid overdose is found with pinpoint pupils, a respiratory rate of 6 breaths/min, and altered level of consciousness. The nurse's priority intervention is to:",
+        "options": [
+            "A. Administer Naloxone (Narcan) as prescribed.",
+            "B. Initiate CPR immediately.",
+            "C. Position the client in Trendelenburg.",
+            "D. Obtain a urine drug screen."
+        ],
+        "c": "A",
+        "r": "The classic triad of opioid overdose is miosis (pinpoint pupils), respiratory depression, and **altered LOC**. The priority is to reverse the opioid effect with **Naloxone (Narcan)**, which is an opioid antagonist. CPR is for cardiac arrest, not respiratory depression.",
+        "type": "single"
+    },
+    "q24": {
+        "section": "GERIATRIC NUTRITION",
+        "topic": "Aspiration Prevention",
+        "question": "When administering tube feedings to a client at risk for aspiration, the nurse should prioritize which action?",
+        "options": [
+            "A. Position the client flat to promote gastric emptying.",
+            "B. Administer the feeding as a rapid bolus.",
+            "C. Elevate the head of the bed to at least 30-45 degrees.",
+            "D. Verify tube placement by injecting air and listening over the stomach."
+        ],
+        "c": "C",
+        "r": "To prevent aspiration, the client's **head of bed (HOB) should be elevated at least 30-45 degrees** during and for 30-60 minutes after feedings. This uses gravity to keep stomach contents down. X-ray is the gold standard for initial tube placement verification, not auscultation.",
+        "type": "single"
+    },
+    "q25": {
+        "section": "RESPIRATORY",
+        "topic": "Hypoxemia",
+        "question": "A client's arterial blood gas (ABG) results show a PaO₂ of 55 mmHg. The nurse interprets this as:",
+        "options": [
+            "A. Normal oxygenation.",
+            "B. Hypoxemia (low oxygen in the blood).",
+            "C. Hyperoxemia (high oxygen in the blood).",
+            "D. Metabolic acidosis."
+        ],
+        "c": "B",
+        "r": "Normal **PaO₂** is 80-100 mmHg. A PaO₂ of 55 mmHg is significantly below normal, indicating **hypoxemia** (low oxygen in arterial blood). Hypoxemia can lead to tissue hypoxia if not corrected.",
+        "type": "single"
+    },
+    "q26": {
+        "section": "RESPIRATORY",
+        "topic": "Status Asthmaticus",
+        "question": "A client with asthma is admitted in status asthmaticus. Which finding indicates the client's condition is worsening?",
+        "options": [
+            "A. Loud, audible wheezing.",
+            "B. Silent chest (absence of wheezing).",
+            "C. Productive cough with yellow sputum.",
+            "D. Respiratory rate of 22 breaths/min."
+        ],
+        "c": "B",
+        "r": "A **silent chest** in an asthmatic client is an ominous sign. It indicates such severe bronchoconstriction that there is minimal to no air movement, and therefore no wheezing. This is a medical emergency requiring immediate intervention.",
+        "type": "single"
+    },
+    "q27": {
+        "section": "POST-OPERATIVE CARE",
+        "topic": "Coughing Position",
+        "question": "After abdominal surgery, a client is reluctant to cough due to incisional pain. Which position should the nurse encourage for effective coughing?",
+        "options": [
+            "A. Supine with legs elevated.",
+            "B. Prone position.",
+            "C. Sitting upright or in a side-lying position, splinting the incision.",
+            "D. Trendelenburg position."
+        ],
+        "c": "C",
+        "r": "**Sitting upright** allows for maximum lung expansion. Encouraging the client to **splint** the incision (using a pillow or hands) provides support and reduces pain during coughing, making the cough more effective.",
+        "type": "single"
+    },
+    "q28": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Degenerative Changes",
+        "question": "The nurse is teaching a client about age-related degenerative changes in the eye. Which statement indicates a need for further teaching?",
+        "options": [
+            "A. 'The lens may become less flexible, making it harder to focus on close objects.'",
+            "B. 'Peripheral vision may decrease slightly with age.'",
+            "C. 'I can expect my night vision to improve as I get older.'",
+            "D. 'The pupil may react more slowly to changes in light.'"
+        ],
+        "c": "C",
+        "r": "Age-related changes typically include decreased lens flexibility (presbyopia), some loss of peripheral vision, slower pupil reaction, and notably, **decreased night vision** (not improved) due to changes in the pupil and retina. Statement C requires further teaching.",
+        "type": "single"
+    },
+    "q29": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Chronic Open-Angle Glaucoma",
+        "question": "A client diagnosed with Chronic Open-Angle Glaucoma (COAG) asks the nurse about the disease. Which statement by the nurse is most accurate?",
+        "options": [
+            "A. 'COAG causes a sudden, painful increase in eye pressure.'",
+            "B. 'COAG is characterized by a gradual, painless loss of peripheral vision.'",
+            "C. 'COAG is easily cured with antibiotic eye drops.'",
+            "D. 'COAG only affects one eye at a time.'"
+        ],
+        "c": "B",
+        "r": "**Chronic Open-Angle Glaucoma (COAG)** is the most common form and is characterized by a slow, **painless** increase in intraocular pressure (IOP), leading to gradual **peripheral vision loss** (tunnel vision). It often affects both eyes and requires lifelong management, not a cure.",
+        "type": "single"
+    },
+    "q30": {
+        "section": "PHARMACOLOGY",
+        "topic": "Beta-Agonists (SABA)",
+        "question": "A client with asthma is prescribed Albuterol (Proventil HFA). The nurse teaches the client that this medication acts as a:",
+        "options": [
+            "A. Bronchodilator by relaxing airway smooth muscle.",
+            "B. Corticosteroid that reduces airway inflammation.",
+            "C. Anticholinergic that blocks parasympathetic nerve signals.",
+            "D. Leukotriene modifier that prevents allergic reactions."
+        ],
+        "c": "A",
+        "r": "**Albuterol** is a short-acting beta-2 agonist (**SABA**) that causes **bronchodilation** by relaxing the smooth muscles of the airways. It is a rescue inhaler used for quick relief of acute bronchospasm.",
+        "type": "single"
+    },
+    "q31": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Miotics",
+        "question": "A client with glaucoma is prescribed Pilocarpine (Isopto Carpine). The nurse explains that this medication works by:",
+        "options": [
+            "A. Dilating the pupil to allow more light into the eye.",
+            "B. Reducing aqueous humor production.",
+            "C. Constricting the pupil (miosis) to improve aqueous humor outflow.",
+            "D. Paralyzing the ciliary muscle for examination."
+        ],
+        "c": "C",
+        "r": "**Pilocarpine** is a miotic (cholinergic) agent. It causes **pupil constriction (miosis)**, which pulls the iris away from the trabecular meshwork, opening it up and improving the outflow of aqueous humor, thereby reducing intraocular pressure (IOP).",
+        "type": "single"
+    },
+    "q32": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Pterygium",
+        "question": "A client presents with a fleshy, triangular growth of tissue on the conjunctiva extending onto the cornea. The nurse recognizes this as:",
+        "options": [
+            "A. Cataract.",
+            "B. Pterygium.",
+            "C. Chalazion.",
+            "D. Stye (Hordeolum)."
+        ],
+        "c": "B",
+        "r": "A **Pterygium** is a benign, wing-shaped (triangular) growth of fleshy tissue on the conjunctiva that can extend onto the cornea. It is often associated with sun (UV) exposure. If it grows large enough to cover the pupil, it can impair vision.",
+        "type": "single"
+    },
+    "q33": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Blurring of Vision",
+        "question": "A client reports gradual, painless blurring of vision, difficulty with night driving, and seeing halos around lights. The nurse suspects:",
+        "options": [
+            "A. Acute Angle-Closure Glaucoma.",
+            "B. Cataract.",
+            "C. Retinal Detachment.",
+            "D. Macular Degeneration."
+        ],
+        "c": "B",
+        "r": "These are classic symptoms of a **cataract**: gradual, **painless** clouding of the lens leading to blurred vision, difficulty with night vision (glare), and halos around lights. Acute angle-closure glaucoma is sudden and painful.",
+        "type": "single"
+    },
+    "q34": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Iron Deficiency Signs",
+        "question": "A nurse is assessing a client suspected of having iron deficiency anemia. Which findings are most consistent with this diagnosis? (Select All That Apply)",
+        "options": [
+            "A. Brittle, spoon-shaped nails (koilonychia).",
+            "B. Glossitis (inflamed, sore tongue).",
+            "C. Jaundice.",
+            "D. Pica (craving for non-food substances like ice or dirt).",
+            "E. Petechiae (tiny red spots on the skin)."
+        ],
+        "c": "ABD",
+        "r": "Signs of iron deficiency anemia include **Brittle nails/koilonychia (A)**, **Glossitis (B)**, and **Pica (D)**. Jaundice (C) is more associated with hemolytic anemia or liver disease. Petechiae (E) are related to platelet disorders, not iron deficiency.",
+        "type": "sata"
+    },
+    "q35": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Iridectomy",
+        "question": "A client with acute angle-closure glaucoma undergoes a peripheral iridectomy. The nurse explains that the purpose of this procedure is to:",
+        "options": [
+            "A. Remove the entire iris to reduce intraocular pressure.",
+            "B. Create a small hole in the iris to allow aqueous humor to flow more freely.",
+            "C. Implant a new lens to restore vision.",
+            "D. Laser the trabecular meshwork to increase outflow."
+        ],
+        "c": "B",
+        "r": "A **peripheral iridectomy** (or laser iridotomy) creates a small opening in the peripheral iris. This allows aqueous humor to bypass a potential pupillary block and flow directly from the posterior chamber to the anterior chamber and out through the trabecular meshwork.",
+        "type": "single"
+    },
+    "q36": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Enucleation",
+        "question": "A client is scheduled for enucleation of the left eye due to a malignant tumor. The nurse provides preoperative teaching, emphasizing that enucleation involves:",
+        "options": [
+            "A. Removal of the eyeball contents, leaving the scleral shell.",
+            "B. Complete removal of the eyeball.",
+            "C. Removal of the eyeball and all orbital contents.",
+            "D. Partial removal of the iris and lens."
+        ],
+        "c": "B",
+        "r": "**Enucleation** is the surgical **removal of the entire eyeball**, leaving the orbital muscles and other orbital contents intact. This is distinguished from evisceration (contents only) and exenteration (entire orbit).",
+        "type": "single"
+    },
+    "q37": {
+        "section": "ELECTROLYTES",
+        "topic": "Hypocalcemia Signs",
+        "question": "A nurse is assessing a client with suspected hypocalcemia. Which assessment findings would confirm this? (Select All That Apply)",
+        "options": [
+            "A. Positive Chvostek's sign (facial twitching when cheek is tapped).",
+            "B. Positive Trousseau's sign (carpal spasm with BP cuff inflation).",
+            "C. Hyperactive deep tendon reflexes.",
+            "D. Flaccid muscles and decreased reflexes.",
+            "E. Prolonged QT interval on ECG."
+        ],
+        "c": "ABCE",
+        "r": "**Hypocalcemia** causes increased neuromuscular excitability. **Chvostek's (A)**, **Trousseau's (B)**, **hyperactive reflexes (C)**, and a **prolonged QT interval (E)** are all signs. Flaccid muscles (D) would be seen in hypercalcemia.",
+        "type": "sata"
+    },
+    "q38": {
+        "section": "HEPATIC & GI",
+        "topic": "Hepatotoxicity",
+        "question": "A client is taking a medication known for hepatotoxicity. Which lab values should the nurse monitor most closely?",
+        "options": [
+            "A. BUN and Creatinine.",
+            "B. ALT and AST.",
+            "C. Hemoglobin and Hematocrit.",
+            "D. WBC and Platelets."
+        ],
+        "c": "B",
+        "r": "**ALT (Alanine Aminotransferase) and AST (Aspartate Aminotransferase)** are liver enzymes. Elevated levels indicate liver cell damage, which is a hallmark of **hepatotoxicity**. BUN/Creatinine are for kidney function.",
+        "type": "single"
+    },
+    "q39": {
+        "section": "NEUROLOGY",
+        "topic": "Paresthesias",
+        "question": "A client reports experiencing paresthesias (tingling, numbness) in their hands and feet. The nurse recognizes that this could be a sign of:",
+        "options": [
+            "A. Peripheral neuropathy.",
+            "B. Central nervous system tumor.",
+            "C. Acute myocardial infarction.",
+            "D. Pulmonary embolism."
+        ],
+        "c": "A",
+        "r": "**Paresthesias** in a 'glove and stocking' distribution (hands and feet) are classic signs of **peripheral neuropathy**, which can be caused by diabetes, B12 deficiency, chemotherapy, or other conditions affecting peripheral nerves.",
+        "type": "single"
+    },
+    "q40": {
+        "section": "HEMATOLOGY",
+        "topic": "Gate-Control Theory Application",
+        "question": "Based on the gate-control theory of pain, which nursing intervention would be most effective in reducing a client's perception of post-operative pain?",
+        "options": [
+            "A. Administering a prescribed opioid analgesic.",
+            "B. Applying a heating pad to the surgical site with provider approval.",
+            "C. Encouraging the client to focus on the pain.",
+            "D. Limiting all sensory stimulation in the room."
+        ],
+        "c": "B",
+        "r": "The **Gate-Control Theory** suggests that non-noxious stimuli (like heat or massage) can 'close the gate' to pain perception by activating large-diameter nerve fibers. Applying a **heating pad (B)** stimulates these fibers and can reduce pain perception.",
+        "type": "single"
+    },
+    "q41": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Stroke Rehab",
+        "question": "A client recovering from a stroke has expressive aphasia and right-sided hemiplegia. Which interventions are appropriate for the rehabilitation team to include? (Select All That Apply)",
+        "options": [
+            "A. Speech therapy to work on communication strategies.",
+            "B. Occupational therapy for activities of daily living (ADLs).",
+            "C. Physical therapy for mobility and strength training.",
+            "D. Discouraging all attempts at verbal communication to prevent frustration.",
+            "E. Providing written instructions as the sole method of communication."
+        ],
+        "c": "ABC",
+        "r": "Rehabilitation for stroke includes **speech therapy (A)** for aphasia, **occupational therapy (B)** for ADLs, and **physical therapy (C)** for mobility. Discouraging communication (D) is harmful. Written instructions alone (E) may not be effective depending on the type of aphasia.",
+        "type": "sata"
+    },
+    "q42": {
+        "section": "HEPATIC & GI",
+        "topic": "Peritonitis",
+        "question": "A client with a perforated appendix develops peritonitis. Which assessment finding would the nurse expect?",
+        "options": [
+            "A. Soft, non-tender abdomen.",
+            "B. Rigid, board-like abdomen with rebound tenderness.",
+            "C. Hyperactive bowel sounds.",
+            "D. Decreased temperature and heart rate."
+        ],
+        "c": "B",
+        "r": "**Peritonitis** causes severe abdominal inflammation. The classic finding is a **rigid, board-like abdomen** with **rebound tenderness** (pain when pressure is released). Bowel sounds are typically hypoactive or absent. Fever and tachycardia are common.",
+        "type": "single"
+    },
+    "q43": {
+        "section": "RESPIRATORY",
+        "topic": "Airway Priority",
+        "question": "A nurse is caring for a client who has just been admitted after a near-drowning incident. The client is unresponsive. What is the nurse's FIRST priority action?",
+        "options": [
+            "A. Check for a pulse.",
+            "B. Open the airway and assess for breathing.",
+            "C. Begin chest compressions.",
+            "D. Insert a nasogastric tube."
+        ],
+        "c": "B",
+        "r": "According to basic life support (BLS) principles for an unresponsive person, after confirming unresponsiveness and calling for help, the priority is **Airway** (A in CAB/ABC for drowning). Opening the airway and assessing for breathing is the first step, as drowning is a respiratory emergency.",
+        "type": "single"
+    },
+    "q44": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Glasgow Coma Scale",
+        "question": "A nurse assesses a client's Glasgow Coma Scale (GCS). The client opens eyes to painful stimuli (E2), makes incomprehensible sounds (V2), and exhibits abnormal flexion (decorticate posturing) to pain (M3). What is the client's GCS score?",
+        "options": [
+            "A. 5",
+            "B. 7",
+            "C. 9",
+            "D. 11"
+        ],
+        "c": "B",
+        "r": "GCS is calculated: Eyes (E) + Verbal (V) + Motor (M). E2 (pain) + V2 (incomprehensible sounds) + M3 (abnormal flexion) = **7**. A GCS of 8 or below indicates severe brain injury and often the need for intubation.",
+        "type": "single"
+    },
+    "q45": {
+        "section": "OPHTHALMOLOGY",
+        "topic": "Snellen's Test",
+        "question": "When performing a Snellen's visual acuity test, the nurse notes the client can read the 20/40 line with the right eye. This means:",
+        "options": [
+            "A. The client has normal vision in the right eye.",
+            "B. The client can see at 20 feet what a person with normal vision can see at 40 feet.",
+            "C. The client can see at 40 feet what a person with normal vision can see at 20 feet.",
+            "D. The client is legally blind in the right eye."
+        ],
+        "c": "B",
+        "r": "A Snellen's result of **20/40** means the client must stand at **20 feet** to see what a person with normal (20/20) vision can see from **40 feet**. This indicates reduced visual acuity.",
+        "type": "single"
+    },
+    "q46": {
+        "section": "HEPATIC & GI",
+        "topic": "Hypotonic Enema",
+        "question": "A nurse is preparing to administer a hypotonic (tap water) enema. The nurse understands that a potential complication of this type of enema is:",
+        "options": [
+            "A. Dehydration due to fluid loss.",
+            "B. Water intoxication due to fluid absorption.",
+            "C. Hypernatremia due to sodium absorption.",
+            "D. Constipation."
+        ],
+        "c": "B",
+        "r": "A **hypotonic enema** (tap water) has a lower solute concentration than body fluids. This can cause water to be **absorbed** into the bloodstream, potentially leading to **water intoxication** (fluid overload, hyponatremia, seizures). Hypertonic enemas draw fluid out.",
+        "type": "single"
+    },
+    "q47": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Cushing's Response",
+        "question": "A client with a severe head injury begins exhibiting Cushing's Triad. The nurse recognizes this as:",
+        "options": [
+            "A. Hypotension, tachycardia, and irregular respirations.",
+            "B. Hypertension, bradycardia, and widened pulse pressure.",
+            "C. Fever, tachycardia, and hypertension.",
+            "D. Hypotension, hypothermia, and shallow respirations."
+        ],
+        "c": "B",
+        "r": "**Cushing's Triad** (or Cushing's Response) is a late sign of increased intracranial pressure (ICP). It consists of **Hypertension** (with a **widened pulse pressure**), **Bradycardia**, and **irregular respirations** (often Cheyne-Stokes). It's an ominous sign indicating brainstem compression.",
+        "type": "single"
+    },
+    "q48": {
+        "section": "ONCOLOGY",
+        "topic": "Amphotericin B Side Effects",
+        "question": "A client receiving Amphotericin B for a systemic fungal infection should be monitored for which common adverse effects? (Select All That Apply)",
+        "options": [
+            "A. Nephrotoxicity (kidney damage).",
+            "B. Hypokalemia (low potassium).",
+            "C. Infusion-related reactions (fever, chills, rigors).",
+            "D. Ototoxicity (hearing loss).",
+            "E. Hypomagnesemia (low magnesium)."
+        ],
+        "c": "ABCE",
+        "r": "**Amphotericin B** is notoriously toxic. Common effects include **Nephrotoxicity (A)**, **Hypokalemia (B)**, **Hypomagnesemia (E)**, and **infusion reactions (C)** like fever/chills. Ototoxicity (D) is more associated with aminoglycosides.",
+        "type": "sata"
+    },
+    "q49": {
+        "section": "ONCOLOGY",
+        "topic": "Vision Changes with Chemo",
+        "question": "A client receiving chemotherapy reports new-onset vision changes. Which medication class is most likely responsible?",
+        "options": [
+            "A. Alkylating agents (e.g., Cyclophosphamide).",
+            "B. Vinca alkaloids (e.g., Vincristine).",
+            "C. Antimetabolites (e.g., Methotrexate).",
+            "D. Corticosteroids (e.g., Prednisone)."
+        ],
+        "c": "B",
+        "r": "**Vinca alkaloids** (like Vincristine, Vinblastine) are known for causing neurotoxicity, including **peripheral neuropathy** and **cranial nerve palsies** which can lead to **vision changes** (e.g., diplopia, ptosis).",
+        "type": "single"
+    },
+    "q50": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Naloxone Administration",
+        "question": "A client brought to the emergency department for suspected opioid overdose is being given Naloxone. The nurse knows that Naloxone can be administered by which routes? (Select All That Apply)",
+        "options": [
+            "A. Intravenous (IV).",
+            "B. Intramuscular (IM).",
+            "C. Subcutaneous (SubQ).",
+            "D. Intranasal.",
+            "E. Oral."
+        ],
+        "c": "ABCD",
+        "r": "**Naloxone** can be administered **IV (A)** for fastest onset, **IM (B)**, **SubQ (C)**, or **Intranasal (D)** (commonly used by first responders/laypersons via Narcan nasal spray). It is **not** effective orally (E) due to significant first-pass metabolism.",
+        "type": "sata"
+    },
+    "q51": {
+        "section": "HEMATOLOGY",
+        "topic": "Hemoglobin Function",
+        "question": "A client's hemoglobin level is 8 g/dL. The nurse understands that the primary function of hemoglobin is to:",
+        "options": [
+            "A. Fight infection.",
+            "B. Transport oxygen from the lungs to the tissues.",
+            "C. Promote blood clotting.",
+            "D. Regulate body temperature."
+        ],
+        "c": "B",
+        "r": "**Hemoglobin** is the iron-containing protein in red blood cells (RBCs) responsible for **transporting oxygen** from the lungs to the body's tissues and returning carbon dioxide to the lungs. A low level indicates anemia.",
+        "type": "single"
+    },
+    "q52": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Polycythemia Vera",
+        "question": "A client is diagnosed with Polycythemia Vera. The nurse understands that this condition is characterized by:",
+        "options": [
+            "A. Decreased production of all blood cell types.",
+            "B. An overproduction of red blood cells, leading to hyperviscosity.",
+            "C. An abnormal increase in white blood cells only.",
+            "D. A deficiency in clotting factors."
+        ],
+        "c": "B",
+        "r": "**Polycythemia Vera** is a myeloproliferative disorder resulting in an **overproduction of RBCs**, often WBCs and platelets too. This leads to **hyperviscosity** (thick blood), increasing the risk of **thrombosis** (clots).",
+        "type": "single"
+    },
+    "q53": {
+        "section": "ONCOLOGY",
+        "topic": "Vesicant Extravasation",
+        "question": "A client receiving a chemotherapy infusion of a vesicant agent reports burning pain at the IV site. The nurse's FIRST action is to:",
+        "options": [
+            "A. Apply a warm compress to the site.",
+            "B. Stop the infusion immediately.",
+            "C. Flush the line with normal saline.",
+            "D. Notify the oncologist for new orders."
+        ],
+        "c": "B",
+        "r": "**Vesicants** (like Doxorubicin, Vincristine) can cause severe tissue damage if they extravasate (leak out of the vein). At the first sign of extravasation (pain, swelling, redness), the **immediate action is to STOP the infusion** to prevent further tissue damage. Then, follow facility protocol for the specific vesicant.",
+        "type": "single"
+    },
+    "q54": {
+        "section": "ONCOLOGY",
+        "topic": "Blood Return Check",
+        "question": "Before administering a chemotherapy agent through a peripheral IV, the nurse should verify patency. What is the most reliable method?",
+        "options": [
+            "A. Flushing with saline and observing for swelling.",
+            "B. Aspirating for blood return and flushing with saline.",
+            "C. Checking for patient discomfort only.",
+            "D. Increasing the infusion rate to test flow."
+        ],
+        "c": "B",
+        "r": "The most reliable method to verify IV patency before administering vesicant chemotherapy is to **aspirate for a blood return** (confirms catheter is in the vein) and **flush with saline** while observing for ease of flow and absence of swelling/pain.",
+        "type": "single"
+    },
+    "q55": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Neutropenic Diet",
+        "question": "Which foods should a neutropenic client AVOID? (Select All That Apply)",
+        "options": [
+            "A. Fresh, unpeeled fruits (e.g., apples, grapes).",
+            "B. Raw vegetables (e.g., salads).",
+            "C. Well-cooked meats.",
+            "D. Soft, unpasteurized cheeses.",
+            "E. Deli meats and hot dogs."
+        ],
+        "c": "ABDE",
+        "r": "Neutropenic clients should avoid foods with high bacterial contamination risk: **Fresh unpeeled fruits (A)**, **raw vegetables (B)**, **unpasteurized cheeses (D)**, and **deli meats/hot dogs (E)** (risk of Listeria). Well-cooked meats (C) are generally safe.",
+        "type": "sata"
+    },
+    "q56": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Erythropoietin",
+        "question": "A client with chronic kidney disease (CKD) is receiving Epoetin alfa (Procrit/Epogen). The nurse understands this medication is given to:",
+        "options": [
+            "A. Stimulate white blood cell production.",
+            "B. Promote platelet aggregation.",
+            "C. Stimulate red blood cell production (erythropoiesis).",
+            "D. Prevent blood clots."
+        ],
+        "c": "C",
+        "r": "**Epoetin alfa** is a synthetic form of **erythropoietin**, a hormone produced by the kidneys that stimulates **erythropoiesis** (RBC production). In CKD, the kidneys produce less erythropoietin, leading to anemia, which this drug treats.",
+        "type": "single"
+    },
+    "q57": {
+        "section": "ONCOLOGY",
+        "topic": "Corticosteroids Side Effects",
+        "question": "A client is on long-term corticosteroid therapy. Which side effects should the nurse monitor for? (Select All That Apply)",
+        "options": [
+            "A. Hyperglycemia.",
+            "B. Osteoporosis.",
+            "C. Hypotension.",
+            "D. Immunosuppression.",
+            "E. Weight gain and fluid retention."
+        ],
+        "c": "ABDE",
+        "r": "Long-term **corticosteroids** cause: **Hyperglycemia (A)**, **Osteoporosis (B)**, **Immunosuppression (D)**, and **weight gain/fluid retention (E)**. They typically cause **hypertension**, not hypotension (C).",
+        "type": "sata"
+    },
+    "q58": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Immunotherapy",
+        "question": "A client is receiving immunotherapy for cancer. The nurse explains that the goal of immunotherapy is to:",
+        "options": [
+            "A. Directly kill cancer cells with cytotoxic drugs.",
+            "B. Boost or restore the body's own immune system to fight cancer.",
+            "C. Block the blood supply to tumors.",
+            "D. Permanently suppress the immune system."
+        ],
+        "c": "B",
+        "r": "**Immunotherapy** works by **boosting or restoring the body's own immune system** to recognize and destroy cancer cells. This is different from chemotherapy, which directly kills rapidly dividing cells.",
+        "type": "single"
+    },
+    "q59": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Environmental Allergens",
+        "question": "A nurse is teaching a client about managing environmental allergies. Which instruction is most appropriate?",
+        "options": [
+            "A. 'Keep windows open to increase fresh air circulation.'",
+            "B. 'Use a HEPA filter and keep indoor humidity low.'",
+            "C. 'Dust furniture with a dry cloth to remove allergens.'",
+            "D. 'Carpeting is preferable to hardwood floors for allergy control.'"
+        ],
+        "c": "B",
+        "r": "To reduce **environmental allergens**, clients should use **HEPA filters** (trap small particles), keep humidity low (reduces mold/dust mites), keep windows closed during high pollen seasons, dust with damp cloths, and prefer hardwood/tile floors over carpet.",
+        "type": "single"
+    },
+    "q60": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Prevention Levels",
+        "question": "Match the following actions to their level of disease prevention:\n- Administering a vaccine to prevent measles.\n- Screening for high blood pressure.\n- Cardiac rehabilitation after a heart attack.",
+        "options": [
+            "A. Primary, Secondary, Tertiary.",
+            "B. Secondary, Primary, Tertiary.",
+            "C. Tertiary, Primary, Secondary.",
+            "D. Primary, Tertiary, Secondary."
+        ],
+        "c": "A",
+        "r": "**Primary Prevention** stops disease before it starts (vaccines). **Secondary Prevention** detects disease early (screening). **Tertiary Prevention** reduces disability/restores function after disease (rehab).",
+        "type": "single"
+    },
+    "q61": {
+        "section": "IMMUNE & HEMATOLOGY",
+        "topic": "Immune Functions",
+        "question": "The nurse is teaching a student about the functions of the immune system. Which are primary functions? (Select All That Apply)",
+        "options": [
+            "A. Defense against invading pathogens.",
+            "B. Surveillance (recognizing and destroying abnormal cells like cancer).",
+            "C. Regulation of blood glucose levels.",
+            "D. Homeostasis (removing damaged or dead cells).",
+            "E. Production of red blood cells."
+        ],
+        "c": "ABD",
+        "r": "The primary functions of the immune system are: **Defense (A)** against pathogens, **Surveillance (B)** for abnormal cells, and **Homeostasis (D)** (removing old/damaged cells). Glucose regulation (C) is endocrine; RBC production (E) is hematopoietic.",
+        "type": "sata"
+    },
+    "q62": {
+        "section": "HEPATIC & GI",
+        "topic": "Hepatitis A Transmission",
+        "question": "A nurse is educating a client diagnosed with Hepatitis A. The nurse explains that the primary mode of transmission for Hepatitis A is:",
+        "options": [
+            "A. Blood and blood products.",
+            "B. Sexual contact.",
+            "C. The fecal-oral route (contaminated food or water).",
+            "D. Airborne droplets."
+        ],
+        "c": "C",
+        "r": "**Hepatitis A (HAV)** is transmitted primarily via the **fecal-oral route**, through ingestion of contaminated food (especially shellfish) or water. It is not typically transmitted through blood or sexual contact like Hepatitis B or C.",
+        "type": "single"
+    },
+    "q63": {
+        "section": "HEPATIC & GI",
+        "topic": "Ammonia & Hepatic Encephalopathy",
+        "question": "A client with liver cirrhosis has an elevated serum ammonia level and is confused. The nurse anticipates an order for:",
+        "options": [
+            "A. A high-protein diet to rebuild liver tissue.",
+            "B. Lactulose (Chronulac) to reduce ammonia absorption.",
+            "C. IV Potassium supplementation.",
+            "D. Blood transfusion for anemia."
+        ],
+        "c": "B",
+        "r": "Elevated **ammonia** in liver failure leads to **hepatic encephalopathy** (confusion, asterixis). **Lactulose** is a laxative that traps ammonia in the colon and promotes its excretion, reducing serum levels. Protein is often restricted, not increased.",
+        "type": "single"
+    },
+    "q64": {
+        "section": "HEPATIC & GI",
+        "topic": "Asterixis",
+        "question": "The nurse assesses a client with hepatic encephalopathy and notes a flapping tremor of the hands when the wrists are extended. This finding is documented as:",
+        "options": [
+            "A. Intention tremor.",
+            "B. Asterixis.",
+            "C. Athetosis.",
+            "D. Myoclonus."
+        ],
+        "c": "B",
+        "r": "**Asterixis** (also called 'liver flap') is a characteristic flapping tremor of the hands seen in hepatic encephalopathy. It occurs due to the toxic effects of ammonia on the brain affecting motor control.",
+        "type": "single"
+    },
+    "q65": {
+        "section": "NUTRITION",
+        "topic": "Re-feeding Syndrome",
+        "question": "A severely malnourished client is started on nutritional support. The nurse monitors closely for Re-feeding Syndrome, which is characterized by:",
+        "options": [
+            "A. Hyperkalemia and hypernatremia.",
+            "B. Hypophosphatemia, hypokalemia, and potential cardiac arrhythmias.",
+            "C. Elevated blood glucose and ketoacidosis.",
+            "D. Fluid volume deficit and dehydration."
+        ],
+        "c": "B",
+        "r": "**Re-feeding Syndrome** occurs when a malnourished person receives nutrition too quickly. Insulin release causes a rapid shift of electrolytes (especially **phosphorus**, potassium, magnesium) into cells, leading to **hypophosphatemia**, **cardiac arrhythmias**, respiratory failure, and even death.",
+        "type": "single"
+    },
+    "q66": {
+        "section": "HEPATIC & GI",
+        "topic": "Paralytic Ileus",
+        "question": "A post-operative client has absent bowel sounds and abdominal distension. The nurse suspects paralytic ileus. Which intervention is a priority?",
+        "options": [
+            "A. Encourage the client to ambulate as soon as possible.",
+            "B. Administer a stimulant laxative.",
+            "C. Provide a clear liquid diet.",
+            "D. Insert a rectal tube for decompression."
+        ],
+        "c": "A",
+        "r": "**Paralytic ileus** is a temporary cessation of bowel peristalsis, common post-surgery. **Early ambulation (A)** is a key intervention to stimulate bowel motility. The client is typically NPO with an NG tube for decompression until bowel function returns. Laxatives are contraindicated.",
+        "type": "single"
+    },
+    "q67": {
+        "section": "HEPATIC & GI",
+        "topic": "Cholecystitis Pain",
+        "question": "A client with suspected cholecystitis reports severe right upper quadrant (RUQ) pain. Which assessment finding would support this diagnosis?",
+        "options": [
+            "A. Pain relieved by eating fatty foods.",
+            "B. Positive Murphy's sign (inspiratory arrest during RUQ palpation).",
+            "C. Left lower quadrant (LLQ) tenderness.",
+            "D. Absent bowel sounds in all quadrants."
+        ],
+        "c": "B",
+        "r": "**Murphy's sign** is positive when the client abruptly stops inhaling during palpation of the RUQ due to pain when the inflamed gallbladder descends and contacts the examiner's hand. This is a classic sign of **cholecystitis**.",
+        "type": "single"
+    },
+    "q68": {
+        "section": "HEPATIC & GI",
+        "topic": "Morphine & Sphincter of Oddi",
+        "question": "A client with biliary colic is prescribed Morphine for pain. The nurse should be aware that morphine can:",
+        "options": [
+            "A. Cause relaxation of the Sphincter of Oddi, easing bile flow.",
+            "B. Cause spasm of the Sphincter of Oddi, potentially worsening pain.",
+            "C. Have no effect on the biliary system.",
+            "D. Dissolve gallstones."
+        ],
+        "c": "B",
+        "r": "**Morphine** can cause **spasm of the Sphincter of Oddi**, the muscle controlling bile and pancreatic duct flow. This can worsen biliary colic. Some providers prefer **Meperidine (Demerol)** or other analgesics in biliary pain, though this practice is debated.",
+        "type": "single"
+    },
+    "q69": {
+        "section": "RESPIRATORY",
+        "topic": "Respiratory Acidosis",
+        "question": "A client's ABG results show: pH 7.30, PaCO₂ 55 mmHg, HCO₃⁻ 24 mEq/L. The nurse interprets this as:",
+        "options": [
+            "A. Respiratory Alkalosis.",
+            "B. Metabolic Acidosis.",
+            "C. Respiratory Acidosis.",
+            "D. Metabolic Alkalosis."
+        ],
+        "c": "C",
+        "r": "pH < 7.35 = Acidosis. PaCO₂ > 45 mmHg (high) indicates the respiratory system is the cause (retaining CO₂). HCO₃⁻ is normal (22-26), meaning no metabolic compensation yet. This is **uncompensated Respiratory Acidosis**.",
+        "type": "single"
+    },
+    "q70": {
+        "section": "RESPIRATORY",
+        "topic": "Cough Reflex",
+        "question": "The cough reflex is an important defense mechanism for the respiratory system. Which statement about the cough reflex is TRUE?",
+        "options": [
+            "A. It is a voluntary action only and cannot occur reflexively.",
+            "B. It is initiated when irritant receptors in the airways are stimulated.",
+            "C. It is ineffective in removing mucus from the lower airways.",
+            "D. Opioid medications enhance the cough reflex."
+        ],
+        "c": "B",
+        "r": "The **cough reflex** is an involuntary (though can be voluntary) response initiated by stimulation of **irritant receptors** in the airways (e.g., by dust, mucus, infection). It's highly effective for clearing debris. Opioids **suppress** the cough reflex.",
+        "type": "single"
+    },
+    "q71": {
+        "section": "RESPIRATORY",
+        "topic": "Mucociliary Escalator",
+        "question": "The mucociliary escalator is a primary defense mechanism in the respiratory tract. It functions by:",
+        "options": [
+            "A. Producing antibodies to neutralize pathogens.",
+            "B. Trapping particles in mucus and moving them upward via ciliary action.",
+            "C. Directly killing bacteria with enzymes.",
+            "D. Absorbing toxins from inhaled air."
+        ],
+        "c": "B",
+        "r": "The **mucociliary escalator** consists of a layer of mucus (produced by goblet cells) that traps inhaled particles, and **cilia** that beat in a coordinated, wave-like motion to propel the mucus (and trapped debris) up toward the pharynx to be swallowed or expectorated.",
+        "type": "single"
+    },
+    "q72": {
+        "section": "RESPIRATORY",
+        "topic": "Alveolar Macrophages",
+        "question": "Alveolar macrophages are critical for lung defense. Their primary function is to:",
+        "options": [
+            "A. Produce surfactant to reduce surface tension.",
+            "B. Phagocytize (engulf and destroy) pathogens and debris in the alveoli.",
+            "C. Transport oxygen to the blood.",
+            "D. Regulate airflow by constricting bronchioles."
+        ],
+        "c": "B",
+        "r": "**Alveolar macrophages** (dust cells) are immune cells residing in the alveoli. Their main job is to **phagocytize** (engulf and destroy) pathogens, inhaled particles (like dust, pollen), and cellular debris, providing a critical line of defense in the gas-exchange zone.",
+        "type": "single"
+    },
+    "q73": {
+        "section": "RESPIRATORY",
+        "topic": "Acute Bronchitis",
+        "question": "When caring for a client with acute bronchitis, which nursing intervention is considered the priority?",
+        "options": [
+            "A. Providing warm, dry heat to the chest.",
+            "B. Encouraging smoking cessation.",
+            "C. Administering an antibiotic on schedule.",
+            "D. Auscultating lung sounds to assess airway patency."
+        ],
+        "c": "D",
+        "r": "The nursing priority in acute respiratory disorders is always **ABC (Airway, Breathing, Circulation)**. **Auscultating lung sounds** is a key assessment to determine the extent of airway obstruction or inflammation, guiding further treatment.",
+        "type": "single"
+    },
+    "q74": {
+        "section": "HEPATIC & GI",
+        "topic": "Esophageal Varices",
+        "question": "Which intervention is the highest priority for a client with active bleeding esophageal varices due to portal hypertension?",
+        "options": [
+            "A. Administer a nonselective beta-blocker (propranolol).",
+            "B. Prepare for the insertion of a Sengstaken-Blakemore tube.",
+            "C. Monitor vital signs and check for signs of hemorrhagic shock.",
+            "D. Administer Lactulose to prevent hepatic encephalopathy."
+        ],
+        "c": "C",
+        "r": "Bleeding varices cause life-threatening hemorrhage. The immediate priority is recognizing and managing the associated acute event: **hemorrhagic shock** (assessing VS, securing large-bore IVs, potential transfusion). Insertion of the Sengstaken-Blakemore tube (B) is a mechanical measure used when conservative treatment (e.g., band ligation, drugs) has failed.",
+        "type": "single"
+    },
+    "q75": {
+        "section": "RESPIRATORY",
+        "topic": "Asthma ABCDE Cascade",
+        "question": "(Ordering) The nurse encounters a client having a suspected flare of Bronchial Asthma. Order the priority nursing actions according to the ABCDE cascade for prioritizing care:\n1. Assess the breathing pattern and auscultate lungs.\n2. Administer Albuterol (Proventil HFA) via nebulizer or MDI.\n3. Determine if a foreign object or edema is present.\n4. Provide supplemental oxygen.",
+        "options": [
+            "A. 3, 1, 2, 4",
+            "B. 2, 4, 1, 3",
+            "C. 1, 3, 4, 2",
+            "D. 3, 2, 1, 4"
+        ],
+        "c": "D",
+        "r": "The Frye's **ABCDE cascade** guides prioritization. **A=Airway (3)** includes checking for foreign objects or edema. **B=Breathing** involves assessment and intervention. In an acute asthma attack, securing the airway (3) and immediately administering the **SABA (2)** and **oxygen (4)** are typically followed by detailed assessment (1). **D (3, 2, 1, 4)** best reflects the rapid sequence in a respiratory crisis.",
+        "type": "single"
+    },
+    "q76": {
+        "section": "NUTRITION",
+        "topic": "TPN Complications",
+        "question": "When monitoring a client receiving Total Parenteral Nutrition (TPN) via a central venous catheter (CVC), the nurse is aware that a high-glucose solution creates a high risk for:",
+        "options": [
+            "A. Fluid volume deficit and hypovolemia.",
+            "B. Total Parenteral Nutrition (TPN) not being managed with oral hypoglycemics.",
+            "C. Hyperglycemia and potential pancreatitis.",
+            "D. Negative nitrogen balance and elevated glucose levels."
+        ],
+        "c": "C",
+        "r": "**TPN** is a high-glucose solution. The most common complications are **hyperglycemia** and, if the infusion is suddenly stopped or glucose is uncontrolled, the pancreas may struggle to keep up, potentially leading to **pancreatitis**.",
+        "type": "single"
+    }
+};
+let cc = 0, ic = 0, tq = Object.keys(qd).length;
+let answeredQuestions = new Set();
+let missedQuestions = new Set();
+let retestCorrect = 0;
+let retestIncorrect = 0;
+let retestQuestionStates = new Map();
+let sequenceSelectionMap = new Map();
+function playCorrectSound() {
+    try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const oscillator = audioContext.createOscillator();
+const gainNode = audioContext.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.3);
+    } catch (error) {
+        console.log('Audio not available:', error);
+    }
+}
+
+function processRationale(qid, rationale, isCorrect) {
+    const qData = qd[qid];
+let cleanRationale = rationale.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+const criticalTerms = ["Neutropenia", "ANC", "DIC", "Type I", "Type II", "IgE", "hemolytic transfusion", "Sickle Cell", "iron", "sterility", "Kayexelate", "Nonmaleficence", "Ferritin", "Leucovorin", "Methotrexate", "ADCC", "influenza", "Latex", "vegetarian", "Epinephrine", "anaphylaxis", "Osteomalacia", "Phenytoin", "numerical scale", "Russell's traction", "Romberg's", "Gate Control Theory", "Referred pain", "opioid overdose", "altered LOC", "tube feedings", "PaO₂", "Status asthmaticus", "right side-lying position", "Degenerative changes", "Chronic open-angle glaucoma", "Albuterol", "SABA", "Miotics", "cholinergics", "Pterygium", "blurring of vision", "Brittle nails", "pica", "iridectomy", "Enucleation", "Chvostek's sign", "Trousseau's sign", "hypocalcemia", "hepatotoxicity", "ALT/AST", "paresthesias", "gate-control theory", "speech and occupational therapy", "peritonitis", "Airway", "Breathing", "Circulation", "ABC", "essential foods", "Glasgow Coma Scale", "Snellen's Test", "hypotonic enema", "Cushing's Response", "Bradycardia", "widened pulse pressure", "Amphotericin B", "vision changes", "Naloxone", "intranasal", "Hemoglobin", "Polycythemia", "hyperviscosity", "thrombosis", "vesicants", "extravasation", "blood return", "fresh fruits", "erythropoietin", "erythropoiesis", "Corticosteroids", "hyperglycemia", "Immunotherapy", "environmental allergens", "Primary Prevention", "Secondary Prevention", "Tertiary Prevention", "Defense", "Surveillance", "Homeostasis", "Hepatitis A", "fecal-oral route", "ammonia", "Lactulose", "asterixis", "Re-feeding Syndrome", "hypophosphatemia", "cardiac arrhythmias", "paralytic ileus", "cholecystitis", "cholelithiasis", "Morphine", "Sphincter of Oddi", "Respiratory Acidosis", "PaCO₂", "cough reflex", "mucociliary escalator", "alveolar macrophages", "hypoxic drive", "hemorrhagic shock", "Sengstaken-Blakemore tube", "ABCDE cascade", "TPN", "pancreatitis"];
+    criticalTerms.forEach(term => {
+        const regex = new RegExp(`\\b(${term})\\b`, 'gi');
+        cleanRationale = cleanRationale.replace(regex, '<span class="rationale-keyword-highlight"><b>$1</b></span>');
+    });
+    return `<p style="text-align: left; margin: 5px 0;">${cleanRationale}</p>`;
+}
+
+function formatQuestionText(questionText) {
+    // Patterns that indicate the start of the actual question
+    const questionPatterns = [
+        /\b(Which\s+(?:of the following\s+)?(?:action|intervention|statement|assessment|finding|response|priority|nursing|laboratory|symptom|sign|medication|instruction|teaching|is\b|should|would|does|do|are|best|most|indicates|is most|is the|is a\b))/i,
+        /\b(What\s+(?:is|are|does|would|should|action|priority|finding|intervention))/i,
+        /\b(The\s+nurse\s+(?:should|would|understands?|knows?|recognizes?|prioritizes?|interprets?|anticipates?|suspects?|includes?))/i,
+        /\b(True\s+or\s+False:)/i,
+        /\b(Select\s+[Aa]ll\s+[Tt]hat\s+[Aa]pply)/i,
+        /\b(In\s+what\s+order\s+should)/i,
+        /\b(How\s+should\s+the\s+nurse)/i,
+        /\b(The\s+(?:primary|priority|most\s+important|immediate|best|appropriate)\s+(?:action|intervention|response|nursing))/i
+    ];
+
+    for (const pattern of questionPatterns) {
+        const match = questionText.match(pattern);
+        if (match && match.index > 10) {
+            const background = questionText.substring(0, match.index).trim();
+            const prompt = questionText.substring(match.index).trim();
+            return `<span class="question-background">${background}</span><span class="question-prompt">${prompt}</span>`;
+        }
+    }
+
+    // Fallback: look for the last sentence that ends with ? or :
+    const lastQuestionMatch = questionText.match(/^(.+?[.!])\s+([^.!]+[?:])$/s);
+    if (lastQuestionMatch) {
+        return `<span class="question-background">${lastQuestionMatch[1].trim()}</span><span class="question-prompt">${lastQuestionMatch[2].trim()}</span>`;
+    }
+
+    // If no split found, return as single prompt
+    return `<span class="question-prompt">${questionText}</span>`;
+}
+
+function generateQuestionHtml(qid, qData, isRetest = false) {
+    let html = '';
+const isSATA = qData.type === 'sata';
+const isSequence = qData.type === 'sequence';
+const checkButtonHtml = (isSATA || isSequence) ? `<button class="check-sata-button" data-q="${qid}" data-retest="${isRetest}">✅ Check Answer</button>` : '';
+const retestState = retestQuestionStates.get(qid);
+const isAlreadyAnsweredInRetest = retestState && retestState.answered;
+let questionNumberDisplay = (!isRetest) ? `<span class="question-number-box">${qData.displayNum}.</span>` : '';
+let optionsHtml = '';
+
+    if (isSequence) {
+        const questionText = qData.question;
+const itemMatches = questionText.match(/\n\d+\.\s+.+/g);
+
+        if (itemMatches) {
+            const items = itemMatches.map(item => item.trim());
+            optionsHtml = items.map((item, idx) => {
+                const itemNumber = idx + 1;
+const itemText = item.replace(/^\d+\.\s+/, '');
+let optionClasses = 'answer-option sequence-item';
+let sequenceNum = '';
+let isDisabled = '';
+
+                if (isAlreadyAnsweredInRetest) {
+                    isDisabled = 'style="pointer-events: none; cursor: default;"';
+const selectedSequence = retestState.selectedSequence || [];
+const positionInSequence = selectedSequence.indexOf(itemNumber);
+                    if (positionInSequence !== -1) {
+                        sequenceNum = `<span class="answer-option-sequence-num">${positionInSequence + 1}</span>`;
+                        optionClasses += ' sequenced';
+                    }
+                }
+
+                return `<div class="${optionClasses}" data-q="${qid}" data-item="${itemNumber}" data-retest="${isRetest}" ${isDisabled}>${sequenceNum}<span class="sequence-item-text">${itemText}</span></div>`;
+            }).join('');
+        } else {
+            optionsHtml = '<p style="color: var(--red);">Error: Could not parse sequence items</p>';
+        }
+    } else {
+        optionsHtml = qData.options.map((option, idx) => {
+            let optionLetter = String.fromCharCode(65 + idx);
+let displayOptionText = option.startsWith(`${optionLetter}. `) ? option.substring(3) : option;
+let optionClasses = 'answer-option';
+let isDisabled = '';
+
+            if (isAlreadyAnsweredInRetest) {
+                isDisabled = 'style="pointer-events: none; cursor: default;"';
+const isSelected = retestState.selected.includes(optionLetter);
+const isCorrectOption = qData.c.includes(optionLetter);
+                if (isSelected && isCorrectOption) { optionClasses += ' correct-feedback-background'; }
+                else if (isSelected && !isCorrectOption) { optionClasses += ' incorrect-feedback-background'; }
+                else if (!isSelected && isCorrectOption) { optionClasses += ' correct-feedback-background'; }
+            }
+
+            return `<li class="${optionClasses}" data-q="${qid}" data-a="${optionLetter}" data-retest="${isRetest}" ${isDisabled}><span class="answer-option-letter">${optionLetter}</span>${displayOptionText}</li>`;
+        }).join('');
+    }
+
+    const listTag = isSequence ? 'div' : 'ol type="A"';
+const listClose = isSequence ? 'div' : 'ol';
+
+    html += `
+        <div class="section-block pastel-${(qData.displayNum % 6) + 1}" data-qid="${qid}" data-answered="${isAlreadyAnsweredInRetest ? 'true' : 'false'}" data-retest="${isRetest}">
+            ${questionNumberDisplay}${questionNumberDisplay ? ' ' : ''}<p class="question-text">${formatQuestionText(qData.question)}</p>
+            <${listTag}>${optionsHtml}</${listClose}>
+            ${isAlreadyAnsweredInRetest ? '' : checkButtonHtml}
+            <div class="answer-feedback" id="feedback-${qid}${isRetest ? '-retest' : ''}" style="${isAlreadyAnsweredInRetest ? 'display:block;' : 'display:none;'}">
+                <div><span id="cs-${qid}${isRetest ? '-retest' : ''}"></span><span id="ca-${qid}${isRetest ? '-retest' : ''}"></span></div>
+                <div style="margin-top: 5px;"><span class="rationale-label"><b>Rationale:</b></span></div>
+                <div id="r-${qid}${isRetest ? '-retest' : ''}" style="margin-top: 3px;"></div>
+            </div>
+        </div>
+    `;
+    return html;
+}
+
+function handleSequenceClick(element, qid, isRetest) {
+    const sectionBlock = element.closest('.section-block');
+const itemNumber = parseInt(element.dataset.item);
+
+    if (!sequenceSelectionMap.has(qid)) {
+        sequenceSelectionMap.set(qid, []);
+    }
+    const currentSequence = sequenceSelectionMap.get(qid);
+const indexInSequence = currentSequence.indexOf(itemNumber);
+
+    if (indexInSequence !== -1) {
+        currentSequence.splice(indexInSequence);
+    } else {
+        currentSequence.push(itemNumber);
+    }
+
+    const allItems = sectionBlock.querySelectorAll('.sequence-item');
+    allItems.forEach(item => {
+        const itemNum = parseInt(item.dataset.item);
+const posInSeq = currentSequence.indexOf(itemNum);
+const seqNumSpan = item.querySelector('.answer-option-sequence-num');
+
+        if (posInSeq !== -1) {
+            item.classList.add('sequenced');
+            if (seqNumSpan) {
+                seqNumSpan.textContent = posInSeq + 1;
+            } else {
+                const newSpan = document.createElement('span');
+                newSpan.className = 'answer-option-sequence-num';
+                newSpan.textContent = posInSeq + 1;
+                item.insertBefore(newSpan, item.firstChild);
+            }
+        } else {
+            item.classList.remove('sequenced');
+            if (seqNumSpan) {
+                seqNumSpan.remove();
+            }
+        }
+    });
+}
+
+function checkSequenceAnswer(qid, isRetest) {
+    const qData = qd[qid];
+const currentSequence = sequenceSelectionMap.get(qid) || [];
+const correctSequenceStr = qData.c;
+const correctMatch = correctSequenceStr.match(/(\d+),\s*(\d+),\s*(\d+),\s*(\d+)/);
+
+    if (!correctMatch) {
+        console.error('Could not parse correct sequence for', qid);
+        return;
+    }
+
+    const correctSequence = [
+        parseInt(correctMatch[1]),
+        parseInt(correctMatch[2]),
+        parseInt(correctMatch[3]),
+        parseInt(correctMatch[4])
+    ];
+const isCorrect = currentSequence.length === correctSequence.length &&
+        currentSequence.every((val, idx) => val === correctSequence[idx]);
+const feedbackId = isRetest ? `feedback-${qid}-retest` : `feedback-${qid}`;
+const csId = isRetest ? `cs-${qid}-retest` : `cs-${qid}`;
+const caId = isRetest ? `ca-${qid}-retest` : `ca-${qid}`;
+const rId = isRetest ? `r-${qid}-retest` : `r-${qid}`;
+const feedbackDiv = document.getElementById(feedbackId);
+const csSpan = document.getElementById(csId);
+const caSpan = document.getElementById(caId);
+const rDiv = document.getElementById(rId);
+
+    if (isCorrect) {
+        feedbackDiv.classList.add('correct-feedback-container');
+        csSpan.innerHTML = '<span class="correct-answer-label"><span class="feedback-emoticon">✅</span> CORRECT!</span> ';
+        playCorrectSound();
+    } else {
+        feedbackDiv.classList.remove('correct-feedback-container');
+        csSpan.innerHTML = '<span class="incorrect-feedback-label"><span class="feedback-emoticon">❌</span> INCORRECT</span> ';
+    }
+
+    caSpan.innerHTML = `<span class="correct-letter-highlight">Correct Order: ${correctSequence.join(', ')}</span>`;
+    rDiv.innerHTML = processRationale(qid, qData.r, isCorrect);
+    feedbackDiv.style.display = 'block';
+const sectionBlock = feedbackDiv.closest('.section-block');
+    sectionBlock.querySelectorAll('.sequence-item').forEach(item => {
+        item.style.pointerEvents = 'none';
+        item.style.cursor = 'default';
+    });
+const checkBtn = sectionBlock.querySelector('.check-sata-button');
+    if (checkBtn) checkBtn.style.display = 'none';
+
+    if (isRetest) {
+        retestQuestionStates.set(qid, {
+            answered: true,
+            wasCorrect: isCorrect,
+            selectedSequence: [...currentSequence]
+        });
+        if (isCorrect) retestCorrect++;
+        else retestIncorrect++;
+        document.getElementById('retest-cc').textContent = retestCorrect;
+        document.getElementById('retest-ic').textContent = retestIncorrect;
+        document.getElementById('retest-score-summary').style.display = 'block';
+    } else {
+        answeredQuestions.add(qid);
+        if (isCorrect) cc++;
+        else { ic++; missedQuestions.add(qid); }
+        updateScore();
+    }
+}
+
+function handleSingleAnswer(element, qid, isRetest) {
+    const qData = qd[qid];
+const selectedAnswer = element.dataset.a;
+const isCorrect = selectedAnswer === qData.c;
+const feedbackId = isRetest ? `feedback-${qid}-retest` : `feedback-${qid}`;
+const csId = isRetest ? `cs-${qid}-retest` : `cs-${qid}`;
+const caId = isRetest ? `ca-${qid}-retest` : `ca-${qid}`;
+const rId = isRetest ? `r-${qid}-retest` : `r-${qid}`;
+const feedbackDiv = document.getElementById(feedbackId);
+const csSpan = document.getElementById(csId);
+const caSpan = document.getElementById(caId);
+const rDiv = document.getElementById(rId);
+
+    element.classList.add(isCorrect ? 'correct-feedback-background' : 'incorrect-feedback-background');
+const sectionBlock = element.closest('.section-block');
+    sectionBlock.querySelectorAll('.answer-option').forEach(opt => {
+        opt.style.pointerEvents = 'none';
+        opt.style.cursor = 'default';
+        if (opt.dataset.a === qData.c && !isCorrect) {
+            opt.classList.add('correct-feedback-background');
+        }
+    });
+
+    if (isCorrect) {
+        feedbackDiv.classList.add('correct-feedback-container');
+        csSpan.innerHTML = '<span class="correct-answer-label"><span class="feedback-emoticon">✅</span> CORRECT!</span> ';
+        playCorrectSound();
+    } else {
+        feedbackDiv.classList.remove('correct-feedback-container');
+        csSpan.innerHTML = '<span class="incorrect-feedback-label"><span class="feedback-emoticon">❌</span> INCORRECT</span> ';
+    }
+
+    caSpan.innerHTML = `<span class="correct-letter-highlight">Answer: ${qData.c}</span>`;
+    rDiv.innerHTML = processRationale(qid, qData.r, isCorrect);
+    feedbackDiv.style.display = 'block';
+
+    if (isRetest) {
+        retestQuestionStates.set(qid, { answered: true, wasCorrect: isCorrect, selected: [selectedAnswer] });
+        if (isCorrect) retestCorrect++;
+        else retestIncorrect++;
+        document.getElementById('retest-cc').textContent = retestCorrect;
+        document.getElementById('retest-ic').textContent = retestIncorrect;
+        document.getElementById('retest-score-summary').style.display = 'block';
+    } else {
+        answeredQuestions.add(qid);
+        if (isCorrect) cc++;
+        else { ic++; missedQuestions.add(qid); }
+        updateScore();
+    }
+}
+
+function handleSATACheck(qid, isRetest) {
+    const qData = qd[qid];
+const sectionBlock = document.querySelector(`.section-block[data-qid="${qid}"][data-retest="${isRetest}"]`);
+const selectedOptions = sectionBlock.querySelectorAll('.answer-option.selected');
+const selectedLetters = Array.from(selectedOptions).map(opt => opt.dataset.a).sort().join('');
+const correctLetters = qData.c.split('').sort().join('');
+const isCorrect = selectedLetters === correctLetters;
+const feedbackId = isRetest ? `feedback-${qid}-retest` : `feedback-${qid}`;
+const csId = isRetest ? `cs-${qid}-retest` : `cs-${qid}`;
+const caId = isRetest ? `ca-${qid}-retest` : `ca-${qid}`;
+const rId = isRetest ? `r-${qid}-retest` : `r-${qid}`;
+const feedbackDiv = document.getElementById(feedbackId);
+const csSpan = document.getElementById(csId);
+const caSpan = document.getElementById(caId);
+const rDiv = document.getElementById(rId);
+
+    sectionBlock.querySelectorAll('.answer-option').forEach(opt => {
+        opt.style.pointerEvents = 'none';
+        opt.style.cursor = 'default';
+const letter = opt.dataset.a;
+const isSelected = opt.classList.contains('selected');
+const isCorrectOption = qData.c.includes(letter);
+
+        if (isSelected && isCorrectOption) opt.classList.add('correct-feedback-background');
+        else if (isSelected && !isCorrectOption) opt.classList.add('incorrect-feedback-background');
+        else if (!isSelected && isCorrectOption) opt.classList.add('correct-feedback-background');
+    });
+const checkBtn = sectionBlock.querySelector('.check-sata-button');
+    if (checkBtn) checkBtn.style.display = 'none';
+
+    if (isCorrect) {
+        feedbackDiv.classList.add('correct-feedback-container');
+        csSpan.innerHTML = '<span class="correct-answer-label"><span class="feedback-emoticon">✅</span> CORRECT!</span> ';
+        playCorrectSound();
+    } else {
+        feedbackDiv.classList.remove('correct-feedback-container');
+        csSpan.innerHTML = '<span class="incorrect-feedback-label"><span class="feedback-emoticon">❌</span> INCORRECT</span> ';
+    }
+
+    caSpan.innerHTML = `<span class="correct-letter-highlight">Correct: ${qData.c.split('').join(', ')}</span>`;
+    rDiv.innerHTML = processRationale(qid, qData.r, isCorrect);
+    feedbackDiv.style.display = 'block';
+
+    if (isRetest) {
+        retestQuestionStates.set(qid, { answered: true, wasCorrect: isCorrect, selected: selectedLetters.split('') });
+        if (isCorrect) retestCorrect++;
+        else retestIncorrect++;
+        document.getElementById('retest-cc').textContent = retestCorrect;
+        document.getElementById('retest-ic').textContent = retestIncorrect;
+        document.getElementById('retest-score-summary').style.display = 'block';
+    } else {
+        answeredQuestions.add(qid);
+        if (isCorrect) cc++;
+        else { ic++; missedQuestions.add(qid); }
+        updateScore();
+    }
+}
+
+function updateScore() {
+    document.getElementById('cc').textContent = cc;
+    document.getElementById('ic').textContent = ic;
+const grade = answeredQuestions.size > 0 ? Math.round((cc / answeredQuestions.size) * 100) : 0;
+const gradeEl = document.getElementById('gp');
+    gradeEl.textContent = grade + '%';
+    gradeEl.parentElement.classList.toggle('failing', grade < 70);
+
+    if (answeredQuestions.size === tq && missedQuestions.size > 0) {
+        populateRetestSection();
+    }
+}
+
+function populateRetestSection() {
+    const retestArea = document.getElementById('retest-questions-display-area');
+    retestArea.innerHTML = '';
+    missedQuestions.forEach(qid => {
+        const qData = qd[qid];
+        retestArea.innerHTML += generateQuestionHtml(qid, qData, true);
+    });
+    attachEventListeners(true);
+}
+
+function attachEventListeners(retestOnly = false) {
+    const scope = retestOnly ? document.getElementById('retest-questions-display-area') : document;
+
+    scope.querySelectorAll('.answer-option:not(.sequence-item)').forEach(opt => {
+        opt.addEventListener('click', function() {
+            if (this.style.pointerEvents === 'none') return;
+const qid = this.dataset.q;
+const qData = qd[qid];
+const isRetest = this.dataset.retest === 'true';
+
+            if (qData.type === 'sata') {
+                this.classList.toggle('selected');
+            } else {
+                handleSingleAnswer(this, qid, isRetest);
+            }
+        });
+    });
+
+    scope.querySelectorAll('.sequence-item').forEach(item => {
+        item.addEventListener('click', function() {
+            if (this.style.pointerEvents === 'none') return;
+const qid = this.dataset.q;
+const isRetest = this.dataset.retest === 'true';
+            handleSequenceClick(this, qid, isRetest);
+        });
+    });
+
+    scope.querySelectorAll('.check-sata-button').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const qid = this.dataset.q;
+const qData = qd[qid];
+const isRetest = this.dataset.retest === 'true';
+
+            if (qData.type === 'sequence') {
+                checkSequenceAnswer(qid, isRetest);
+            } else {
+                handleSATACheck(qid, isRetest);
+            }
+        });
+    });
+}
+
+function initQuiz() {
+    const displayArea = document.getElementById('questions-display-area');
+    
+    // Section mapping to consolidate related topics
+    const sectionMapping = {
+        "IMMUNE & HEMATOLOGY": "IMMUNE SYSTEM & HEMATOLOGY",
+        "HEMATOLOGY": "IMMUNE SYSTEM & HEMATOLOGY",
+        "ELECTROLYTES": "FLUID, ELECTROLYTES & ACID-BASE",
+        "HEPATIC & GI": "GASTROINTESTINAL & HEPATIC",
+        "NEUROLOGY": "NEUROLOGICAL",
+        "NURSING ETHICS": "NURSING FUNDAMENTALS",
+        "NURSING PROCESS": "NURSING FUNDAMENTALS",
+        "NUTRITION": "NUTRITION",
+        "GERIATRIC NUTRITION": "NUTRITION",
+        "ONCOLOGY": "ONCOLOGY",
+        "OPHTHALMOLOGY": "SENSORY: EYES & VISION",
+        "PAIN MANAGEMENT": "PAIN MANAGEMENT",
+        "PHARMACOLOGY": "PHARMACOLOGY",
+        "POST-OPERATIVE CARE": "PERIOPERATIVE CARE",
+        "RESPIRATORY": "RESPIRATORY"
+    };
+    
+    // Desired section order
+    const sectionOrder = [
+        "NURSING FUNDAMENTALS",
+        "FLUID, ELECTROLYTES & ACID-BASE",
+        "IMMUNE SYSTEM & HEMATOLOGY",
+        "RESPIRATORY",
+        "GASTROINTESTINAL & HEPATIC",
+        "NEUROLOGICAL",
+        "SENSORY: EYES & VISION",
+        "PAIN MANAGEMENT",
+        "PHARMACOLOGY",
+        "ONCOLOGY",
+        "NUTRITION",
+        "PERIOPERATIVE CARE"
+    ];
+    
+    // Section icons
+    const sectionIcons = {
+        "NURSING FUNDAMENTALS": "📋",
+        "FLUID, ELECTROLYTES & ACID-BASE": "💧",
+        "IMMUNE SYSTEM & HEMATOLOGY": "🩸",
+        "RESPIRATORY": "😤",
+        "GASTROINTESTINAL & HEPATIC": "🍽️",
+        "NEUROLOGICAL": "🧠",
+        "SENSORY: EYES & VISION": "👁️",
+        "PAIN MANAGEMENT": "💊",
+        "PHARMACOLOGY": "💉",
+        "ONCOLOGY": "🎗️",
+        "NUTRITION": "🥗",
+        "PERIOPERATIVE CARE": "🏥"
+    };
+    
+    // Group questions by mapped section
+    const groupedQuestions = {};
+    Object.keys(qd).forEach(qid => {
+        const originalSection = qd[qid].section;
+        const mappedSection = sectionMapping[originalSection] || originalSection;
+        if (!groupedQuestions[mappedSection]) {
+            groupedQuestions[mappedSection] = [];
+        }
+        groupedQuestions[mappedSection].push(qid);
+    });
+    
+    // Render questions in section order with headers
+    let questionNum = 1;
+    sectionOrder.forEach(section => {
+        if (groupedQuestions[section] && groupedQuestions[section].length > 0) {
+            const icon = sectionIcons[section] || "📚";
+            const questionCount = groupedQuestions[section].length;
+            displayArea.innerHTML += `
+                <div class="section-header">
+                    <span class="section-icon">${icon}</span>
+                    <span class="section-title">${section}</span>
+                    <span class="section-count">${questionCount} Questions</span>
+                </div>
+            `;
+            
+            groupedQuestions[section].forEach(qid => {
+                qd[qid].displayNum = questionNum++;
+                displayArea.innerHTML += generateQuestionHtml(qid, qd[qid], false);
+            });
+        }
+    });
+
+    attachEventListeners(false);
+}
+
+document.addEventListener('DOMContentLoaded', initQuiz);
+
+</script>
+
+</body></html>
