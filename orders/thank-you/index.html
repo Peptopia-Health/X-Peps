@@ -1,704 +1,703 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You — PEPTOPIA Health</title>
-    <meta name="description" content="Your order has been received. Thank you for choosing Peptopia Health.">
-    <meta name="author" content="Peptopia Health">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <style>
-        /*
-         * ═══════════════════════════════════════════════════════════════
-         * PEPTOPIA HEALTH — Thank You Page
-         * Matches Orders page aesthetic
-         * ═══════════════════════════════════════════════════════════════
-         */
-
-        /* ═══════════════════════════════════════════
-           THEME VARIABLES — Light (Default)
-           ═══════════════════════════════════════════ */
-        :root {
-            --bg-page: #F4F6FA;
-            --bg-card: #FFFFFF;
-            --border-card: rgba(15, 23, 42, 0.07);
-            --shadow-card: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
-            --shadow-card-hover: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --text-muted: #94A3B8;
-            --separator: rgba(15, 23, 42, 0.06);
-            --footer-border: rgba(15, 23, 42, 0.06);
-            --badge-bg: rgba(144, 0, 245, 0.06);
-            --badge-border: rgba(144, 0, 245, 0.14);
-            --toggle-bg: #FFFFFF;
-            --toggle-border: rgba(15, 23, 42, 0.10);
-            --toggle-hover-bg: #F1F5F9;
-            --banner-bg: rgba(144, 0, 245, 0.04);
-            --banner-border: rgba(144, 0, 245, 0.10);
-            --btn-contact-bg: rgba(15, 23, 42, 0.03);
-            --btn-contact-border: rgba(15, 23, 42, 0.15);
-            --btn-contact-hover-bg: rgba(15, 23, 42, 0.06);
-            --btn-contact-hover-border: rgba(15, 23, 42, 0.25);
-
-            /* Brand colors */
-            --brand-purple: #9000F5;
-            --brand-purple-hover: #A530FF;
-            --pink: #FF85E1;
-            --purple: #A855F7;
-            --emerald: #10B981;
-        }
-
-        /* ═══════════════════════════════════════════
-           THEME VARIABLES — Dark
-           ═══════════════════════════════════════════ */
-        html.dark {
-            --bg-page: #070B14;
-            --bg-card: rgba(255, 255, 255, 0.025);
-            --border-card: rgba(255, 255, 255, 0.07);
-            --shadow-card: 0 0 0 0 transparent;
-            --shadow-card-hover: 0 0 0 0 transparent;
-            --text-primary: #E2E8F0;
-            --text-secondary: #94A3B8;
-            --text-muted: #64748B;
-            --separator: rgba(255, 255, 255, 0.05);
-            --footer-border: rgba(255, 255, 255, 0.04);
-            --badge-bg: rgba(144, 0, 245, 0.12);
-            --badge-border: rgba(144, 0, 245, 0.25);
-            --toggle-bg: rgba(255, 255, 255, 0.06);
-            --toggle-border: rgba(255, 255, 255, 0.10);
-            --toggle-hover-bg: rgba(255, 255, 255, 0.12);
-            --banner-bg: rgba(144, 0, 245, 0.06);
-            --banner-border: rgba(144, 0, 245, 0.15);
-            --btn-contact-bg: rgba(255, 255, 255, 0.04);
-            --btn-contact-border: rgba(255, 255, 255, 0.15);
-            --btn-contact-hover-bg: rgba(255, 255, 255, 0.08);
-            --btn-contact-hover-border: rgba(255, 255, 255, 0.3);
-        }
-
-        /* ═══════════════════════════════════════════
-           BASE RESET
-           ═══════════════════════════════════════════ */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-page);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.6;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: background-color 0.35s ease, color 0.35s ease;
-        }
-
-        /* ═══════════════════════════════════════════
-           BACKGROUND ATMOSPHERE
-           ═══════════════════════════════════════════ */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(ellipse at 15% 20%, rgba(144, 0, 245, 0.035) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 80%, rgba(6, 182, 212, 0.025) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(255, 133, 225, 0.015) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-            transition: background 0.35s ease;
-        }
-
-        html.dark body::before {
-            background:
-                radial-gradient(ellipse at 15% 20%, rgba(144, 0, 245, 0.08) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(255, 133, 225, 0.03) 0%, transparent 60%);
-        }
-
-        /* Dot grid */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-            background-size: 32px 32px;
-            pointer-events: none;
-            z-index: 0;
-            transition: background-image 0.35s ease;
-        }
-
-        html.dark body::after {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
-
-        /* ═══════════════════════════════════════════
-           SMOOTH TRANSITIONS
-           ═══════════════════════════════════════════ */
-        .site-footer,
-        .theme-toggle,
-        .hero-badge,
-        .confirmation-card,
-        .nav-link {
-            transition: background-color 0.35s ease, border-color 0.35s ease,
-                        box-shadow 0.35s ease, color 0.35s ease;
-        }
-
-        /* ═══════════════════════════════════════════
-           HEADER
-           ═══════════════════════════════════════════ */
-        .site-header {
-            position: relative;
-            z-index: 10;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-        }
-
-        .brand-mark {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--brand-purple), var(--pink));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: #fff;
-            letter-spacing: -1px;
-            box-shadow: 0 0 20px rgba(144, 0, 245, 0.3);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-name {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            line-height: 1.1;
-            transition: color 0.35s ease;
-        }
-
-        .brand-tagline {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.35s ease;
-        }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-link {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-
-        .nav-link:hover {
-            color: var(--text-primary);
-            background: var(--btn-contact-bg);
-        }
-
-        /* ═══════════════════════════════════════════
-           THEME TOGGLE
-           ═══════════════════════════════════════════ */
-        .theme-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid var(--toggle-border);
-            background: var(--toggle-bg);
-            color: var(--text-secondary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
-            margin-left: 4px;
-            box-shadow: var(--shadow-card);
-        }
-
-        .theme-toggle:hover {
-            background: var(--toggle-hover-bg);
-            color: var(--text-primary);
-        }
-
-        .theme-toggle .fa-sun { display: none; }
-        html.dark .theme-toggle .fa-moon { display: none; }
-        html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
-
-        /* ═══════════════════════════════════════════
-           MAIN CONTENT — Vertically centered
-           ═══════════════════════════════════════════ */
-        .main-content {
-            position: relative;
-            z-index: 1;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 24px 64px;
-        }
-
-        /* ═══════════════════════════════════════════
-           CONFIRMATION CARD
-           ═══════════════════════════════════════════ */
-        .confirmation-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 20px;
-            padding: 48px 40px;
-            max-width: 560px;
-            width: 100%;
-            text-align: center;
-            box-shadow: var(--shadow-card);
-            animation: cardReveal 0.7s ease-out both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .confirmation-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--emerald), rgba(16, 185, 129, 0.3));
-            border-radius: 20px 20px 0 0;
-        }
-
-        @keyframes cardReveal {
-            from { opacity: 0; transform: translateY(30px) scale(0.96); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* Success icon */
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(16, 185, 129, 0.10);
-            border: 2px solid rgba(16, 185, 129, 0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 28px;
-            animation: iconPop 0.5s ease-out 0.3s both;
-        }
-
-        .success-icon i {
-            font-size: 2rem;
-            color: var(--emerald);
-        }
-
-        @keyframes iconPop {
-            0%   { opacity: 0; transform: scale(0.5); }
-            60%  { transform: scale(1.15); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Checkmark draw animation */
-        .success-icon .fa-check {
-            animation: checkDraw 0.4s ease-out 0.6s both;
-        }
-
-        @keyframes checkDraw {
-            from { opacity: 0; transform: scale(0) rotate(-45deg); }
-            to   { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        .confirmation-card h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(1.6rem, 4vw, 2.2rem);
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            line-height: 1.15;
-            margin-bottom: 12px;
-            animation: fadeSlideUp 0.5s ease-out 0.4s both;
-        }
-
-        .confirmation-card h1 .gradient-text {
-            background: linear-gradient(135deg, #0F172A 0%, var(--emerald) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        html.dark .confirmation-card h1 .gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--emerald) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .confirmation-card .subtitle {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            margin-bottom: 32px;
-            animation: fadeSlideUp 0.5s ease-out 0.5s both;
-            transition: color 0.35s ease;
-        }
-
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Detail items */
-        .confirmation-details {
-            background: var(--banner-bg);
-            border: 1px solid var(--banner-border);
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin-bottom: 32px;
-            text-align: left;
-            animation: fadeSlideUp 0.5s ease-out 0.6s both;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 10px 0;
-        }
-
-        .detail-item:not(:last-child) {
-            border-bottom: 1px solid var(--separator);
-        }
-
-        .detail-item i {
-            color: var(--emerald);
-            font-size: 0.85rem;
-            min-width: 18px;
-            text-align: center;
-            margin-top: 3px;
-        }
-
-        .detail-item p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            transition: color 0.35s ease;
-        }
-
-        .detail-item strong {
-            color: var(--text-primary);
-            transition: color 0.35s ease;
-        }
-
-        /* Action buttons */
-        .confirmation-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            animation: fadeSlideUp 0.5s ease-out 0.7s both;
-        }
-
-        .btn-orders {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 32px;
-            border: none;
-            border-radius: 12px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #fff;
-            background: linear-gradient(135deg, var(--brand-purple), #B347FF);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 12px rgba(144, 0, 245, 0.25);
-        }
-
-        .btn-orders:hover {
-            background: linear-gradient(135deg, var(--brand-purple-hover), #C06FFF);
-            box-shadow: 0 4px 20px rgba(144, 0, 245, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-orders:active {
-            transform: translateY(0);
-        }
-
-        .btn-support {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border: 1px solid var(--btn-contact-border);
-            border-radius: 12px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text-secondary);
-            background: var(--btn-contact-bg);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-support:hover {
-            border-color: var(--btn-contact-hover-border);
-            color: var(--text-primary);
-            background: var(--btn-contact-hover-bg);
-        }
-
-        /* ═══════════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════════ */
-        .site-footer {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 32px 24px;
-            border-top: 1px solid var(--footer-border);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-copy {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            transition: color 0.35s ease;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 1.05rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--purple);
-        }
-
-        /* ═══════════════════════════════════════════
-           RESPONSIVE
-           ═══════════════════════════════════════════ */
-        @media (max-width: 768px) {
-            .site-header {
-                padding: 16px;
-            }
-
-            .brand-text {
-                display: none;
-            }
-
-            .nav-link {
-                padding: 8px 10px;
-                font-size: 0.72rem;
-                letter-spacing: 1px;
-            }
-
-            .main-content {
-                padding: 24px 16px 48px;
-                align-items: flex-start;
-                padding-top: 40px;
-            }
-
-            .confirmation-card {
-                padding: 36px 24px;
-            }
-
-            .success-icon {
-                width: 64px;
-                height: 64px;
-                margin-bottom: 24px;
-            }
-
-            .success-icon i {
-                font-size: 1.6rem;
-            }
-
-            .confirmation-details {
-                padding: 16px 18px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           SCROLLBAR
-           ═══════════════════════════════════════════ */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-page); }
-        ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
-    </style>
-</head>
-<body>
-
-    <!-- ═══════════════ HEADER ═══════════════ -->
-    <header class="site-header">
-        <a href="https://x-peps.com" target="_top" class="header-brand">
-            <div class="brand-mark">P</div>
-            <div class="brand-text">
-                <span class="brand-name">Peptopia</span>
-                <span class="brand-tagline">Health &amp; Wellness</span>
-            </div>
-        </a>
-        <nav class="header-nav">
-            <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" class="nav-link">Orders</a>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-sun"></i>
-            </button>
-        </nav>
-    </header>
-
-    <!-- ═══════════════ MAIN ═══════════════ -->
-    <main class="main-content">
-        <div class="confirmation-card">
-
-            <div class="success-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
-
-            <h1><span class="gradient-text">Thank You!</span></h1>
-            <p class="subtitle">Your payment has been received and your order is being processed. You will receive a confirmation email shortly.</p>
-
-            <div class="confirmation-details">
-                <div class="detail-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p><strong>Confirmation email</strong> — A receipt and order details will be sent to the email address you provided at checkout.</p>
-                </div>
-                <div class="detail-item">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <p><strong>Shipping &amp; fulfillment</strong> — Orders are typically processed within 1–3 business days. You will be notified when your order ships.</p>
-                </div>
-                <div class="detail-item">
-                    <i class="fa-solid fa-headset"></i>
-                    <p><strong>Need help?</strong> — Reach out to us on <a href="https://discord.gg/peptopia" target="_top" style="color: var(--purple); text-decoration: none; font-weight: 500;">Discord</a> for any questions about your order.</p>
-                </div>
-            </div>
-
-            <div class="confirmation-actions">
-                <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" class="btn-orders">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Orders
-                </a>
-                <a href="https://discord.gg/peptopia" target="_top" class="btn-support">
-                    <i class="fa-brands fa-discord"></i> Contact Support
-                </a>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- ═══════════════ FOOTER ═══════════════ -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <span class="footer-copy">&copy; 2025 Peptopia Health &bull; All rights reserved</span>
-            <div class="footer-links">
-                <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" title="Orders"><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="https://discord.gg/peptopia" target="_top" title="Discord"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://www.youtube.com/@PeptopiaHealth" target="_top" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ═══════════════ SCRIPTS ═══════════════ -->
-    <script>
-        // ─── Storage helper (safe for iframe and standalone) ───
-        var storage = (function() {
-            try {
-                var s = window.self === window.top ? window['local' + 'Storage'] : null;
-                if (s) { s.setItem('_t', '1'); s.removeItem('_t'); }
-                return s;
-            } catch(e) { return null; }
-        })();
-
-        // ─── Theme Toggle ───
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            var isDark = document.documentElement.classList.contains('dark');
-            if (storage) {
-                storage.setItem('peptopia-theme', isDark ? 'dark' : 'light');
-            }
-        }
-
-        // ─── Initialize theme ───
-        (function() {
-            var saved = storage ? storage.getItem('peptopia-theme') : null;
-            if (saved === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-        })();
-    </script>
-
-</body>
-</html>
++   1 <!DOCTYPE html>
++   2 <html lang="en">
++   3 <head>
++   4     <meta charset="UTF-8">
++   5     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++   6     <title>Thank You — PEPTOPIA Health</title>
++   7     <meta name="description" content="Your order has been received. Thank you for choosing Peptopia Health.">
++   8     <meta name="author" content="Peptopia Health">
++   9     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
++  10     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
++  11     <style>
++  12         /*
++  13          * ═══════════════════════════════════════════════════════════════
++  14          * PEPTOPIA HEALTH — Thank You Page
++  15          * Matches Orders page aesthetic
++  16          * ═══════════════════════════════════════════════════════════════
++  17          */
++  18 
++  19         /* ═══════════════════════════════════════════
++  20            THEME VARIABLES — Light (Default)
++  21            ═══════════════════════════════════════════ */
++  22         :root {
++  23             --bg-page: #F4F6FA;
++  24             --bg-card: #FFFFFF;
++  25             --border-card: rgba(15, 23, 42, 0.07);
++  26             --shadow-card: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
++  27             --shadow-card-hover: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
++  28             --text-primary: #0F172A;
++  29             --text-secondary: #475569;
++  30             --text-muted: #94A3B8;
++  31             --separator: rgba(15, 23, 42, 0.06);
++  32             --footer-border: rgba(15, 23, 42, 0.06);
++  33             --badge-bg: rgba(144, 0, 245, 0.06);
++  34             --badge-border: rgba(144, 0, 245, 0.14);
++  35             --toggle-bg: #FFFFFF;
++  36             --toggle-border: rgba(15, 23, 42, 0.10);
++  37             --toggle-hover-bg: #F1F5F9;
++  38             --banner-bg: rgba(144, 0, 245, 0.04);
++  39             --banner-border: rgba(144, 0, 245, 0.10);
++  40             --btn-contact-bg: rgba(15, 23, 42, 0.03);
++  41             --btn-contact-border: rgba(15, 23, 42, 0.15);
++  42             --btn-contact-hover-bg: rgba(15, 23, 42, 0.06);
++  43             --btn-contact-hover-border: rgba(15, 23, 42, 0.25);
++  44 
++  45             /* Brand colors */
++  46             --brand-purple: #9000F5;
++  47             --brand-purple-hover: #A530FF;
++  48             --pink: #FF85E1;
++  49             --purple: #A855F7;
++  50             --emerald: #10B981;
++  51         }
++  52 
++  53         /* ═══════════════════════════════════════════
++  54            THEME VARIABLES — Dark
++  55            ═══════════════════════════════════════════ */
++  56         html.dark {
++  57             --bg-page: #070B14;
++  58             --bg-card: rgba(255, 255, 255, 0.025);
++  59             --border-card: rgba(255, 255, 255, 0.07);
++  60             --shadow-card: 0 0 0 0 transparent;
++  61             --shadow-card-hover: 0 0 0 0 transparent;
++  62             --text-primary: #E2E8F0;
++  63             --text-secondary: #94A3B8;
++  64             --text-muted: #64748B;
++  65             --separator: rgba(255, 255, 255, 0.05);
++  66             --footer-border: rgba(255, 255, 255, 0.04);
++  67             --badge-bg: rgba(144, 0, 245, 0.12);
++  68             --badge-border: rgba(144, 0, 245, 0.25);
++  69             --toggle-bg: rgba(255, 255, 255, 0.06);
++  70             --toggle-border: rgba(255, 255, 255, 0.10);
++  71             --toggle-hover-bg: rgba(255, 255, 255, 0.12);
++  72             --banner-bg: rgba(144, 0, 245, 0.06);
++  73             --banner-border: rgba(144, 0, 245, 0.15);
++  74             --btn-contact-bg: rgba(255, 255, 255, 0.04);
++  75             --btn-contact-border: rgba(255, 255, 255, 0.15);
++  76             --btn-contact-hover-bg: rgba(255, 255, 255, 0.08);
++  77             --btn-contact-hover-border: rgba(255, 255, 255, 0.3);
++  78         }
++  79 
++  80         /* ═══════════════════════════════════════════
++  81            BASE RESET
++  82            ═══════════════════════════════════════════ */
++  83         *, *::before, *::after {
++  84             margin: 0;
++  85             padding: 0;
++  86             box-sizing: border-box;
++  87         }
++  88 
++  89         html {
++  90             font-size: 16px;
++  91             -webkit-text-size-adjust: 100%;
++  92         }
++  93 
++  94         body {
++  95             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
++  96             background: var(--bg-page);
++  97             color: var(--text-primary);
++  98             min-height: 100vh;
++  99             line-height: 1.6;
++ 100             overflow-x: hidden;
++ 101             display: flex;
++ 102             flex-direction: column;
++ 103             transition: background-color 0.35s ease, color 0.35s ease;
++ 104         }
++ 105 
++ 106         /* ═══════════════════════════════════════════
++ 107            BACKGROUND ATMOSPHERE
++ 108            ═══════════════════════════════════════════ */
++ 109         body::before {
++ 110             content: '';
++ 111             position: fixed;
++ 112             top: 0;
++ 113             left: 0;
++ 114             width: 100%;
++ 115             height: 100%;
++ 116             background:
++ 117                 radial-gradient(ellipse at 15% 20%, rgba(144, 0, 245, 0.035) 0%, transparent 55%),
++ 118                 radial-gradient(ellipse at 85% 80%, rgba(6, 182, 212, 0.025) 0%, transparent 50%),
++ 119                 radial-gradient(ellipse at 50% 50%, rgba(255, 133, 225, 0.015) 0%, transparent 60%);
++ 120             pointer-events: none;
++ 121             z-index: 0;
++ 122             transition: background 0.35s ease;
++ 123         }
++ 124 
++ 125         html.dark body::before {
++ 126             background:
++ 127                 radial-gradient(ellipse at 15% 20%, rgba(144, 0, 245, 0.08) 0%, transparent 55%),
++ 128                 radial-gradient(ellipse at 85% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
++ 129                 radial-gradient(ellipse at 50% 50%, rgba(255, 133, 225, 0.03) 0%, transparent 60%);
++ 130         }
++ 131 
++ 132         /* Dot grid */
++ 133         body::after {
++ 134             content: '';
++ 135             position: fixed;
++ 136             top: 0;
++ 137             left: 0;
++ 138             width: 100%;
++ 139             height: 100%;
++ 140             background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
++ 141             background-size: 32px 32px;
++ 142             pointer-events: none;
++ 143             z-index: 0;
++ 144             transition: background-image 0.35s ease;
++ 145         }
++ 146 
++ 147         html.dark body::after {
++ 148             background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
++ 149         }
++ 150 
++ 151         /* ═══════════════════════════════════════════
++ 152            SMOOTH TRANSITIONS
++ 153            ═══════════════════════════════════════════ */
++ 154         .site-footer,
++ 155         .theme-toggle,
++ 156         .hero-badge,
++ 157         .confirmation-card,
++ 158         .nav-link {
++ 159             transition: background-color 0.35s ease, border-color 0.35s ease,
++ 160                         box-shadow 0.35s ease, color 0.35s ease;
++ 161         }
++ 162 
++ 163         /* ═══════════════════════════════════════════
++ 164            HEADER
++ 165            ═══════════════════════════════════════════ */
++ 166         .site-header {
++ 167             position: relative;
++ 168             z-index: 10;
++ 169             padding: 20px 24px;
++ 170             display: flex;
++ 171             align-items: center;
++ 172             justify-content: space-between;
++ 173             max-width: 1200px;
++ 174             margin: 0 auto;
++ 175             width: 100%;
++ 176         }
++ 177 
++ 178         .header-brand {
++ 179             display: flex;
++ 180             align-items: center;
++ 181             gap: 14px;
++ 182             text-decoration: none;
++ 183         }
++ 184 
++ 185         .brand-mark {
++ 186             width: 42px;
++ 187             height: 42px;
++ 188             border-radius: 12px;
++ 189             background: linear-gradient(135deg, var(--brand-purple), var(--pink));
++ 190             display: flex;
++ 191             align-items: center;
++ 192             justify-content: center;
++ 193             font-family: 'Outfit', sans-serif;
++ 194             font-weight: 800;
++ 195             font-size: 1.15rem;
++ 196             color: #fff;
++ 197             letter-spacing: -1px;
++ 198             box-shadow: 0 0 20px rgba(144, 0, 245, 0.3);
++ 199         }
++ 200 
++ 201         .brand-text {
++ 202             display: flex;
++ 203             flex-direction: column;
++ 204         }
++ 205 
++ 206         .brand-name {
++ 207             font-family: 'Outfit', sans-serif;
++ 208             font-weight: 700;
++ 209             font-size: 1.15rem;
++ 210             color: var(--text-primary);
++ 211             letter-spacing: 2px;
++ 212             text-transform: uppercase;
++ 213             line-height: 1.1;
++ 214             transition: color 0.35s ease;
++ 215         }
++ 216 
++ 217         .brand-tagline {
++ 218             font-size: 0.7rem;
++ 219             color: var(--text-muted);
++ 220             letter-spacing: 1.5px;
++ 221             text-transform: uppercase;
++ 222             transition: color 0.35s ease;
++ 223         }
++ 224 
++ 225         .header-nav {
++ 226             display: flex;
++ 227             align-items: center;
++ 228             gap: 8px;
++ 229         }
++ 230 
++ 231         .nav-link {
++ 232             font-family: 'Outfit', sans-serif;
++ 233             font-size: 0.8rem;
++ 234             font-weight: 500;
++ 235             text-transform: uppercase;
++ 236             letter-spacing: 1.5px;
++ 237             color: var(--text-secondary);
++ 238             text-decoration: none;
++ 239             padding: 8px 16px;
++ 240             border-radius: 8px;
++ 241         }
++ 242 
++ 243         .nav-link:hover {
++ 244             color: var(--text-primary);
++ 245             background: var(--btn-contact-bg);
++ 246         }
++ 247 
++ 248         /* ═══════════════════════════════════════════
++ 249            THEME TOGGLE
++ 250            ═══════════════════════════════════════════ */
++ 251         .theme-toggle {
++ 252             width: 40px;
++ 253             height: 40px;
++ 254             border-radius: 50%;
++ 255             border: 1px solid var(--toggle-border);
++ 256             background: var(--toggle-bg);
++ 257             color: var(--text-secondary);
++ 258             cursor: pointer;
++ 259             display: flex;
++ 260             align-items: center;
++ 261             justify-content: center;
++ 262             font-size: 1.05rem;
++ 263             margin-left: 4px;
++ 264             box-shadow: var(--shadow-card);
++ 265         }
++ 266 
++ 267         .theme-toggle:hover {
++ 268             background: var(--toggle-hover-bg);
++ 269             color: var(--text-primary);
++ 270         }
++ 271 
++ 272         .theme-toggle .fa-sun { display: none; }
++ 273         html.dark .theme-toggle .fa-moon { display: none; }
++ 274         html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
++ 275 
++ 276         /* ═══════════════════════════════════════════
++ 277            MAIN CONTENT — Vertically centered
++ 278            ═══════════════════════════════════════════ */
++ 279         .main-content {
++ 280             position: relative;
++ 281             z-index: 1;
++ 282             flex: 1;
++ 283             display: flex;
++ 284             align-items: center;
++ 285             justify-content: center;
++ 286             padding: 40px 24px 64px;
++ 287         }
++ 288 
++ 289         /* ═══════════════════════════════════════════
++ 290            CONFIRMATION CARD
++ 291            ═══════════════════════════════════════════ */
++ 292         .confirmation-card {
++ 293             background: var(--bg-card);
++ 294             border: 1px solid var(--border-card);
++ 295             border-radius: 20px;
++ 296             padding: 48px 40px;
++ 297             max-width: 560px;
++ 298             width: 100%;
++ 299             text-align: center;
++ 300             box-shadow: var(--shadow-card);
++ 301             animation: cardReveal 0.7s ease-out both;
++ 302             position: relative;
++ 303             overflow: hidden;
++ 304         }
++ 305 
++ 306         .confirmation-card::before {
++ 307             content: '';
++ 308             position: absolute;
++ 309             top: 0;
++ 310             left: 0;
++ 311             right: 0;
++ 312             height: 4px;
++ 313             background: linear-gradient(90deg, var(--emerald), rgba(16, 185, 129, 0.3));
++ 314             border-radius: 20px 20px 0 0;
++ 315         }
++ 316 
++ 317         @keyframes cardReveal {
++ 318             from { opacity: 0; transform: translateY(30px) scale(0.96); }
++ 319             to   { opacity: 1; transform: translateY(0) scale(1); }
++ 320         }
++ 321 
++ 322         /* Success icon */
++ 323         .success-icon {
++ 324             width: 80px;
++ 325             height: 80px;
++ 326             border-radius: 50%;
++ 327             background: rgba(16, 185, 129, 0.10);
++ 328             border: 2px solid rgba(16, 185, 129, 0.25);
++ 329             display: flex;
++ 330             align-items: center;
++ 331             justify-content: center;
++ 332             margin: 0 auto 28px;
++ 333             animation: iconPop 0.5s ease-out 0.3s both;
++ 334         }
++ 335 
++ 336         .success-icon i {
++ 337             font-size: 2rem;
++ 338             color: var(--emerald);
++ 339         }
++ 340 
++ 341         @keyframes iconPop {
++ 342             0%   { opacity: 0; transform: scale(0.5); }
++ 343             60%  { transform: scale(1.15); }
++ 344             100% { opacity: 1; transform: scale(1); }
++ 345         }
++ 346 
++ 347         /* Checkmark draw animation */
++ 348         .success-icon .fa-check {
++ 349             animation: checkDraw 0.4s ease-out 0.6s both;
++ 350         }
++ 351 
++ 352         @keyframes checkDraw {
++ 353             from { opacity: 0; transform: scale(0) rotate(-45deg); }
++ 354             to   { opacity: 1; transform: scale(1) rotate(0deg); }
++ 355         }
++ 356 
++ 357         .confirmation-card h1 {
++ 358             font-family: 'Outfit', sans-serif;
++ 359             font-size: clamp(1.6rem, 4vw, 2.2rem);
++ 360             font-weight: 800;
++ 361             letter-spacing: -0.5px;
++ 362             line-height: 1.15;
++ 363             margin-bottom: 12px;
++ 364             animation: fadeSlideUp 0.5s ease-out 0.4s both;
++ 365         }
++ 366 
++ 367         .confirmation-card h1 .gradient-text {
++ 368             background: linear-gradient(135deg, #0F172A 0%, var(--emerald) 100%);
++ 369             -webkit-background-clip: text;
++ 370             -webkit-text-fill-color: transparent;
++ 371             background-clip: text;
++ 372         }
++ 373 
++ 374         html.dark .confirmation-card h1 .gradient-text {
++ 375             background: linear-gradient(135deg, #FFFFFF 0%, var(--emerald) 100%);
++ 376             -webkit-background-clip: text;
++ 377             -webkit-text-fill-color: transparent;
++ 378             background-clip: text;
++ 379         }
++ 380 
++ 381         .confirmation-card .subtitle {
++ 382             font-size: 1.05rem;
++ 383             color: var(--text-secondary);
++ 384             line-height: 1.65;
++ 385             margin-bottom: 32px;
++ 386             animation: fadeSlideUp 0.5s ease-out 0.5s both;
++ 387     transition: color 0.35s ease;
++ 388         }
++ 389 
++ 390         @keyframes fadeSlideUp {
++ 391             from { opacity: 0; transform: translateY(16px); }
++ 392             to   { opacity: 1; transform: translateY(0); }
++ 393         }
++ 394 
++ 395         /* Detail items */
++ 396         .confirmation-details {
++ 397             background: var(--banner-bg);
++ 398             border: 1px solid var(--banner-border);
++ 399             border-radius: 12px;
++ 400             padding: 20px 24px;
++ 401             margin-bottom: 32px;
++ 402             text-align: left;
++ 403             animation: fadeSlideUp 0.5s ease-out 0.6s both;
++ 404         }
++ 405 
++ 406         .detail-item {
++ 407             display: flex;
++ 408             align-items: flex-start;
++ 409             gap: 12px;
++ 410             padding: 10px 0;
++ 411         }
++ 412 
++ 413         .detail-item:not(:last-child) {
++ 414             border-bottom: 1px solid var(--separator);
++ 415         }
++ 416 
++ 417         .detail-item i {
++ 418             color: var(--emerald);
++ 419             font-size: 0.85rem;
++ 420             min-width: 18px;
++ 421             text-align: center;
++ 422             margin-top: 3px;
++ 423         }
++ 424 
++ 425         .detail-item p {
++ 426             font-size: 0.88rem;
++ 427             color: var(--text-secondary);
++ 428             line-height: 1.5;
++ 429             transition: color 0.35s ease;
++ 430         }
++ 431 
++ 432         .detail-item strong {
++ 433             color: var(--text-primary);
++ 434             transition: color 0.35s ease;
++ 435         }
++ 436 
++ 437         /* Action buttons */
++ 438         .confirmation-actions {
++ 439             display: flex;
++ 440             flex-direction: column;
++ 441             gap: 12px;
++ 442             animation: fadeSlideUp 0.5s ease-out 0.7s both;
++ 443         }
++ 444 
++ 445         .btn-orders {
++ 446             display: inline-flex;
++ 447             align-items: center;
++ 448             justify-content: center;
++ 449             gap: 10px;
++ 450             padding: 14px 32px;
++ 451             border: none;
++ 452             border-radius: 12px;
++ 453             font-family: 'Outfit', sans-serif;
++ 454             font-size: 0.9rem;
++ 455             font-weight: 600;
++ 456             letter-spacing: 1px;
++ 457             text-transform: uppercase;
++ 458             text-decoration: none;
++ 459             color: #fff;
++ 460             background: linear-gradient(135deg, var(--brand-purple), #B347FF);
++ 461             cursor: pointer;
++ 462             transition: all 0.3s ease;
++ 463             box-shadow: 0 2px 12px rgba(144, 0, 245, 0.25);
++ 464         }
++ 465 
++ 466         .btn-orders:hover {
++ 467             background: linear-gradient(135deg, var(--brand-purple-hover), #C06FFF);
++ 468             box-shadow: 0 4px 20px rgba(144, 0, 245, 0.4);
++ 469             transform: translateY(-2px);
++ 470         }
++ 471 
++ 472         .btn-orders:active {
++ 473             transform: translateY(0);
++ 474         }
++ 475 
++ 476         .btn-support {
++ 477             display: inline-flex;
++ 478             align-items: center;
++ 479             justify-content: center;
++ 480             gap: 8px;
++ 481             padding: 12px 24px;
++ 482             border: 1px solid var(--btn-contact-border);
++ 483             border-radius: 12px;
++ 484             font-family: 'Outfit', sans-serif;
++ 485             font-size: 0.82rem;
++ 486             font-weight: 500;
++ 487             letter-spacing: 1px;
++ 488             text-transform: uppercase;
++ 489             text-decoration: none;
++ 490             color: var(--text-secondary);
++ 491             background: var(--btn-contact-bg);
++ 492             cursor: pointer;
++ 493             transition: all 0.3s ease;
++ 494         }
++ 495 
++ 496         .btn-support:hover {
++ 497             border-color: var(--btn-contact-hover-border);
++ 498             color: var(--text-primary);
++ 499             background: var(--btn-contact-hover-bg);
++ 500         }
++ 501 
++ 502         /* ═══════════════════════════════════════════
++ 503            FOOTER
++ 504            ═══════════════════════════════════════════ */
++ 505         .site-footer {
++ 506             position: relative;
++ 507             z-index: 1;
++ 508             text-align: center;
++ 509             padding: 32px 24px;
++ 510             border-top: 1px solid var(--footer-border);
++ 511         }
++ 512 
++ 513         .footer-content {
++ 514             max-width: 1200px;
++ 515             margin: 0 auto;
++ 516             display: flex;
++ 517             align-items: center;
++ 518             justify-content: space-between;
++ 519             flex-wrap: wrap;
++ 520             gap: 16px;
++ 521         }
++ 522 
++ 523         .footer-copy {
++ 524             font-size: 0.78rem;
++ 525             color: var(--text-muted);
++ 526             letter-spacing: 0.5px;
++ 527             transition: color 0.35s ease;
++ 528         }
++ 529 
++ 530         .footer-links {
++ 531             display: flex;
++ 532             gap: 20px;
++ 533         }
++ 534 
++ 535         .footer-links a {
++ 536             color: var(--text-muted);
++ 537             text-decoration: none;
++ 538             font-size: 1.05rem;
++ 539             transition: color 0.3s ease;
++ 540         }
++ 541 
++ 542         .footer-links a:hover {
++ 543             color: var(--purple);
++ 544         }
++ 545 
++ 546         /* ═══════════════════════════════════════════
++ 547            RESPONSIVE
++ 548            ═══════════════════════════════════════════ */
++ 549         @media (max-width: 768px) {
++ 550             .site-header {
++ 551                 padding: 16px;
++ 552             }
++ 553 
++ 554             .brand-text {
++ 555                 display: none;
++ 556             }
++ 557 
++ 558             .nav-link {
++ 559                 padding: 8px 10px;
++ 560                 font-size: 0.72rem;
++ 561                 letter-spacing: 1px;
++ 562             }
++ 563 
++ 564             .main-content {
++ 565                 padding: 24px 16px 48px;
++ 566                 align-items: flex-start;
++ 567                 padding-top: 40px;
++ 568             }
++ 569 
++ 570             .confirmation-card {
++ 571                 padding: 36px 24px;
++ 572             }
++ 573 
++ 574             .success-icon {
++ 575                 width: 64px;
++ 576                 height: 64px;
++ 577                 margin-bottom: 24px;
++ 578             }
++ 579 
++ 580             .success-icon i {
++ 581                 font-size: 1.6rem;
++ 582             }
++ 583 
++ 584             .confirmation-details {
++ 585                 padding: 16px 18px;
++ 586             }
++ 587 
++ 588             .footer-content {
++ 589                 flex-direction: column;
++ 590                 text-align: center;
++ 591             }
++ 592         }
++ 593 
++ 594         /* ═══════════════════════════════════════════
++ 595            SCROLLBAR
++ 596            ═══════════════════════════════════════════ */
++ 597         ::-webkit-scrollbar { width: 6px; }
++ 598         ::-webkit-scrollbar-track { background: var(--bg-page); }
++ 599         ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 3px; }
++ 600         ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
++ 601     </style>
++ 602 </head>
++ 603 <body>
++ 604 
++ 605     <!-- ═══════════════ HEADER ═══════════════ -->
++ 606     <header class="site-header">
++ 607         <a href="https://x-peps.com" target="_top" class="header-brand">
++ 608             <div class="brand-mark">P</div>
++ 609             <div class="brand-text">
++ 610                 <span class="brand-name">Peptopia</span>
++ 611                 <span class="brand-tagline">Health &amp; Wellness</span>
++ 612             </div>
++ 613         </a>
++ 614         <nav class="header-nav">
++ 615             <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" class="nav-link">Orders</a>
++ 616             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
++ 617                 <i class="fa-solid fa-moon"></i>
++ 618                 <i class="fa-solid fa-sun"></i>
++ 619             </button>
++ 620         </nav>
++ 621     </header>
++ 622 
++ 623     <!-- ═══════════════ MAIN ═══════════════ -->
++ 624     <main class="main-content">
++ 625         <div class="confirmation-card">
++ 626 
++ 627             <div class="success-icon">
++ 628                 <i class="fa-solid fa-check"></i>
++ 629             </div>
++ 630 
++ 631             <h1><span class="gradient-text">Thank You!</span></h1>
++ 632             <p class="subtitle">Your payment has been received and your order is being processed. You will receive a confirmation email shortly.</p>
++ 633 
++ 634             <div class="confirmation-details">
++ 635                 <div class="detail-item">
++ 636                     <i class="fa-solid fa-envelope"></i>
++ 637                     <p><strong>Confirmation email</strong> — A receipt and order details will be sent to the email address you provided at checkout.</p>
++ 638                 </div>
++ 639                 <div class="detail-item">
++ 640                     <i class="fa-solid fa-truck-fast"></i>
++ 641                     <p><strong>Shipping &amp; fulfillment</strong> — Orders are typically processed within 1–3 business days. You will be notified when your order ships.</p>
++ 642                 </div>
++ 643                 <div class="detail-item">
++ 644                     <i class="fa-solid fa-headset"></i>
++ 645                     <p><strong>Need help?</strong> — Reach out to us on <a href="https://discord.gg/peptopia" target="_top" style="color: var(--purple); text-decoration: none; font-weight: 500;">Discord</a> for any questions about your order.</p>
++ 646                 </div>
++ 647             </div>
++ 648 
++ 649             <div class="confirmation-actions">
++ 650                 <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" class="btn-orders">
++ 651                     <i class="fa-solid fa-arrow-left"></i> Back to Orders
++ 652                 </a>
++ 653                 <a href="https://discord.gg/peptopia" target="_top" class="btn-support">
++ 654                     <i class="fa-brands fa-discord"></i> Contact Support
++ 655                 </a>
++ 656             </div>
++ 657 
++ 658         </div>
++ 659     </main>
++ 660 
++ 661     <!-- ═══════════════ FOOTER ═══════════════ -->
++ 662     <footer class="site-footer">
++ 663         <div class="footer-content">
++ 664             <span class="footer-copy">&copy; 2025 Peptopia Health &bull; All rights reserved</span>
++ 665             <div class="footer-links">
++ 666                 <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" title="Orders"><i class="fa-solid fa-bag-shopping"></i></a>
++ 667                 <a href="https://discord.gg/peptopia" target="_top" title="Discord"><i class="fa-brands fa-discord"></i></a>
++ 668                 <a href="https://www.youtube.com/@PeptopiaHealth" target="_top" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
++ 669             </div>
++ 670         </div>
++ 671     </footer>
++ 672 
++ 673     <!-- ═══════════════ SCRIPTS ═══════════════ -->
++ 674     <script>
++ 675         // ─── Storage helper (safe for iframe and standalone) ───
++ 676         var storage = (function() {
++ 677             try {
++ 678                 var s = window.self === window.top ? window['local' + 'Storage'] : null;
++ 679                 if (s) { s.setItem('_t', '1'); s.removeItem('_t'); }
++ 680                 return s;
++ 681             } catch(e) { return null; }
++ 682         })();
++ 683 
++ 684         // ─── Theme Toggle ───
++ 685         function toggleTheme() {
++ 686             document.documentElement.classList.toggle('dark');
++ 687             var isDark = document.documentElement.classList.contains('dark');
++ 688             if (storage) {
++ 689                 storage.setItem('peptopia-theme', isDark ? 'dark' : 'light');
++ 690             }
++ 691         }
++ 692 
++ 693         // ─── Initialize theme ───
++ 694         (function() {
++ 695             var saved = storage ? storage.getItem('peptopia-theme') : null;
++ 696             if (saved === 'dark') {
++ 697                 document.documentElement.classList.add('dark');
++ 698             }
++ 699         })();
++ 700     </script>
++ 701 
++ 702 </body>
++ 703 </html>
