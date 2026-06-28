@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Guides — Peptopia Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+            --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+            --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#22D3EE;
+            --emerald:#10B981;--amber:#F59E0B;--slate:#64748B
+        }
+        html.dark{
+            --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+            --sh:none;--sh-h:0 0 0 0 transparent;
+            --t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B
+        }
+        body{
+            font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);
+            min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+            transition:background-color .35s ease,color .35s ease
+        }
+
+        /* Background atmosphere */
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(6,182,212,.04) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(8,145,178,.03) 0%,transparent 50%),
+                radial-gradient(ellipse at 50% 50%,rgba(34,211,238,.015) 0%,transparent 60%);
+            pointer-events:none;z-index:0;transition:background .35s ease
+        }
+        html.dark body::before{
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(6,182,212,.08) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(8,145,178,.06) 0%,transparent 50%),
+                radial-gradient(ellipse at 50% 50%,rgba(34,211,238,.03) 0%,transparent 60%)
+        }
+        body::after{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);
+            background-size:32px 32px;pointer-events:none;z-index:0;transition:background-image .35s ease
+        }
+        html.dark body::after{
+            background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
+        }
+
+        /* Header */
+        .hdr{
+            position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1200px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{
+            font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:var(--t1);
+            letter-spacing:2px;text-transform:uppercase;line-height:1.1;transition:color .35s ease
+        }
+        .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;transition:color .35s ease}
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
+            letter-spacing:1.5px;color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:var(--t1);background:rgba(15,23,42,.03)}
+        html.dark .nav a:hover{background:rgba(255,255,255,.05)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:var(--t2);cursor:pointer;display:flex;align-items:center;
+            justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        html.dark .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .theme-toggle:hover{color:var(--t1);background:rgba(15,23,42,.04)}
+        html.dark .theme-toggle:hover{background:rgba(255,255,255,.12)}
+        .theme-toggle .fa-sun{display:none}
+        html.dark .theme-toggle .fa-moon{display:none}
+        html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
+
+        /* Hero */
+        .hero{text-align:center;padding:32px 24px;max-width:800px;margin:0 auto;position:relative;z-index:1}
+        .hero h1{font-family:'Outfit',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:12px}
+        .hero h1 .grad{
+            background:linear-gradient(135deg,#0E7490 0%,var(--cyan) 50%,var(--cyan-light) 100%);
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+        }
+        html.dark .hero h1 .grad{
+            background:linear-gradient(135deg,#fff 0%,var(--cyan) 50%,var(--cyan-light) 100%);
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+        }
+        .hero p{font-size:1.05rem;color:var(--t2);transition:color .35s ease}
+
+        /* Sections */
+        .section{max-width:1200px;margin:0 auto;padding:0 24px 48px;width:100%;position:relative;z-index:1}
+        .section-title{
+            font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:800;color:var(--t1);
+            margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(15,23,42,.06);
+            transition:color .35s ease,border-color .35s ease
+        }
+        html.dark .section-title{border-color:rgba(255,255,255,.06)}
+
+        /* Grid */
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+
+        /* Cards */
+        .card{
+            background:var(--card);border:1px solid var(--border);border-radius:16px;
+            padding:24px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;
+            box-shadow:var(--sh);position:relative;overflow:hidden;
+            transition:transform .3s ease,box-shadow .3s ease,background .35s ease,border-color .35s ease;
+            text-decoration:none;color:var(--t1)
+        }
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;transition:height .3s ease}
+        .card:hover{transform:translateY(-4px);box-shadow:var(--sh-h)}
+
+        .card-hdr{display:flex;align-items:center;gap:16px;margin-bottom:16px;width:100%}
+        .card-ico{
+            width:48px;height:48px;min-width:48px;border-radius:12px;
+            display:flex;align-items:center;justify-content:center;
+            font-size:1.25rem;transition:transform .3s ease
+        }
+        .card:hover .card-ico{transform:scale(1.05)}
+
+        /* Cyan accent */
+        .card.ac-cyan::before{background:var(--cyan)}
+        .card.ac-cyan .card-ico{background:rgba(6,182,212,.12);color:var(--cyan)}
+
+        /* Emerald accent */
+        .card.ac-emerald::before{background:var(--emerald)}
+        .card.ac-emerald .card-ico{background:rgba(16,185,129,.12);color:var(--emerald)}
+
+        /* Amber accent */
+        .card.ac-amber::before{background:var(--amber)}
+        .card.ac-amber .card-ico{background:rgba(245,158,11,.12);color:var(--amber)}
+
+        /* Slate accent */
+        .card.ac-slate::before{background:var(--slate)}
+        .card.ac-slate .card-ico{background:rgba(100,116,139,.12);color:var(--slate)}
+
+        .card h2{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;line-height:1.3;transition:color .35s ease}
+        .card p{color:var(--t2);font-size:.9rem;line-height:1.5;margin-bottom:24px;flex-grow:1;transition:color .35s ease}
+
+        .btn{
+            display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;
+            border-radius:8px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:700;
+            text-transform:uppercase;letter-spacing:.5px;color:#fff;width:100%;transition:filter .3s ease
+        }
+        .b-cyan{background:linear-gradient(135deg,var(--cyan-dark),var(--cyan))}
+        .b-emerald{background:linear-gradient(135deg,#059669,var(--emerald))}
+        .b-amber{background:linear-gradient(135deg,#D97706,var(--amber))}
+        .b-slate{background:linear-gradient(135deg,#475569,var(--slate))}
+        .card:hover .btn{filter:brightness(1.1)}
+
+        /* Footer */
+        .footer{
+            position:relative;z-index:1;text-align:center;padding:32px 24px;
+            border-top:1px solid rgba(15,23,42,.06);margin-top:auto;
+            transition:border-color .35s ease
+        }
+        html.dark .footer{border-color:rgba(255,255,255,.04)}
+        .footer-inner{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;
+            justify-content:space-between;flex-wrap:wrap;gap:16px
+        }
+        .footer-copy{font-size:.78rem;color:var(--t3);letter-spacing:.5px;transition:color .35s ease}
+        .footer-links{display:flex;gap:20px}
+        .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
+        .footer-links a:hover{color:var(--cyan)}
+
+        /* Responsive */
+        @media(max-width:768px){
+            .hdr{padding:16px}
+            .brand{display:none}
+            .nav a{padding:8px 10px;font-size:.72rem;letter-spacing:1px}
+            .footer-inner{flex-direction:column;text-align:center}
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar{width:6px}
+        ::-webkit-scrollbar-track{background:var(--bg)}
+        ::-webkit-scrollbar-thumb{background:rgba(148,163,184,.25);border-radius:3px}
+        ::-webkit-scrollbar-thumb:hover{background:rgba(148,163,184,.4)}
+    </style>
+</head>
+<body>
+    <header class="hdr">
+        <a href="https://peptopia-health.github.io/" class="hdr-brand">
+            <div class="logo">P</div>
+            <div class="brand">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tag">Health &amp; Wellness</span>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="https://peptopia-health.github.io/">Home</a>
+            <a href="https://peptopia-health.github.io/X-Peps/orders/">Shop</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1><span class="grad">Research Guides</span></h1>
+        <p>Safe, educated, and effective research. Comprehensive guides for every product in our catalog.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">GLP-1 Receptor Agonists</h2>
+        <div class="grid">
+            <a href="Tirzepatide_Guide.html" class="card ac-cyan">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-flask-vial"></i></div>
+                    <h2>Tirzepatide</h2>
+                </div>
+                <p>Dual GIP/GLP-1 receptor agonist. Reconstitution, dosing protocols, and storage guidelines.</p>
+                <span class="btn b-cyan"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+
+            <a href="Semaglutide_Guide.html" class="card ac-cyan">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-vial"></i></div>
+                    <h2>Semaglutide</h2>
+                </div>
+                <p>GLP-1 receptor agonist. Titration schedules, reconstitution, and research protocols.</p>
+                <span class="btn b-cyan"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+
+            <a href="Retatrutide_Guide.html" class="card ac-cyan">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-atom"></i></div>
+                    <h2>Retatrutide</h2>
+                </div>
+                <p>Triple agonist (GIP/GLP-1/Glucagon). Emerging research data, dosing, and handling.</p>
+                <span class="btn b-cyan"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Peptides &amp; Recovery</h2>
+        <div class="grid">
+            <a href="CJC_Ipamorelin_Guide.html" class="card ac-emerald">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-dna"></i></div>
+                    <h2>CJC-1295 / Ipamorelin</h2>
+                </div>
+                <p>Growth hormone secretagogue blend. Reconstitution, dosing, and research applications.</p>
+                <span class="btn b-emerald"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+
+            <a href="BPC157_KPV_Guide.html" class="card ac-emerald">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h2>BPC-157 / KPV</h2>
+                </div>
+                <p>Recovery and healing peptide blend. Bacteriostatic water reconstitution and protocols.</p>
+                <span class="btn b-emerald"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Cellular Health &amp; Nootropics</h2>
+        <div class="grid">
+            <a href="5Amino_1MQ_Guide.html" class="card ac-amber">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-capsules"></i></div>
+                    <h2>5-Amino 1MQ</h2>
+                </div>
+                <p>NNMT inhibitor for cellular energy and metabolic research. Dosing and research overview.</p>
+                <span class="btn b-amber"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+
+            <a href="Modafinil_Guide.html" class="card ac-amber">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-brain"></i></div>
+                    <h2>Modafinil</h2>
+                </div>
+                <p>Eugeroic nootropic compound. Research applications, mechanisms, and safety data.</p>
+                <span class="btn b-amber"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">General Reference</h2>
+        <div class="grid">
+            <a href="Reconstitution_Guide.html" class="card ac-slate">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-eye-dropper"></i></div>
+                    <h2>Reconstitution Guide</h2>
+                </div>
+                <p>Universal guide to reconstituting lyophilized peptides with bacteriostatic water.</p>
+                <span class="btn b-slate"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+
+            <a href="Storage_Handling.html" class="card ac-slate">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-temperature-low"></i></div>
+                    <h2>Storage &amp; Handling</h2>
+                </div>
+                <p>Proper storage temperatures, light sensitivity, shelf life, and handling best practices.</p>
+                <span class="btn b-slate"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            </a>
+
+            <a href="https://peptopia-health.github.io/X-Peps/orders/" class="card ac-slate">
+                <div class="card-hdr">
+                    <div class="card-ico"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <h2>Shop Products</h2>
+                </div>
+                <p>Browse and order research-grade peptides, nootropics, and herbal compounds.</p>
+                <span class="btn b-slate"><i class="fa-solid fa-arrow-right"></i> Go to Shop</span>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2025 Peptopia Health &bull; All rights reserved</span>
+            <div class="footer-links">
+                <a href="https://peptopia-health.github.io/X-Peps/orders/" title="Shop"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="https://discord.gg/peptopia" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Storage helper (safe for iframe and standalone)
+        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
+        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+    </script>
+</body>
+</html>
