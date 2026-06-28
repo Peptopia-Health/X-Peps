@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders — PEPTOPIA Health</title>
+    <meta name="description" content="Order peptide therapeutics and supplements from Peptopia Health. Secure checkout powered by GoDaddy Payments.">
+    <meta name="author" content="Peptopia Health">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /*
+         * ═══════════════════════════════════════════════════════════════
+         * PEPTOPIA HEALTH — Orders Page
+         * Light/Dark Theme with GoDaddy Pay Link Integration
+         * Hosted on GitHub Pages
+         * ═══════════════════════════════════════════════════════════════
+         */
+
+        /* ═══════════════════════════════════════════
+           THEME VARIABLES — Light (Default)
+           ═══════════════════════════════════════════ */
+        :root {
+            --bg-page: #F4F6FA;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #FFFFFF;
+            --border-card: rgba(15, 23, 42, 0.07);
+            --border-card-hover: rgba(15, 23, 42, 0.14);
+            --shadow-card: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+            --shadow-card-hover: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #94A3B8;
+            --separator: rgba(15, 23, 42, 0.06);
+            --btn-contact-border: rgba(15, 23, 42, 0.15);
+            --btn-contact-bg: rgba(15, 23, 42, 0.03);
+            --btn-contact-hover-border: rgba(15, 23, 42, 0.25);
+            --btn-contact-hover-bg: rgba(15, 23, 42, 0.06);
+            --banner-bg: rgba(16, 185, 129, 0.04);
+            --banner-border: rgba(16, 185, 129, 0.10);
+            --footer-border: rgba(15, 23, 42, 0.06);
+            --badge-bg: rgba(16, 185, 129, 0.06);
+            --badge-border: rgba(16, 185, 129, 0.14);
+            --toggle-bg: #FFFFFF;
+            --toggle-border: rgba(15, 23, 42, 0.10);
+            --toggle-hover-bg: #F1F5F9;
+
+            /* Brand colors (shared across themes) */
+            --brand-green: #059669;
+            --brand-green-hover: #10B981;
+            --pink: #FF85E1;
+            --purple: #A855F7;
+            --purple-glow: rgba(168, 85, 247, 0.35);
+            --cyan: #06B6D4;
+            --cyan-glow: rgba(6, 182, 212, 0.35);
+            --amber: #F59E0B;
+            --amber-glow: rgba(245, 158, 11, 0.35);
+            --rose: #F43F5E;
+            --rose-glow: rgba(244, 63, 94, 0.35);
+            --emerald: #10B981;
+            --emerald-glow: rgba(16, 185, 129, 0.35);
+            --indigo: #818CF8;
+            --indigo-glow: rgba(129, 140, 248, 0.35);
+            --slate: #94A3B8;
+            --slate-glow: rgba(148, 163, 184, 0.25);
+        }
+
+        /* ═══════════════════════════════════════════
+           THEME VARIABLES — Dark (Toggle)
+           ═══════════════════════════════════════════ */
+        html.dark {
+            --bg-page: #070B14;
+            --bg-card: rgba(255, 255, 255, 0.025);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
+            --border-card: rgba(255, 255, 255, 0.07);
+            --border-card-hover: rgba(255, 255, 255, 0.14);
+            --shadow-card: 0 0 0 0 transparent;
+            --shadow-card-hover: 0 0 0 0 transparent;
+            --text-primary: #E2E8F0;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --separator: rgba(255, 255, 255, 0.05);
+            --btn-contact-border: rgba(255, 255, 255, 0.15);
+            --btn-contact-bg: rgba(255, 255, 255, 0.04);
+            --btn-contact-hover-border: rgba(255, 255, 255, 0.3);
+            --btn-contact-hover-bg: rgba(255, 255, 255, 0.08);
+            --banner-bg: rgba(16, 185, 129, 0.06);
+            --banner-border: rgba(16, 185, 129, 0.15);
+            --footer-border: rgba(255, 255, 255, 0.04);
+            --badge-bg: rgba(16, 185, 129, 0.12);
+            --badge-border: rgba(16, 185, 129, 0.25);
+            --toggle-bg: rgba(255, 255, 255, 0.06);
+            --toggle-border: rgba(255, 255, 255, 0.10);
+            --toggle-hover-bg: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ═══════════════════════════════════════════
+           BASE RESET
+           ═══════════════════════════════════════════ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-page);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        /* ═══════════════════════════════════════════
+           BACKGROUND ATMOSPHERE
+           ═══════════════════════════════════════════ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.015) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            transition: background 0.35s ease;
+        }
+
+        html.dark body::before {
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 80%, rgba(5, 150, 105, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 60%);
+        }
+
+        /* Dot grid */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            z-index: 0;
+            transition: background-image 0.35s ease;
+        }
+
+        html.dark body::after {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* ═══════════════════════════════════════════
+           SMOOTH THEME TRANSITIONS
+           ═══════════════════════════════════════════ */
+        .product-card,
+        .card-icon,
+        .site-footer,
+        .info-banner-inner,
+        .theme-toggle,
+        .hero-badge,
+        .nav-link {
+            transition: background-color 0.35s ease, border-color 0.35s ease,
+                        box-shadow 0.35s ease, color 0.35s ease;
+        }
+
+        /* ═══════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════ */
+        .site-header {
+            position: relative;
+            z-index: 10;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--brand-purple), var(--pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: #fff;
+            letter-spacing: -1px;
+            box-shadow: 0 0 20px rgba(144, 0, 245, 0.3);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            transition: color 0.35s ease;
+        }
+
+        .brand-tagline {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.35s ease;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: var(--btn-contact-bg);
+        }
+
+        .nav-link.active {
+            color: var(--emerald);
+            background: var(--badge-bg);
+        }
+
+        /* ═══════════════════════════════════════════
+           THEME TOGGLE (Sun/Moon)
+           ═══════════════════════════════════════════ */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--toggle-border);
+            background: var(--toggle-bg);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            margin-left: 4px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .theme-toggle:hover {
+            background: var(--toggle-hover-bg);
+            color: var(--text-primary);
+            border-color: var(--border-card-hover);
+        }
+
+        /* Moon visible in light mode, Sun visible in dark mode */
+        .theme-toggle .fa-sun {
+            display: none;
+        }
+
+        html.dark .theme-toggle .fa-moon {
+            display: none;
+        }
+
+        html.dark .theme-toggle .fa-sun {
+            display: inline-block;
+            color: #FBBF24;
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO SECTION
+           ═══════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 48px 24px 32px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 100px;
+            background: var(--badge-bg);
+            border: 1px solid var(--badge-border);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--emerald);
+            margin-bottom: 24px;
+            animation: fadeSlideUp 0.6s ease-out both;
+        }
+
+        .hero-badge i {
+            font-size: 0.65rem;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            animation: fadeSlideUp 0.6s ease-out 0.1s both;
+        }
+
+        /* Light mode heading gradient */
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #0F172A 0%, var(--brand-green) 50%, var(--emerald) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Dark mode heading gradient */
+        html.dark .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--emerald) 50%, var(--brand-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.65;
+            animation: fadeSlideUp 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══════════════════════════════════════════
+           PRODUCT GRID
+           ═══════════════════════════════════════════ */
+        .products-section {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        /* ═══════════════════════════════════════════
+           PRODUCT CARD
+           ═══════════════════════════════════════════ */
+        .product-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-card);
+            animation: cardEnter 0.5s ease-out both;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            border-radius: 16px 16px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .product-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-card-hover);
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .product-card:hover::before {
+            height: 4px;
+        }
+
+        /* Staggered entry */
+        .product-card:nth-child(1) { animation-delay: 0.05s; }
+        .product-card:nth-child(2) { animation-delay: 0.10s; }
+        .product-card:nth-child(3) { animation-delay: 0.15s; }
+        .product-card:nth-child(4) { animation-delay: 0.20s; }
+        .product-card:nth-child(5) { animation-delay: 0.25s; }
+        .product-card:nth-child(6) { animation-delay: 0.30s; }
+        .product-card:nth-child(7) { animation-delay: 0.35s; }
+
+        @keyframes cardEnter {
+            from { opacity: 0; transform: translateY(24px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Accent top-border colors */
+        .product-card.accent-purple::before  { background: linear-gradient(90deg, var(--purple), rgba(168, 85, 247, 0.3)); }
+        .product-card.accent-cyan::before    { background: linear-gradient(90deg, var(--cyan), rgba(6, 182, 212, 0.3)); }
+        .product-card.accent-amber::before   { background: linear-gradient(90deg, var(--amber), rgba(245, 158, 11, 0.3)); }
+        .product-card.accent-rose::before    { background: linear-gradient(90deg, var(--rose), rgba(244, 63, 94, 0.3)); }
+        .product-card.accent-emerald::before { background: linear-gradient(90deg, var(--emerald), rgba(16, 185, 129, 0.3)); }
+        .product-card.accent-indigo::before  { background: linear-gradient(90deg, var(--indigo), rgba(129, 140, 248, 0.3)); }
+        .product-card.accent-slate::before   { background: linear-gradient(90deg, var(--slate), rgba(148, 163, 184, 0.2)); }
+
+        /* Card header */
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .product-card:hover .card-icon {
+            transform: scale(1.08);
+        }
+
+        .accent-purple .card-icon  { background: rgba(168, 85, 247, 0.10); color: var(--purple); box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.18); }
+        .accent-cyan .card-icon    { background: rgba(6, 182, 212, 0.10); color: var(--cyan); box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.18); }
+        .accent-amber .card-icon   { background: rgba(245, 158, 11, 0.10); color: var(--amber); box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.18); }
+        .accent-rose .card-icon    { background: rgba(244, 63, 94, 0.10); color: var(--rose); box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.18); }
+        .accent-emerald .card-icon { background: rgba(16, 185, 129, 0.10); color: var(--emerald); box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.18); }
+        .accent-indigo .card-icon  { background: rgba(129, 140, 248, 0.10); color: var(--indigo); box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.18); }
+        .accent-slate .card-icon   { background: rgba(148, 163, 184, 0.08); color: var(--slate); box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.15); }
+
+        .product-card:hover.accent-purple .card-icon  { box-shadow: 0 0 16px var(--purple-glow); }
+        .product-card:hover.accent-cyan .card-icon    { box-shadow: 0 0 16px var(--cyan-glow); }
+        .product-card:hover.accent-amber .card-icon   { box-shadow: 0 0 16px var(--amber-glow); }
+        .product-card:hover.accent-rose .card-icon    { box-shadow: 0 0 16px var(--rose-glow); }
+        .product-card:hover.accent-emerald .card-icon { box-shadow: 0 0 16px var(--emerald-glow); }
+        .product-card:hover.accent-indigo .card-icon  { box-shadow: 0 0 16px var(--indigo-glow); }
+
+        .card-title-block { flex: 1; }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 2px;
+            transition: color 0.35s ease;
+        }
+
+        .card-dosage {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .accent-purple .card-dosage  { color: var(--purple); }
+        .accent-cyan .card-dosage    { color: var(--cyan); }
+        .accent-amber .card-dosage   { color: var(--amber); }
+        .accent-rose .card-dosage    { color: var(--rose); }
+        .accent-emerald .card-dosage { color: var(--emerald); }
+        .accent-indigo .card-dosage  { color: var(--indigo); }
+        .accent-slate .card-dosage   { color: var(--slate); }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            transition: color 0.35s ease;
+        }
+
+        /* Card footer */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--separator);
+        }
+
+        .card-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            transition: color 0.35s ease;
+        }
+
+        .card-price .currency {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            vertical-align: super;
+            margin-right: 1px;
+        }
+
+        .card-price-note {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            transition: color 0.35s ease;
+        }
+
+        /* Buy button */
+        .btn-buy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(135deg, var(--brand-green), var(--emerald));
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(16, 185, 129, 0.25);
+        }
+
+        .btn-buy:hover {
+            background: linear-gradient(135deg, var(--brand-green-hover), #34D399);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .btn-buy:active {
+            transform: translateY(0);
+        }
+
+        .btn-buy i { font-size: 0.8rem; }
+
+        /* Contact / Inquire button */
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border: 1px solid var(--btn-contact-border);
+            border-radius: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-secondary);
+            background: var(--btn-contact-bg);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-contact:hover {
+            border-color: var(--btn-contact-hover-border);
+            color: var(--text-primary);
+            background: var(--btn-contact-hover-bg);
+        }
+
+        /* ═══════════════════════════════════════════
+           INFO BANNER
+           ═══════════════════════════════════════════ */
+        .info-banner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 48px;
+            animation: fadeSlideUp 0.6s ease-out 0.5s both;
+        }
+
+        .info-banner-inner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            border-radius: 12px;
+            background: var(--banner-bg);
+            border: 1px solid var(--banner-border);
+        }
+
+        .info-banner i {
+            font-size: 1.1rem;
+            color: var(--emerald);
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .info-banner p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            transition: color 0.35s ease;
+        }
+
+        .info-banner a {
+            color: var(--emerald);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-banner a:hover {
+            color: var(--brand-green-hover);
+            text-decoration: underline;
+        }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════ */
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid var(--footer-border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            transition: color 0.35s ease;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--emerald);
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 16px;
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .nav-link {
+                padding: 8px 10px;
+                font-size: 0.72rem;
+                letter-spacing: 1px;
+            }
+
+            .hero {
+                padding: 32px 16px 24px;
+            }
+
+            .products-section {
+                padding: 24px 16px 48px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .product-card {
+                padding: 22px;
+            }
+
+            .card-footer {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .card-price {
+                text-align: center;
+            }
+
+            .card-price-note {
+                text-align: center;
+            }
+
+            .btn-buy, .btn-contact {
+                text-align: center;
+                justify-content: center;
+                padding: 12px 24px;
+            }
+
+            .info-banner {
+                padding: 0 16px 40px;
+            }
+
+            .info-banner-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 16px 18px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1060px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+           SCROLLBAR
+           ═══════════════════════════════════════════ */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-page); }
+        ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ HEADER ═══════════════ -->
+    <header class="site-header">
+        <a href="https://peptopia-health.github.io/" target="_top" class="header-brand">
+            <div class="brand-mark">P</div>
+            <div class="brand-text">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tagline">Health &amp; Wellness</span>
+            </div>
+        </a>
+        <nav class="header-nav">
+            <a href="https://peptopia-health.github.io/" target="_top" class="nav-link">Home</a>
+            <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" class="nav-link active">Shop</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+        <div class="hero-badge">
+            <i class="fa-solid fa-lock"></i>
+            Secure Checkout
+        </div>
+        <h1><span class="gradient-text">Place Your Order</span></h1>
+        <p>Select a product below to proceed to secure checkout powered by GoDaddy&nbsp;Payments. All transactions are encrypted and PCI&nbsp;compliant.</p>
+    </section>
+
+    <!-- ═══════════════ PRODUCTS ═══════════════ -->
+    <section class="products-section">
+        <div class="products-grid">
+
+            <!-- ─── Tirzepatide 30mg ─── -->
+            <div class="product-card accent-purple">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">Tirzepatide</div>
+                        <div class="card-dosage">30 mg</div>
+                    </div>
+                </div>
+                <p class="card-description">A dual GIP and GLP-1 receptor agonist commonly utilized for blood sugar management and weight loss.</p>
+                <div class="card-footer">
+                    <div class="card-price"><span class="currency">$</span>325</div>
+                    <a href="https://pay.x-peps.com/T30" target="_blank" rel="noopener" class="btn-buy">
+                        <i class="fa-solid fa-bag-shopping"></i> Purchase
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Semaglutide 10mg ─── -->
+            <div class="product-card accent-cyan">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">Semaglutide</div>
+                        <div class="card-dosage">10 mg</div>
+                    </div>
+                </div>
+                <p class="card-description">A GLP-1 receptor agonist utilized primarily for treating type 2 diabetes and supporting chronic weight management.</p>
+                <div class="card-footer">
+                    <div class="card-price"><span class="currency">$</span>145</div>
+                    <a href="https://pay.x-peps.com/S10" target="_blank" rel="noopener" class="btn-buy">
+                        <i class="fa-solid fa-bag-shopping"></i> Purchase
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Retatrutide 20mg ─── -->
+            <div class="product-card accent-amber">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">Retatrutide</div>
+                        <div class="card-dosage">20 mg</div>
+                    </div>
+                </div>
+                <p class="card-description">An investigational triple-hormone receptor (GLP-1, GIP, and glucagon) agonist currently studied for obesity treatment.</p>
+                <div class="card-footer">
+                    <div class="card-price"><span class="currency">$</span>340</div>
+                    <a href="https://pay.x-peps.com/R20" target="_blank" rel="noopener" class="btn-buy">
+                        <i class="fa-solid fa-bag-shopping"></i> Purchase
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Cagrilintide 10mg ─── -->
+            <div class="product-card accent-rose">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-prescription-bottle"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">Cagrilintide</div>
+                        <div class="card-dosage">10 mg</div>
+                    </div>
+                </div>
+                <p class="card-description">An investigational long-acting amylin analog being researched for its potential in weight management.</p>
+                <div class="card-footer">
+                    <div class="card-price"><span class="currency">$</span>220</div>
+                    <a href="https://pay.x-peps.com/C10" target="_blank" rel="noopener" class="btn-buy">
+                        <i class="fa-solid fa-bag-shopping"></i> Purchase
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── SLU-PP-332 20mg ─── -->
+            <div class="product-card accent-emerald">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">SLU-PP-332</div>
+                        <div class="card-dosage">20 mg</div>
+                    </div>
+                </div>
+                <p class="card-description">An investigational ERR agonist often referred to as an "exercise mimetic," studied for metabolic and muscular effects.</p>
+                <div class="card-footer">
+                    <div class="card-price"><span class="currency">$</span>95</div>
+                    <a href="https://pay.x-peps.com/SLU" target="_blank" rel="noopener" class="btn-buy">
+                        <i class="fa-solid fa-bag-shopping"></i> Purchase
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Modafinil 200mg ─── -->
+            <div class="product-card accent-indigo">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">Modafinil</div>
+                        <div class="card-dosage">200 mg</div>
+                    </div>
+                </div>
+                <p class="card-description">A wakefulness-promoting agent prescribed to treat excessive sleepiness caused by conditions like narcolepsy or shift work sleep disorder.</p>
+                <div class="card-footer">
+                    <div class="card-price"><span class="currency">$</span>375</div>
+                    <a href="https://x-peps.com/intake-screening" target="_top" class="btn-contact">
+                        <i class="fa-solid fa-envelope"></i> Inquire
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Bacteriostatic Water ─── -->
+            <div class="product-card accent-slate">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card-title-block">
+                        <div class="card-title">Bacteriostatic Water</div>
+                        <div class="card-dosage">Diluent</div>
+                    </div>
+                </div>
+                <p class="card-description">Sterile water containing a preservative (benzyl alcohol) used to dilute or dissolve medications for injection.</p>
+                <div class="card-footer">
+                    <span class="card-price-note">Included with qualifying orders</span>
+                    <a href="https://pay.x-peps.com/BAC" target="_blank" rel="noopener" class="btn-contact">
+                        <i class="fa-solid fa-bag-shopping"></i> Order
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════ INFO BANNER ═══════════════ -->
+    <div class="info-banner">
+        <div class="info-banner-inner">
+            <i class="fa-solid fa-shield-halved"></i>
+            <p>All payments are processed securely through <strong>GoDaddy Payments</strong>. Your financial information is never stored on our servers. For questions about your order, visit our <a href="https://x-peps.com/intake-screening" target="_top">Intake Screening</a> page or reach out via <a href="https://discord.gg/peptopia" target="_top">Discord</a>.</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span class="footer-copy">&copy; 2025 Peptopia Health &bull; All rights reserved</span>
+            <div class="footer-links">
+                <a href="https://peptopia-health.github.io/" target="_top" title="Home"><i class="fa-solid fa-house"></i></a>
+                <a href="https://discord.gg/peptopia" target="_top" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_top" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
+
+    <script>
+        // ─── Storage helper (safe for both iframe and standalone) ───
+        var storage = (function() {
+            try {
+                var s = window.self === window.top ? window['local' + 'Storage'] : null;
+                if (s) { s.setItem('_t', '1'); s.removeItem('_t'); }
+                return s;
+            } catch(e) { return null; }
+        })();
+
+        // ─── Theme Toggle (Sun / Moon) ───
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            var isDark = document.documentElement.classList.contains('dark');
+            if (storage) {
+                storage.setItem('peptopia-theme', isDark ? 'dark' : 'light');
+            }
+        }
+
+        // ─── Initialize theme from saved preference ───
+        (function() {
+            var saved = storage ? storage.getItem('peptopia-theme') : null;
+            if (saved === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+            // Default is light — no class needed
+        })();
+    </script>
+
+</body>
+</html>
