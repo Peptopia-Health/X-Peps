@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirzepatide Research Guide — Peptopia Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Base Styles matching Peptopia Theme */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+            --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+            --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#22D3EE;
+        }
+        html.dark{
+            --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+            --sh:none; --sh-h:0 0 0 0 transparent;
+            --t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B
+        }
+        body{
+            font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);
+            min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+            transition:background-color .35s ease,color .35s ease
+        }
+
+        /* Cyan background atmosphere */
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(6,182,212,.05) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(8,145,178,.04) 0%,transparent 50%);
+            pointer-events:none;z-index:0;transition:background .35s ease
+        }
+        html.dark body::before{
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(6,182,212,.08) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(8,145,178,.06) 0%,transparent 50%)
+        }
+        body::after{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);
+            background-size:32px 32px;pointer-events:none;z-index:0;transition:background-image .35s ease
+        }
+        html.dark body::after{
+            background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
+        }
+
+        /* Header */
+        .hdr{
+            position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1200px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:var(--t1);letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+        .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
+        
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
+            letter-spacing:1.5px;color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:var(--t1);background:rgba(15,23,42,.03)}
+        html.dark .nav a:hover{background:rgba(255,255,255,.05)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        html.dark .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .theme-toggle .fa-sun{display:none}
+        html.dark .theme-toggle .fa-moon{display:none}
+        html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
+
+        /* Content Area */
+        .article-container {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px; width: 100%;
+            position: relative; z-index: 1; flex-grow: 1;
+        }
+        .guide-header { text-align: center; margin-bottom: 40px; }
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800; margin-bottom: 12px;
+        }
+        .guide-header h1 .grad {
+            background: linear-gradient(135deg, #0E7490 0%, var(--cyan) 50%, var(--cyan-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        html.dark .guide-header h1 .grad {
+            background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--cyan-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .guide-header p { font-size: 1.15rem; color: var(--t2); max-width: 600px; margin: 0 auto; }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800;
+            color: var(--t1); margin: 48px 0 24px; padding-bottom: 12px;
+            border-bottom: 2px solid rgba(6,182,212,.2);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-title i { color: var(--cyan); }
+
+        /* Visual Educational Components */
+        .info-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 24px; box-shadow: var(--sh);
+            position: relative; overflow: hidden;
+        }
+        .info-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--cyan);
+        }
+        
+        /* Mechanism Flex Container */
+        .mechanism-grid {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin-bottom: 32px;
+        }
+        .mech-card {
+            background: rgba(6,182,212,.05); border: 1px solid rgba(6,182,212,.15);
+            padding: 20px; border-radius: 16px; text-align: center; height: 100%;
+        }
+        html.dark .mech-card { background: rgba(6,182,212,.08); border-color: rgba(6,182,212,.2); }
+        .mech-card h3 { font-family: 'Outfit', sans-serif; color: var(--cyan-dark); font-size: 1.2rem; margin-bottom: 8px; }
+        html.dark .mech-card h3 { color: var(--cyan-light); }
+        .mech-card p { font-size: 0.9rem; color: var(--t2); }
+        .mech-icon { font-size: 2rem; color: var(--cyan); margin-bottom: 12px; }
+        .mech-plus { font-size: 1.5rem; color: var(--t3); font-weight: bold; }
+
+        @media (max-width: 600px) {
+            .mechanism-grid { grid-template-columns: 1fr; gap: 8px; }
+            .mech-plus { transform: rotate(90deg); text-align: center; padding: 8px 0; }
+        }
+
+        /* Step-by-Step Reconstitution */
+        .step-container { display: flex; flex-direction: column; gap: 16px; }
+        .step-item {
+            display: flex; align-items: flex-start; gap: 16px; background: var(--card);
+            border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;
+            box-shadow: var(--sh); transition: transform .2s ease;
+        }
+        .step-item:hover { transform: translateX(5px); }
+        .step-num {
+            background: linear-gradient(135deg, var(--cyan-dark), var(--cyan));
+            color: white; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem;
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(6,182,212,.3);
+        }
+        .step-content h4 { color: var(--t1); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 4px; }
+        .step-content p { color: var(--t2); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Titration Table */
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; box-shadow: var(--sh); border: 1px solid var(--border); margin-bottom: 24px; }
+        .dosing-table { width: 100%; border-collapse: collapse; background: var(--card); text-align: left; min-width: 600px; }
+        .dosing-table th, .dosing-table td { padding: 16px; border-bottom: 1px solid var(--border); color: var(--t1); font-size: 0.95rem; }
+        .dosing-table th { background: rgba(6,182,212,.05); font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--cyan-dark); }
+        html.dark .dosing-table th { background: rgba(6,182,212,.1); color: var(--cyan-light); }
+        .dosing-table tbody tr:last-child td { border-bottom: none; }
+        .dosing-table tbody tr:hover { background: rgba(15,23,42,0.01); }
+        html.dark .dosing-table tbody tr:hover { background: rgba(255,255,255,0.01); }
+
+        .dose-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+        }
+        .b-start { background: rgba(16,185,129,.15); color: #059669; } /* Emerald */
+        .b-titrate1 { background: rgba(245,158,11,.15); color: #D97706; } /* Amber */
+        .b-titrate2 { background: rgba(249,115,22,.15); color: #C2410C; } /* Orange */
+        .b-max { background: rgba(239,68,68,.15); color: #B91C1C; } /* Red */
+        
+        html.dark .b-start { color: #34D399; }
+        html.dark .b-titrate1 { color: #FBBF24; }
+        html.dark .b-titrate2 { color: #FB923C; }
+        html.dark .b-max { color: #F87171; }
+
+        /* Storage Grid */
+        .storage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .storage-card {
+            background: var(--card); border: 1px solid var(--border); padding: 20px;
+            border-radius: 12px; text-align: center; box-shadow: var(--sh);
+        }
+        .storage-card i { font-size: 2rem; color: var(--cyan); margin-bottom: 12px; }
+        .storage-card h4 { color: var(--t1); font-family: 'Outfit', sans-serif; margin-bottom: 8px; }
+        .storage-card p { color: var(--t2); font-size: 0.85rem; }
+
+        /* Footer */
+        .footer{
+            position:relative;z-index:1;text-align:center;padding:32px 24px;
+            border-top:1px solid rgba(15,23,42,.06); margin-top:auto;
+        }
+        html.dark .footer{border-color:rgba(255,255,255,.04)}
+        .footer-inner{ max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .footer-copy{font-size:.78rem;color:var(--t3);letter-spacing:.5px;}
+        .footer-links{display:flex;gap:20px}
+        .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
+        .footer-links a:hover{color:var(--cyan)}
+        
+        @media(max-width:768px){
+            .hdr{padding:16px}
+            .brand{display:none}
+            .footer-inner{flex-direction:column;text-align:center}
+        }
+        
+        /* Utility */
+        .emoji { font-size: 1.2em; vertical-align: middle; margin-right: 4px; }
+        .highlight { color: var(--cyan-dark); font-weight: 600; }
+        html.dark .highlight { color: var(--cyan-light); }
+    </style>
+</head>
+<body>
+    <header class="hdr">
+        <a href="https://peptopia-health.github.io/" class="hdr-brand">
+            <div class="logo">P</div>
+            <div class="brand">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tag">Health &amp; Wellness</span>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="https://peptopia-health.github.io/">Home</a>
+            <a href="https://peptopia-health.github.io/X-Peps/orders/">Shop</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        <div class="guide-header">
+            <h1><span class="grad">Tirzepatide Guide</span></h1>
+            <p>The next-generation dual GIP/GLP-1 receptor agonist. A complete guide to mechanism, reconstitution, and clinical research protocols.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-microscope"></i> What is Tirzepatide?</h2>
+        <div class="info-box">
+            <p style="margin-bottom: 24px; color: var(--t2);">Tirzepatide is a groundbreaking synthetic peptide that mimics two highly important incretin hormones found naturally in the body. Unlike first-generation peptides (like Semaglutide) that only target one receptor, Tirzepatide's dual-action approach yields highly synergistic research outcomes.</p>
+            
+            <div class="mechanism-grid">
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-link"></i></div>
+                    <h3>GLP-1 Agonist</h3>
+                    <p><span class="emoji">⏳</span> Slows gastric emptying<br><span class="emoji">🧠</span> Signals satiety to brain<br><span class="emoji">📉</span> Lowers blood glucose</p>
+                </div>
+                <div class="mech-plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-dna"></i></div>
+                    <h3>GIP Agonist</h3>
+                    <p><span class="emoji">🔥</span> Improves insulin sensitivity<br><span class="emoji">🚫</span> Reduces nausea vs GLP-1 alone<br><span class="emoji">⚡</span> Enhances fat metabolism</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-flask-vial"></i> Reconstitution Basics</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">Lyophilized (freeze-dried) Tirzepatide must be reconstituted with <strong>Bacteriostatic Water (BAC)</strong> before research use. Follow these standard sterile handling protocols:</p>
+        
+        <div class="step-container" style="margin-bottom: 40px;">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Prep & Sanitize <span class="emoji">🧼</span></h4>
+                    <p>Wash hands thoroughly. Pop the plastic caps off both the Tirzepatide vial and the BAC water vial. Swab both rubber stoppers with an alcohol prep pad and let air dry.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Draw BAC Water <span class="emoji">💉</span></h4>
+                    <p>Using a sterile mixing syringe, draw the required amount of Bacteriostatic Water. (e.g., Adding 1mL of BAC to a 10mg vial yields a concentration of 1mg per 0.1mL/10 units).</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Inject & Dissolve <span class="emoji">💧</span></h4>
+                    <p>Pierce the peptide vial. <strong>Do not spray directly onto the powder.</strong> Angle the needle so the water drips slowly down the glass wall of the vial to protect the fragile peptide bonds.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h4>Swirl Gently <span class="emoji">🔄</span></h4>
+                    <p><strong style="color:#ef4444;">NEVER SHAKE.</strong> Gently roll or swirl the vial between your fingers until the solution is completely clear and dissolved. It is now ready for research.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-regular fa-calendar-check"></i> Standard Titration Schedule</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">To mitigate gastrointestinal side effects <span class="emoji">🤢</span>, clinical protocols for Tirzepatide utilize a strict step-up titration schedule, administering the peptide <strong>once every 7 days</strong>.</p>
+        
+        <div class="table-wrapper">
+            <table class="dosing-table">
+                <thead>
+                    <tr>
+                        <th>Timeline</th>
+                        <th>Weekly Dose</th>
+                        <th>Phase</th>
+                        <th>Goal / Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Weeks 1 - 4</strong></td>
+                        <td><span class="dose-badge b-start">2.5 mg</span></td>
+                        <td>Initiation Phase</td>
+                        <td>Acclimate the body; not intended for primary weight management.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weeks 5 - 8</strong></td>
+                        <td><span class="dose-badge b-titrate1">5.0 mg</span></td>
+                        <td>Therapeutic Titration</td>
+                        <td>First therapeutic dose. Evaluate GI tolerance before increasing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weeks 9 - 12</strong></td>
+                        <td><span class="dose-badge b-titrate2">7.5 mg</span></td>
+                        <td>Therapeutic Titration</td>
+                        <td>Continue if 5.0mg efficacy wanes and tolerance is good.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weeks 13 - 16</strong></td>
+                        <td><span class="dose-badge b-max">10.0 mg</span></td>
+                        <td>Maintenance / Max</td>
+                        <td>Typical maintenance dose. <em>(Note: Clinical max is up to 15mg step-ups).</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-temperature-arrow-down"></i> Storage & Handling</h2>
+        <div class="storage-grid">
+            <div class="storage-card">
+                <i class="fa-regular fa-snowflake"></i>
+                <h4>Temperature</h4>
+                <p>Store in the refrigerator (36°F to 46°F) both before and after reconstitution. Do not freeze.</p>
+            </div>
+            <div class="storage-card">
+                <i class="fa-regular fa-sun"></i>
+                <h4>Light Exposure</h4>
+                <p>Peptides are highly sensitive to UV light. Keep vials in their boxes or a dark container.</p>
+            </div>
+            <div class="storage-card">
+                <i class="fa-solid fa-calendar-xmark"></i>
+                <h4>Shelf Life</h4>
+                <p>Once mixed with BAC water, discard the vial after <strong>28 days</strong> to ensure sterility and efficacy.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2025 Peptopia Health &bull; All rights reserved</span>
+            <div class="footer-links">
+                <a href="https://peptopia-health.github.io/X-Peps/orders/" title="Shop"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="https://discord.gg/peptopia" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Storage helper (safe for iframe and standalone)
+        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
+        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+    </script>
+</body>
+</html>

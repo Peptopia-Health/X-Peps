@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage & Handling Guide — Peptopia Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Base Styles matching Peptopia Theme */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+            --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+            --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            /* Slate for General Reference */
+            --primary:#64748B;--primary-dark:#475569;--primary-light:#94A3B8;
+        }
+        html.dark{
+            --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+            --sh:none; --sh-h:0 0 0 0 transparent;
+            --t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B
+        }
+        body{
+            font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);
+            min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+            transition:background-color .35s ease,color .35s ease
+        }
+
+        /* Slate background atmosphere */
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(100,116,139,.05) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(71,85,105,.04) 0%,transparent 50%);
+            pointer-events:none;z-index:0;transition:background .35s ease
+        }
+        html.dark body::before{
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(100,116,139,.08) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(71,85,105,.06) 0%,transparent 50%)
+        }
+        body::after{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);
+            background-size:32px 32px;pointer-events:none;z-index:0;transition:background-image .35s ease
+        }
+        html.dark body::after{
+            background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
+        }
+
+        /* Header */
+        .hdr{
+            position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1200px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:var(--t1);letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+        .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
+        
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
+            letter-spacing:1.5px;color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:var(--t1);background:rgba(15,23,42,.03)}
+        html.dark .nav a:hover{background:rgba(255,255,255,.05)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        html.dark .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .theme-toggle .fa-sun{display:none}
+        html.dark .theme-toggle .fa-moon{display:none}
+        html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
+
+        /* Content Area */
+        .article-container {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px; width: 100%;
+            position: relative; z-index: 1; flex-grow: 1;
+        }
+        .guide-header { text-align: center; margin-bottom: 40px; }
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800; margin-bottom: 12px;
+        }
+        .guide-header h1 .grad {
+            background: linear-gradient(135deg, #334155 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        html.dark .guide-header h1 .grad {
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .guide-header p { font-size: 1.15rem; color: var(--t2); max-width: 650px; margin: 0 auto; }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800;
+            color: var(--t1); margin: 48px 0 24px; padding-bottom: 12px;
+            border-bottom: 2px solid rgba(100,116,139,.2);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-title i { color: var(--primary); }
+
+        /* Visual Educational Components */
+        .info-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 24px; box-shadow: var(--sh);
+            position: relative; overflow: hidden;
+        }
+        .info-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary);
+        }
+        
+        /* Mechanism Flex Container */
+        .mechanism-grid-3 {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; margin-bottom: 32px;
+        }
+        .mech-card {
+            background: rgba(100,116,139,.05); border: 1px solid rgba(100,116,139,.15);
+            padding: 20px; border-radius: 16px; text-align: center; height: 100%;
+        }
+        html.dark .mech-card { background: rgba(100,116,139,.08); border-color: rgba(100,116,139,.2); }
+        .mech-card h3 { font-family: 'Outfit', sans-serif; color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 8px; }
+        html.dark .mech-card h3 { color: var(--primary-light); }
+        .mech-card p { font-size: 0.9rem; color: var(--t2); }
+        .mech-icon { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+
+        @media (max-width: 600px) {
+            .mechanism-grid-3 { grid-template-columns: 1fr; gap: 12px; }
+        }
+
+        /* Step-by-Step Components */
+        .step-container { display: flex; flex-direction: column; gap: 16px; }
+        .step-item {
+            display: flex; align-items: flex-start; gap: 16px; background: var(--card);
+            border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;
+            box-shadow: var(--sh); transition: transform .2s ease;
+        }
+        .step-item:hover { transform: translateX(5px); }
+        .step-num {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem;
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(100,116,139,.3);
+        }
+        .step-content h4 { color: var(--t1); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 4px; }
+        .step-content p { color: var(--t2); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Reference Table */
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; box-shadow: var(--sh); border: 1px solid var(--border); margin-bottom: 24px; }
+        .dosing-table { width: 100%; border-collapse: collapse; background: var(--card); text-align: left; min-width: 600px; }
+        .dosing-table th, .dosing-table td { padding: 16px; border-bottom: 1px solid var(--border); color: var(--t1); font-size: 0.95rem; }
+        .dosing-table th { background: rgba(100,116,139,.05); font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--primary-dark); }
+        html.dark .dosing-table th { background: rgba(100,116,139,.1); color: var(--primary-light); }
+        .dosing-table tbody tr:last-child td { border-bottom: none; }
+        .dosing-table tbody tr:hover { background: rgba(15,23,42,0.01); }
+        html.dark .dosing-table tbody tr:hover { background: rgba(255,255,255,0.01); }
+
+        .dose-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+        }
+        .b-lyo { background: rgba(16,185,129,.15); color: #059669; } /* Emerald */
+        .b-recon { background: rgba(245,158,11,.15); color: #D97706; } /* Amber */
+        .b-danger { background: rgba(239,68,68,.15); color: #B91C1C; } /* Red */
+        
+        html.dark .b-lyo { color: #34D399; }
+        html.dark .b-recon { color: #FBBF24; }
+        html.dark .b-danger { color: #F87171; }
+
+        /* Important Rule Box */
+        .rule-box {
+            background: rgba(100,116,139,.1); border-left: 4px solid var(--primary);
+            padding: 16px; border-radius: 0 12px 12px 0; margin-bottom: 32px;
+        }
+        .rule-box h4 { color: var(--primary-dark); font-family: 'Outfit', sans-serif; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;}
+        html.dark .rule-box h4 { color: var(--primary-light); }
+        .rule-box p { color: var(--t2); font-size: 0.95rem; }
+
+        /* Footer */
+        .footer{
+            position:relative;z-index:1;text-align:center;padding:32px 24px;
+            border-top:1px solid rgba(15,23,42,.06); margin-top:auto;
+        }
+        html.dark .footer{border-color:rgba(255,255,255,.04)}
+        .footer-inner{ max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .footer-copy{font-size:.78rem;color:var(--t3);letter-spacing:.5px;}
+        .footer-links{display:flex;gap:20px}
+        .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
+        .footer-links a:hover{color:var(--primary)}
+        
+        @media(max-width:768px){
+            .hdr{padding:16px}
+            .brand{display:none}
+            .footer-inner{flex-direction:column;text-align:center}
+        }
+        
+        /* Utility */
+        .emoji { font-size: 1.2em; vertical-align: middle; margin-right: 4px; }
+        .highlight { color: var(--primary-dark); font-weight: 600; }
+        html.dark .highlight { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header class="hdr">
+        <a href="https://peptopia-health.github.io/" class="hdr-brand">
+            <div class="logo">P</div>
+            <div class="brand">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tag">Health &amp; Wellness</span>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="https://peptopia-health.github.io/">Home</a>
+            <a href="https://peptopia-health.github.io/X-Peps/orders/">Shop</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        <div class="guide-header">
+            <h1><span class="grad">Storage &amp; Handling</span></h1>
+            <p>Best practices for preserving the integrity, stability, and efficacy of your research compounds.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i> The Basics of Stability</h2>
+        <div class="info-box">
+            <p style="margin-bottom: 24px; color: var(--t2);">Peptides are fragile chains of amino acids held together by delicate bonds. Because of this, their environmental stability changes drastically depending on whether they are in their raw, dry state or mixed with a liquid solution.</p>
+            
+            <div class="mechanism-grid-3">
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-icicles"></i></div>
+                    <h3>Lyophilized (Dry)</h3>
+                    <p><span class="emoji">❄️</span> Freeze-dried powder<br><span class="emoji">🛡️</span> Highly durable &amp; stable<br><span class="emoji">🌡️</span> Survives room temperature</p>
+                </div>
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>Reconstituted (Liquid)</h3>
+                    <p><span class="emoji">💧</span> Mixed with BAC water<br><span class="emoji">⚠️</span> Highly vulnerable to degradation<br><span class="emoji">🥶</span> Requires immediate refrigeration</p>
+                </div>
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-capsules"></i></div>
+                    <h3>Nootropics / Orals</h3>
+                    <p><span class="emoji">💊</span> Small molecule capsules<br><span class="emoji">📦</span> Keep sealed with desiccants<br><span class="emoji">🌡️</span> Room temperature only</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Environmental Hazards</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">To prevent your research materials from rapidly degrading, you must actively protect them from three primary environmental enemies:</p>
+        
+        <div class="step-container" style="margin-bottom: 40px;">
+            <div class="step-item">
+                <div class="step-num"><i class="fa-solid fa-sun"></i></div>
+                <div class="step-content">
+                    <h4>Ultraviolet Light <span class="emoji">☀️</span></h4>
+                    <p>Prolonged exposure to direct sunlight or harsh UV rays will break down the amino acid sequences inside the vial. Always store your vials in a dark place, such as a closed drawer, a medicine cabinet, or the back of a refrigerator.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num"><i class="fa-solid fa-hurricane"></i></div>
+                <div class="step-content">
+                    <h4>Physical Agitation <span class="emoji">🫨</span></h4>
+                    <p>Once a peptide has been reconstituted into liquid, the molecular chains become highly susceptible to kinetic damage. <strong style="color:#ef4444;">Never shake a peptide vial.</strong> If you need to mix it, gently roll it between your palms or swirl it slowly.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+                <div class="step-content">
+                    <h4>Heat &amp; Temperature Swings <span class="emoji">🔥</span></h4>
+                    <p>Repeatedly moving a vial from a cold fridge to a warm room can introduce condensation and temperature shock. Only remove the vial from the refrigerator when actively preparing for research, and return it immediately afterward.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-temperature-low"></i> Quick Reference Storage Table</h2>
+        
+        <div class="rule-box">
+            <h4><i class="fa-solid fa-clock-rotate-left"></i> The 28-Day Rule</h4>
+            <p>Bacteriostatic (BAC) Water contains 0.9% benzyl alcohol, which prevents bacterial growth. However, this alcohol begins to degrade the peptide itself over time. For maximum efficacy and safety, <strong>always discard any reconstituted peptide after 28 to 30 days.</strong></p>
+        </div>
+        
+        <div class="table-wrapper">
+            <table class="dosing-table">
+                <thead>
+                    <tr>
+                        <th>Material State</th>
+                        <th>Storage Environment</th>
+                        <th>Expected Shelf Life</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lyophilized Peptides</strong></td>
+                        <td>Deep Freezer (-20°C)</td>
+                        <td><span class="dose-badge b-lyo">2 - 3 Years</span></td>
+                        <td>Optimal for long-term bulk storage. Allow to reach room temp before mixing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lyophilized Peptides</strong></td>
+                        <td>Refrigerator (2°C - 8°C)</td>
+                        <td><span class="dose-badge b-lyo">12 - 18 Months</span></td>
+                        <td>Standard storage protocol for unused powders before reconstitution.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lyophilized Peptides</strong></td>
+                        <td>Room Temp (20°C - 24°C)</td>
+                        <td><span class="dose-badge b-recon">3 - 4 Weeks</span></td>
+                        <td>Perfectly safe for transit and shipping; move to fridge upon arrival.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reconstituted Peptides</strong></td>
+                        <td>Refrigerator (2°C - 8°C)</td>
+                        <td><span class="dose-badge b-recon">28 Days</span></td>
+                        <td><strong>Mandatory.</strong> Liquid peptides must be kept cold to maintain stability.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reconstituted Peptides</strong></td>
+                        <td>Room Temp (20°C - 24°C)</td>
+                        <td><span class="dose-badge b-danger">Rapid Degradation</span></td>
+                        <td>Leaving mixed vials out will destroy the peptide within 24-48 hours.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oral Capsules (5-Amino)</strong></td>
+                        <td>Room Temp (Dark/Dry)</td>
+                        <td><span class="dose-badge b-lyo">2 Years</span></td>
+                        <td>Do not refrigerate. Keep sealed with silica desiccant packets.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2026 Peptopia Health &bull; All rights reserved</span>
+            <div class="footer-links">
+                <a href="https://peptopia-health.github.io/X-Peps/orders/" title="Shop"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="https://discord.gg/peptopia" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Storage helper (safe for iframe and standalone)
+        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
+        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+    </script>
+</body>
+</html>
