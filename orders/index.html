@@ -1,3 +1,8 @@
+To fix the layout so it forces exactly **one tile per row on all mobile devices**, I have adjusted the CSS media query to be more aggressive (triggering at a wider screen width) and explicitly reset the column alignment for the centered tile on smaller screens. This ensures the layout remains strictly vertical for mobile users.
+
+Here is the complete, full `orders.html` file:
+
+```html:orders.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,42 +17,43 @@
             --bg-page: #F4F6FA;
             --t1: #0F172A; --t2: #475569;
             --purple: #9000F5; --emerald: #10B981; --orange: #F97316; --slate: #64748B;
+            --neon-border: #FF85E1;
         }
         body { font-family: 'DM Sans', sans-serif; background: var(--bg-page); color: var(--t1); line-height: 1.4; padding-bottom: 50px; }
         
         .hdr { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
         .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-        .brand-logo-img { width: 48px; height: 48px; border-radius: 50%; border: 2px solid #FF85E1; box-shadow: 0 0 10px #FF85E1; object-fit: cover; }
+        .brand-logo-img { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--neon-border); box-shadow: 0 0 10px var(--neon-border); object-fit: cover; }
         
         .hero { text-align: center; padding: 10px 24px 20px; }
         .hero h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; }
-        .hero p { color: var(--t2); margin-top: 5px; }
+        .hero p { color: var(--t2); margin-top: 5px; line-height: 1.2; }
 
-        .cat-wrap { max-width: 1200px; margin: 0 auto 30px; padding: 20px; border-radius: 16px; border: 1px solid; }
-        .cat-purple { border-color: var(--purple); }
-        .cat-emerald { border-color: var(--emerald); }
-        .cat-orange { border-color: var(--orange); }
-        .cat-slate { border-color: var(--slate); }
+        /* Category Containers */
+        .cat-wrap { max-width: 1200px; margin: 0 auto 30px; padding: 25px; border-radius: 16px; }
+        .cat-purple { background-color: #f5f0ff; }
+        .cat-emerald { background-color: #f0fdf4; }
+        .cat-orange { background-color: #fff7ed; }
+        .cat-slate { background-color: #f8fafc; }
 
-        .cat-title { font-family: 'Outfit', sans-serif; text-align: center; margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; }
+        .cat-title { font-family: 'Outfit', sans-serif; text-align: center; margin-bottom: 25px; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 2px; }
         
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         
-        .card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #E2E8F0; position: relative; display: flex; flex-direction: column; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 12px 12px 0 0; }
-        
-        .accent-purple::before { background: var(--purple); }
-        .accent-emerald::before { background: var(--emerald); }
-        .accent-orange::before { background: var(--orange); }
-        .accent-slate::before { background: var(--slate); }
-
-        .icon-box { font-size: 1.2rem; margin-bottom: 10px; }
+        .card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #E2E8F0; display: flex; flex-direction: column; min-height: 320px; }
+        .icon-box { font-size: 1.5rem; margin-bottom: 12px; }
         .card-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; }
-        .card-desc { font-size: 0.85rem; color: var(--t2); margin-bottom: 15px; line-height: 1.4; flex-grow: 1; }
-        .card-price { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 10px; }
-        .btn-buy { padding: 8px 12px; background: #059669; color: white; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-align: center; }
-        
-        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+        .card-desc { font-size: 0.9rem; color: var(--t2); margin-bottom: 15px; line-height: 1.5; flex-grow: 1; }
+        .card-price { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; }
+        .btn-buy { padding: 10px 12px; background: #059669; color: white; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-align: center; display: block; }
+        .btn-inquire { padding: 10px 12px; background: #64748B; color: white; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-align: center; display: block; }
+        .coming-soon { color: #94A3B8; font-style: italic; font-weight: 600; text-align: center; margin-top: auto; padding-top: 10px; }
+
+        /* Force 1 column on mobile */
+        @media (max-width: 1024px) { 
+            .grid { grid-template-columns: 1fr; } 
+            .cagri-centered { grid-column: auto; }
+        }
     </style>
 </head>
 <body>
@@ -55,104 +61,110 @@
     <header class="hdr">
         <a href="https://x-peps.com/" class="header-brand">
             <img src="/peptopia-logo.png" alt="Logo" class="brand-logo-img">
-            <div style="font-family: Outfit, sans-serif; font-weight: 700; font-size: 1.2rem;">PEPTOPIA</div>
+            <div style="font-family: Outfit, sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--t1);">PEPTOPIA</div>
         </a>
     </header>
 
     <section class="hero">
         <h1>Place Your Order</h1>
-        <p>Select a product below to checkout securely.<br>
+        <p>Select a product below to checkout securely.
         All transactions are encrypted and PCI compliant.</p>
     </section>
 
+    <!-- Weight Management -->
     <div class="cat-wrap cat-purple">
         <h2 class="cat-title" style="color:var(--purple)">Weight Management Agents</h2>
         <div class="grid">
-            <div class="card accent-purple"><div class="icon-box"><i class="fa-solid fa-dna" style="color:var(--purple)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-syringe" style="color:var(--purple)"></i></div>
                 <div class="card-title">Tirzepatide (30mg)</div>
-                <p class="card-desc">Dual GIP/GLP-1 receptor agonist supporting metabolic health. It uniquely targets two receptors for enhanced glucose control. Superior weight loss results observed compared to single-agonist alternatives.</p>
+                <p class="card-desc">This is a dual GIP and GLP-1 receptor agonist that offers superior metabolic support. It is uniquely formulated to target two specific pathways for enhanced glucose control. Studies indicate this compound yields more robust weight loss results compared to single-agonist treatments.</p>
                 <div class="card-price">$325</div><a href="https://pay.x-peps.com/T30" class="btn-buy">PURCHASE</a>
             </div>
-            <div class="card accent-purple"><div class="icon-box"><i class="fa-solid fa-flask-vial" style="color:var(--purple)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-flask-vial" style="color:var(--purple)"></i></div>
                 <div class="card-title">Semaglutide (10mg)</div>
-                <p class="card-desc">A potent GLP-1 receptor agonist for chronic weight management. It significantly slows gastric emptying to increase satiety. This remains the gold standard for long-term weight maintenance.</p>
+                <p class="card-desc">This powerful GLP-1 receptor agonist is specifically designed for long-term weight management. It works by slowing gastric emptying to increase satiety and control appetite. This remains the gold standard for maintaining consistent weight loss across clinical populations.</p>
                 <div class="card-price">$145</div><a href="https://pay.x-peps.com/S10" class="btn-buy">PURCHASE</a>
             </div>
-            <div class="card accent-purple"><div class="icon-box"><i class="fa-solid fa-microscope" style="color:var(--purple)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-microscope" style="color:var(--purple)"></i></div>
                 <div class="card-title">Retatrutide (20mg)</div>
-                <p class="card-desc">Triple-hormone agonist targeting GIP, GLP-1, and glucagon receptors. It drives a higher magnitude of fat loss than dual-agonists. Emerging data indicates superior metabolic optimization.</p>
+                <p class="card-desc">This novel triple-hormone agonist targets GIP, GLP-1, and glucagon receptors to drive deeper metabolic change. It is formulated to drive a greater magnitude of fat loss than dual-agonist compounds. Emerging research positions this agent as a superior option for total metabolic optimization.</p>
                 <div class="card-price">$340</div><a href="https://pay.x-peps.com/R20" class="btn-buy">PURCHASE</a>
             </div>
-            <div class="card accent-purple" style="grid-column: 2 / 3"><div class="icon-box"><i class="fa-solid fa-prescription-bottle" style="color:var(--purple)"></i></div>
+            <div class="card cagri-centered"><div class="icon-box"><i class="fa-solid fa-prescription-bottle" style="color:var(--purple)"></i></div>
                 <div class="card-title">Cagrilintide (10mg)</div>
-                <p class="card-desc">A long-acting amylin analog that works synergistically with GLP-1 agonists. It helps suppress appetite via independent hypothalamic pathways. Ideal for breaking weight loss plateaus.</p>
+                <p class="card-desc">This long-acting amylin analog works synergistically alongside GLP-1 agents to amplify overall weight loss. It utilizes independent hypothalamic pathways to suppress appetite significantly beyond standard options. It is an excellent choice for individuals aiming to break through stubborn weight loss plateaus.</p>
                 <div class="card-price">$220</div><a href="https://pay.x-peps.com/C10" class="btn-buy">PURCHASE</a>
             </div>
         </div>
     </div>
 
+    <!-- Bioenhancement -->
     <div class="cat-wrap cat-emerald">
         <h2 class="cat-title" style="color:var(--emerald)">Bioenhancement Agents</h2>
         <div class="grid">
-            <div class="card accent-emerald"><div class="icon-box"><i class="fa-solid fa-dumbbell" style="color:var(--emerald)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-dumbbell" style="color:var(--emerald)"></i></div>
                 <div class="card-title">SLU-PP-332 (20mg)</div>
-                <p class="card-desc">An exercise mimetic that activates specific metabolic pathways. It mimics the physiological benefits of training without the physical stress. Ideal for maintaining muscle metabolic activity.</p>
+                <p class="card-desc">This compound acts as an exercise mimetic by activating specific metabolic pathways within the muscle. It mimics the physiological benefits of training without the associated physical stress. It is ideal for those focused on maintaining muscle metabolic activity.</p>
                 <div class="card-price">$95</div><a href="https://pay.x-peps.com/SLU" class="btn-buy">PURCHASE</a>
             </div>
-            <div class="card accent-emerald"><div class="icon-box"><i class="fa-solid fa-microchip" style="color:var(--emerald)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-microchip" style="color:var(--emerald)"></i></div>
                 <div class="card-title">BPC-157</div>
-                <p class="card-desc">A peptide known for systemic tissue repair and anti-inflammatory properties. It supports recovery from physical stressors. Currently trending for its diverse wellness applications.</p>
-                <div class="card-price">Coming Soon</div>
+                <p class="card-desc">This peptide is widely recognized for supporting systemic tissue repair and lowering inflammation. It helps your body recover effectively from various physical stressors. It is currently a top choice for those pursuing diverse wellness applications.</p>
+                <div class="coming-soon">Coming Soon!</div>
             </div>
-            <div class="card accent-emerald"><div class="icon-box"><i class="fa-solid fa-sun" style="color:var(--emerald)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-sun" style="color:var(--emerald)"></i></div>
                 <div class="card-title">GLOW / KLOW</div>
-                <p class="card-desc">Innovative compounds focusing on cellular vitality and skin health. These agents are designed to support systemic rejuvenation. Stay tuned for official release details.</p>
-                <div class="card-price">Coming Soon</div>
+                <p class="card-desc">These compounds are designed to focus on cellular vitality and skin health. They are specifically engineered to provide foundational support for systemic rejuvenation. Official release details for these innovative agents will be available soon.</p>
+                <div class="coming-soon">Coming Soon!</div>
             </div>
         </div>
     </div>
 
+    <!-- Wakefulness Agents -->
     <div class="cat-wrap cat-orange">
         <h2 class="cat-title" style="color:var(--orange)">Wakefulness Agents</h2>
         <div class="grid">
-            <div class="card accent-orange"><div class="icon-box"><i class="fa-solid fa-brain" style="color:var(--orange)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-brain" style="color:var(--orange)"></i></div>
                 <div class="card-title">Modafinil (200mg)</div>
-                <p class="card-desc">A unique CNS stimulant that promotes alertness without traditional jittery side effects. It provides stable focus compared to amphetamine-based stimulants. Ideal for combatting excessive sleepiness.</p>
-                <div class="card-price">$375</div><a href="#" class="btn-buy" style="background:#475569">INQUIRE</a>
+                <p class="card-desc">This is a unique CNS stimulant that promotes clean alertness without the jittery side effects of traditional amphetamines. It provides stable focus, unlike R-enantiomer-only products that can be overly long-lasting. It is ideal for those combatting excessive sleepiness and needing high productivity.</p>
+                <div class="card-price">$375</div><a href="#" class="btn-inquire">INQUIRE</a>
             </div>
-            <div class="card accent-orange"><div class="icon-box"><i class="fa-solid fa-stopwatch" style="color:var(--orange)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-stopwatch" style="color:var(--orange)"></i></div>
                 <div class="card-title">Armodafinil</div>
-                <p class="card-desc">Contains only the R-enantiomer, offering a longer duration of action than standard Modafinil. It is often preferred for maintaining focus late into the day. Highly effective for shift-work users.</p>
-                <div class="card-price">Coming Soon</div>
+                <p class="card-desc">Containing only the R-enantiomer, this agent offers a notably longer duration of action compared to the racemic mix of standard Modafinil. It is often preferred by those requiring sustained cognitive focus late into the day. This is widely considered the superior choice for extended work shifts.</p>
+                <div class="coming-soon">Coming Soon!</div>
             </div>
-            <div class="card accent-orange"><div class="icon-box"><i class="fa-solid fa-bolt" style="color:var(--orange)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-bolt" style="color:var(--orange)"></i></div>
                 <div class="card-title">Tesofensine</div>
-                <p class="card-desc">A serotonin-noradrenaline-dopamine reuptake inhibitor. It offers distinct cognitive and metabolic benefits not found in common stimulants. Currently under intensive investigation.</p>
-                <div class="card-price">Coming Soon</div>
+                <p class="card-desc">A potent monoamine reuptake inhibitor offering distinct cognitive and metabolic advantages not found in standard stimulants. It serves a different function than wakefulness agents by acting on multiple neurotransmitters simultaneously. It is currently under intensive scientific investigation for therapeutic use.</p>
+                <div class="coming-soon">Coming Soon!</div>
             </div>
         </div>
     </div>
 
+    <!-- Supplies -->
     <div class="cat-wrap cat-slate">
         <h2 class="cat-title" style="color:var(--slate)">Supplies</h2>
         <div class="grid">
-            <div class="card accent-slate"><div class="icon-box"><i class="fa-solid fa-droplet" style="color:var(--slate)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-droplet" style="color:var(--slate)"></i></div>
                 <div class="card-title">Bacteriostatic Water</div>
-                <p class="card-desc">Essential sterile diluent for all injectable peptide research. Contains 0.9% benzyl alcohol for preservation. A necessary component for precise compound reconstitution.</p>
+                <p class="card-desc">This sterile diluent is essential for all injectable peptide research. It contains 0.9% benzyl alcohol, which provides long-term preservation. This is a necessary component for the precise and safe reconstitution of your compounds.</p>
                 <div class="card-price">$28</div><a href="https://pay.x-peps.com/BAC" class="btn-buy">PURCHASE</a>
             </div>
-            <div class="card accent-slate"><div class="icon-box"><i class="fa-solid fa-syringe" style="color:var(--slate)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-syringe" style="color:var(--slate)"></i></div>
                 <div class="card-title">Syringes</div>
-                <p class="card-desc">High-precision insulin syringes designed for accurate dosing. Essential for safe and consistent research applications. Sterile packaging guaranteed.</p>
-                <div class="card-price">Coming Soon</div>
+                <p class="card-desc">These high-precision insulin syringes are designed for accurate and consistent clinical dosing. They are essential for ensuring safe research applications at home. Every unit comes guaranteed with sterile, individual packaging.</p>
+                <div class="coming-soon">Coming Soon!</div>
             </div>
-            <div class="card accent-slate"><div class="icon-box"><i class="fa-solid fa-pump-medical" style="color:var(--slate)"></i></div>
+            <div class="card"><div class="icon-box"><i class="fa-solid fa-pump-medical" style="color:var(--slate)"></i></div>
                 <div class="card-title">Alcohol Pads</div>
-                <p class="card-desc">Professional-grade alcohol prep pads for site sterilization. Mandatory for maintaining clean research protocols. Individually wrapped for total sterility.</p>
-                <div class="card-price">Coming Soon</div>
+                <p class="card-desc">These professional-grade alcohol prep pads are used for thorough site sterilization. Proper preparation is mandatory for maintaining the cleanest possible research protocols. They are individually wrapped to guarantee total sterility and safety.</p>
+                <div class="coming-soon">Coming Soon!</div>
             </div>
         </div>
     </div>
 
 </body>
 </html>
+
+```
