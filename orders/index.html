@@ -4,347 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders — PEPTOPIA Health</title>
-    <meta name="description" content="Order peptide therapeutics and supplements from Peptopia Health. Secure checkout powered by GoDaddy Payments.">
-    <meta name="author" content="Peptopia Health">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     
     <style>
         :root {
             --bg-page: #F4F6FA;
-            --bg-card: #FFFFFF;
-            --bg-card-hover: #FFFFFF;
-            --border-card: rgba(15, 23, 42, 0.07);
-            --border-card-hover: rgba(15, 23, 42, 0.14);
-            --shadow-card: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
-            --shadow-card-hover: 0 12px 28px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --text-muted: #94A3B8;
-            --separator: rgba(15, 23, 42, 0.06);
-            --btn-contact-border: rgba(15, 23, 42, 0.15);
-            --btn-contact-bg: rgba(15, 23, 42, 0.03);
-            --btn-contact-hover-border: rgba(15, 23, 42, 0.25);
-            --btn-contact-hover-bg: rgba(15, 23, 42, 0.06);
-            --banner-bg: rgba(16, 185, 129, 0.04);
-            --banner-border: rgba(16, 185, 129, 0.10);
-            --footer-border: rgba(15, 23, 42, 0.06);
-            --badge-bg: rgba(16, 185, 129, 0.06);
-            --badge-border: rgba(16, 185, 129, 0.14);
-            --toggle-bg: #FFFFFF;
-            --toggle-border: rgba(15, 23, 42, 0.10);
-            --toggle-hover-bg: #F1F5F9;
-
-            --brand-green: #059669;
-            --brand-green-hover: #10B981;
-            --brand-purple: #9000F5;
-            --purple: #A855F7;
-            --purple-glow: rgba(168, 85, 247, 0.35);
-            --cyan: #06B6D4;
-            --cyan-glow: rgba(6, 182, 212, 0.35);
-            --amber: #F59E0B;
-            --amber-glow: rgba(245, 158, 11, 0.35);
-            --rose: #F43F5E;
-            --rose-glow: rgba(244, 63, 94, 0.35);
-            --emerald: #10B981;
-            --emerald-glow: rgba(16, 185, 129, 0.35);
-            --indigo: #818CF8;
-            --indigo-glow: rgba(129, 140, 248, 0.35);
-            --slate: #94A3B8;
-            --slate-glow: rgba(148, 163, 184, 0.25);
+            --t1: #0F172A; --t2: #475569;
+            --purple: #9000F5; --emerald: #10B981; --orange: #F97316; --slate: #64748B;
         }
-
-        html.dark {
-            --bg-page: #070B14;
-            --bg-card: rgba(255, 255, 255, 0.025);
-            --bg-card-hover: rgba(255, 255, 255, 0.05);
-            --border-card: rgba(255, 255, 255, 0.07);
-            --border-card-hover: rgba(255, 255, 255, 0.14);
-            --shadow-card: 0 0 0 0 transparent;
-            --shadow-card-hover: 0 0 0 0 transparent;
-            --text-primary: #E2E8F0;
-            --text-secondary: #94A3B8;
-            --text-muted: #64748B;
-            --separator: rgba(255, 255, 255, 0.05);
-            --btn-contact-border: rgba(255, 255, 255, 0.15);
-            --btn-contact-bg: rgba(255, 255, 255, 0.04);
-            --btn-contact-hover-border: rgba(255, 255, 255, 0.3);
-            --btn-contact-hover-bg: rgba(255, 255, 255, 0.08);
-            --banner-bg: rgba(16, 185, 129, 0.06);
-            --banner-border: rgba(16, 185, 129, 0.15);
-            --footer-border: rgba(255, 255, 255, 0.04);
-            --badge-bg: rgba(16, 185, 129, 0.12);
-            --badge-border: rgba(16, 185, 129, 0.25);
-            --toggle-bg: rgba(255, 255, 255, 0.06);
-            --toggle-border: rgba(255, 255, 255, 0.10);
-            --toggle-hover-bg: rgba(255, 255, 255, 0.12);
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { font-size: 16px; scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--bg-page); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; transition: background-color 0.35s ease, color 0.35s ease; }
-
-        .site-header { position: relative; z-index: 10; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; width: 100%; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg-page); color: var(--t1); line-height: 1.4; padding-bottom: 50px; }
+        
+        .hdr { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
         .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-        .brand-logo-img { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; }
-        .brand-text { display: flex; flex-direction: column; }
-        .brand-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text-primary); letter-spacing: 2px; text-transform: uppercase; line-height: 1.1; }
-        .brand-tagline { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
-        .header-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .nav-link { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); text-decoration: none; padding: 8px 16px; border-radius: 8px; }
-        .nav-link:hover { color: var(--text-primary); background: var(--btn-contact-bg); }
-        .nav-link.active { color: var(--emerald); background: var(--badge-bg); }
-
-        .theme-toggle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--toggle-border); background: var(--toggle-bg); color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; margin-left: 4px; box-shadow: var(--shadow-card); flex-shrink: 0; }
-        .theme-toggle:hover { background: var(--toggle-hover-bg); color: var(--text-primary); }
-        .theme-toggle .fa-sun { display: none; }
-        html.dark .theme-toggle .fa-moon { display: none; }
-        html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
-
-        .hero { position: relative; z-index: 1; text-align: center; padding: 0 24px 32px; max-width: 720px; margin: 0 auto; }
-        .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 16px; }
-        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto; line-height: 1.65; }
-
-        .products-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 16px 24px 64px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .brand-logo-img { width: 48px; height: 48px; border-radius: 50%; border: 2px solid #FF85E1; box-shadow: 0 0 10px #FF85E1; object-fit: cover; }
         
-        .product-card { position: relative; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; box-shadow: var(--shadow-card); overflow: hidden; }
-        .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 16px 16px 0 0; }
+        .hero { text-align: center; padding: 10px 24px 20px; }
+        .hero h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; }
+        .hero p { color: var(--t2); margin-top: 5px; }
+
+        .cat-wrap { max-width: 1200px; margin: 0 auto 30px; padding: 20px; border-radius: 16px; border: 1px solid; }
+        .cat-purple { border-color: var(--purple); }
+        .cat-emerald { border-color: var(--emerald); }
+        .cat-orange { border-color: var(--orange); }
+        .cat-slate { border-color: var(--slate); }
+
+        .cat-title { font-family: 'Outfit', sans-serif; text-align: center; margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; }
         
-        .accent-purple::before  { background: var(--purple); }
-        .accent-cyan::before    { background: var(--cyan); }
-        .accent-amber::before   { background: var(--amber); }
-        .accent-rose::before    { background: var(--rose); }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        
+        .card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #E2E8F0; position: relative; display: flex; flex-direction: column; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 12px 12px 0 0; }
+        
+        .accent-purple::before { background: var(--purple); }
         .accent-emerald::before { background: var(--emerald); }
-        .accent-indigo::before  { background: var(--indigo); }
-        .accent-slate::before   { background: var(--slate); }
+        .accent-orange::before { background: var(--orange); }
+        .accent-slate::before { background: var(--slate); }
 
-        .card-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
-        .card-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-        .accent-purple .card-icon  { background: rgba(168, 85, 247, 0.10); color: var(--purple); }
-        .accent-cyan .card-icon    { background: rgba(6, 182, 212, 0.10); color: var(--cyan); }
-        .accent-amber .card-icon   { background: rgba(245, 158, 11, 0.10); color: var(--amber); }
-        .accent-rose .card-icon    { background: rgba(244, 63, 94, 0.10); color: var(--rose); }
-        .accent-emerald .card-icon { background: rgba(16, 185, 129, 0.10); color: var(--emerald); }
-        .accent-indigo .card-icon  { background: rgba(129, 140, 248, 0.10); color: var(--indigo); }
-        .accent-slate .card-icon   { background: rgba(148, 163, 184, 0.08); color: var(--slate); }
-
-        .card-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; }
-        .card-dosage { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
-        .card-description { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; flex-grow: 1; margin-bottom: 20px; }
-        .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid var(--separator); }
-        .card-price { font-family: 'Outfit', sans-serif; font-size: 1.65rem; font-weight: 700; }
-        .btn-buy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 28px; border: none; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--brand-green), var(--emerald)); cursor: pointer; }
-        .btn-contact { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 24px; border: 1px solid var(--btn-contact-border); border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); background: var(--btn-contact-bg); }
-
-        .info-banner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px 48px; }
-        .info-banner-inner { display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-radius: 12px; background: var(--banner-bg); border: 1px solid var(--banner-border); }
-        .info-banner i { font-size: 1.1rem; color: var(--emerald); min-width: 20px; }
-        .info-banner p { font-size: 0.88rem; color: var(--text-secondary); }
-        .info-banner a { color: var(--emerald); font-weight: 500; }
-
-        .site-footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px; border-top: 1px solid var(--footer-border); }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-
-        @media (max-width: 768px) {
-            .site-header { flex-direction: column; gap: 16px; }
-            .brand-text { display: none; }
-            .products-grid { grid-template-columns: 1fr; }
-            .info-banner-inner { flex-direction: column; text-align: center; }
-            .footer-content { flex-direction: column; text-align: center; }
-        }
+        .icon-box { font-size: 1.2rem; margin-bottom: 10px; }
+        .card-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; }
+        .card-desc { font-size: 0.85rem; color: var(--t2); margin-bottom: 15px; line-height: 1.4; flex-grow: 1; }
+        .card-price { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 10px; }
+        .btn-buy { padding: 8px 12px; background: #059669; color: white; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; text-align: center; }
+        
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <header class="site-header">
-        <a href="https://x-peps.com/" target="_top" class="header-brand">
-            <img src="/peptopia-logo.png" alt="Peptopia" class="brand-logo-img">
-            <div class="brand-text">
-                <span class="brand-name">Peptopia</span>
-                <span class="brand-tagline">Health &amp; Wellness</span>
-            </div>
+    <header class="hdr">
+        <a href="https://x-peps.com/" class="header-brand">
+            <img src="/peptopia-logo.png" alt="Logo" class="brand-logo-img">
+            <div style="font-family: Outfit, sans-serif; font-weight: 700; font-size: 1.2rem;">PEPTOPIA</div>
         </a>
-        <nav class="header-nav">
-            <a href="https://x-peps.com/" target="_top" class="nav-link">Home</a>
-            <a href="https://x-peps.com/orders/" target="_top" class="nav-link active">Shop</a>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-sun"></i>
-            </button>
-        </nav>
     </header>
 
     <section class="hero">
         <h1>Place Your Order</h1>
-        <p>Select a product below to checkout securely.<br>All transactions are encrypted and PCI compliant.</p>
+        <p>Select a product below to checkout securely.<br>
+        All transactions are encrypted and PCI compliant.</p>
     </section>
 
-    <section class="products-section">
-        <div class="products-grid">
-            <div class="product-card accent-purple">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">Tirzepatide</div>
-                        <div class="card-dosage">30 mg</div>
-                    </div>
-                </div>
-                <p class="card-description">A dual GIP and GLP-1 receptor agonist commonly utilized for blood sugar management and weight loss.</p>
-                <div class="card-footer">
-                    <div class="card-price"><span class="currency">$</span>325</div>
-                    <a href="https://pay.x-peps.com/T30" target="_blank" rel="noopener" class="btn-buy">
-                        <i class="fa-solid fa-bag-shopping"></i> Purchase
-                    </a>
-                </div>
+    <div class="cat-wrap cat-purple">
+        <h2 class="cat-title" style="color:var(--purple)">Weight Management Agents</h2>
+        <div class="grid">
+            <div class="card accent-purple"><div class="icon-box"><i class="fa-solid fa-dna" style="color:var(--purple)"></i></div>
+                <div class="card-title">Tirzepatide (30mg)</div>
+                <p class="card-desc">Dual GIP/GLP-1 receptor agonist supporting metabolic health. It uniquely targets two receptors for enhanced glucose control. Superior weight loss results observed compared to single-agonist alternatives.</p>
+                <div class="card-price">$325</div><a href="https://pay.x-peps.com/T30" class="btn-buy">PURCHASE</a>
             </div>
-
-            <div class="product-card accent-cyan">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">Semaglutide</div>
-                        <div class="card-dosage">10 mg</div>
-                    </div>
-                </div>
-                <p class="card-description">A GLP-1 receptor agonist utilized primarily for treating type 2 diabetes and supporting chronic weight management.</p>
-                <div class="card-footer">
-                    <div class="card-price"><span class="currency">$</span>145</div>
-                    <a href="https://pay.x-peps.com/S10" target="_blank" rel="noopener" class="btn-buy">
-                        <i class="fa-solid fa-bag-shopping"></i> Purchase
-                    </a>
-                </div>
+            <div class="card accent-purple"><div class="icon-box"><i class="fa-solid fa-flask-vial" style="color:var(--purple)"></i></div>
+                <div class="card-title">Semaglutide (10mg)</div>
+                <p class="card-desc">A potent GLP-1 receptor agonist for chronic weight management. It significantly slows gastric emptying to increase satiety. This remains the gold standard for long-term weight maintenance.</p>
+                <div class="card-price">$145</div><a href="https://pay.x-peps.com/S10" class="btn-buy">PURCHASE</a>
             </div>
-
-            <div class="product-card accent-amber">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">Retatrutide</div>
-                        <div class="card-dosage">20 mg</div>
-                    </div>
-                </div>
-                <p class="card-description">An investigational triple-hormone receptor (GLP-1, GIP, and glucagon) agonist currently studied for obesity treatment.</p>
-                <div class="card-footer">
-                    <div class="card-price"><span class="currency">$</span>340</div>
-                    <a href="https://pay.x-peps.com/R20" target="_blank" rel="noopener" class="btn-buy">
-                        <i class="fa-solid fa-bag-shopping"></i> Purchase
-                    </a>
-                </div>
+            <div class="card accent-purple"><div class="icon-box"><i class="fa-solid fa-microscope" style="color:var(--purple)"></i></div>
+                <div class="card-title">Retatrutide (20mg)</div>
+                <p class="card-desc">Triple-hormone agonist targeting GIP, GLP-1, and glucagon receptors. It drives a higher magnitude of fat loss than dual-agonists. Emerging data indicates superior metabolic optimization.</p>
+                <div class="card-price">$340</div><a href="https://pay.x-peps.com/R20" class="btn-buy">PURCHASE</a>
             </div>
-
-            <div class="product-card accent-rose">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-prescription-bottle"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">Cagrilintide</div>
-                        <div class="card-dosage">10 mg</div>
-                    </div>
-                </div>
-                <p class="card-description">An investigational long-acting amylin analog being researched for its potential in weight management.</p>
-                <div class="card-footer">
-                    <div class="card-price"><span class="currency">$</span>220</div>
-                    <a href="https://pay.x-peps.com/C10" target="_blank" rel="noopener" class="btn-buy">
-                        <i class="fa-solid fa-bag-shopping"></i> Purchase
-                    </a>
-                </div>
+            <div class="card accent-purple" style="grid-column: 2 / 3"><div class="icon-box"><i class="fa-solid fa-prescription-bottle" style="color:var(--purple)"></i></div>
+                <div class="card-title">Cagrilintide (10mg)</div>
+                <p class="card-desc">A long-acting amylin analog that works synergistically with GLP-1 agonists. It helps suppress appetite via independent hypothalamic pathways. Ideal for breaking weight loss plateaus.</p>
+                <div class="card-price">$220</div><a href="https://pay.x-peps.com/C10" class="btn-buy">PURCHASE</a>
             </div>
-
-            <div class="product-card accent-emerald">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">SLU-PP-332</div>
-                        <div class="card-dosage">20 mg</div>
-                    </div>
-                </div>
-                <p class="card-description">An investigational ERR agonist often referred to as an "exercise mimetic," studied for metabolic and muscular effects.</p>
-                <div class="card-footer">
-                    <div class="card-price"><span class="currency">$</span>95</div>
-                    <a href="https://pay.x-peps.com/SLU" target="_blank" rel="noopener" class="btn-buy">
-                        <i class="fa-solid fa-bag-shopping"></i> Purchase
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card accent-indigo">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">Modafinil</div>
-                        <div class="card-dosage">200 mg</div>
-                    </div>
-                </div>
-                <p class="card-description">A wakefulness-promoting agent prescribed to treat excessive sleepiness caused by conditions like narcolepsy or shift work sleep disorder.</p>
-                <div class="card-footer">
-                    <div class="card-price"><span class="currency">$</span>375</div>
-                    <a href="https://x-peps.com/intake-screening" target="_top" class="btn-contact">
-                        <i class="fa-solid fa-envelope"></i> Inquire
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card accent-slate">
-                <div class="card-header">
-                    <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
-                    <div class="card-title-block">
-                        <div class="card-title">Bacteriostatic Water</div>
-                        <div class="card-dosage">Diluent</div>
-                    </div>
-                </div>
-                <p class="card-description">Sterile water containing a preservative (benzyl alcohol) used to dilute or dissolve medications for injection.</p>
-                <div class="card-footer">
-                    <span class="card-price-note">Included with qualifying orders</span>
-                    <a href="https://pay.x-peps.com/BAC" target="_blank" rel="noopener" class="btn-contact">
-                        <i class="fa-solid fa-bag-shopping"></i> Order
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="info-banner">
-        <div class="info-banner-inner">
-            <i class="fa-solid fa-shield-halved"></i>
-            <p>All payments are processed securely through <strong>GoDaddy Payments</strong>. Your financial information is never stored on our servers. For questions about your order, send an email to <a href="mailto:Peptopia@X-Peps.com">Peptopia@X-Peps.com</a> or contact by <a href="https://wa.me/13046202576" target="_blank" rel="noopener">WhatsApp at 1-304-620-2576</a>.</p>
         </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <span class="footer-copy">&copy; 2026 Peptopia Health &bull; All rights reserved</span>
-            <div class="footer-links">
-                <a href="https://x-peps.com/" target="_top" title="Home"><i class="fa-solid fa-house"></i></a>
-                <a href="https://discord.gg/peptopia" target="_top" title="Discord"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://www.youtube.com/@PeptopiaHealth" target="_top" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <div class="cat-wrap cat-emerald">
+        <h2 class="cat-title" style="color:var(--emerald)">Bioenhancement Agents</h2>
+        <div class="grid">
+            <div class="card accent-emerald"><div class="icon-box"><i class="fa-solid fa-dumbbell" style="color:var(--emerald)"></i></div>
+                <div class="card-title">SLU-PP-332 (20mg)</div>
+                <p class="card-desc">An exercise mimetic that activates specific metabolic pathways. It mimics the physiological benefits of training without the physical stress. Ideal for maintaining muscle metabolic activity.</p>
+                <div class="card-price">$95</div><a href="https://pay.x-peps.com/SLU" class="btn-buy">PURCHASE</a>
+            </div>
+            <div class="card accent-emerald"><div class="icon-box"><i class="fa-solid fa-microchip" style="color:var(--emerald)"></i></div>
+                <div class="card-title">BPC-157</div>
+                <p class="card-desc">A peptide known for systemic tissue repair and anti-inflammatory properties. It supports recovery from physical stressors. Currently trending for its diverse wellness applications.</p>
+                <div class="card-price">Coming Soon</div>
+            </div>
+            <div class="card accent-emerald"><div class="icon-box"><i class="fa-solid fa-sun" style="color:var(--emerald)"></i></div>
+                <div class="card-title">GLOW / KLOW</div>
+                <p class="card-desc">Innovative compounds focusing on cellular vitality and skin health. These agents are designed to support systemic rejuvenation. Stay tuned for official release details.</p>
+                <div class="card-price">Coming Soon</div>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script>
-        var storage = (function() {
-            try {
-                var s = window.self === window.top ? window['local' + 'Storage'] : null;
-                if (s) { s.setItem('_t', '1'); s.removeItem('_t'); }
-                return s;
-            } catch(e) { return null; }
-        })();
+    <div class="cat-wrap cat-orange">
+        <h2 class="cat-title" style="color:var(--orange)">Wakefulness Agents</h2>
+        <div class="grid">
+            <div class="card accent-orange"><div class="icon-box"><i class="fa-solid fa-brain" style="color:var(--orange)"></i></div>
+                <div class="card-title">Modafinil (200mg)</div>
+                <p class="card-desc">A unique CNS stimulant that promotes alertness without traditional jittery side effects. It provides stable focus compared to amphetamine-based stimulants. Ideal for combatting excessive sleepiness.</p>
+                <div class="card-price">$375</div><a href="#" class="btn-buy" style="background:#475569">INQUIRE</a>
+            </div>
+            <div class="card accent-orange"><div class="icon-box"><i class="fa-solid fa-stopwatch" style="color:var(--orange)"></i></div>
+                <div class="card-title">Armodafinil</div>
+                <p class="card-desc">Contains only the R-enantiomer, offering a longer duration of action than standard Modafinil. It is often preferred for maintaining focus late into the day. Highly effective for shift-work users.</p>
+                <div class="card-price">Coming Soon</div>
+            </div>
+            <div class="card accent-orange"><div class="icon-box"><i class="fa-solid fa-bolt" style="color:var(--orange)"></i></div>
+                <div class="card-title">Tesofensine</div>
+                <p class="card-desc">A serotonin-noradrenaline-dopamine reuptake inhibitor. It offers distinct cognitive and metabolic benefits not found in common stimulants. Currently under intensive investigation.</p>
+                <div class="card-price">Coming Soon</div>
+            </div>
+        </div>
+    </div>
 
-        function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
-            var isDark = document.documentElement.classList.contains('dark');
-            if (storage) {
-                storage.setItem('peptopia-theme', isDark ? 'dark' : 'light');
-            }
-        }
+    <div class="cat-wrap cat-slate">
+        <h2 class="cat-title" style="color:var(--slate)">Supplies</h2>
+        <div class="grid">
+            <div class="card accent-slate"><div class="icon-box"><i class="fa-solid fa-droplet" style="color:var(--slate)"></i></div>
+                <div class="card-title">Bacteriostatic Water</div>
+                <p class="card-desc">Essential sterile diluent for all injectable peptide research. Contains 0.9% benzyl alcohol for preservation. A necessary component for precise compound reconstitution.</p>
+                <div class="card-price">$28</div><a href="https://pay.x-peps.com/BAC" class="btn-buy">PURCHASE</a>
+            </div>
+            <div class="card accent-slate"><div class="icon-box"><i class="fa-solid fa-syringe" style="color:var(--slate)"></i></div>
+                <div class="card-title">Syringes</div>
+                <p class="card-desc">High-precision insulin syringes designed for accurate dosing. Essential for safe and consistent research applications. Sterile packaging guaranteed.</p>
+                <div class="card-price">Coming Soon</div>
+            </div>
+            <div class="card accent-slate"><div class="icon-box"><i class="fa-solid fa-pump-medical" style="color:var(--slate)"></i></div>
+                <div class="card-title">Alcohol Pads</div>
+                <p class="card-desc">Professional-grade alcohol prep pads for site sterilization. Mandatory for maintaining clean research protocols. Individually wrapped for total sterility.</p>
+                <div class="card-price">Coming Soon</div>
+            </div>
+        </div>
+    </div>
 
-        (function() {
-            var saved = storage ? storage.getItem('peptopia-theme') : null;
-            if (saved === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-        })();
-    </script>
 </body>
 </html>
