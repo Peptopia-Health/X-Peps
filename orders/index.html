@@ -51,7 +51,7 @@
             border: 2px solid var(--neon-border); 
             box-shadow: 0 0 10px var(--neon-border); 
             object-fit: cover; 
-            background: transparent;
+            background: #FFFFFF;
         }
         .brand-name {
             font-family: 'Outfit', sans-serif; 
@@ -84,10 +84,10 @@
             padding: 15px 25px 25px; 
             border-radius: 16px; 
         }
-        .cat-purple  { background-color: #F3EBFF; } 
-        .cat-emerald { background-color: #ECFDF5; } 
-        .cat-orange  { background-color: #FFF7ED; } 
-        .cat-slate   { background-color: #F8FAFC; } 
+        .cat-purple  { background-color: #F3EBFF; } /* Soft Purple */
+        .cat-emerald { background-color: #ECFDF5; } /* Soft Green */
+        .cat-orange  { background-color: #FFF7ED; } /* Soft Orange */
+        .cat-slate   { background-color: #F8FAFC; } /* Soft Slate */
 
         .cat-title { 
             font-family: 'Outfit', sans-serif; 
@@ -229,7 +229,9 @@
 
     <header class="hdr">
         <a href="https://x-peps.com/" class="header-brand">
-            <img src="peptopia-logo.png" alt="Peptopia Logo" class="brand-logo-img">
+            <!-- Absolute URL to guarantee the image loads from your live GitHub pages domain -->
+            <!-- Note: The 'onerror' attribute automatically checks the X-Peps folder if it's not in the root directory -->
+            <img src="https://peptopia-health.github.io/peptopia-logo.png" onerror="this.onerror=null; this.src='https://peptopia-health.github.io/X-Peps/peptopia-logo.png';" alt="Peptopia Logo" class="brand-logo-img">
             <div class="brand-name">PEPTOPIA</div>
         </a>
     </header>
@@ -239,6 +241,7 @@
         <p>Select a product below to checkout securely.<br>All transactions are encrypted and PCI compliant.</p>
     </section>
 
+    <!-- ─── WEIGHT MANAGEMENT ─── -->
     <div class="cat-wrap cat-purple">
         <h2 class="cat-title" style="color:var(--purple)">Weight Management Agents</h2>
         <div class="grid">
@@ -263,6 +266,7 @@
                 <div class="btn-container"><a href="https://pay.x-peps.com/R20" class="price-bubble">$340</a></div>
             </div>
             
+            <!-- Centered 4th Tile -->
             <div class="card accent-purple cagri-centered">
                 <div class="icon-box"><i class="fa-solid fa-prescription-bottle" style="color:var(--purple)"></i></div>
                 <div class="card-title">Cagrilintide (10mg)</div>
@@ -272,6 +276,7 @@
         </div>
     </div>
 
+    <!-- ─── BIOENHANCEMENT ─── -->
     <div class="cat-wrap cat-emerald">
         <h2 class="cat-title" style="color:var(--emerald)">Bioenhancement Agents</h2>
         <div class="grid">
@@ -298,6 +303,7 @@
         </div>
     </div>
 
+    <!-- ─── WAKEFULNESS ─── -->
     <div class="cat-wrap cat-orange">
         <h2 class="cat-title" style="color:var(--orange)">Wakefulness Agents</h2>
         <div class="grid">
@@ -324,6 +330,7 @@
         </div>
     </div>
 
+    <!-- ─── SUPPLIES ─── -->
     <div class="cat-wrap cat-slate">
         <h2 class="cat-title" style="color:var(--slate)">Supplies</h2>
         <div class="grid">
