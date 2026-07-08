@@ -10,12 +10,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     
     <style>
-        /*
-         * ═══════════════════════════════════════════════════════════════
-         * PEPTOPIA HEALTH — Orders Page
-         * ═══════════════════════════════════════════════════════════════
-         */
-
         :root {
             --bg-page: #F4F6FA;
             --bg-card: #FFFFFF;
@@ -88,18 +82,11 @@
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { font-size: 16px; scroll-behavior: smooth; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-page);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-            transition: background-color 0.35s ease, color 0.35s ease;
-        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg-page); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; transition: background-color 0.35s ease, color 0.35s ease; }
 
         .site-header { position: relative; z-index: 10; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; width: 100%; }
         .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-        .brand-logo-img { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
+        .brand-logo-img { width: 48px; height: 48px; border-radius: 12px; object-fit: contain; }
         .brand-text { display: flex; flex-direction: column; }
         .brand-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text-primary); letter-spacing: 2px; text-transform: uppercase; line-height: 1.1; }
         .brand-tagline { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
@@ -114,7 +101,7 @@
         html.dark .theme-toggle .fa-moon { display: none; }
         html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
 
-        .hero { position: relative; z-index: 1; text-align: center; padding: 16px 24px 32px; max-width: 720px; margin: 0 auto; }
+        .hero { position: relative; z-index: 1; text-align: center; padding: 0 24px 32px; max-width: 720px; margin: 0 auto; }
         .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 16px; }
         .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto; line-height: 1.65; }
 
@@ -172,7 +159,7 @@
 
     <header class="site-header">
         <a href="https://x-peps.com/" target="_top" class="header-brand">
-            <img src="peptopia-logo.jpg" alt="Peptopia" class="brand-logo-img">
+            <img src="/peptopia-logo.jpg" alt="Peptopia" class="brand-logo-img">
             <div class="brand-text">
                 <span class="brand-name">Peptopia</span>
                 <span class="brand-tagline">Health &amp; Wellness</span>
