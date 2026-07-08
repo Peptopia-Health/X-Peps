@@ -13,14 +13,9 @@
         /*
          * ═══════════════════════════════════════════════════════════════
          * PEPTOPIA HEALTH — Orders Page
-         * Light/Dark Theme with GoDaddy Pay Link Integration
-         * Hosted on GitHub Pages
          * ═══════════════════════════════════════════════════════════════
          */
 
-        /* ═══════════════════════════════════════════
-           THEME VARIABLES — Light (Default)
-           ═══════════════════════════════════════════ */
         :root {
             --bg-page: #F4F6FA;
             --bg-card: #FFFFFF;
@@ -46,11 +41,9 @@
             --toggle-border: rgba(15, 23, 42, 0.10);
             --toggle-hover-bg: #F1F5F9;
 
-            /* Brand colors (shared across themes) */
             --brand-green: #059669;
             --brand-green-hover: #10B981;
             --brand-purple: #9000F5;
-            --pink: #FF85E1;
             --purple: #A855F7;
             --purple-glow: rgba(168, 85, 247, 0.35);
             --cyan: #06B6D4;
@@ -67,9 +60,6 @@
             --slate-glow: rgba(148, 163, 184, 0.25);
         }
 
-        /* ═══════════════════════════════════════════
-           THEME VARIABLES — Dark (Toggle)
-           ═══════════════════════════════════════════ */
         html.dark {
             --bg-page: #070B14;
             --bg-card: rgba(255, 255, 255, 0.025);
@@ -96,600 +86,93 @@
             --toggle-hover-bg: rgba(255, 255, 255, 0.12);
         }
 
-        /* ═══════════════════════════════════════════
-           BASE RESET
-           ═══════════════════════════════════════════ */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-            scroll-behavior: smooth;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
         body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'DM Sans', sans-serif;
             background: var(--bg-page);
             color: var(--text-primary);
             min-height: 100vh;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevents horizontal scroll */
+            overflow-x: hidden;
             transition: background-color 0.35s ease, color 0.35s ease;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(ellipse at 15% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.015) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-            transition: background 0.35s ease;
-        }
+        .site-header { position: relative; z-index: 10; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; width: 100%; }
+        .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .brand-logo-img { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text-primary); letter-spacing: 2px; text-transform: uppercase; line-height: 1.1; }
+        .brand-tagline { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
+        .header-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .nav-link { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); text-decoration: none; padding: 8px 16px; border-radius: 8px; }
+        .nav-link:hover { color: var(--text-primary); background: var(--btn-contact-bg); }
+        .nav-link.active { color: var(--emerald); background: var(--badge-bg); }
 
-        html.dark body::before {
-            background:
-                radial-gradient(ellipse at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 80%, rgba(5, 150, 105, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 60%);
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-            background-size: 32px 32px;
-            pointer-events: none;
-            z-index: 0;
-            transition: background-image 0.35s ease;
-        }
-
-        html.dark body::after {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
-
-        .product-card,
-        .card-icon,
-        .site-footer,
-        .info-banner-inner,
-        .theme-toggle,
-        .nav-link {
-            transition: background-color 0.35s ease, border-color 0.35s ease,
-                        box-shadow 0.35s ease, color 0.35s ease;
-        }
-
-        .site-header {
-            position: relative;
-            z-index: 10;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-        }
-
-        .brand-mark-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 15px rgba(144, 0, 245, 0.3);
-            border: 2px solid var(--bg-card);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-name {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            line-height: 1.1;
-            transition: color 0.35s ease;
-        }
-
-        .brand-tagline {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.35s ease;
-        }
-
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap; /* Prevents overflow on smaller devices */
-        }
-
-        .nav-link {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-
-        .nav-link:hover {
-            color: var(--text-primary);
-            background: var(--btn-contact-bg);
-        }
-
-        .nav-link.active {
-            color: var(--emerald);
-            background: var(--badge-bg);
-        }
-
-        .theme-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid var(--toggle-border);
-            background: var(--toggle-bg);
-            color: var(--text-secondary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
-            margin-left: 4px;
-            box-shadow: var(--shadow-card);
-            flex-shrink: 0;
-        }
-
-        .theme-toggle:hover {
-            background: var(--toggle-hover-bg);
-            color: var(--text-primary);
-            border-color: var(--border-card-hover);
-        }
-
+        .theme-toggle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--toggle-border); background: var(--toggle-bg); color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; margin-left: 4px; box-shadow: var(--shadow-card); flex-shrink: 0; }
+        .theme-toggle:hover { background: var(--toggle-hover-bg); color: var(--text-primary); }
         .theme-toggle .fa-sun { display: none; }
         html.dark .theme-toggle .fa-moon { display: none; }
         html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
 
-        .hero {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 16px 24px 32px; /* Reduced top padding to move text up */
-            max-width: 720px;
-            margin: 0 auto;
-        }
+        .hero { position: relative; z-index: 1; text-align: center; padding: 16px 24px 32px; max-width: 720px; margin: 0 auto; }
+        .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 16px; }
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto; line-height: 1.65; }
 
-        .hero h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            animation: fadeSlideUp 0.6s ease-out both;
-        }
+        .products-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 16px 24px 64px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        
+        .product-card { position: relative; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; box-shadow: var(--shadow-card); overflow: hidden; }
+        .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 16px 16px 0 0; }
+        
+        .accent-purple::before  { background: var(--purple); }
+        .accent-cyan::before    { background: var(--cyan); }
+        .accent-amber::before   { background: var(--amber); }
+        .accent-rose::before    { background: var(--rose); }
+        .accent-emerald::before { background: var(--emerald); }
+        .accent-indigo::before  { background: var(--indigo); }
+        .accent-slate::before   { background: var(--slate); }
 
-        .hero h1 .gradient-text {
-            background: linear-gradient(135deg, #0F172A 0%, var(--brand-green) 50%, var(--emerald) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .card-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+        .card-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .accent-purple .card-icon  { background: rgba(168, 85, 247, 0.10); color: var(--purple); }
+        .accent-cyan .card-icon    { background: rgba(6, 182, 212, 0.10); color: var(--cyan); }
+        .accent-amber .card-icon   { background: rgba(245, 158, 11, 0.10); color: var(--amber); }
+        .accent-rose .card-icon    { background: rgba(244, 63, 94, 0.10); color: var(--rose); }
+        .accent-emerald .card-icon { background: rgba(16, 185, 129, 0.10); color: var(--emerald); }
+        .accent-indigo .card-icon  { background: rgba(129, 140, 248, 0.10); color: var(--indigo); }
+        .accent-slate .card-icon   { background: rgba(148, 163, 184, 0.08); color: var(--slate); }
 
-        html.dark .hero h1 .gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--emerald) 50%, var(--brand-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .card-title { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 700; }
+        .card-dosage { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+        .card-description { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; flex-grow: 1; margin-bottom: 20px; }
+        .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid var(--separator); }
+        .card-price { font-family: 'Outfit', sans-serif; font-size: 1.65rem; font-weight: 700; }
+        .btn-buy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 28px; border: none; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--brand-green), var(--emerald)); cursor: pointer; }
+        .btn-contact { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 24px; border: 1px solid var(--btn-contact-border); border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); background: var(--btn-contact-bg); }
 
-        .hero p {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            max-width: 540px;
-            margin: 0 auto;
-            line-height: 1.65;
-            animation: fadeSlideUp 0.6s ease-out 0.1s both;
-        }
+        .info-banner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px 48px; }
+        .info-banner-inner { display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-radius: 12px; background: var(--banner-bg); border: 1px solid var(--banner-border); }
+        .info-banner i { font-size: 1.1rem; color: var(--emerald); min-width: 20px; }
+        .info-banner p { font-size: 0.88rem; color: var(--text-secondary); }
+        .info-banner a { color: var(--emerald); font-weight: 500; }
 
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .products-section {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 16px 24px 64px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-        }
-
-        .product-card {
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 16px;
-            padding: 28px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-card);
-            animation: cardEnter 0.5s ease-out both;
-            overflow: hidden;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            border-radius: 16px 16px 0 0;
-            transition: height 0.3s ease;
-        }
-
-        .product-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--border-card-hover);
-            box-shadow: var(--shadow-card-hover);
-            transform: translateY(-4px);
-        }
-
-        .product-card:hover::before { height: 4px; }
-
-        .product-card:nth-child(1) { animation-delay: 0.05s; }
-        .product-card:nth-child(2) { animation-delay: 0.10s; }
-        .product-card:nth-child(3) { animation-delay: 0.15s; }
-        .product-card:nth-child(4) { animation-delay: 0.20s; }
-        .product-card:nth-child(5) { animation-delay: 0.25s; }
-        .product-card:nth-child(6) { animation-delay: 0.30s; }
-        .product-card:nth-child(7) { animation-delay: 0.35s; }
-
-        @keyframes cardEnter {
-            from { opacity: 0; transform: translateY(24px) scale(0.97); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .product-card.accent-purple::before  { background: linear-gradient(90deg, var(--purple), rgba(168, 85, 247, 0.3)); }
-        .product-card.accent-cyan::before    { background: linear-gradient(90deg, var(--cyan), rgba(6, 182, 212, 0.3)); }
-        .product-card.accent-amber::before   { background: linear-gradient(90deg, var(--amber), rgba(245, 158, 11, 0.3)); }
-        .product-card.accent-rose::before    { background: linear-gradient(90deg, var(--rose), rgba(244, 63, 94, 0.3)); }
-        .product-card.accent-emerald::before { background: linear-gradient(90deg, var(--emerald), rgba(16, 185, 129, 0.3)); }
-        .product-card.accent-indigo::before  { background: linear-gradient(90deg, var(--indigo), rgba(129, 140, 248, 0.3)); }
-        .product-card.accent-slate::before   { background: linear-gradient(90deg, var(--slate), rgba(148, 163, 184, 0.2)); }
-
-        .card-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            min-width: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .product-card:hover .card-icon { transform: scale(1.08); }
-
-        .accent-purple .card-icon  { background: rgba(168, 85, 247, 0.10); color: var(--purple); box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.18); }
-        .accent-cyan .card-icon    { background: rgba(6, 182, 212, 0.10); color: var(--cyan); box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.18); }
-        .accent-amber .card-icon   { background: rgba(245, 158, 11, 0.10); color: var(--amber); box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.18); }
-        .accent-rose .card-icon    { background: rgba(244, 63, 94, 0.10); color: var(--rose); box-shadow: 0 0 0 1px rgba(244, 63, 94, 0.18); }
-        .accent-emerald .card-icon { background: rgba(16, 185, 129, 0.10); color: var(--emerald); box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.18); }
-        .accent-indigo .card-icon  { background: rgba(129, 140, 248, 0.10); color: var(--indigo); box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.18); }
-        .accent-slate .card-icon   { background: rgba(148, 163, 184, 0.08); color: var(--slate); box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.15); }
-
-        .card-title-block { flex: 1; }
-        .card-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.2;
-            margin-bottom: 2px;
-            transition: color 0.35s ease;
-        }
-        .card-dosage {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .accent-purple .card-dosage  { color: var(--purple); }
-        .accent-cyan .card-dosage    { color: var(--cyan); }
-        .accent-amber .card-dosage   { color: var(--amber); }
-        .accent-rose .card-dosage    { color: var(--rose); }
-        .accent-emerald .card-dosage { color: var(--emerald); }
-        .accent-indigo .card-dosage  { color: var(--indigo); }
-        .accent-slate .card-dosage   { color: var(--slate); }
-
-        .card-description {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            flex-grow: 1;
-            margin-bottom: 20px;
-            transition: color 0.35s ease;
-        }
-
-        .card-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--separator);
-        }
-
-        .card-price {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.65rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.5px;
-            transition: color 0.35s ease;
-        }
-
-        .card-price .currency {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            vertical-align: super;
-            margin-right: 1px;
-        }
-
-        .card-price-note {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-style: italic;
-            transition: color 0.35s ease;
-        }
-
-        .btn-buy {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 28px;
-            border: none;
-            border-radius: 10px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #fff;
-            background: linear-gradient(135deg, var(--brand-green), var(--emerald));
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            box-shadow: 0 2px 12px rgba(16, 185, 129, 0.25);
-        }
-
-        .btn-buy:hover {
-            background: linear-gradient(135deg, var(--brand-green-hover), #34D399);
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .btn-contact {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 24px;
-            border: 1px solid var(--btn-contact-border);
-            border-radius: 10px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text-secondary);
-            background: var(--btn-contact-bg);
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .btn-contact:hover {
-            border-color: var(--btn-contact-hover-border);
-            color: var(--text-primary);
-            background: var(--btn-contact-hover-bg);
-        }
-
-        .info-banner {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px 48px;
-            animation: fadeSlideUp 0.6s ease-out 0.5s both;
-        }
-
-        .info-banner-inner {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 18px 24px;
-            border-radius: 12px;
-            background: var(--banner-bg);
-            border: 1px solid var(--banner-border);
-        }
-
-        .info-banner i {
-            font-size: 1.1rem;
-            color: var(--emerald);
-            min-width: 20px;
-            text-align: center;
-        }
-
-        .info-banner p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.55;
-            transition: color 0.35s ease;
-            width: 100%;
-        }
-
-        .info-banner a {
-            color: var(--emerald);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .info-banner a:hover {
-            color: var(--brand-green-hover);
-            text-decoration: underline;
-        }
-
-        .site-footer {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 32px 24px;
-            border-top: 1px solid var(--footer-border);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-copy {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            transition: color 0.35s ease;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 1.05rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover { color: var(--emerald); }
+        .site-footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px; border-top: 1px solid var(--footer-border); }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 
         @media (max-width: 768px) {
-            .site-header {
-                flex-direction: column;
-                padding: 16px;
-                gap: 16px;
-            }
-            .header-nav {
-                width: 100%;
-                justify-content: center;
-            }
+            .site-header { flex-direction: column; gap: 16px; }
             .brand-text { display: none; }
-            .nav-link {
-                padding: 8px 10px;
-                font-size: 0.72rem;
-                letter-spacing: 1px;
-            }
-            .hero { padding: 16px 16px 24px; }
-            .hero h1 { font-size: 2.2rem; }
-            .products-section { padding: 16px 16px 48px; }
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .product-card { padding: 22px; }
-            .card-footer {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 12px;
-            }
-            .card-price, .card-price-note, .btn-buy, .btn-contact {
-                text-align: center;
-                justify-content: center;
-            }
-            .info-banner { padding: 0 16px 40px; }
-            .info-banner-inner {
-                flex-direction: column;
-                text-align: center;
-                padding: 16px 18px;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+            .products-grid { grid-template-columns: 1fr; }
+            .info-banner-inner { flex-direction: column; text-align: center; }
+            .footer-content { flex-direction: column; text-align: center; }
         }
-
-        @media (min-width: 769px) and (max-width: 1060px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-page); }
-        ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
     </style>
 </head>
 <body>
 
     <header class="site-header">
         <a href="https://x-peps.com/" target="_top" class="header-brand">
-            <img src="/Peptopia_Logo_No_bg.jpg" alt="Peptopia" class="brand-mark-img" onerror="this.src='https://placehold.co/42x42/9000F5/FFFFFF?text=P'">
+            <img src="peptopia-logo.jpg" alt="Peptopia" class="brand-logo-img">
             <div class="brand-text">
                 <span class="brand-name">Peptopia</span>
                 <span class="brand-tagline">Health &amp; Wellness</span>
@@ -706,13 +189,12 @@
     </header>
 
     <section class="hero">
-        <h1><span class="gradient-text">Place Your Order</span></h1>
+        <h1>Place Your Order</h1>
         <p>Select a product below to checkout securely.<br>All transactions are encrypted and PCI compliant.</p>
     </section>
 
     <section class="products-section">
         <div class="products-grid">
-
             <div class="product-card accent-purple">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
@@ -877,6 +359,5 @@
             }
         })();
     </script>
-
 </body>
 </html>
