@@ -8,6 +8,7 @@
     <meta name="author" content="Peptopia Health">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
     <style>
         /*
          * ═══════════════════════════════════════════════════════════════
@@ -48,6 +49,7 @@
             /* Brand colors (shared across themes) */
             --brand-green: #059669;
             --brand-green-hover: #10B981;
+            --brand-purple: #9000F5;
             --pink: #FF85E1;
             --purple: #A855F7;
             --purple-glow: rgba(168, 85, 247, 0.35);
@@ -115,13 +117,10 @@
             color: var(--text-primary);
             min-height: 100vh;
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevents horizontal scroll */
             transition: background-color 0.35s ease, color 0.35s ease;
         }
 
-        /* ═══════════════════════════════════════════
-           BACKGROUND ATMOSPHERE
-           ═══════════════════════════════════════════ */
         body::before {
             content: '';
             position: fixed;
@@ -145,7 +144,6 @@
                 radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 60%);
         }
 
-        /* Dot grid */
         body::after {
             content: '';
             position: fixed;
@@ -164,23 +162,16 @@
             background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
 
-        /* ═══════════════════════════════════════════
-           SMOOTH THEME TRANSITIONS
-           ═══════════════════════════════════════════ */
         .product-card,
         .card-icon,
         .site-footer,
         .info-banner-inner,
         .theme-toggle,
-        .hero-badge,
         .nav-link {
             transition: background-color 0.35s ease, border-color 0.35s ease,
                         box-shadow 0.35s ease, color 0.35s ease;
         }
 
-        /* ═══════════════════════════════════════════
-           HEADER
-           ═══════════════════════════════════════════ */
         .site-header {
             position: relative;
             z-index: 10;
@@ -190,6 +181,7 @@
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .header-brand {
@@ -199,20 +191,13 @@
             text-decoration: none;
         }
 
-        .brand-mark {
+        .brand-mark-img {
             width: 42px;
             height: 42px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--brand-purple), var(--pink));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: #fff;
-            letter-spacing: -1px;
-            box-shadow: 0 0 20px rgba(144, 0, 245, 0.3);
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(144, 0, 245, 0.3);
+            border: 2px solid var(--bg-card);
         }
 
         .brand-text {
@@ -243,6 +228,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-wrap: wrap; /* Prevents overflow on smaller devices */
         }
 
         .nav-link {
@@ -267,9 +253,6 @@
             background: var(--badge-bg);
         }
 
-        /* ═══════════════════════════════════════════
-           THEME TOGGLE (Sun/Moon)
-           ═══════════════════════════════════════════ */
         .theme-toggle {
             width: 40px;
             height: 40px;
@@ -284,6 +267,7 @@
             font-size: 1.05rem;
             margin-left: 4px;
             box-shadow: var(--shadow-card);
+            flex-shrink: 0;
         }
 
         .theme-toggle:hover {
@@ -292,52 +276,17 @@
             border-color: var(--border-card-hover);
         }
 
-        /* Moon visible in light mode, Sun visible in dark mode */
-        .theme-toggle .fa-sun {
-            display: none;
-        }
+        .theme-toggle .fa-sun { display: none; }
+        html.dark .theme-toggle .fa-moon { display: none; }
+        html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
 
-        html.dark .theme-toggle .fa-moon {
-            display: none;
-        }
-
-        html.dark .theme-toggle .fa-sun {
-            display: inline-block;
-            color: #FBBF24;
-        }
-
-        /* ═══════════════════════════════════════════
-           HERO SECTION
-           ═══════════════════════════════════════════ */
         .hero {
             position: relative;
             z-index: 1;
             text-align: center;
-            padding: 48px 24px 32px;
+            padding: 16px 24px 32px; /* Reduced top padding to move text up */
             max-width: 720px;
             margin: 0 auto;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 100px;
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--emerald);
-            margin-bottom: 24px;
-            animation: fadeSlideUp 0.6s ease-out both;
-        }
-
-        .hero-badge i {
-            font-size: 0.65rem;
         }
 
         .hero h1 {
@@ -347,10 +296,9 @@
             letter-spacing: -0.5px;
             line-height: 1.1;
             margin-bottom: 16px;
-            animation: fadeSlideUp 0.6s ease-out 0.1s both;
+            animation: fadeSlideUp 0.6s ease-out both;
         }
 
-        /* Light mode heading gradient */
         .hero h1 .gradient-text {
             background: linear-gradient(135deg, #0F172A 0%, var(--brand-green) 50%, var(--emerald) 100%);
             -webkit-background-clip: text;
@@ -358,7 +306,6 @@
             background-clip: text;
         }
 
-        /* Dark mode heading gradient */
         html.dark .hero h1 .gradient-text {
             background: linear-gradient(135deg, #FFFFFF 0%, var(--emerald) 50%, var(--brand-green) 100%);
             -webkit-background-clip: text;
@@ -372,7 +319,7 @@
             max-width: 540px;
             margin: 0 auto;
             line-height: 1.65;
-            animation: fadeSlideUp 0.6s ease-out 0.2s both;
+            animation: fadeSlideUp 0.6s ease-out 0.1s both;
         }
 
         @keyframes fadeSlideUp {
@@ -380,15 +327,12 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* ═══════════════════════════════════════════
-           PRODUCT GRID
-           ═══════════════════════════════════════════ */
         .products-section {
             position: relative;
             z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 32px 24px 64px;
+            padding: 16px 24px 64px;
         }
 
         .products-grid {
@@ -397,9 +341,6 @@
             gap: 20px;
         }
 
-        /* ═══════════════════════════════════════════
-           PRODUCT CARD
-           ═══════════════════════════════════════════ */
         .product-card {
             position: relative;
             background: var(--bg-card);
@@ -431,11 +372,8 @@
             transform: translateY(-4px);
         }
 
-        .product-card:hover::before {
-            height: 4px;
-        }
+        .product-card:hover::before { height: 4px; }
 
-        /* Staggered entry */
         .product-card:nth-child(1) { animation-delay: 0.05s; }
         .product-card:nth-child(2) { animation-delay: 0.10s; }
         .product-card:nth-child(3) { animation-delay: 0.15s; }
@@ -449,7 +387,6 @@
             to   { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Accent top-border colors */
         .product-card.accent-purple::before  { background: linear-gradient(90deg, var(--purple), rgba(168, 85, 247, 0.3)); }
         .product-card.accent-cyan::before    { background: linear-gradient(90deg, var(--cyan), rgba(6, 182, 212, 0.3)); }
         .product-card.accent-amber::before   { background: linear-gradient(90deg, var(--amber), rgba(245, 158, 11, 0.3)); }
@@ -458,7 +395,6 @@
         .product-card.accent-indigo::before  { background: linear-gradient(90deg, var(--indigo), rgba(129, 140, 248, 0.3)); }
         .product-card.accent-slate::before   { background: linear-gradient(90deg, var(--slate), rgba(148, 163, 184, 0.2)); }
 
-        /* Card header */
         .card-header {
             display: flex;
             align-items: flex-start;
@@ -477,9 +413,7 @@
             font-size: 1.2rem;
         }
 
-        .product-card:hover .card-icon {
-            transform: scale(1.08);
-        }
+        .product-card:hover .card-icon { transform: scale(1.08); }
 
         .accent-purple .card-icon  { background: rgba(168, 85, 247, 0.10); color: var(--purple); box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.18); }
         .accent-cyan .card-icon    { background: rgba(6, 182, 212, 0.10); color: var(--cyan); box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.18); }
@@ -489,15 +423,7 @@
         .accent-indigo .card-icon  { background: rgba(129, 140, 248, 0.10); color: var(--indigo); box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.18); }
         .accent-slate .card-icon   { background: rgba(148, 163, 184, 0.08); color: var(--slate); box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.15); }
 
-        .product-card:hover.accent-purple .card-icon  { box-shadow: 0 0 16px var(--purple-glow); }
-        .product-card:hover.accent-cyan .card-icon    { box-shadow: 0 0 16px var(--cyan-glow); }
-        .product-card:hover.accent-amber .card-icon   { box-shadow: 0 0 16px var(--amber-glow); }
-        .product-card:hover.accent-rose .card-icon    { box-shadow: 0 0 16px var(--rose-glow); }
-        .product-card:hover.accent-emerald .card-icon { box-shadow: 0 0 16px var(--emerald-glow); }
-        .product-card:hover.accent-indigo .card-icon  { box-shadow: 0 0 16px var(--indigo-glow); }
-
         .card-title-block { flex: 1; }
-
         .card-title {
             font-family: 'Outfit', sans-serif;
             font-size: 1.2rem;
@@ -507,7 +433,6 @@
             margin-bottom: 2px;
             transition: color 0.35s ease;
         }
-
         .card-dosage {
             font-family: 'Outfit', sans-serif;
             font-size: 0.8rem;
@@ -533,7 +458,6 @@
             transition: color 0.35s ease;
         }
 
-        /* Card footer */
         .card-footer {
             display: flex;
             align-items: center;
@@ -568,7 +492,6 @@
             transition: color 0.35s ease;
         }
 
-        /* Buy button */
         .btn-buy {
             display: inline-flex;
             align-items: center;
@@ -597,13 +520,6 @@
             transform: translateY(-1px);
         }
 
-        .btn-buy:active {
-            transform: translateY(0);
-        }
-
-        .btn-buy i { font-size: 0.8rem; }
-
-        /* Contact / Inquire button */
         .btn-contact {
             display: inline-flex;
             align-items: center;
@@ -630,9 +546,6 @@
             background: var(--btn-contact-hover-bg);
         }
 
-        /* ═══════════════════════════════════════════
-           INFO BANNER
-           ═══════════════════════════════════════════ */
         .info-banner {
             position: relative;
             z-index: 1;
@@ -664,6 +577,7 @@
             color: var(--text-secondary);
             line-height: 1.55;
             transition: color 0.35s ease;
+            width: 100%;
         }
 
         .info-banner a {
@@ -677,9 +591,6 @@
             text-decoration: underline;
         }
 
-        /* ═══════════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════════ */
         .site-footer {
             position: relative;
             z-index: 1;
@@ -717,75 +628,47 @@
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--emerald);
-        }
+        .footer-links a:hover { color: var(--emerald); }
 
-        /* ═══════════════════════════════════════════
-           RESPONSIVE
-           ═══════════════════════════════════════════ */
         @media (max-width: 768px) {
             .site-header {
+                flex-direction: column;
                 padding: 16px;
+                gap: 16px;
             }
-
-            .brand-text {
-                display: none;
+            .header-nav {
+                width: 100%;
+                justify-content: center;
             }
-
+            .brand-text { display: none; }
             .nav-link {
                 padding: 8px 10px;
                 font-size: 0.72rem;
                 letter-spacing: 1px;
             }
-
-            .hero {
-                padding: 32px 16px 24px;
-            }
-
-            .products-section {
-                padding: 24px 16px 48px;
-            }
-
+            .hero { padding: 16px 16px 24px; }
+            .hero h1 { font-size: 2.2rem; }
+            .products-section { padding: 16px 16px 48px; }
             .products-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-
-            .product-card {
-                padding: 22px;
-            }
-
+            .product-card { padding: 22px; }
             .card-footer {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 12px;
             }
-
-            .card-price {
-                text-align: center;
-            }
-
-            .card-price-note {
-                text-align: center;
-            }
-
-            .btn-buy, .btn-contact {
+            .card-price, .card-price-note, .btn-buy, .btn-contact {
                 text-align: center;
                 justify-content: center;
-                padding: 12px 24px;
             }
-
-            .info-banner {
-                padding: 0 16px 40px;
-            }
-
+            .info-banner { padding: 0 16px 40px; }
             .info-banner-inner {
                 flex-direction: column;
                 text-align: center;
                 padding: 16px 18px;
             }
-
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -793,14 +676,9 @@
         }
 
         @media (min-width: 769px) and (max-width: 1060px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* ═══════════════════════════════════════════
-           SCROLLBAR
-           ═══════════════════════════════════════════ */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg-page); }
         ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 3px; }
@@ -809,18 +687,17 @@
 </head>
 <body>
 
-    <!-- ═══════════════ HEADER ═══════════════ -->
     <header class="site-header">
-        <a href="https://peptopia-health.github.io/" target="_top" class="header-brand">
-            <div class="brand-mark">P</div>
+        <a href="https://x-peps.com/" target="_top" class="header-brand">
+            <img src="/Peptopia_Logo_No_bg.jpg" alt="Peptopia" class="brand-mark-img" onerror="this.src='https://placehold.co/42x42/9000F5/FFFFFF?text=P'">
             <div class="brand-text">
                 <span class="brand-name">Peptopia</span>
                 <span class="brand-tagline">Health &amp; Wellness</span>
             </div>
         </a>
         <nav class="header-nav">
-            <a href="https://peptopia-health.github.io/" target="_top" class="nav-link">Home</a>
-            <a href="https://peptopia-health.github.io/X-Peps/orders/" target="_top" class="nav-link active">Shop</a>
+            <a href="https://x-peps.com/" target="_top" class="nav-link">Home</a>
+            <a href="https://x-peps.com/orders/" target="_top" class="nav-link active">Shop</a>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
                 <i class="fa-solid fa-moon"></i>
                 <i class="fa-solid fa-sun"></i>
@@ -828,21 +705,14 @@
         </nav>
     </header>
 
-    <!-- ═══════════════ HERO ═══════════════ -->
     <section class="hero">
-        <div class="hero-badge">
-            <i class="fa-solid fa-lock"></i>
-            Secure Checkout
-        </div>
         <h1><span class="gradient-text">Place Your Order</span></h1>
-        <p>Select a product below to proceed to secure checkout powered by GoDaddy&nbsp;Payments. All transactions are encrypted and PCI&nbsp;compliant.</p>
+        <p>Select a product below to checkout securely.<br>All transactions are encrypted and PCI compliant.</p>
     </section>
 
-    <!-- ═══════════════ PRODUCTS ═══════════════ -->
     <section class="products-section">
         <div class="products-grid">
 
-            <!-- ─── Tirzepatide 30mg ─── -->
             <div class="product-card accent-purple">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
@@ -860,7 +730,6 @@
                 </div>
             </div>
 
-            <!-- ─── Semaglutide 10mg ─── -->
             <div class="product-card accent-cyan">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
@@ -878,7 +747,6 @@
                 </div>
             </div>
 
-            <!-- ─── Retatrutide 20mg ─── -->
             <div class="product-card accent-amber">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
@@ -896,7 +764,6 @@
                 </div>
             </div>
 
-            <!-- ─── Cagrilintide 10mg ─── -->
             <div class="product-card accent-rose">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-prescription-bottle"></i></div>
@@ -914,7 +781,6 @@
                 </div>
             </div>
 
-            <!-- ─── SLU-PP-332 20mg ─── -->
             <div class="product-card accent-emerald">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
@@ -932,7 +798,6 @@
                 </div>
             </div>
 
-            <!-- ─── Modafinil 200mg ─── -->
             <div class="product-card accent-indigo">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
@@ -950,7 +815,6 @@
                 </div>
             </div>
 
-            <!-- ─── Bacteriostatic Water ─── -->
             <div class="product-card accent-slate">
                 <div class="card-header">
                     <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
@@ -971,30 +835,25 @@
         </div>
     </section>
 
-    <!-- ═══════════════ INFO BANNER ═══════════════ -->
     <div class="info-banner">
         <div class="info-banner-inner">
             <i class="fa-solid fa-shield-halved"></i>
-            <p>All payments are processed securely through <strong>GoDaddy Payments</strong>. Your financial information is never stored on our servers. For questions about your order, visit our <a href="https://x-peps.com/intake-screening" target="_top">Intake Screening</a> page or reach out via <a href="https://discord.gg/peptopia" target="_top">Discord</a>.</p>
+            <p>All payments are processed securely through <strong>GoDaddy Payments</strong>. Your financial information is never stored on our servers. For questions about your order, send an email to <a href="mailto:Peptopia@X-Peps.com">Peptopia@X-Peps.com</a> or contact by <a href="https://wa.me/13046202576" target="_blank" rel="noopener">WhatsApp at 1-304-620-2576</a>.</p>
         </div>
     </div>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer class="site-footer">
         <div class="footer-content">
-            <span class="footer-copy">&copy; 2025 Peptopia Health &bull; All rights reserved</span>
+            <span class="footer-copy">&copy; 2026 Peptopia Health &bull; All rights reserved</span>
             <div class="footer-links">
-                <a href="https://peptopia-health.github.io/" target="_top" title="Home"><i class="fa-solid fa-house"></i></a>
+                <a href="https://x-peps.com/" target="_top" title="Home"><i class="fa-solid fa-house"></i></a>
                 <a href="https://discord.gg/peptopia" target="_top" title="Discord"><i class="fa-brands fa-discord"></i></a>
                 <a href="https://www.youtube.com/@PeptopiaHealth" target="_top" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- ═══════════════ SCRIPTS ═══════════════ -->
-
     <script>
-        // ─── Storage helper (safe for both iframe and standalone) ───
         var storage = (function() {
             try {
                 var s = window.self === window.top ? window['local' + 'Storage'] : null;
@@ -1003,7 +862,6 @@
             } catch(e) { return null; }
         })();
 
-        // ─── Theme Toggle (Sun / Moon) ───
         function toggleTheme() {
             document.documentElement.classList.toggle('dark');
             var isDark = document.documentElement.classList.contains('dark');
@@ -1012,13 +870,11 @@
             }
         }
 
-        // ─── Initialize theme from saved preference ───
         (function() {
             var saved = storage ? storage.getItem('peptopia-theme') : null;
             if (saved === 'dark') {
                 document.documentElement.classList.add('dark');
             }
-            // Default is light — no class needed
         })();
     </script>
 
