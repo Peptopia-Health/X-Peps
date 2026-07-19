@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOW & KLOW Research Guide — Peptopia Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Base Styles matching Peptopia Theme */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+            --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+            --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            /* Emerald for Recovery Peptides */
+            --primary:#10B981;--primary-dark:#059669;--primary-light:#34D399;
+        }
+        html.dark{
+            --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+            --sh:none; --sh-h:0 0 0 0 transparent;
+            --t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B
+        }
+        body{
+            font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);
+            min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+            transition:background-color .35s ease,color .35s ease
+        }
+
+        /* Emerald background atmosphere */
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(16,185,129,.05) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(5,150,105,.04) 0%,transparent 50%);
+            pointer-events:none;z-index:0;transition:background .35s ease
+        }
+        html.dark body::before{
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(16,185,129,.08) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(5,150,105,.06) 0%,transparent 50%)
+        }
+        body::after{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);
+            background-size:32px 32px;pointer-events:none;z-index:0;transition:background-image .35s ease
+        }
+        html.dark body::after{
+            background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
+        }
+
+        /* Header */
+        .hdr{
+            position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1200px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:var(--t1);letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+        .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
+        
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
+            letter-spacing:1.5px;color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:var(--t1);background:rgba(15,23,42,.03)}
+        html.dark .nav a:hover{background:rgba(255,255,255,.05)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        html.dark .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .theme-toggle .fa-sun{display:none}
+        html.dark .theme-toggle .fa-moon{display:none}
+        html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
+
+        /* Content Area */
+        .article-container {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px; width: 100%;
+            position: relative; z-index: 1; flex-grow: 1;
+        }
+        .guide-header { text-align: center; margin-bottom: 40px; }
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800; margin-bottom: 12px;
+        }
+        .guide-header h1 .grad {
+            background: linear-gradient(135deg, #047857 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        html.dark .guide-header h1 .grad {
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .guide-header p { font-size: 1.15rem; color: var(--t2); max-width: 650px; margin: 0 auto; }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800;
+            color: var(--t1); margin: 48px 0 24px; padding-bottom: 12px;
+            border-bottom: 2px solid rgba(16,185,129,.2);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-title i { color: var(--primary); }
+
+        .info-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 24px; box-shadow: var(--sh);
+            position: relative; overflow: hidden;
+        }
+        .info-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary);
+        }
+        
+        /* Mechanism Flex Container (Side-by-Side Cards) */
+        .mechanism-grid {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; margin-bottom: 32px;
+        }
+        .mech-card {
+            background: rgba(16,185,129,.03); border: 1px solid rgba(16,185,129,.15);
+            padding: 24px 20px; border-radius: 16px; text-align: center; height: 100%;
+            box-shadow: 0 4px 15px rgba(16,185,129,.05);
+        }
+        html.dark .mech-card { background: rgba(16,185,129,.05); border-color: rgba(16,185,129,.2); }
+        .mech-card h3 { font-family: 'Outfit', sans-serif; color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 16px; }
+        html.dark .mech-card h3 { color: var(--primary-light); }
+        .mech-card p { font-size: 0.95rem; color: var(--t2); line-height: 1.8; text-align: left; display: inline-block; }
+        .mech-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 16px; }
+        .mech-plus { font-size: 2rem; color: var(--t3); font-weight: bold; display: flex; align-items: center; justify-content: center; }
+
+        @media (max-width: 768px) {
+            .mechanism-grid { grid-template-columns: 1fr; gap: 12px; }
+            .mech-plus { transform: rotate(90deg); padding: 8px 0; }
+            .mech-card p { text-align: center; }
+        }
+
+        .step-container { display: flex; flex-direction: column; gap: 16px; }
+        .step-item {
+            display: flex; align-items: flex-start; gap: 16px; background: var(--card);
+            border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;
+            box-shadow: var(--sh); transition: transform .2s ease;
+        }
+        .step-item:hover { transform: translateX(5px); }
+        .step-num {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem;
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(16,185,129,.3);
+        }
+        .step-content h4 { color: var(--t1); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 4px; }
+        .step-content p { color: var(--t2); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Tables */
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; box-shadow: var(--sh); border: 1px solid var(--border); margin-bottom: 24px; }
+        .dosing-table { width: 100%; border-collapse: collapse; background: var(--card); text-align: left; min-width: 600px; }
+        .dosing-table th, .dosing-table td { padding: 16px; border-bottom: 1px solid var(--border); color: var(--t1); font-size: 0.95rem; }
+        .dosing-table th { background: rgba(16,185,129,.05); font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--primary-dark); }
+        html.dark .dosing-table th { background: rgba(16,185,129,.1); color: var(--primary-light); }
+        .dosing-table tbody tr:last-child td { border-bottom: none; }
+        .dosing-table tbody tr:hover { background: rgba(15,23,42,0.01); }
+        html.dark .dosing-table tbody tr:hover { background: rgba(255,255,255,0.01); }
+
+        .dose-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+        }
+        .b-systemic { background: rgba(99,102,241,.15); color: #4F46E5; } /* Indigo */
+        .b-local { background: rgba(245,158,11,.15); color: #D97706; } /* Amber */
+        
+        html.dark .b-systemic { color: #818CF8; }
+        html.dark .b-local { color: #FBBF24; }
+
+        /* Notice Boxes */
+        .rule-box {
+            background: rgba(16,185,129,.05); border-left: 4px solid var(--primary);
+            padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 32px;
+        }
+        .rule-box.warning { border-left-color: #F59E0B; background: rgba(245,158,11,.05); }
+        .rule-box.success { border-left-color: #10B981; background: rgba(16,185,129,.05); }
+        
+        .rule-box h4 { font-family: 'Outfit', sans-serif; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 1.15rem; }
+        .rule-box.warning h4 { color: #D97706; }
+        html.dark .rule-box.warning h4 { color: #FBBF24; }
+        .rule-box.success h4 { color: var(--primary-dark); }
+        html.dark .rule-box.success h4 { color: var(--primary-light); }
+        
+        .rule-box p { color: var(--t2); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Video Suggestion */
+        .video-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; display: flex; align-items: center; gap: 20px; box-shadow: var(--sh);
+            margin-top: 40px;
+        }
+        .video-icon { font-size: 2.5rem; color: #EF4444; }
+        .video-text h4 { font-family: 'Outfit', sans-serif; color: var(--t1); margin-bottom: 4px; }
+        .video-text p { color: var(--t2); font-size: 0.9rem; }
+
+        /* Footer */
+        .footer{
+            position:relative;z-index:1;text-align:center;padding:32px 24px;
+            border-top:1px solid rgba(15,23,42,.06); margin-top:auto;
+        }
+        html.dark .footer{border-color:rgba(255,255,255,.04)}
+        .footer-inner{ max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .footer-copy{font-size:.78rem;color:var(--t3);letter-spacing:.5px;}
+        .footer-links{display:flex;gap:20px}
+        .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
+        .footer-links a:hover{color:var(--primary)}
+        
+        @media(max-width:768px){
+            .hdr{padding:16px}
+            .brand{display:none}
+            .footer-inner{flex-direction:column;text-align:center}
+            .video-box { flex-direction: column; text-align: center; gap: 10px; }
+        }
+        
+        /* Utility */
+        .emoji { font-size: 1.2em; vertical-align: middle; margin-right: 6px; }
+    </style>
+</head>
+<body>
+    <header class="hdr">
+        <!-- Clicking the logo returns the user to the home index page -->
+        <a href="https://peptopia-health.github.io/" class="hdr-brand">
+            <div class="logo">P</div>
+            <div class="brand">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tag">Health &amp; Wellness</span>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="https://peptopia-health.github.io/">Home</a>
+            <a href="https://peptopia-health.github.io/X-Peps/orders/">Shop</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        <div class="guide-header">
+            <h1><span class="grad">GLOW &amp; KLOW Guide</span></h1>
+            <p>Advanced multi-compound peptide blends formulated for comprehensive tissue regeneration, severe inflammation management, and vibrant skin health.</p>
+        </div>
+
+        <div class="info-box">
+            <p style="margin-bottom: 24px; color: var(--t2); font-size: 1.05rem; text-align: center;">GLOW and KLOW are multi-compound peptide blends primarily utilized in clinical protocols for tissue regeneration, skin health, and anti-aging. By stacking foundational regenerative peptides into a single preparation, researchers can target multiple biological pathways simultaneously.</p>
+            
+            <div class="mechanism-grid">
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <h3>GLOW Blend</h3>
+                    <p>
+                        <span class="emoji">🧬</span> <strong>GHK-Cu:</strong> Promotes collagen synthesis & cellular regeneration.<br>
+                        <span class="emoji">🩹</span> <strong>BPC-157:</strong> Accelerates soft tissue repair & angiogenesis.<br>
+                        <span class="emoji">🏃‍♀️</span> <strong>TB-500:</strong> Supports cell migration & wound healing.<br>
+                        <br>
+                        <em>Best for: Overall skin texture, hair/nail health, and foundational tissue repair.</em>
+                    </p>
+                </div>
+                
+                <div class="mech-plus"><i class="fa-solid fa-arrow-right"></i></div>
+                
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3>KLOW Blend</h3>
+                    <p>
+                        <em>Everything in GLOW, plus:</em><br><br>
+                        <span class="emoji">🛡️</span> <strong>KPV:</strong> Inhibits inflammatory pathways.<br>
+                        <span class="emoji">🦠</span> <strong>Gut Health:</strong> Supports epithelial barrier integrity.<br>
+                        <span class="emoji">⚖️</span> <strong>Immunity:</strong> Modulates immune dysregulation.<br>
+                        <br>
+                        <em>Best for: High inflammatory burdens, gut issues, and advanced immune support.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-flask-vial"></i> Reconstitution Basics</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">Because these are multi-compound blends, ensuring proper and gentle reconstitution is vital to preserving the delicate bonds of all three (or four) peptides in the vial. Reconstitute using <strong>Bacteriostatic Water (BAC)</strong>:</p>
+        
+        <div class="step-container" style="margin-bottom: 40px;">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Prep & Sanitize <span class="emoji">🧼</span></h4>
+                    <p>Wash hands thoroughly. Pop the plastic caps off both the Peptide blend vial and the BAC water vial. Swab both rubber stoppers with an alcohol prep pad and let them air dry completely.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Draw BAC Water <span class="emoji">💉</span></h4>
+                    <p>Using a sterile mixing syringe, draw the required amount of Bacteriostatic Water. Ensure there are no large air bubbles in the syringe before injecting.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Inject & Dissolve <span class="emoji">💧</span></h4>
+                    <p>Pierce the peptide vial. <strong>Do not spray the water directly onto the powder.</strong> Angle the needle so the water drips slowly down the glass wall of the vial. Direct pressure can easily destroy fragile peptide chains.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h4>Swirl Gently <span class="emoji">🔄</span></h4>
+                    <p><strong style="color:#ef4444;">NEVER SHAKE.</strong> Gently roll the vial between your palms or swirl it slowly in circles. <em>Note: Because of the GHK-Cu, the resulting liquid will be a beautiful, vibrant blue color.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rule-box" style="margin-bottom: 40px;">
+            <h4><i class="fa-solid fa-calculator"></i> Peptopia 30mg Vial Protocol</h4>
+            <p style="margin-bottom: 12px; color: var(--t2);">We specifically formulate GLOW and KLOW in large <strong>30mg research vials</strong>. Follow these exact steps for perfect reconstitution and dosing:</p>
+            <ul style="color: var(--t2); margin-left: 20px; line-height: 1.8;">
+                <li>Draw exactly <strong>3.0mL of Bacteriostatic Water</strong> into a large sterile mixing syringe (typically a 3mL luer-lock syringe).</li>
+                <li>Gently inject the 3.0mL of BAC water into the 30mg lyophilized powder using the slow-drip method above.</li>
+                <li><strong>The Math:</strong> This 3mL to 30mg ratio creates a concentration of 10mg per 1mL. On a standard U-100 insulin syringe, drawing <strong>10 Units (0.1mL) equals exactly 1,000mcg (1mg)</strong> of the peptide blend.</li>
+            </ul>
+            <p style="margin-top: 16px; font-weight: 500; color: var(--t1);"><i class="fa-brands fa-youtube" style="color: #EF4444; margin-right: 4px;"></i> <a href="https://youtu.be/UrP3WGRHnVA?si=hFjk_U8iey7cvU34" target="_blank" style="color: var(--primary-dark); text-decoration: underline; font-weight: 700;">Watch our video guide</a> to see visual walkthroughs of proper handling and preparation techniques.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-notes-medical"></i> Research Protocols & Usage</h2>
+        
+        <div class="rule-box warning">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Important Considerations</h4>
+            <p>These formulations are highly specialized. They are typically available via a physician's prescription through licensed 503A compounding pharmacies, or strictly for laboratory research purposes. Exact dosages will vary heavily based on the specific milligram ratio of the blend acquired.</p>
+        </div>
+        
+        <div class="table-wrapper">
+            <table class="dosing-table">
+                <thead>
+                    <tr>
+                        <th>Protocol / Focus</th>
+                        <th>Preferred Blend</th>
+                        <th>Frequency</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Skin, Hair &amp; Anti-Aging</strong></td>
+                        <td><strong>GLOW</strong></td>
+                        <td><span class="dose-badge b-systemic">Daily or 5x/Week</span></td>
+                        <td>Targets collagen synthesis and elasticity. Often administered systemically (SubQ).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acute Injury Repair</strong></td>
+                        <td><strong>GLOW</strong></td>
+                        <td><span class="dose-badge b-local">Daily</span></td>
+                        <td>Leverages TB-500 & BPC-157 for localized administration near the injury site.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Autoimmune / High Inflammation</strong></td>
+                        <td><strong>KLOW</strong></td>
+                        <td><span class="dose-badge b-systemic">Daily</span></td>
+                        <td>The addition of KPV provides intense systemic relief for generalized inflammatory burdens.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-list"></i> Side Effects & Safety</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">While generally well-tolerated, the combination of multiple peptides means researchers should be aware of a few potential mild reactions:</p>
+        <ul style="color: var(--t2); margin-left: 20px; margin-bottom: 30px; line-height: 1.8;">
+            <li><strong>Injection Site Sensitivity:</strong> Because of the Copper in GHK-Cu, injections of GLOW or KLOW can sometimes sting more than standard peptides. Diluting with slightly more BAC water can help alleviate this.</li>
+            <li><strong>Mild Flushing:</strong> Some users experience a temporary warmth or flush shortly after administration.</li>
+            <li><strong>Stomach Upset:</strong> BPC-157 works heavily on the gut mucosa; mild gastrointestinal shifts can occasionally occur during the first few days of a cycle.</li>
+        </ul>
+
+        <h2 class="section-title"><i class="fa-solid fa-heart-pulse"></i> Improving Quality of Life</h2>
+        <div class="rule-box success" style="margin-bottom: 24px;">
+            <h4><i class="fa-solid fa-seedling"></i> Cumulative, Long-Term Vitality</h4>
+            
+            <p style="margin-bottom: 16px;">The true power of GLOW and KLOW lies in their ability to work at the cellular and gene-modulation levels. These are not overnight fixes or synthetic stimulants; they are designed to drastically improve your long-term Quality of Life by restoring the body's natural healing capabilities.</p>
+            
+            <p style="margin-bottom: 16px;"><strong style="color: var(--t1);"><i class="fa-solid fa-spa" style="color: var(--primary);"></i> Restored Skin &amp; Radiance:</strong> Thanks to GHK-Cu, researchers often note a literal "GLOW" returning to their complexion. Over several weeks, the increased collagen synthesis helps plump the skin, fade persistent scars, and strengthen thinning hair and brittle nails.</p>
+            
+            <p style="margin-bottom: 16px;"><strong style="color: var(--t1);"><i class="fa-solid fa-person-walking" style="color: var(--primary);"></i> Reclaiming Mobility:</strong> For those sidelined by chronic joint pain, tendinitis, or old sports injuries, the BPC-157 and TB-500 synergy acts as a biological repair crew. Users frequently report being able to return to the gym, hike without knee braces, and wake up without stiffness.</p>
+            
+            <p><strong style="color: var(--t1);"><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Internal Harmony (KLOW):</strong> High inflammatory burdens create brain fog, fatigue, and gut distress. The addition of KPV in the KLOW blend helps silence this internal alarm system. As the gut lining heals and systemic inflammation drops, researchers often experience a return of deep, restorative sleep and sharp mental clarity.</p>
+        </div>
+
+        <a href="https://youtu.be/UrP3WGRHnVA?si=hFjk_U8iey7cvU34" target="_blank" style="text-decoration: none; color: inherit; display: block; margin-top: 40px;">
+            <div class="video-box" style="margin-top: 0; border-color: rgba(16,185,129,.4); transition: transform .2s ease; cursor: pointer; background: linear-gradient(to right, var(--card), rgba(16,185,129,.02));" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+                <div class="video-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="video-text">
+                    <h4 style="color: var(--primary-dark);">Watch the Peptopia Deep Dive</h4>
+                    <p>Want to see exactly how these blends work? <strong>Click here to watch our official YouTube breakdown</strong>, where we dive into the science, the synergy, and the incredible healing potential of these advanced recovery stacks.</p>
+                </div>
+            </div>
+        </a>
+
+        <div class="video-box" style="margin-top: 20px;">
+            <div class="video-icon" style="color: var(--t3);"><i class="fa-solid fa-magnifying-glass-play"></i></div>
+            <div class="video-text">
+                <h4>Independent Research</h4>
+                <p>For more visual breakdowns from third parties, we highly recommend searching YouTube for <strong>"GHK-Cu and BPC-157 Regeneration Protocols"</strong> to see firsthand accounts and physician reviews of the science.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2026 Peptopia Health &bull; All rights reserved</span>
+            <div class="footer-links">
+                <a href="https://peptopia-health.github.io/X-Peps/orders/" title="Shop"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="https://discord.gg/peptopia" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Storage helper (safe for iframe and standalone)
+        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
+        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+    </script>
+</body>
+</html>
