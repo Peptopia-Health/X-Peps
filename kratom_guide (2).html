@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kratom Strain Guide — Peptopia Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+            --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+            --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            /* Yellow accent for Botanicals */
+            --primary:#EAB308;--primary-dark:#CA8A04;--primary-light:#FDE047;
+        }
+        html.dark{
+            --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+            --sh:none; --sh-h:0 0 0 0 transparent;
+            --t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B
+        }
+        body{
+            font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);
+            min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+            transition:background-color .35s ease,color .35s ease
+        }
+
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(234,179,8,.05) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(202,138,4,.04) 0%,transparent 50%);
+            pointer-events:none;z-index:0;transition:background .35s ease
+        }
+        html.dark body::before{
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(234,179,8,.08) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(202,138,4,.06) 0%,transparent 50%)
+        }
+        body::after{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);
+            background-size:32px 32px;pointer-events:none;z-index:0;transition:background-image .35s ease
+        }
+        html.dark body::after{
+            background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
+        }
+
+        .hdr{
+            position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1200px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:var(--t1);letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+        .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
+        
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
+            letter-spacing:1.5px;color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:var(--t1);background:rgba(15,23,42,.03)}
+        html.dark .nav a:hover{background:rgba(255,255,255,.05)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        html.dark .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .theme-toggle .fa-sun{display:none}
+        html.dark .theme-toggle .fa-moon{display:none}
+        html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
+
+        .article-container {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px; width: 100%;
+            position: relative; z-index: 1; flex-grow: 1;
+        }
+        .guide-header { text-align: center; margin-bottom: 40px; }
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800; margin-bottom: 12px;
+        }
+        .guide-header h1 .grad {
+            background: linear-gradient(135deg, #A16207 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        html.dark .guide-header h1 .grad {
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .guide-header p { font-size: 1.15rem; color: var(--t2); max-width: 650px; margin: 0 auto; }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800;
+            color: var(--t1); margin: 48px 0 24px; padding-bottom: 12px;
+            border-bottom: 2px solid rgba(234,179,8,.2);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-title i { color: var(--primary); }
+
+        .info-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 24px; box-shadow: var(--sh);
+            position: relative; overflow: hidden;
+        }
+        .info-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary);
+        }
+
+        .strain-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 20px; box-shadow: var(--sh);
+            transition: background .35s ease, border-color .35s ease, transform .2s ease;
+        }
+        .strain-box:hover { transform: translateX(5px); border-color: rgba(234,179,8,.3); }
+        .strain-title {
+            font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700;
+            margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: var(--primary-dark);
+        }
+        html.dark .strain-title { color: var(--primary-light); }
+        .strain-box p { color: var(--t2); font-size: 0.95rem; line-height: 1.6; }
+
+        .legend-box {
+            background: rgba(234,179,8,.05); border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0; padding: 20px; margin-bottom: 24px;
+            font-size: 0.95rem; color: var(--t2); line-height: 1.8;
+        }
+        .legend-box strong { color: var(--t1); font-family: 'Outfit', sans-serif; font-size: 1.05rem; }
+        
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; box-shadow: var(--sh); border: 1px solid var(--border); margin-bottom: 40px; }
+        .kratom-table { width: 100%; border-collapse: collapse; background: var(--card); text-align: left; min-width: 800px; }
+        .kratom-table th, .kratom-table td {
+            padding: 16px; border-bottom: 1px solid var(--border);
+            color: var(--t1); font-size: 0.95rem;
+        }
+        .kratom-table th {
+            background: rgba(234,179,8,.05); font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--primary-dark);
+        }
+        html.dark .kratom-table th { background: rgba(234,179,8,.1); color: var(--primary-light); }
+        .kratom-table tbody tr:last-child td { border-bottom: none; }
+        .kratom-table tbody tr:hover { background: rgba(15,23,42,0.01); }
+        html.dark .kratom-table tbody tr:hover { background: rgba(255,255,255,0.01); }
+        
+        .strength-icons { color: #10B981; letter-spacing: 2px; font-size: 1.1rem; }
+        .emoji { font-size: 1.2em; vertical-align: middle; margin-right: 4px; }
+
+        .footer{
+            position:relative;z-index:1;text-align:center;padding:32px 24px;
+            border-top:1px solid rgba(15,23,42,.06); margin-top:auto;
+        }
+        html.dark .footer{border-color:rgba(255,255,255,.04)}
+        .footer-inner{ max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .footer-copy{font-size:.78rem;color:var(--t3);letter-spacing:.5px;}
+        .footer-links{display:flex;gap:20px}
+        .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
+        .footer-links a:hover{color:var(--primary)}
+        
+        @media(max-width:768px){
+            .hdr{padding:16px}
+            .brand{display:none}
+            .footer-inner{flex-direction:column;text-align:center}
+        }
+    </style>
+</head>
+<body>
+    <header class="hdr">
+        <a href="https://peptopia-health.github.io/" class="hdr-brand">
+            <div class="logo">P</div>
+            <div class="brand">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tag">Health &amp; Wellness</span>
+            </div>
+        </a>
+        <nav class="nav">
+            <a href="https://peptopia-health.github.io/">Home</a>
+            <a href="https://peptopia-health.github.io/X-Peps/orders/">Shop</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        <div class="guide-header">
+            <h1><span class="grad">Kratom Strain Guide</span></h1>
+            <p>Comprehensive analysis of alkaloid profiles, vein colors, and detailed physiological effects.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-leaf"></i> The Yellow Vein Phenomenon</h2>
+        <div class="info-box">
+            <p style="color: var(--t2); line-height: 1.6;">Yellow kratom is unique; unlike red, green, or white (which refer to the actual vein color of the leaf when harvested), "Yellow" usually refers to a specialized post-harvest drying or fermentation process. Often, this involves blending different vein colors before sun-drying. This specialized curing technique generally creates an alkaloid profile that beautifully bridges the gap between the clean energy of a green strain and the pain relief/relaxation of a red strain.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-certificate"></i> Yellow Super Sulawesi</div>
+            <p>Sourced from the island of Sulawesi, "Super" indicates that only the largest, most mature leaves were selected. This strain is famous for profound mood enhancement and sustained energy. It sits closer to a green/white hybrid in its effects, making it excellent for long workdays where you need to maintain a positive outlook without the jitteriness of a pure white.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-seedling"></i> Yellow Java</div>
+            <p>A mild, daytime strain perfect for beginners or those highly sensitive to kratom. Yellow Java provides very gentle stress relief and clear-headedness. It is unlikely to cause drowsiness or overstimulation, acting mostly as a subtle, background mood-stabilizer.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-umbrella-beach"></i> Yellow Bali</div>
+            <p>Bali strains are traditionally known for relaxation, and the yellow drying process adds a "sunny" disposition to it. Yellow Bali provides warm, comforting physical relaxation and moderate pain relief, paired with a distinct mood lift. It's ideal for late afternoon use to transition smoothly from work to rest.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-bolt"></i> Yellow Maeng Da</div>
+            <p>"Maeng Da" implies a high-potency, genetically grafted strain. Yellow Maeng Da is typically a powerhouse for productivity. It offers potent, clean energy and strong focus (similar to a white), but the yellowing process smooths out the edges, significantly reducing the anxiety or jitters that some users experience from pure White Maeng Da.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-face-smile-beam"></i> Yellow Paradise</div>
+            <p>Usually a proprietary blend crafted by the vendor specifically for maximum euphoria and social anxiety relief. Yellow Paradise is designed to be a "stress-melting" strain that promotes a strong sense of well-being and positivity, making it excellent for social settings or unwinding on a weekend.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-dragon"></i> Yellow Dragon</div>
+            <p>Dragon blends typically mix a strong white with a strong red, and then apply the yellow drying technique. The result is a highly functional pain-management strain. You get the mental clarity and zen-like focus from the white, combined with the moderate analgesia of the red, resulting in a very clear-headed calmness.</p>
+        </div>
+
+        <div class="strain-box">
+            <div class="strain-title"><i class="fa-solid fa-moon"></i> Yellow Sumba</div>
+            <p>Harvested from the remote island of Sumba, this is a relatively rare and highly coveted strain. It is excellent for deep systemic relaxation, often used to quiet a racing mind and ease full-body tension. Despite its strong relaxing properties, it usually avoids the heavy sedation of a dark red, making it an excellent choice for a quiet evening of reading or meditation.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-table-list"></i> Summary Comparison</h2>
+        
+        <div class="legend-box">
+            <strong><i class="fa-solid fa-map-location-dot" style="color: var(--primary); margin-right: 8px;"></i> Visual Legend:</strong><br><br>
+            <span style="display:inline-block; margin-right: 15px;"><strong>Strength:</strong> <span class="strength-icons">🌿</span> (Mild) to <span class="strength-icons">🌿🌿🌿🌿🌿</span> (Very Potent)</span><br>
+            <span style="display:inline-block; margin-top:10px;"><strong>Effects:</strong> <span class="emoji">⚡</span> Energy & Stimulation | <span class="emoji">😴</span> Sleepy & Sedation | <span class="emoji">😌</span> Relaxation & Calm | <span class="emoji">😊</span> Mood Uplift | <span class="emoji">🧠</span> Focus & Clarity | <span class="emoji">🩹</span> Pain & Physical Relief</span>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="kratom-table">
+                <thead>
+                    <tr>
+                        <th>Kratom Option</th>
+                        <th>Vein Color</th>
+                        <th>Strength (MIT)</th>
+                        <th>Primary Use Case</th>
+                        <th>Typical Effects</th>
+                        <th>Potential Side Effects</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>White Maeng Da</strong></td>
+                        <td>⚪ White</td>
+                        <td><span class="strength-icons">🌿🌿🌿🌿🌿</span><br><small>(1.3%+)</small></td>
+                        <td>Maximum energy & focus</td>
+                        <td><span class="emoji">⚡</span> Strong stimulation, <span class="emoji">🧠</span> intense focus, <span class="emoji">😊</span> mood elevation</td>
+                        <td>Anxiety, jitteriness, insomnia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>White Thai</strong></td>
+                        <td>⚪ White</td>
+                        <td><span class="strength-icons">🌿🌿🌿</span><br><small>(1.0%+)</small></td>
+                        <td>Morning energy boost</td>
+                        <td><span class="emoji">⚡</span> Alertness, <span class="emoji">⚡</span> physical energy, <span class="emoji">🧠</span> clarity</td>
+                        <td>Overstimulation at high doses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Green Maeng Da</strong></td>
+                        <td>🟢 Green</td>
+                        <td><span class="strength-icons">🌿🌿🌿🌿🌿</span><br><small>(1.3%+)</small></td>
+                        <td>Balanced daytime support</td>
+                        <td><span class="emoji">⚡</span> Smooth energy, <span class="emoji">🧠</span> focus, <span class="emoji">🩹</span> mild relief</td>
+                        <td>Nausea or dizziness if overused</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Green Bali</strong></td>
+                        <td>🟢 Green</td>
+                        <td><span class="strength-icons">🌿🌿🌿</span><br><small>(1.0%+)</small></td>
+                        <td>Gentle daytime relaxation</td>
+                        <td><span class="emoji">😌</span> Mild relaxation, <span class="emoji">😊</span> subtle mood boost</td>
+                        <td>Mild drowsiness at high doses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Red Maeng Da</strong></td>
+                        <td>🔴 Red</td>
+                        <td><span class="strength-icons">🌿🌿🌿🌿🌿</span><br><small>(1.3%+)</small></td>
+                        <td>Strong pain relief & relax</td>
+                        <td><span class="emoji">🩹</span> Analgesia, <span class="emoji">😌</span> stress relief, <span class="emoji">😴</span> sedation</td>
+                        <td>Tolerance, heavy drowsiness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Red Bali</strong></td>
+                        <td>🔴 Red</td>
+                        <td><span class="strength-icons">🌿🌿🌿</span><br><small>(1.0%+)</small></td>
+                        <td>Sleep support & deep rest</td>
+                        <td><span class="emoji">😴</span> Heavy sedation, <span class="emoji">😴</span> deep relaxation</td>
+                        <td>Lethargy, dependence risk</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Super Sulawesi</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿🌿🌿</span><br><small>(1.2%+)</small></td>
+                        <td>Mood enhance & energy</td>
+                        <td><span class="emoji">😊</span> Profound mood, <span class="emoji">🧠</span> focus, <span class="emoji">😌</span> body relax</td>
+                        <td>Potential overstimulation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Java</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿</span><br><small>(~1.0%)</small></td>
+                        <td>Mild daytime stress relief</td>
+                        <td><span class="emoji">😌</span> Gentle calm, <span class="emoji">🧠</span> clear-headedness</td>
+                        <td>Very mild; few side effects</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Bali</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿🌿</span><br><small>(1.1%+)</small></td>
+                        <td>Late-afternoon relief</td>
+                        <td><span class="emoji">😌</span> Warm relax, <span class="emoji">🩹</span> moderate relief, <span class="emoji">😊</span> sunny mood</td>
+                        <td>Mild drowsiness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Maeng Da</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿🌿🌿🌿</span><br><small>(1.3%+)</small></td>
+                        <td>Productivity management</td>
+                        <td><span class="emoji">⚡</span> Clean energy, <span class="emoji">🧠</span> strong focus, <span class="emoji">😌</span> anxiety drop</td>
+                        <td>Jitteriness in sensitive users</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Paradise</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿🌿🌿</span><br><small>(Blend)</small></td>
+                        <td>Euphoria & social anxiety</td>
+                        <td><span class="emoji">😌</span> Stress-melting, <span class="emoji">😊</span> strong positivity</td>
+                        <td>Varies by vendor batch</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Dragon</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿🌿</span><br><small>(1.1%+)</small></td>
+                        <td>Pain relief + clarity</td>
+                        <td><span class="emoji">🧠</span> Zen-like focus, <span class="emoji">🩹</span> moderate analgesia</td>
+                        <td>Can be too mild for acute pain</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yellow Sumba</strong></td>
+                        <td>🟡 Yellow</td>
+                        <td><span class="strength-icons">🌿🌿🌿</span><br><small>(1.1%+)</small></td>
+                        <td>Evening tranquility</td>
+                        <td><span class="emoji">😴</span> Systemic relax, <span class="emoji">😌</span> tension relief</td>
+                        <td>Dry mouth, mild lethargy</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2026 Peptopia Health &bull; All rights reserved</span>
+            <div class="footer-links">
+                <a href="https://peptopia-health.github.io/X-Peps/orders/" title="Shop"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="https://discord.gg/peptopia" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Storage helper (safe for iframe and standalone)
+        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
+        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+    </script>
+</body>
+</html>
