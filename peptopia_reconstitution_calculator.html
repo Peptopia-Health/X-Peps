@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptide Reconstitution Calculator | Peptopia Healthcare</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pepblue: '#1e3a8a', // Deep clinical blue
+                        pepaccent: '#0ea5e9', // Vibrant highlight
+                        pepdark: '#0f172a',
+                        peplight: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom Input Styling */
+        .glass-input {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s ease;
+        }
+        .glass-input:focus {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+            outline: none;
+        }
+
+        /* Number Input Arrows Removal */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        /* Custom Scrollbar for Cheat Sheet */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-peplight text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Peptopia Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo Area -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center text-2xl font-bold text-pepblue tracking-tight">
+                        <i class="fa-solid fa-flask-vial mr-3 text-pepaccent text-3xl"></i>
+                        Peptopia
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#" class="hover:text-pepaccent transition-colors">Home</a>
+                    <a href="#" class="hover:text-pepaccent transition-colors">Orders</a>
+                    <a href="#" class="hover:text-pepaccent transition-colors">Shop</a>
+                    <a href="#" class="hover:text-pepaccent transition-colors">Guides</a>
+                    <a href="#" class="hover:text-pepaccent transition-colors">Nursing</a>
+                    <a href="#" class="hover:text-pepaccent transition-colors">Corrections</a>
+                    <a href="#" class="bg-pepblue text-white px-5 py-2 rounded-lg hover:bg-blue-900 transition-colors shadow-sm">Access Portal</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button class="text-slate-500 hover:text-pepblue">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Header Section -->
+        <div class="mb-10 text-center md:text-left">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Clinical Reconstitution Calculator</h1>
+            <p class="text-slate-600 max-w-2xl text-lg">Premium research and comprehensive clinical education tools. Calculate exact syringe draw units with precision and safety.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Left Column: Inputs (5 columns wide) -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                    <h2 class="text-xl font-bold text-pepblue mb-6 border-b border-slate-100 pb-4 flex items-center">
+                        <i class="fa-solid fa-calculator mr-2 text-pepaccent"></i> Calculator Inputs
+                    </h2>
+                    
+                    <form id="calc_form" class="space-y-6">
+                        
+                        <!-- Input: Vial Quantity -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                                1. Peptide Vial Quantity (mg)
+                                <i class="fa-solid fa-circle-info text-slate-400 ml-1 cursor-help" title="The total amount of powder in your vial, usually measured in milligrams (mg)."></i>
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="vial_mg" step="any" min="0" placeholder="e.g., 5" class="calc-input glass-input w-full rounded-lg px-4 py-3 text-lg font-medium">
+                                <span class="absolute right-4 top-3.5 text-slate-400 font-semibold">mg</span>
+                            </div>
+                            <!-- Presets -->
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="vial_mg" data-value="2">2mg</button>
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="vial_mg" data-value="5">5mg</button>
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="vial_mg" data-value="10">10mg</button>
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="vial_mg" data-value="15">15mg</button>
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="vial_mg" data-value="30">30mg</button>
+                            </div>
+                        </div>
+
+                        <!-- Input: Bacteriostatic Water -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                                2. Bacteriostatic Water Added (ml)
+                                <i class="fa-solid fa-circle-info text-slate-400 ml-1 cursor-help" title="The volume of diluent (bacteriostatic water) you are adding to the vial. 1 ml = 1 cc = 100 units."></i>
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="water_ml" step="any" min="0" placeholder="e.g., 2" class="calc-input glass-input w-full rounded-lg px-4 py-3 text-lg font-medium">
+                                <span class="absolute right-4 top-3.5 text-slate-400 font-semibold">ml</span>
+                            </div>
+                            <!-- Presets -->
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="water_ml" data-value="1">1ml</button>
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="water_ml" data-value="2">2ml</button>
+                                <button type="button" class="preset-btn px-3 py-1 text-xs font-semibold bg-slate-100 hover:bg-pepblue hover:text-white text-slate-600 rounded-md transition-colors" data-target="water_ml" data-value="3">3ml</button>
+                            </div>
+                        </div>
+
+                        <!-- Input: Syringe Volume -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">
+                                3. Syringe Size (U-100)
+                            </label>
+                            <select id="syringe_vol" class="calc-input glass-input w-full rounded-lg px-4 py-3 text-lg font-medium cursor-pointer bg-white">
+                                <option value="1">1.0 ml (100 Units)</option>
+                                <option value="0.5">0.5 ml (50 Units)</option>
+                                <option value="0.3">0.3 ml (30 Units)</option>
+                            </select>
+                        </div>
+
+                        <!-- Input: Desired Dose -->
+                        <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                            <label class="block text-sm font-semibold text-pepblue mb-2">
+                                4. Desired Dose
+                            </label>
+                            <div class="flex gap-3">
+                                <input type="number" id="dose_input" step="any" min="0" placeholder="e.g., 250" class="calc-input glass-input w-2/3 rounded-lg px-4 py-3 text-lg font-bold text-pepblue">
+                                <select id="dose_unit" class="calc-input glass-input w-1/3 rounded-lg px-2 py-3 text-sm font-semibold bg-white cursor-pointer text-center">
+                                    <option value="mcg">mcg</option>
+                                    <option value="mg">mg</option>
+                                </select>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Ensure you have selected the correct measurement unit.</p>
+                        </div>
+
+                        <button type="button" id="reset_btn" class="w-full py-3 rounded-lg font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200">
+                            <i class="fa-solid fa-rotate-right mr-2"></i> Reset Calculator
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Column: Results & Features (7 columns wide) -->
+            <div class="lg:col-span-7">
+                
+                <!-- Empty State (Shown initially) -->
+                <div id="empty_state" class="bg-white rounded-2xl shadow-sm border border-slate-200 h-full flex flex-col items-center justify-center p-12 text-center">
+                    <div class="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-syringe text-4xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700 mb-2">Awaiting Parameters</h3>
+                    <p class="text-slate-500 max-w-sm">Enter your vial quantity, water volume, and desired dose to generate comprehensive reconstitution data.</p>
+                </div>
+
+                <!-- Results Container (Hidden initially) -->
+                <div id="results_container" class="hidden space-y-6">
+                    
+                    <!-- Highlight Result Card -->
+                    <div class="bg-gradient-to-br from-pepblue to-blue-900 rounded-2xl shadow-md p-6 md:p-8 text-white relative overflow-hidden">
+                        <!-- Decorative bg -->
+                        <i class="fa-solid fa-droplet absolute -right-4 -bottom-6 text-9xl text-white opacity-5"></i>
+                        
+                        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div>
+                                <h3 class="text-blue-200 font-semibold mb-1 uppercase tracking-wider text-sm">Draw Volume</h3>
+                                <div class="text-5xl md:text-6xl font-bold font-mono tracking-tight drop-shadow-sm">
+                                    <span id="draw_units_display">0.0</span> <span class="text-2xl md:text-3xl font-medium text-blue-200 tracking-normal">Units</span>
+                                </div>
+                                <p class="mt-2 text-blue-100 font-medium">
+                                    Volume: <span id="dose_ml_display" class="text-white font-bold">0.0</span> ml &nbsp;|&nbsp; 
+                                    Concentration: <span id="concentration_display" class="text-white font-bold">0</span> mcg/ml
+                                </p>
+                            </div>
+                            
+                            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl text-center min-w-[140px]">
+                                <p class="text-blue-200 text-xs font-semibold uppercase mb-1">Dose Confirm</p>
+                                <p id="dose_confirm_display" class="text-2xl font-bold text-white">0 mcg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Syringe & Math Breakdown Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Syringe Visualization -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col items-center">
+                            <h3 class="text-sm font-bold text-slate-800 mb-6 uppercase tracking-wide w-full text-center border-b pb-3">Syringe Visualization</h3>
+                            
+                            <!-- Syringe CSS Graphic -->
+                            <div class="relative w-20 h-72 mx-auto flex justify-center pb-8">
+                                
+                                <!-- Plunger top (moves with liquid) -->
+                                <div id="syringe_plunger" class="absolute w-12 h-6 border-2 border-slate-400 bg-slate-800 rounded-t-sm z-30 transition-all duration-700 ease-out" style="bottom: 0%; transform: translateX(-50%); left: 50%;"></div>
+                                <div id="syringe_plunger_rod" class="absolute w-4 border-x-2 border-slate-400 bg-slate-200 z-20 transition-all duration-700 ease-out" style="bottom: 0%; height: 100%; transform: translateX(-50%); left: 50%;"></div>
+
+                                <!-- Barrel -->
+                                <div class="relative w-14 h-full border-2 border-slate-400 rounded-b-xl border-t-0 bg-white shadow-inner overflow-visible z-10">
+                                    
+                                    <!-- Flanges -->
+                                    <div class="absolute -top-2 -left-4 w-22 h-3 border-2 border-slate-400 rounded-sm bg-slate-100" style="width: calc(100% + 2rem);"></div>
+                                    
+                                    <!-- Tick marks -->
+                                    <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-between py-1 z-20 pointer-events-none" id="syringe_ticks">
+                                        <!-- Populated by JS -->
+                                    </div>
+                                    
+                                    <!-- Liquid inside barrel -->
+                                    <div id="syringe_liquid" class="absolute bottom-0 left-0 w-full bg-pepaccent/80 transition-all duration-700 ease-out" style="height: 0%;"></div>
+                                </div>
+
+                                <!-- Hub & Needle -->
+                                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-3 h-4 border-x-2 border-b-2 border-slate-400 bg-slate-200 z-10"></div>
+                                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-4 bg-slate-400 z-10"></div>
+                            </div>
+                            
+                            <div id="syringe_warning" class="hidden mt-4 text-xs font-bold text-red-500 bg-red-50 p-2 rounded border border-red-100 text-center">
+                                <i class="fa-solid fa-triangle-exclamation mr-1"></i> Dose exceeds selected syringe capacity!
+                            </div>
+                        </div>
+
+                        <!-- Calculation Breakdown -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                            <!-- REQUESTED HEADER CHANGE APPLIED HERE -->
+                            <h3 class="text-xl font-bold text-pepblue mb-4 border-b border-slate-100 pb-3">
+                                How-To Calculate Reconstitution Values
+                            </h3>
+                            
+                            <div class="space-y-4 mt-4">
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Step 1: Convert Vial to mcg</p>
+                                    <p id="math_step_1" class="font-mono text-sm text-slate-800 font-medium">0 mg &times; 1000 = 0 mcg</p>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Step 2: Determine Concentration</p>
+                                    <p id="math_step_2" class="font-mono text-sm text-slate-800 font-medium">0 mcg &divide; 0 ml = 0 mcg/ml</p>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Step 3: Calculate Draw Volume</p>
+                                    <p id="math_step_3" class="font-mono text-sm text-slate-800 font-medium">0 mcg &divide; 0 mcg/ml = 0 ml</p>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Step 4: Convert to U-100 Units</p>
+                                    <p id="math_step_4" class="font-mono text-sm text-slate-800 font-bold text-pepaccent">0 ml &times; 100 = 0 Units</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Quick Reference / Cheat Sheet -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                            <h3 class="text-lg font-bold text-slate-800 flex items-center">
+                                <i class="fa-solid fa-list mr-2 text-pepaccent"></i> Protocol Cheat Sheet
+                            </h3>
+                            <span class="text-xs font-semibold bg-blue-100 text-pepblue px-2 py-1 rounded">Auto-generated</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-4">Quick reference draw amounts based on your current vial (<span id="cheat_vial_display" class="font-bold">0</span>mg) and diluent (<span id="cheat_water_display" class="font-bold">0</span>ml) setup.</p>
+                        
+                        <div class="overflow-hidden rounded-lg border border-slate-200">
+                            <table class="w-full text-left border-collapse">
+                                <thead class="bg-slate-50 text-slate-600 text-xs uppercase font-bold">
+                                    <tr>
+                                        <th class="py-3 px-4 border-b">Desired Dose</th>
+                                        <th class="py-3 px-4 border-b">Volume (ml)</th>
+                                        <th class="py-3 px-4 border-b text-pepblue">Syringe Units</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="quick_reference_table" class="divide-y divide-slate-100 bg-white">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Disclaimer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-bold text-white mb-2">Peptopia Healthcare</p>
+                <p class="text-xs max-w-2xl">
+                    <strong>Disclaimer:</strong> This calculator is provided for clinical education and research reference purposes only. Peptopia Healthcare does not endorse the unprescribed use of peptides or research chemicals. Always consult a licensed healthcare provider before administering any protocols.
+                </p>
+            </div>
+            <div class="text-xs">
+                &copy; <script>document.write(new Date().getFullYear())</script> Peptopia Healthcare. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup Event Listeners
+            const inputs = document.querySelectorAll('.calc-input');
+            inputs.forEach(input => {
+                input.addEventListener('input', calculateReconstitution);
+            });
+
+            const presetBtns = document.querySelectorAll('.preset-btn');
+            presetBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const targetId = e.target.getAttribute('data-target');
+                    const value = e.target.getAttribute('data-value');
+                    document.getElementById(targetId).value = value;
+                    calculateReconstitution();
+                });
+            });
+
+            document.getElementById('reset_btn').addEventListener('click', () => {
+                document.getElementById('calc_form').reset();
+                calculateReconstitution();
+            });
+
+            // Initial render of syringe ticks (default 1ml)
+            renderSyringeTicks(1);
+        });
+
+        function renderSyringeTicks(syringeVol) {
+            const container = document.getElementById('syringe_ticks');
+            container.innerHTML = '';
+            
+            const totalUnits = syringeVol * 100;
+            // Determine step logic based on syringe size to make it look realistic
+            let numLines = totalUnits === 100 ? 50 : totalUnits; // 100U shows a line every 2 units
+            let majorStep = totalUnits === 100 ? 10 : 5;
+            let displayMultiplier = totalUnits === 100 ? 2 : 1;
+
+            for(let i = numLines; i >= 0; i--) {
+                const unitVal = i * displayMultiplier;
+                const isMajor = unitVal % majorStep === 0;
+
+                const tickDiv = document.createElement('div');
+                tickDiv.className = 'w-full flex items-center relative';
+                tickDiv.style.height = `${100 / numLines}%`;
+
+                if (isMajor && unitVal !== 0) {
+                    tickDiv.innerHTML = `
+                        <div class="w-1/2 border-b-2 border-slate-600"></div>
+                        <span class="absolute left-[55%] text-[9px] text-slate-500 font-bold leading-none translate-y-1/2">${unitVal}</span>
+                    `;
+                } else if (unitVal !== 0) {
+                    tickDiv.innerHTML = `<div class="w-1/4 border-b border-slate-300"></div>`;
+                }
+                container.appendChild(tickDiv);
+            }
+        }
+
+        function calculateReconstitution() {
+            // Retrieve Inputs
+            const vialMg = parseFloat(document.getElementById('vial_mg').value) || 0;
+            const waterMl = parseFloat(document.getElementById('water_ml').value) || 0;
+            const doseInput = parseFloat(document.getElementById('dose_input').value) || 0;
+            const doseUnit = document.getElementById('dose_unit').value;
+            const syringeVol = parseFloat(document.getElementById('syringe_vol').value) || 1;
+
+            const emptyState = document.getElementById('empty_state');
+            const resultsContainer = document.getElementById('results_container');
+
+            // Render Ticks based on selected syringe
+            renderSyringeTicks(syringeVol);
+
+            if (vialMg > 0 && waterMl > 0 && doseInput > 0) {
+                // Show Results
+                emptyState.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+
+                // Core Math
+                const doseMcg = doseUnit === 'mg' ? doseInput * 1000 : doseInput;
+                const vialMcg = vialMg * 1000;
+                const mcgPerMl = vialMcg / waterMl;
+                const doseMl = doseMcg / mcgPerMl;
+                const drawUnits = doseMl * 100;
+                const maxUnits = syringeVol * 100;
+
+                // Update Highlight Displays
+                document.getElementById('draw_units_display').innerText = drawUnits.toFixed(1);
+                document.getElementById('dose_ml_display').innerText = doseMl.toFixed(3);
+                document.getElementById('concentration_display').innerText = mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 0});
+                
+                const doseDisplayStr = doseUnit === 'mg' ? `${doseInput} mg` : `${doseMcg} mcg`;
+                document.getElementById('dose_confirm_display').innerText = doseDisplayStr;
+
+                // Update Math Breakdown (Requested Section)
+                document.getElementById('math_step_1').innerHTML = `${vialMg} mg &times; 1000 = <span class="text-pepblue">${vialMcg.toLocaleString()} mcg</span>`;
+                document.getElementById('math_step_2').innerHTML = `${vialMcg.toLocaleString()} mcg &divide; ${waterMl} ml = <span class="text-pepblue">${mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 1})} mcg/ml</span>`;
+                document.getElementById('math_step_3').innerHTML = `${doseMcg} mcg &divide; ${mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 1})} mcg/ml = <span class="text-pepblue">${doseMl.toFixed(4)} ml</span>`;
+                document.getElementById('math_step_4').innerHTML = `${doseMl.toFixed(4)} ml &times; 100 = <span class="font-bold text-pepaccent">${drawUnits.toFixed(1)} Units</span>`;
+
+                // Update Visual Syringe Fill
+                const fillPercentage = Math.min((drawUnits / maxUnits) * 100, 100);
+                const syringeLiquid = document.getElementById('syringe_liquid');
+                const syringePlunger = document.getElementById('syringe_plunger');
+                const plungerRod = document.getElementById('syringe_plunger_rod');
+                
+                syringeLiquid.style.height = `${fillPercentage}%`;
+                syringePlunger.style.bottom = `${fillPercentage}%`;
+                
+                // Warn if over capacity
+                const warningElem = document.getElementById('syringe_warning');
+                if (drawUnits > maxUnits) {
+                    syringeLiquid.classList.replace('bg-pepaccent/80', 'bg-red-500/80');
+                    warningElem.classList.remove('hidden');
+                } else {
+                    syringeLiquid.classList.replace('bg-red-500/80', 'bg-pepaccent/80');
+                    warningElem.classList.add('hidden');
+                }
+
+                // Generate Cheat Sheet Table
+                document.getElementById('cheat_vial_display').innerText = vialMg;
+                document.getElementById('cheat_water_display').innerText = waterMl;
+                
+                const tableBody = document.getElementById('quick_reference_table');
+                tableBody.innerHTML = '';
+                
+                // Common doses in mcg for cheat sheet
+                const standardDoses = [50, 100, 250, 500, 1000, 2000, 2500, 5000];
+                let hasRows = false;
+
+                standardDoses.forEach(dMcg => {
+                    if (dMcg <= vialMcg) { // Don't show doses larger than the whole vial
+                        hasRows = true;
+                        const dMl = dMcg / mcgPerMl;
+                        const dU = dMl * 100;
+                        
+                        let doseLabel = dMcg >= 1000 ? `${(dMcg/1000).toFixed(1)} mg` : `${dMcg} mcg`;
+                        
+                        // Highlight the row if it matches current input
+                        const isMatch = Math.abs(dMcg - doseMcg) < 0.1;
+                        const rowClass = isMatch ? 'bg-blue-50 font-semibold' : 'hover:bg-slate-50 transition-colors';
+                        const textClass = isMatch ? 'text-pepblue' : 'text-slate-600';
+
+                        tableBody.innerHTML += `
+                            <tr class="${rowClass} text-sm">
+                                <td class="py-2.5 px-4 font-medium ${textClass}">${doseLabel}</td>
+                                <td class="py-2.5 px-4 ${textClass}">${dMl.toFixed(3)} ml</td>
+                                <td class="py-2.5 px-4 text-pepblue font-bold">${dU.toFixed(1)} U</td>
+                            </tr>
+                        `;
+                    }
+                });
+
+                if (!hasRows) {
+                    tableBody.innerHTML = `<tr><td colspan="3" class="py-4 text-center text-sm text-slate-500">Values exceed vial capacity.</td></tr>`;
+                }
+
+            } else {
+                emptyState.classList.remove('hidden');
+                resultsContainer.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
