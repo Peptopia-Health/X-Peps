@@ -21,7 +21,9 @@
             --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
             --brand-purple:#9000F5;--pink:#FF85E1;
             --cyan:#06B6D4;--cyan-dark:#0891B2;--cyan-light:#22D3EE;
-            --emerald:#10B981;--amber:#F59E0B;--slate:#64748B;--yellow:#EAB308
+            --emerald:#10B981;--amber:#F59E0B;--slate:#64748B;--yellow:#EAB308;
+            /* Added missing dark green variables */
+            --dark-green:#14532d;--dark-green-dark:#0c361d;
         }
         html.dark{
             --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
@@ -155,9 +157,9 @@
         .card.ac-amber::before{background:var(--amber)}
         .card.ac-amber .card-ico{background:rgba(245,158,11,.12);color:var(--amber)}
 
-       /* Dark Green accent */
-        .card.ac-darkgreen::before{background:var(--darkgreen);}
-        .card.ac-darkgreen .card-ico{background:rgba(20,83,45,.12);color:var(--darkgreen)}
+        /* Dark Green accent (FIXED CLASS NAME & VARIABLE) */
+        .card.ac-dark-green::before{background:var(--dark-green);}
+        .card.ac-dark-green .card-ico{background:rgba(20,83,45,.12);color:var(--dark-green)}
 
         /* Slate accent */
         .card.ac-slate::before{background:var(--slate)}
@@ -173,7 +175,10 @@
         }
         .b-cyan{background:linear-gradient(135deg,var(--cyan-dark),var(--cyan))}
         .b-emerald{background:linear-gradient(135deg,#059669,var(--emerald))}
-        .b-darkgreen{background:linear-gradient(135deg,#14532d,var(--darkgreen))}
+        
+        /* Dark Green Button (FIXED CLASS NAME & VARIABLES) */
+        .b-dark-green{background:linear-gradient(135deg,var(--dark-green-dark),var(--dark-green))}
+        
         .b-amber{background:linear-gradient(135deg,#D97706,var(--amber))}
         .b-yellow{background:linear-gradient(135deg,#CA8A04,var(--yellow))}
         .b-slate{background:linear-gradient(135deg,#475569,var(--slate))}
@@ -301,13 +306,14 @@
    <section class="section">
     <h2 class="section-title">Botanicals &amp; Herbals</h2>
     <div class="grid">
+        <!-- FIXED HTML CLASSES -->
         <a href="kratom_guide.html" class="card ac-dark-green">
             <div class="card-hdr">
                 <div class="card-ico"><i class="fa-solid fa-leaf"></i></div>
                 <h2>Kratom Guide</h2>
             </div>
             <p>Comprehensive guide to Kratom strains, alkaloid profiles, and effects, featuring a detailed analysis of Yellow strains.</p>
-            <span class="btn b-darkgreen"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
+            <span class="btn b-dark-green"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
         </a>
     </div>
 </section>
