@@ -8,11 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Added Outfit for the Peptopia Header) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
+            darkMode: 'class', // Enables standard dark mode toggling
             theme: {
                 extend: {
                     colors: {
@@ -30,7 +31,7 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
         
         /* Custom Input Styling */
         .glass-input {
@@ -69,48 +70,129 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #94a3b8; 
         }
+
+        /* =========================================
+           STANDARDIZED PEPTOPIA HEADER STYLES
+           ========================================= */
+        :root{
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            --cyan:#06B6D4;
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+        }
+        .hdr{
+            position:relative;z-index:10;padding:16px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1280px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{
+            font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:#0F172A;
+            letter-spacing:2px;text-transform:uppercase;line-height:1.1;transition:color .35s ease
+        }
+        .brand-tag{font-size:.7rem;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;transition:color .35s ease}
+        
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:600;text-transform:uppercase;
+            letter-spacing:1.5px;color:#475569;text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:#0F172A;background:rgba(15,23,42,.03)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:#475569;cursor:pointer;display:flex;align-items:center;
+            justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        .theme-toggle:hover{color:#0F172A;background:rgba(15,23,42,.04)}
+        .theme-toggle .fa-sun{display:none}
+
+        /* =========================================
+           DARK MODE OVERRIDES (CSS ONLY)
+           Protects the HTML body structure from changes
+           ========================================= */
+        html.dark { --bg-color: #0B1120; }
+        html.dark body { background-color: var(--bg-color); color: #E2E8F0; }
+        html.dark .bg-peplight { background-color: var(--bg-color); }
+        
+        /* Dark Mode: Header */
+        html.dark .hdr-wrap { background-color: #0B1120; border-color: rgba(255,255,255,.05); }
+        html.dark .brand-name { color: #E2E8F0; }
+        html.dark .nav a { color: #94A3B8; }
+        html.dark .nav a:hover { color: #E2E8F0; background: rgba(255,255,255,.05); }
+        html.dark .theme-toggle { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); color: #94A3B8; }
+        html.dark .theme-toggle:hover { color: #E2E8F0; background: rgba(255,255,255,.12); }
+        html.dark .theme-toggle .fa-moon { display: none; }
+        html.dark .theme-toggle .fa-sun { display: inline-block; color: #FBBF24; }
+        
+        /* Dark Mode: Calculator Body Elements */
+        html.dark .bg-white { background-color: rgba(30, 41, 59, 0.4); border-color: #334155; }
+        html.dark .text-slate-900 { color: #F8FAFC; }
+        html.dark .text-slate-800 { color: #F1F5F9; }
+        html.dark .text-slate-700 { color: #E2E8F0; }
+        html.dark .text-slate-600 { color: #CBD5E1; }
+        html.dark .text-slate-500 { color: #94A3B8; }
+        html.dark .text-slate-400 { color: #64748B; }
+        html.dark .bg-slate-100 { background-color: #1E293B; }
+        html.dark .bg-slate-50 { background-color: #0F172A; border-color: #1E293B;}
+        html.dark .border-slate-200 { border-color: #334155; }
+        html.dark .border-slate-100 { border-color: #1E293B; }
+        html.dark .border-slate-300 { border-color: #475569; }
+        html.dark .border-slate-400 { border-color: #64748B; }
+        
+        /* Dark Mode: Inputs */
+        html.dark .glass-input { background-color: #0F172A !important; border-color: #334155 !important; color: #F8FAFC !important; }
+        html.dark .glass-input:focus { border-color: #0ea5e9 !important; }
+        html.dark select.glass-input option { background-color: #0F172A; color: #F8FAFC; }
+        html.dark .preset-btn:hover { background-color: #0ea5e9; }
+        
+        /* Dark Mode: Specific Containers */
+        html.dark .bg-blue-50\/50 { background-color: rgba(30, 58, 138, 0.2); border-color: rgba(30, 58, 138, 0.4); }
+        html.dark .bg-blue-50 { background-color: rgba(30, 58, 138, 0.4); }
+        html.dark .text-pepblue { color: #38bdf8; } /* Lighten blue text for dark mode */
+        html.dark .hover\:bg-slate-50:hover { background-color: rgba(30, 41, 59, 0.8); }
+        html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) { border-color: #1E293B; }
+        html.dark .bg-slate-900 { background-color: #0B1120; border-top: 1px solid #1E293B; }
+        html.dark .bg-red-50 { background-color: rgba(127, 29, 29, 0.2); border-color: rgba(153, 27, 27, 0.4); }
     </style>
 </head>
 <body class="bg-peplight text-slate-800 antialiased min-h-screen flex flex-col">
 
-    <!-- Peptopia Navigation -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo Area -->
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center text-2xl font-bold text-pepblue tracking-tight">
-                        <i class="fa-solid fa-flask-vial mr-3 text-pepaccent text-3xl"></i>
-                        Peptopia
-                    </a>
+    <!-- STANDARDIZED PEPTOPIA HEADER -->
+    <div class="hdr-wrap bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm transition-colors duration-300">
+        <header class="hdr">
+            <a href="https://peptopia-health.github.io/" class="hdr-brand">
+                <div class="logo">P</div>
+                <div class="brand">
+                    <span class="brand-name">Peptopia</span>
+                    <span class="brand-tag">Health &amp; Wellness</span>
                 </div>
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                    <a href="#" class="hover:text-pepaccent transition-colors">Home</a>
-                    <a href="#" class="hover:text-pepaccent transition-colors">Orders</a>
-                    <a href="#" class="hover:text-pepaccent transition-colors">Shop</a>
-                    <a href="#" class="hover:text-pepaccent transition-colors">Guides</a>
-                    <a href="#" class="hover:text-pepaccent transition-colors">Nursing</a>
-                    <a href="#" class="hover:text-pepaccent transition-colors">Corrections</a>
-                    <a href="#" class="bg-pepblue text-white px-5 py-2 rounded-lg hover:bg-blue-900 transition-colors shadow-sm">Access Portal</a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="flex items-center md:hidden">
-                    <button class="text-slate-500 hover:text-pepblue">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+            </a>
+            <nav class="nav">
+                <a href="https://peptopia-health.github.io/">Home</a>
+                <a href="https://peptopia-health.github.io/X-Peps/orders/">Shop</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+            </nav>
+        </header>
+    </div>
 
     <!-- Main Content -->
     <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
         <!-- Header Section -->
         <div class="mb-10 text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Clinical Reconstitution Calculator</h1>
-            <p class="text-slate-600 max-w-2xl text-lg">Premium research and comprehensive clinical education tools. Calculate exact syringe draw units with precision and safety.</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Reconstitution Calculator</h1>
+            <p class="text-slate-600 max-w-2xl text-lg">Calculate exact syringe draw units with precision and safety.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -340,7 +422,7 @@
             <div>
                 <p class="font-bold text-white mb-2">Peptopia Healthcare</p>
                 <p class="text-xs max-w-2xl">
-                    <strong>Disclaimer:</strong> This calculator is provided for clinical education and research reference purposes only. Peptopia Healthcare does not endorse the unprescribed use of peptides or research chemicals. Always consult a licensed healthcare provider before administering any protocols.
+                    <strong>Disclaimer:</strong> This calculator is provided for clinical education and research reference purposes.
                 </p>
             </div>
             <div class="text-xs">
@@ -349,8 +431,13 @@
         </div>
     </footer>
 
-    <!-- Logic Script -->
+    <!-- Theme Toggle Logic & Core JS -->
     <script>
+        // Storage helper for Light/Dark Mode (safe for iframe and standalone)
+        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
+        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+
         document.addEventListener('DOMContentLoaded', () => {
             // Setup Event Listeners
             const inputs = document.querySelectorAll('.calc-input');
@@ -397,11 +484,11 @@
 
                 if (isMajor && unitVal !== 0) {
                     tickDiv.innerHTML = `
-                        <div class="w-1/2 border-b-2 border-slate-600"></div>
+                        <div class="w-1/2 border-b-2 border-slate-600 dark:border-slate-400"></div>
                         <span class="absolute left-[55%] text-[9px] text-slate-500 font-bold leading-none translate-y-1/2">${unitVal}</span>
                     `;
                 } else if (unitVal !== 0) {
-                    tickDiv.innerHTML = `<div class="w-1/4 border-b border-slate-300"></div>`;
+                    tickDiv.innerHTML = `<div class="w-1/4 border-b border-slate-300 dark:border-slate-600"></div>`;
                 }
                 container.appendChild(tickDiv);
             }
