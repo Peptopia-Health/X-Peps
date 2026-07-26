@@ -191,8 +191,8 @@
         
         <!-- Header Section -->
         <div class="mb-10 text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Reconstitution Calculator</h1>
-            <p class="text-slate-600 max-w-2xl text-lg">Calculate exact syringe draw units with precision and safety.</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Clinical Reconstitution Calculator</h1>
+            <p class="text-slate-600 max-w-2xl text-lg">Premium research and comprehensive clinical education tools. Calculate exact syringe draw units with precision and safety.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -256,19 +256,18 @@
                             </select>
                         </div>
 
-                        <!-- Input: Desired Dose -->                      
-                        <div>
-                        <!--<div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">-->
+                        <!-- Input: Desired Dose -->
+                        <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
                             <label class="block text-sm font-semibold text-pepblue mb-2">
                                 4. Desired Dose
                             </label>
-                            <!--<div class="flex gap-3">-->
+                            <div class="flex gap-3">
                                 <input type="number" id="dose_input" step="any" min="0" placeholder="e.g., 250" class="calc-input glass-input w-2/3 rounded-lg px-4 py-3 text-lg font-bold text-pepblue">
                                 <select id="dose_unit" class="calc-input glass-input w-1/3 rounded-lg px-2 py-3 text-sm font-semibold bg-white cursor-pointer text-center">
                                     <option value="mcg">mcg</option>
                                     <option value="mg">mg</option>
                                 </select>
-                           
+                            </div>
                             <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Ensure you have selected the correct measurement unit.</p>
                         </div>
 
@@ -307,7 +306,7 @@
                                 </div>
                                 <p class="mt-2 text-blue-100 font-medium">
                                     Volume: <span id="dose_ml_display" class="text-white font-bold">0.0</span> ml &nbsp;|&nbsp; 
-                                    Concentration: <span id="concentration_display" class="text-white font-bold">0</span> mcg/ml
+                                    Concentration: <span id="concentration_display" class="text-white font-bold">0</span> <span id="concentration_unit">mcg/ml</span>
                                 </p>
                             </div>
                             
@@ -423,7 +422,7 @@
             <div>
                 <p class="font-bold text-white mb-2">Peptopia Healthcare</p>
                 <p class="text-xs max-w-2xl">
-                    <strong>Disclaimer:</strong> This calculator is provided for clinical education and research reference purposes.
+                    <strong>Disclaimer:</strong> This calculator is provided for clinical education and research reference purposes only. Peptopia Healthcare does not endorse the unprescribed use of peptides or research chemicals. Always consult a licensed healthcare provider before administering any protocols.
                 </p>
             </div>
             <div class="text-xs">
@@ -518,6 +517,7 @@
                 const doseMcg = doseUnit === 'mg' ? doseInput * 1000 : doseInput;
                 const vialMcg = vialMg * 1000;
                 const mcgPerMl = vialMcg / waterMl;
+                const mgPerMl = vialMg / waterMl;
                 const doseMl = doseMcg / mcgPerMl;
                 const drawUnits = doseMl * 100;
                 const maxUnits = syringeVol * 100;
@@ -525,16 +525,48 @@
                 // Update Highlight Displays
                 document.getElementById('draw_units_display').innerText = drawUnits.toFixed(1);
                 document.getElementById('dose_ml_display').innerText = doseMl.toFixed(3);
-                document.getElementById('concentration_display').innerText = mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 0});
+                
+                // Toggle concentration units to avoid mcg noise for weight loss peptides
+                if (doseUnit === 'mg') {
+                    document.getElementById('concentration_display').innerText = mgPerMl.toLocaleString(undefined, {maximumFractionDigits: 2});
+                    document.getElementById('concentration_unit').innerText = "mg/ml";
+                } else {
+                    document.getElementById('concentration_display').innerText = mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 0});
+                    document.getElementById('concentration_unit').innerText = "mcg/ml";
+                }
                 
                 const doseDisplayStr = doseUnit === 'mg' ? `${doseInput} mg` : `${doseMcg} mcg`;
                 document.getElementById('dose_confirm_display').innerText = doseDisplayStr;
 
-                // Update Math Breakdown (Requested Section)
-                document.getElementById('math_step_1').innerHTML = `${vialMg} mg &times; 1000 = <span class="text-pepblue">${vialMcg.toLocaleString()} mcg</span>`;
-                document.getElementById('math_step_2').innerHTML = `${vialMcg.toLocaleString()} mcg &divide; ${waterMl} ml = <span class="text-pepblue">${mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 1})} mcg/ml</span>`;
-                document.getElementById('math_step_3').innerHTML = `${doseMcg} mcg &divide; ${mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 1})} mcg/ml = <span class="text-pepblue">${doseMl.toFixed(4)} ml</span>`;
-                document.getElementById('math_step_4').innerHTML = `${doseMl.toFixed(4)} ml &times; 100 = <span class="font-bold text-pepaccent">${drawUnits.toFixed(1)} Units</span>`;
+                // Update Math Breakdown dynamically based on unit to avoid mcg noise
+                if (doseUnit === 'mg') {
+                    document.getElementById('math_step_1').parentElement.querySelector('p').innerText = "Step 1: Determine Concentration (mg)";
+                    document.getElementById('math_step_1').innerHTML = `${vialMg} mg &divide; ${waterMl} ml = <span class="text-pepblue">${mgPerMl.toLocaleString(undefined, {maximumFractionDigits: 2})} mg/ml</span>`;
+                    
+                    document.getElementById('math_step_2').parentElement.querySelector('p').innerText = "Step 2: Calculate Draw Volume";
+                    document.getElementById('math_step_2').innerHTML = `${doseInput} mg &divide; ${mgPerMl.toLocaleString(undefined, {maximumFractionDigits: 2})} mg/ml = <span class="text-pepblue">${doseMl.toFixed(4)} ml</span>`;
+                    
+                    document.getElementById('math_step_3').parentElement.querySelector('p').innerText = "Step 3: Convert to U-100 Units";
+                    document.getElementById('math_step_3').innerHTML = `${doseMl.toFixed(4)} ml &times; 100 = <span class="font-bold text-pepaccent">${drawUnits.toFixed(1)} Units</span>`;
+                    
+                    document.getElementById('math_step_4').parentElement.style.display = 'none'; // Hide step 4
+                } else {
+                    document.getElementById('math_step_1').parentElement.style.display = 'block';
+                    document.getElementById('math_step_1').parentElement.querySelector('p').innerText = "Step 1: Convert Vial to mcg";
+                    document.getElementById('math_step_1').innerHTML = `${vialMg} mg &times; 1000 = <span class="text-pepblue">${vialMcg.toLocaleString()} mcg</span>`;
+                    
+                    document.getElementById('math_step_2').parentElement.style.display = 'block';
+                    document.getElementById('math_step_2').parentElement.querySelector('p').innerText = "Step 2: Determine Concentration";
+                    document.getElementById('math_step_2').innerHTML = `${vialMcg.toLocaleString()} mcg &divide; ${waterMl} ml = <span class="text-pepblue">${mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 1})} mcg/ml</span>`;
+                    
+                    document.getElementById('math_step_3').parentElement.style.display = 'block';
+                    document.getElementById('math_step_3').parentElement.querySelector('p').innerText = "Step 3: Calculate Draw Volume";
+                    document.getElementById('math_step_3').innerHTML = `${doseMcg} mcg &divide; ${mcgPerMl.toLocaleString(undefined, {maximumFractionDigits: 1})} mcg/ml = <span class="text-pepblue">${doseMl.toFixed(4)} ml</span>`;
+                    
+                    document.getElementById('math_step_4').parentElement.style.display = 'block';
+                    document.getElementById('math_step_4').parentElement.querySelector('p').innerText = "Step 4: Convert to U-100 Units";
+                    document.getElementById('math_step_4').innerHTML = `${doseMl.toFixed(4)} ml &times; 100 = <span class="font-bold text-pepaccent">${drawUnits.toFixed(1)} Units</span>`;
+                }
 
                 // Update Visual Syringe Fill
                 const fillPercentage = Math.min((drawUnits / maxUnits) * 100, 100);
@@ -562,32 +594,59 @@
                 const tableBody = document.getElementById('quick_reference_table');
                 tableBody.innerHTML = '';
                 
-                // Common doses in mcg for cheat sheet
-                const standardDoses = [50, 100, 250, 500, 1000, 2000, 2500, 5000];
                 let hasRows = false;
 
-                standardDoses.forEach(dMcg => {
-                    if (dMcg <= vialMcg) { // Don't show doses larger than the whole vial
-                        hasRows = true;
-                        const dMl = dMcg / mcgPerMl;
-                        const dU = dMl * 100;
-                        
-                        let doseLabel = dMcg >= 1000 ? `${(dMcg/1000).toFixed(1)} mg` : `${dMcg} mcg`;
-                        
-                        // Highlight the row if it matches current input
-                        const isMatch = Math.abs(dMcg - doseMcg) < 0.1;
-                        const rowClass = isMatch ? 'bg-blue-50 font-semibold' : 'hover:bg-slate-50 transition-colors';
-                        const textClass = isMatch ? 'text-pepblue' : 'text-slate-600';
+                if (doseUnit === 'mg') {
+                    // GLP-1 / Weight Loss standard titration doses
+                    const standardDosesMg = [0.25, 0.5, 1.0, 1.7, 2.4, 2.5, 5.0, 7.5, 10.0, 12.5, 15.0];
+                    standardDosesMg.forEach(dMg => {
+                        if (dMg <= vialMg) { // Don't show doses larger than the whole vial
+                            hasRows = true;
+                            const dMl = dMg / mgPerMl;
+                            const dU = dMl * 100;
+                            
+                            let doseLabel = `${dMg} mg`;
+                            
+                            // Highlight the row if it matches current input
+                            const isMatch = Math.abs(dMg - doseInput) < 0.01;
+                            const rowClass = isMatch ? 'bg-blue-50 font-semibold dark:bg-slate-800' : 'hover:bg-slate-50 transition-colors';
+                            const textClass = isMatch ? 'text-pepblue dark:text-blue-400' : 'text-slate-600 dark:text-slate-300';
 
-                        tableBody.innerHTML += `
-                            <tr class="${rowClass} text-sm">
-                                <td class="py-2.5 px-4 font-medium ${textClass}">${doseLabel}</td>
-                                <td class="py-2.5 px-4 ${textClass}">${dMl.toFixed(3)} ml</td>
-                                <td class="py-2.5 px-4 text-pepblue font-bold">${dU.toFixed(1)} U</td>
-                            </tr>
-                        `;
-                    }
-                });
+                            tableBody.innerHTML += `
+                                <tr class="${rowClass} text-sm">
+                                    <td class="py-2.5 px-4 font-medium ${textClass}">${doseLabel}</td>
+                                    <td class="py-2.5 px-4 ${textClass}">${dMl.toFixed(3)} ml</td>
+                                    <td class="py-2.5 px-4 text-pepblue dark:text-blue-400 font-bold">${dU.toFixed(1)} U</td>
+                                </tr>
+                            `;
+                        }
+                    });
+                } else {
+                    // Common doses in mcg for cheat sheet (BPC, etc.)
+                    const standardDosesMcg = [50, 100, 250, 500, 1000, 2000, 2500, 5000];
+                    standardDosesMcg.forEach(dMcg => {
+                        if (dMcg <= vialMcg) { // Don't show doses larger than the whole vial
+                            hasRows = true;
+                            const dMl = dMcg / mcgPerMl;
+                            const dU = dMl * 100;
+                            
+                            let doseLabel = dMcg >= 1000 ? `${(dMcg/1000).toFixed(1)} mg` : `${dMcg} mcg`;
+                            
+                            // Highlight the row if it matches current input
+                            const isMatch = Math.abs(dMcg - doseMcg) < 0.1;
+                            const rowClass = isMatch ? 'bg-blue-50 font-semibold dark:bg-slate-800' : 'hover:bg-slate-50 transition-colors';
+                            const textClass = isMatch ? 'text-pepblue dark:text-blue-400' : 'text-slate-600 dark:text-slate-300';
+
+                            tableBody.innerHTML += `
+                                <tr class="${rowClass} text-sm">
+                                    <td class="py-2.5 px-4 font-medium ${textClass}">${doseLabel}</td>
+                                    <td class="py-2.5 px-4 ${textClass}">${dMl.toFixed(3)} ml</td>
+                                    <td class="py-2.5 px-4 text-pepblue dark:text-blue-400 font-bold">${dU.toFixed(1)} U</td>
+                                </tr>
+                            `;
+                        }
+                    });
+                }
 
                 if (!hasRows) {
                     tableBody.innerHTML = `<tr><td colspan="3" class="py-4 text-center text-sm text-slate-500">Values exceed vial capacity.</td></tr>`;
