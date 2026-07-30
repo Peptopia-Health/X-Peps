@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Nursing - Interview Study Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #003366;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            margin: 0 auto 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            max-width: 900px;
+            border-top: 5px solid #0056b3;
+        }
+        .question-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 15px;
+        }
+        .theme-box {
+            background-color: #e6f2ff;
+            color: #0056b3;
+            padding: 12px 20px;
+            border-left: 5px solid #0056b3;
+            font-weight: bold;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+        .star-section {
+            margin-bottom: 15px;
+        }
+        .star-section strong {
+            color: #0056b3;
+            font-size: 1.1em;
+        }
+        
+        /* CSS STAR Diagram */
+        .diagram-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin: 40px auto;
+        }
+        .diagram-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110px;
+            height: 110px;
+            background: #0056b3;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .diagram-node {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #f8f9fa;
+            border: 3px solid #0056b3;
+            color: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 5;
+        }
+        .node-s { top: 0; left: 50%; transform: translateX(-50%); }
+        .node-t { top: 50%; right: 0; transform: translateY(-50%); }
+        .node-a { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .node-r { top: 50%; left: 0; transform: translateY(-50%); }
+        
+        /* Connecting lines indicating flow */
+        .diagram-line {
+            position: absolute;
+            border: 2px dashed #99c2ff;
+            z-index: 1;
+        }
+        .line-st { top: 20%; right: 20%; width: 40%; height: 40%; border-radius: 0 100% 0 0; border-left: none; border-bottom: none; }
+        .line-ta { bottom: 20%; right: 20%; width: 40%; height: 40%; border-radius: 0 0 100% 0; border-left: none; border-top: none; }
+        .line-ar { bottom: 20%; left: 20%; width: 40%; height: 40%; border-radius: 0 0 0 100%; border-right: none; border-top: none; }
+        .line-rs { top: 20%; left: 20%; width: 40%; height: 40%; border-radius: 100% 0 0 0; border-right: none; border-bottom: none; }
+
+        .node-label {
+            position: absolute;
+            font-size: 12px;
+            font-weight: bold;
+            color: #555;
+            text-align: center;
+            width: 100px;
+        }
+        .label-s { top: -25px; left: 50%; transform: translateX(-50%); }
+        .label-t { top: 50%; right: -85px; transform: translateY(-50%); }
+        .label-a { bottom: -25px; left: 50%; transform: translateX(-50%); }
+        .label-r { top: 50%; left: -85px; transform: translateY(-50%); }
+        
+        @media (max-width: 600px) {
+            .card { padding: 20px; }
+            .diagram-container { transform: scale(0.8); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Mental Health Nursing</h1>
+        <p><strong>Interview Study Guide</strong></p>
+        <p>Target Role: Registered Nurse - Mental Health</p>
+    </div>
+
+    <!-- QUESTION 1 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: De-escalation & Empathy</div>
+        <div class="question-title">Question 1: Tell me about a time when you had to care for a patient who was becoming increasingly agitated, hostile, or uncooperative. What steps did you take to de-escalate the situation, and what was the outcome?</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Patient<br>Centric<br>Care</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> During a routine medpass at the regional jail, a patient's critical HIV medication, Biktarvy, was missing from my cart due to a facility shortage.</div>
+        <div class="star-section"><strong>Task:</strong> The patient became immediately hostile. He grabbed the medcart and shoved it toward me, aggressively demanding to know why his treatment was being withheld. I needed to ensure my physical safety while immediately de-escalating his panic.</div>
+        <div class="star-section"><strong>Action:</strong> I kept my composure and immediately employed verbal de-escalation, focusing on validating his entirely justified fear. I told him, "I know how much you need this for your health, and I am on your side." I explained that while there was a supply issue, I was actively working to get his treatment. I set a firm, concrete plan with him: I told him I was going straight to my desk to call the pharmacy, track the transport, and that I would return to his section with a corrections officer to give him an update as soon as I had one.</div>
+        <div class="star-section"><strong>Result:</strong> Setting that clear expectation helped him recede from the cart and calm down. I followed through immediately, contacted the pharmacy, and confirmed the medication was on the truck for a 7:00 AM delivery. I went right back to his unit to deliver the update. Because I kept my word, that patient now explicitly requests me for his care. We built a deep mutual trust because he knows I understand that his Biktarvy is literally keeping him alive, and that I will always advocate for him.</div>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: Clinical Safety & Evidence-Based Practice</div>
+        <div class="question-title">Question 2: Tell me about a time when you disagreed with a colleague, provider, or supervisor regarding a patient’s care or a clinical protocol. How did you handle the situation, and what was the outcome?</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Clinical<br>Safety</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> While working at the regional jail, a fellow nurse and I disagreed during medpass. Our facility policy allows for the manual mixing of compatible insulins, and she insisted that I mix them to save time. However, the designated area for drawing insulin was very poorly lit.</div>
+        <div class="star-section"><strong>Task:</strong> I felt that mixing in the dark posed a significant safety risk—specifically the danger of cross-contaminating the NPH vial or making an irreversible dosing error. I needed to stand firm on patient safety while maintaining a respectful, collaborative relationship with a highly experienced colleague.</div>
+        <div class="star-section"><strong>Action:</strong> I started by giving her my full attention and validating her perspective, letting her know I deeply respected her experience. However, I explained that I was not comfortable taking on the high cognitive and physical workload of mixing insulins in an environment where I couldn't clearly see the vials. I chose to administer the injections separately to ensure accuracy. To ensure I was making the best clinical decision, I went home and researched the structural and clinical risks of mixing insulins. I wrote a comprehensive study guide detailing the risks—like the inability to correct an overdraw and the strict 15-minute administration clock. I brought this research to my supervisor to advocate for a change in our environment.</div>
+        <div class="star-section"><strong>Result:</strong> My supervisor agreed entirely with my safety assessment. Because I spoke up and backed my clinical judgment with evidence-based research, the facility relocated our insulin administration to a much brighter room. I worked with my colleague to adjust our medpass flow in this new, well-lit area. We improved systemic safety for all our patients, and my colleague and I maintained a strong, respectful working relationship.</div>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: Triage & Prioritization</div>
+        <div class="question-title">Question 3: Tell me about a time when you were overwhelmed with your workload or faced a sudden change in priorities. How did you organize your time and ensure all patient needs were met safely?</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Triage &<br>Prioritization</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> On a busy Saturday night at the regional jail, a fellow nurse called out at the last minute. This left me as the sole RN responsible for over 700 inmates during a shift that experienced non-stop new arrests and intakes.</div>
+        <div class="star-section"><strong>Task:</strong> After a few hours, the sheer volume of work was causing me to fall behind. I had to figure out how to manage urgent medical intakes in the booking area while also ensuring that all routine, critical medications were passed safely on the housing pods. The task was to manage a massive workload without compromising a single patient's safety.</div>
+        <div class="star-section"><strong>Action:</strong> I used patient safety as my guiding light, telling myself, "Nobody is going downhill on my shift." I took a brief step back to write out a strict clinical priority list on a Post-it note, separating absolute critical needs from tasks that could wait. I then proactively coordinated with the correctional officers, setting up a specific schedule to balance my time between the pods for on-time med administration and the back area for new intakes. I ended up staying for an 18-hour shift to ensure continuity of care.</div>
+        <div class="star-section"><strong>Result:</strong> I successfully kept all 700-plus patients safe and ensured every critical medication was administered. During the morning handoff, I gave the incoming nursing team a clear, organized brief on what lower-priority tasks I had fallen behind on, and we worked together as a team to catch up. Before leaving the facility, I sent a detailed follow-up note to my nursing supervisor outlining the staffing crisis, the steps I took to mitigate it, and the status of the facility, ensuring leadership was fully informed.</div>
+    </div>
+
+    <!-- QUESTION 4 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: Boundaries & Authority</div>
+        <div class="question-title">Question 4: Tell me about a time when a patient attempted to test or cross professional boundaries with you. How did you handle the situation, and how did you maintain a therapeutic relationship moving forward?</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Boundaries &<br>Authority</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> In the correctional setting, boundary testing and manipulation are common; inmates often attempt to 'work' the staff as part of their daily routine. Recently, an inmate attempted to intimidate me by addressing me by name and casually mentioning, "We know where you live, and we'll have to stop by sometime."</div>
+        <div class="star-section"><strong>Task:</strong> I needed to immediately and firmly establish a professional boundary and de-escalate the intimidation tactic without showing fear, while also maintaining my authority as the clinical professional on the block.</div>
+        <div class="star-section"><strong>Action:</strong> I maintained direct eye contact and a calm, even tone. I explicitly informed her that her comment was unprofessional and bordered on a direct threat. I clearly laid out the consequences, explaining that if she crossed that line again, I would formally report the behavior, which would likely result in long-term segregation. Later, when I was in a secure area with my nursing team, I debriefed the incident with them, asking how they had handled similar intimidation tactics so I could turn the experience into a learning opportunity.</div>
+        <div class="star-section"><strong>Result:</strong> The patient immediately backed down. Because I stood my ground firmly and without anger, she actually gained respect for me. She never attempted to intimidate or boundary-test me again, and we were able to maintain a functional, professional clinical relationship moving forward. I also gained valuable insight from my team's experiences.</div>
+    </div>
+
+    <!-- QUESTION 5 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: Crisis Intervention & Advocacy</div>
+        <div class="question-title">Question 5: Tell me about a time when you had to deal with a patient experiencing a mental health crisis or severe distress. How did you ensure their safety and advocate for their needs?</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Crisis<br>Advocacy</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> During a shift at the regional jail, an inmate began experiencing acute psychiatric distress, exhibiting severe paranoia and expressing active self-harm ideation. The environment was loud and overstimulating, which was exacerbating their condition.</div>
+        <div class="star-section"><strong>Task:</strong> My immediate priority was to ensure the physical safety of the patient, prevent any acts of self-harm, and quickly coordinate an environment where they could be medically and psychiatrically stabilized.</div>
+        <div class="star-section"><strong>Action:</strong> I immediately initiated a 1:1 observation protocol. I worked with the correctional officers to clear the immediate area of any potential hazards and moved the patient to a quieter, safer holding space. I utilized therapeutic communication—speaking in a low, calm voice, validating their distress without feeding into the delusions, and assuring them they were in a safe place. Recognizing the severity of the crisis, I strongly advocated for immediate psychiatric evaluation by escalating the situation to the on-call provider.</div>
+        <div class="star-section"><strong>Result:</strong> The patient was secured and stabilized without causing harm to themselves or others. Through my advocacy and immediate implementation of safety protocols, the patient was successfully transferred to an appropriate mental health housing unit for continued observation and specialized care.</div>
+    </div>
+
+    <!-- QUESTION 6 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: Communication & Rapport</div>
+        <div class="question-title">Question 6: Tell me about a time you had to adapt your communication style to effectively care for a patient from a different background, or one who was difficult to communicate with.</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Communication<br>& Rapport</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> During my clinical experience, I encountered a patient who was highly distrustful of medical staff and had a significant barrier to effective communication, causing them to refuse standard assessments and care.</div>
+        <div class="star-section"><strong>Task:</strong> I needed to break through this barrier to build a therapeutic alliance, accurately assess their mental and physical state, and ensure they received the appropriate medical care without feeling coerced.</div>
+        <div class="star-section"><strong>Action:</strong> Drawing on my background in linguistics and my BA in Russian, I understand that communication is just as much about cultural nuance and body language as it is about words. Instead of forcing the standard clinical assessment immediately, I sat down at their eye level, maintained an open and non-threatening posture, and actively listened to their grievances without interrupting. I adapted my language to remove medical jargon, speaking to them clearly and plainly as a person, rather than just a patient on a checklist.</div>
+        <div class="star-section"><strong>Result:</strong> By shifting my approach from clinical and authoritative to open and culturally empathetic, the patient felt heard and respected. They willingly cooperated with the assessment, and I was able to successfully complete my charting and ensure they received their necessary care.</div>
+    </div>
+
+    <!-- QUESTION 7 -->
+    <div class="card">
+        <div class="theme-box">Key Theme: Process Improvement & Leadership</div>
+        <div class="question-title">Question 7: Tell me about a time you identified a problem or inefficiency in your unit and took the initiative to improve the process.</div>
+        
+        <div class="diagram-container">
+            <div class="diagram-line line-st"></div>
+            <div class="diagram-line line-ta"></div>
+            <div class="diagram-line line-ar"></div>
+            <div class="diagram-line line-rs"></div>
+            <div class="diagram-center">Process<br>Improvement</div>
+            
+            <div class="diagram-node node-s">S</div><div class="node-label label-s">Situation</div>
+            <div class="diagram-node node-t">T</div><div class="node-label label-t">Task</div>
+            <div class="diagram-node node-a">A</div><div class="node-label label-a">Action</div>
+            <div class="diagram-node node-r">R</div><div class="node-label label-r">Result</div>
+        </div>
+
+        <div class="star-section"><strong>Situation:</strong> In the fast-paced environment of corrections nursing, I noticed that the handoff and medication tracking process during shift changes and new intakes was occasionally fragmented, leading to confusion and potential delays in critical care.</div>
+        <div class="star-section"><strong>Task:</strong> I wanted to proactively streamline this workflow to reduce the cognitive load on the nursing staff, minimize the risk of medication errors, and improve the overall efficiency of our unit.</div>
+        <div class="star-section"><strong>Action:</strong> I leveraged the analytical and systemic thinking skills I gained while earning my MBA in Finance. I observed the workflow, identified the specific bottlenecks where communication was breaking down, and proposed a streamlined tracking system. I initiated a standardized priority list and handoff protocol that clearly delineated urgent intake needs from routine medication passes. I then communicated this improved workflow to the shift leadership and incoming nurses.</div>
+        <div class="star-section"><strong>Result:</strong> The implementation of this structured tracking and handoff method significantly smoothed the transition between shifts. It empowered the nursing staff to manage heavy workloads with greater accuracy, reduced the time spent hunting for information, and ultimately improved the safety and continuity of patient care.</div>
+    </div>
+
+</body>
+</html>
