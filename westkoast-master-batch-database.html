@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WestKoast Botanicals — Master Batch Database</title>
+<meta name="description" content="A research-style index of WestKoast Botanicals batches, COA sample IDs, internal lot identifiers, and available alkaloid information.">
+<style>
+:root{
+  --bg:#0b1020; --panel:#121a2d; --panel2:#18223a; --text:#eef3ff; --muted:#9eabc4;
+  --line:#2a3856; --accent:#7dd3fc; --green:#70e1a1; --yellow:#f5d36c; --red:#ff8c8c;
+  --white:#e7eaf2; --shadow:0 16px 45px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 15% 0%,#18264b 0,#0b1020 38%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--accent)}
+header{padding:42px 20px 28px;max-width:1400px;margin:auto}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:10px 0 14px}
+.subtitle{max-width:850px;color:var(--muted);font-size:1.05rem}
+.wrap{max-width:1400px;margin:auto;padding:0 20px 60px}
+.controls{display:grid;grid-template-columns:1.4fr .7fr .7fr .7fr;gap:10px;margin:22px 0}
+input,select,button{width:100%;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit}
+button{cursor:pointer}
+button:hover{background:var(--panel2)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.card .num{font-size:1.65rem;font-weight:850}
+.card .label{color:var(--muted);font-size:.82rem;margin-top:3px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}
+h2{margin:0 0 12px;font-size:1.25rem}
+.panel{background:rgba(18,26,45,.88);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+canvas{width:100%;height:310px;display:block}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:1100px}
+th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{position:sticky;top:0;background:#17213a;color:#cbd7ef;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+tr:hover td{background:rgba(125,211,252,.035)}
+.badge{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:.75rem;font-weight:750;white-space:nowrap}
+.confirmed{color:var(--green)} .group{color:var(--yellow)} .unknown{color:var(--muted)}
+.vein-green{color:var(--green)} .vein-white{color:var(--white)} .vein-red{color:var(--red)}
+.note{color:var(--muted);font-size:.9rem}
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:rgba(24,34,58,.55)}
+summary{cursor:pointer;padding:12px 14px;font-weight:800}
+details .inside{padding:0 14px 14px}
+footer{max-width:1400px;margin:auto;padding:30px 20px 50px;color:var(--muted);font-size:.85rem}
+.notice{border-left:3px solid var(--yellow);padding:12px 14px;background:rgba(245,211,108,.06);border-radius:8px;color:#d9e0ef}
+@media(max-width:900px){
+ .controls,.stats,.grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}.card{padding:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Independent COA / batch index</div>
+  <h1>WestKoast Botanicals<br>Master Batch Database</h1>
+  <p class="subtitle">
+    A searchable, research-style index of recent WestKoast batches, laboratory sample IDs,
+    internal lot identifiers, retail strain names, and alkaloid results where publicly verified.
+  </p>
+</header>
+
+<main class="wrap">
+  <div class="notice">
+    <strong>Data standard:</strong> A retail strain is not automatically assigned to an individual laboratory
+    sample. Green/yellow/white status below distinguishes exact matches from batch/vein-level associations.
+    Blank chemistry fields mean the value was not verified in the source set used for this page.
+  </div>
+
+  <div class="controls">
+    <input id="search" placeholder="Search strain, batch, COA #, internal lot…">
+    <select id="batch"><option value="">All batches</option><option>0726</option><option>0626</option><option>0526</option></select>
+    <select id="vein"><option value="">All veins</option><option>Green</option><option>White</option><option>Red</option><option>Blend</option><option>Dark</option><option>Yellow</option></select>
+    <select id="confidence"><option value="">All confidence</option><option value="Confirmed">Confirmed</option><option value="Group confirmed">Group confirmed</option><option value="Unknown">Unknown</option></select>
+  </div>
+
+  <section class="stats">
+    <div class="card"><div class="num" id="rows">0</div><div class="label">database rows</div></div>
+    <div class="card"><div class="num">3</div><div class="label">recent batches</div></div>
+    <div class="card"><div class="num">10</div><div class="label">0726 COA samples</div></div>
+    <div class="card"><div class="num">10</div><div class="label">0526 COA samples*</div></div>
+    <div class="card"><div class="num">1</div><div class="label">sample with verified alkaloid values</div></div>
+  </section>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>COA Sample Distribution</h2>
+      <canvas id="chart" aria-label="COA sample distribution by batch"></canvas>
+      <p class="note">The chart counts laboratory samples, not retail products.</p>
+    </section>
+    <section class="panel">
+      <h2>How to read the database</h2>
+      <details open><summary>🟢 Confirmed</summary><div class="inside">The strain, batch, and exact COA relationship is directly supported by the source material.</div></details>
+      <details open><summary>🟡 Group confirmed</summary><div class="inside">The batch and/or vein is supported, but the exact internal COA sample is not established.</div></details>
+      <details open><summary>⚪ Unknown</summary><div class="inside">Do not use an individual COA number for that retail strain without additional documentation.</div></details>
+      <details><summary>Why are there two names?</summary><div class="inside">Retail names such as “Green Bumblebee” and lab IDs such as “FC#B.07Green” are separate identifiers. This site keeps them separate unless a source links them.</div></details>
+    </section>
+  </div>
+
+  <section class="panel" style="margin-top:18px">
+    <h2>Master COA Index</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Batch</th><th>Report ID</th><th>COA Sample</th><th>Internal Lot</th><th>Material</th>
+          <th>Retail Strain</th><th>Mitragynine</th><th>7-OH</th><th>Total Alkaloids</th><th>Confidence</th>
+        </tr></thead>
+        <tbody id="coaBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <h2>Retail Strain / Batch Index</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Strain / Product</th><th>Batch</th><th>Vein</th><th>COA Group</th><th>Exact COA</th>
+          <th>Mitragynine</th><th>Total Alkaloids</th><th>Status</th>
+        </tr></thead>
+        <tbody id="retailBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>Research note:</strong> This page is an informational database, not a laboratory certification.
+  COA availability, batch names, product inventory, and test results can change. Always inspect the original
+  certificate for the complete analytical result and chain-of-custody information.
+  <br><br>
+  *0526 includes the full report family plus metals samples; the displayed “10” refers to the COA/sample entries
+  represented in this database, not necessarily the number of distinct retail products.
+</footer>
+
+<script>
+const coa = [
+["0726","2607994","001","FC#T.06BLEND","Blend","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","002","FC#T.02White","White","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","004","FC#AR.01Red","Red","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","005","FC#AR.02Red","Red","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","006","FC#D.01green","Green","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","007","FC#B.01Green","Green","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","008","FC#T.01Green","Green","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","009","FC#B.07Green","Green","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","010","FCB.01White","White","Unknown","—","—","—","Group confirmed"],
+["0726","2607994","011","FC#T.02Green","Green","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","001","FC#T.01green","Green","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","002","FC#T.02green","Green","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","003","FC#T.03green","Green","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","005","FC#B.01green","Green","Unknown","1.37%","<0.0179%","2.09%","Confirmed"],
+["0526","2604E07","006","FC#B.05green","Green","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","007","FC#B.06green","Green","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","008","FC#B.01white","White","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","009","FC#B.02white","White","Unknown","—","—","—","Group confirmed"],
+["0526","2604E07","011","FC#T.01white","White","Unknown","—","—","—","Group confirmed"]
+];
+
+const retail = [
+["Green Bumblebee","0726","Green","2607994","2607994-00X","—","—","Group confirmed"],
+["Green Hulk","0726","Green","2607994","2607994-00X","—","—","Group confirmed"],
+["Nano Super Green","0726","Green","2607994","2607994-00X","—","—","Group confirmed"],
+["White 46","0726","White","2607994","2607994-002 or -010","—","—","Group confirmed"],
+["White Blaze","0726","White","2607994","2607994-002 or -010","—","—","Group confirmed"],
+["White Asia","0726","White","2607994","2607994-002 or -010","—","—","Group confirmed"],
+["White Ultra","0726","White","2607994","2607994-002 or -010","—","—","Group confirmed"],
+["Nano White Monster","0726","White","2607994","2607994-002 or -010","—","—","Group confirmed"],
+["Red Gold","0726","Red","2607994","2607994-004 or -005","—","—","Group confirmed"],
+["Red Magic","0726","Red","2607994","2607994-004 or -005","—","—","Group confirmed"],
+["Red Fuzzy Blanket","0726","Red","2607994","2607994-004 or -005","—","—","Group confirmed"],
+["Awesome Sauce","0726","Blend","2607994","2607994-001 possible","—","—","Group confirmed"],
+["Black MD","0726","Dark","—","—","—","—","Unknown"],
+["OG Yellow MD","0726","Yellow","—","—","—","—","Unknown"],
+["Green Thunder","0626","Green","—","—","—","—","Group confirmed"],
+["Green Ketapang","0626","Green","—","—","—","—","Group confirmed"],
+["Mean Green","0626","Green","—","—","—","—","Group confirmed"],
+["Red Jongkong UF","0626","Red","—","—","—","—","Group confirmed"],
+["Red Vein UF","0626","Red","—","—","—","—","Group confirmed"],
+["Dark Red Elephant UF","0626","Red","—","—","—","—","Group confirmed"],
+["Pink Dragon","0626-era","Red/Blend","—","—","—","—","Unknown"],
+["Green Lightning","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Bright Green","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Green Bali","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["OG Green Malay","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["OG Dark Green","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["OG Green Elephant","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Nano Super Green","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Nano Green MD","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Nano Green Vietnam","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Nano Green Monster","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["Nano Green Devil","0526","Green","2604E07","Unknown","—","—","Group confirmed"],
+["White Bumblebee","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["White Maeng Da","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["White Lemon","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["Super White","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["White Ultra","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["Elite White","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["White Asia","0526","White","2604E07","Unknown","—","—","Group confirmed"],
+["Nano Red Devil","0526","Red","—","—","—","—","Unknown"],
+["Nano Super Red","0526","Red","—","—","—","—","Unknown"],
+["Nano Red Vietnam","0526","Red","—","—","—","—","Unknown"],
+["Chocolate","0526","Dark","—","—","—","—","Unknown"],
+["Hug The Kids","0526-era","Blend","—","—","—","—","Unknown"],
+["Energy Mood","0526-era","Blend","—","—","—","—","Unknown"],
+["Yellow Vein","0526-era","Yellow","—","—","—","—","Unknown"]
+];
+
+function badge(s){
+  const cls=s==="Confirmed"?"confirmed":s==="Group confirmed"?"group":"unknown";
+  const icon=s==="Confirmed"?"🟢":s==="Group confirmed"?"🟡":"⚪";
+  return `<span class="badge ${cls}">${icon} ${s}</span>`;
+}
+function render(){
+  const q=document.getElementById("search").value.toLowerCase().trim();
+  const b=document.getElementById("batch").value;
+  const v=document.getElementById("vein").value;
+  const c=document.getElementById("confidence").value;
+  const match=(x)=> {
+    const text=x.join(" ").toLowerCase();
+    const batchOk=!b || x[0]===b;
+    const veinOk=!v || (x[4]||"").toLowerCase().includes(v.toLowerCase()) || (x[2]||"").toLowerCase().includes(v.toLowerCase());
+    const confOk=!c || x[x.length-1]===c || x[7]===c;
+    return (!q || text.includes(q)) && batchOk && veinOk && confOk;
+  };
+  const a=coa.filter(match);
+  const r=retail.filter(match);
+  document.getElementById("rows").textContent=a.length+r.length;
+  document.getElementById("coaBody").innerHTML=a.map(x=>`<tr>
+    <td>${x[0]}</td><td>${x[1]}</td><td>${x[1]}-${x[2]}</td><td><code>${x[3]}</code></td>
+    <td>${x[4]}</td><td>${x[5]}</td><td>${x[6]}</td><td>${x[7]}</td><td>${x[8]}</td><td>${badge(x[9])}</td>
+  </tr>`).join("") || `<tr><td colspan="10">No matching COA samples.</td></tr>`;
+  document.getElementById("retailBody").innerHTML=r.map(x=>`<tr>
+    <td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td>${x[3]}</td><td>${x[4]}</td>
+    <td>${x[5]}</td><td>${x[6]}</td><td>${badge(x[7])}</td>
+  </tr>`).join("") || `<tr><td colspan="8">No matching retail products.</td></tr>`;
+}
+["search","batch","vein","confidence"].forEach(id=>document.getElementById(id).addEventListener("input",render));
+render();
+
+function drawChart(){
+  const canvas=document.getElementById("chart"), ctx=canvas.getContext("2d");
+  const dpr=window.devicePixelRatio||1, rect=canvas.getBoundingClientRect();
+  canvas.width=rect.width*dpr; canvas.height=310*dpr; ctx.scale(dpr,dpr);
+  const w=rect.width,h=310, vals=[10,0,9], labels=["0726","0626","0526"];
+  const max=10, pad={l:45,r:20,t:25,b:48}, cw=w-pad.l-pad.r, ch=h-pad.t-pad.b;
+  ctx.clearRect(0,0,w,h); ctx.font="12px system-ui"; ctx.fillStyle="#9eabc4";
+  for(let i=0;i<=max;i+=2){let y=pad.t+ch-(i/max)*ch;ctx.fillText(i,pad.l-27,y+4);ctx.strokeStyle="#2a3856";ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();}
+  const gap=cw/vals.length, bw=Math.min(90,gap*.55);
+  vals.forEach((val,i)=>{
+    const x=pad.l+gap*i+(gap-bw)/2, bh=(val/max)*ch, y=pad.t+ch-bh;
+    ctx.fillStyle="#7dd3fc";ctx.fillRect(x,y,bw,bh);
+    ctx.fillStyle="#eef3ff";ctx.font="bold 13px system-ui";ctx.textAlign="center";ctx.fillText(val,x+bw/2,y-8);
+    ctx.fillStyle="#9eabc4";ctx.font="12px system-ui";ctx.fillText(labels[i],x+bw/2,h-20);
+  });
+}
+drawChart(); window.addEventListener("resize",drawChart);
+</script>
+</body>
+</html>
