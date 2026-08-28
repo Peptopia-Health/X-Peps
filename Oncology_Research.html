@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tirzepatide &amp; Retatrutide in Oncology Research | Peptopia Guides</title>
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              900: '#134e4a',
+            },
+            space: {
+              950: '#060a12',
+              900: '#0b1324',
+              850: '#101a33',
+              800: '#162244',
+              700: '#213360',
+              600: '#334c8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Light Mode Background & Ambient Glow */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html:not(.dark) body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(20, 184, 166, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+    }
+
+    /* Dark Mode Background & Ambient Glow */
+    html.dark body {
+      background-color: #070d1a;
+      color: #e2e8f0;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(45, 212, 191, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(56, 189, 248, 0.06) 0%, transparent 50%);
+    }
+
+    /* Custom Glassmorphism & Adaptive Card Styles */
+    .pep-card {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    html:not(.dark) .pep-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.06);
+    }
+    html:not(.dark) .pep-card:hover {
+      border-color: #14b8a6;
+      box-shadow: 0 12px 28px -6px rgba(20, 184, 166, 0.15);
+      transform: translateY(-2px);
+    }
+
+    html.dark .pep-card {
+      background: linear-gradient(145deg, rgba(16, 26, 51, 0.8) 0%, rgba(11, 19, 36, 0.9) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+    }
+    html.dark .pep-card:hover {
+      border-color: rgba(45, 212, 191, 0.35);
+      box-shadow: 0 12px 32px -8px rgba(20, 184, 166, 0.18), 0 0 0 1px rgba(45, 212, 191, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .gradient-text-teal {
+      background: linear-gradient(135deg, #0284c7 0%, #0d9488 50%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    html.dark .gradient-text-teal {
+      background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-purple {
+      background: linear-gradient(135deg, #9333ea 0%, #7c3aed 50%, #db2777 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    html.dark .gradient-text-purple {
+      background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+
+  <script>
+    // Theme Initializer to prevent flashing
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-teal-500 selection:text-white dark:selection:text-black">
+
+  <!-- TOP BRAND NOTIFICATION BAR -->
+  <div class="border-b border-slate-200 dark:border-teal-500/20 bg-slate-100/90 dark:bg-space-950/80 px-4 py-2 text-center text-xs font-medium text-slate-700 dark:text-slate-300">
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/10 dark:bg-teal-500/10 text-teal-700 dark:text-teal-300 font-mono text-[11px] border border-teal-500/30 mr-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-teal-500 dark:bg-teal-400 animate-ping"></span>
+      RESEARCH DOSSIER
+    </span>
+    Emerging Incretin &amp; Multi-Receptor Mimetics in Oncology Therapeutics
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/90 dark:bg-space-950/85 border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="https://x-peps.com/X-Peps/" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-400 p-[2px] shadow-md shadow-teal-500/20 group-hover:scale-105 transition duration-300">
+          <div class="w-full h-full bg-white dark:bg-space-950 rounded-[10px] flex items-center justify-center">
+            <span class="text-xl font-black bg-gradient-to-r from-teal-600 to-cyan-500 dark:from-teal-300 dark:to-cyan-200 bg-clip-text text-transparent">P</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-lg font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+            Peptopia <span class="text-xs px-2 py-0.5 rounded bg-teal-500/10 text-teal-700 dark:text-teal-400 border border-teal-500/20 font-mono font-semibold">HEALTH</span>
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 -mt-0.5 tracking-wide">Health &amp; Wellness Research</p>
+        </div>
+      </a>
+
+      <!-- Right Nav & Theme Switcher -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <a href="https://peptopia-health.github.io/" class="hover:text-teal-600 dark:hover:text-teal-400 transition">Home</a>
+          <a href="https://x-peps.com/X-Peps/" class="text-teal-600 dark:text-teal-400 font-semibold border-b-2 border-teal-500 pb-1">Guides</a>
+          <a href="https://peptopia-health.github.io/X-Peps/orders/" class="hover:text-teal-600 dark:hover:text-teal-400 transition">Shop</a>
+          <a href="https://peptopia-health.github.io/X-Peps/peptopia_reconstitution_calculator.html" class="px-3.5 py-1.5 rounded-lg bg-teal-500/10 border border-teal-500/30 text-teal-700 dark:text-teal-300 hover:bg-teal-500/20 transition flex items-center gap-2 font-mono text-xs font-semibold">
+            <span>Calculator</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </a>
+        </nav>
+
+        <!-- THEME TOGGLE BUTTON -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Theme" class="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-space-900 text-slate-700 dark:text-slate-200 hover:border-teal-500 dark:hover:border-teal-400 transition text-xs font-medium shadow-sm">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg id="sunIcon" class="w-4 h-4 text-amber-400 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg id="moonIcon" class="w-4 h-4 text-indigo-600 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <span id="themeText" class="font-mono text-[11px] hidden sm:inline">Theme</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+
+    <!-- HERO HEADER -->
+    <div class="text-center max-w-3xl mx-auto mb-16 pt-2">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-300 text-xs font-semibold mb-4 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400"></span>
+        GLP-1/GIP &amp; Triple Agonist Oncology Investigations
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white mb-6 leading-tight">
+        Tirzepatide &amp; Retatrutide in <span class="gradient-text-teal">Cancer Research</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+        Investigating how dual and triple receptor agonists are expanding beyond metabolic endpoints into tumor bioenergetic suppression, hyperinsulinemia downregulation, and oncology risk mitigation.
+      </p>
+
+      <!-- Quick Compound Filter Pills -->
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <button onclick="scrollToSection('tirzepatide')" class="px-4 py-2 rounded-xl bg-white dark:bg-space-850 border border-teal-500/40 hover:border-teal-600 dark:hover:border-teal-400 text-teal-800 dark:text-teal-300 text-sm font-semibold flex items-center gap-2 shadow-sm transition hover:shadow-md">
+          <svg class="w-4 h-4 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          Tirzepatide (Dual Agonist)
+        </button>
+        <button onclick="scrollToSection('retatrutide')" class="px-4 py-2 rounded-xl bg-white dark:bg-space-850 border border-purple-500/40 hover:border-purple-600 dark:hover:border-purple-400 text-purple-800 dark:text-purple-300 text-sm font-semibold flex items-center gap-2 shadow-sm transition hover:shadow-md">
+          <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          Retatrutide (Triple Agonist)
+        </button>
+        <button onclick="scrollToSection('mechanisms')" class="px-4 py-2 rounded-xl bg-white dark:bg-space-850 border border-slate-300 dark:border-slate-700 hover:border-slate-500 text-slate-800 dark:text-slate-200 text-sm font-semibold flex items-center gap-2 shadow-sm transition hover:shadow-md">
+          <svg class="w-4 h-4 text-sky-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          Pathways &amp; Trials
+        </button>
+      </div>
+    </div>
+
+    <!-- HIGH-IMPACT KEY METRIC CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      
+      <!-- Metric 1 -->
+      <div class="pep-card rounded-2xl p-6 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono tracking-wider text-teal-700 dark:text-teal-400 uppercase font-bold">Tirzepatide Cohort Study</span>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/30">Real-World</span>
+        </div>
+        <div class="text-4xl font-extrabold text-slate-900 dark:text-white mb-2 flex items-baseline gap-1.5">
+          <span class="text-teal-600 dark:text-teal-400">-41%</span>
+          <span class="text-sm font-medium text-slate-500 dark:text-slate-400">Total Incident Risk</span>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          Significant reduction in overall obesity-related cancer incidence, led by up to a <strong class="text-teal-700 dark:text-teal-300 font-bold">58% decrease</strong> in endometrial malignancy.
+        </p>
+      </div>
+
+      <!-- Metric 2 -->
+      <div class="pep-card rounded-2xl p-6 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono tracking-wider text-purple-700 dark:text-purple-400 uppercase font-bold">Retatrutide Preclinical</span>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/30">Bioenergetics</span>
+        </div>
+        <div class="text-4xl font-extrabold text-slate-900 dark:text-white mb-2 flex items-baseline gap-1.5">
+          <span class="text-purple-600 dark:text-purple-400">-65%</span>
+          <span class="text-sm font-medium text-slate-500 dark:text-slate-400">PDAC Tumor Load</span>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          Preclinical Pancreatic Ductal Adenocarcinoma volume reduction via glucagon receptor-induced metabolic stress and substrate deprivation.
+        </p>
+      </div>
+
+      <!-- Metric 3 -->
+      <div class="pep-card rounded-2xl p-6 relative overflow-hidden group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono tracking-wider text-rose-700 dark:text-rose-400 uppercase font-bold">TRIM-EBC Human Trial</span>
+          <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-500/10 text-rose-700 dark:text-rose-300 border border-rose-500/30">Phase II/III</span>
+        </div>
+        <div class="text-4xl font-extrabold text-slate-900 dark:text-white mb-2 flex items-baseline gap-1.5">
+          <span class="text-rose-600 dark:text-rose-400">IGF-1</span>
+          <span class="text-sm font-medium text-slate-500 dark:text-slate-400">Axis Suppression</span>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          Active clinical trial exploring early-stage breast cancer recurrence prevention by reversing chemotherapy-induced metabolic dysfunction.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- SECTION 1: TIRZEPATIDE SPOTLIGHT -->
+    <div id="tirzepatide" class="mb-20 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="p-2.5 rounded-xl bg-teal-500/10 border border-teal-500/30 text-teal-600 dark:text-teal-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+        </div>
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-teal-700 dark:text-teal-400 font-bold">Dual Target Agonist • GLP-1 &amp; GIP</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Tirzepatide: Oncology Intel &amp; Evidence</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left: In-Depth Overview Card -->
+        <div class="lg:col-span-7 pep-card rounded-2xl p-7">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-teal-500 dark:bg-teal-400"></span>
+              Metabolic &amp; Anti-Proliferative Actions
+            </h3>
+            <span class="text-xs font-mono bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-700/50 px-2.5 py-1 rounded font-semibold">Preclinical &amp; Epidemiological</span>
+          </div>
+
+          <div class="space-y-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p>
+              Tirzepatide has demonstrated strong cancer-preventative associations among modern incretins. In large cohort investigations, sustained dual GIP and GLP-1 receptor co-agonism generated pronounced protective associations against 13 obesity-associated malignancies.
+            </p>
+
+            <!-- Detailed breakdown list -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-space-900/90 border border-slate-200 dark:border-slate-800">
+                <div class="text-teal-700 dark:text-teal-400 font-bold text-sm mb-1">Endometrial Protection</div>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">-58%</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Marked suppression via estrogen downregulation and visceral fat reduction.</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-space-900/90 border border-slate-200 dark:border-slate-800">
+                <div class="text-sky-700 dark:text-cyan-400 font-bold text-sm mb-1">GI &amp; Colorectal Cancers</div>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">-41%</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Broad risk mitigation across colorectal, pancreatic, and gastric tissues.</div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-teal-50/80 dark:bg-teal-950/20 border border-teal-200 dark:border-teal-500/20 text-xs text-slate-700 dark:text-slate-300">
+              <span class="font-bold text-teal-800 dark:text-teal-300">University of Michigan (ENDO Study):</span> Direct animal models revealed that Tirzepatide decelerates breast tumor growth directly by downregulating the <strong class="text-slate-900 dark:text-white font-bold">IGF-1 / Hyperinsulinemia axis</strong> and attenuating inflammatory cytokine cascades within the tumor microenvironment.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Clinical Trial Highlight (TRIM-EBC) -->
+        <div class="lg:col-span-5 pep-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono uppercase text-teal-700 dark:text-teal-400 font-bold">Spotlight Trial</span>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/30 font-semibold">Active</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">TRIM-EBC Clinical Trial</h3>
+            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mb-4 font-semibold">Target: Early-Stage Breast Cancer (EBC)</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              TRIM-EBC is evaluating whether Tirzepatide-mediated normalization of post-chemotherapy insulin resistance and visceral adiposity can eliminate the microenvironmental fuel that enables cancer recurrence and chemoresistance.
+            </p>
+          </div>
+
+          <div class="border-t border-slate-200 dark:border-slate-800/80 pt-4 space-y-2.5 text-xs font-mono text-slate-500 dark:text-slate-400">
+            <div class="flex justify-between">
+              <span>Primary Endpoint:</span>
+              <span class="text-slate-900 dark:text-slate-200 font-semibold">Metabolic Biomarkers &amp; DFS</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Intervention:</span>
+              <span class="text-teal-700 dark:text-teal-300 font-semibold">Tirzepatide weekly titration</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Key Focus:</span>
+              <span class="text-slate-900 dark:text-slate-200 font-semibold">Chemotherapy Resistance Reduction</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2: RETATRUTIDE SPOTLIGHT -->
+    <div id="retatrutide" class="mb-20 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-400">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-700 dark:text-purple-400 font-bold">Triple Agonist • GLP-1, GIP &amp; Glucagon</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Retatrutide (LY3437943): The Bioenergetic Wedge</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left: Glucagon Bioenergetics Breakdown -->
+        <div class="lg:col-span-7 pep-card rounded-2xl p-7">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-500 dark:bg-purple-400"></span>
+              Glucagon Receptor (GCGR) &amp; The Warburg Effect
+            </h3>
+            <span class="text-xs font-mono bg-purple-50 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700/50 px-2.5 py-1 rounded font-semibold">Targeted Energetic Stress</span>
+          </div>
+
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+            Unlike dual agonists, Retatrutide uniquely engages the <strong class="text-purple-700 dark:text-purple-300 font-semibold">Glucagon Receptor (GCGR)</strong> in addition to GLP-1 and GIP. This elevates basal hepatic energy expenditure, redistributes nutrient fluxes, and alters circulating glycolytic precursors.
+          </p>
+
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-space-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
+              <div class="mt-0.5 text-purple-600 dark:text-purple-400 font-bold font-mono text-sm">01</div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Substrate Deprivation in Aggressive Tumors</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Cancer cells heavily rely on rapid aerobic glycolysis (the Warburg Effect). Glucagon agonism alters intracellular nutrient availability, denying cancer cells their metabolic surge.</p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-space-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
+              <div class="mt-0.5 text-purple-600 dark:text-purple-400 font-bold font-mono text-sm">02</div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Selective Metabolic Fragility</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Healthy tissues adapt to multi-agonist fuel shifts through intact metabolic homeostasis, whereas metabolic-dependent malignant cells suffer energy crisis and apoptosis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Preclinical Pancreatic Cancer Card -->
+        <div class="lg:col-span-5 pep-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono uppercase text-purple-700 dark:text-purple-400 font-bold">Preclinical Breakthrough</span>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/30 font-semibold">In Vivo Model</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Pancreatic Ductal Adenocarcinoma</h3>
+            <p class="text-xs font-mono text-purple-700 dark:text-purple-300 mb-4 font-semibold">Target: PDAC Aggressive Model Systems</p>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              In experimental models of PDAC—traditionally one of the most treatment-refractory cancers—Retatrutide triggered tumor load reductions of <strong class="text-purple-700 dark:text-purple-300 font-bold">up to 65%</strong> by collapsing nutrient transport cascades.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-purple-50/80 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-500/30 text-xs text-slate-700 dark:text-slate-300">
+            <span class="text-purple-800 dark:text-purple-300 font-bold">Key Finding:</span> Triple agonist synergy outperforms single and dual agonists in driving cancer-specific nutrient deprivation without precipitating cachexia in host models.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 3: MECHANISMS GRID -->
+    <div id="mechanisms" class="mb-20 scroll-mt-24">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-mono uppercase tracking-widest text-teal-700 dark:text-teal-400 font-bold">Biochemical Pathways</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Four Anti-Tumor Mechanisms</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">How multi-receptor incretin mimetics remodel host and tumor physiology</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="pep-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-700 dark:text-teal-400 border border-teal-500/30 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              01
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Insulin / IGF-1 Axis</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Drastically suppresses hyperinsulinemia, disabling the IGF-1 and PI3K/Akt/mTOR downstream growth and anti-apoptotic cascades in tumors.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-teal-700 dark:text-teal-400 font-semibold">
+            Target: Mitogenic Signalling
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pep-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-700 dark:text-cyan-400 border border-sky-500/30 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              02
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Inflammation Shield</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Lowers systemic circulating pro-inflammatory cytokines (IL-6, TNF-&alpha;, CRP), remodeling the immunosuppressive microenvironment.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-sky-700 dark:text-cyan-400 font-semibold">
+            Target: Tumor Microenvironment
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pep-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-500/30 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              03
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Tumor Bioenergetics</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Retatrutide's glucagon component shifts nutrient flux, depriving rapidly dividing malignant cells of necessary glucose intermediates.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-purple-700 dark:text-purple-400 font-semibold">
+            Target: Warburg Glycolysis
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="pep-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/30 flex items-center justify-center font-mono font-bold text-sm mb-4">
+              04
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Adiposity &amp; Hormones</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Profound visceral fat loss eliminates peripheral aromatase enzymatic conversion, curbing estrogen-stimulated tumors (breast, endometrial).
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-rose-700 dark:text-rose-400 font-semibold">
+            Target: Estrogenic Synthesis
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 4: CLINICAL GUIDELINES & SURVIVORSHIP MATRIX -->
+    <div class="mb-16">
+      <div class="pep-card rounded-2xl p-8">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6 mb-6">
+          <div>
+            <span class="text-xs font-mono uppercase text-amber-700 dark:text-amber-400 font-bold">Clinical Protocol Analysis</span>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">Clinical Guidelines &amp; Survivorship Considerations</h3>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/30 font-semibold">
+            ESMO Oncology Guidance
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Caution Column -->
+          <div class="space-y-4">
+            <h4 class="text-base font-bold text-amber-700 dark:text-amber-400 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              During Active Chemotherapy &amp; Cytotoxic Care
+            </h4>
+            <ul class="space-y-2.5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 dark:text-amber-400 font-bold">•</span>
+                <span><strong>Delayed Gastric Emptying:</strong> Incretin-induced gastric deceleration may alter oral cytotoxic pharmacokinetics and absorption timing.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 dark:text-amber-400 font-bold">•</span>
+                <span><strong>Gastrointestinal Symptom Overlap:</strong> Nausea and GI adverse profiles may compound standard platinum or taxane-based toxicities.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 dark:text-amber-400 font-bold">•</span>
+                <span><strong>ESMO Guidance:</strong> Suggests caution and dedicated clinical supervision when starting potent incretins during active IV chemotherapy.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Survivorship Column -->
+          <div class="space-y-4">
+            <h4 class="text-base font-bold text-teal-700 dark:text-teal-400 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Survivorship &amp; Endocrine Therapy Synergy
+            </h4>
+            <ul class="space-y-2.5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 dark:text-teal-400 font-bold">•</span>
+                <span><strong>Aromatase Inhibitor (AI) Weight Gain:</strong> Effectively mitigates adiposity gains and metabolic syndrome in post-menopausal breast cancer survivors.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 dark:text-teal-400 font-bold">•</span>
+                <span><strong>Androgen Deprivation Therapy (ADT):</strong> Protects cardiovascular profiles and improves insulin sensitivity in prostate cancer management.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 dark:text-teal-400 font-bold">•</span>
+                <span><strong>Long-Term Recurrence Reduction:</strong> Sustained glycemic optimization creates a hostile host terrain for dormant micro-metastases.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARISON SUMMARY TABLE -->
+    <div class="pep-card rounded-2xl p-6 sm:p-8 mb-16 overflow-hidden">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400"></span>
+        Compound Oncology Profile Comparison
+      </h3>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-mono bg-slate-50 dark:bg-space-900/50">
+              <th class="py-3.5 px-4 font-semibold">Compound</th>
+              <th class="py-3.5 px-4 font-semibold">Receptor Agonism</th>
+              <th class="py-3.5 px-4 font-semibold">Primary Oncology Target</th>
+              <th class="py-3.5 px-4 font-semibold">Demonstrated Impact</th>
+              <th class="py-3.5 px-4 font-semibold">Key Clinical Setting</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800/80 text-slate-700 dark:text-slate-300">
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition">
+              <td class="py-4 px-4 font-bold text-teal-700 dark:text-teal-300 font-mono">Tirzepatide</td>
+              <td class="py-4 px-4">GLP-1 / GIP Dual Agonist</td>
+              <td class="py-4 px-4">Hyperinsulinemia &amp; IGF-1 Axis</td>
+              <td class="py-4 px-4 font-semibold text-slate-900 dark:text-white">41% Risk Drop; 58% Endometrial</td>
+              <td class="py-4 px-4">TRIM-EBC Trial (Early Breast Cancer)</td>
+            </tr>
+            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition">
+              <td class="py-4 px-4 font-bold text-purple-700 dark:text-purple-300 font-mono">Retatrutide</td>
+              <td class="py-4 px-4">GLP-1 / GIP / Glucagon Triple</td>
+              <td class="py-4 px-4">Warburg Effect &amp; Nutrient Collapse</td>
+              <td class="py-4 px-4 font-semibold text-slate-900 dark:text-white">65% Tumor Volume Reduction</td>
+              <td class="py-4 px-4">PDAC &amp; Preclinical Solid Tumors</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800/80 bg-slate-100 dark:bg-space-950 py-12 text-center text-xs text-slate-500 dark:text-slate-400 mt-auto transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      
+      <!-- Brand Logo Footer -->
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-8 h-8 rounded-lg bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-700 dark:text-teal-300 font-bold">
+          P
+        </div>
+        <span class="text-sm font-bold text-slate-900 dark:text-white tracking-wide">Peptopia Health &amp; Wellness</span>
+      </div>
+
+      <p class="max-w-xl text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+        Research guides and intellectual summaries are provided exclusively for academic and informational purposes. Data derived from peer-reviewed publications and clinical trials.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6 mb-6 font-mono text-[11px] text-slate-600 dark:text-slate-400">
+        <a href="https://x-peps.com/X-Peps/" class="hover:text-teal-600 dark:hover:text-teal-400 transition">All Research Guides</a>
+        <a href="https://peptopia-health.github.io/X-Peps/orders/" class="hover:text-teal-600 dark:hover:text-teal-400 transition">Catalog</a>
+        <a href="https://peptopia-health.github.io/X-Peps/peptopia_reconstitution_calculator.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition">Reconstitution Calculator</a>
+        <a href="https://x-peps.com/X-Peps/storage_handling.html" class="hover:text-teal-600 dark:hover:text-teal-400 transition">Storage &amp; Handling</a>
+      </div>
+
+      <div class="text-slate-500 dark:text-slate-500 font-mono text-[11px]">
+        &copy; 2026 Peptopia Health &bull; All rights reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: SMOOTH SCROLL & THEME TOGGLING -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        try { localStorage.setItem('theme', 'light'); } catch(e){}
+      } else {
+        html.classList.add('dark');
+        try { localStorage.setItem('theme', 'dark'); } catch(e){}
+      }
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+</body>
+</html>
