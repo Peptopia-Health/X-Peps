@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLU-PP-332 Research Guide | Peptopia Health</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#f3e8ff',
+                            DEFAULT: '#8B5CF6',
+                            dark: '#6D28D9',
+                            accent: '#A78BFA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #5b21b6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        html.dark .hero-bg {
+            background: linear-gradient(135deg, #2e1065 0%, #4c1d95 50%, #3b0764 100%);
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="rgba(255,255,255,0.08)"/></svg>');
+            z-index: 1;
+        }
+        
+        html.dark .hero-bg::after {
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="rgba(255,255,255,0.03)"/></svg>');
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+        }
+        
+        html.dark .glass-card {
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+
+    <!-- Theme Initialization Script -->
+    <script>
+        function initTheme() {
+            if (localStorage.getItem('peptopia-theme') === 'dark' || (!('peptopia-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        initTheme();
+    </script>
+
+    <!-- Top Navigation Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="https://x-peps.com/" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
+                <div class="w-10 h-10 rounded-full border-2 border-purple-400 shadow-[0_0_10px_rgba(167,139,250,0.4)] bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center text-white font-heading font-bold text-lg">P</div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-bold text-slate-900 dark:text-white leading-none tracking-wide text-lg">PEPTOPIA</span>
+                    <span class="text-[0.65rem] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-widest mt-1">Health & Wellness</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="https://x-peps.com/X-Peps/" class="hidden sm:block text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 uppercase tracking-wider transition-colors">Guides</a>
+                <button onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700 shadow-sm" aria-label="Toggle Theme">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header / Hero Section -->
+    <section class="hero-bg text-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative z-10 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto text-center relative z-20">
+            <span class="uppercase tracking-widest text-xs sm:text-sm font-bold bg-white/10 px-4 py-2 rounded-full mb-6 inline-block border border-white/20 text-purple-300 shadow-sm">
+                Peptopia Research Guide
+            </span>
+            <!-- Title with uniform color applied to text after the colon -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight font-heading text-white">
+                SLU-PP-332: Exercise Mimetic
+            </h1>
+            <p class="text-lg sm:text-xl text-purple-100 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                A molecule that replicates the cellular and metabolic benefits of intense endurance exercise—increasing fat oxidation and stamina without central nervous system stimulation.
+            </p>
+            
+            <a href="https://pay.x-peps.com/SLU" class="bg-white dark:bg-slate-100 text-purple-950 font-bold py-4 px-8 rounded-full shadow-lg hover:bg-purple-50 dark:hover:bg-white transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-2 text-lg">
+                <i class="fa-solid fa-cart-shopping"></i> Shop SLU-PP-332 Now
+            </a>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+        <!-- Overview & Discovery -->
+        <section class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-700 text-white flex items-center justify-center text-3xl mb-6 shadow-lg">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-4 font-heading text-slate-900 dark:text-white">A Breakthrough in Exercise Mimicry</h2>
+                <h3 class="text-xl text-purple-600 dark:text-purple-400 font-semibold mb-4">Cellular Energy & Endurance Without the Treadmill</h3>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    <strong>SLU-PP-332</strong> is an innovative experimental compound engineered to simulate the profound metabolic adaptations traditionally triggered by sustained cardiovascular training.
+                </p>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    Pioneering researchers at the <a href="https://news.ufl.edu/2023/09/exercise-mimicking-drug/" target="_blank" rel="noopener noreferrer" class="text-purple-600 dark:text-purple-400 font-semibold underline hover:text-purple-800 dark:hover:text-purple-300">University of Florida</a> and collaborating academic institutions have demonstrated that this small molecule targets fundamental cellular pathways responsible for energy expenditure, fat burning, and muscle fiber transformation.
+                </p>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    Pioneering researchers at the <a href="https://news.ufl.edu/2023/09/exercise-mimicking-drug/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 font-semibold underline hover:text-emerald-800 dark:hover:text-emerald-300">University of Florida</a> and collaborating academic institutions have demonstrated that this small molecule targets fundamental cellular pathways responsible for energy expenditure, fat burning, and muscle fiber transformation.
+                </p>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                    Crucially, SLU-PP-332 operates without suppressing caloric intake or requiring additional physical output, opening new avenues for researching metabolic health and muscle preservation.
+                </p>
+            </div>
+            
+            <div class="md:w-1/2 glass-card p-8 rounded-3xl border-t-4 border-t-purple-500 dark:border-t-purple-400">
+                <h4 class="font-bold text-slate-900 dark:text-white mb-4 text-lg font-heading">Key Compound Summary</h4>
+                <ul class="space-y-4 text-slate-700 dark:text-slate-300">
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-dna text-purple-600 dark:text-purple-400 mt-1 text-xl"></i>
+                        <div>
+                            <strong class="block text-slate-900 dark:text-white">Primary Target</strong>
+                            <span class="text-sm text-slate-600 dark:text-slate-400">Estrogen-Related Receptor Alpha (ERRα) Agonist</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-fire text-amber-500 mt-1 text-xl"></i>
+                        <div>
+                            <strong class="block text-slate-900 dark:text-white">Metabolic Mode</strong>
+                            <span class="text-sm text-slate-600 dark:text-slate-400">Enhances resting fatty acid oxidation & energy expenditure</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-heart-pulse text-blue-500 mt-1 text-xl"></i>
+                        <div>
+                            <strong class="block text-slate-900 dark:text-white">CNS Impact</strong>
+                            <span class="text-sm text-slate-600 dark:text-slate-400">Non-stimulant mechanism (no elevated heart rate or jitters)</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i class="fa-solid fa-microscope text-purple-600 dark:text-purple-400 mt-1 text-xl"></i>
+                        <div>
+                            <strong class="block text-slate-900 dark:text-white">Research Status</strong>
+                            <span class="text-sm text-slate-600 dark:text-slate-400">Clinical research phase</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="bg-gradient-to-br from-purple-50 to-fuchsia-50 dark:from-slate-800 dark:to-slate-900 border border-purple-100 dark:border-slate-700 rounded-[3rem] p-8 sm:p-12 relative overflow-hidden shadow-sm transition-colors duration-300">
+            <div class="absolute top-0 right-0 -mt-8 -mr-8 text-purple-900/5 dark:text-white/5 text-9xl">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4 font-heading text-slate-900 dark:text-white">How SLU-PP-332 Works</h2>
+                    <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-fuchsia-500 mx-auto rounded-full mb-4"></div>
+                    <!-- Updated slogan requested to be on one line -->
+                    <p class="text-slate-700 dark:text-slate-300 text-lg sm:whitespace-nowrap">
+                        Activates genetics to simulate intense endurance workouts.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-purple-100 dark:border-slate-700 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-400 flex items-center justify-center text-xl mb-4 font-bold">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 font-heading">ERRα Receptor Activation</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            SLU-PP-332 acts as a potent agonist (activator) for <strong>Estrogen-Related Receptors (ERRs)</strong>, with a specific affinity for <strong>ERRα</strong>. These nuclear receptors regulate key metabolic gene networks in energy-demanding tissues such as skeletal muscle, liver, and heart.
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-purple-100 dark:border-slate-700 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-fuchsia-100 dark:bg-fuchsia-900/40 text-fuchsia-700 dark:text-fuchsia-400 flex items-center justify-center text-xl mb-4 font-bold">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 font-heading">Transcriptional Reprogramming</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Upon activation, ERRα triggers gene transcription programs identical to those naturally activated during prolonged aerobic cardio. This stimulates mitochondrial biogenesis and shifts cellular energy production toward lipid utilization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Potential Benefits -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 font-heading text-slate-900 dark:text-white">Key Potential Benefits</h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Clinical findings demonstrate widespread metabolic and physical enhancements.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-2 border-purple-500 dark:border-purple-400">
+                    <div class="text-purple-500 dark:text-purple-400 text-2xl mb-4"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-lg">Boosts Fat Metabolism</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Encourages muscle and hepatic tissue to preferentially burn fatty acids for cellular energy rather than storing them in adipose tissue.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-2 border-fuchsia-500 dark:border-fuchsia-400">
+                    <div class="text-fuchsia-500 dark:text-fuchsia-400 text-2xl mb-4"><i class="fa-solid fa-weight-loss"></i></div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-lg">Aids Weight Loss</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Reduces total fat mass and body weight in obese subjects without requiring reduced food consumption or forced physical exertion.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-2 border-blue-500 dark:border-blue-400">
+                    <div class="text-blue-500 dark:text-blue-400 text-2xl mb-4"><i class="fa-solid fa-cubes-stacked"></i></div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-lg">Improves Blood Sugar</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Enhances peripheral insulin sensitivity and glucose clearance, supporting healthy metabolic homeostasis in insulin-resistant subjects.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-2 border-purple-500 dark:border-purple-400">
+                    <div class="text-purple-500 dark:text-purple-400 text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-lg">Protects the Liver</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Lowers lipid accumulation inside liver cells, offering protective effects against hepatic steatosis and fatty liver progression.
+                    </p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-2 border-purple-500 dark:border-purple-400">
+                    <div class="text-purple-500 dark:text-purple-400 text-2xl mb-4"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-lg">Increases Stamina</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Significantly improves physical endurance capacity, enabling subjects to run longer distances and withstand sustained exertion.
+                    </p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-2 border-purple-500 dark:border-purple-400">
+                    <div class="text-purple-500 dark:text-purple-400 text-2xl mb-4"><i class="fa-solid fa-child-reaching"></i></div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-lg">Supports Muscle Health</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Promotes fatigue-resistant oxidative muscle fibers (Type I) and helps counteract muscle wasting caused by age or inactivity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Non-stimulant feature card -->
+            <div class="mt-8 bg-purple-900 text-white p-8 rounded-3xl shadow-lg flex flex-col md:flex-row items-center gap-6">
+                <div class="w-16 h-16 rounded-full bg-purple-700/60 flex items-center justify-center text-3xl shrink-0 text-purple-300">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold font-heading mb-2 text-purple-300">Non-Stimulant Mechanism</h4>
+                    <p class="text-purple-100 text-sm leading-relaxed">
+                        Unlike conventional fat burners or metabolic agents, SLU-PP-332 operates exclusively via nuclear receptor gene transcription rather than central nervous system (CNS) stimulation. As a result, it does not induce tachycardia, elevated blood pressure, anxiety, or jitters.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Status -->
+        <section class="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors">
+            <div class="bg-amber-500 dark:bg-amber-600 text-white p-6 flex items-center gap-4">
+                <div class="w-12 h-12 bg-amber-600 dark:bg-amber-700 rounded-xl flex items-center justify-center text-2xl shrink-0 shadow-inner">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold font-heading">Current Clinical Status</h3>
+                    <p class="text-amber-100 text-sm">Important experimental context</p>
+                </div>
+            </div>
+
+            <div class="p-8 text-slate-700 dark:text-slate-300">
+                <div class="flex items-start gap-4">
+                    <i class="fa-solid fa-microscope text-amber-500 mt-1 text-lg"></i>
+                    <div>
+                        <strong class="block text-slate-900 dark:text-white mb-1">Clinical Phase</strong>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            All current clinical data and reported benefits stem from laboratory cellular assays and extensive model studies. Long-term human pharmacokinetics remain under investigation but continue to astound researchers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center pb-12">
+            <div class="bg-gradient-to-r from-slate-900 to-purple-950 dark:from-slate-950 dark:to-purple-900 rounded-3xl p-10 sm:p-16 text-white relative overflow-hidden shadow-2xl transition-colors duration-300">
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-6 font-heading">Explore Peptopia Research Resources</h2>
+                    <p class="text-gray-300 dark:text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
+                        Stay informed on emerging compounds, metabolic research, and cellular health breakthroughs.
+                    </p>
+                    <a href="https://pay.x-peps.com/SLU" class="inline-block bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white font-bold text-xl py-4 px-10 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105">
+                        <i class="fa-solid fa-cart-shopping mr-2"></i> Shop SLU-PP-332 Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-slate-900 py-8 border-t border-slate-200 dark:border-slate-800 mt-auto transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                © 2026 Peptopia Health. All information provided is strictly for educational and scientific reference purposes.
+            </p>
+            <div class="flex gap-6 justify-center">
+                <a href="https://x-peps.com/X-Peps/orders/" class="text-slate-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors" title="Shop"><i class="fa-solid fa-bag-shopping text-xl"></i></a>
+                <a href="https://discord.gg/peptopia" target="_blank" class="text-slate-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors" title="Discord"><i class="fa-brands fa-discord text-xl"></i></a>
+                <a href="https://www.youtube.com/@PeptopiaHealth" target="_blank" class="text-slate-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors" title="YouTube"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Logic execution on DOM load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const icon = document.getElementById('theme-icon');
+            if (document.documentElement.classList.contains('dark')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const icon = document.getElementById('theme-icon');
+            
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('peptopia-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('peptopia-theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+    </script>
+</body>
+</html>
