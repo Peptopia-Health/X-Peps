@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Down to Earth Botanicals - Strain Guide</title>
+    
+    <!-- Fallback font imports for live rendering. 
+         For absolute zero-dependency offline use, replace the src URLs in the @font-face blocks below with raw base64 data. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Base64 Font Embedding Structure */
+        @font-face {
+            font-family: 'Outfit-Base64';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url('data:font/woff2;charset=utf-8;base64,[INSERT_BASE64_OUTFIT_HERE]') format('woff2');
+        }
+        @font-face {
+            font-family: 'DMSans-Base64';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('data:font/woff2;charset=utf-8;base64,[INSERT_BASE64_DMSANS_HERE]') format('woff2');
+        }
+
+        :root {
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --border: #E2E8F0;
+            --border-light: #F1F5F9;
+            --sh: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --sh-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            
+            --t1: #0F172A;
+            --t2: #334155;
+            --t3: #64748B;
+            
+            --cyan: #06B6D4;
+            --cyan-light: rgba(6, 182, 212, 0.12);
+            --emerald: #10B981;
+            --emerald-light: rgba(16, 185, 129, 0.12);
+            --violet: #8B5CF6;
+            --violet-light: rgba(139, 92, 246, 0.12);
+            --orange: #F97316;
+            --orange-light: rgba(249, 115, 22, 0.12);
+            --coral: #EF4444;
+            --coral-light: rgba(239, 68, 68, 0.12);
+            --amber: #F59E0B;
+            --amber-light: rgba(245, 158, 11, 0.12);
+            
+            --neon-border: #06B6D4;
+            --radius: 12px;
+            --radius-lg: 16px;
+            
+            /* Typography matching x-peps.com */
+            --font-head: 'Outfit', 'Outfit-Base64', system-ui, sans-serif;
+            --font-body: 'DM Sans', 'DMSans-Base64', system-ui, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--t2);
+            min-height: 100vh;
+            line-height: 1.65;
+        }
+
+        a { color: var(--cyan); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        a:hover { color: var(--violet); }
+
+        .site-header {
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            background: var(--card);
+        }
+
+        .hdr-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-border);
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #06B6D4, #8B5CF6);
+            color: #fff;
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+        }
+
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name {
+            font-family: var(--font-head);
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--t1);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .brand-tag {
+            font-size: 0.7rem;
+            color: var(--t3);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 24px 100px;
+        }
+
+        /* Title Page */
+        .title-page {
+            text-align: center;
+            padding: 80px 20px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title-page h1 {
+            font-family: var(--font-head);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            color: var(--t1);
+        }
+        .title-page h2 {
+            font-family: var(--font-head);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: var(--t3);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        .disclaimer-top {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--amber);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Index Styles */
+        .toc-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 40px;
+            box-shadow: var(--sh);
+        }
+        .toc-main {
+            list-style: none;
+            font-family: var(--font-head);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--t1);
+            line-height: 2;
+        }
+        .toc-sub {
+            list-style: lower-alpha;
+            margin-left: 32px;
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--t2);
+            padding-top: 8px;
+            padding-bottom: 12px;
+        }
+        .toc-sub li { margin-bottom: 8px; }
+
+        /* Animated Meters */
+        .score-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .score-label {
+            width: 130px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--t1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .meter-container {
+            flex: 1;
+            height: 10px;
+            background: var(--border-light);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .meter-fill {
+            height: 100%;
+            border-radius: 10px;
+            animation: fillBar 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            width: 0; /* Animated via JS or inline style */
+        }
+        @keyframes fillBar {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+        
+        .meter-emerald { background: linear-gradient(90deg, #10B981, #34D399); }
+        .meter-cyan { background: linear-gradient(90deg, #06B6D4, #22D3EE); }
+        .meter-coral { background: linear-gradient(90deg, #EF4444, #F87171); }
+        .meter-amber { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+        .meter-violet { background: linear-gradient(90deg, #8B5CF6, #A855F7); }
+
+        /* Standouts Callout Box */
+        .standouts-box {
+            background: var(--card);
+            border-radius: var(--radius-lg);
+            padding: 24px 32px;
+            margin: 32px 0;
+            border: 1px solid var(--border);
+            box-shadow: var(--sh);
+            position: relative;
+            overflow: hidden;
+        }
+        .standouts-box::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 6px;
+        }
+        .standouts-green::before { background: var(--emerald); }
+        .standouts-white::before { background: var(--cyan); }
+        .standouts-red::before { background: var(--coral); }
+        .standouts-yellow::before { background: var(--amber); }
+
+        .standouts-title {
+            font-family: var(--font-head);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--t1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: 24px;
+            box-shadow: var(--sh);
+            transition: box-shadow 0.2s;
+        }
+        .section-card:hover { box-shadow: var(--sh-hover); }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .section-icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .icon-emerald { background: var(--emerald-light); color: var(--emerald); }
+        .icon-cyan { background: var(--cyan-light); color: var(--cyan); }
+        .icon-coral { background: var(--coral-light); color: var(--coral); }
+        .icon-amber { background: var(--amber-light); color: var(--amber); }
+        .icon-violet { background: var(--violet-light); color: var(--violet); }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--t1);
+        }
+        .section-inner {
+            padding: 24px;
+        }
+
+        /* Matrix Table with Pastel Shading */
+        .guide-table {
+            width: 100%; border-collapse: collapse;
+            font-size: 0.9rem; margin: 20px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px; overflow: hidden;
+            box-shadow: var(--sh);
+            background: var(--card);
+        }
+        .guide-table th {
+            background: #F8FAFC;
+            border-bottom: 2px solid var(--border);
+            padding: 14px 16px; text-align: left;
+            font-family: var(--font-head);
+            font-size: 0.85rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            color: var(--t3);
+        }
+        .guide-table td {
+            border-bottom: 1px solid var(--border-light);
+            padding: 12px 16px; color: var(--t1); font-weight: 500;
+            vertical-align: middle;
+        }
+        
+        /* Pastel Matrix Rows */
+        tr.matrix-green-1 td { background-color: #F0FDF4; }
+        tr.matrix-green-2 td { background-color: #DCFCE7; }
+        tr.matrix-white-1 td { background-color: #F8FAFC; }
+        tr.matrix-white-2 td { background-color: #F1F5F9; }
+        tr.matrix-red-1 td { background-color: #FEF2F2; }
+        tr.matrix-red-2 td { background-color: #FEE2E2; }
+        tr.matrix-gold-1 td { background-color: #FFFBEB; }
+        tr.matrix-gold-2 td { background-color: #FEF3C7; }
+
+        /* Typography */
+        h2.section-heading {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 60px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-light);
+        }
+        .color-emerald { color: var(--emerald); }
+        .color-cyan { color: var(--cyan); }
+        .color-coral { color: var(--coral); }
+        .color-amber { color: var(--amber); }
+
+        .callout {
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-left: 4px solid;
+            font-size: 0.95rem; line-height: 1.6;
+            background: rgba(15, 23, 42, 0.03);
+            border-color: var(--t3);
+        }
+        .callout-title {
+            font-family: var(--font-head);
+            font-weight: 700; font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex; align-items: center; gap: 8px;
+            color: var(--t1);
+        }
+
+        .guide-footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            background: #FFFFFF;
+        }
+        .footer-disclaimer {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 0.9rem;
+            color: var(--t3);
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="#" class="hdr-brand">
+            <div class="brand-logo">P</div>
+            <div class="brand-text">
+                <span class="brand-name">Peptopia</span>
+                <span class="brand-tag">Clinical Research</span>
+            </div>
+        </a>
+    </header>
+
+    <main class="main">
+        <!-- Title Page -->
+        <div class="title-page">
+            <div class="disclaimer-top">
+                <i class="fa-solid fa-triangle-exclamation"></i> Independent product analysis. No affiliation or sponsorship with DTE.
+            </div>
+            <h1>Down to Earth Botanicals</h1>
+            <h2>Complete Strain Guide</h2>
+        </div>
+
+        <!-- Index / Table of Contents -->
+        <div class="toc-card">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                <i class="fa-solid fa-book-open" style="font-size: 24px; color: var(--cyan);"></i>
+                <h3 style="font-family: var(--font-head); font-size: 1.5rem; color: var(--t1);">Table of Contents</h3>
+            </div>
+            <ol class="toc-main">
+                <li><a href="#comparison">Visual Kratom Color Comparison Matrix</a></li>
+                <li>Strain analyses by color
+                    <ol class="toc-sub">
+                        <li><a href="#green">Green Veins: Euphoria, Drive & Bliss</a></li>
+                        <li><a href="#white">White Veins: High Velocity & Cognitive Clarity</a></li>
+                        <li><a href="#red">Red Veins: Deep Relaxation & Somatic Relief</a></li>
+                        <li><a href="#gold">Gold & Yellow Veins: Golden Hour Warmth</a></li>
+                        <li><a href="#blends">Specialty Blends & Synergistic Synergies</a></li>
+                    </ol>
+                </li>
+                <li><a href="#sources">Bibliography & Citations</a></li>
+            </ol>
+        </div>
+
+        <!-- Science Note -->
+        <div class="callout" style="border-color: var(--violet); background: var(--violet-light);">
+            <div class="callout-title" style="color: var(--violet);"><i class="fa-solid fa-flask"></i> Alkaloid Science & Product Characterization</div>
+            <p style="color: var(--t1);">The consumer record reliably demonstrates that different kratom color phenotypes present distinct physiological effects. While laboratory certificates of analysis (COAs) map the primary alkaloids (mitragynine and 7-hydroxymitragynine), they do not capture the full entourage effect of minor alkaloids and traditional curing methodologies. The exact pharmacological mechanism—the "why" behind the diverse profiles—remains an open scientific question, but the characterizations and effects listed in this guide reflect established, consistent product analysis.</p>
+        </div>
+
+        <!-- 1. Visual Comparison Graphic -->
+        <h2 id="comparison" class="section-heading color-cyan">1. Visual Kratom Color Comparison Matrix</h2>
+        <p style="margin-bottom: 30px;">Refer to the visual taxonomy below to rapidly identify the optimal color phenotype suited for specific physiological targets and shifting daily requirements.</p>
+        
+        <div style="text-align: center; margin-bottom: 40px;">
+            <!-- Renders the graphic if located in the same directory, scales fluidly -->
+            <img src="Kratom Comparison.png" alt="Kratom Color Comparison" style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--sh);">
+        </div>
+
+        <!-- Master Matrix Table -->
+        <div style="overflow-x: auto;">
+            <table class="guide-table">
+                <thead>
+                    <tr>
+                        <th>Strain Name & Batch</th>
+                        <th>Phenotype</th>
+                        <th>Pacing</th>
+                        <th>Primary Characterization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="matrix-green-1">
+                        <td><strong>30-Year Pure Green MD (A33)</strong></td>
+                        <td>Green</td>
+                        <td>Mid-Fast</td>
+                        <td>Executive focus, task initiation, workday drive</td>
+                    </tr>
+                    <tr class="matrix-green-2">
+                        <td><strong>Green PMD 18 (C4)</strong></td>
+                        <td>Green</td>
+                        <td>Moderate</td>
+                        <td>Versatile focus, sustained social bliss, elite mood</td>
+                    </tr>
+                    <tr class="matrix-white-1">
+                        <td><strong>Super White Elephant (A33)</strong></td>
+                        <td>White</td>
+                        <td>Fast</td>
+                        <td>Morning wake-up, athletic drive, social fluency</td>
+                    </tr>
+                    <tr class="matrix-white-2">
+                        <td><strong>White Bone (K19)</strong></td>
+                        <td>White</td>
+                        <td>Fast</td>
+                        <td>Heavy physical endurance, dense alkaloid drive</td>
+                    </tr>
+                    <tr class="matrix-red-1">
+                        <td><strong>Old School Red Sumatra (D11)</strong></td>
+                        <td>Red</td>
+                        <td>Mid-Slow</td>
+                        <td>Golden Hour, empathogenic bliss, unfermented calm</td>
+                    </tr>
+                    <tr class="matrix-red-2">
+                        <td><strong>Secret Red Sunda</strong></td>
+                        <td>Red</td>
+                        <td>Slow</td>
+                        <td>Deep nighttime sedation, heavy physical relief, sleep</td>
+                    </tr>
+                    <tr class="matrix-gold-1">
+                        <td><strong>Elder Tree Gold</strong></td>
+                        <td>Gold</td>
+                        <td>Mid-Slow</td>
+                        <td>Evening unwind, warm euphoric blanket, emotional peace</td>
+                    </tr>
+                    <tr class="matrix-gold-2">
+                        <td><strong>Mellow Yellow Indo</strong></td>
+                        <td>Yellow</td>
+                        <td>Mid-Slow</td>
+                        <td>Anti-anxiety, grounding, mental composure</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 2. Green Veins -->
+        <h2 id="green" class="section-heading color-emerald">2. Green Veins: Euphoria, Drive & Bliss</h2>
+        
+        <div class="standouts-box standouts-green">
+            <div class="standouts-title"><i class="fa-solid fa-trophy" style="color: var(--amber);"></i> Green Vein Standouts</div>
+            <ul style="list-style: none; color: var(--t2);">
+                <li style="margin-bottom: 8px;"><strong style="color: var(--t1);">Peak Euphoria & Mood Lift:</strong> Beetlejuice Green 2.0, Green PMD 18 (C4)</li>
+                <li style="margin-bottom: 8px;"><strong style="color: var(--t1);">Maximum Executive Drive:</strong> 30-Year Pure Green MD (A33), 20-Year Wild Green Dragon</li>
+                <li><strong style="color: var(--t1);">Luxury Velvet Consistency:</strong> Imperial Green Dragon (SD D10)</li>
+            </ul>
+        </div>
+
+        <!-- Strain Card: 30-Year Pure Green MD -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon icon-emerald"><i class="fa-solid fa-tree"></i></div>
+                <div class="section-title">30-Year Pure Green MD Select-Series (Batch A33)</div>
+            </div>
+            <div class="section-inner">
+                <p style="margin-bottom: 24px;">Harvested by Farmer A from remote, wild old-growth canopy trees deep in the Kapuas river basin. This profile is frequently cited in product analysis as a flagship benchmark for expansive, radiant cerebral euphoria that entirely eradicates morning apathy, utilizing an ultra-fine emerald flour grind that facilitates rapid absorption.</p>
+                
+                <!-- Animated Meters -->
+                <div style="margin-bottom: 24px;">
+                    <div class="score-row">
+                        <span class="score-label">Euphoria (4.8)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 96%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Energy (4.2)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 84%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Relaxation (3.2)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 64%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Legs (4.5h)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 90%;"></div></div>
+                    </div>
+                </div>
+
+                <table class="guide-table">
+                    <thead><tr><th>Primary Alkaloid Profile</th><th>Target Concentration</th></tr></thead>
+                    <tbody>
+                        <tr><td>Mitragynine (MIT)</td><td>~ 1.80% - 2.00%</td></tr>
+                        <tr><td>7-Hydroxymitragynine (7-OH-MIT)</td><td>< 0.015%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Strain Card: Imperial Green Dragon -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon icon-emerald"><i class="fa-solid fa-wind"></i></div>
+                <div class="section-title">Imperial Green Dragon (String-Dried SD D10)</div>
+            </div>
+            <div class="section-inner">
+                <p style="margin-bottom: 24px;">An artisanal luxury daytime harvest. Farmer D utilizes highly specialized indoor string-drying lines where mature whole leaves are suspended by their stems in humidity-monitored dark rooms. This meticulous process prevents thermal and UV degradation, protecting delicate secondary indoles to produce a velvety, anxiety-free high-gear output.</p>
+                
+                <!-- Animated Meters -->
+                <div style="margin-bottom: 24px;">
+                    <div class="score-row">
+                        <span class="score-label">Euphoria (4.9)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 99%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Energy (3.8)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 76%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Legs (5.5h)</span>
+                        <div class="meter-container"><div class="meter-fill meter-emerald" style="width: 100%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 3. White Veins -->
+        <h2 id="white" class="section-heading color-cyan">3. White Veins: High Velocity & Cognitive Clarity</h2>
+
+        <div class="standouts-box standouts-white">
+            <div class="standouts-title"><i class="fa-solid fa-trophy" style="color: var(--amber);"></i> White Vein Standouts</div>
+            <ul style="list-style: none; color: var(--t2);">
+                <li style="margin-bottom: 8px;"><strong style="color: var(--t1);">Elite Cognitive Focus:</strong> Wild White JK (A28 / A30), White JK Platinum (K16)</li>
+                <li style="margin-bottom: 8px;"><strong style="color: var(--t1);">Maximum Kinetic Drive:</strong> White Bone (K19), Super White Elephant Select (A33)</li>
+                <li><strong style="color: var(--t1);">Smooth Daytime Optimism:</strong> Blizzard Bali</li>
+            </ul>
+        </div>
+
+        <!-- Strain Card: Super White Elephant -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon icon-cyan"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <div class="section-title">Super White Elephant Select (Batch A33)</div>
+            </div>
+            <div class="section-inner">
+                <p style="margin-bottom: 24px;">Sourced by Farmer A from mature broad-leaf (elephant) wild trees. Product analyses consistently highlight this profile for delivering a soaring, sunny, and extroverted mood lift that immediately clears mental fog. It represents maximum clean stimulation—ideal for anti-procrastination and athletic initiation without producing nervous tremors.</p>
+                
+                <div style="margin-bottom: 24px;">
+                    <div class="score-row">
+                        <span class="score-label">Euphoria (4.9)</span>
+                        <div class="meter-container"><div class="meter-fill meter-cyan" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Energy (4.9)</span>
+                        <div class="meter-container"><div class="meter-fill meter-cyan" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Relaxation (1.8)</span>
+                        <div class="meter-container"><div class="meter-fill meter-cyan" style="width: 36%;"></div></div>
+                    </div>
+                </div>
+
+                <table class="guide-table">
+                    <thead><tr><th>Primary Alkaloid Profile</th><th>Target Concentration</th></tr></thead>
+                    <tbody>
+                        <tr><td>Mitragynine (MIT)</td><td>~ 1.65% - 1.85%</td></tr>
+                        <tr><td>7-Hydroxymitragynine (7-OH-MIT)</td><td>< 0.010%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. Red Veins -->
+        <h2 id="red" class="section-heading color-coral">4. Red Veins: Deep Relaxation & Somatic Relief</h2>
+        
+        <div class="standouts-box standouts-red">
+            <div class="standouts-title"><i class="fa-solid fa-trophy" style="color: var(--amber);"></i> Red Vein Standouts</div>
+            <ul style="list-style: none; color: var(--t2);">
+                <li style="margin-bottom: 8px;"><strong style="color: var(--t1);">Unfermented Daytime Bliss:</strong> Wild Red Dragon (A27), Super Red MD (A24)</li>
+                <li style="margin-bottom: 8px;"><strong style="color: var(--t1);">Golden Hour Unwind:</strong> Old School Red Sumatra (D11), PRMD 18 (C5)</li>
+                <li><strong style="color: var(--t1);">Maximum Sedation & Relief:</strong> Secret Red Sunda, Red Bali (R7 C5)</li>
+            </ul>
+        </div>
+
+        <!-- Strain Card: Old School Red Sumatra -->
+        <div class="section-card">
+            <div class="section-header">
+                <div class="section-icon icon-coral"><i class="fa-solid fa-mug-hot"></i></div>
+                <div class="section-title">Old School Red Sumatra (Batch D11)</div>
+            </div>
+            <div class="section-inner">
+                <p style="margin-bottom: 24px;">A meticulously clean, indoor-cured wild Sumatra harvest from Farmer D. Avoids the heavy sluggishness of solar-fermentation, instead unfolding with a transcendent wave of warm, smiling emotional elevation. It softens situational stress, eases postural rigidity, and inspires profound contentedness during the evening transition.</p>
+                
+                <div style="margin-bottom: 24px;">
+                    <div class="score-row">
+                        <span class="score-label">Euphoria (4.9)</span>
+                        <div class="meter-container"><div class="meter-fill meter-coral" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Relaxation (4.8)</span>
+                        <div class="meter-container"><div class="meter-fill meter-coral" style="width: 96%;"></div></div>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Sedation (4.2)</span>
+                        <div class="meter-container"><div class="meter-fill meter-coral" style="width: 84%;"></div></div>
+                    </div>
+                </div>
+
+                <table class="guide-table">
+                    <thead><tr><th>Primary Alkaloid Profile</th><th>Target Concentration</th></tr></thead>
+                    <tbody>
+                        <tr><td>Mitragynine (MIT)</td><td>~ 1.45%</td></tr>
+                        <tr><td>7-Hydroxymitragynine (7-OH-MIT)</td><td>~ 0.015% (Elevated via curing)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="guide-footer">
+        <div class="footer-disclaimer">
+            <strong>DISCLAIMER:</strong> This monograph is an independent product analysis and characterization effort. The author is an independent customer and has no affiliation, sponsorship, endorsement, or business relationship with Down to Earth (DTE) Botanicals, and does not represent the company in any capacity. Kratom (Mitragyna speciosa) has not been evaluated by the FDA and is not intended to diagnose, treat, cure, or prevent any disease. Product effects represent subjective community consensus and independent review.
+        </div>
+        
+        <h3 id="sources" style="font-family: var(--font-head); color: var(--t1); margin-bottom: 20px; font-size: 1.2rem;">Bibliography & Citations</h3>
+        <div style="text-align: left; max-width: 800px; margin: 0 auto; color: var(--t2); font-size: 0.9rem;">
+            <p style="margin-bottom: 12px;">1. <em>Down to Earth Botanicals Strain Guide</em>. Peptopia Research Archive. Synthesized from product analyses across independent forums[cite: 1, 2, 3, 10].</p>
+            <p style="margin-bottom: 12px;">2. <em>Visual Taxonomy and Color Classification</em>. Author Archive[cite: 11].</p>
+            <p style="margin-bottom: 12px;">3. <em>Kratom Purchases - Full Chart (Updated 2026)</em>. Peptopia Database[cite: 5, 6, 7, 8, 9].</p>
+            <p style="margin-bottom: 12px;">4. <em>Comprehensive Kratom Guide: Benefits and Effects</em>. Operations Supplement Safety & Independent Reviews[cite: 12].</p>
+        </div>
+        
+        <p style="border-top: 1px solid var(--border); padding-top: 24px; margin-top: 30px; font-weight: 500;">
+            &copy; 2026 Peptopia Clinical Research. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Trigger CSS animations on load
+        window.onload = () => {
+            document.querySelectorAll('.meter-fill').forEach(el => {
+                const width = el.style.width;
+                el.style.width = '0';
+                setTimeout(() => { el.style.width = width; }, 100);
+            });
+        }
+    </script>
+</body>
+</html>
