@@ -362,7 +362,7 @@
                     <div class="card-ico"><i class="fa-solid fa-leaf"></i></div>
                     <h2>Kratom Guide</h2>
                 </div>
-                <p>Comprehensive guide to Kratom strains, alkaloid profiles, and effects, featuring a detailed analysis of Yellow strains.</p>
+                <p>Comprehensive guide to Kratom strains, alkaloid profiles, and effects, featuring a detailed analysis of Yellow strains.<br><span class="dose-link" role="button" tabindex="0" onclick="event.preventDefault();event.stopPropagation();openDosePopup()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();openDosePopup()}">Kratom Dose Conversions</span></p>
                 <span class="btn b-dark-green"><i class="fa-solid fa-arrow-right"></i> Read Guide</span>
             </a>
             
@@ -518,6 +518,27 @@
         var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
         function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
         (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+    </script>
+
+    <style>
+        .dose-link{color:#7c3aed;text-decoration:underline;cursor:pointer;font-weight:600}
+        .dose-link:hover{color:#5b21b6}
+        .dose-overlay{position:fixed;inset:0;background:rgba(18,26,18,.74);display:flex;align-items:center;justify-content:center;z-index:9999;padding:4vmin}
+        .dose-overlay[hidden]{display:none}
+        .dose-modal{position:relative;max-width:min(920px,94vw);background:#fff;border-radius:18px;padding:10px;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+        .dose-modal img{display:block;width:100%;height:auto;max-height:82vh;border-radius:12px}
+        .dose-close{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border-radius:50%;border:none;background:#7c3aed;color:#fff;font-size:24px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    </style>
+    <div id="dosePopup" class="dose-overlay" hidden onclick="if(event.target===this)closeDosePopup()">
+        <div class="dose-modal" role="dialog" aria-modal="true" aria-label="Kratom Dose Conversions">
+            <button class="dose-close" onclick="closeDosePopup()" aria-label="Close">&times;</button>
+            <img src="kratom-dose-conversion.png" alt="Kratom Dose Conversion chart">
+        </div>
+    </div>
+    <script>
+        function openDosePopup(){document.getElementById('dosePopup').hidden=false;document.body.style.overflow='hidden'}
+        function closeDosePopup(){document.getElementById('dosePopup').hidden=true;document.body.style.overflow=''}
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDosePopup()});
     </script>
 </body>
 </html>
