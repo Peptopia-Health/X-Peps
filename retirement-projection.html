@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement Projection — October 2026</title>
+<style>
+:root, [data-theme="light"]{
+  --bg:#faf8f2; --bg2:#f1ece0; --card:#ffffff; --ink:#2b2721; --muted:#6f675a;
+  --line:#ddd3bd; --accent:#1f6f5c; --accent-soft:#e3f0eb; --gold:#8a6d1a;
+  --hl:#fff7dd; --shadow:0 2px 10px rgba(60,50,30,.08);
+}
+[data-theme="dark"]{
+  --bg:#171512; --bg2:#211e19; --card:#24211c; --ink:#ece5d8; --muted:#a89e8d;
+  --line:#3a352c; --accent:#5fc4a8; --accent-soft:#1d2b26; --gold:#d9b64a;
+  --hl:#2c2617; --shadow:0 2px 10px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;padding:0 0 60px}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;
+  padding:7px 16px;font-size:13px;cursor:pointer}
+.themebtn:hover{border-color:var(--accent)}
+h1{font-size:34px;margin:6px 0 4px;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:15px;margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;
+  margin:18px 0;box-shadow:var(--shadow)}
+h2{font-size:21px;margin:0 0 10px;color:var(--accent)}
+h3{font-size:16px;margin:16px 0 6px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+th{background:var(--bg2);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+tr.hl td{background:var(--hl);font-weight:600}
+.num{font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:var(--muted)}
+.assume{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:8px}
+.assume div{background:var(--bg2);border-radius:10px;padding:10px 14px;font-size:13.5px}
+.assume b{color:var(--accent)}
+.big{font-size:26px;font-weight:700;color:var(--accent)}
+.totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}
+.totals .t{background:var(--accent-soft);border-radius:10px;padding:12px 14px}
+.totals .t .a{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.totals .t .v{font-size:19px;font-weight:700}
+ul.tight{margin:6px 0;padding-left:20px;font-size:14.5px}
+ul.tight li{margin:5px 0}
+.disclaimer{margin-top:26px;padding:16px 20px;border:1px dashed var(--line);border-radius:12px;
+  font-size:13px;color:var(--muted);background:var(--bg2)}
+footer{margin-top:18px;font-size:12.5px;color:var(--muted);text-align:center}
+@media print{
+  .themebtn,.topbar .themebtn{display:none!important}
+  body{background:#fff;color:#111;padding:0}
+  .card{box-shadow:none;break-inside:avoid}
+  [data-theme="dark"]{--bg:#fff;--card:#fff;--ink:#111;--muted:#555;--line:#ccc;--bg2:#f4f4f4;--accent:#1f6f5c;--accent-soft:#eef5f2;--hl:#fffbe8}
+}
+@media(max-width:640px){th,td{font-size:12.5px;padding:7px 6px}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <div class="kicker">Independent personal analysis · October 2026</div>
+  <button class="themebtn" id="themeBtn" onclick="toggleTheme()">🌙 Dark mode</button>
+</div>
+
+<h1>Retirement Projection</h1>
+<p class="sub">Yearly &amp; monthly withdrawal estimates at ages 57, 59, 62, 67 and 70 — built from verified account balances, official Social Security estimates, and FERS pension math.</p>
+
+<div class="card">
+<h2>Starting assets <span class="note">(verified Oct 13, 2026)</span></h2>
+<table class="num">
+<tr><th>Account</th><th>Balance</th></tr>
+<tr><td>Thrift Savings Plan (single merged account)</td><td>$540,991</td></tr>
+<tr><td>Fidelity Rollover IRA</td><td>$542,014</td></tr>
+<tr><td>General Dynamics 401(k)</td><td>$77,955</td></tr>
+<tr><td>Fidelity Roth IRA</td><td>$23,738</td></tr>
+<tr><td>Cash (Fidelity + NWFCU checking/savings)</td><td>$23,030</td></tr>
+<tr class="hl"><td>Total</td><td>$1,207,728</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>Assumptions</h2>
+<div class="assume">
+<div><b>Growth:</b> 6% nominal / yr (stock-heavy portfolio)</div>
+<div><b>Contributions:</b> ~$7,300/yr to TSP while employed (5% + match + auto 1%)</div>
+<div><b>Withdrawal rate:</b> 4% of portfolio at retirement</div>
+<div><b>FERS pension:</b> 7 prior yrs + VA yrs; high-3 $145k; 1% factor (1.1% at 62+ w/ 20+ yrs). Assumes 2012 service counts (no refund taken).</div>
+<div><b>Social Security:</b> SSA official estimates, adjusted upward for $73k VA earnings replacing SSA's assumed $30.1k/yr</div>
+<div><b>Dollars:</b> nominal (not inflation-adjusted)</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Social Security — official vs. adjusted</h2>
+<p class="note" style="margin-top:0">SSA's estimates assume continued earnings of $30,100/yr. Actual VA earnings (~$73,000/yr) lift the benefit — adjusted figures below add the marginal gain per working year.</p>
+<table class="num">
+<tr><th>Claim age</th><th>SSA official / mo</th><th>Adjusted / mo</th><th>Adjusted / yr</th></tr>
+<tr><td>62</td><td>$2,610</td><td>$2,650</td><td>$31,800</td></tr>
+<tr><td>67 (full retirement age)</td><td>$3,707</td><td>$3,880</td><td>$46,560</td></tr>
+<tr class="hl"><td>70</td><td>$4,596</td><td>$4,870</td><td>$58,440</td></tr>
+</table>
+<p class="note">Earnings record note: 2025 shows $0 (nursing-student year) and 2024 was $30,100 — both unusually low vs. prior years (2021–2023 all above $140k). Verify 2025 earnings with SSA; correcting it can only help.</p>
+</div>
+
+<div class="card">
+<h2>Projection by retirement age</h2>
+<p class="note" style="margin-top:0">"Total" = 4% portfolio withdrawal + FERS pension + Social Security. Retiring at 57 or 59: pension &amp; Social Security begin at 62.</p>
+<table class="num">
+<tr><th>Retire at</th><th>Portfolio</th><th>Withdraw / yr</th><th>Withdraw / mo</th><th>Total / yr</th><th>Total / mo</th></tr>
+<tr><td><b>57</b> (now)</td><td>$1,207,728</td><td>$48,309</td><td>$4,026</td><td>$90,259*</td><td>$7,522*</td></tr>
+<tr><td><b>59</b></td><td>$1,372,041</td><td>$54,882</td><td>$4,574</td><td>$99,732*</td><td>$8,311*</td></tr>
+<tr><td><b>62</b></td><td>$1,657,363</td><td>$66,295</td><td>$5,525</td><td>$115,495</td><td>$9,625</td></tr>
+<tr><td><b>67</b></td><td>$2,259,077</td><td>$90,363</td><td>$7,530</td><td>$161,573</td><td>$13,464</td></tr>
+<tr class="hl"><td><b>70</b></td><td>$2,713,837</td><td>$108,553</td><td>$9,046</td><td>$198,893</td><td>$16,574</td></tr>
+</table>
+<p class="note">*Ages 57/59 totals apply from age 62 onward, when pension + Social Security start. Before 62, income is the portfolio withdrawal alone.</p>
+<h3>Income mix at each age</h3>
+<table class="num">
+<tr><th>Retire at</th><th>Portfolio 4%</th><th>FERS pension / yr</th><th>Social Security / yr</th></tr>
+<tr><td><b>57</b></td><td>$48,309</td><td>$10,150 (from 62)</td><td>$31,800 (from 62)</td></tr>
+<tr><td><b>59</b></td><td>$54,882</td><td>$13,050 (from 62)</td><td>$31,800 (from 62)</td></tr>
+<tr><td><b>62</b></td><td>$66,295</td><td>$17,400</td><td>$31,800</td></tr>
+<tr><td><b>67</b></td><td>$90,363</td><td>$24,650</td><td>$46,560</td></tr>
+<tr><td><b>70</b></td><td>$108,553</td><td>$31,900</td><td>$58,440</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>Key takeaways</h2>
+<div class="totals">
+<div class="t"><div class="a">Retire today → from 62</div><div class="v">$90k/yr</div></div>
+<div class="t"><div class="a">Retire at 62</div><div class="v">$116k/yr</div></div>
+<div class="t"><div class="a">Retire at 67</div><div class="v">$162k/yr</div></div>
+<div class="t"><div class="a">Retire at 70</div><div class="v">$199k/yr</div></div>
+</div>
+<ul class="tight">
+<li>Delaying Social Security from 62 to 70 grows the check from ~$31.8k to ~$58.4k/yr — the single biggest lever.</li>
+<li>Each working year adds ~$7,300 in TSP contributions plus ~6% compounding on a seven-figure base, and accrues another year of FERS pension (~$1,450/yr of annual pension per year at the $145k high-3).</li>
+<li>The TSP is 100% stocks (61% S Fund / 39% I Fund) — strong growth engine, but no stabilizer. Worth revisiting allocation as retirement nears.</li>
+<li>Verify 2025 ($0) earnings with SSA — a correction raises the benefit baseline.</li>
+<li>Confirm with HR whether the 2012-era FERS service is creditable (no refund taken); the pension figures above depend on it.</li>
+</ul>
+</div>
+
+<div class="disclaimer">
+<strong>Disclaimer.</strong> This is a personal planning estimate, not financial advice. Projections use simplified assumptions (steady 6% growth, 4% withdrawal, current law) and actual outcomes will differ — markets fluctuate, tax law changes, and personal circumstances evolve. Social Security figures are estimates derived from SSA's official numbers adjusted for actual earnings; only SSA can give a definitive benefit amount. Consult a qualified fiduciary advisor before making retirement decisions. Prepared October 2026 for personal use.
+</div>
+
+<footer>Self-contained single file · prints cleanly to PDF via browser print</footer>
+</div>
+<script>
+function toggleTheme(){
+  var h=document.documentElement;
+  var next=h.getAttribute('data-theme')==='light'?'dark':'light';
+  h.setAttribute('data-theme',next);
+  document.getElementById('themeBtn').textContent=next==='light'?'🌙 Dark mode':'☀️ Light mode';
+}
+if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){
+  /* default stays light per author preference */
+}
+</script>
+</body>
+</html>
