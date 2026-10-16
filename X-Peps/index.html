@@ -226,6 +226,31 @@
         .news-card .tile-week{font-size:.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin:0}
         .news-card .nc-btn{font-size:.78rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#DC2626,#2563EB);
             padding:5px 12px;border-radius:20px;text-decoration:none;white-space:nowrap}
+
+        /* News archive modal popup */
+        .news-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+            background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:20px}
+        .news-modal-overlay.open{display:flex}
+        .news-modal{background:var(--card);border:1px solid var(--border);border-radius:16px;
+            max-width:560px;width:100%;max-height:80vh;overflow-y:auto;padding:24px;position:relative;
+            box-shadow:0 20px 60px rgba(0,0,0,.3)}
+        .news-modal h3{margin:0 0 16px;font-size:1.1rem;color:var(--t1)}
+        .news-modal-close{position:absolute;top:12px;right:16px;background:none;border:none;
+            font-size:1.5rem;cursor:pointer;color:var(--t3);line-height:1}
+        .news-modal-close:hover{color:var(--t1)}
+        .news-modal-list{display:flex;flex-direction:column;gap:10px}
+        .news-modal-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);
+            border-radius:10px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+        .news-modal-item:hover{transform:translateY(-1px);box-shadow:var(--sh)}
+        .news-modal-item .nc-ico{width:36px;height:36px;flex:none;border-radius:8px;display:flex;
+            align-items:center;justify-content:center;
+            background:linear-gradient(135deg,rgba(220,38,38,.12),rgba(37,99,235,.12));color:#DC2626}
+        html.dark .news-modal-item .nc-ico{background:linear-gradient(135deg,rgba(220,38,38,.2),rgba(37,99,235,.2));color:#F87171}
+        .news-modal-item .nmi-text{flex:1;min-width:0}
+        .news-modal-item .nmi-title{font-weight:700;font-size:.9rem;color:var(--t1);margin:0 0 2px;line-height:1.3}
+        .news-modal-item .nmi-week{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.8px}
+        .news-modal-item .nmi-arrow{color:var(--t3);font-size:1.2rem;flex:none}
+
         /* Archive dropdown */
         .news-archive{width:100%;max-width:640px;margin:4px auto 0;text-align:center}
         .news-archive summary{cursor:pointer;font-size:.85rem;font-weight:600;color:var(--t2);padding:8px;
@@ -379,11 +404,75 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
                 </div>
             </a>
         </div>
-        <details class="news-archive">
-            <summary>▼ Older updates</summary>
-            <div class="archive-list" id="news-archive-list">
+        <div style="text-align:center;margin-top:12px">
+            <button id="news-archive-btn" style="cursor:pointer;font-size:.9rem;font-weight:600;color:var(--t2);
+                background:none;border:1px solid var(--border);padding:10px 24px;border-radius:24px">
+                ▼ Browse all news stories
+            </button>
+        </div>
+        <div class="news-modal-overlay" id="news-modal-overlay">
+            <div class="news-modal">
+                <button class="news-modal-close" id="news-modal-close" aria-label="Close">×</button>
+                <h3>📰 Smart Drug News Archive</h3>
+                <div class="news-modal-list" id="news-modal-list">
+                    <a href="glp-news-2026-10-26.html" class="news-modal-item">
+                        <div class="nc-ico">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="nmi-text">
+                            <p class="nmi-title">Retatrutide's TRIUMPH-2: Triple Agonist Hits 18.8% Weight Loss</p>
+                            <p class="nmi-week">Week of Oct 26 – Nov 1, 2026</p>
+                        </div>
+                        <span class="nmi-arrow">→</span>
+                    </a>
+                    <a href="glp-news-2026-10-19.html" class="news-modal-item">
+                        <div class="nc-ico">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2h12"></path><path d="M6 22h12"></path>
+                                <path d="M7 2v4l5 5 5-5V2"></path><path d="M17 22v-4l-5-5-5 5v4"></path>
+                            </svg>
+                        </div>
+                        <div class="nmi-text">
+                            <p class="nmi-title">Semaglutide Extends Lifespan 12% in Landmark Mouse Study</p>
+                            <p class="nmi-week">Week of Oct 19 – 25, 2026</p>
+                        </div>
+                        <span class="nmi-arrow">→</span>
+                    </a>
+                    <a href="glps_and_aging.html" class="news-modal-item">
+                        <div class="nc-ico">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3l1.9 5.7 5.7 1.3-5.7 1.9L12 17.6l-1.9-5.7L4.4 10l5.7-1.3z"></path>
+                                <path d="M18.5 15.5v3M17 17h3"></path>
+                            </svg>
+                        </div>
+                        <div class="nmi-text">
+                            <p class="nmi-title">GLP-1s Reverse Biological Age — By Years</p>
+                            <p class="nmi-week">Week of Oct 12 – 18, 2026</p>
+                        </div>
+                        <span class="nmi-arrow">→</span>
+                    </a>
+                </div>
             </div>
-        </details>
+        </div>
+        <script>
+        (function(){
+            var overlay = document.getElementById('news-modal-overlay');
+            var openBtn = document.getElementById('news-archive-btn');
+            var closeBtn = document.getElementById('news-modal-close');
+            if(openBtn && overlay){
+                openBtn.addEventListener('click', function(){ overlay.classList.add('open'); });
+                closeBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+                overlay.addEventListener('click', function(e){
+                    if(e.target === overlay) overlay.classList.remove('open');
+                });
+                document.addEventListener('keydown', function(e){
+                    if(e.key === 'Escape') overlay.classList.remove('open');
+                });
+            }
+        })();
+        </script>
     </section>
 
     <section class="section">
