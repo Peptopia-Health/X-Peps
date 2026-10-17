@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" href="/X-Peps/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dissociative Identity Disorder Study Guide | Peptopia Health Psychology</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F4F6FA;--card:#fff;--t1:#0F172A;--t2:#475569;--t3:#94A3B8;--border:rgba(15,23,42,.1);--p1:#0D9488;--p2:#0E7490;--pink:#EC4899;--pinkd:#BE185D;--teal:#0D9488;--amber:#D97706}
+html.dark{--bg:#0B1120;--card:#111a2e;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#64748B;--border:rgba(255,255,255,.12)}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7}
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:14px 24px}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+.peptopia-wordmark{display:flex;flex-direction:column;font-weight:800;font-size:1.02rem;letter-spacing:.14em;color:var(--t1);line-height:1.15}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:var(--t3)}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-nav a{font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--t2);text-decoration:none}
+.peptopia-nav a:hover{color:var(--pinkd)}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--t2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.peptopia-iconbtn:hover{border-color:var(--pink);color:var(--pinkd)}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+main{max-width:940px;margin:0 auto;padding:8px 24px 40px}
+.hero{border-radius:18px;padding:36px 32px;margin:18px 0 26px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#0F766E,#0E7490 55%,#4F46E5)}
+.hero h1{font-size:2rem;line-height:1.25;margin:10px 0 8px;font-weight:800}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.22);padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.08em}
+.hero .ico{font-size:2.8rem;display:block}
+.hero .sub{opacity:.94;font-size:1rem;max-width:660px}
+h2.sec{font-size:1.35rem;margin:34px 0 14px;padding-bottom:8px;border-bottom:3px solid var(--p1);display:flex;align-items:center;gap:10px}
+p.body,li.body{margin:12px 0;font-size:1rem}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.stat .n{font-size:1.75rem;font-weight:800;color:var(--p1)}
+html.dark .stat .n{color:#C4B5FD}
+.stat .l{font-size:.78rem;color:var(--t2);margin-top:4px}
+.callout{border-radius:12px;padding:16px 20px;margin:20px 0;font-size:.95rem;border-left:6px solid var(--p1);background:var(--card);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.callout.teach{border-left-color:var(--amber)}
+.callout.clin{border-left-color:var(--teal)}
+.callout h4{margin:0 0 6px;font-size:1rem}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+@media(max-width:640px){.cols2{grid-template-columns:1fr}}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.tcard h4{margin-bottom:8px;font-size:1.02rem}
+.tcard.pdy{border-top:4px solid var(--p1)}
+.tcard.neu{border-top:4px solid var(--teal)}
+.crit{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:20px 0}
+.crit .c{display:flex;gap:14px;margin:14px 0}
+.crit .cl{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.timeline{position:relative;margin:26px 0;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--amber),var(--p1),var(--teal));border-radius:2px}
+.tstep{position:relative;margin:0 0 18px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px}
+.tstep::before{content:'';position:absolute;left:-24px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--p1);border:3px solid var(--bg)}
+.tstep h4{margin:0 0 4px}
+table.diff{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88rem;background:var(--card);border-radius:12px;overflow:hidden}
+table.diff th{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;text-align:left;padding:10px 12px;font-size:.82rem}
+table.diff td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+table.diff tr:last-child td{border-bottom:none}
+table.diff td:first-child{font-weight:700;white-space:nowrap}
+.casegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
+.case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;border-top:4px solid var(--p2)}
+.case h4{margin:0 0 6px;font-size:1rem}
+.case .yr{font-size:.75rem;color:var(--t3);font-weight:700;letter-spacing:.06em}
+.check{list-style:none;padding:0}
+.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--border)}
+.check li::before{content:'\2713';position:absolute;left:4px;color:var(--teal);font-weight:800}
+.nanda{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.nanda span{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);color:var(--p1);border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:600}
+html.dark .nanda span{color:#C4B5FD}
+.kt{background:var(--card);border:1px solid var(--border);border-left:6px solid var(--pink);border-radius:12px;padding:20px 24px;margin:26px 0}
+.kt h2{font-size:1.05rem;margin-bottom:10px;border:none;padding:0}
+.kt ul{padding-left:20px}
+.kt li{margin:7px 0}
+.bib{margin:34px 0 10px;font-size:.84rem;color:var(--t2)}
+.bib h2{font-size:1rem;border:none;padding:0;margin-bottom:8px}
+.bib li{margin:5px 0;list-style:none}
+.bib a{color:var(--pinkd)}
+.peptopia-ftr{border-top:1px solid var(--border);margin-top:40px;padding:22px 24px;text-align:center;font-size:.8rem;color:var(--t3)}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr a{color:var(--t3)}
+.peptopia-ftr a:hover{color:var(--pinkd)}
+.peptopia-ftr svg{width:18px;height:18px;vertical-align:middle}
+.ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr .peptopia-ftr-icons{display:none!important}body{background:#fff!important}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.stat,.tcard,.case,.tstep,.callout,.kt,.crit,table.diff{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2.sec,h3,h4{break-after:avoid!important}}
+@media(max-width:640px){.hero h1{font-size:1.5rem}table.diff{font-size:.78rem}}
+
+.ftr-email-line{text-align:center;margin:6px 0}
+.ftr-email-line a{color:var(--t2);text-decoration:none}
+.ftr-email-line a:hover{color:var(--pinkd)}
+</style>
+</head>
+<body>
+<header class="peptopia-hdr">
+<a class="peptopia-brand" href="https://x-peps.com/">
+<img class="peptopia-logo" src="data:image/png;base64,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" alt="Peptopia Health &amp; Wellness">
+<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
+</a>
+<nav class="peptopia-nav" aria-label="Site">
+<a href="https://x-peps.com/">HOME</a>
+<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
+<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+</nav>
+</header>
+<main>
+
+
+<section class="hero">
+<span class="ico">&#x1F9E9;</span>
+<span class="tag">HEALTH PSYCHOLOGY &bull; STUDY GUIDE 02 &bull; DISSOCIATIVE DISORDERS</span>
+<h1>Dissociative Identity Disorder</h1>
+<p class="sub">Two or more distinct personality states take turns in control &mdash; with gaps in memory that ordinary forgetting can't explain. Formerly "multiple personality disorder," DID is psychiatry's most debated diagnosis and its most tightly linked to childhood trauma.</p>
+</section>
+
+<div class="statgrid">
+<div class="stat"><div class="n">1.5%</div><div class="l">Lifetime prevalence in U.S. adults (300.14 / F44.81) &mdash; more common than schizophrenia</div></div>
+<div class="stat"><div class="n">&gt;90%</div><div class="l">Report severe childhood abuse or neglect before onset &mdash; the trauma model</div></div>
+<div class="stat"><div class="n">70%</div><div class="l">Have attempted suicide or engaged in self-injury &mdash; safety is the nursing priority</div></div>
+<div class="stat"><div class="n">9:1</div><div class="l">Female-to-male ratio in adult clinical settings (far narrower in children)</div></div>
+</div>
+
+<h2 class="sec">&#x1F4D6; What It Is</h2>
+<p class="body"><strong>Dissociative identity disorder (DID)</strong> &mdash; formerly <em>multiple personality disorder</em> &mdash; is a <strong>disruption of identity characterized by two or more distinct personality states</strong> (called "alters"), with a marked discontinuity in the sense of self and sense of agency, plus alterations in affect, behavior, consciousness, memory, perception, cognition, and/or sensory-motor functioning. The discontinuity may be observed by others or reported by the patient.</p>
+<p class="body">Core features include <strong>recurrent gaps in recall</strong> of everyday events, important personal information, or traumatic events &mdash; far beyond ordinary forgetting &mdash; and <strong>"switching"</strong> between identity states, often triggered by stress or trauma reminders. Between switches, many patients experience <strong>depersonalization</strong> (feeling detached from self) and <strong>derealization</strong> (world feels unreal), and describe "coming to" in unfamiliar places with no memory of how they got there.</p>
+
+<div class="callout">
+<h4>&#x1F300; Possession Form vs. Nonpossession Form</h4>
+<p class="body" style="margin:0">DSM-5-TR and clinical sources describe two presentations. In the <strong>possession form</strong>, alternate identities appear to come from outside and "take over" &mdash; the person may speak with a different voice, use a different name, and behave as though possessed. In the <strong>nonpossession form</strong>, the disruption is subtler: sudden shifts in affect, voice, demeanor, or memory that the person experiences as intrusions ("made" feelings, thoughts, or actions) rather than full takeovers. Both forms meet the same criteria.</p>
+</div>
+
+<div class="callout teach">
+<h4>&#x1F3AF; Key Teaching Point &mdash; Why the Name Changed</h4>
+<p class="body" style="margin:0">DSM-III (1980) called it <strong>multiple personality disorder</strong>. DSM-IV (1994) renamed it <strong>dissociative identity disorder</strong> to reflect that the core problem is a <strong>failure to integrate identity, memory, and consciousness</strong> &mdash; not the presence of fully formed separate "people." The rename also acknowledges that many patients experience identity <em>fragmentation</em> rather than cleanly distinct personalities, and it reduced the sensationalism that harmed clinical credibility.</p>
+</div>
+
+<h2 class="sec">&#x1F4CB; DSM-5-TR Diagnostic Criteria (300.14 / F44.81)</h2>
+<p class="body">All five criteria (A&ndash;E) must be met.</p>
+<div class="crit">
+<div class="c"><span class="cl">A</span><div><strong>Disruption of identity</strong> characterized by two or more distinct personality states, marked by discontinuity in sense of self and sense of agency, with related alterations in affect, behavior, consciousness, memory, perception, cognition, and/or sensory-motor functioning. Observed by others or reported by the individual.</div></div>
+<div class="c"><span class="cl">B</span><div><strong>Recurrent gaps in recall</strong> of everyday events, important personal information, and/or traumatic events that are <strong>inconsistent with ordinary forgetting</strong>.</div></div>
+<div class="c"><span class="cl">C</span><div><strong>Clinically significant distress or impairment</strong> in social, occupational, or other important areas of functioning.</div></div>
+<div class="c"><span class="cl">D</span><div><strong>Not a normal part of a broadly accepted cultural or religious practice</strong> &mdash; in children, fantasy play or imaginary friends don't count; in adults, ritual possession states with community sanction are excluded.</div></div>
+<div class="c"><span class="cl">E</span><div><strong>Not attributable</strong> to the physiological effects of a substance (e.g., blackouts, intoxication) or another medical condition (e.g., complex partial seizures).</div></div>
+</div>
+
+<h2 class="sec">&#x1F4CA; Epidemiology</h2>
+<div class="statgrid">
+<div class="stat"><div class="n">1.5%</div><div class="l">Lifetime prevalence in U.S. adults (APA, 2022)</div></div>
+<div class="stat"><div class="n">1&ndash;3%</div><div class="l">Lifetime prevalence range across community studies</div></div>
+<div class="stat"><div class="n">5&ndash;10</div><div class="l">Typical age of onset &mdash; early childhood, after repeated trauma</div></div>
+<div class="stat"><div class="n">&#x26A0;</div><div class="l">Most cases are misdiagnosed for years &mdash; often as bipolar, BPD, or schizophrenia</div></div>
+</div>
+<p class="body"><strong>DID is not rare &mdash; it is under-recognized.</strong> Onset is in early childhood (typically ages 5&ndash;10), when severe, repeated trauma meets a still-forming identity. Symptoms often go unnoticed or are misattributed to <strong>ADHD or conduct problems</strong> in children, and the full disorder may not be identified until adolescence or adulthood. Diagnosis <strong>declines with age</strong>; the adult female-to-male ratio of roughly 9:1 narrows dramatically in children (about 5:4), suggesting many male cases are missed &mdash; men with DID more often end up in criminal-justice or substance-abuse settings than in mental-health care. No racial or ethnic predilection has been established.</p>
+<p class="body"><strong>Comorbidity is the rule, not the exception:</strong> up to <strong>90% meet criteria for PTSD</strong> at some point, 75&ndash;80% for major depressive disorder, and high rates of anxiety disorders, substance-use disorders, eating disorders, and borderline personality features. Overlapping symptoms &mdash; mood swings, impulsivity, auditory "voices," self-harm &mdash; are why misdiagnosis is so common.</p>
+
+<h2 class="sec">&#x1F300; Etiology &mdash; Why It Happens</h2>
+<div class="callout">
+<h4>&#x1F494; The trauma model is dominant</h4>
+<p class="body" style="margin:0">DID is best understood as a <strong>developmental, trauma-based disorder</strong>. When a child faces overwhelming, inescapable abuse &mdash; usually chronic physical, sexual, or emotional abuse and neglect, often by caregivers &mdash; <strong>dissociation becomes a survival strategy</strong>: the child "steps outside" the experience because neither fight nor flight is possible. Repeated use of this defense during the critical years of identity formation (before about age 9) fragments the developing self into compartments that can hold incompatible experiences. Risk factors include early and severe trauma, lack of soothing/recovery afterward, and the absence of a safe attachment figure.</p>
+</div>
+<div class="cols2">
+<div class="tcard pdy">
+<h4>&#x1F4AD; Posttraumatic / Developmental Theory</h4>
+<p class="body" style="margin:0">Severe childhood trauma disrupts the normal integration of consciousness, memory, and identity. The child learns to compartmentalize: one part holds the abuse, another holds school-day normalcy. Over years these compartments develop distinct names, ages, genders, and roles. This model has the strongest empirical support &mdash; 90%+ of patients report severe early trauma, and dissociation severity tracks trauma severity.</p>
+</div>
+<div class="tcard neu">
+<h4>&#x1F9EC; Neurobiological Findings</h4>
+<p class="body" style="margin:0">Structural imaging shows <strong>smaller hippocampal and amygdala volumes</strong> than normal; functional studies show <strong>decreased limbic activity with increased frontal activity</strong> during switching. The pattern reflects a brain organized around containing threat: emotion-processing regions dampened, control regions working overtime. Critically, <strong>switching is measurable</strong> &mdash; distinct physiological patterns across identity states, which argues against pure fabrication.</p>
+</div>
+</div>
+<div class="callout teach">
+<h4>&#x1F3AF; The Sociocognitive Model &mdash; Know the Controversy</h4>
+<p class="body" style="margin:0">A minority position holds that DID is partly <strong>shaped by cultural expectation and therapeutic suggestion</strong> &mdash; that media portrayals and leading clinical techniques can elaborate alter systems. This view drove the 1990s "false memory" lawsuits. The mainstream response: while iatrogenic <em>elaboration</em> is possible, the trauma histories, physiological switching data, and cross-cultural cases are difficult to explain away. <strong>Exam stance: trauma model is the accepted etiology; sociocognitive influence is a recognized controversy, not the consensus.</strong></p>
+</div>
+
+<h2 class="sec">&#x1F464;&zwj;&#x1F465; Clinical Presentation &mdash; The Alter System</h2>
+<p class="body">Patients commonly describe a "system" of identity states. Alters often have <strong>different names, ages, genders, voices, handwriting, and even physiological responses</strong> (allergies, eyeglass prescriptions). Common roles include:</p>
+<div class="cols2">
+<div class="tcard pdy">
+<h4>&#x1F3E0; Host</h4>
+<p class="body" style="margin:0">The identity that handles daily life and usually presents for treatment. Often amnestic for the trauma and for other alters' activities &mdash; the one who "loses time."</p>
+</div>
+<div class="tcard neu">
+<h4>&#x1F6E1;&#xFE0F; Protector / Persecutor</h4>
+<p class="body" style="margin:0"><strong>Protectors</strong> (sometimes called "Ragen," after one of Billy Milligan's best-known alters) defend the system, often aggressively. <strong>Persecutors</strong> reenact abuser behavior, punish the host, or drive self-harm &mdash; they hold the internalized abuser's voice.</p>
+</div>
+<div class="tcard pdy">
+<h4>&#x1F476; Child Alters ("Littles")</h4>
+<p class="body" style="margin:0">Identity states frozen at the age the trauma occurred. They may speak, draw, and play like children, and often hold the most direct traumatic memories.</p>
+</div>
+<div class="tcard neu">
+<h4>&#x1F4CB; Caretaker / Gatekeeper</h4>
+<p class="body" style="margin:0">Manages daily functioning, keeps schedules, or <strong>controls which alter is "out"</strong> and who can access traumatic memories. Often the most cooperative in therapy.</p>
+</div>
+</div>
+<div class="timeline">
+<div class="tstep">
+<h4>&#x1F4A5; Switching</h4>
+<p class="body" style="margin:0">Shifts between states, triggered by <strong>stress, trauma reminders, strong emotion, or perceived threat</strong>. May be seconds to days; the new state may deny knowledge of what the last one did. Sudden changes in voice, posture, vocabulary, and affect are observable markers.</p>
+</div>
+<div class="tstep">
+<h4>&#x1F441;&#xFE0F; Amnesic Gaps &amp; "Lost Time"</h4>
+<p class="body" style="margin:0">Finding unfamiliar purchases, being called by a different name, "coming to" somewhere unknown. <strong>Micro-amnesias</strong> (minutes) are common; <strong>macro-amnesias</strong> (days to years of childhood) are characteristic.</p>
+</div>
+<div class="tstep">
+<h4>&#x1F5E3;&#xFE0F; First-Rank Symptoms</h4>
+<p class="body" style="margin:0"><strong>Auditory hallucinations</strong> (the "voices" are usually the alters arguing, commenting, or commanding &mdash; experienced as <em>inside</em> the head, unlike psychotic voices); <strong>made feelings, impulses, and actions</strong> (passive influence); thought withdrawal/insertion. These Schneiderian symptoms are why <strong>schizophrenia is the most common misdiagnosis</strong>.</p>
+</div>
+<div class="tstep">
+<h4>&#x1F4AD; Co-consciousness</h4>
+<p class="body" style="margin:0">Later in treatment, alters may become aware of one another &mdash; hearing each other, leaving internal messages, negotiating control. Co-consciousness is a <strong>therapeutic milestone</strong>: it precedes cooperation and, for some, integration.</p>
+</div>
+</div>
+
+<h2 class="sec">&#x23F1; Developmental Course</h2>
+<div class="timeline">
+<div class="tstep">
+<h4>Ages 5&ndash;10 &mdash; Onset</h4>
+<p class="body" style="margin:0">Severe repeated trauma; dissociation as coping. Symptoms <strong>often missed or mistaken for ADHD</strong> &mdash; inattention, "daydreaming," behavioral outbursts.</p>
+</div>
+<div class="tstep">
+<h4>Adolescence &mdash; Emergence</h4>
+<p class="body" style="margin:0">Identity fragmentation becomes harder to hide: self-harm, substance use, "mood swings" misread as bipolar or borderline personality features. First psychiatric contacts &mdash; usually with the wrong diagnosis.</p>
+</div>
+<div class="tstep">
+<h4>Adulthood &mdash; Recognition</h4>
+<p class="body" style="margin:0">Full criteria evident; average patient has seen <strong>multiple clinicians over several years</strong> before DID is named. Without treatment the course is chronic and often disabling.</p>
+</div>
+<div class="tstep">
+<h4>Treatment &mdash; Years, Non-Linear</h4>
+<p class="body" style="margin:0">Phase-oriented therapy unfolds over years with setbacks. Early treatment and a stable therapeutic alliance predict the best outcomes; even without full integration, symptoms and functioning can improve substantially.</p>
+</div>
+</div>
+
+<h2 class="sec">&#x2696;&#xFE0F; Differential Diagnosis</h2>
+<p class="body">The exam-critical table &mdash; DID must be separated from look-alikes that share voices, mood shifts, or amnesia.</p>
+<table class="diff">
+<thead><tr><th>Condition</th><th>Distinguishing Features</th></tr></thead>
+<tbody>
+<tr><td>Dissociative amnesia (w/ fugue)</td><td>Identity <em>loss</em> with amnesia, but <strong>no chronic alternating identity states</strong>; fugue adds travel</td></tr>
+<tr><td>Depersonalization/derealization</td><td>Detachment from self or world <strong>without</strong> distinct identity states or amnesic gaps</td></tr>
+<tr><td>PTSD (dissociative subtype)</td><td>Dissociation tied to trauma reminders; <strong>no elaborated alter system</strong> &mdash; though 90% of DID patients also meet PTSD criteria</td></tr>
+<tr><td>OSDD</td><td>"Almost DID" &mdash; identity disruption <strong>without full amnesia</strong> (OSDD-1) or with atypical features</td></tr>
+<tr><td>Borderline personality disorder</td><td>Identity <em>disturbance</em> (unstable self-image) but <strong>no distinct states with amnesia</strong>; dissociation usually stress-triggered and transient</td></tr>
+<tr><td>Bipolar disorder</td><td>Alter-driven mood/behavior shifts <strong>misread as rapid cycling</strong>; true bipolar episodes last days&ndash;weeks, lack amnesia, respond to mood stabilizers</td></tr>
+<tr><td>Schizophrenia</td><td><strong>Voices experienced as external</strong> vs. DID's internal alter voices; DID shows <strong>no formal thought disorder</strong>; Schneiderian symptoms overlap but context differs</td></tr>
+<tr><td>Malingering / factitious</td><td>DID shows <strong>genuine distress, shame, and attempts to hide symptoms</strong>; malingering seeks external gain (legal/financial), factitious seeks the sick role</td></tr>
+<tr><td>Substance / medical</td><td>Blackouts (alcohol), seizures (TLE), head injury &mdash; <strong>tox screen, EEG, MRI</strong> rule these out; substance-induced states lack alter structure</td></tr>
+<tr><td>Cultural / religious possession</td><td>Normative, community-sanctioned, time-limited possession &mdash; <strong>excluded by Criterion D</strong>; DID possession is involuntary and distressing</td></tr>
+</tbody>
+</table>
+<div class="callout clin">
+<h4>&#x1FA7A; Organic &amp; Safety Workup</h4>
+<p class="body" style="margin:0">Neurological exam, <strong>EEG</strong> (temporal lobe epilepsy), <strong>MRI/CT</strong>, labs, <strong>toxicology screen</strong>, medication review, sleep history &mdash; plus <strong>suicide/self-harm risk assessment at every contact</strong> given the 70% attempt rate.</p>
+</div>
+
+<h2 class="sec">&#x1F504; Comorbidity Focus: PTSD</h2>
+<div class="callout teach">
+<h4>&#x1F3AF; The Signature Pairing</h4>
+<p class="body" style="margin:0"><strong>Up to 90% of people with DID meet criteria for PTSD</strong> at some point &mdash; the highest PTSD overlap of any diagnosis. Understand this pairing and you understand the disorder's treatment logic.</p>
+</div>
+<p class="body">DID and PTSD share the same soil: <strong>overwhelming trauma the nervous system could not process</strong>. In PTSD the trauma memory intrudes (flashbacks, nightmares); in DID the memory is <strong>compartmentalized</strong> &mdash; held by alters the host cannot access. This is why treating the PTSD without addressing the dissociative structure fails, and why the <strong>dissociative subtype of PTSD</strong> (added in DSM-5) sits on a spectrum with DID. Childhood trauma is the common root: screen every PTSD patient with early-onset trauma for dissociative symptoms &mdash; and screen every DID patient for full PTSD criteria.</p>
+<div class="cols2">
+<div class="tcard pdy">
+<h4>&#x1F9ED; DID vs. PTSD Dissociation</h4>
+<p class="body" style="margin:0"><strong>PTSD:</strong> depersonalization/derealization during flashbacks; memory is <em>intrusive</em> (too present).<br><strong>DID:</strong> amnesic barriers between identity states; memory is <em>inaccessible</em> (too absent). Both involve disrupted memory integration &mdash; in opposite directions.</p>
+</div>
+<div class="tcard neu">
+<h4>&#x1F50D; Treatment Implication</h4>
+<p class="body" style="margin:0"><strong>Stabilize before processing:</strong> trauma work attempted before the patient can stay present risks flooding and decompensation. Phase 1 of DID treatment (safety, coping, co-consciousness) <em>is</em> PTSD stabilization &mdash; the disorders are treated on the same timeline.</p>
+</div>
+</div>
+
+<h2 class="sec">&#x1F50E; Assessment</h2>
+<ul class="check">
+<li><strong>Clinical interview</strong> &mdash; trauma history taken gently and slowly; ask about lost time, "voices," feeling controlled from inside, finding unfamiliar belongings. Collateral from family/partners is often revelatory.</li>
+<li><strong>DES</strong> (Dissociative Experiences Scale) &mdash; 28-item screen; scores <strong>&ge; 30</strong> suggest high dissociation warranting full evaluation. Quick, validated, widely used.</li>
+<li><strong>MID</strong> (Multidimensional Inventory of Dissociation) &mdash; 218 items; maps specific dissociative symptoms and is harder to fake.</li>
+<li><strong>SCID-D</strong> (Structured Clinical Interview for DSM Dissociative Disorders) &mdash; <strong>gold-standard</strong> structured diagnostic interview; distinguishes DID from look-alikes.</li>
+<li><strong>Observe for switching</strong> &mdash; note abrupt changes in voice, affect, posture, vocabulary, handwriting across the interview; ask "who am I speaking with now?" if a shift occurs.</li>
+<li><strong>Medical workup</strong> &mdash; neuro exam, EEG, MRI/CT, labs, toxicology, medication review; rule out TLE, TBI, substances.</li>
+<li><strong>Malingering assessment</strong> &mdash; genuine patients typically <strong>minimize and hide</strong> symptoms (shame, fear of disbelief); dramatic volunteering of alters for gain points the other way.</li>
+</ul>
+
+<h2 class="sec">&#x1FA79; Treatment &mdash; Phase-Oriented Trauma Therapy</h2>
+<p class="body"><strong>Psychotherapy is the primary &mdash; essentially the only &mdash; treatment for DID itself.</strong> The <strong>ISSTD (International Society for the Study of Trauma and Dissociation) guidelines</strong> define a three-phase, long-term approach. It is non-linear: patients cycle back through phases as new material surfaces.</p>
+<div class="timeline">
+<div class="tstep">
+<h4>Phase 1 &mdash; Safety, Stabilization, Symptom Reduction</h4>
+<p class="body" style="margin:0">Build the therapeutic alliance (often the patient's first safe relationship); <strong>safety planning for suicide/self-harm</strong>; teach grounding and coping; contain impulsive or dangerous alters; negotiate <strong>co-consciousness and internal cooperation</strong>. This phase can take months to years &mdash; and it is never skipped.</p>
+</div>
+<div class="tstep">
+<h4>Phase 2 &mdash; Confronting Traumatic Memories</h4>
+<p class="body" style="margin:0">Carefully paced processing of traumatic material &mdash; giving the trauma meaning, resolving inappropriate guilt, grieving. Moved into <strong>only when the patient can stay present and regulated</strong>; flooding the system causes setbacks.</p>
+</div>
+<div class="tstep">
+<h4>Phase 3 &mdash; Identity Integration &amp; Rehabilitation</h4>
+<p class="body" style="margin:0">Two legitimate endpoints: <strong>integration/fusion</strong> (alters merge into a cohesive identity &mdash; the classic goal) or <strong>functional multiplicity</strong> (alters remain but cooperate smoothly, as artist Kim Noble's system does). Either way: rebuild work, relationships, and daily life.</p>
+</div>
+</div>
+<div class="cols2">
+<div class="tcard pdy">
+<h4>&#x1F4AC; Adjunctive Modalities</h4>
+<p class="body" style="margin:0"><strong>CBT:</strong> challenge maladaptive beliefs ("I deserved it"). <strong>DBT skills:</strong> distress tolerance and emotion regulation &mdash; especially valuable with self-harm and borderline features. <strong>EMDR:</strong> used cautiously for traumatic memories. <strong>Group/family therapy:</strong> psychoeducation and support.</p>
+</div>
+<div class="tcard neu">
+<h4>&#x1F48A; Pharmacology</h4>
+<p class="body" style="margin:0"><strong>No medication treats DID itself.</strong> Meds target comorbidities so the patient can engage in therapy: <strong>SSRIs/SNRIs</strong> for depression, PTSD, anxiety; mood stabilizers or antipsychotics only if a true comorbid bipolar or psychotic disorder exists. Anxiolytics for acute distress &mdash; short-term, given substance-use risk.</p>
+</div>
+</div>
+<div class="callout teach">
+<h4>&#x23F3; Hypnosis &mdash; The Controversy (exam favorite)</h4>
+<p class="body"><strong>For:</strong> historically used to facilitate alter communication and retrieve dissociated memories; proponents cite material later corroborated and real therapeutic progress.</p>
+<p class="body" style="margin:0"><strong>Against:</strong> critics warn of <strong>false-memory risk and iatrogenic elaboration</strong> &mdash; hypnotically facilitated recall may blur fantasy and memory, and leading techniques can shape alter presentations. Modern ISSTD guidance: use sparingly, with informed consent, never as the primary tool.</p>
+</div>
+<div class="callout clin">
+<h4>&#x1F4C8; Prognosis</h4>
+<p class="body" style="margin:0">DID is <strong>chronic without treatment &mdash; there is no quick cure</strong>, and management is often lifelong. But treatment works: the <strong>TOP DD study (Brand et al., ~280 patients)</strong> found phase-oriented therapy reduced dissociation, PTSD, depression, suicide attempts, self-harm, and hospitalizations over time. <strong>Earlier diagnosis and a stable therapeutic alliance predict the best outcomes.</strong> Prevention centers on protecting children: early intervention after abuse, safe caregiving, and trauma-informed schools and clinics.</p>
+</div>
+
+<h2 class="sec">&#x1F4DC; Famous Cases</h2>
+<div class="casegrid">
+<div class="case"><div class="yr">1977 &ndash; 2014</div><h4>&#x2696;&#xFE0F; Billy Milligan</h4><p class="body" style="margin:0;font-size:.9rem">24 alters; 1978 &mdash; the <strong>first insanity acquittal on MPD grounds</strong> in U.S. history (kidnapping/rape charges, Ohio). Evaluated by nine professionals including Sybil's psychiatrist Cornelia Wilbur.</p></div>
+<div class="case"><div class="yr">1973</div><h4>&#x1F4D6; Shirley Mason &mdash; "Sybil"</h4><p class="body" style="margin:0;font-size:.9rem">16 alters; Flora Rheta Schreiber's bestseller and the 1976 TV film made MPD a household term &mdash; and, critics argue, shaped a generation of diagnoses. Real identity revealed posthumously.</p></div>
+<div class="case"><div class="yr">1957</div><h4>&#x1F3AD; Chris Costner Sizemore &mdash; "Eve"</h4><p class="body" style="margin:0;font-size:.9rem"><em>The Three Faces of Eve</em> (book and Oscar-winning film). Later reported the "three faces" were an undercount &mdash; closer to 22 &mdash; and became a mental-health advocate after integration.</p></div>
+<div class="case"><div class="yr">1989</div><h4>&#x1F408; Truddi Chase &mdash; "When Rabbit Howls"</h4><p class="body" style="margin:0;font-size:.9rem">92 alters, called "The Troops." Never integrated &mdash; instead negotiated internal cooperation, and used her story to educate the public about ritual childhood abuse.</p></div>
+<div class="case"><div class="yr">2000s &ndash; PRESENT</div><h4>&#x1F3A8; Kim Noble</h4><p class="body" style="margin:0;font-size:.9rem">British artist with DID who paints in distinct styles as different alters. A living example of <strong>functional multiplicity</strong> &mdash; alters with negotiated roles, including parenting.</p></div>
+<div class="case"><div class="yr">2008</div><h4>&#x1F3C8; Herschel Walker</h4><p class="body" style="margin:0;font-size:.9rem">NFL star and Heisman winner; disclosed DID in <em>Breaking Free</em>. His openness did more to reduce stigma than any textbook &mdash; proof the disorder doesn't preclude elite functioning.</p></div>
+</div>
+
+<h2 class="sec">&#x1FA7A; Nursing Care &mdash; VA Inpatient Focus</h2>
+<div class="callout clin">
+<h4>&#x1F6A8; Safety Is Priority One</h4>
+<p class="body" style="margin:0"><strong>70%+ have attempted suicide or self-injured</strong> &mdash; screen for SI/HI and self-harm urges on admission and every shift; persecutor alters may command self-harm. <strong>1:1 observation or q15 safety checks per acuity</strong>; sharps/belongings protocols; secure the milieu. Treat every switch as a potential risk reassessment &mdash; a cooperative alter can yield to a self-destructive one without warning.</p>
+</div>
+<h4 style="margin:18px 0 8px">&#x1F9E0; Grounding Techniques &mdash; Teach and Coach</h4>
+<ul class="check">
+<li><strong>5-4-3-2-1 sensory grounding:</strong> name 5 things seen, 4 felt, 3 heard, 2 smelled, 1 tasted &mdash; anchors the patient in the present during dissociation or flashback.</li>
+<li><strong>Orienting statements:</strong> "You are at the VA in Martinsburg. It is 2026. You are safe." Repeat calmly; avoid quizzing.</li>
+<li><strong>Cold water / strong sensation:</strong> holding ice or splashing cold water interrupts dissociative episodes for many patients.</li>
+<li><strong>Safe-place imagery:</strong> a rehearsed mental location the patient can retreat to instead of switching.</li>
+<li><strong>Internal communication tools:</strong> journaling between alters, scheduled "check-in" times &mdash; supports co-consciousness and reduces surprise switching.</li>
+</ul>
+<h4 style="margin:18px 0 8px">&#x1F4AC; Therapeutic Communication</h4>
+<ul class="check">
+<li><strong>Address whoever is present</strong> &mdash; ask "Who am I speaking with right now?" and use the name they give; never mock or argue with an alter.</li>
+<li><strong>Introduce and re-introduce yourself</strong> &mdash; the incoming alter may not know you from the last interaction.</li>
+<li><strong>Be consistent across staff and shifts</strong> &mdash; unpredictability triggers switching; coordinate messaging in handoff.</li>
+<li>Validate fear and confusion <strong>without confronting the dissociation</strong> ("It makes sense this is frightening").</li>
+<li><strong>Avoid sudden touch or looming</strong> &mdash; announce yourself, explain every procedure before beginning, allow extra time.</li>
+<li>Do <strong>not</strong> try to "call out" specific alters for curiosity &mdash; switching on demand is destabilizing.</li>
+</ul>
+<h4 style="margin:18px 0 8px">&#x1F3E5; Milieu Management</h4>
+<p class="body"><strong>Calm, consistent, predictable routine</strong> &mdash; structure is itself therapeutic for a fragmented identity system. Low-stimulation environment during acute switching; identify and minimize known triggers (loud confrontation, certain topics, anniversary dates). <strong>De-escalation over restraint</strong> wherever safety allows &mdash; restraints can reenact abuse dynamics and fracture trust. Coordinate the whole team so limits and expectations stay identical across shifts.</p>
+<h4 style="margin:18px 0 8px">&#x1F4CB; NANDA-Style Nursing Diagnoses</h4>
+<div class="nanda">
+<span>Disturbed personal identity</span><span>Risk for suicide</span><span>Risk for self-mutilation</span><span>Ineffective coping</span><span>Chronic low self-esteem</span><span>Anxiety</span><span>Risk for trauma</span><span>Social isolation</span>
+</div>
+<h4 style="margin:18px 0 8px">&#x1F46A; Family &amp; Discharge</h4>
+<p class="body">Teach family about DID, common triggers, and how to respond to switching <strong>without fear or ridicule</strong>; encourage participation in the treatment plan. Discharge planning: <strong>outpatient trauma-informed therapy referral</strong> (continuity matters more than modality), written <strong>crisis/safety plan</strong> the patient helped author, medical follow-up, and connection to supports &mdash; the ISSTD therapist locator and crisis resources such as <strong>988</strong> (call or text) and <strong>911</strong> for emergencies.</p>
+<p class="body"><strong>Documentation:</strong> objective behavioral descriptions (which name the patient gave, observed voice/affect changes, what each state said/did), safety checks, response to grounding, collateral sources &mdash; chart facts, not diagnostic conclusions beyond RN scope.</p>
+
+<div class="kt">
+<h2>&#x1F4CC; Key Takeaways &mdash; Exam Review</h2>
+<ul>
+<li><strong>DSM-5-TR 300.14 / F44.81:</strong> disruption of identity (2+ states) + recurrent amnesic gaps + distress/impairment + not cultural/religious + not substance/medical.</li>
+<li><strong>Prevalence ~1.5%</strong> of U.S. adults &mdash; more common than schizophrenia; under-recognized, not rare.</li>
+<li><strong>Etiology:</strong> severe, repeated childhood trauma (ages 5&ndash;10) &mdash; dissociation as survival; 90%+ report abuse/neglect.</li>
+<li><strong>Possession vs. nonpossession</strong> forms &mdash; dramatic takeover vs. subtle intrusions; same criteria.</li>
+<li><strong>Schneiderian symptoms</strong> (internal voices, made actions) &rarr; schizophrenia is the classic misdiagnosis; bipolar rapid-cycling is the other.</li>
+<li><strong>90% PTSD comorbidity;</strong> DID and PTSD share trauma soil &mdash; stabilize before processing trauma.</li>
+<li><strong>Assessment:</strong> DES (&ge;30 = high), MID, SCID-D (gold standard); observe switching; rule out TLE/substances.</li>
+<li><strong>Treatment:</strong> ISSTD three phases &mdash; safety/stabilization &rarr; trauma processing &rarr; integration or functional multiplicity. No drug treats DID; meds target comorbidities.</li>
+<li><strong>Hypnosis is controversial</strong> &mdash; false-memory/iatrogenic risk; never the primary tool.</li>
+<li><strong>Nursing:</strong> 70% suicide/self-harm rate &mdash; safety first; grounding (5-4-3-2-1); address whoever is present; calm predictable milieu; document behavior objectively.</li>
+</ul>
+</div>
+
+<div class="bib">
+<h2>&#x1F4DA; Bibliography</h2>
+<ul>
+<li>1. Cleveland Clinic &mdash; "Dissociative Identity Disorder (DID)" (source handout, 7-page PDF)</li>
+<li>2. American Psychiatric Association &mdash; <em>DSM-5-TR</em> (2022), Dissociative Identity Disorder 300.14 (F44.81)</li>
+<li>3. Wikipedia &mdash; "Dissociative identity disorder" (<a href="https://en.wikipedia.org/wiki/Dissociative_identity_disorder">en.wikipedia.org/wiki/Dissociative_identity_disorder</a>)</li>
+<li>4. MSD Manual, Professional Edition &mdash; "Dissociative Identity Disorder" (<a href="https://www.msdmanuals.com/professional/psychiatric-disorders/dissociative-disorders/dissociative-identity-disorder">msdmanuals.com</a>)</li>
+<li>5. ISSTD &mdash; Guidelines for Treating Dissociative Identity Disorder in Adults, 3rd revision (<em>Journal of Trauma &amp; Dissociation</em>, 2011)</li>
+<li>6. Brand, B.L. et al. &mdash; TOP DD Network Study: treatment outcomes in ~280 DID patients (dissociation, PTSD, depression, suicidality)</li>
+<li>7. Dorahy, M.J., Brand, B.L. &amp; Sar, V. &mdash; review of dissociative identity disorder (<em>Lancet Psychiatry</em>)</li>
+<li>8. Sar, V. et al. (2014) &mdash; childhood onset and adolescent emergence of dissociative disorders</li>
+<li>9. NAMI &mdash; "Dissociative Disorders" (<a href="https://www.nami.org">nami.org</a>)</li>
+<li>10. Merck Manual, Consumer Version &mdash; "Dissociative Identity Disorder"</li>
+<li>11. A&amp;E True Crime &mdash; "Billy Milligan: Can Someone With DID Be Accountable for Violent Crimes?" (<a href="https://www.aetv.com/real-crime/billy-milligan-diagnosis">aetv.com</a>)</li>
+<li>12. Schreiber, F.R. (1973) &mdash; <em>Sybil</em>; Thigpen &amp; Cleckley (1957) &mdash; <em>The Three Faces of Eve</em>; Chase, T. (1987) &mdash; <em>When Rabbit Howls</em>; Walker, H. (2008) &mdash; <em>Breaking Free</em></li>
+</ul>
+</div>
+
+
+</main>
+<footer class="peptopia-ftr">
+<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
+<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
+<div class="peptopia-ftr-icons">
+<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="data:image/png;base64,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" alt="Peptopia home"></a>
+<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
+<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
+</div>
+</footer>
+<script>
+var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
+function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
+(function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+</script>
+</body>
+</html>
