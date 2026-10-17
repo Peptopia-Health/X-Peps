@@ -24,10 +24,9 @@ body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-
 html.dark .peptopia-theme-toggle .pp-sun{display:block}
 html.dark .peptopia-theme-toggle .pp-moon{display:none}
 main{max-width:860px;margin:0 auto;padding:8px 24px 40px}
-.hero{border-radius:18px;padding:34px 30px;margin:18px 0 26px;color:#fff;position:relative;overflow:hidden}
-.hero h1{font-size:1.9rem;line-height:1.25;margin:10px 0 8px;font-weight:800}
-.hero .wk{display:inline-block;background:rgba(255,255,255,.22);padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.08em}
-.hero .ico{font-size:2.6rem;display:block}
+.hero{border-radius:18px;padding:14px 24px;margin:0 0 22px;color:#fff;position:relative;overflow:hidden}
+.hero h1{font-size:1.9rem;line-height:1.3;margin:4px 0 6px;font-weight:800}
+.datebubble{display:inline-block;background:linear-gradient(135deg,#7C3AED,#A855F7);color:#fff;padding:8px 20px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-align:center;line-height:1.6;margin-bottom:8px}
 .hero .sub{opacity:.92;font-size:1rem;max-width:640px}
 .kt{background:var(--card);border:1px solid var(--border);border-left:6px solid var(--pink);border-radius:12px;padding:20px 24px;margin:24px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .kt h2{font-size:1.05rem;margin-bottom:10px}
@@ -53,10 +52,24 @@ html.dark .brow .bt{background:rgba(255,255,255,.08)}
 .bib a{color:var(--pinkd)}
 .peptopia-ftr{border-top:1px solid var(--border);margin-top:40px;padding:22px 24px;text-align:center;font-size:.8rem;color:var(--t3)}
 .peptopia-ftr .ficons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .ftr-email-line{margin:8px 0 0;text-align:center}
+.peptopia-ftr .ftr-email-line a{color:var(--t2);text-decoration:none;font-weight:600}
 .peptopia-ftr a{color:var(--t3)}
 .peptopia-ftr a:hover{color:var(--pinkd)}
 .peptopia-ftr svg{width:18px;height:18px;vertical-align:middle}
 .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+/* Interactive weight line chart */
+.linechart-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:24px 0}
+.linechart-wrap h3{font-size:1rem;margin-bottom:6px}
+.linechart{cursor:zoom-in}
+.chart-legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:10px;font-size:.8rem;color:var(--t2)}
+.chart-legend span{display:inline-flex;align-items:center;gap:6px}
+.chart-dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.chart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px}
+.chart-overlay.open{display:flex}
+.chart-modal{background:var(--card);border-radius:16px;width:100%;max-width:900px;max-height:92vh;overflow:auto;padding:20px;position:relative;cursor:zoom-out}
+.chart-close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--t1);font-size:1.3rem;cursor:pointer;line-height:1;z-index:2}
+@media(max-width:640px){.chart-modal{max-width:100%;height:100%;max-height:100%;border-radius:0}}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr .ficons{display:none!important}body{background:#fff!important}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media(max-width:640px){.hero h1{font-size:1.45rem}.brow .bl{flex-basis:96px}}
 </style>
@@ -76,10 +89,9 @@ html.dark .brow .bt{background:rgba(255,255,255,.08)}
 </header>
 <main>
 
+<div style="text-align:center"><span class="datebubble">Smart Drug News<br>October 26 - November 1, 2026</span></div>
 <section class="hero" style="background:linear-gradient(135deg,#7C3AED,#A855F7 55%,#C084FC)">
-<span class="ico">&#x1F3AF;</span>
-<span class="wk">SMART DRUG NEWS &bull; WEEK OF OCT 26 &ndash; NOV 1, 2026</span>
-<h1>Retatrutide's TRIUMPH-2: Triple Agonist Hits 18.8% Weight Loss</h1>
+<h1>&#x1F3AF; Retatrutide's TRIUMPH-2:<br>18.8% Weight Loss</h1>
 <p class="sub">Phase 3 results in <em>The Lancet</em> set a new bar &mdash; and Lilly is headed for the FDA.</p>
 </section>
 
@@ -96,11 +108,11 @@ html.dark .brow .bt{background:rgba(255,255,255,.08)}
 <p class="body">The obesity-drug arms race has a new frontrunner. At the EASD meeting in Milan on September 29, 2026, Eli Lilly unveiled full Phase 3 results for retatrutide &mdash; a once-weekly <em>triple</em> agonist targeting GIP, GLP-1, and glucagon receptors &mdash; and simultaneously published the TRIUMPH-2 trial in <em>The Lancet</em>. In 1,152 adults with type 2 diabetes and obesity, the drug delivered weight loss that eclipses everything on the market.</p>
 
 <div class="bars">
-<h3>&#x1F4CA; Weight loss at 80 weeks by dose (vs 5.1% placebo)</h3>
+<h3>&#x1F4CA; Weight loss at 80 weeks</h3>
 <div class="brow"><span class="bl">Placebo</span><div class="bt"><div class="bf" style="width:27%;background:linear-gradient(90deg,#94A3B8,#64748B)">5.1%</div></div></div>
-<div class="brow"><span class="bl">Retatrutide 4 mg</span><div class="bt"><div class="bf" style="width:63%;background:linear-gradient(90deg,#C084FC,#A855F7)">11.9%</div></div></div>
-<div class="brow"><span class="bl">Retatrutide 9 mg</span><div class="bt"><div class="bf" style="width:89%;background:linear-gradient(90deg,#A855F7,#7C3AED)">16.8%</div></div></div>
-<div class="brow"><span class="bl">Retatrutide 12 mg</span><div class="bt"><div class="bf" style="width:100%;background:linear-gradient(90deg,#7C3AED,#5B21B6)">18.8%</div></div></div>
+<div class="brow"><span class="bl">Reta 4 mg</span><div class="bt"><div class="bf" style="width:63%;background:linear-gradient(90deg,#C084FC,#A855F7)">11.9%</div></div></div>
+<div class="brow"><span class="bl">Reta 9 mg</span><div class="bt"><div class="bf" style="width:89%;background:linear-gradient(90deg,#A855F7,#7C3AED)">16.8%</div></div></div>
+<div class="brow"><span class="bl">Reta 12 mg</span><div class="bt"><div class="bf" style="width:100%;background:linear-gradient(90deg,#7C3AED,#5B21B6)">18.8%</div></div></div>
 </div>
 
 <p class="body">The dose-response curve is strikingly clean: 11.9% at 4 mg, 16.8% at 9 mg, and 18.8% at 12 mg &mdash; all massively ahead of placebo's 5.1%. Nearly half of participants on the top dose shed at least 20% of their body weight, and 31% lost 25% or more &mdash; territory that starts to overlap with bariatric surgery outcomes. By trial's end, 59.5% of the 12 mg group no longer met the clinical criteria for obesity at all.</p>
@@ -129,6 +141,72 @@ html.dark .brow .bt{background:rgba(255,255,255,.08)}
 
 <p class="body">With TRIUMPH-2 published and the broader TRIUMPH program advancing, Eli Lilly has signaled it plans to submit retatrutide to the FDA in early 2027. If approved, it would become the first triple-agonist obesity therapy &mdash; and, on these numbers, the most effective pharmacologic weight-loss option ever brought to regulators. The next questions are durability: whether the weight stays off, and what years of triple-receptor activation mean for the heart, bones, and muscle mass.</p>
 
+<div class="linechart-wrap">
+<h3>&#x1F4C8; Weight over time (starting at 200 lbs)</h3>
+<div class="linechart" id="wl-chart" title="Tap to expand" role="img" aria-label="Line chart of weight over 20 months for three retatrutide doses and placebo"></div>
+<div class="chart-legend">
+<span><i class="chart-dot" style="background:#EF4444"></i>Reta 12 mg</span>
+<span><i class="chart-dot" style="background:#EC4899"></i>Reta 9 mg</span>
+<span><i class="chart-dot" style="background:#A855F7"></i>Reta 4 mg</span>
+<span><i class="chart-dot" style="background:#94A3B8"></i>Placebo</span>
+</div>
+</div>
+<div class="chart-overlay" id="chart-overlay">
+<div class="chart-modal" id="chart-modal">
+<button class="chart-close" id="chart-close" aria-label="Close">&times;</button>
+<h3 style="font-size:1rem;margin-bottom:6px">&#x1F4C8; Weight over time (starting at 200 lbs)</h3>
+<div id="wl-chart-big"></div>
+<div class="chart-legend">
+<span><i class="chart-dot" style="background:#EF4444"></i>Reta 12 mg</span>
+<span><i class="chart-dot" style="background:#EC4899"></i>Reta 9 mg</span>
+<span><i class="chart-dot" style="background:#A855F7"></i>Reta 4 mg</span>
+<span><i class="chart-dot" style="background:#94A3B8"></i>Placebo</span>
+</div>
+</div>
+</div>
+<script>
+(function(){
+var months=[0,4,8,12,16,20];
+var series=[
+{name:'Reta 12 mg',color:'#EF4444',data:[200,184.5,174,168,164.5,162.5]},
+{name:'Reta 9 mg',color:'#EC4899',data:[200,186.5,177.5,171.5,168.5,166.5]},
+{name:'Reta 4 mg',color:'#A855F7',data:[200,190,183.5,179.5,177.5,176.5]},
+{name:'Placebo',color:'#94A3B8',data:[200,196.5,194,192.5,191.5,190]}];
+var ymin=158,ymax=202;
+function draw(el,W,H){
+var pL=46,pR=14,pT=12,pB=32,iw=W-pL-pR,ih=H-pT-pB;
+function X(m){return (pL+iw*m/20).toFixed(1);}
+function Y(w){return (pT+ih*(ymax-w)/(ymax-ymin)).toFixed(1);}
+var s='<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="display:block" role="img">';
+for(var yv=160;yv<=200;yv+=10){
+s+='<line x1="'+pL+'" y1="'+Y(yv)+'" x2="'+(W-pR)+'" y2="'+Y(yv)+'" stroke="currentColor" opacity="0.15"/>';
+s+='<text x="'+(pL-7)+'" y="'+(+Y(yv)+4)+'" text-anchor="end" font-size="10" fill="currentColor" opacity="0.65">'+yv+'</text>';}
+s+='<text x="8" y="'+(pT+8)+'" font-size="10" fill="currentColor" opacity="0.65">lbs</text>';
+for(var i=0;i<months.length;i++){
+s+='<text x="'+X(months[i])+'" y="'+(H-14)+'" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.65">'+months[i]+'</text>';}
+s+='<text x="'+(pL+iw/2)+'" y="'+(H-2)+'" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.65">Months</text>';
+series.forEach(function(sr){
+var pts=sr.data.map(function(w,i){return X(months[i])+','+Y(w);}).join(' ');
+s+='<polyline points="'+pts+'" fill="none" stroke="'+sr.color+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+var n=sr.data.length-1;
+s+='<circle cx="'+X(months[n])+'" cy="'+Y(sr.data[n])+'" r="4" fill="'+sr.color+'"/>';
+s+='<text x="'+(+X(months[n])+8)+'" y="'+(+Y(sr.data[n])+4)+'" font-size="10" font-weight="700" fill="'+sr.color+'">'+sr.data[n].toFixed(0)+'</text>';});
+s+='</svg>';
+el.innerHTML=s;
+}
+draw(document.getElementById('wl-chart'),640,360);
+var overlay=document.getElementById('chart-overlay');
+document.getElementById('wl-chart').addEventListener('click',function(){
+draw(document.getElementById('wl-chart-big'),900,540);
+overlay.classList.add('open');});
+function close(){overlay.classList.remove('open');}
+document.getElementById('chart-close').addEventListener('click',function(e){e.stopPropagation();close();});
+overlay.addEventListener('click',function(e){if(e.target===overlay)close();});
+document.getElementById('chart-modal').addEventListener('click',function(e){
+if(e.target.id==='wl-chart-big'||e.target.closest('#wl-chart-big'))close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 <div class="bib">
 <h2>&#x1F4DA; Sources</h2>
 <ul>
@@ -136,12 +214,12 @@ html.dark .brow .bt{background:rgba(255,255,255,.08)}
 <li>Eli Lilly &mdash; TRIUMPH-2 topline announcement and FDA submission guidance (early 2027)</li>
 <li>EASD 2026 meeting coverage &mdash; retatrutide late-breaking presentation</li>
 </ul>
-<p style="margin-top:10px;font-size:.8rem">Peptopia Health is an independent customer-authored publication. This is a news summary, not medical advice. No pharmaceutical affiliation.</p>
 </div>
 
 </main>
 <footer class="peptopia-ftr">
-<div>&copy; 2026 Peptopia Health &bull; All rights reserved &bull; <a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
+<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
+<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
 <div class="ficons">
 <a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="data:image/png;base64,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" alt="Peptopia home"></a>
 <a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
