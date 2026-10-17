@@ -226,6 +226,27 @@
         .news-card .tile-week{font-size:.68rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--t3);margin:0}
         .news-card .nc-btn{font-size:.78rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#DC2626,#2563EB);
             padding:5px 12px;border-radius:20px;text-decoration:none;white-space:nowrap}
+        /* News archive modal popup */
+        .news-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;
+            display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto}
+        .news-modal-overlay.open{display:flex}
+        .news-modal{background:var(--card);border-radius:16px;max-width:520px;width:100%;
+            padding:24px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+        .news-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
+            border:1px solid var(--border);background:var(--bg);color:var(--t1);font-size:1.3rem;
+            cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+        .news-modal-close:active{transform:scale(.92)}
+        .news-modal h3{margin:0 0 16px;font-size:1.1rem}
+        .news-modal-list{display:flex;flex-direction:column;gap:10px}
+        .news-modal-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);
+            border-radius:12px;text-decoration:none;color:inherit}
+        .news-modal-item:active{background:rgba(0,0,0,.04)}
+        .news-modal-item .nc-ico{width:36px;height:36px;flex:none;border-radius:8px;display:flex;
+            align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(220,38,38,.12),rgba(37,99,235,.12));color:#DC2626}
+        .news-modal-item .nmi-text{flex:1}
+        .news-modal-item .nmi-title{font-size:.88rem;font-weight:700;margin:0;color:var(--t1)}
+        .news-modal-item .nmi-week{font-size:.72rem;color:var(--t3);margin:2px 0 0}
+        .news-modal-item .nmi-arrow{font-size:1.1rem;color:var(--t3)}
         /* Archive dropdown */
         .news-archive{width:100%;max-width:640px;margin:4px auto 0;text-align:center}
         .news-archive summary{cursor:pointer;font-size:.85rem;font-weight:600;color:var(--t2);padding:8px;
