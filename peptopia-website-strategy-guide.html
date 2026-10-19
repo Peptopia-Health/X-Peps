@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peptopia Website Strategy Guide | Operations Manual</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FDFBF7;--card:#fff;--t1:#1F2937;--t2:#4B5563;--t3:#9CA3AF;--border:rgba(31,41,55,.1);
+--teal:#0D9488;--teald:#0F766E;--amber:#D97706;--orange:#EA580C;--purple:#7C3AED;--pink:#EC4899;--pinkd:#BE185D;--blue:#2563EB;--green:#4D7C0F;--red:#DC2626}
+html.dark{--bg:#0B1120;--card:#111a2e;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#64748B;--border:rgba(255,255,255,.12)}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7}
+main{max-width:980px;margin:0 auto;padding:8px 24px 60px}
+.hero{border-radius:20px;padding:40px 36px;margin:18px 0 30px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#0D9488,#0EA5E9 45%,#7C3AED 100%)}
+.hero h1{font-size:2.1rem;line-height:1.25;margin:12px 0 10px;font-weight:800}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.22);padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.08em}
+.hero .ico{font-size:3rem;display:block}
+.hero .sub{opacity:.95;font-size:1.02rem;max-width:680px}
+h2.sec{font-size:1.4rem;margin:40px 0 16px;padding-bottom:10px;border-bottom:3px solid var(--teal);display:flex;align-items:center;gap:10px}
+h2.sec.amber{border-color:var(--amber)}h2.sec.purple{border-color:var(--purple)}h2.sec.pink{border-color:var(--pink)}h2.sec.blue{border-color:var(--blue)}h2.sec.green{border-color:var(--green)}h2.sec.red{border-color:var(--red)}
+h3{font-size:1.1rem;margin:22px 0 10px;color:var(--teald)}
+html.dark h3{color:#5EEAD4}
+p.body,li.body{margin:10px 0;font-size:.98rem}
+ul.tight li{margin:6px 0}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.stat .n{font-size:1.7rem;font-weight:800;color:var(--teal)}
+.stat .l{font-size:.78rem;color:var(--t2);margin-top:4px}
+.stat.warn .n{color:var(--amber)}.stat.bad .n{color:var(--red)}
+.callout{border-radius:12px;padding:16px 20px;margin:20px 0;font-size:.95rem;border-left:6px solid var(--teal);background:var(--card);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.callout.amber{border-left-color:var(--amber)}.callout.red{border-left-color:var(--red)}.callout.purple{border-left-color:var(--purple)}.callout.green{border-left-color:var(--green)}
+.callout h4{margin:0 0 6px;font-size:1rem}
+table.data{width:100%;border-collapse:collapse;margin:18px 0;font-size:.86rem;background:var(--card);border-radius:12px;overflow:hidden}
+table.data th{background:linear-gradient(135deg,#0D9488,#0EA5E9);color:#fff;text-align:left;padding:10px 12px;font-size:.8rem}
+table.data td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+table.data tr:last-child td{border-bottom:none}
+.bars{margin:18px 0}
+.bar-row{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:.82rem}
+.bar-label{width:280px;flex:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--t2)}
+.bar-track{flex:1;height:18px;background:rgba(0,0,0,.06);border-radius:9px;overflow:hidden}
+html.dark .bar-track{background:rgba(255,255,255,.08)}
+.bar-fill{height:100%;border-radius:9px;background:linear-gradient(90deg,#0D9488,#0EA5E9)}
+.bar-fill.big{background:linear-gradient(90deg,#D97706,#EA580C)}
+.bar-val{width:70px;flex:none;text-align:right;font-weight:700;color:var(--t2)}
+.sitemap{display:flex;flex-direction:column;gap:0;margin:20px 0}
+.sm-node{background:var(--card);border:2px solid var(--teal);border-radius:12px;padding:10px 16px;margin:6px 0;font-size:.9rem}
+.sm-node.root{border-color:var(--purple);background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(14,165,233,.08));font-weight:800}
+.sm-node.cat{border-color:var(--amber);margin-left:28px}
+.sm-node.page{border-color:var(--border);margin-left:56px;font-size:.84rem;color:var(--t2)}
+.sm-node .emo{margin-right:8px}
+.cmd{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:14px 0}
+.cmd .phrase{font-size:1.05rem;margin-bottom:6px}
+.cmd .phrase strong{background:linear-gradient(135deg,rgba(13,148,136,.12),rgba(14,165,233,.12));border:1px solid var(--teal);border-radius:8px;padding:3px 12px;display:inline-block}
+.cmd p{font-size:.9rem;color:var(--t2);margin:6px 0}
+.cmd .meta{font-size:.8rem;color:var(--t3)}
+.pri{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:12px 0;display:flex;gap:14px;align-items:flex-start}
+.pri .num{flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.pri h4{margin:0 0 4px;font-size:1rem}
+.pri p{font-size:.88rem;color:var(--t2);margin:2px 0}
+.pri .effort{font-size:.78rem;font-weight:700;color:var(--amber)}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0}
+.flow .step{background:var(--card);border:2px solid var(--teal);border-radius:10px;padding:8px 14px;font-size:.84rem;font-weight:600}
+.flow .arrow{color:var(--teal);font-weight:800;font-size:1.1rem}
+.palette{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.swatch{width:110px;text-align:center;font-size:.75rem;color:var(--t2)}
+.swatch .c{height:44px;border-radius:10px;margin-bottom:4px;border:1px solid var(--border)}
+.kbd{display:inline-block;background:rgba(0,0,0,.06);border:1px solid var(--border);border-radius:6px;padding:1px 8px;font-size:.82rem;font-family:ui-monospace,monospace}
+html.dark .kbd{background:rgba(255,255,255,.08)}
+@media(max-width:640px){.bar-label{width:150px}.hero h1{font-size:1.6rem}.sm-node.page{margin-left:28px}.sm-node.cat{margin-left:14px}}
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
+.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
+html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
+html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+@media(max-width:640px){.peptopia-hdr{padding:10px 12px;gap:8px}.peptopia-brand{gap:8px}.peptopia-logo{width:38px;height:38px}.peptopia-wordmark{font-size:.85rem}.peptopia-nav{gap:.6rem}.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}.peptopia-iconbtn{width:34px;height:34px;flex:none}}
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
+html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
+html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
+.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
+
+</style>
+</head>
+<body>
+<header class="peptopia-hdr">
+<a class="peptopia-brand" href="https://x-peps.com/">
+<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
+<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
+</a>
+<nav class="peptopia-nav" aria-label="Site">
+<a href="https://x-peps.com/">HOME</a>
+<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+</nav>
+</header>
+<main>
+
+<div class="hero">
+<span class="ico">📋</span>
+<span class="tag">PEPTOPIA OPERATIONS MANUAL</span>
+<h1>Website Strategy Guide</h1>
+<p class="sub">Design, deployment, and maintenance strategy for x-peps.com — the playbook for building a world-class site, the command dictionary for working with your AI, and an honest audit of where we stand.</p>
+</div>
+
+<h2 class="sec">📊 1. Executive Summary</h2>
+<p class="body">The Peptopia site spans two GitHub repositories and ~48 live pages, serving kratom education, peptide/GLP-1 research guides, and weekly news to drive vendor trust and orders. The <span class="kbd">transform.py</span> standardization pipeline is our biggest win — one script enforces logos, theme toggle, print rules, and footers across every page. The biggest risks are <strong>file bloat</strong> (6.2 MB repo with 650 KB+ single files), <strong>inconsistent visual treatment</strong> across pages built at different times, and <strong>workflow fragility</strong> (the 128 KB API upload cap and binary-file corruption trap).</p>
+
+<div class="statgrid">
+<div class="stat"><div class="n">48</div><div class="l">Live pages</div></div>
+<div class="stat"><div class="n">6.2 MB</div><div class="l">X-Peps repo size</div></div>
+<div class="stat warn"><div class="n">7</div><div class="l">Files over API limit</div></div>
+<div class="stat bad"><div class="n">1.1 MB</div><div class="l">Wasted on dup icons</div></div>
+<div class="stat"><div class="n">41</div><div class="l">Pages standardized</div></div>
+</div>
+
+<h2 class="sec amber">🎯 2. Core Business Goals</h2>
+<p class="body">Everything on x-peps.com serves three funnels. Every recommendation in this guide ties back to them:</p>
+<div class="callout">
+<h4>🥬 Funnel 1 — Kratom: Education → Trust → Sales</h4>
+<p>Strain guides with honest effect data and vendor reviews build credibility. Readers who trust the guides buy through linked vendors. <strong>Goal: more guides, better visuals, brutal honesty.</strong></p>
+</div>
+<div class="callout amber">
+<h4>💉 Funnel 2 — Peptides &amp; GLP-1: Research → Authority → Orders</h4>
+<p>Deep research guides position Peptopia as the authority. The ORDERS page converts. <strong>Goal: comprehensive guides, weekly news freshness, clean reconstitution tools.</strong></p>
+</div>
+<div class="callout purple">
+<h4>📰 Funnel 3 — News: Freshness → Repeat Visits</h4>
+<p>Weekly GLP-1 news cards bring readers back every Monday. <strong>Goal: one new article weekly, 3 cards visible, archive for the rest.</strong></p>
+</div>
+
+<h2 class="sec purple">🗺️ 3. Site Structure Diagram</h2>
+<div class="sitemap">
+<div class="sm-node root"><span class="emo">🌐</span>x-peps.com — Root site (peptopia-health.github.io)</div>
+<div class="sm-node page"><span class="emo">🏠</span>index.html — Landing page → links to guides + orders</div>
+<div class="sm-node page"><span class="emo">📁</span>/Corrections/ — 13 standardized correction pages</div>
+<div class="sm-node root"><span class="emo">📚</span>x-peps.com/X-Peps/ — Guides site (X-Peps repo)</div>
+<div class="sm-node cat"><span class="emo">📰</span>Smart Drug News — glp-news-*.html (weekly, 3 cards + archive)</div>
+<div class="sm-node cat"><span class="emo">💉</span>GLP-1 Receptor Agonists — tirzepatide, semaglutide, retatrutide, glps_and_aging</div>
+<div class="sm-node cat"><span class="emo">🧬</span>Peptides &amp; Recovery — cjc/ipamorelin, bpc/kpv, glow/klow, dsip, tesofensine</div>
+<div class="sm-node cat"><span class="emo">🥬</span>Botanicals &amp; Herbals — kratom guides, potentiators, vendor reviews, strain guides</div>
+<div class="sm-node cat"><span class="emo">🎯</span>Oncology Research — oncology_guide, dsip_in_cancer_treatment</div>
+<div class="sm-node cat"><span class="emo">⚛️</span>Gene Transcription &amp; Mitochondrial — 5_amino_1mq, slu_pp_332</div>
+<div class="sm-node cat"><span class="emo">🧠</span>Cellular Health &amp; Nootropics — modafinil</div>
+<div class="sm-node cat"><span class="emo">📖</span>General Reference — reconstitution, storage, retirement-projection</div>
+<div class="sm-node cat"><span class="emo">🎓</span>Learning — health-psychology → fugue, DID guides</div>
+<div class="sm-node cat"><span class="emo">🛒</span>orders/ — Shop page (theme toggle only, no print)</div>
+<div class="sm-node page"><span class="emo">🔒</span>6 nursing vault files (! prefix) — UNTOUCHABLE</div>
+</div>
+<p class="body">Dependencies: every page loads logos from <span class="kbd">IMG_3345.png</span> (dark) / <span class="kbd">IMG_3346.png</span> (light). All chrome comes from <span class="kbd">transform.py</span>. The guides index links to every guide; vendor review hub links to strain guides.</p>
+
+<h2 class="sec blue">📦 4. File Inventory &amp; Dependencies</h2>
+<h3>X-Peps repo — largest files</h3>
+<div class="bars">
+<div class="bar-row"><div class="bar-label">! HESI Vault.html 🔒</div><div class="bar-track"><div class="bar-fill big" style="width:100%"></div></div><div class="bar-val">657 KB</div></div>
+<div class="bar-row"><div class="bar-label">hudson-valley guide</div><div class="bar-track"><div class="bar-fill big" style="width:99%"></div></div><div class="bar-val">651 KB</div></div>
+<div class="bar-row"><div class="bar-label">peptopia-logo.png</div><div class="bar-track"><div class="bar-fill big" style="width:76%"></div></div><div class="bar-val">497 KB</div></div>
+<div class="bar-row"><div class="bar-label">DTE.html</div><div class="bar-track"><div class="bar-fill big" style="width:70%"></div></div><div class="bar-val">460 KB</div></div>
+<div class="bar-row"><div class="bar-label">! NCLEX Vault.html 🔒</div><div class="bar-track"><div class="bar-fill big" style="width:62%"></div></div><div class="bar-val">406 KB</div></div>
+<div class="bar-row"><div class="bar-label">phantom-herbal guide</div><div class="bar-track"><div class="bar-fill big" style="width:60%"></div></div><div class="bar-val">397 KB</div></div>
+<div class="bar-row"><div class="bar-label">daisy-peptides report</div><div class="bar-track"><div class="bar-fill big" style="width:58%"></div></div><div class="bar-val">379 KB</div></div>
+<div class="bar-row"><div class="bar-label">IMG_3345.png (dark logo)</div><div class="bar-track"><div class="bar-fill" style="width:51%"></div></div><div class="bar-val">336 KB</div></div>
+<div class="bar-row"><div class="bar-label">IMG_3346.png (light logo)</div><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><div class="bar-val">297 KB</div></div>
+</div>
+<h3>Flags</h3>
+<ul class="tight">
+<li class="body">🔴 <strong>Over 500 KB:</strong> HESI Vault (657 KB, locked), hudson-valley guide (651 KB), peptopia-logo.png (497 KB — replaceable with the 336 KB IMG_3345).</li>
+<li class="body">🟡 <strong>Archive dead weight (~250 KB):</strong> index_archive_10-03-2026, index_archive_8-11-2026, index_archived_08-27-2026, index_archived_9-3-2026, slu_pp_332_archive_10-03-2026, slu_pp_332_guide_old — 6 files, none linked from live nav.</li>
+<li class="body">🟡 <strong>Root repo icon sprawl (~1.1 MB wasted):</strong> peptopia-logo.png (607 KB) + web-app-manifest-512x512.png (567 KB) + favicon.svg (106 KB) + 3 more icon files. Only apple-touch-icon is actively referenced.</li>
+<li class="body">🟢 <strong>6 nursing vaults (! prefix):</strong> never touch — excluded from all transforms.</li>
+<li class="body">🔴 <strong>favicon-32x32.png (3.3 KB):</strong> corrupted — contains base64 text, not image bytes. Needs re-upload.</li>
+</ul>
+</main>
+<footer class="peptopia-ftr">
+<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
+<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
+<div class="peptopia-ftr-icons">
+<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia home" class="logo-dark"><img src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia home" class="logo-light"></a>
+<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
+<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
+</div>
+</footer>
+<script>
+/* Peptopia theme: light default, toggle persists via localStorage */
+var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
+function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
+(function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+</script>
+</body>
+</html>
+<main>
+
+<h2 class="sec green">⚙️ 5. GitHub Optimization</h2>
+<p class="body">Total footprint: <strong>7.7 MB</strong> across both repos. Here's where the waste is and what to do:</p>
+<table class="data">
+<tr><th>Option</th><th>What</th><th>Saves</th><th>Effort</th><th>Impact</th></tr>
+<tr><td><strong>1. Delete archive files</strong></td><td>Remove 6 unlinked archive HTML files from X-Peps</td><td>~250 KB</td><td>Low</td><td>⭐⭐⭐</td></tr>
+<tr><td><strong>2. Consolidate root icons</strong></td><td>Keep apple-touch-icon.png + one favicon; delete 4 redundant icon files</td><td>~850 KB</td><td>Low</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><strong>3. Shrink logo PNGs</strong></td><td>Re-export IMG_3345/3346 at 256px (plenty for 46px display)</td><td>~400 KB</td><td>Medium</td><td>⭐⭐⭐</td></tr>
+<tr><td><strong>4. Split giant guides</strong></td><td>Break hudson-valley (651 KB) into 2-3 sub-pages</td><td>Workflow</td><td>High</td><td>⭐⭐</td></tr>
+<tr><td><strong>5. Fix favicon-32x32</strong></td><td>Re-upload valid 32px PNG via drag-drop</td><td>Correctness</td><td>Low</td><td>⭐⭐</td></tr>
+</table>
+<div class="callout red">
+<h4>⚠️ Hard limits that shape our workflow</h4>
+<p><strong>128 KB API cap:</strong> any file over ~128 KB cannot be uploaded via API — it needs David's manual drag-drop. 7 files currently exceed this.<br>
+<strong>Binary corruption:</strong> the GitHub API's <span class="kbd">create_or_update_file</span> mangles binary files (UTF-8 encodes them). Images can ONLY go up via web UI drag-drop. Never attempt binary upload via API.<br>
+<strong>Cache:</strong> GitHub Pages caches for 10 minutes (<span class="kbd">max-age=600</span>). Changes take up to 10 min to appear.</p>
+</div>
+<div class="callout">
+<h4>📅 File lifespan rules</h4>
+<p><strong>News articles:</strong> permanent — never delete, rotate to archive dropdown after 3 weeks.<br>
+<strong>Guides:</strong> permanent — update in place, never rename (breaks links).<br>
+<strong>Archive_ files:</strong> delete after 90 days if unlinked.<br>
+<strong>Superseded batch guides</strong> (e.g. D10 → D11): keep 6 months, then archive.</p>
+</div>
+
+<h2 class="sec red">🔍 6. What Works / What's Broken</h2>
+<h3>✅ What works</h3>
+<ul class="tight">
+<li class="body"><strong>transform.py pipeline</strong> — single script enforces logos, theme toggle, print rules, footers, mobile CSS across 41 pages.</li>
+<li class="body"><strong>Dual-logo theme system</strong> — dark bubble on light theme, light bubble on dark theme, file-referenced (no base64 bloat).</li>
+<li class="body"><strong>News card rotation</strong> — 3 newest cards visible, older in archive dropdown, custom SVG icon per story.</li>
+<li class="body"><strong>Print-conditional headers</strong> — guides/reports get print + toggle; index/orders get toggle only.</li>
+<li class="body"><strong>Mobile responsive chrome</strong> — header collapses cleanly at 640px.</li>
+</ul>
+<h3>❌ What's broken or inconsistent</h3>
+<ul class="tight">
+<li class="body"><strong>Guides index stale copy:</strong> still shows "Comprehensive guides for every product in our catalog" — David ordered this replaced with a toolbox icon (Oct 18, not done).</li>
+<li class="body"><strong>Peptide reconstitution calculator:</strong> requested Oct 18, page exists but toolbox icon not added to index. Not built.</li>
+<li class="body"><strong>Hero style drift:</strong> older guides (dsip.html, oncology_guide.html) use different hero gradients and padding than newer ones (Foundayo article, Imperial Green Dragon).</li>
+<li class="body"><strong>Stat card inconsistency:</strong> 3+ stat-card variants across guides — colors, borders, and number formatting differ.</li>
+<li class="body"><strong>7 oversized pages</strong> can't use the API pipeline — they bypass transform.py and drift out of sync.</li>
+<li class="body"><strong>Footer icon order</strong> varies on pages transformed before Oct 19.</li>
+<li class="body"><strong>glps_and_aging.html</strong> (120 KB) exceeds API limit — the evergreen report can't auto-update.</li>
+</ul>
+</main>
+<main>
+
+<h2 class="sec pink">🔑 7. Command Dictionary</h2>
+<p class="body">Say the <strong>exact bold phrase</strong> — no extra explanation needed. Everything else is automatic.</p>
+
+<h3>📖 Guide Building</h3>
+<div class="cmd">
+<div class="phrase"><strong>"Peptopia guide: [topic]"</strong></div>
+<p>Builds a complete Peptopia-style guide: YouTube/Reddit research, brutally honest vendor coverage, 5-effect donut cards, full graphics, standard header/footer, lowercase filename, GitHub upload.</p>
+<p class="meta">You provide: just the topic. You get back: live URL + summary. Example: "Peptopia guide: Blue Lotus extract"</p>
+</div>
+
+<h3>📰 News</h3>
+<div class="cmd">
+<div class="phrase"><strong>"GLP news topics"</strong></div>
+<p>Researches the week's 3 freshest GLP-1/peptide/longevity stories and presents them as tappable choices. You pick one, the article is built.</p>
+<p class="meta">Runs automatically every Monday 5 AM. Manual trigger anytime with this phrase.</p>
+</div>
+
+<h3>🔧 Page Updates</h3>
+<div class="cmd">
+<div class="phrase"><strong>"Standardize: [page names]"</strong></div>
+<p>Applies transform.py chrome to named pages: new logos, theme toggle, print rules, mobile CSS, footer. Batch as many as fit under the API limit.</p>
+<p class="meta">You provide: page filenames. You get back: confirmation + live verification.</p>
+</div>
+<div class="cmd">
+<div class="phrase"><strong>"Fix: [page] [issue]"</strong></div>
+<p>Targeted single fix. Example: "Fix: tirzepatide_guide.html missing print button"</p>
+<p class="meta">Best for one-page, one-problem corrections.</p>
+</div>
+
+<h3>🔬 Research</h3>
+<div class="cmd">
+<div class="phrase"><strong>"Research: [topic]"</strong></div>
+<p>Deep-dive research brief WITHOUT building a page. Returns: strain/vendor profile, community consensus, negatives, pricing, donut chart percentages, sources.</p>
+<p class="meta">Use when you want the facts first, guide later.</p>
+</div>
+
+<h3>🖼️ Images</h3>
+<div class="cmd">
+<div class="phrase"><strong>"Optimize images: [page]"</strong></div>
+<p>Audits image weight on a page, recompresses oversized PNGs, converts to efficient formats.</p>
+</div>
+<div class="cmd">
+<div class="phrase"><strong>"New logo: [description]"</strong></div>
+<p>Generates a new logo variant from your description. You upload via drag-drop (binaries can't go via API).</p>
+</div>
+
+<h3>🔍 Site Audit</h3>
+<div class="cmd">
+<div class="phrase"><strong>"Audit site"</strong></div>
+<p>Full consistency check across all pages: logos, theme toggle, print buttons, footers, CSS conflicts, broken links. Returns a per-page report.</p>
+</div>
+
+<h3>🚀 Publishing &amp; Scheduling</h3>
+<div class="cmd">
+<div class="phrase"><strong>"Publish: [filename]"</strong></div>
+<p>Uploads a local HTML file to GitHub (must be under 128 KB). Handles SHA lookup, transform, and live verification.</p>
+<p class="meta">Multi-step pipelines (research → build → publish → announce) are chained automatically — just name the end goal.</p>
+</div>
+<div class="cmd">
+<div class="phrase"><strong>"Schedule: [task] [when]"</strong></div>
+<p>Creates a recurring job. Example: "Schedule: GLP news topics every Monday 5am"</p>
+</div>
+</main>
+<main>
+
+<h2 class="sec amber">🎨 8. Artistic Style Guide</h2>
+<p class="body">Bright, inviting, mood-lifting. Color everywhere — neon glow only as an accent, never the theme.</p>
+<h3>Palette</h3>
+<div class="palette">
+<div class="swatch"><div class="c" style="background:#0D9488"></div>Teal<br>#0D9488</div>
+<div class="swatch"><div class="c" style="background:#0EA5E9"></div>Sky<br>#0EA5E9</div>
+<div class="swatch"><div class="c" style="background:#D97706"></div>Amber<br>#D97706</div>
+<div class="swatch"><div class="c" style="background:#EA580C"></div>Orange<br>#EA580C</div>
+<div class="swatch"><div class="c" style="background:#7C3AED"></div>Purple<br>#7C3AED</div>
+<div class="swatch"><div class="c" style="background:#EC4899"></div>Pink<br>#EC4899</div>
+<div class="swatch"><div class="c" style="background:#4D7C0F"></div>Leaf<br>#4D7C0F</div>
+<div class="swatch"><div class="c" style="background:#2563EB"></div>Blue<br>#2563EB</div>
+</div>
+<h3>Rules</h3>
+<ul class="tight">
+<li class="body"><strong>Hero:</strong> gradient in the page's accent color, emoticon icon, ~14px vertical padding, tag pill + H1 + one-line sub.</li>
+<li class="body"><strong>Stat cards:</strong> 4-5 per page, big number + small label, accent-colored number.</li>
+<li class="body"><strong>Visuals required per guide:</strong> hero, stat grid, effect donut card(s), at least one CSS chart or comparison table, callout boxes, section emoticons.</li>
+<li class="body"><strong>Donut chart standard:</strong> 5 families (High Energy, Mood &amp; Well-being, Balance &amp; Clarity, Calm &amp; Relaxation, Relief &amp; Warmth). Green strains: light-olive banner. White: pale gray. No number badges.</li>
+<li class="body"><strong>Typography:</strong> system sans-serif stack ONLY. Never Times New Roman or any serif.</li>
+<li class="body"><strong>Neon/glow:</strong> logo glow and button hover only. Page backgrounds stay light and airy.</li>
+<li class="body"><strong>Exemplars</strong> (match these): Imperial Green Dragon D10 guide, Foundayo news article, DTE Botanicals strain guide.</li>
+</ul>
+
+<h2 class="sec green">✅ 9. Priority Task List</h2>
+<div class="pri"><div class="num">1</div><div><h4>Rebuild the 7 oversized pages through the pipeline</h4><p>Hudson-valley, DTE, phantom, daisy, treeleaf, glps_and_aging, westkoast guides — split or compress so they fit the API and stay in sync.</p><p class="effort">Effort: High • Impact: kills the #1 drift source</p></div></div>
+<div class="pri"><div class="num">2</div><div><h4>Finish the peptide reconstitution calculator</h4><p>Requested Oct 18. Build the calculator page + toolbox icon on guides index (replacing the stale "Comprehensive guides" copy).</p><p class="effort">Effort: Medium • Impact: new tool, fulfills commitment</p></div></div>
+<div class="pri"><div class="num">3</div><div><h4>Delete archive dead weight + consolidate icons</h4><p>Remove 6 unlinked archives, 4 redundant root icons. Saves ~1.1 MB.</p><p class="effort">Effort: Low • Impact: leaner repo, faster clones</p></div></div>
+<div class="pri"><div class="num">4</div><div><h4>Unify hero + stat-card styles</h4><p>Backfill older guides (dsip, oncology, kratom_guide) to the current hero/stat standard.</p><p class="effort">Effort: Medium • Impact: visual consistency</p></div></div>
+<div class="pri"><div class="num">5</div><div><h4>Fix favicon-32x32.png</h4><p>Re-upload valid PNG via drag-drop.</p><p class="effort">Effort: Low • Impact: correctness</p></div></div>
+<div class="pri"><div class="num">6</div><div><h4>Rename logo files properly</h4><p>IMG_3345 → logo-dark.png, IMG_3346 → logo-light.png, IMG_3326 → apple-touch-icon (replace). Update transform.py URLs.</p><p class="effort">Effort: Low (needs desktop) • Impact: clean naming</p></div></div>
+<div class="pri"><div class="num">7</div><div><h4>Mobile QA pass</h4><p>Load top 10 pages on phone: check header, hero, cards, tables at 375px width.</p><p class="effort">Effort: Low • Impact: catches layout breaks</p></div></div>
+
+<h2 class="sec blue">🚀 10. Deployment Workflow</h2>
+<div class="flow">
+<div class="step">💡 Idea</div><div class="arrow">→</div>
+<div class="step">🔬 Research</div><div class="arrow">→</div>
+<div class="step">✍️ Build HTML</div><div class="arrow">→</div>
+<div class="step">🎨 transform.py</div><div class="arrow">→</div>
+<div class="step">👍 Approval</div><div class="arrow">→</div>
+<div class="step">📤 GitHub</div><div class="arrow">→</div>
+<div class="step">🌐 Live (10 min)</div>
+</div>
+<table class="data">
+<tr><th>Step</th><th>What happens</th><th>What can go wrong</th></tr>
+<tr><td>Idea → Research</td><td>"Peptopia guide: X" triggers YouTube/Reddit research brief</td><td>Thin sources — flag gaps honestly</td></tr>
+<tr><td>Build</td><td>HTML with hero, stats, donut cards, charts; sans-serif; bright palette</td><td>Serif fonts, missing visuals, no print CSS</td></tr>
+<tr><td>transform.py</td><td>Adds header (print conditional), footer, theme JS, mobile CSS</td><td>Regex hangs on huge files — use the fixed line-filter version</td></tr>
+<tr><td>Approval</td><td>GitHub write triggers approval card on David's phone</td><td>Batch uploads = many cards; warn upfront</td></tr>
+<tr><td>GitHub</td><td>API upload if &lt;128 KB; drag-drop if larger or binary</td><td>SHA mismatch — re-fetch SHA before retry; never retry blindly</td></tr>
+<tr><td>Live</td><td>Pages serves in ~10 min (CDN cache)</td><td>Stale cache — verify via raw.githubusercontent.com, not the CDN</td></tr>
+</table>
+<div class="callout green">
+<h4>🎯 The golden rule</h4>
+<p>Every page leaves the pipeline through <span class="kbd">transform.py</span>. No hand-edited pages go live. That's how 41 pages stay consistent — and how the 7 oversized ones drifted.</p>
+</div>
+</main>
