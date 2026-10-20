@@ -175,9 +175,101 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 .print-btn:hover{background:#2e7d4f}
 @media print{.print-btn,.toc-top{display:none}.strain,.panel{break-inside:avoid}}
 
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+
+html.dark .peptopia-wordmark{color:#f1f5f9}
+
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+
+html.dark .peptopia-tagline{color:#94a3b8}
+
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+
+html.dark .peptopia-nav>a{color:#cbd5e1}
+
+.peptopia-nav>a:hover{color:#be185d}
+
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-hdr .peptopia-nav,.peptopia-ftr .peptopia-ftr-icons{display:none!important}
+
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+
+/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
+.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
+
+html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
+
+html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
+
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+
+html.dark .peptopia-wordmark{color:#f1f5f9}
+
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+
+html.dark .peptopia-tagline{color:#94a3b8}
+
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-hdr{padding:10px 12px;gap:8px}
+.peptopia-brand{gap:8px}
+.peptopia-logo{width:38px;height:38px}
+.peptopia-wordmark{font-size:.85rem}
+.peptopia-nav{gap:.6rem}
+.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}
+.peptopia-iconbtn{width:34px;height:34px;flex:none}
+
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+
+html.dark .peptopia-nav>a{color:#cbd5e1}
+
+.peptopia-nav>a:hover{color:#be185d}
+
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}
+/* injected standard header CSS */
 </style>
 </head>
 <body id="top">
+<header class="peptopia-hdr">
+<a class="peptopia-brand" href="https://x-peps.com/">
+<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
+<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
+</a>
+<nav class="peptopia-nav" aria-label="Site">
+<a href="https://x-peps.com/">HOME</a>
+<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+</nav>
+</header>
 <a class="toc-top" href="#top" title="Back to top">↑</a>
 <button class="print-btn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
 <div class="wrap">
@@ -320,7 +412,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 <div class="catintro"><p>The fast end of the menu: energetic whites for mood lift, drive and focus. All three core whites sit at Mid-Upper, with White Dragon the fastest of the trio.</p></div>
 <div class="popbox star">🏆 White standouts — vendor’s picks: <b>White Java</b> (mood lift); <b>White Dragon</b> (fastest white); <b>Silver Haze</b> (community-favorite reserve).</div>
 <div class="strain white">
-  <div class="strain-head"><h3>White Java</h3><span class="batch">01 Drop · White</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 49], [&quot;clarity&quot;, 26], [&quot;mood&quot;, 15], [&quot;calm&quot;, 10]], &quot;caption&quot;: &quot;One of the three core whites of the 01 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Java</h3><span class="batch">01 Drop · White</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:75%"></div></div>
@@ -339,7 +431,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain white">
-  <div class="strain-head"><h3>White Ponti</h3><span class="batch">01 Drop · White</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 49], [&quot;clarity&quot;, 26], [&quot;mood&quot;, 15], [&quot;calm&quot;, 10]], &quot;caption&quot;: &quot;The second core white, framed around relief rather than&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Ponti</h3><span class="batch">01 Drop · White</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:75%"></div></div>
@@ -354,7 +446,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain white">
-  <div class="strain-head"><h3>White Dragon</h3><span class="batch">01 Drop · White</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 50], [&quot;clarity&quot;, 27], [&quot;mood&quot;, 15], [&quot;calm&quot;, 8]], &quot;caption&quot;: &quot;The fastest of the three core whites&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Dragon</h3><span class="batch">01 Drop · White</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:85%"></div></div>
@@ -370,7 +462,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain white">
-  <div class="strain-head"><h3>White Catalyst</h3><span class="batch">02 Drop · Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 50], [&quot;clarity&quot;, 27], [&quot;mood&quot;, 15], [&quot;calm&quot;, 8]], &quot;caption&quot;: &quot;An all-whites microbatch from the 02 Drop special reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Catalyst</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:85%"></div></div>
@@ -385,7 +477,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain white">
-  <div class="strain-head"><h3>White Jack</h3><span class="batch">White</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 49], [&quot;clarity&quot;, 26], [&quot;mood&quot;, 15], [&quot;calm&quot;, 10]], &quot;caption&quot;: &quot;Appeared in the vendor\u2019s July 2026 product photography;&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Jack</h3><span class="batch">White</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:75%"></div></div>
@@ -401,7 +493,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain white">
-  <div class="strain-head"><h3>Silver Haze</h3><span class="batch">Founder’s Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 47], [&quot;clarity&quot;, 25], [&quot;mood&quot;, 16], [&quot;calm&quot;, 12]], &quot;caption&quot;: &quot;A whites-and-greens founder\u2019s reserve microbatch,&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Silver Haze</h3><span class="batch">Founder’s Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:68%"></div></div>
@@ -424,7 +516,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 <div class="catintro"><p>The middle of the spectrum, and the deepest bench: nine greens from the fast Green Dragon down to the slow Green Giant base strain.</p></div>
 <div class="popbox star">🏆 Green standouts — widest range: <b>Green Dragon</b> (fast); <b>Green Forest</b> (full-spectrum, mid+); <b>D’Anjou Green</b> (reserve, long legs); <b>Green Giant</b> (slow base).</div>
 <div class="strain green">
-  <div class="strain-head"><h3>Green Dragon</h3><span class="batch">01 Drop · Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 40], [&quot;clarity&quot;, 22], [&quot;mood&quot;, 22], [&quot;calm&quot;, 16]], &quot;caption&quot;: &quot;The fast green of the 01 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Dragon</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:75%"></div></div>
@@ -440,7 +532,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Forest</h3><span class="batch">01 Drop · Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 21], [&quot;clarity&quot;, 19], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;A slightly-above-mid green with a broad effect profile&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Forest</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:62%"></div></div>
@@ -457,7 +549,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Malay</h3><span class="batch">01 Drop · Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 21], [&quot;clarity&quot;, 19], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;The menu\u2019s Malay green, offered by the full kilo&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Malay</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:62%"></div></div>
@@ -475,7 +567,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Melt</h3><span class="batch">01 Drop · Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 26], [&quot;energy&quot;, 25], [&quot;mood&quot;, 22], [&quot;clarity&quot;, 15], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;Noted for freshness above all else&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Melt</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:40%"></div></div>
@@ -492,7 +584,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Bali Emerald</h3><span class="batch">01 Drop · Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 30], [&quot;mood&quot;, 22], [&quot;energy&quot;, 21], [&quot;clarity&quot;, 14], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;The Bali green of the 01 Drop, sitting low on the spectrum&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Bali Emerald</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:30%"></div></div>
@@ -510,7 +602,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>D’Anjou Green</h3><span class="batch">Founder’s Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 26], [&quot;energy&quot;, 25], [&quot;mood&quot;, 22], [&quot;clarity&quot;, 15], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;An all-greens founder\u2019s reserve microbatch with a&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>D’Anjou Green</h3><span class="batch">Founder’s Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:40%"></div></div>
@@ -526,7 +618,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Giant</h3><span class="batch">Base Strain</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 33], [&quot;mood&quot;, 23], [&quot;energy&quot;, 17], [&quot;relief&quot;, 15], [&quot;clarity&quot;, 12]], &quot;caption&quot;: &quot;A 100% B-supplier base green&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Giant</h3><span class="batch">Base Strain</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:20%"></div></div>
@@ -541,7 +633,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Hulu</h3><span class="batch">02 Drop · Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 31], [&quot;mood&quot;, 21], [&quot;calm&quot;, 21], [&quot;clarity&quot;, 18], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;A green-and-white microbatch from the 02 Drop reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Hulu</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:55%"></div></div>
@@ -556,7 +648,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Sunda</h3><span class="batch">Unreleased Base</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 30], [&quot;mood&quot;, 22], [&quot;energy&quot;, 21], [&quot;clarity&quot;, 14], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;An unreleased base strain, held back from the menu for&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Sunda</h3><span class="batch">Unreleased Base</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:30%"></div></div>
@@ -578,7 +670,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 <div class="catintro"><p>The wind-down color: reds cluster at the slow end of the vendor’s spectrum, from mid down to mid-low/slow.</p></div>
 <div class="popbox star">🏆 Red standouts — slowest: <b>Deep River Red</b>, <b>Blood Moon Red</b>, <b>Dark Hematoma</b> (all Mid-Low/Slow); most popular: <b>Red Vein</b>.</div>
 <div class="strain red">
-  <div class="strain-head"><h3>Red Vein</h3><span class="batch">01 Drop · Red</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 38], [&quot;relief&quot;, 18], [&quot;energy&quot;, 17], [&quot;mood&quot;, 14], [&quot;clarity&quot;, 13]], &quot;caption&quot;: &quot;The 100% base red vein&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Vein</h3><span class="batch">01 Drop · Red</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:40%"></div></div>
@@ -593,7 +685,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Red Honeycrisp</h3><span class="batch">Founder’s Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 32], [&quot;energy&quot;, 21], [&quot;relief&quot;, 17], [&quot;clarity&quot;, 15], [&quot;mood&quot;, 15]], &quot;caption&quot;: &quot;A reds-and-greens founder\u2019s reserve microbatch with a&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Honeycrisp</h3><span class="batch">Founder’s Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:50%"></div></div>
@@ -608,7 +700,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Deep River Red</h3><span class="batch">01 Drop · Red</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 44], [&quot;relief&quot;, 22], [&quot;mood&quot;, 14], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 9]], &quot;caption&quot;: &quot;The slow red of the 01 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Deep River Red</h3><span class="batch">01 Drop · Red</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:20%"></div></div>
@@ -625,7 +717,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Blood Moon Red</h3><span class="batch">02 Drop · Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 44], [&quot;relief&quot;, 22], [&quot;mood&quot;, 14], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 9]], &quot;caption&quot;: &quot;An all-reds microbatch from the 02 Drop reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Blood Moon Red</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:20%"></div></div>
@@ -640,7 +732,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Dark Hematoma</h3><span class="batch">02 Drop · Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 44], [&quot;relief&quot;, 22], [&quot;mood&quot;, 14], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 9]], &quot;caption&quot;: &quot;A red, green and yellow microbatch from the 02 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Dark Hematoma</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:20%"></div></div>
@@ -655,7 +747,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Pink Fire</h3><span class="batch">Red</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 38], [&quot;relief&quot;, 18], [&quot;energy&quot;, 17], [&quot;mood&quot;, 14], [&quot;clarity&quot;, 13]], &quot;caption&quot;: &quot;A popular red sitting just under the middle of the&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pink Fire</h3><span class="batch">Red</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:40%"></div></div>
@@ -670,7 +762,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Bentuangie</h3><span class="batch">Announced Sep 2026</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 43], [&quot;relief&quot;, 21], [&quot;mood&quot;, 14], [&quot;energy&quot;, 12], [&quot;clarity&quot;, 10]], &quot;caption&quot;: &quot;A bentuangie strain announced in September 2026&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Bentuangie</h3><span class="batch">Announced Sep 2026</span></div>
   <div class="strain-body">
     <div class="spectag">Vendor spectrum marker: <b>not published yet</b></div>
     <h4>🌿 The leaf</h4>
@@ -688,7 +780,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 <div class="catintro"><p>Mellow yellows, the slowest gold on the menu, and the two fermented offerings — including the vapor-steamed Red Clay, the most technically distinctive product in the catalog.</p></div>
 <div class="popbox star">🏆 Gold standouts: <b>Yellow Lush</b> (vendor’s stress-relief pick); <b>Red Clay</b> (signature vapor-steamed ferment); <b>21k Gold Bali</b> (slowest marker).</div>
 <div class="strain gold">
-  <div class="strain-head"><h3>Yellow Lush</h3><span class="batch">Partly Fermented · Yellow</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 21], [&quot;energy&quot;, 20], [&quot;clarity&quot;, 15], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;Partly fermented yellow finished with the vapor-steaming&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Yellow Lush</h3><span class="batch">Partly Fermented · Yellow</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:50%"></div></div>
@@ -704,7 +796,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain gold">
-  <div class="strain-head"><h3>Yellow Dream</h3><span class="batch">Yellow</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 37], [&quot;mood&quot;, 21], [&quot;relief&quot;, 16], [&quot;energy&quot;, 14], [&quot;clarity&quot;, 12]], &quot;caption&quot;: &quot;A calming yellow with a growing following&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Yellow Dream</h3><span class="batch">Yellow</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:30%"></div></div>
@@ -722,7 +814,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain gold">
-  <div class="strain-head"><h3>21k Gold Bali</h3><span class="batch">Gold</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 46], [&quot;mood&quot;, 20], [&quot;relief&quot;, 19], [&quot;clarity&quot;, 8], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;The slowest marker on the regular menu&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>21k Gold Bali</h3><span class="batch">Gold</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:8%"></div></div>
@@ -737,7 +829,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain gold">
-  <div class="strain-head"><h3>Red Clay</h3><span class="batch">Fermented</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 42], [&quot;mood&quot;, 20], [&quot;relief&quot;, 17], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 10]], &quot;caption&quot;: &quot;The house signature ferment: leaf fermented then finished&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Clay</h3><span class="batch">Fermented</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:20%"></div></div>
@@ -753,7 +845,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain gold">
-  <div class="strain-head"><h3>Chocolate Bentley</h3><span class="batch">Fermented</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 42], [&quot;mood&quot;, 20], [&quot;relief&quot;, 17], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 10]], &quot;caption&quot;: &quot;The second ferment on the menu&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Chocolate Bentley</h3><span class="batch">Fermented</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:20%"></div></div>
@@ -775,7 +867,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 <div class="catintro"><p>The 02 Drop microbatches, the Lucky 7 trainwrecks, complex blends, and the enhanced/extract line built on premium salt extracts.</p></div>
 <div class="popbox star">🏆 Blend standouts: <b>Lucky 7 Relief Wreck</b> (seven-strain slow wreck); <b>Ivory Sunrise</b> (fast-leaning complex blend); <b>Shock Wave 2.1%</b> (flagship enhanced).</div>
 <div class="strain blend">
-  <div class="strain-head"><h3>Lucky 7 Relief Wreck</h3><span class="batch">Lucky 7 Trainwreck</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;energy&quot;, 21], [&quot;mood&quot;, 19], [&quot;relief&quot;, 15], [&quot;clarity&quot;, 14]], &quot;caption&quot;: &quot;A seven-strain wreck built entirely from 01 Drop strains,&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Lucky 7 Relief Wreck</h3><span class="batch">Lucky 7 Trainwreck</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:30%"></div></div>
@@ -790,7 +882,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Lucky 7 Energy Wreck</h3><span class="batch">Lucky 7 Trainwreck</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;clarity&quot;, 21], [&quot;mood&quot;, 18], [&quot;calm&quot;, 17], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;The mirror-image wreck: seven all-different counterparts,&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Lucky 7 Energy Wreck</h3><span class="batch">Lucky 7 Trainwreck</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:70%"></div></div>
@@ -805,7 +897,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Gold Matrix</h3><span class="batch">Complex Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;mood&quot;, 19], [&quot;clarity&quot;, 16], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;A complex house blend on the mellow side of mid&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Gold Matrix</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:40%"></div></div>
@@ -820,7 +912,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Asian Pear Apple</h3><span class="batch">Complex Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;mood&quot;, 19], [&quot;clarity&quot;, 16], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;A fruit-named complex blend built on green, green and red&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Asian Pear Apple</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:40%"></div></div>
@@ -835,7 +927,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Velvet Plush</h3><span class="batch">Complex Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 29], [&quot;calm&quot;, 23], [&quot;mood&quot;, 19], [&quot;clarity&quot;, 17], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;A red-and-green complex blend with a partly fermented&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Velvet Plush</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:50%"></div></div>
@@ -850,7 +942,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Ivory Sunrise</h3><span class="batch">Complex Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;clarity&quot;, 21], [&quot;mood&quot;, 18], [&quot;calm&quot;, 17], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;A yellow-and-white complex blend with a partly fermented&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Ivory Sunrise</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:70%"></div></div>
@@ -865,7 +957,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Prism Shine</h3><span class="batch">02 Drop · Special Reserve</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 39], [&quot;clarity&quot;, 21], [&quot;mood&quot;, 18], [&quot;calm&quot;, 15], [&quot;relief&quot;, 7]], &quot;caption&quot;: &quot;A greens-and-whites microbatch from the 02 Drop reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Prism Shine</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:75%"></div></div>
@@ -880,7 +972,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Shock Wave 2.1%</h3><span class="batch">Enhanced Powder</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 35], [&quot;clarity&quot;, 20], [&quot;mood&quot;, 18], [&quot;calm&quot;, 18], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;Green-and-white powder enhanced with premium salt extracts&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Shock Wave 2.1%</h3><span class="batch">Enhanced Powder</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:65%"></div></div>
@@ -895,7 +987,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Monster Malay</h3><span class="batch">Enhanced Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;calm&quot;, 20], [&quot;clarity&quot;, 19], [&quot;mood&quot;, 18], [&quot;relief&quot;, 10]], &quot;caption&quot;: &quot;An enhanced Malay blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Monster Malay</h3><span class="batch">Enhanced Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:60%"></div></div>
@@ -910,7 +1002,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Thai Pathom Gold 75%</h3><span class="batch">Extract</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 45], [&quot;clarity&quot;, 25], [&quot;mood&quot;, 19], [&quot;calm&quot;, 11]], &quot;caption&quot;: &quot;A salt-based extract described as nearly pure mitragynine&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Thai Pathom Gold 75%</h3><span class="batch">Extract</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:90%"></div></div>
@@ -925,7 +1017,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 </div>
 
 <div class="strain blend">
-  <div class="strain-head"><h3>Margarita 65%</h3><span class="batch">Extract</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 45], [&quot;clarity&quot;, 25], [&quot;mood&quot;, 19], [&quot;calm&quot;, 11]], &quot;caption&quot;: &quot;A salt-based extract with a warm secondary-alkaloid&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Margarita 65%</h3><span class="batch">Extract</span></div>
   <div class="strain-body">
     <div class="specwrap">
       <div class="specbar"><div class="specmark" style="left:88%"></div></div>
@@ -1083,6 +1175,78 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     svg.appendChild(c);off+=frac*circ;
   });
 });
+</script>
+<!-- Donut chart popup (STRICT REQUIREMENT: all strain-comparison guides) -->
+<div id="donut-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
+<div id="donut-modal-box" style="background:#FFFEF9;border-radius:16px;padding:24px;width:66vw;max-width:900px;max-height:90vh;overflow:auto;box-shadow:0 8px 32px rgba(0,0,0,.4);"></div>
+<style>
+@media(max-width:768px){
+  #donut-modal-box{width:94vw!important;padding:16px!important;}
+}
+</style>
+</div>
+<script>
+(function(){
+  var COLORS = {energy:'#F59E0B', mood:'#2E7D4F', clarity:'#5BA3D9', calm:'#E8873A', relief:'#B03A3A'};
+  var LABELS = {energy:'High Energy', mood:'Mood & Well-being', clarity:'Balance & Clarity', calm:'Calm & Relaxation', relief:'Relief & Warmth'};
+  var VEIN = {green:['#B5C49A','#2F3A24','#7A8F6A'], red:['#D98C8C','#4A1414','#B03A3A'], white:['#EDEDED','#333333','#BDBDBD'], gold:['#F2C94C','#4A3A10','#F2C94C'], yellow:['#F2C94C','#4A3A10','#F2C94C']};
+  var modal = document.getElementById('donut-modal');
+  var box = document.getElementById('donut-modal-box');
+  function renderDonut(name, data){
+    var v = VEIN[data.vein] || VEIN.green;
+    var cx=280, cy=210, R=110, r=58;
+    var svg = '<svg viewBox="0 0 560 420" style="width:100%;height:auto;display:block;">';
+    svg += '<rect x="4" y="4" width="552" height="64" rx="14" fill="'+v[0]+'"/>';
+    svg += '<text x="280" y="46" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="'+v[1]+'">'+name+'</text>';
+    var start = -90, segs = [];
+    data.effects.forEach(function(e){
+      var sweep = e[1]/100*360, mid = start + sweep/2;
+      segs.push({k:e[0], p:e[1], mid:mid});
+      var a0 = start*Math.PI/180, a1 = (start+sweep)*Math.PI/180;
+      var x0=cx+R*Math.cos(a0), y0=cy+R*Math.sin(a0), x1=cx+R*Math.cos(a1), y1=cy+R*Math.sin(a1);
+      var ix0=cx+r*Math.cos(a0), iy0=cy+r*Math.sin(a0), ix1=cx+r*Math.cos(a1), iy1=cy+r*Math.sin(a1);
+      var large = sweep > 180 ? 1 : 0;
+      svg += '<path d="M'+x0+','+y0+' A'+R+','+R+' 0 '+large+' 1 '+x1+','+y1+' L'+ix1+','+iy1+' A'+r+','+r+' 0 '+large+' 0 '+ix0+','+iy0+' Z" fill="'+COLORS[e[0]]+'" stroke="white" stroke-width="2"/>';
+      start += sweep;
+    });
+    segs.forEach(function(s){
+      var a = s.mid*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+      var x0=cx+(R-8)*ca, y0=cy+(R-8)*sa, x1=cx+(R+14)*ca, y1=cy+(R+14)*sa;
+      var label = LABELS[s.k], pct = s.p + '%';
+      if(ca >= 0){
+        var tx = cx+R+24;
+        svg += '<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<line x1="'+x1+'" y1="'+y1+'" x2="'+(tx-4)+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="white"/>';
+        svg += '<text x="'+tx+'" y="'+(y1-4)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#222">'+label+'</text>';
+        svg += '<text x="'+tx+'" y="'+(y1+16)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="14" fill="#555">'+pct+'</text>';
+      } else {
+        var tw = Math.max(label.length*8.5, 30);
+        var tx2 = cx-R-24-tw;
+        svg += '<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<line x1="'+x1+'" y1="'+y1+'" x2="'+(tx2+tw+4)+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="white"/>';
+        svg += '<text x="'+tx2+'" y="'+(y1-4)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#222">'+label+'</text>';
+        svg += '<text x="'+tx2+'" y="'+(y1+16)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="14" fill="#555">'+pct+'</text>';
+      }
+    });
+    svg += '<text x="280" y="398" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="16" fill="#444">'+data.caption+'</text>';
+    svg += '</svg>';
+    return svg;
+  }
+  document.querySelectorAll('.donut-trigger').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var data = JSON.parse(el.getAttribute('data-strain').replace(/&quot;/g, '"'));
+      var h3 = el.closest('h3');
+      var name = h3 ? h3.textContent.trim() : 'Effect chart';
+      box.innerHTML = renderDonut(name, data);
+      modal.style.display = 'flex';
+    });
+  });
+  modal.addEventListener('click', function(){ modal.style.display = 'none'; });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
+})();
 </script>
 </body>
 </html>
