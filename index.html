@@ -836,7 +836,8 @@ a:active .card,.card:active,.news-card:active{transition:none!important;transfor
     <style>
         .dose-link{color:#7c3aed;text-decoration:underline;cursor:pointer;font-weight:600}
         .dose-link:hover{color:#5b21b6}
-        .dose-overlay{position:fixed;inset:0;background:rgba(18,26,18,.74);display:flex;align-items:center;justify-content:center;z-index:9999;padding:4vmin}
+        .dose-overlay{display:none;position:fixed;inset:0;background:rgba(18,26,18,.74);align-items:center;justify-content:center;z-index:9999;padding:4vmin}
+.dose-overlay:not([hidden]){display:flex}
         .dose-overlay[hidden]{display:none}
         .dose-modal{position:relative;max-width:min(920px,94vw);background:#fff;border-radius:18px;padding:10px;box-shadow:0 24px 80px rgba(0,0,0,.45)}
         .dose-modal img{display:block;width:100%;height:auto;max-height:82vh;border-radius:12px}
