@@ -438,6 +438,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
 
+
+/* David 2026-10-19: no lingering shadows during card->guide navigation */
+a,.card,.news-card{-webkit-tap-highlight-color:transparent!important;}
+a:focus,.card:focus,.news-card:focus{outline:none!important;}
+a:active .card,.card:active,.news-card:active{transition:none!important;transform:none!important;box-shadow:var(--sh)!important;}
 </style>
 </head>
 <body>
