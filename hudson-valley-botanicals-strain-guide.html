@@ -246,7 +246,17 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 /* David 2026-10-19: kill donut bottom whitespace */
 .donut-wrap,.donut-container,.chart-wrap,.effects-chart{margin-bottom:8px!important;padding-bottom:0!important;}
 .donut-wrap img,.donut-container img{margin-bottom:0!important;display:block;}
-.index{margin-top:8px!important;}</style>
+.index{margin-top:8px!important;}
+/* David 2026-10-19: TLN-style compact strain cards */
+.strain-head{display:flex!important;align-items:center;gap:12px;padding:14px 20px!important;color:#fff;flex-wrap:wrap;}
+.strain-head h3{margin:0!important;font-size:20px;flex:1;min-width:180px;}
+.strain.green .strain-head{background:linear-gradient(100deg,#1a5c3a,#2E7D4F)!important;}
+.strain.red .strain-head{background:linear-gradient(100deg,#7a1f1f,#B03A3A)!important;}
+.strain.white .strain-head{background:linear-gradient(100deg,#6b7a6b,#9db8a0)!important;}
+.strain.gold .strain-head{background:linear-gradient(100deg,#8a6d1a,#C9A227)!important;}
+.strain-body{background:#fff!important;padding:16px 20px!important;}
+.strain .batch{background:rgba(255,255,255,.25);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;color:#fff!important;}
+</style>
 </head>
 <body>
 <header class="peptopia-hdr">
@@ -384,8 +394,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Super Green</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img3.webp" alt="Super Green effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><a class="batch" href="#coa" style="text-decoration:none;color:inherit;">Lot SG4626 &middot; tested 2026-04-13</a></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Super Green</h3><span class="batch">Lot SG4626 &middot; tested 2026-04-13</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img3.webp" alt="Super Green effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>strong</b></span><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>steady</b></span><span><i class="vdot" style="background:#C96A2E"></i>Ease <b>moderate</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>The flagship. Premium-graded, larger fully-developed leaves &mdash; HVB's top green tier, and the strain the
@@ -403,8 +413,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Maeng Da</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img4.webp" alt="Green Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Indoor dried</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Green Maeng Da</h3><span class="batch">Indoor dried</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img4.webp" alt="Green Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>strong</b></span><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>steady</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>Selectively graded mid-maturity leaf, dried indoors under cover &mdash; HVB's indoor-dry process is designed
@@ -420,8 +430,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Super Green Maeng Da</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img5.webp" alt="Super Green Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Premium grade</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Super Green Maeng Da</h3><span class="batch">Premium grade</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img5.webp" alt="Super Green Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>strong</b></span><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>pronounced</b></span><span><b>$25</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>The premium Maeng Da grade &mdash; larger leaves, selectively picked. The $2 premium over standard Green
@@ -437,8 +447,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Jongkong</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img6.webp" alt="Green Jongkong effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Jongkong district</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Green Jongkong</h3><span class="batch">Jongkong district</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img6.webp" alt="Green Jongkong effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>steady</b></span><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>smooth</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>From the Jongkong district of West Kalimantan &mdash; mid-maturity leaf from a named growing region rather
@@ -453,8 +463,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Green Hulu</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img7.webp" alt="Green Hulu effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Upper Kapuas River</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Green Hulu</h3><span class="batch">Upper Kapuas River</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img7.webp" alt="Green Hulu effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>warm</b></span><span><i class="vdot" style="background:#C96A2E"></i>Ease <b>noticeable</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>Hulu Kapuas leaf from the upper Kapuas River region of West Kalimantan. Riverbank leaf runs slightly more
@@ -467,8 +477,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain green">
-  <div class="strain-head"><h3>Wild Green</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img8.webp" alt="Wild Green effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Wild-harvested</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Wild Green</h3><span class="batch">Wild-harvested</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img8.webp" alt="Wild Green effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>full</b></span><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>natural</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>Wild-harvested from uncultivated trees &mdash; HVB has run a wild line since 2017. Wild leaf is the
@@ -488,8 +498,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Red Bali</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img9.webp" alt="Red Bali effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Historic Bali route</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Red Bali</h3><span class="batch">Historic Bali route</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img9.webp" alt="Red Bali effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#C96A2E"></i>Ease <b>strong</b></span><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>warm</b></span><span><b>$25</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>Fully mature leaf with an extended dry, named for the historic Bali export route &mdash; the classic red.
@@ -504,8 +514,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain red">
-  <div class="strain-head"><h3>Red Maeng Da</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img10.webp" alt="Red Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><span class="batch">Selectively graded</span></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>Red Maeng Da</h3><span class="batch">Selectively graded</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img10.webp" alt="Red Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#C96A2E"></i>Ease <b>strong</b></span><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>low</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>Selectively graded red &mdash; the Maeng Da name on a red means a fuller-bodied red rather than a sleepy one.</p>
@@ -525,8 +535,8 @@ The four vein families at a glance. Individual strain cards below adjust these b
 </div>
 
 <div class="strain white">
-  <div class="strain-head"><h3>White Maeng Da</h3><div style="text-align:center;margin:10px 0 6px;"><img src="https://x-peps.com/X-Peps/images/hv-img11.webp" alt="White Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div><a class="batch" href="#coa" style="text-decoration:none;color:inherit;">Lot WMD4626 &middot; tested 2026-04-13</a></div>
-  <div class="strain-body">
+  <div class="strain-head"><h3>White Maeng Da</h3><span class="batch">Lot WMD4626 &middot; tested 2026-04-13</span></div>
+  <div class="strain-body"><div style="text-align:center;margin:4px 0 12px;"><img src="https://x-peps.com/X-Peps/images/hv-img11.webp" alt="White Maeng Da effect card" style="max-width:520px;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08);"></div>
     <div class="iconrow"><span><i class="vdot" style="background:#F59E0B"></i>Energy <b>strong</b></span><span><i class="vdot" style="background:#2E7D4F"></i>Mood <b>bright</b></span><span><b>$23</b>/250g</span></div>
     <h4>The leaf</h4>
     <p>Harvested early in the maturity cycle, dried indoors under cover. The morning strain of the lineup &mdash;
