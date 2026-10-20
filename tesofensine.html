@@ -213,6 +213,12 @@ html.dark table,html.dark thead,html.dark tbody,html.dark tr
 html.dark th,html.dark td{border-color:rgba(255,255,255,.09)!important;color:#E2E8F0!important}
 html.dark input,html.dark select,html.dark textarea{background:#111A2E!important;color:#E2E8F0!important;border-color:rgba(255,255,255,.14)!important}
 
+
+/* David: single logo display (dark on light, light on dark) */
+/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
+.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
+html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
+html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
 </style>
 </head>
 <body class="antialiased">
