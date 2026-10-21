@@ -118,6 +118,16 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
 
+/* ===== Quotes + compound terms (David 2026-10-20) ===== */
+.pq{font-style:italic;color:#5B21B6;background:linear-gradient(180deg,transparent 58%,rgba(216,180,254,.55) 58%,rgba(216,180,254,.55) 96%,transparent 96%);padding:0 2px;border-radius:2px}
+.cmp{color:#0E7C66;font-weight:700;cursor:pointer;border-bottom:2px dotted rgba(14,124,102,.55)}
+.cmp:hover{background:rgba(14,124,102,.10)}
+#ptCmpOverlay{display:none;position:fixed;inset:0;background:rgba(20,16,30,.55);z-index:9999;align-items:center;justify-content:center;padding:18px}
+#ptCmpOverlay:not([hidden]){display:flex}
+.pt-cmp-card{background:#fff;color:#1c2430;border-radius:16px;max-width:520px;width:100%;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;text-align:left}
+.pt-cmp-banner{background:#0E7C66;color:#fff;font-weight:800;font-size:1.15rem;padding:14px 20px}
+.pt-cmp-body{padding:16px 20px;line-height:1.6;font-size:1rem}
+.pt-cmp-hint{padding:0 20px 14px;color:#5b6b7d;font-size:.82rem}
 </style><div class="wrap"><div class="hero"><h1>🔬 Kratom Variation</h1>
 <p>Vein colors, strain names, vendors — the science of kratom inconsistency.</p></div><div class="shortstack">
 <span class="ss-badge">The short answer</span>
@@ -142,35 +152,35 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <h2>Layer 1 — The Leaf Is a Mixture, Not a Molecule</h2>
 <p>A gram of kratom leaf is not a dose of a single drug. <span class="tag t-sci">SCIENCE</span> It is a variable blend of more than 40 alkaloids, and the <i>ratios</i> matter as much as the headline number:</p>
 <table><tr><th>Alkaloid</th><th>What it does</th><th>Typical scale</th></tr>
-<tr><td><b>Mitragynine</b></td><td>The dominant alkaloid — a partial μ-opioid agonist with adrenergic/serotonergic activity. Your liver converts part of it to 7-OH.</td><td>~0.3–2% of plain leaf; field extremes documented below</td></tr>
-<tr><td><b>7-Hydroxymitragynine (7-OH)</b></td><td>Far more potent μ-opioid agonist. In natural leaf it is only a trace — and largely forms through oxidation after harvest.</td><td><b>0.01–0.04%</b> in commercial leaf</td></tr>
-<tr><td><b>Paynantheine</b></td><td>Second-tier alkaloid with serotonergic activity, associated with mood effects in the literature.</td><td>Up to ~13% of extract fractions</td></tr>
-<tr><td><b>Speciogynine / Speciociliatine</b></td><td>Mitragynine's geometric twins (diastereomers) — serotonergic activity; speciociliatine also acts at μ-opioid receptors.</td><td>Varies independently of mitragynine</td></tr>
-<tr><td><b>Corynantheidine</b></td><td>A functional <b>antagonist</b> at the μ-opioid receptor — it presses the brake while the others press the gas.</td><td>Minor, but mechanistically decisive</td></tr>
+<tr><td><b><span class="cmp" data-t="mitragynine">Mitragynine</span></b></td><td>The dominant alkaloid — a partial μ-opioid agonist with adrenergic/serotonergic activity. Your liver converts part of it to <span class="cmp" data-t="7-oh">7-OH</span>.</td><td>~0.3–2% of plain leaf; field extremes documented below</td></tr>
+<tr><td><b><span class="cmp" data-t="7-hydroxymitragynine">7-Hydroxymitragynine</span> (<span class="cmp" data-t="7-oh">7-OH</span>)</b></td><td>Far more potent μ-opioid agonist. In natural leaf it is only a trace — and largely forms through oxidation after harvest.</td><td><b>0.01–0.04%</b> in commercial leaf</td></tr>
+<tr><td><b><span class="cmp" data-t="paynantheine">Paynantheine</span></b></td><td>Second-tier alkaloid with serotonergic activity, associated with mood effects in the literature.</td><td>Up to ~13% of extract fractions</td></tr>
+<tr><td><b><span class="cmp" data-t="speciogynine">Speciogynine</span> / <span class="cmp" data-t="speciociliatine">Speciociliatine</span></b></td><td><span class="cmp" data-t="mitragynine">Mitragynine</span>'s geometric twins (diastereomers) — serotonergic activity; <span class="cmp" data-t="speciociliatine">speciociliatine</span> also acts at μ-opioid receptors.</td><td>Varies independently of <span class="cmp" data-t="mitragynine">mitragynine</span></td></tr>
+<tr><td><b><span class="cmp" data-t="corynantheidine">Corynantheidine</span></b></td><td>A functional <b>antagonist</b> at the μ-opioid receptor — it presses the brake while the others press the gas.</td><td>Minor, but mechanistically decisive</td></tr>
 <tr><td><b>Mitraphylline</b></td><td>Name-checked in marketing copy everywhere — yet in the University of Florida's 10-alkaloid analysis of commercial products it was <b>below the limit of quantification in every sample</b>.</td><td>Negligible in products tested</td></tr></table>
-<div class="callout">Two powders can show <b>identical mitragynine on a COA and still be pharmacologically different products</b> — because a standard COA never measures the antagonist, the diastereomers, or the oxindoles. — Sharma et al., University of Florida</div>
+<div class="callout">Two powders can show <b>identical <span class="cmp" data-t="mitragynine">mitragynine</span> on a COA and still be pharmacologically different products</b> — because a standard COA never measures the antagonist, the diastereomers, or the oxindoles. — Sharma et al., University of Florida</div>
 
 <h3>How wide is the potency spread, really?</h3>
-<p>In the largest field dataset — <b>745 samples</b> collected in Thailand (Sengnon et al., 2023) — mitragynine in leaf from the <i>same district</i> ranged from <b>0.74% in October (rainy season) to 4.94% in June</b>. Nearly seven-fold, before any human touches it.</p>
-<div class="card"><b>Mitragynine by harvest month — same district, same trees (Sengnon 2023)</b>
+<p>In the largest field dataset — <b>745 samples</b> collected in Thailand (Sengnon et al., 2023) — <span class="cmp" data-t="mitragynine">mitragynine</span> in leaf from the <i>same district</i> ranged from <b>0.74% in October (rainy season) to 4.94% in June</b>. Nearly seven-fold, before any human touches it.</p>
+<div class="card"><b><span class="cmp" data-t="mitragynine">Mitragynine</span> by harvest month — same district, same trees (Sengnon 2023)</b>
 <div class="bar-row"><span class="lbl">June (late summer)</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">4.94%</span></div>
 <div class="bar-row"><span class="lbl">October (rainy)</span><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div><span class="bar-val">0.74%</span></div>
-<p style="color:var(--muted);font-size:.92rem;margin:6px 0 0">A 3 g serving at 0.5% delivers ~15 mg mitragynine. At 3%, ~90 mg. Users experience that arithmetic as "this bag does nothing / this bag floored me" — and no strain name predicts which end they bought.</p></div>
-<p>Leaf age compounds it: younger leaves measured <b>0.74% mitragynine vs. 0.40%</b> in older leaves on the same plants (Leksungnoen 2025). Soil calcium and magnesium promoted alkaloid production. Insect-damaged leaves — alkaloids are the plant's defense chemicals — accumulated significantly more. Genetics matter too: researchers have identified multiple distinct <b>chemotypes</b> of the species, including one unusually rich in speciogynine instead of mitragynine.</p>
+<p style="color:var(--muted);font-size:.92rem;margin:6px 0 0">A 3 g serving at 0.5% delivers ~15 mg <span class="cmp" data-t="mitragynine">mitragynine</span>. At 3%, ~90 mg. Users experience that arithmetic as "this bag does nothing / this bag floored me" — and no strain name predicts which end they bought.</p></div>
+<p>Leaf age compounds it: younger leaves measured <b>0.74% <span class="cmp" data-t="mitragynine">mitragynine</span> vs. 0.40%</b> in older leaves on the same plants (Leksungnoen 2025). Soil calcium and magnesium promoted alkaloid production. Insect-damaged leaves — alkaloids are the plant's defense chemicals — accumulated significantly more. Genetics matter too: researchers have identified multiple distinct <b>chemotypes</b> of the species, including one unusually rich in <span class="cmp" data-t="speciogynine">speciogynine</span> instead of <span class="cmp" data-t="mitragynine">mitragynine</span>.</p>
 
 <h2>Layer 2 — Processing Rewrites the Chemistry (and the Color)</h2>
 <p>University of Florida controlled research (Zhang et al., 2025) isolated what happens after harvest:</p>
 <ul>
-<li><b>Withering</b> leaves before drying raised mitragynine by <b>14–65%</b> in one cultivar — from a step that is undocumented and unstandardized across the entire supply chain.</li>
-<li>A 12-hour wither with low-temperature drying raised speciogynine <b>37–48%</b> and paynantheine <b>35–67%</b>.</li>
+<li><b>Withering</b> leaves before drying raised <span class="cmp" data-t="mitragynine">mitragynine</span> by <b>14–65%</b> in one cultivar — from a step that is undocumented and unstandardized across the entire supply chain.</li>
+<li>A 12-hour wither with low-temperature drying raised <span class="cmp" data-t="speciogynine">speciogynine</span> <b>37–48%</b> and <span class="cmp" data-t="paynantheine">paynantheine</span> <b>35–67%</b>.</li>
 <li><b>High drying temperatures produced reddish-brown powder; low temperatures produced green powder.</b> The color a buyer sees is substantially a drying outcome, not a leaf identity.</li>
-<li>7-OH appeared only at trace levels and only in certain seasons — evidence it is largely a <b>post-harvest oxidation product</b>, not a major constituent of the living leaf.</li>
+<li><span class="cmp" data-t="7-oh">7-OH</span> appeared only at trace levels and only in certain seasons — evidence it is largely a <b>post-harvest oxidation product</b>, not a major constituent of the living leaf.</li>
 </ul>
 
 <h2>Vein Colors — What They Actually Mean</h2>
-<p>In the Thai field data, geography and season moved mitragynine content — but did <b>not</b> move vein color. And in native Southeast Asia, no color-strain distinction is made at all; the color-effect system is a Western retail construction. What each color word most plausibly reflects:</p>
+<p>In the Thai field data, geography and season moved <span class="cmp" data-t="mitragynine">mitragynine</span> content — but did <b>not</b> move vein color. And in native Southeast Asia, no color-strain distinction is made at all; the color-effect system is a Western retail construction. What each color word most plausibly reflects:</p>
 <div class="veingrid">
-<div class="vein vred"><h4>🔴 Red</h4><p>Mature leaf, longer sun-drying and/or fermentation, more oxidation. The processing half is plausible (heat and sun redden powder; oxidation forms trace 7-OH) — but no study shows retail "red" consistently contains a distinct alkaloid profile.</p></div>
+<div class="vein vred"><h4>🔴 Red</h4><p>Mature leaf, longer sun-drying and/or fermentation, more oxidation. The processing half is plausible (heat and sun redden powder; oxidation forms trace <span class="cmp" data-t="7-oh">7-OH</span>) — but no study shows retail "red" consistently contains a distinct alkaloid profile.</p></div>
 <div class="vein vgreen"><h4>🟢 Green</h4><p>Mid-maturity leaf, moderate controlled drying. The middle of the process spectrum — and in practice the default state most leaf starts from before other colors are produced from it.</p></div>
 <div class="vein vwhite"><h4>⚪ White</h4><p>Younger leaf, indoor or low-light drying to keep a lighter color. Some vendors add ground stem/vein material to whites — a formulation step that changes alkaloid-per-gram in either direction.</p></div>
 <div class="vein vgold"><h4>🟡 Gold / Yellow</h4><p>Not a recognized fresh-leaf vein type at all. Consistently an <i>outcome</i> — extended drying, partial fermentation, or blending of red/green/white powders — which is why yellow is the most vendor-variable category of all.</p></div>
@@ -179,14 +189,14 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <h2>The Decisive Test — Names vs. Chemistry</h2>
 <p>One study measured both halves of the claim in the same vendor's products (Huisman et al., 2023). <b>644 users</b> reported exactly the pattern marketing predicts — white highest for energy and concentration, red lowest. Then independent lab COAs (Santé Laboratories) tested six differently named products from that same respected vendor:</p>
-<div class="card"><b>Mitragynine % by product — independent COAs (Huisman 2023)</b>
+<div class="card"><b><span class="cmp" data-t="mitragynine">Mitragynine</span> % by product — independent COAs (Huisman 2023)</b>
 <div class="bar-row"><span class="lbl">Green Maeng Da</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">1.56%</span></div>
 <div class="bar-row"><span class="lbl">White Maeng Da</span><div class="bar-track"><div class="bar-fill" style="width:99%"></div></div><span class="bar-val">1.54%</span></div>
 <div class="bar-row"><span class="lbl">Red Maeng Da</span><div class="bar-track"><div class="bar-fill" style="width:97%"></div></div><span class="bar-val">1.52%</span></div>
 <div class="bar-row"><span class="lbl">Green Bali</span><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><span class="bar-val">1.44%</span></div>
 <div class="bar-row"><span class="lbl">White Thai</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div><span class="bar-val">1.41%</span></div>
 <div class="bar-row"><span class="lbl">Red Bali</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div><span class="bar-val">1.40%</span></div>
-<p style="color:var(--muted);font-size:.92rem;margin:6px 0 0">Total alkaloid: 2.20–2.44%. <b>No significant difference in any alkaloid measured</b> (mitragynine p=0.362; total alkaloid p=0.500). The authors' conclusion: reported differences may be disproportionately influenced by marketing narratives and expectancy. Unmeasured minor compounds remain possible — but the burden of proof has moved.</p></div>
+<p style="color:var(--muted);font-size:.92rem;margin:6px 0 0">Total alkaloid: 2.20–2.44%. <b>No significant difference in any alkaloid measured</b> (<span class="cmp" data-t="mitragynine">mitragynine</span> p=0.362; total alkaloid p=0.500). The authors' conclusion: reported differences may be disproportionately influenced by marketing narratives and expectancy. Unmeasured minor compounds remain possible — but the burden of proof has moved.</p></div>
 
 <h2>Layer 3 — Strain Names Are Product Codes, Not Botany</h2>
 <p>A retail strain name = a color word + a place word + marketing. There is no botanical registry, no cultivar standard, no legal definition. The geography doesn't survive the supply chain: <span class="tag t-sci">SCIENCE</span> Indonesia supplies <b>over 90% of the world's kratom</b>, concentrated in West Kalimantan. "Bali" is a historical trade label. Every "Thai" product sold before 2021 was almost certainly Indonesian leaf — kratom was illegal in Thailand from 1943 to 2020/21. <b>Maeng Da</b> is Thai slang for "pimp grade" — a grade claim some vendors pin on their strongest batch and others apply at random.</p>
@@ -194,35 +204,36 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <h2>Layer 4 — Vendors: Recipes, Pools, and the Extract Problem</h2>
 <h3>Blending is how strains are made</h3>
-<p><span class="tag t-ven">VENDOR DISCLOSURE</span> One major vendor states its Super White Maeng Da formula openly: <b>70% white vein + 30% green vein, plus added mitragynine extract to reach ≥3% MIT</b>. Legitimate, disclosed formulation — and proof that a name that sounds like a leaf type can denote a blend plus extract, while another vendor's identical name may be neither.</p>
+<p><span class="tag t-ven">VENDOR DISCLOSURE</span> One major vendor states its Super White Maeng Da formula openly: <b>70% white vein + 30% green vein, plus added <span class="cmp" data-t="mitragynine">mitragynine</span> extract to reach ≥3% MIT</b>. Legitimate, disclosed formulation — and proof that a name that sounds like a leaf type can denote a blend plus extract, while another vendor's identical name may be neither.</p>
 <h3>The extract end is a different product category</h3>
-<p><span class="tag t-sci">SCIENCE</span> Products sold as "kratom extract" tested with mitragynine of only 2–6 mg/g but <b>7-OH at 22–75 mg/g — 5–28% above their own label claims</b> — with profiles inconsistent with natural leaf (Brown et al., AOAC method). A 2026 analysis found capsule-to-capsule variation up to <b>48%</b> within a single product. A University of Florida study found <b>85% of derived products</b> (tablets, edibles, extracts — <i>not</i> plain leaf) mismatched their labels. Much of the internet's loudest "this vendor is fire / this vendor is bunk" discourse is this category confusion wearing leaf's clothing.</p>
+<p><span class="tag t-sci">SCIENCE</span> Products sold as "kratom extract" tested with <span class="cmp" data-t="mitragynine">mitragynine</span> of only 2–6 mg/g but <b><span class="cmp" data-t="7-oh">7-OH</span> at 22–75 mg/g — 5–28% above their own label claims</b> — with profiles inconsistent with natural leaf (Brown et al., AOAC method). A 2026 analysis found capsule-to-capsule variation up to <b>48%</b> within a single product. A University of Florida study found <b>85% of derived products</b> (tablets, edibles, extracts — <i>not</i> plain leaf) mismatched their labels. Much of the internet's loudest "this vendor is fire / this vendor is bunk" discourse is this category confusion wearing leaf's clothing.</p>
 <h3>Storage and testing</h3>
 <p>Oxidation, UV, heat, and moisture degrade alkaloids mechanistically — but no peer-reviewed decay curve for bagged powder exists; vendor "<5% loss in 12 months" figures are untraceable. Indonesian leaf may spend weeks in containers and months in warehouses before bagging, so two vendors' "fresh" can differ by a season of storage. And COAs vary as much as products: most report only two alkaloids, methods conflate look-alike molecules, and a COA tests a <i>sample</i> — batch-specific, recent, from a named accredited lab with a full panel, or it's decoration.</p>
 
 <h2>Layer 4½ — Why Even a Good Vendor's Next Drop Differs</h2>
 <p>A new "batch" or numbered drop usually means a new incoming lot of Indonesian leaf — and everything above says it will differ: a different harvest month (worth up to ~7× in the field data), a different leaf-age mix (worth ~2×), different weather and pest stress, and artisanal post-harvest handling decided lot by lot — withering time alone is worth 14–65%.</p>
 <div class="callout"><b>The missing step:</b> a pharmaceutical or mainstream supplement maker <i>standardizes</i> — assays incoming lots and blends to a target. Almost no kratom vendor does this for plain leaf. The COA <i>describes</i> the variance instead of removing it. Numbered drops make the variance <b>visible and trackable</b> — they don't reduce it. Drop culture is buyers rationally adapting: track the lot, not the name.</div>
+<div class="callout"><b>Can one lot number cover more than one color or strain? Yes.</b> A lot number is whatever the vendor declares it to be — no standard defines it. One lot number can sit on a blend of several strains and colors, because a finished blend <i>is</i> a single lot. The same incoming bulk lot can be split and sold under several different strain names and vein colors. And one product lot can be built from several incoming bulk lots. A lot number identifies a vendor's finished batch — not a single harvest, color, or strain.</div>
 
 <h2>Layer 5 — You Are the Final Variable</h2>
 <ul>
 <li><b>Dose crossover.</b> Low doses (roughly 1–5 g) skew stimulating; higher doses skew sedative/analgesic. A 2× stronger batch at your usual grams can flip the category entirely. In Smith et al.'s dose study, users' "too low" and "effective" thresholds averaged 2.64 g and 3.19 g — with standard deviations nearly as large as the means.</li>
-<li><b>Metabolism.</b> CYP3A4 — genetically variable — is the main enzyme converting mitragynine, and the only tested one producing 7-OH. Human half-life estimates run from ~3 hours (tea) to 23 ± 16 hours (whole leaf).</li>
-<li><b>Stomach and preparation.</b> Gastric acid destroys &gt;20% of mitragynine within 20 minutes. A tea-bag infusion extracted only 0.062–0.131% mitragynine vs. 0.485–0.616% by full extraction of the same material. "Tea" is not one preparation, and its delivered dose spans a several-fold range by method alone.</li>
+<li><b>Metabolism.</b> <span class="cmp" data-t="cyp3a4">CYP3A4</span> — genetically variable — is the main enzyme converting <span class="cmp" data-t="mitragynine">mitragynine</span>, and the only tested one producing <span class="cmp" data-t="7-oh">7-OH</span>. Human half-life estimates run from ~3 hours (tea) to 23 ± 16 hours (whole leaf).</li>
+<li><b>Stomach and preparation.</b> Gastric acid destroys &gt;20% of <span class="cmp" data-t="mitragynine">mitragynine</span> within 20 minutes. A tea-bag infusion extracted only 0.062–0.131% <span class="cmp" data-t="mitragynine">mitragynine</span> vs. 0.485–0.616% by full extraction of the same material. "Tea" is not one preparation, and its delivered dose spans a several-fold range by method alone.</li>
 <li><b>Tolerance and expectancy.</b> Tolerance moves the baseline weekly. And per the decisive test above, label-driven expectation co-authors every unblinded experience — including every video review where the strain name is known before the first sip.</li>
 </ul>
-<p><span class="tag t-com">COMMUNITY</span> Johns Hopkins / NIDA researchers analyzing 370 Reddit threads (Rogers et al., 2024) found the folk model and the lab model agree on nearly every testable point. Their summary deserves the last word on this layer: <i>"no two kratom batches are alike, nor are any two people."</i> One poster's version: <i>"It is a total crap shoot… eventually the vendor runs out and their new order from Indo isn't the same. They often just slap a name on the different batches and/or make all kinds of blends."</i></p>
+<p><span class="tag t-com">COMMUNITY</span> Johns Hopkins / NIDA researchers analyzing 370 Reddit threads (Rogers et al., 2024) found the folk model and the lab model agree on nearly every testable point. Their summary deserves the last word on this layer: <i class="pq">"no two kratom batches are alike, nor are any two people."</i> One poster's version: <i class="pq">"It is a total crap shoot… eventually the vendor runs out and their new order from Indo isn't the same. They often just slap a name on the different batches and/or make all kinds of blends."</i></p>
 
 <h2>The Regulation Gap — Why Nothing Forces Consistency</h2>
-<p>There is no federal product standard for kratom: no required assay, no naming rule, no batch-equivalence requirement. The AKA's GMP program is voluntary and — in its own words — is <i>"facility and process certification versus product certification"</i>; the AKA <i>"does not endorse the quality of the product."</i> State KCPA laws are a patchwork (sources count 15–19 states) covering age, labeling, and adulterants — none requires lot <i>n+1</i> to resemble lot <i>n</i>. The market's variance isn't a failure to enforce a standard. Mostly, there is no standard to enforce.</p>
+<p>There is no federal product standard for kratom: no required assay, no naming rule, no batch-equivalence requirement. The AKA's GMP program is voluntary and — in its own words — is <i class="pq">"facility and process certification versus product certification"</i>; the AKA <i class="pq">"does not endorse the quality of the product."</i> State KCPA laws are a patchwork (sources count 15–19 states) covering age, labeling, and adulterants — none requires lot <i>n+1</i> to resemble lot <i>n</i>. The market's variance isn't a failure to enforce a standard. Mostly, there is no standard to enforce.</p>
 
 <h2>Ranked — What Actually Matters Most</h2>
 <table class="rank"><tr><th>#</th><th>Factor</th><th>Why it ranks here</th></tr>
 <tr><td>1</td><td><b>Dose vs. your crossover</b></td><td>Grams × actual potency decides the <i>kind</i> of effect, not just strength.</td></tr>
 <tr><td>2</td><td><b>The specific lot's alkaloid content</b></td><td>Several-fold documented spread from season, soil, leaf age, genetics.</td></tr>
-<tr><td>3</td><td><b>That lot's processing</b></td><td>Withering alone: +14–65% mitragynine. Drying sets ratios and color. Invisible to buyers.</td></tr>
+<tr><td>3</td><td><b>That lot's processing</b></td><td>Withering alone: +14–65% <span class="cmp" data-t="mitragynine">mitragynine</span>. Drying sets ratios and color. Invisible to buyers.</td></tr>
 <tr><td>4</td><td><b>Vendor sourcing &amp; formulation</b></td><td>Pooling, blend recipes, stem inclusion, extract enhancement. Jumps to #1 for extracts/enhanced products.</td></tr>
-<tr><td>5</td><td><b>Your metabolism &amp; tolerance</b></td><td>CYP3A4 conversion rate and a moving weekly baseline.</td></tr>
+<tr><td>5</td><td><b>Your metabolism &amp; tolerance</b></td><td><span class="cmp" data-t="cyp3a4">CYP3A4</span> conversion rate and a moving weekly baseline.</td></tr>
 <tr><td>6</td><td><b>Preparation &amp; stomach state</b></td><td>Delivered dose varies several-fold by method alone.</td></tr>
 <tr><td>7</td><td><b>Expectancy / set &amp; setting</b></td><td>Demonstrated where chemistry didn't differ.</td></tr>
 <tr><td>8</td><td><b>Vein color as a label</b></td><td>No demonstrated reliability as a chemistry predictor.</td></tr>
@@ -233,8 +244,8 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <ol class="rules">
 <li><b>Buy the lot, not the name.</b> The only unit with demonstrated consistency is a specific batch/drop from a specific vendor in a specific window. Reorder the lot number; treat its replacement as a new, untested product.</li>
 <li><b>Read COAs like an auditor, or ignore them.</b> Batch-matched to the bag, recent, named accredited third-party lab, full alkaloid panel. Identical numbers across different products = red flag.</li>
-<li><b>Dose in milligrams of mitragynine, not grams of powder.</b> Lot A at 1.5% and Lot B at 0.9% are not interchangeable at the same weight — B carries ~40% less primary alkaloid per gram.</li>
-<li><b>Use the natural fingerprint.</b> Plain leaf: mitragynine dominant, 7-OH at trace 0.01–0.04%. A COA showing 7-OH near or above ~0.1% of the powder is not behaving like plain leaf.</li>
+<li><b>Dose in milligrams of <span class="cmp" data-t="mitragynine">mitragynine</span>, not grams of powder.</b> Lot A at 1.5% and Lot B at 0.9% are not interchangeable at the same weight — B carries ~40% less primary alkaloid per gram.</li>
+<li><b>Use the natural fingerprint.</b> Plain leaf: <span class="cmp" data-t="mitragynine">mitragynine</span> dominant, <span class="cmp" data-t="7-oh">7-OH</span> at trace 0.01–0.04%. A COA showing <span class="cmp" data-t="7-oh">7-OH</span> near or above ~0.1% of the powder is not behaving like plain leaf.</li>
 <li><b>Discount color and origin claims to zero.</b> Reward specific process disclosure instead — harvest month, drying method, fermentation time, lot number, full-panel COA.</li>
 <li><b>Treat vendor reputation as perishable.</b> It describes recent lots and the current supply chain, not a durable trait. One weak drop is evidence about a lot before it's evidence about a vendor.</li>
 <li><b>Control your own variables first.</b> Weigh it. Same preparation, same stomach state, same timing. Spoon-and-eyeball measurement manufactures "batch differences" out of thin air.</li>
@@ -249,12 +260,12 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <li>Zhang et al. (2025), University of Florida — postharvest withering/drying effects on alkaloids and powder color. Frontiers in Plant Science</li>
 <li>Manwill et al. (2022), UNC Greensboro — chemotypes of plants and products. Planta Medica 88</li>
 <li>Rogers et al. (2024), Johns Hopkins / NIDA / UF — analysis of 370 Reddit threads. PMC11211595</li>
-<li>Kamble et al. (2019) — CYP3A4 metabolism of mitragynine; 7-OH formation. Reviewed at PMC8637859</li>
-<li>Manda et al. — mitragynine stability in simulated gastric fluid. PMC6272646</li>
+<li>Kamble et al. (2019) — <span class="cmp" data-t="cyp3a4">CYP3A4</span> metabolism of <span class="cmp" data-t="mitragynine">mitragynine</span>; <span class="cmp" data-t="7-oh">7-OH</span> formation. Reviewed at PMC8637859</li>
+<li>Manda et al. — <span class="cmp" data-t="mitragynine">mitragynine</span> stability in simulated gastric fluid. PMC6272646</li>
 <li>Smith et al. (2022) — self-reported dose-effect relationships among US users. PMC8921773</li>
 <li>Leksungnoen et al. (2025) — leaf age, light, and water stress effects. Horticulturae 11, 272</li>
-<li>Brown et al. — elevated 7-OH in products misbranded as kratom. J. AOAC International, PMC12733965</li>
-<li>Lydecker et al. (2016) — suspected adulteration of commercial products with 7-OH. PMC5135684</li>
+<li>Brown et al. — elevated <span class="cmp" data-t="7-oh">7-OH</span> in products misbranded as kratom. J. AOAC International, PMC12733965</li>
+<li>Lydecker et al. (2016) — suspected adulteration of commercial products with <span class="cmp" data-t="7-oh">7-OH</span>. PMC5135684</li>
 <li>Indonesian Presidential Staff Office — Indonesia &gt;90% of world kratom supply, West Kalimantan concentration.</li>
 <li>American Kratom Association — GMP Standards Program (voluntary, process certification).</li>
 <li>Federal Register (July 6, 2026) — state KCPA enactment summary.</li>
@@ -280,5 +291,21 @@ Compiled October 2026.</p>
 var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
 function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
 (function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+</script>
+<div id="ptCmpOverlay" hidden><div class="pt-cmp-card">
+<div class="pt-cmp-banner" id="ptCmpTitle"></div>
+<div class="pt-cmp-body" id="ptCmpBody"></div>
+<div class="pt-cmp-hint">Tap the term again — or anywhere outside — to close.</div>
+</div></div>
+<script>
+var PT_CMP={"mitragynine": ["Mitragynine", "Kratom's dominant alkaloid — roughly 60% of the leaf's total alkaloid content and typically 0.5–2% or more of plain leaf by weight. A partial agonist at μ-opioid receptors: stimulant-like at low doses, sedating at higher ones. It is the number most COAs report."], "7-hydroxymitragynine": ["7-Hydroxymitragynine (7-OH)", "A far more potent μ-opioid agonist than mitragynine. Fresh leaf holds only traces (about 0.01–0.04%) — most 7-OH forms after harvest by oxidation, and in the body when the liver enzyme CYP3A4 converts mitragynine. Noticeably elevated levels are a fingerprint of fortified or extract products."], "7-oh": ["7-Hydroxymitragynine (7-OH)", "A far more potent μ-opioid agonist than mitragynine. Fresh leaf holds only traces (about 0.01–0.04%) — most 7-OH forms after harvest by oxidation, and in the body when the liver enzyme CYP3A4 converts mitragynine. Noticeably elevated levels are a fingerprint of fortified or extract products."], "speciociliatine": ["Speciociliatine", "Kratom's second-most abundant alkaloid and a close chemical mirror of mitragynine (a diastereomer). In lab assays it is a stronger partial μ-opioid agonist than mitragynine itself, so its share of the mix helps set a lot's character."], "speciogynine": ["Speciogynine", "One of kratom's major alkaloids. A smooth-muscle relaxant that acts as a competitive antagonist at opioid receptors in lab models — part of the leaf's built-in balancing chemistry."], "paynantheine": ["Paynantheine", "Among the three most abundant kratom alkaloids. In lab models it competes at μ- and κ-opioid receptors without activating them, quietly moderating the overall effect of the mix."], "corynantheidine": ["Corynantheidine", "A minor kratom alkaloid that functions as a μ-opioid antagonist in lab assays — one of the leaf's natural counterweights to its own agonists."], "cyp3a4": ["CYP3A4", "The liver enzyme chiefly responsible for converting mitragynine into 7-hydroxymitragynine. Its activity differs from person to person and shifts with other medications — one reason the same dose can hit two people very differently."]};
+var ptCmpOpen=null;
+function ptCmpClose(){var o=document.getElementById('ptCmpOverlay');o.hidden=true;ptCmpOpen=null}
+function ptCmpShow(k){var d=PT_CMP[k];if(!d)return;document.getElementById('ptCmpTitle').textContent=d[0];
+document.getElementById('ptCmpBody').textContent=d[1];document.getElementById('ptCmpOverlay').hidden=false;ptCmpOpen=k}
+document.addEventListener('click',function(e){var t=e.target.closest?e.target.closest('.cmp'):null;
+if(t){var k=t.getAttribute('data-t');if(ptCmpOpen===k){ptCmpClose()}else{ptCmpShow(k)}return}
+if(e.target.id==='ptCmpOverlay'){ptCmpClose()}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ptCmpClose()}});
 </script>
 </body></html>
