@@ -21,7 +21,7 @@
   --red:#b03a2e; --red-dk:#7e241a; --red-soft:#f7e8e4;
   --green:#2e7d4f; --green-dk:#1c5433; --green-soft:#e6f2ea;
   --white:#5c8a2f; --white-dk:#3c5f1d; --white-soft:#eef4e2;
-  --gold:#b8860b; --gold-dk:#7d5f06; --gold-soft:#faf3dd;
+  --gold:#FFD800; --gold-dk:#B78A00; --gold-soft:#FFF6CF;
   --blend:#6a4c93; --blend-dk:#4a3369; --blend-soft:#efe9f7;
   --accent:#1f6f5c; --line:#ddd3bd;
 }
@@ -32,18 +32,18 @@ body{margin:0;background:var(--paper);color:var(--ink);
 h1,h2,h3,.serif{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700;letter-spacing:-.01em}
 .wrap{max-width:960px;margin:0 auto;padding:0 22px}
 /* ---------- title page ---------- */
-.titlepage{min-height:96vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:60px 24px;position:relative;overflow:hidden;
+.titlepage{min-height:auto;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;
+  text-align:center;padding:26px 24px 12px;position:relative;overflow:hidden;
   background:radial-gradient(1200px 600px at 50% -10%,#e9f3e4 0%,var(--paper) 60%);}
-.titlepage::before{content:"❧";font-size:120px;color:#d8e6cf;position:absolute;top:8%;opacity:.7}
-.titlepage::after{content:"❧";font-size:120px;color:#d8e6cf;position:absolute;bottom:6%;opacity:.7;transform:rotate(180deg)}
-.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:14px}
-.titlepage h1{font-size:clamp(38px,6vw,64px);margin:0 0 10px;color:#23402f;line-height:1.12}
-.titlepage .sub{font-size:clamp(17px,2.4vw,22px);color:var(--muted);max-width:640px;margin:0 0 26px}
-.titlepage .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
+
+
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:10px}
+.titlepage h1{font-size:clamp(38px,6vw,64px);margin:0 0 6px;color:#23402f;line-height:1.12}
+.titlepage .sub{font-size:clamp(17px,2.4vw,22px);color:var(--muted);max-width:640px;margin:0 0 20px}
+.titlepage .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
 .pill{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:13px;background:#fff;color:var(--muted)}
 .titlepage .date{font-size:14px;color:var(--muted)}
-.leafrule{font-size:26px;color:var(--accent);margin:18px 0;letter-spacing:12px}
+
 /* ---------- index ---------- */
 .index{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 30px;margin:34px 0;
   box-shadow:0 4px 18px rgba(60,50,30,.06)}
@@ -61,7 +61,7 @@ h1,h2,h3,.serif{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helveti
 .band-red{background:linear-gradient(120deg,var(--red-dk),var(--red))}
 .band-green{background:linear-gradient(120deg,var(--green-dk),var(--green))}
 .band-white{background:linear-gradient(120deg,var(--white-dk),var(--white))}
-.band-gold{background:linear-gradient(120deg,var(--gold-dk),#cf9a1b)}
+.band-gold{background:linear-gradient(120deg,var(--gold-dk),#FFD800)}
 .band-blend{background:linear-gradient(120deg,var(--blend-dk),var(--blend))}
 .band-neutral{background:linear-gradient(120deg,#23402f,#1f6f5c)}
 .catintro{background:#fff;border:1px solid var(--line);border-left:6px solid var(--accent);
@@ -74,7 +74,7 @@ h1,h2,h3,.serif{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helveti
 .strain.red .strain-head{background:linear-gradient(100deg,var(--red-dk),var(--red))}
 .strain.green .strain-head{background:linear-gradient(100deg,var(--green-dk),var(--green))}
 .strain.white .strain-head{background:linear-gradient(100deg,var(--white-dk),var(--white))}
-.strain.gold .strain-head{background:linear-gradient(100deg,var(--gold-dk),#cf9a1b)}
+.strain.gold .strain-head{background:linear-gradient(100deg,var(--gold-dk),#FFD800);text-shadow:0 1px 3px rgba(0,0,0,.35)}
 .strain.blend .strain-head{background:linear-gradient(100deg,var(--blend-dk),var(--blend))}
 .batch{font-size:12px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4);
   padding:3px 12px;border-radius:999px;white-space:nowrap}
@@ -87,7 +87,7 @@ h1,h2,h3,.serif{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helveti
 .strain li{margin:4px 0}
 .score{display:inline-block;min-width:44px;text-align:center;font-weight:700;border-radius:8px;
   padding:2px 8px;color:#fff;font-size:14px}
-.s5{background:#2e7d4f}.s4{background:#5c8a2f}.s3{background:#b8860b}.s2{background:#c96a1b}.s1{background:#b03a2e}
+.s5{background:#2e7d4f}.s4{background:#5c8a2f}.s3{background:#FFD800}.s2{background:#c96a1b}.s1{background:#b03a2e}
 .quote{border-left:4px solid var(--line);margin:10px 0;padding:8px 14px;background:var(--paper2);
   border-radius:0 8px 8px 0;font-style:italic;color:#4a4438;font-size:14.5px}
 .quote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:4px}
@@ -112,11 +112,17 @@ table.grid tr:nth-child(even) td{background:#fbf9f3}
 .panel .phead{text-align:center;padding:10px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:22px;color:#fff}
 .panel .pbody{display:flex;gap:14px;padding:16px;align-items:center}
 .panel .pleft,.panel .pright{flex:1;font-size:13px;font-weight:700;line-height:1.4}
-.panel .pfoot{padding:0 16px 16px;font-size:13.5px;color:#4a4438}
+.panel .pfoot{padding:0 16px 12px;font-size:13.5px;color:#4a4438;text-align:center;line-height:1.45}
+.pfoot a{color:#1f6f5c;font-weight:700}
+@media(min-width:700px){.pfoot .s1,.pfoot .s2{white-space:nowrap}}
+.pleft{text-align:center}.panel .pright{text-align:center}
+.p-white .golink{background:#eef4e2}.p-green .golink{background:#e6f2ea}
+.p-red .golink{background:#f7e8e4}.p-yellow .golink{background:#fff6cf}
+a.specdot{cursor:pointer;z-index:2}
 .panel a.golink{display:block;text-align:center;padding:9px;background:rgba(0,0,0,.06);
   color:#23402f;font-weight:700;text-decoration:none;font-size:14px}
 .p-white .phead{background:#7cb342}.p-green .phead{background:#26a69a}
-.p-yellow .phead{background:#d4a017}.p-red .phead{background:#c62828}
+.p-yellow .phead{background:#FFD800;text-shadow:0 1px 3px rgba(0,0,0,.45)}.p-red .phead{background:#c62828}
 .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:14px 0;font-size:13px}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:-2px}
 /* ---------- misc ---------- */
@@ -145,25 +151,26 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 .meter i{display:block;height:100%;background:linear-gradient(90deg,#8bc34a,#2e7d4f);border-radius:3px}
 .index ol ol{list-style-type:lower-alpha;margin-top:6px}
 .index ol ol li{margin:4px 0}
-.subtitle{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:clamp(20px,3vw,30px);color:#1f6f5c;letter-spacing:2px;text-transform:uppercase;margin:0 0 20px}
+.subtitle{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:clamp(20px,3vw,30px);color:#1f6f5c;letter-spacing:2px;text-transform:uppercase;margin:0 0 22px}
+.pq{color:#555;font-style:italic;background:linear-gradient(180deg,transparent 62%,rgba(196,181,253,.45) 62%)}
 .affil{display:inline-block;margin-top:18px;font-size:13.5px;color:var(--muted);border:1px dashed #c9bd9d;border-radius:999px;padding:7px 18px;background:#fff}
 .leafdiv{text-align:center;color:#b9ac8d;font-size:20px;letter-spacing:14px;margin:30px 0 10px}
 
 /* TreeLeaf spectrum system */
 .specwrap{margin:2px 0 10px}
-.specbar{position:relative;height:10px;border-radius:6px;background:linear-gradient(90deg,#5c6bc0,#26a69a 30%,#7cb342 55%,#f9a825 78%,#ef6c00);box-shadow:inset 0 1px 2px rgba(0,0,0,.18)}
+.specbar{position:relative;height:10px;border-radius:6px;background:linear-gradient(90deg,#5c6bc0,#26a69a 30%,#7cb342 55%,#FFD800 78%,#ef6c00);box-shadow:inset 0 1px 2px rgba(0,0,0,.18)}
 .specmark{position:absolute;top:-4px;width:4px;height:18px;background:#1a1a1a;border-radius:2px;box-shadow:0 0 0 2px #fff;transform:translateX(-50%)}
 .specends{display:flex;justify-content:space-between;font-size:10px;color:#8a7d5c;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:3px}
 .spectag{font-size:12.5px;color:#5d5340;margin-top:4px}
 .spectag b{color:#2e7d32}
 /* mega spectrum map */
 .specmap{position:relative;margin:18px 0 8px;padding:0 0 0 92px}
-.specmap-bar{position:absolute;left:92px;right:0;top:0;bottom:26px;border-radius:8px;background:linear-gradient(90deg,#5c6bc0,#26a69a 30%,#7cb342 55%,#f9a825 78%,#ef6c00);opacity:.28}
+.specmap-bar{position:absolute;left:92px;right:0;top:0;bottom:26px;border-radius:8px;background:linear-gradient(90deg,#5c6bc0,#26a69a 30%,#7cb342 55%,#FFD800 78%,#ef6c00);opacity:.28}
 .specmap-lane{position:relative;height:30px;margin-bottom:2px}
 .lanename{position:absolute;left:-92px;width:84px;text-align:right;font-size:11px;font-weight:800;color:#5d5340;top:7px}
 .specdot{position:absolute;top:9px;width:13px;height:13px;border-radius:50%;background:#fffdf6;border:3px solid #999;transform:translateX(-50%);box-shadow:0 1px 3px rgba(0,0,0,.25)}
 .specdot.dw{border-color:#b0b3b8}.specdot.dg{border-color:#2e7d32}.specdot.dr{border-color:#c62828}
-.specdot.dy{border-color:#d4a017}.specdot.dp{border-color:#7b1fa2}
+.specdot.dy{border-color:#FFD800}.specdot.dp{border-color:#7b1fa2}
 .specmap-scale{position:relative;height:20px;margin-top:6px;font-size:10.5px;font-weight:700;color:#8a7d5c}
 .specmap-scale span{position:absolute;transform:translateX(-50%);letter-spacing:.5px}
 .speclegend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:#5d5340;margin:8px 0}
@@ -279,17 +286,14 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <div class="kicker">Independent Customer Research</div>
   <h1>Tree Leaf Naturalist</h1>
   <div class="subtitle">Complete Strain Guide</div>
-  <div class="leafrule">❧ ❧ ❧</div>
-  <p class="sub">An independent, product-by-product analysis of the Tree Leaf Naturalist lineup —
-  every strain organized by vein color, plotted on the vendor’s own slow-to-fast spectrum, with menu tiers,
-  effect markers, and honest notes on what is verified and what isn’t.</p>
+  
+  <p class="sub">Five colors, one spectrum — find your strain, your speed, and your price.</p>
   <div class="badges">
     <span class="pill">🔴 Reds</span><span class="pill">🟢 Greens</span>
     <span class="pill">⚪ Whites</span><span class="pill">🟡 Golds &amp; Ferments</span>
     <span class="pill">🟣 Blends &amp; Enhanced</span>
   </div>
-  <div><span class="affil">✋ Written by an independent customer — no affiliation with, sponsorship from, or business relationship with Tree Leaf Naturalist. The author does not represent the company.</span></div>
-  <div class="date" style="margin-top:14px">Compiled October 2026</div>
+  <div><span class="affil">✋ Independent customer review — no affiliation with Tree Leaf Naturalist.</span></div>
 </div>
 
 <!-- ================= INDEX ================= -->
@@ -297,13 +301,13 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <h2>📖 Index</h2>
   <ol>
     <li><a href="#howto">How to use this guide &amp; the spectrum map</a></li>
-    <li><a href="#science">The spectrum system &amp; an honest note on evidence</a></li>
+    <li><a href="#science">The spectrum system</a></li>
     <li>Strain analyses by color
       <ol>
         <li><a href="#white">⚪ White strains — clean drive &amp; focus</a></li>
         <li><a href="#green">🟢 Green strains — balanced energy &amp; mood</a></li>
         <li><a href="#red">🔴 Red strains — deep calm &amp; evening ease</a></li>
-        <li><a href="#gold">🟡 Yellows, golds &amp; ferments — mellow warmth and craft processes</a></li>
+        <li><a href="#gold">🟡 Yellows, golds &amp; ferments — mellow warmth</a></li>
         <li><a href="#blends">🟣 Blends, reserves &amp; enhanced — house specialties</a></li>
       </ol>
     </li>
@@ -325,18 +329,18 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <span><i style="background:#5c6bc0"></i>Slow — wind down</span>
   <span><i style="background:#26a69a"></i>Mid-Low — mellow</span>
   <span><i style="background:#7cb342"></i>Mid — balanced</span>
-  <span><i style="background:#f9a825"></i>Mid-Upper — lifted</span>
+  <span><i style="background:#FFD800"></i>Mid-Upper — lifted</span>
   <span><i style="background:#ef6c00"></i>Fast — drive</span>
 </div>
 <h3>🗺️ The full spectrum map</h3>
 <p>Every strain in the catalog, plotted on the vendor’s own slow → fast spectrum. Dots are ringed by vein color; positions follow the menu’s published markers. The <a href="#matrix">master matrix</a> below lists each strain’s exact marker.</p>
-<div class="specmap">
+<div class="specmap" id="specmap">
   <div class="specmap-bar"></div>
-  <div class="specmap-lane"><span class="lanename">Whites</span><i class="specdot dw" style="left:75.0%" title="White Java — Mid-Upper"></i><i class="specdot dw" style="left:77.2%" title="White Ponti — Mid-Upper"></i><i class="specdot dw" style="left:85.0%" title="White Dragon — Mid-Upper / Fast"></i><i class="specdot dw" style="left:87.2%" title="White Catalyst — Mid-Upper / Fast"></i><i class="specdot dw" style="left:70.6%" title="White Jack — Mid-Upper*"></i><i class="specdot dw" style="left:68.0%" title="Silver Haze — Upper-Mid"></i></div>
-<div class="specmap-lane"><span class="lanename">Greens</span><i class="specdot dg" style="left:75.0%" title="Green Dragon — Mid-Upper"></i><i class="specdot dg" style="left:62.0%" title="Green Forest — Mid+"></i><i class="specdot dg" style="left:64.2%" title="Green Malay — Mid+"></i><i class="specdot dg" style="left:40.0%" title="Green Melt — Mid / Mid-Low"></i><i class="specdot dg" style="left:30.0%" title="Green Bali Emerald — Mid-Low"></i><i class="specdot dg" style="left:42.2%" title="D’Anjou Green — Mid / Mid-Low"></i><i class="specdot dg" style="left:20.0%" title="Green Giant — Mid-Low / Slow"></i><i class="specdot dg" style="left:55.0%" title="Green Hulu — Mid / Mid+"></i><i class="specdot dg" style="left:32.2%" title="Green Sunda — Under mid"></i></div>
-<div class="specmap-lane"><span class="lanename">Reds</span><i class="specdot dr" style="left:40.0%" title="Red Vein — Mid / Mid-Low"></i><i class="specdot dr" style="left:50.0%" title="Red Honeycrisp — Mid"></i><i class="specdot dr" style="left:20.0%" title="Deep River Red — Mid-Low / Slow"></i><i class="specdot dr" style="left:22.2%" title="Blood Moon Red — Mid-Low / Slow"></i><i class="specdot dr" style="left:15.6%" title="Dark Hematoma — Mid-Low / Slow"></i><i class="specdot dr" style="left:42.2%" title="Pink Fire — Mid / Mid-Low"></i></div>
-<div class="specmap-lane"><span class="lanename">Yellows · Golds · Ferments</span><i class="specdot dy" style="left:50.0%" title="Yellow Lush — Mid"></i><i class="specdot dy" style="left:30.0%" title="Yellow Dream — Mid-Low"></i><i class="specdot dy" style="left:8.0%" title="21k Gold Bali — Slow"></i><i class="specdot dy" style="left:20.0%" title="Red Clay — Mid-Low / Slow"></i><i class="specdot dy" style="left:22.2%" title="Chocolate Bentley — Mid-Low / Slow"></i></div>
-<div class="specmap-lane"><span class="lanename">Blends · Enhanced</span><i class="specdot dp" style="left:30.0%" title="Lucky 7 Relief Wreck — Mid-Low"></i><i class="specdot dp" style="left:70.0%" title="Lucky 7 Energy Wreck — Mid+ / Mid-Upper"></i><i class="specdot dp" style="left:40.0%" title="Gold Matrix — Mid / Mid-Low"></i><i class="specdot dp" style="left:42.2%" title="Asian Pear Apple — Mid / Mid-Low"></i><i class="specdot dp" style="left:50.0%" title="Velvet Plush — Mid"></i><i class="specdot dp" style="left:72.2%" title="Ivory Sunrise — Mid+ / Mid-Upper"></i><i class="specdot dp" style="left:75.0%" title="Prism Shine — Mid-Upper"></i><i class="specdot dp" style="left:65.0%" title="Shock Wave 2.1% — Mid+"></i><i class="specdot dp" style="left:60.0%" title="Monster Malay — Mid+*"></i><i class="specdot dp" style="left:90.0%" title="Thai Pathom Gold 75% — Fast*"></i><i class="specdot dp" style="left:88.0%" title="Margarita 65% — Fast*"></i></div>
+  <div class="specmap-lane"><span class="lanename">Whites</span><a class="specdot dw" style="left:75.0%" title="White Java — Mid-Upper" href="#strain-white-java" aria-label="White Java"></a><a class="specdot dw" style="left:77.2%" title="White Ponti — Mid-Upper" href="#strain-white-ponti" aria-label="White Ponti"></a><a class="specdot dw" style="left:85.0%" title="White Dragon — Mid-Upper / Fast" href="#strain-white-dragon" aria-label="White Dragon"></a><a class="specdot dw" style="left:87.2%" title="White Catalyst — Mid-Upper / Fast" href="#strain-white-catalyst" aria-label="White Catalyst"></a><a class="specdot dw" style="left:70.6%" title="White Jack — Mid-Upper*" href="#strain-white-jack" aria-label="White Jack"></a><a class="specdot dw" style="left:68.0%" title="Silver Haze — Upper-Mid" href="#strain-silver-haze" aria-label="Silver Haze"></a></div>
+<div class="specmap-lane"><span class="lanename">Greens</span><a class="specdot dg" style="left:75.0%" title="Green Dragon — Mid-Upper" href="#strain-green-dragon" aria-label="Green Dragon"></a><a class="specdot dg" style="left:62.0%" title="Green Forest — Mid+" href="#strain-green-forest" aria-label="Green Forest"></a><a class="specdot dg" style="left:64.2%" title="Green Malay — Mid+" href="#strain-green-malay" aria-label="Green Malay"></a><a class="specdot dg" style="left:40.0%" title="Green Melt — Mid / Mid-Low" href="#strain-green-melt" aria-label="Green Melt"></a><a class="specdot dg" style="left:30.0%" title="Green Bali Emerald — Mid-Low" href="#strain-green-bali-emerald" aria-label="Green Bali Emerald"></a><a class="specdot dg" style="left:42.2%" title="D’Anjou Green — Mid / Mid-Low" href="#strain-danjou-green" aria-label="D’Anjou Green"></a><a class="specdot dg" style="left:20.0%" title="Green Giant — Mid-Low / Slow" href="#strain-green-giant" aria-label="Green Giant"></a><a class="specdot dg" style="left:55.0%" title="Green Hulu — Mid / Mid+" href="#strain-green-hulu" aria-label="Green Hulu"></a><a class="specdot dg" style="left:32.2%" title="Green Sunda — Under mid" href="#strain-green-sunda" aria-label="Green Sunda"></a></div>
+<div class="specmap-lane"><span class="lanename">Reds</span><a class="specdot dr" style="left:40.0%" title="Red Vein — Mid / Mid-Low" href="#strain-red-vein" aria-label="Red Vein"></a><a class="specdot dr" style="left:50.0%" title="Red Honeycrisp — Mid" href="#strain-red-honeycrisp" aria-label="Red Honeycrisp"></a><a class="specdot dr" style="left:20.0%" title="Deep River Red — Mid-Low / Slow" href="#strain-deep-river-red" aria-label="Deep River Red"></a><a class="specdot dr" style="left:22.2%" title="Blood Moon Red — Mid-Low / Slow" href="#strain-blood-moon-red" aria-label="Blood Moon Red"></a><a class="specdot dr" style="left:15.6%" title="Dark Hematoma — Mid-Low / Slow" href="#strain-dark-hematoma" aria-label="Dark Hematoma"></a><a class="specdot dr" style="left:42.2%" title="Pink Fire — Mid / Mid-Low" href="#strain-pink-fire" aria-label="Pink Fire"></a></div>
+<div class="specmap-lane"><span class="lanename">Yellows · Golds · Ferments</span><a class="specdot dy" style="left:50.0%" title="Yellow Lush — Mid" href="#strain-yellow-lush" aria-label="Yellow Lush"></a><a class="specdot dy" style="left:30.0%" title="Yellow Dream — Mid-Low" href="#strain-yellow-dream" aria-label="Yellow Dream"></a><a class="specdot dy" style="left:8.0%" title="21k Gold Bali — Slow" href="#strain-21k-gold-bali" aria-label="21k Gold Bali"></a><a class="specdot dy" style="left:20.0%" title="Red Clay — Mid-Low / Slow" href="#strain-red-clay" aria-label="Red Clay"></a><a class="specdot dy" style="left:22.2%" title="Chocolate Bentley — Mid-Low / Slow" href="#strain-chocolate-bentley" aria-label="Chocolate Bentley"></a></div>
+<div class="specmap-lane"><span class="lanename">Blends · Enhanced</span><a class="specdot dp" style="left:30.0%" title="Lucky 7 Relief Wreck — Mid-Low" href="#strain-lucky-7-relief-wreck" aria-label="Lucky 7 Relief Wreck"></a><a class="specdot dp" style="left:70.0%" title="Lucky 7 Energy Wreck — Mid+ / Mid-Upper" href="#strain-lucky-7-energy-wreck" aria-label="Lucky 7 Energy Wreck"></a><a class="specdot dp" style="left:40.0%" title="Gold Matrix — Mid / Mid-Low" href="#strain-gold-matrix" aria-label="Gold Matrix"></a><a class="specdot dp" style="left:42.2%" title="Asian Pear Apple — Mid / Mid-Low" href="#strain-asian-pear-apple" aria-label="Asian Pear Apple"></a><a class="specdot dp" style="left:50.0%" title="Velvet Plush — Mid" href="#strain-velvet-plush" aria-label="Velvet Plush"></a><a class="specdot dp" style="left:72.2%" title="Ivory Sunrise — Mid+ / Mid-Upper" href="#strain-ivory-sunrise" aria-label="Ivory Sunrise"></a><a class="specdot dp" style="left:75.0%" title="Prism Shine — Mid-Upper" href="#strain-prism-shine" aria-label="Prism Shine"></a><a class="specdot dp" style="left:65.0%" title="Shock Wave 2.1% — Mid+" href="#strain-shock-wave-21" aria-label="Shock Wave 2.1%"></a><a class="specdot dr" style="left:25.0%" title="Anvil Red — Mid-Low / Slow" href="#strain-anvil-red" aria-label="Anvil Red"></a><a class="specdot dp" style="left:72.0%" title="DK’s Special Enhanced — Mid+ / Mid-Upper" href="#strain-dks-special-enhanced" aria-label="DK’s Special Enhanced"></a><a class="specdot dp" style="left:60.0%" title="Monster Malay — Mid+*" href="#strain-monster-malay" aria-label="Monster Malay"></a><a class="specdot dp" style="left:90.0%" title="Thai Pathom Gold 75% — Fast*" href="#strain-thai-pathom-gold-75" aria-label="Thai Pathom Gold 75%"></a><a class="specdot dp" style="left:88.0%" title="Margarita 65% — Fast*" href="#strain-margarita-65" aria-label="Margarita 65%"></a></div>
 
   <div class="specmap-scale"><span style="left:8%">Slow</span><span style="left:30%">Mid-Low</span><span style="left:50%">Mid</span><span style="left:75%">Mid-Upper</span><span style="left:96%">Fast</span></div>
 </div>
@@ -345,48 +349,48 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <span><i class="dw" style="border-color:#b0b3b8"></i>White</span>
   <span><i class="dg" style="border-color:#2e7d32"></i>Green</span>
   <span><i class="dr" style="border-color:#c62828"></i>Red</span>
-  <span><i class="dy" style="border-color:#d4a017"></i>Yellow / Gold / Ferment</span>
+  <span><i class="dy" style="border-color:#FFD800"></i>Yellow / Gold / Ferment</span>
   <span><i class="dp" style="border-color:#7b1fa2"></i>Blend / Enhanced</span>
 </div>
 <div class="panels">
 <div class="panel p-white">
     <div class="phead">White</div>
     <div class="pbody">
-      <div class="pleft">⚡ FAST, UPLIFTING WHITES<br><b>Mid-Upper</b></div>
+      <div class="pleft">⚡ FAST WHITES<br><b>Mid-Upper</b></div>
       <svg class="pie" data-slices="#7cb342:60,#90caf9:25,#b0b3b8:15" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">☀️ MOOD LIFT &amp; DRIVE<br><b>60%</b><br><br>📈 FASTEST PICKS<br><b>25%</b><br><br>◽ UNRATED<br><b>15%</b></div>
+      <div class="pright">☀️ MOOD &amp; DRIVE<br><b>60%</b><br>📈 FASTEST PICKS<br><b>25%</b><br>⚡ ENERGY<br><b>15%</b></div>
     </div>
-    <div class="pfoot">Energetic whites for mood lift and drive; White Dragon is the fastest of the three core whites.</div>
+    <div class="pfoot"><span class="s1"><b>Energetic</b> whites for <b>mood lift</b> and <b>drive</b>.</span><br><span class="s2"><a href="#strain-white-dragon">White Dragon</a> is the fastest of the three core whites.</span></div>
     <a class="golink" href="#white">→ Browse white strains</a>
   </div>
 <div class="panel p-green">
     <div class="phead">Green</div>
     <div class="pbody">
-      <div class="pleft">🌅 THE DEEPEST BENCH<br><b>9 strains</b></div>
-      <svg class="pie" data-slices="#7cb342:33,#90caf9:22,#f9a825:22,#ef6c00:12,#c62828:11" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">📈 MID-UPPER THIRD<br><b>33%</b><br><br>⚖️ MIDDLE THIRD<br><b>44%</b><br><br>🌙 SLOW THIRD<br><b>23%</b></div>
+      <div class="pleft">🌅 DEEPEST BENCH<br><b>9 strains</b></div>
+      <svg class="pie" data-slices="#7cb342:33,#90caf9:22,#FFD800:22,#ef6c00:12,#c62828:11" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">📈 MID-UPPER THIRD<br><b>33%</b><br>⚖️ MIDDLE THIRD<br><b>44%</b><br>🌙 SLOW THIRD<br><b>23%</b></div>
     </div>
-    <div class="pfoot">Nine greens spanning the whole spectrum — from the fast Green Dragon to the slow Green Giant base.</div>
+    <div class="pfoot"><span class="s1">Nine greens spanning the <b>whole spectrum</b>.</span><br><span class="s2">From the <b>fast</b> <a href="#strain-green-dragon">Green Dragon</a> to the <b>slow</b> <a href="#strain-green-giant">Green Giant</a> base.</span></div>
     <a class="golink" href="#green">→ Browse green strains</a>
   </div>
 <div class="panel p-red">
     <div class="phead">Red</div>
     <div class="pbody">
-      <div class="pleft">🌙 THE WIND-DOWN COLOR<br><b>Slow end</b></div>
-      <svg class="pie" data-slices="#c62828:50,#ef6c00:33,#f9a825:17" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">🌙 SLOW / MID-LOW<br><b>50%</b><br><br>😌 MID-LOW<br><b>33%</b><br><br>⚖️ MID<br><b>17%</b></div>
+      <div class="pleft">🌙 WIND-DOWN REDS<br><b>Slow end</b></div>
+      <svg class="pie" data-slices="#c62828:50,#ef6c00:33,#FFD800:17" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">🌙 SLOW / MID-LOW<br><b>50%</b><br>😌 MID-LOW<br><b>33%</b><br>⚖️ MID<br><b>17%</b></div>
     </div>
-    <div class="pfoot">Reds cluster at the slow end: three at Mid-Low/Slow, two at Mid/Mid-Low, one at Mid.</div>
+    <div class="pfoot"><span class="s1">Reds cluster at the <b>slow end</b>.</span><br><span class="s2">Three at Mid-Low/Slow, two at Mid/Mid-Low, one at Mid.</span></div>
     <a class="golink" href="#red">→ Browse red strains</a>
   </div>
 <div class="panel p-yellow">
     <div class="phead">Yellow · Gold · Ferment</div>
     <div class="pbody">
-      <div class="pleft">🍯 MELLOW &amp; CRAFT<br><b>Slow → Mid</b></div>
-      <svg class="pie" data-slices="#f9a825:40,#ef6c00:20,#c62828:40" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">😌 MELLOW MID<br><b>40%</b><br><br>🧘 MID-LOW<br><b>20%</b><br><br>🌙 SLOW / FERMENT<br><b>40%</b></div>
+      <div class="pleft">🍯 MELLOW WARMTH<br><b>Slow → Mid</b></div>
+      <svg class="pie" data-slices="#FFD800:40,#ef6c00:20,#c62828:40" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">😌 MELLOW MID<br><b>40%</b><br>🧘 MID-LOW<br><b>20%</b><br>🌙 SLOW / FERMENT<br><b>40%</b></div>
     </div>
-    <div class="pfoot">Mellow yellows, the slowest gold on the menu, and two vapor-steamed ferments.</div>
+    <div class="pfoot"><span class="s1"><b>Mellow</b> yellows — the <b>slowest gold</b> on the menu.</span><br><span class="s2">Plus two vapor-steamed ferments.</span></div>
     <a class="golink" href="#gold">→ Browse yellows &amp; ferments</a>
   </div>
 
@@ -394,14 +398,14 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2>🔬 The spectrum system &amp; an honest note on evidence</h2>
+  <h2>🔬 The spectrum system</h2>
   <p>How the vendor grades its own leaf — and what is (and isn’t) verified.</p>
   <div class="bigicon">🔬</div>
 </div>
 <div class="catintro">
-  <p>Every Tree Leaf Naturalist powder carries the vendor’s own speed marker: <b>Slow, Mid-Low, Mid, Mid-Upper, or Fast</b> (with in-betweens like Mid/Mid-Low). In the vendor’s words, “almost anything that leans under mid I personally consider slow.” The markers come from the public menu and from the vendor’s direct strain-by-strain guidance — they are one experienced palate’s read, and the vendor is upfront that “everyone is different.”</p>
-  <p><b>An honest note on evidence:</b> Tree Leaf Naturalist launched around April 2026, so the independent record is young but real: three Reddit review posts (r/kratomreview100 and r/TrueKratomReviews, August–September 2026) cover seven strains — Green Bali Emerald, Green Malay (rated A+), White Java, Green Forest, Green Melt, Yellow Dream, and Deep River Red — all positive, with the vendor replying in the threads as u/Tree-Leaf-Naturalist. No YouTube reviews or forum trip reports were found. Strain characterizations below are the vendor’s own (menu markers plus direct guidance), marked as such; community findings are quoted under “Community reports” where they exist. Nothing here is invented to fill the gap.</p>
-  <p>On lab testing: the brand claims “Lab Tested,” but <b>no certificates of analysis are publicly posted</b> anywhere — not on the site, not in the menus. The vendor discusses COAs privately and describes the Red Clay ferment’s COA as the cleanest he has seen; that claim is vendor-asserted, not independently verified. See the <a href="#coa">lab reference</a>.</p>
+  <p>Every Tree Leaf Naturalist powder carries the vendor’s own speed marker: <b>Slow, Mid-Low, Mid, Mid-Upper, or Fast</b> (with in-betweens like Mid/Mid-Low). In the vendor’s words, <span class="pq">“almost anything that leans under mid I personally consider slow.”</span> The markers come from the public menu and from the vendor’s direct strain-by-strain guidance — they are one experienced palate’s read, and the vendor is upfront that <span class="pq">“everyone is different.”</span></p>
+  <p>Tree Leaf Naturalist launched around April 2026, so the independent record is young but real: three Reddit review posts (r/kratomreview100 and r/TrueKratomReviews, August–September 2026) cover seven strains — Green Bali Emerald, Green Malay (rated A+), White Java, Green Forest, Green Melt, Yellow Dream, and Deep River Red — all positive, with the vendor replying in the threads as u/Tree-Leaf-Naturalist. No YouTube reviews or forum trip reports were found. Strain characterizations below are the vendor’s own (menu markers plus direct guidance), marked as such; community findings are quoted under <span class="pq">“Community reports”</span> where they exist. Nothing here is invented to fill the gap.</p>
+  <p>On lab testing: the brand claims <span class="pq">“Lab Tested,”</span> but <b>no certificates of analysis are publicly posted</b> anywhere — not on the site, not in the menus. The vendor discusses COAs privately and describes the Red Clay ferment’s COA as the cleanest he has seen; that claim is vendor-asserted, not independently verified. See the <a href="#coa">lab reference</a>.</p>
 </div>
 
 <div class="colorband band-white" id="white">
@@ -411,7 +415,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 <div class="catintro"><p>The fast end of the menu: energetic whites for mood lift, drive and focus. All three core whites sit at Mid-Upper, with White Dragon the fastest of the trio.</p></div>
 <div class="popbox star">🏆 White standouts — vendor’s picks: <b>White Java</b> (mood lift); <b>White Dragon</b> (fastest white); <b>Silver Haze</b> (community-favorite reserve).</div>
-<div class="strain white">
+<div class="strain white" id="strain-white-java">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 49], [&quot;clarity&quot;, 26], [&quot;mood&quot;, 15], [&quot;calm&quot;, 10]], &quot;caption&quot;: &quot;One of the three core whites of the 01 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Java</h3><span class="batch">01 Drop · White</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -422,7 +426,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>One of the three core whites of the 01 Drop — the vendor’s first recommendation for anyone chasing mood lift.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Very popular for mood lift.” Positioned as the mood-lift white of the trio.</p>
+    <p><span class="pq">“Very popular for mood lift.”</span> Positioned as the mood-lift white of the trio.</p>
     <h4>💬 Community reports</h4>
     <p>"Pure mood boost with an ok amount of energy" — called one of the more unique whites the reviewer had tried. Also a favorite in a 5-sample set.</p>
     <div class="quote">"pure mood boost with an ok amount of energy I absolutely loved it"<cite>— Reddit, r/kratomreview100, Sep 2026; r/TrueKratomReviews, Aug 2026</cite></div>
@@ -430,7 +434,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain white">
+<div class="strain white" id="strain-white-ponti">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 49], [&quot;clarity&quot;, 26], [&quot;mood&quot;, 15], [&quot;calm&quot;, 10]], &quot;caption&quot;: &quot;The second core white, framed around relief rather than&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Ponti</h3><span class="batch">01 Drop · White</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -441,11 +445,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The second core white, framed around relief rather than lift.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Good reviews for relief.” The relief-oriented member of the white trio.</p>
+    <p><span class="pq">“Good reviews for relief.”</span> The relief-oriented member of the white trio.</p>
   </div>
 </div>
 
-<div class="strain white">
+<div class="strain white" id="strain-white-dragon">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 50], [&quot;clarity&quot;, 27], [&quot;mood&quot;, 15], [&quot;calm&quot;, 8]], &quot;caption&quot;: &quot;The fastest of the three core whites&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Dragon</h3><span class="batch">01 Drop · White</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -456,12 +460,12 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The fastest of the three core whites.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Arguably the faster choice.”</p>
+    <p><span class="pq">“Arguably the faster choice.”</span></p>
     <div class="popbox tip">⚡ The fastest white on the regular menu — the pick for maximum drive.</div>
   </div>
 </div>
 
-<div class="strain white">
+<div class="strain white" id="strain-white-catalyst">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 50], [&quot;clarity&quot;, 27], [&quot;mood&quot;, 15], [&quot;calm&quot;, 8]], &quot;caption&quot;: &quot;An all-whites microbatch from the 02 Drop special reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Catalyst</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -476,7 +480,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain white">
+<div class="strain white" id="strain-white-jack">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 49], [&quot;clarity&quot;, 26], [&quot;mood&quot;, 15], [&quot;calm&quot;, 10]], &quot;caption&quot;: &quot;Appeared in the vendor\u2019s July 2026 product photography;&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Jack</h3><span class="batch">White</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -492,7 +496,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain white">
+<div class="strain white" id="strain-silver-haze">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 47], [&quot;clarity&quot;, 25], [&quot;mood&quot;, 16], [&quot;calm&quot;, 12]], &quot;caption&quot;: &quot;A whites-and-greens founder\u2019s reserve microbatch,&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Silver Haze</h3><span class="batch">Founder’s Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -503,7 +507,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A whites-and-greens founder’s reserve microbatch, hand-selected from the founder’s stash.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Above mid spec” and “getting great feedback, becoming a community favorite.”</p>
+    <p><span class="pq">“Above mid spec”</span> and <span class="pq">“getting great feedback, becoming a community favorite.”</span></p>
     <div class="popbox star">🌟 The vendor’s community-favorite white-leaning reserve.</div>
   </div>
 </div>
@@ -515,7 +519,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 <div class="catintro"><p>The middle of the spectrum, and the deepest bench: nine greens from the fast Green Dragon down to the slow Green Giant base strain.</p></div>
 <div class="popbox star">🏆 Green standouts — widest range: <b>Green Dragon</b> (fast); <b>Green Forest</b> (full-spectrum, mid+); <b>D’Anjou Green</b> (reserve, long legs); <b>Green Giant</b> (slow base).</div>
-<div class="strain green">
+<div class="strain green" id="strain-green-dragon">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 40], [&quot;clarity&quot;, 22], [&quot;mood&quot;, 22], [&quot;calm&quot;, 16]], &quot;caption&quot;: &quot;The fast green of the 01 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Dragon</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -526,12 +530,12 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The fast green of the 01 Drop.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“If you like fast leaf than Green Dragon is a must.”</p>
+    <p><span class="pq">“If you like fast leaf than Green Dragon is a must.”</span></p>
     <div class="popbox tip">⚡ The vendor’s must-try for fast-leaf lovers.</div>
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-forest">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 21], [&quot;clarity&quot;, 19], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;A slightly-above-mid green with a broad effect profile&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Forest</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -542,13 +546,13 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A slightly-above-mid green with a broad effect profile.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Leans slightly above mid and it has a very full spectrum effect with good mood lift.”</p>
+    <p><span class="pq">“Leans slightly above mid and it has a very full spectrum effect with good mood lift.”</span></p>
     <h4>💬 Community reports</h4>
     <p>A favorite from a 5-sample set (white Java, green forest, green melt, deep river red, yellow dream) — "They were all very good but the white Java, green forest and green melt stood out as my favorites."</p>
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-malay">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 21], [&quot;clarity&quot;, 19], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;The menu\u2019s Malay green, offered by the full kilo&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Malay</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -566,7 +570,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-melt">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 26], [&quot;energy&quot;, 25], [&quot;mood&quot;, 22], [&quot;clarity&quot;, 15], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;Noted for freshness above all else&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Melt</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -577,13 +581,13 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>Noted for freshness above all else.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Mid for some people and mid low for others. It is extremely fresh powder with a great smell.”</p>
+    <p><span class="pq">“Mid for some people and mid low for others. It is extremely fresh powder with a great smell.”</span></p>
     <h4>💬 Community reports</h4>
     <p>A favorite from the same 5-sample set.</p>
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-bali-emerald">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 30], [&quot;mood&quot;, 22], [&quot;energy&quot;, 21], [&quot;clarity&quot;, 14], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;The Bali green of the 01 Drop, sitting low on the spectrum&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Bali Emerald</h3><span class="batch">01 Drop · Green</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -601,7 +605,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-danjou-green">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 26], [&quot;energy&quot;, 25], [&quot;mood&quot;, 22], [&quot;clarity&quot;, 15], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;An all-greens founder\u2019s reserve microbatch with a&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>D’Anjou Green</h3><span class="batch">Founder’s Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -612,12 +616,12 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>An all-greens founder’s reserve microbatch with a fruit-cultivar name.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Great mood, a little stronger than the Red Honeycrisp and it has long legs but for most people it ends around mid low.”</p>
+    <p><span class="pq">“Great mood, a little stronger than the Red Honeycrisp and it has long legs but for most people it ends around mid low.”</span></p>
     <div class="popbox star">🌟 A founder’s favorite green — mood with staying power.</div>
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-giant">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 33], [&quot;mood&quot;, 23], [&quot;energy&quot;, 17], [&quot;relief&quot;, 15], [&quot;clarity&quot;, 12]], &quot;caption&quot;: &quot;A 100% B-supplier base green&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Giant</h3><span class="batch">Base Strain</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -628,11 +632,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A 100% B-supplier base green — sold as-is and used as a blending component (part of the Deep Red formula). Released after tester demand; limited supply.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Definitely under mid for me” — though some testers read it as a balanced mid. “Liked by many.”</p>
+    <p><span class="pq">“Definitely under mid for me”</span> — though some testers read it as a balanced mid. <span class="pq">“Liked by many.”</span></p>
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-hulu">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 31], [&quot;mood&quot;, 21], [&quot;calm&quot;, 21], [&quot;clarity&quot;, 18], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;A green-and-white microbatch from the 02 Drop reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Hulu</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -647,7 +651,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-sunda">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 30], [&quot;mood&quot;, 22], [&quot;energy&quot;, 21], [&quot;clarity&quot;, 14], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;An unreleased base strain, held back from the menu for&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Sunda</h3><span class="batch">Unreleased Base</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -658,7 +662,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>An unreleased base strain, held back from the menu for blending — similar in character to Green Giant.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Similar to the green giant… leans under mid.” A few kilos exist; offered by request.</p>
+    <p><span class="pq">“Similar to the green giant… leans under mid.”</span> A few kilos exist; offered by request.</p>
   </div>
 </div>
 
@@ -669,7 +673,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 <div class="catintro"><p>The wind-down color: reds cluster at the slow end of the vendor’s spectrum, from mid down to mid-low/slow.</p></div>
 <div class="popbox star">🏆 Red standouts — slowest: <b>Deep River Red</b>, <b>Blood Moon Red</b>, <b>Dark Hematoma</b> (all Mid-Low/Slow); most popular: <b>Red Vein</b>.</div>
-<div class="strain red">
+<div class="strain red" id="strain-red-vein">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 38], [&quot;relief&quot;, 18], [&quot;energy&quot;, 17], [&quot;mood&quot;, 14], [&quot;clarity&quot;, 13]], &quot;caption&quot;: &quot;The 100% base red vein&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Vein</h3><span class="batch">01 Drop · Red</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -680,11 +684,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The 100% base red vein — the foundation the Deep Red blend is built on.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Very popular”; the vendor places it under mid (mid to mid-low).</p>
+    <p><span class="pq">“Very popular”</span>; the vendor places it under mid (mid to mid-low).</p>
   </div>
 </div>
 
-<div class="strain red">
+<div class="strain red" id="strain-red-honeycrisp">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 32], [&quot;energy&quot;, 21], [&quot;relief&quot;, 17], [&quot;clarity&quot;, 15], [&quot;mood&quot;, 15]], &quot;caption&quot;: &quot;A reds-and-greens founder\u2019s reserve microbatch with a&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Honeycrisp</h3><span class="batch">Founder’s Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -695,11 +699,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A reds-and-greens founder’s reserve microbatch with a fruit-cultivar name.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“MID spec with good mood.”</p>
+    <p><span class="pq">“MID spec with good mood.”</span></p>
   </div>
 </div>
 
-<div class="strain red">
+<div class="strain red" id="strain-deep-river-red">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 44], [&quot;relief&quot;, 22], [&quot;mood&quot;, 14], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 9]], &quot;caption&quot;: &quot;The slow red of the 01 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Deep River Red</h3><span class="batch">01 Drop · Red</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -716,7 +720,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain red">
+<div class="strain red" id="strain-blood-moon-red">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 44], [&quot;relief&quot;, 22], [&quot;mood&quot;, 14], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 9]], &quot;caption&quot;: &quot;An all-reds microbatch from the 02 Drop reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Blood Moon Red</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -727,11 +731,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>An all-reds microbatch from the 02 Drop reserves.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Definitely under mid.” One customer described it as making him feel “chatty” — the vendor is awaiting more feedback.</p>
+    <p><span class="pq">“Definitely under mid.”</span> One customer described it as making him feel <span class="pq">“chatty”</span> — the vendor is awaiting more feedback.</p>
   </div>
 </div>
 
-<div class="strain red">
+<div class="strain red" id="strain-dark-hematoma">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 44], [&quot;relief&quot;, 22], [&quot;mood&quot;, 14], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 9]], &quot;caption&quot;: &quot;A red, green and yellow microbatch from the 02 Drop&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Dark Hematoma</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -746,7 +750,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain red">
+<div class="strain red" id="strain-pink-fire">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 38], [&quot;relief&quot;, 18], [&quot;energy&quot;, 17], [&quot;mood&quot;, 14], [&quot;clarity&quot;, 13]], &quot;caption&quot;: &quot;A popular red sitting just under the middle of the&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pink Fire</h3><span class="batch">Red</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -757,11 +761,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A popular red sitting just under the middle of the spectrum.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Leans towards the slower side of the spectrum”; “very popular” but under mid in the vendor’s read.</p>
+    <p><span class="pq">“Leans towards the slower side of the spectrum”</span>; <span class="pq">“very popular”</span> but under mid in the vendor’s read.</p>
   </div>
 </div>
 
-<div class="strain red">
+<div class="strain red" id="strain-bentuangie">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 43], [&quot;relief&quot;, 21], [&quot;mood&quot;, 14], [&quot;energy&quot;, 12], [&quot;clarity&quot;, 10]], &quot;caption&quot;: &quot;A bentuangie strain announced in September 2026&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Bentuangie</h3><span class="batch">Announced Sep 2026</span></div>
   <div class="strain-body">
     <div class="spectag">Vendor spectrum marker: <b>not published yet</b></div>
@@ -773,13 +777,13 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 
 <div class="colorband band-gold" id="gold">
-  <h2>🟡 Yellows, golds &amp; ferments — mellow warmth and craft processes</h2>
+  <h2>🟡 Yellows, golds &amp; ferments — mellow warmth</h2>
   <p>Mellow yellows, the slowest gold on the menu, and the two fermented offerings — including the vapor-steamed Red Clay, the most technically distinctive product in the catalog.</p>
   <div class="bigicon">🍯</div>
 </div>
 <div class="catintro"><p>Mellow yellows, the slowest gold on the menu, and the two fermented offerings — including the vapor-steamed Red Clay, the most technically distinctive product in the catalog.</p></div>
 <div class="popbox star">🏆 Gold standouts: <b>Yellow Lush</b> (vendor’s stress-relief pick); <b>Red Clay</b> (signature vapor-steamed ferment); <b>21k Gold Bali</b> (slowest marker).</div>
-<div class="strain gold">
+<div class="strain gold" id="strain-yellow-lush">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 21], [&quot;energy&quot;, 20], [&quot;clarity&quot;, 15], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;Partly fermented yellow finished with the vapor-steaming&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Yellow Lush</h3><span class="batch">Partly Fermented · Yellow</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -790,12 +794,12 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>Partly fermented yellow finished with the vapor-steaming process for a hygienic, clean powder. The fermented counterpart runs lower in mitragynine, so the vendor advises dosing up about 32%.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Arguably the best strain for stress relief” — the vendor’s own favorite “when I need to take the edge off.” Lands around MID.</p>
+    <p><span class="pq">“Arguably the best strain for stress relief”</span> — the vendor’s own favorite <span class="pq">“when I need to take the edge off.”</span> Lands around MID.</p>
     <div class="popbox star">🏆 The vendor’s personal pick for stress relief.</div>
   </div>
 </div>
 
-<div class="strain gold">
+<div class="strain gold" id="strain-yellow-dream">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 37], [&quot;mood&quot;, 21], [&quot;relief&quot;, 16], [&quot;energy&quot;, 14], [&quot;clarity&quot;, 12]], &quot;caption&quot;: &quot;A calming yellow with a growing following&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Yellow Dream</h3><span class="batch">Yellow</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -806,14 +810,14 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A calming yellow with a growing following.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Calming and a lot of people are loving this one as a mid low option.”</p>
+    <p><span class="pq">“Calming and a lot of people are loving this one as a mid low option.”</span></p>
     <h4>💬 Community reports</h4>
     <p>"Very euphoric and a great one for those of you who like a slow burn before bedtime." (The reviewer notes they are personally "not big on super slow" strains.)</p>
     <div class="quote">"The yellow dream was very euphoric and a great one for those of you who like a slow burn before bedtime."<cite>— Reddit, r/TrueKratomReviews, Aug 2026</cite></div>
   </div>
 </div>
 
-<div class="strain gold">
+<div class="strain gold" id="strain-21k-gold-bali">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 46], [&quot;mood&quot;, 20], [&quot;relief&quot;, 19], [&quot;clarity&quot;, 8], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;The slowest marker on the regular menu&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>21k Gold Bali</h3><span class="batch">Gold</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -824,11 +828,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The slowest marker on the regular menu.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Leaning slow.” The deep-slow end of the gold lineup.</p>
+    <p><span class="pq">“Leaning slow.”</span> The deep-slow end of the gold lineup.</p>
   </div>
 </div>
 
-<div class="strain gold">
+<div class="strain gold" id="strain-red-clay">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 42], [&quot;mood&quot;, 20], [&quot;relief&quot;, 17], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 10]], &quot;caption&quot;: &quot;The house signature ferment: leaf fermented then finished&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Clay</h3><span class="batch">Fermented</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -837,14 +841,14 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
       <div class="spectag">Vendor spectrum marker: <b>Mid-Low / Slow</b></div>
     </div>
     <h4>🌿 The leaf</h4>
-    <p>The house signature ferment: leaf fermented then finished with hot-water vapor steaming — “not a regular fermentation process” — yielding a silky, clean texture that preserves aroma. The vendor calls it the cleanest ferment COA he has seen; the steaming acts as a sterilization step that shifts the alkaloid profile. Mitragynine runs about half of average, so the vendor’s own guidance is roughly double the dose minus half a gram.</p>
+    <p>The house signature ferment: leaf fermented then finished with hot-water vapor steaming — <span class="pq">“not a regular fermentation process”</span> — yielding a silky, clean texture that preserves aroma. The vendor calls it the cleanest ferment COA he has seen; the steaming acts as a sterilization step that shifts the alkaloid profile. Mitragynine runs about half of average, so the vendor’s own guidance is roughly double the dose minus half a gram.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Definitely under mid if dosed properly.” “One of my favorite ferments and I dont usually even like ferments that much.”</p>
+    <p><span class="pq">“Definitely under mid if dosed properly.”</span> <span class="pq">“One of my favorite ferments and I dont usually even like ferments that much.”</span></p>
     <div class="popbox deep">🧪 The most technically distinctive product in the catalog — fermentation plus vapor-steam sterilization.</div>
   </div>
 </div>
 
-<div class="strain gold">
+<div class="strain gold" id="strain-chocolate-bentley">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 42], [&quot;mood&quot;, 20], [&quot;relief&quot;, 17], [&quot;energy&quot;, 11], [&quot;clarity&quot;, 10]], &quot;caption&quot;: &quot;The second ferment on the menu&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Chocolate Bentley</h3><span class="batch">Fermented</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -866,7 +870,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 <div class="catintro"><p>The 02 Drop microbatches, the Lucky 7 trainwrecks, complex blends, and the enhanced/extract line built on premium salt extracts.</p></div>
 <div class="popbox star">🏆 Blend standouts: <b>Lucky 7 Relief Wreck</b> (seven-strain slow wreck); <b>Ivory Sunrise</b> (fast-leaning complex blend); <b>Shock Wave 2.1%</b> (flagship enhanced).</div>
-<div class="strain blend">
+<div class="strain blend" id="strain-lucky-7-relief-wreck">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;energy&quot;, 21], [&quot;mood&quot;, 19], [&quot;relief&quot;, 15], [&quot;clarity&quot;, 14]], &quot;caption&quot;: &quot;A seven-strain wreck built entirely from 01 Drop strains,&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Lucky 7 Relief Wreck</h3><span class="batch">Lucky 7 Trainwreck</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -877,11 +881,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A seven-strain wreck built entirely from 01 Drop strains, every one mid or under.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Lands mid–mid low” and is “not super slow surprisingly.”</p>
+    <p><span class="pq">“Lands mid–mid low”</span> and is <span class="pq">“not super slow surprisingly.”</span></p>
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-lucky-7-energy-wreck">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;clarity&quot;, 21], [&quot;mood&quot;, 18], [&quot;calm&quot;, 17], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;The mirror-image wreck: seven all-different counterparts,&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Lucky 7 Energy Wreck</h3><span class="batch">Lucky 7 Trainwreck</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -892,11 +896,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The mirror-image wreck: seven all-different counterparts, every one mid or above.</p>
     <h4>📡 Vendor notes</h4>
-    <p>“Not super stimulating but it has a great body feel.”</p>
+    <p><span class="pq">“Not super stimulating but it has a great body feel.”</span></p>
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-gold-matrix">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;mood&quot;, 19], [&quot;clarity&quot;, 16], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;A complex house blend on the mellow side of mid&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Gold Matrix</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -911,7 +915,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-asian-pear-apple">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;mood&quot;, 19], [&quot;clarity&quot;, 16], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;A fruit-named complex blend built on green, green and red&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Asian Pear Apple</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -926,7 +930,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-velvet-plush">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 29], [&quot;calm&quot;, 23], [&quot;mood&quot;, 19], [&quot;clarity&quot;, 17], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;A red-and-green complex blend with a partly fermented&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Velvet Plush</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -941,7 +945,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-ivory-sunrise">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;clarity&quot;, 21], [&quot;mood&quot;, 18], [&quot;calm&quot;, 17], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;A yellow-and-white complex blend with a partly fermented&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Ivory Sunrise</h3><span class="batch">Complex Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -956,7 +960,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-prism-shine">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 39], [&quot;clarity&quot;, 21], [&quot;mood&quot;, 18], [&quot;calm&quot;, 15], [&quot;relief&quot;, 7]], &quot;caption&quot;: &quot;A greens-and-whites microbatch from the 02 Drop reserves&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Prism Shine</h3><span class="batch">02 Drop · Special Reserve</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -971,7 +975,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-shock-wave-21">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 35], [&quot;clarity&quot;, 20], [&quot;mood&quot;, 18], [&quot;calm&quot;, 18], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;Green-and-white powder enhanced with premium salt extracts&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Shock Wave 2.1%</h3><span class="batch">Enhanced Powder</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -986,7 +990,38 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+
+<div class="strain red" id="strain-anvil-red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;relief&quot;, 50], [&quot;calm&quot;, 30], [&quot;mood&quot;, 12], [&quot;clarity&quot;, 8]], &quot;caption&quot;: &quot;Red powder layered with premium extracts — total couch lock&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Anvil Red</h3><span class="batch">Enhanced Powder · 2.1+%</span></div>
+  <div class="strain-body">
+    <div class="specwrap">
+      <div class="specbar"><div class="specmark" style="left:25%"></div></div>
+      <div class="specends"><span>Slow</span><span>Fast</span></div>
+      <div class="spectag">Vendor spectrum marker: <b>Mid-Low / Slow</b></div>
+    </div>
+    <h4>🌿 The leaf</h4>
+    <p>Red vein powder layered with a proprietary blend of premium extracts. 28g $14.50 · 50g $23.30 · 100g $44.02 · 250g $97.10.</p>
+    <h4>📡 Vendor notes</h4>
+    <p>Vendor spec: <span class="pq">“Total couch lock- heavy &amp; slow - Max Relief.”</span> One of six new releases in the enhanced line, which the vendor makes with premium-grade extracts from natural leaf powder using food-grade solvents.</p>
+  </div>
+</div>
+
+<div class="strain blend" id="strain-dks-special-enhanced">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 42], [&quot;mood&quot;, 24], [&quot;clarity&quot;, 22], [&quot;calm&quot;, 7], [&quot;relief&quot;, 5]], &quot;caption&quot;: &quot;Limited-release fast blend with an 80% salt extract&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>DK’s Special Enhanced</h3><span class="batch">Enhanced Blend · Limited Release</span></div>
+  <div class="strain-body">
+    <div class="specwrap">
+      <div class="specbar"><div class="specmark" style="left:72%"></div></div>
+      <div class="specends"><span>Slow</span><span>Fast</span></div>
+      <div class="spectag">Vendor spectrum marker: <b>Mid+ / Mid-Upper</b></div>
+    </div>
+    <h4>🌿 The leaf</h4>
+    <p>A carefully curated blend of Energy Wreck, Silver Haze, and Green Dragon, layered with an 80% salt extract from the vendor’s Thai extract manufacturer. 28g $16 · 50g $26 · 100g $49 · 250g $107.</p>
+    <h4>📡 Vendor notes</h4>
+    <p>Vendor spec: <span class="pq">“strong and energetic.”</span> A limited release — DK previewed it to customers on October 10, 2026, ahead of its menu debut.</p>
+  </div>
+</div>
+
+<div class="strain blend" id="strain-monster-malay">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;calm&quot;, 20], [&quot;clarity&quot;, 19], [&quot;mood&quot;, 18], [&quot;relief&quot;, 10]], &quot;caption&quot;: &quot;An enhanced Malay blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Monster Malay</h3><span class="batch">Enhanced Blend</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -1001,7 +1036,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-thai-pathom-gold-75">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 45], [&quot;clarity&quot;, 25], [&quot;mood&quot;, 19], [&quot;calm&quot;, 11]], &quot;caption&quot;: &quot;A salt-based extract described as nearly pure mitragynine&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Thai Pathom Gold 75%</h3><span class="batch">Extract</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -1016,7 +1051,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   </div>
 </div>
 
-<div class="strain blend">
+<div class="strain blend" id="strain-margarita-65">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 45], [&quot;clarity&quot;, 25], [&quot;mood&quot;, 19], [&quot;calm&quot;, 11]], &quot;caption&quot;: &quot;A salt-based extract with a warm secondary-alkaloid&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Margarita 65%</h3><span class="batch">Extract</span></div>
   <div class="strain-body">
     <div class="specwrap">
@@ -1073,6 +1108,8 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 <tr class="mb1"><td><b>Ivory Sunrise</b></td><td>Blend</td><td>Complex Blend</td><td>Mid+ / Mid-Upper</td></tr>
 <tr class="mb1"><td><b>Prism Shine</b></td><td>Blend</td><td>02 Drop · Special Reserve</td><td>Mid-Upper</td></tr>
 <tr class="mb1"><td><b>Shock Wave 2.1%</b></td><td>Blend</td><td>Enhanced Powder</td><td>Mid+</td></tr>
+<tr class="mb1"><td><b>Anvil Red</b></td><td>Red</td><td>Enhanced Powder</td><td>Mid-Low / Slow</td></tr>
+<tr class="mb1"><td><b>DK’s Special Enhanced</b></td><td>Blend</td><td>Enhanced Blend</td><td>Mid+ / Mid-Upper</td></tr>
 <tr class="mb1"><td><b>Monster Malay</b></td><td>Blend</td><td>Enhanced Blend</td><td>Mid+*</td></tr>
 <tr class="mb1"><td><b>Thai Pathom Gold 75%</b></td><td>Blend</td><td>Extract</td><td>Fast*</td></tr>
 <tr class="mb1"><td><b>Margarita 65%</b></td><td>Blend</td><td>Extract</td><td>Fast*</td></tr>
@@ -1085,10 +1122,10 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <div class="bigicon">🧪</div>
 </div>
 <div class="catintro">
-  <p><b>No public COAs.</b> Despite the “Lab Tested” tagline, no certificates of analysis are posted on the site or in any menu as of October 2026. Any alkaloid figures below are vendor-stated, not independently verified.</p>
-  <p><b>Vendor-stated extract figures:</b> Thai Pathom Gold 75% — 75% mitragynine (“nearly pure mitragynine, lean secondary-alkaloid spectrum”); Margarita 65% — 65% mitragynine / 83% total alkaloids (“warm secondary-alkaloid spectrum”); Shock Wave enhanced powder — 2.1% (a 3.0% double-stack is in testing).</p>
+  <p><b>No public COAs.</b> Despite the <span class="pq">“Lab Tested”</span> tagline, no certificates of analysis are posted on the site or in any menu as of October 2026. Any alkaloid figures below are vendor-stated, not independently verified.</p>
+  <p><b>Vendor-stated extract figures:</b> Thai Pathom Gold 75% — 75% mitragynine (<span class="pq">“nearly pure mitragynine, lean secondary-alkaloid spectrum”</span>); Margarita 65% — 65% mitragynine / 83% total alkaloids (<span class="pq">“warm secondary-alkaloid spectrum”</span>); Shock Wave enhanced powder — 2.1% (a 3.0% double-stack is in testing).</p>
   <p><b>Label serving facts</b> (from product photography): 2,000–3,000 mg Mitragyna speciosa per serving; Red Clay — 2–3 g servings, 33–50 servings per bag. Printed label protocol: start under 2 g weighed on an empty stomach, max 2 servings/day, max 5 days/week, take regular breaks, stay hydrated.</p>
-  <p><b>Fermentation note:</b> the vendor reports that fermentation roughly halves mitragynine content versus average leaf — hence the “dose up 32%” guidance on Yellow Lush and the doubled-dose guidance on Red Clay. The Red Clay vapor-steam step is described as a sterilization-like process that shifts the alkaloid profile; the vendor calls its COA the cleanest ferment panel he has seen. Vendor-asserted; no public document.</p>
+  <p><b>Fermentation note:</b> the vendor reports that fermentation roughly halves mitragynine content versus average leaf — hence the <span class="pq">“dose up 32%”</span> guidance on Yellow Lush and the doubled-dose guidance on Red Clay. The Red Clay vapor-steam step is described as a sterilization-like process that shifts the alkaloid profile; the vendor calls its COA the cleanest ferment panel he has seen. Vendor-asserted; no public document.</p>
 </div>
 
 <div class="colorband band-neutral" id="sourcing">
@@ -1097,10 +1134,10 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <div class="bigicon">🌱</div>
 </div>
 <div class="catintro">
-  <p><b>Menu drops:</b> the catalog is organized in “drops.” The <b>01 Drop</b> is the core line (whites, greens, reds, yellows, ferments). The <b>02 Drop</b> is a special-reserves tier of small microbatches (Dark Hematoma, Blood Moon Red, Prism Shine, Green Hulu, White Catalyst). A <b>Founder’s Special Reserve</b> tier holds hand-selected microbatch counterparts (Red Honeycrisp, Silver Haze, D’Anjou Green).</p>
+  <p><b>Menu drops:</b> the catalog is organized in <span class="pq">“drops.”</span> The <b>01 Drop</b> is the core line (whites, greens, reds, yellows, ferments). The <b>02 Drop</b> is a special-reserves tier of small microbatches (Dark Hematoma, Blood Moon Red, Prism Shine, Green Hulu, White Catalyst). A <b>Founder’s Special Reserve</b> tier holds hand-selected microbatch counterparts (Red Honeycrisp, Silver Haze, D’Anjou Green).</p>
   <p><b>Base strains:</b> Green Giant is sold as a 100% B-supplier base green and doubles as a blending component (it is part of the Deep Red formula). Green Sunda, a similar base, remains unreleased and available only by request.</p>
   <p><b>Fermentation:</b> two ferments sit on the menu — Red Clay and Chocolate Bentley — plus partly-fermented offerings (Yellow Lush, Velvet Plush, Ivory Sunrise). Red Clay’s hot-water vapor-steaming step is presented as a sterilization-like process that produces a silky, clean powder and shifts the alkaloid profile.</p>
-  <p><b>Supply claims:</b> leaf sourced from Indonesia/Malaysia/Thailand per packaging; air-cargo import claimed; “Small Batch · Lab Tested · Ethically Sourced” and “Community First” positioning. Tree Leaf Naturalist LLC is a registered New York entity run by founder DK Dice out of Long Island, NY. The brand launched around April 2026 and sells via text, email and social media while the full website is under development.</p>
+  <p><b>Supply claims:</b> leaf sourced from Indonesia/Malaysia/Thailand per packaging; air-cargo import claimed; <span class="pq">“Small Batch · Lab Tested · Ethically Sourced”</span> and <span class="pq">“Community First”</span> positioning. Tree Leaf Naturalist LLC is a registered New York entity run by founder DK Dice out of Long Island, NY. The brand launched around April 2026 and sells via text, email and social media while the full website is under development.</p>
 </div>
 
 <div class="colorband band-neutral" id="catalog">
@@ -1119,6 +1156,8 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <tr><td>1000 g full kilo — 8-way split</td><td>$99</td><td>8×125 g, up to 8 strains</td></tr>
   <tr><td>October special: Yellow Dream kilo</td><td>$72</td><td>1000 g</td></tr>
   <tr><td>Shock Wave 2.1% enhanced</td><td>$16 / $26 / $48 / $107</td><td>28 g / 50 g / 100 g / 250 g</td></tr>
+<tr><td>Anvil Red 2.1+% enhanced</td><td>$14.50 / $23.30 / $44.02 / $97.10</td><td>28 g / 50 g / 100 g / 250 g</td></tr>
+<tr><td>DK’s Special Enhanced 2.1+%</td><td>$16 / $26 / $49 / $107</td><td>28 g / 50 g / 100 g / 250 g</td></tr>
   <tr><td>Thai Pathom Gold 75% extract</td><td>$21.99 / g</td><td>salt-based</td></tr>
   <tr><td>Margarita 65% extract</td><td>$19.49 / g</td><td>salt-based</td></tr>
   <tr><td>Capsules</td><td>on request</td><td>ask for pricing</td></tr>
@@ -1147,18 +1186,9 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <p><i>Negative findings stated plainly: the only independent customer reviews found as of October 2026 are the Reddit posts cited above; no YouTube reviews, forum trip reports, or review-aggregator listings were found; no public COAs were found anywhere. These are bounded findings, not proof of absence.</i></p>
 </div>
 
-<div class="disclaimer">
-  <b>Disclaimer:</b> These statements have not been evaluated by the Food and Drug Administration. This guide is
-  published for research and educational purposes only, and is not intended to diagnose, treat, cure, or prevent
-  any disease. Effect descriptions summarize vendor-published and community reports; individual experiences vary,
-  and menu tiers denote offerings whose character may change between drops.
-  <br><br>
-  <b>No affiliation:</b> This guide was written by an independent customer of Tree Leaf Naturalist who
-  purchases their products. The author has no affiliation with, sponsorship from, employment by, or business
-  relationship with Tree Leaf Naturalist, and does not represent the company in any capacity. Product names referenced are the property of their respective owner.
-</div>
+<div class="disclaimer">This guide is published for research and educational purposes only.<br>✋ Independent customer review — no affiliation with Tree Leaf Naturalist.</div>
 
-<footer class="site">Tree Leaf Naturalist — Complete Strain Guide · Independent customer research · October 2026</footer>
+<footer class="site">Independent Customer Review · Tree Leaf Naturalist · October 2026</footer>
 </div><!-- /wrap -->
 <script>
 document.querySelectorAll('svg.pie').forEach(function(svg){
@@ -1246,6 +1276,25 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   });
   modal.addEventListener('click', function(){ modal.style.display = 'none'; });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
+})();
+</script>
+<script>
+(function(){
+  var armed=null;
+  try{armed=sessionStorage.getItem('tlFromMap');}catch(e){}
+  if(armed && location.hash!=='#'+armed){armed=null;try{sessionStorage.removeItem('tlFromMap');}catch(e){}}
+  document.querySelectorAll('a.specdot').forEach(function(d){
+    d.addEventListener('click',function(){armed=d.getAttribute('href').slice(1);try{sessionStorage.setItem('tlFromMap',armed);}catch(e){}});
+  });
+  document.querySelectorAll('.strain[id]').forEach(function(c){
+    c.addEventListener('click',function(e){
+      if(armed!==c.id)return;
+      if(e.target.closest('a,button,input,select,textarea,.donut-trigger'))return;
+      armed=null;try{sessionStorage.removeItem('tlFromMap');}catch(err){}
+      var mp=document.getElementById('specmap');
+      if(mp){mp.scrollIntoView({behavior:'smooth',block:'center'});try{history.replaceState(null,'','#specmap');}catch(err){}}
+    });
+  });
 })();
 </script>
 </body>

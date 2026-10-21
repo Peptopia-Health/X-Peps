@@ -29,18 +29,18 @@ body{margin:0;background:var(--paper);color:var(--ink);
 h1,h2,h3,.serif{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700;letter-spacing:-.01em}
 .wrap{max-width:960px;margin:0 auto;padding:0 22px}
 /* ---------- title page ---------- */
-.titlepage{min-height:96vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:60px 24px;position:relative;overflow:hidden;
+.titlepage{min-height:auto;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;
+  text-align:center;padding:26px 24px 12px;position:relative;overflow:hidden;
   background:radial-gradient(1200px 600px at 50% -10%,#e9f3e4 0%,var(--paper) 60%);}
-.titlepage::before{content:"❧";font-size:120px;color:#d8e6cf;position:absolute;top:8%;opacity:.7}
-.titlepage::after{content:"❧";font-size:120px;color:#d8e6cf;position:absolute;bottom:6%;opacity:.7;transform:rotate(180deg)}
+
+
 .kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:14px}
 .titlepage h1{font-size:clamp(38px,6vw,64px);margin:0 0 10px;color:#23402f;line-height:1.12}
 .titlepage .sub{font-size:clamp(17px,2.4vw,22px);color:var(--muted);max-width:640px;margin:0 0 26px}
 .titlepage .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
 .pill{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:13px;background:#fff;color:var(--muted)}
 .titlepage .date{font-size:14px;color:var(--muted)}
-.leafrule{font-size:26px;color:var(--accent);margin:18px 0;letter-spacing:12px}
+
 /* ---------- index ---------- */
 .index{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 30px;margin:34px 0;
   box-shadow:0 4px 18px rgba(60,50,30,.06)}
@@ -249,7 +249,6 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <div class="kicker">Independent Customer Research</div>
   <h1>WestKoast Botanicals</h1>
   <div class="subtitle">Complete Strain Guide</div>
-  <div class="leafrule">❧ ❧ ❧</div>
   <p class="sub">An independent, product-by-product analysis and characterization of the WestKoast lineup —
   every strain organized by vein color, with community reports, batch notes, alkaloid profiles,
   and honest comparisons.</p>
