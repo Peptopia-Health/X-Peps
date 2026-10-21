@@ -126,7 +126,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </style>
 <style>
 .figart{margin:0 0 22px}
-.figart img{width:100%;aspect-ratio:32/9;object-fit:cover;object-position:50% 32%;border-radius:16px;display:block;box-shadow:0 12px 34px rgba(76,29,149,.35)}
+.figart img{width:100%;aspect-ratio:32/9;object-fit:cover;object-position:50% 7%;border-radius:16px;display:block;box-shadow:0 12px 34px rgba(76,29,149,.35)}
 .figart figcaption{font-size:.8rem;color:var(--t3);text-align:center;margin-top:8px}
 .tl{position:relative;margin:4px 0 0;padding-left:28px}
 .tl::before{content:'';position:absolute;left:8px;top:10px;bottom:10px;width:3px;border-radius:2px;background:linear-gradient(180deg,#7C3AED,#EC4899)}
@@ -142,7 +142,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .kp{color:#BE185D;font-weight:800}
 html.dark .kv{color:#C4B5FD}
 html.dark .kp{color:#F9A8D4}
-.hl{background:linear-gradient(180deg,transparent 60%,rgba(250,204,21,.55) 60%);font-weight:700;padding:0 2px}
+.hl{background:#FEF08A;color:#1F2937;font-weight:700;padding:1px 4px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .pq{font-style:italic;color:#555555;background:rgba(216,180,254,.5);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 3px;border-radius:3px}
 html.dark .pq{color:#E9D5FF;background:rgba(124,58,237,.45)}
 .lede::first-letter{font-size:3.15em;float:left;line-height:.82;padding:5px 10px 0 0;color:#6D28D9;font-weight:800}
@@ -152,6 +152,22 @@ html.dark .lede::first-letter{color:#C4B5FD}
 .sm-none{color:#F87171;font-weight:800;font-size:1.3rem;margin-top:15px}
 .sm-sub{color:#94A3B8;font-size:.8rem;margin-top:5px}
 .pullq{font-size:1.13rem;line-height:1.65;font-weight:600;text-align:center;padding:24px 28px;margin:28px 0 6px;border-radius:16px;background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(236,72,153,.12));border:1px solid var(--border)}
+</style>
+<style>
+.figart{margin:0 0 14px}
+.figart figcaption{color:#334155;font-weight:600;font-size:.92rem;margin-top:6px}
+html.dark .figart figcaption{color:#E5E7EB}
+.chart.venn-wrap{padding:12px 10px 8px;margin:14px 0 10px}
+.venn-wrap h4{margin:0 0 4px}
+.venn-cap{margin-top:4px}
+.vennbox{cursor:zoom-in}
+.vennzoom{position:fixed;inset:0;background:rgba(2,6,23,.93);z-index:90;display:flex;align-items:center;justify-content:center;padding:18px}
+.vennzoom[hidden]{display:none}
+.vz-inner{width:min(97vw,1150px)}
+.vz-inner svg{width:100%;height:auto;background:#ffffff;border-radius:14px;display:block}
+.vz-hint{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#CBD5E1;font-size:.85rem}
+.searchmock{margin:16px auto}
+.pullq{margin:20px 0 6px}
 </style>
 </head>
 <body>
@@ -210,22 +226,24 @@ html.dark .lede::first-letter{color:#C4B5FD}
 <p class="body">🧱 Behind the headlines sits a policy wall with no loophole for sellers. TikTok Shop's Prohibited Products policy names <span class="pq">&ldquo;research peptides, research chemicals, or experimental compounds marketed or implied for human use&rdquo;</span> as banned, and classifies products by intended use — in its words, <span class="pq">&ldquo;not how the seller labels or categorizes it.&rdquo;</span> A <i>&ldquo;research use only&rdquo;</i> label is therefore <b>no defence</b>. Branded content rules separately ban prescription-drug and pharmacy promotion, and the Community Guidelines treat a link-in-bio or a steer toward DMs as trading, so the funnel itself is a violation.</p>
 <div class="chart venn-wrap">
 <h4>Three rulebooks, one result</h4>
-<svg viewBox="0 0 640 345" width="100%" role="img" aria-label="Venn diagram: Community Guidelines, Ads and Branded Content, and TikTok Shop overlap at a single point — no lawful channel for peptide sellers">
+<div class="vennbox" id="vennBox" title="Tap to enlarge">
+<svg viewBox="130 30 450 305" width="100%" role="img" aria-label="Venn diagram: Community Guidelines, Ads and Branded Content, and TikTok Shop overlap at a single point — no lawful channel for peptide sellers">
 <circle cx="248" cy="148" r="104" fill="#7C3AED" fill-opacity="0.45"/>
 <circle cx="392" cy="148" r="104" fill="#EC4899" fill-opacity="0.45"/>
 <circle cx="320" cy="222" r="104" fill="#0EA5E9" fill-opacity="0.45"/>
-<text x="168" y="96" font-size="14.5" font-weight="800" fill="#4C1D95">COMMUNITY</text>
-<text x="168" y="115" font-size="14.5" font-weight="800" fill="#4C1D95">GUIDELINES</text>
-<text x="150" y="138" font-size="11.5" fill="#4C1D95">the funnel counts as trading</text>
-<text x="402" y="96" font-size="14.5" font-weight="800" fill="#9D174D">ADS &amp; BRANDED</text>
-<text x="402" y="115" font-size="14.5" font-weight="800" fill="#9D174D">CONTENT</text>
-<text x="412" y="138" font-size="11.5" fill="#9D174D">no drug promotion, ever</text>
-<text x="276" y="306" font-size="14.5" font-weight="800" fill="#075985">TIKTOK SHOP</text>
-<text x="248" y="282" font-size="11.5" fill="#075985">research peptides banned by name</text>
-<text x="320" y="168" text-anchor="middle" font-size="16.5" font-weight="800" fill="#FFFFFF" stroke="#312E81" stroke-width="3.5" paint-order="stroke">NO LAWFUL</text>
-<text x="320" y="190" text-anchor="middle" font-size="16.5" font-weight="800" fill="#FFFFFF" stroke="#312E81" stroke-width="3.5" paint-order="stroke">CHANNEL</text>
+<text x="168" y="96" font-size="16" font-weight="800" fill="#4C1D95">COMMUNITY</text>
+<text x="168" y="115" font-size="16" font-weight="800" fill="#4C1D95">GUIDELINES</text>
+<text x="150" y="138" font-size="12.5" fill="#4C1D95">the funnel counts as trading</text>
+<text x="402" y="96" font-size="16" font-weight="800" fill="#9D174D">ADS &amp; BRANDED</text>
+<text x="402" y="115" font-size="16" font-weight="800" fill="#9D174D">CONTENT</text>
+<text x="412" y="138" font-size="12.5" fill="#9D174D">no drug promotion, ever</text>
+<text x="276" y="306" font-size="16" font-weight="800" fill="#075985">TIKTOK SHOP</text>
+<text x="248" y="282" font-size="12.5" fill="#075985">research peptides banned by name</text>
+<text x="320" y="168" text-anchor="middle" font-size="18.5" font-weight="800" fill="#FFFFFF" stroke="#312E81" stroke-width="3.5" paint-order="stroke">NO LAWFUL</text>
+<text x="320" y="190" text-anchor="middle" font-size="18.5" font-weight="800" fill="#FFFFFF" stroke="#312E81" stroke-width="3.5" paint-order="stroke">CHANNEL</text>
 </svg>
-<p class="venn-cap">Content rules, ad rules and shop rules each reach the same seller from a different side. Where all three overlap, there is nothing left to sell through.</p>
+</div>
+<p class="venn-cap">Content rules, ad rules and shop rules each reach the same seller from a different side. Where all three overlap, there is nothing left to sell through. <b>Tap the diagram to enlarge it.</b></p>
 </div>
 
 <p class="body">⚙️ The machinery runs fast. TikTok reports that <span class="kp">97% of regulated-goods violations were removed within 24 hours</span> in the April–June 2025 window. Shop enforcement reaches connected accounts running the same business, so a banned storefront cannot simply reopen under a sibling profile. In a court filing this year, Eli Lilly noted that a peptide company's founder-linked account, <span class="kv">@itsadamlanda</span>, <span class="pq">&ldquo;was recently banned&rdquo;</span> — an allegation in a complaint, but a sign of how closely the brands now watch the platform.</p>
@@ -237,11 +255,10 @@ html.dark .lede::first-letter{color:#C4B5FD}
 <p class="body">🕳️ What remains is the leak. Videos are still viewable through direct links even when search returns nothing. A deliberate misspelling — <i>&ldquo;retutrutide&rdquo;</i> — surfaced <b>hundreds of videos</b> even after the bans. An advocacy group's sample of 202 flagged grey-market accounts found only about <span class="kp">30% removed</span>. And the trade visibly migrated: Britain's MHRA seized more than 2,000 unlicensed pens in an October 2025 factory raid, yet the operation it targeted was still selling through <b>Telegram</b> two months later.</p>
 
 <div class="callout">
-<h4>✅ Confirmed — and not confirmed</h4>
+<h4>✅ Confirmed, on the record</h4>
 <ul class="ticks">
 <li>Confirmed in TikTok's own policy text: research peptides are prohibited on TikTok Shop by name, classified by intended use rather than seller labels.</li>
 <li>Confirmed by reporting: the retatrutide hashtag and search ban (October 2025), the #peptide ban (November 2025), and peptide search terms returning no results (October 2026).</li>
-<li>Not confirmed: viral claims of a ban on all peptide content. TikTok has made no such statement, and existing videos remain viewable.</li>
 </ul>
 </div>
 
@@ -293,6 +310,13 @@ html.dark .lede::first-letter{color:#C4B5FD}
 var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
 function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
 (function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+</script>
+<div class="vennzoom" id="vennZoom" hidden><div class="vz-inner"></div><div class="vz-hint">Tap anywhere to close</div></div>
+<script>
+var vz=document.getElementById('vennZoom'),vb=document.getElementById('vennBox');
+vb.addEventListener('click',function(){vz.querySelector('.vz-inner').innerHTML=vb.innerHTML;vz.hidden=false;});
+vz.addEventListener('click',function(){vz.hidden=true;});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')vz.hidden=true;});
 </script>
 </body>
 </html>
