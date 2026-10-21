@@ -126,7 +126,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </style>
 <style>
 .figart{margin:0 0 22px}
-.figart img{width:100%;border-radius:16px;display:block;box-shadow:0 12px 34px rgba(76,29,149,.35)}
+.figart img{width:100%;aspect-ratio:32/9;object-fit:cover;object-position:50% 32%;border-radius:16px;display:block;box-shadow:0 12px 34px rgba(76,29,149,.35)}
 .figart figcaption{font-size:.8rem;color:var(--t3);text-align:center;margin-top:8px}
 .tl{position:relative;margin:4px 0 0;padding-left:28px}
 .tl::before{content:'';position:absolute;left:8px;top:10px;bottom:10px;width:3px;border-radius:2px;background:linear-gradient(180deg,#7C3AED,#EC4899)}
@@ -136,6 +136,22 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .tl-text{color:var(--t2);font-size:.93rem;line-height:1.55}
 .venn-wrap{text-align:center}
 .venn-cap{font-size:.85rem;color:var(--t2);margin-top:10px}
+</style>
+<style>
+.kv{color:#6D28D9;font-weight:800}
+.kp{color:#BE185D;font-weight:800}
+html.dark .kv{color:#C4B5FD}
+html.dark .kp{color:#F9A8D4}
+.hl{background:linear-gradient(180deg,transparent 60%,rgba(250,204,21,.55) 60%);font-weight:700;padding:0 2px}
+.pq{font-style:italic;color:#555555;background:rgba(216,180,254,.5);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 3px;border-radius:3px}
+html.dark .pq{color:#E9D5FF;background:rgba(124,58,237,.45)}
+.lede::first-letter{font-size:3.15em;float:left;line-height:.82;padding:5px 10px 0 0;color:#6D28D9;font-weight:800}
+html.dark .lede::first-letter{color:#C4B5FD}
+.searchmock{max-width:430px;margin:22px auto;background:#0B1120;border-radius:18px;padding:18px 20px 16px;text-align:center;box-shadow:0 14px 34px rgba(2,6,23,.45)}
+.sm-bar{background:rgba(255,255,255,.09);color:#E2E8F0;border-radius:999px;padding:9px 18px;font-size:.95rem;text-align:left}
+.sm-none{color:#F87171;font-weight:800;font-size:1.3rem;margin-top:15px}
+.sm-sub{color:#94A3B8;font-size:.8rem;margin-top:5px}
+.pullq{font-size:1.13rem;line-height:1.65;font-weight:600;text-align:center;padding:24px 28px;margin:28px 0 6px;border-radius:16px;background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(236,72,153,.12));border:1px solid var(--border)}
 </style>
 </head>
 <body>
@@ -174,11 +190,13 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <div class="stat"><div class="n">1,500+</div><div class="l">Sites &amp; accounts disrupted by the UK's MHRA in 2025</div></div>
 </div>
 
-<p class="body">On October 20, 2026, The Verge reported that searching TikTok for semaglutide, BPC-157, retatrutide and other peptide terms now returns "no results found." Not a warning interstitial, not reduced reach — the shelf is simply empty. It is the most visible step yet in a two-year enforcement shift that has quietly rewritten how available these products are to ordinary buyers.</p>
+<p class="body lede">On <b>October 20, 2026</b>, <i>The Verge</i> reported that searching TikTok for <span class="kv">semaglutide</span>, <span class="kv">BPC-157</span>, <span class="kv">retatrutide</span> and other peptide terms now returns <span class="hl">&ldquo;no results found.&rdquo;</span> Not a warning interstitial, not reduced reach — <b>the shelf is simply empty</b>. It is the most visible step yet in a two-year enforcement shift that has quietly rewritten how available these products are to ordinary buyers.</p>
 
-<p class="body">The shift began in May 2024, when TikTok rolled out dedicated GLP-1 content rules: weight-loss medication content was restricted to adults and made ineligible for the For You feed, and hashtagged seller videos started being flagged and removed. Creators paid by telehealth companies to promote compounded GLP-1s watched their reach collapse and feared outright bans. Promotion didn't end, but it lost the algorithm.</p>
+<div class="searchmock"><div class="sm-bar">🔍&nbsp; semaglutide</div><div class="sm-none">🚫 No results found</div><div class="sm-sub">The same answer for BPC-157 &middot; retatrutide &middot; #peptide</div></div>
 
-<p class="body">October 2025 was the turning point. Channel 4 News went undercover into the black market for fake weight-loss jabs; TikTok responded by removing the flagged content and banning retatrutide hashtags and searches outright. Weeks later, on November 30, The Independent reported that TikTok had banned the #peptide hashtag itself and removed the accounts the paper had shared with it. An entire product category lost its name on the platform.</p>
+<p class="body">📜 The shift began in <b>May 2024</b>, when TikTok rolled out dedicated GLP-1 content rules: weight-loss medication content was restricted to adults and made <span class="kv">ineligible for the For You feed</span>, and hashtagged seller videos started being flagged and removed. Creators paid by telehealth companies to promote compounded GLP-1s watched their reach collapse and feared outright bans. Promotion didn't end, but it <i>lost the algorithm</i>.</p>
+
+<p class="body">🎬 <b>October 2025</b> was the turning point. <b>Channel 4 News</b> went undercover into the black market for fake weight-loss jabs; TikTok responded by removing the flagged content and banning <span class="kp">retatrutide hashtags and searches</span> outright. Weeks later, on <b>November 30</b>, <i>The Independent</i> reported that TikTok had banned the <span class="kp">#peptide hashtag</span> itself and removed the accounts the paper had shared with it. An entire product category lost its name on the platform.</p>
 <div class="chart">
 <h4>Two years of tightening</h4>
 <div class="tl">
@@ -189,7 +207,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </div>
 </div>
 
-<p class="body">Behind the headlines sits a policy wall with no loophole for sellers. TikTok Shop's Prohibited Products policy names "research peptides, research chemicals, or experimental compounds marketed or implied for human use" as banned, and classifies products by intended use — in its words, "not how the seller labels or categorizes it." A "research use only" label is therefore no defence. Branded content rules separately ban prescription-drug and pharmacy promotion, and the Community Guidelines treat a link-in-bio or a steer toward DMs as trading, so the funnel itself is a violation.</p>
+<p class="body">🧱 Behind the headlines sits a policy wall with no loophole for sellers. TikTok Shop's Prohibited Products policy names <span class="pq">&ldquo;research peptides, research chemicals, or experimental compounds marketed or implied for human use&rdquo;</span> as banned, and classifies products by intended use — in its words, <span class="pq">&ldquo;not how the seller labels or categorizes it.&rdquo;</span> A <i>&ldquo;research use only&rdquo;</i> label is therefore <b>no defence</b>. Branded content rules separately ban prescription-drug and pharmacy promotion, and the Community Guidelines treat a link-in-bio or a steer toward DMs as trading, so the funnel itself is a violation.</p>
 <div class="chart venn-wrap">
 <h4>Three rulebooks, one result</h4>
 <svg viewBox="0 0 640 345" width="100%" role="img" aria-label="Venn diagram: Community Guidelines, Ads and Branded Content, and TikTok Shop overlap at a single point — no lawful channel for peptide sellers">
@@ -210,13 +228,13 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <p class="venn-cap">Content rules, ad rules and shop rules each reach the same seller from a different side. Where all three overlap, there is nothing left to sell through.</p>
 </div>
 
-<p class="body">The machinery runs fast. TikTok reports that 97% of regulated-goods violations were removed within 24 hours in the April–June 2025 window. Shop enforcement reaches connected accounts running the same business, so a banned storefront cannot simply reopen under a sibling profile. In a court filing this year, Eli Lilly noted that a peptide company's founder-linked account, @itsadamlanda, "was recently banned" — an allegation in a complaint, but a sign of how closely the brands now watch the platform.</p>
+<p class="body">⚙️ The machinery runs fast. TikTok reports that <span class="kp">97% of regulated-goods violations were removed within 24 hours</span> in the April–June 2025 window. Shop enforcement reaches connected accounts running the same business, so a banned storefront cannot simply reopen under a sibling profile. In a court filing this year, Eli Lilly noted that a peptide company's founder-linked account, <span class="kv">@itsadamlanda</span>, <span class="pq">&ldquo;was recently banned&rdquo;</span> — an allegation in a complaint, but a sign of how closely the brands now watch the platform.</p>
 
 <h2 class="sec">🔍 What it does to availability</h2>
 
-<p class="body">Search, hashtags, and the For You feed were the grey market's storefront window — a June 2026 JAMA Viewpoint counted more than 230 million TikTok views promoting illicit injectable peptides. All three discovery surfaces are now closed or throttled. A casual buyer can no longer stumble onto a peptide seller between dance videos, and a seller can no longer be found by name. On-platform availability, for anyone who isn't already holding a direct link, has effectively ended.</p>
+<p class="body">🔍 Search, hashtags, and the For You feed were the grey market's storefront window — a June 2026 <i>JAMA</i> Viewpoint counted more than <span class="kv">230 million TikTok views</span> promoting illicit injectable peptides. All three discovery surfaces are now closed or throttled. A casual buyer can no longer stumble onto a peptide seller between dance videos, and a seller can no longer be found by name. On-platform availability, for anyone who isn't already holding a direct link, has <span class="hl">effectively ended</span>.</p>
 
-<p class="body">What remains is the leak. Videos are still viewable through direct links even when search returns nothing. A deliberate misspelling — "retutrutide" — surfaced hundreds of videos even after the bans. An advocacy group's sample of 202 flagged grey-market accounts found only about 30% removed. And the trade visibly migrated: Britain's MHRA seized more than 2,000 unlicensed pens in an October 2025 factory raid, yet the operation it targeted was still selling through Telegram two months later.</p>
+<p class="body">🕳️ What remains is the leak. Videos are still viewable through direct links even when search returns nothing. A deliberate misspelling — <i>&ldquo;retutrutide&rdquo;</i> — surfaced <b>hundreds of videos</b> even after the bans. An advocacy group's sample of 202 flagged grey-market accounts found only about <span class="kp">30% removed</span>. And the trade visibly migrated: Britain's MHRA seized more than 2,000 unlicensed pens in an October 2025 factory raid, yet the operation it targeted was still selling through <b>Telegram</b> two months later.</p>
 
 <div class="callout">
 <h4>✅ Confirmed — and not confirmed</h4>
@@ -246,7 +264,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <p class="note">Exposure reports compiled from US poison centers (CBS News, October 2026). The platform went quiet while the caseload tripled — the demand moved channels rather than disappearing.</p>
 </div>
 
-<p class="body">The bottom line: TikTok has moved from policing claims to erasing findability. For buyers, that is the availability story — the products are no longer discoverable where 230 million views used to happen, and what trade remains has pushed onto encrypted apps and direct links, further from any regulator's view. Whether that makes the market smaller or just darker is the question 2027 will answer.</p>
+<div class="pullq">⚖️ The bottom line: TikTok has moved from policing claims to <span class="kv">erasing findability</span>. The products are no longer discoverable where <b>230 million views</b> used to happen — what trade remains has pushed onto encrypted apps and direct links, further from any regulator's view. <i>Whether that makes the market smaller, or just darker, is the question 2027 will answer.</i></div>
 
 <div class="bib">
 <h2>Sources</h2>
