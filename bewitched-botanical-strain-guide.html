@@ -111,9 +111,7 @@ a.specdot{cursor:pointer;z-index:2}
 .biblio li{margin:6px 0;font-size:14px}
 .biblio a{color:var(--accent);word-break:break-all}
 footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
-.toc-top{position:fixed;bottom:18px;right:18px;background:#23402f;color:#fff;border-radius:999px;
-  width:46px;height:46px;display:flex;align-items:center;justify-content:center;text-decoration:none;
-  font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #23402f;color:#23402f;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.35);z-index:50}
 .print-btn{position:fixed;top:18px;right:18px;background:#23402f;color:#fff;border:0;border-radius:999px;
   padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;
   box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
@@ -216,6 +214,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .pt-cmp-banner{background:#0E7C66;color:#fff;font-weight:800;font-size:1.15rem;padding:14px 20px}
 .pt-cmp-body{padding:16px 20px;line-height:1.6;font-size:1rem}
 .pt-cmp-hint{padding:0 20px 14px;color:#5b6b7d;font-size:.82rem}
+/* ===== Emphatic highlights (David 2026-10-24) ===== */
+.hlr,.hlg,.hlw,.hly,.hlb{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;border-radius:2px}
+.hlr{background:#fbe3de}.hlg{background:#e0f1e4}.hlw{background:#eef4dc}.hly{background:#fdf0cd}.hlb{background:#e9e2f7}
+/* ===== Raised circular icon buttons (David 2026-10-24) ===== */
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
 </style>
 </head>
 <body id="top">
@@ -251,7 +254,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= INDEX ================= -->
 <div class="index">
-  <h2>📖 Index</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📖</span> Index</h2>
   <ol>
     <li><a href="#howto">How to use this guide &amp; the spectrum map</a></li>
     <li><a href="#science">The evidence system — how every claim here is graded</a></li>
@@ -273,7 +276,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= HOW TO USE ================= -->
 <div class="colorband band-neutral" id="howto">
-  <h2>🧭 How to use this guide &amp; the spectrum map</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧭</span> How to use this guide &amp; the spectrum map</h2>
   <p>Bewitched Botanical does not publish a speed spectrum — so this guide builds one from the evidence: roughly 175 on-site customer reviews, graded strain by strain. Find your speed below, glance at the map, then jump to the line that fits the moment.</p>
   <div class="bigicon">🧭</div>
 </div>
@@ -347,7 +350,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= SCIENCE / EVIDENCE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2>🔬 The evidence system</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🔬</span> The evidence system</h2>
   <p>How every claim in this guide is graded — and where the record runs out.</p>
   <div class="bigicon">🔬</div>
 </div>
@@ -355,7 +358,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <p><b>Where the effects come from.</b> Bewitched Botanical publishes almost no speed or effect grading of its own, so every profile here is built from the shop’s own review corpus — roughly <b>175 customer reviews</b>, read in full for every product — cross-checked against the vendor’s recipe and copy. Where reports and vendor copy conflict, <b>reports win</b>, and the conflict is printed (Horseman’s tag, Enchanted Full Moon’s coffee, Moon Drops’ name). Effect percentages in each strain’s chart are normalized from those report-based ratings — nothing is invented to fill a gap.</p>
   <p><b>The flags are part of the data.</b> Two cards rest on vendor description alone because no community reports exist: <a href="#strain-1692">1692</a> (zero reviews) and <a href="#strain-liminal-space">Liminal Space</a> (one content-free review). <a href="#strain-scream-queen">Scream Queen</a> carries an era-split record — a 2024 phenomenon, a far weaker 2025 file — and both eras are printed. A handful of reviewers (one systematic voice above all) author a large share of the corpus, and duplicate reviews exist in it; averages run warm, so this guide weights detailed comparative reports over star counts.</p>
   <p><b>On lab testing:</b> unusually for a small shop, real COAs <i>are</i> published — Wonderland Labs certificates for six base strains under one batch number — but <b>no blend of any kind has a published COA</b>, and neither does the flagship Gold Bali. Full detail in the <a href="#coa">lab reference</a>.</p>
-  <p><b>Stated plainly — the Reddit gap.</b> This vendor’s customer base is visibly Reddit-recruited (one reviewer thanks “reddit people” for the referral), but Reddit itself could not be retrieved with the research tools available, and no Bewitched-specific Reddit threads surfaced in general search. Reddit sentiment is therefore an <b>open gap</b> in this guide — not silence, and not a consensus claimed either way. YouTube coverage exists only at hobbyist scale (Kratom Planet, Kr8tom Chai).</p>
+  <p><b>Stated plainly — the Reddit gap.</b> This vendor’s customer base is visibly Reddit-recruited (one reviewer thanks <span class="hlb">“reddit people”</span> for the referral), but Reddit itself could not be retrieved with the research tools available, and no Bewitched-specific Reddit threads surfaced in general search. Reddit sentiment is therefore an <b>open gap</b> in this guide — not silence, and not a consensus claimed either way. YouTube coverage exists only at hobbyist scale (Kratom Planet, Kr8tom Chai).</p>
   <p><b>My standing:</b> I am a verified buyer — two orders, eight products, in October 2026 (orders #62190 and #62230). Cards for products in my own orders carry the gold Verified Buyer badge. A third household shipment (order #100908, placed for a friend) is deliberately <i>not</i> used as evidence: its contents are not in my purchase records, so this guide does not state them.</p>
 </div>
 <div class="legend">
@@ -369,7 +372,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= BASE STRAINS ================= -->
 <div class="colorband band-green" id="base">
-  <h2>🌿 Base strains — the ten foundations</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🌿</span> Base strains — the ten foundations</h2>
   <p>Nine single strains and one famous blend the vendor files here — including the exclusive Panji trio from Pontianak and the strongest lab number in the shop.</p>
   <div class="bigicon">🌿</div>
 </div>
@@ -382,9 +385,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>The vendor’s raw-potency green: hand-harvested leaf sold on intensity. 25g $5 · 1kg $69. Note the kilo caveat — Green Monster is one of four strains that <b>cannot</b> be bought as a kilo here.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“a premium strain, its vibrant green powder a testament to raw potency. Bold, intense, and hand-harvested”</span> — the strongest language in the base line.</p>
+    <p><span class="hlg">“a premium strain, its vibrant green powder a testament to raw potency. Bold, intense, and hand-harvested”</span> — the strongest language in the base line.</p>
     <h4>💬 Community reports</h4>
-    <p>Three reviews, all aligned with the vendor’s framing: a <b>moderate-strong clean energizer</b> (Crinzi), with <span class="pq">“great energy and a strong mood boost… some long legs”</span> (Miller) and energy plus pain and mental-clarity help (Thomas). The teaching case of this menu: its COA is the joint-lowest base figure on paper (1.17% <span class="cmp" data-t="mitragynine">mitragynine</span>), yet reviewers call it strong — lab percentage alone does not set the experience.</p>
+    <p>Three reviews, all aligned with the vendor’s framing: a <b>moderate-strong clean energizer</b> (Crinzi), with <span class="hlg">“great energy and a strong mood boost… some long legs”</span> (Miller) and energy plus pain and mental-clarity help (Thomas). The teaching case of this menu: its COA is the joint-lowest base figure on paper (1.17% <span class="cmp" data-t="mitragynine">mitragynine</span>), yet reviewers call it strong — lab percentage alone does not set the experience.</p>
   </div>
 </div>
 <div class="strain gold" id="strain-yellow-maeng-da">
@@ -394,9 +397,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>A curated white + red vein blend from Indonesia’s Kalimantan region, filed with the base strains. 25g $5 · 1kg $69.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“A curated blend of White and Red Vein Kratom from Indonesia’s Kalimantan region.”</span> One of only six products on the whole menu with a published COA (1.23% <span class="cmp" data-t="mitragynine">mitragynine</span>).</p>
+    <p><span class="hly">“A curated blend of White and Red Vein Kratom from Indonesia’s Kalimantan region.”</span> One of only six products on the whole menu with a published COA (1.23% <span class="cmp" data-t="mitragynine">mitragynine</span>).</p>
     <h4>💬 Community reports</h4>
-    <p>Two reviews, both 5★, both describing exactly the split personality the recipe predicts: <span class="pq">“the white gives you that boost of energy and red helps soooo much with pain”</span> (Thomas); a gentler <span class="pq">“little energy to it… welcomed”</span> (dreadiscussions). A middle-spectrum all-rounder rather than a specialist.</p>
+    <p>Two reviews, both 5★, both describing exactly the split personality the recipe predicts: <span class="hly">“the white gives you that boost of energy and red helps soooo much with pain”</span> (Thomas); a gentler <span class="hly">“little energy to it… welcomed”</span> (dreadiscussions). A middle-spectrum all-rounder rather than a specialist.</p>
   </div>
 </div>
 <div class="strain red" id="strain-red-maeng-da">
@@ -404,11 +407,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:18%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid-Low / Slow · 18%</b> — Base Strain</div></div>
     <h4>🌿 The leaf</h4>
-    <p>Single-origin red from the Jong Kong region of Indonesia. 25g $5 · 1kg $69 — when it is in stock: the vendor’s own copy currently flags it <span class="pq">“Not available at this time.”</span></p>
+    <p>Single-origin red from the Jong Kong region of Indonesia. 25g $5 · 1kg $69 — when it is in stock: the vendor’s own copy currently flags it <span class="hlr">“Not available at this time.”</span></p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“single-origin strain from Indonesia… rich character.”</span> No COA is published for this strain.</p>
+    <p><span class="hlr">“single-origin strain from Indonesia… rich character.”</span> No COA is published for this strain.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Thin evidence — one review.</b> That single report is emphatic chronic-pain praise (<span class="pq">“VERY great for pain”</span>), and the rest of this card’s profile follows red-vein convention rather than a deep record. Treat the chart as a sketch, not a measurement.</p>
+    <p><b>Thin evidence — one review.</b> That single report is emphatic chronic-pain praise (<span class="hlr">“VERY great for pain”</span>), and the rest of this card’s profile follows red-vein convention rather than a deep record. Treat the chart as a sketch, not a measurement.</p>
     <div class="popbox deep">Thin-evidence card: a single community report plus vein convention. Included because the strain anchors several blends (Pink Elf, Horseman, 4078’s component list) — not because its own file is deep.</div>
   </div>
 </div>
@@ -421,7 +424,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>The lab star of the shop: its Wonderland Labs COA reads <b>2.04% <span class="cmp" data-t="mitragynine">mitragynine</span></b>, the highest figure the vendor has ever published — a number one reviewer quoted back on-site with pride.</p>
     <h4>💬 Community reports</h4>
-    <p>The praise is loud: <span class="pq">“massive amounts of energy”</span> (Thomas); <span class="pq">“dose down just a bit on this one because it hits hard”</span> (Pomeroy); a gradual, steady lift with mood change and top-marks duration (Pate). The dissent is also on record — a slow onset for one reviewer (Bates, 2★) and one weaker batch (Bowers, 3★, Aug 2025). Batch variance, not the strain’s ceiling, is the open question.</p>
+    <p>The praise is loud: <span class="hlw">“massive amounts of energy”</span> (Thomas); <span class="hlw">“dose down just a bit on this one because it hits hard”</span> (Pomeroy); a gradual, steady lift with mood change and top-marks duration (Pate). The dissent is also on record — a slow onset for one reviewer (Bates, 2★) and one weaker batch (Bowers, 3★, Aug 2025). Batch variance, not the strain’s ceiling, is the open question.</p>
     <div class="popbox deep">Batch watch: the 2.04% COA and the 2025 “weaker than usual” report describe different moments in this strain’s life. The ceiling is proven; the consistency is not.</div>
   </div>
 </div>
@@ -432,9 +435,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>The mature-leaf counterpart to White Panji: same Pontianak exclusivity, opposite temperament, with earthy greenish-brown tones from its drying/fermentation. The slowest position on this menu’s map. 25g $5 · 1kg $69 (no kilo format for Panji).</p>
     <h4>📡 Vendor notes</h4>
-    <p>The vendor’s copy oddly says <span class="pq">“Unavailable at this time”</span> while the product remains orderable — one of several places this one-woman shop’s website copy lags its shelves. An older certificate set sits in its gallery, but without a stated <span class="cmp" data-t="mitragynine">mitragynine</span> figure.</p>
+    <p>The vendor’s copy oddly says <span class="hlr">“Unavailable at this time”</span> while the product remains orderable — one of several places this one-woman shop’s website copy lags its shelves. An older certificate set sits in its gallery, but without a stated <span class="cmp" data-t="mitragynine">mitragynine</span> figure.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Thin evidence — one review.</b> It happens to be a postcard from the slow end: <span class="pq">“warm cozy calming great sense of well being… melts away my stress and any aches and pains”</span> (Degerick). This strain also works behind the scenes — it is 85% of the 1692 blend and half of Reality Glitch.</p>
+    <p><b>Thin evidence — one review.</b> It happens to be a postcard from the slow end: <span class="hlr">“warm cozy calming great sense of well being… melts away my stress and any aches and pains”</span> (Degerick). This strain also works behind the scenes — it is 85% of the 1692 blend and half of Reality Glitch.</p>
     <div class="popbox deep">Thin-evidence card: a single (glowing) report. Its slow-end placement leans on that report plus its role as the menu’s designated mature-leaf red.</div>
   </div>
 </div>
@@ -445,9 +448,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>The green of the Panji trio — vibrant, almost neon-green powder from Pontianak leaf. 25g $5 · 1kg $69 (no kilo format for Panji). It is also a building block: Shiokaze, Grinch and Scream Queen all start here.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“vibrant, almost neon green color.”</span> An older four-page certificate set is published in its gallery; no headline <span class="cmp" data-t="mitragynine">mitragynine</span> percentage is stated for it.</p>
+    <p><span class="hlg">“vibrant, almost neon green color.”</span> An older four-page certificate set is published in its gallery; no headline <span class="cmp" data-t="mitragynine">mitragynine</span> percentage is stated for it.</p>
     <h4>💬 Community reports</h4>
-    <p>Four reviews sketch a friendly energizer: <span class="pq">“a moderate-strong clean energizer, by natural powder standards”</span> (Crinzi); <span class="pq">“cozy… lifts my spirit… an uplift in mood that’s not sedating”</span> (Drummond/Moore). One credibility footnote: the review corpus contains the same praise text posted under two different names — counted once here.</p>
+    <p>Four reviews sketch a friendly energizer: <span class="hlg">“a moderate-strong clean energizer, by natural powder standards”</span> (Crinzi); <span class="hlg">“cozy… lifts my spirit… an uplift in mood that’s not sedating”</span> (Drummond/Moore). One credibility footnote: the review corpus contains the same praise text posted under two different names — counted once here.</p>
   </div>
 </div>
 <div class="strain white" id="strain-white-borneo">
@@ -457,9 +460,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>The housework white: a reliable base strain that also carries half of Crythos, 70% of Pink Elf and all of Liminal Space’s white side. 25g $5 · 1kg $69; COA 1.18% <span class="cmp" data-t="mitragynine">mitragynine</span>.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“the reliable, no-nonsense base strain that feels like home.”</span> The vendor sells it as the menu’s metronome — and builds on it constantly.</p>
+    <p><span class="hlw">“the reliable, no-nonsense base strain that feels like home.”</span> The vendor sells it as the menu’s metronome — and builds on it constantly.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Thin solo evidence — one review</b>, but a comparative one: <span class="pq">“similar energy to Green Bali but also has much more analgesia”</span> (Crinzi). Its fuller record is indirect — it is the shared ingredient in three of the best-reviewed classic blends, which is its own kind of testimony.</p>
+    <p><b>Thin solo evidence — one review</b>, but a comparative one: <span class="hlw">“similar energy to Green Bali but also has much more analgesia”</span> (Crinzi). Its fuller record is indirect — it is the shared ingredient in three of the best-reviewed classic blends, which is its own kind of testimony.</p>
   </div>
 </div>
 <div class="strain green" id="strain-green-bali">
@@ -471,7 +474,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>The vendor’s process notes (indoor drying, sunlight finish) are the kind of small-batch detail this shop trades in — specific, checkable, and consistent with what reviewers describe.</p>
     <h4>💬 Community reports</h4>
-    <p>Five reviews converge on one word: reliable. <span class="pq">“great and reliable… Always fresh and consistently good”</span> (Lawrence); <span class="pq">“hits me a little stronger than her Green Panji [with] a noticeable analgesic effect”</span> (Crinzi). On a menu with documented batch swings elsewhere, this is the green reviewers trust to show up the same way twice.</p>
+    <p>Five reviews converge on one word: reliable. <span class="hlg">“great and reliable… Always fresh and consistently good”</span> (Lawrence); <span class="hlg">“hits me a little stronger than her Green Panji [with] a noticeable analgesic effect”</span> (Crinzi). On a menu with documented batch swings elsewhere, this is the green reviewers trust to show up the same way twice.</p>
     <div class="popbox star">For green-first buyers on a budget, this is the base line’s quiet bargain: near-flagship lab numbers, kilo pricing, and the menu’s best consistency record.</div>
   </div>
 </div>
@@ -480,11 +483,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:74%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid-Upper · 74%</b> — Base Strain</div></div>
     <h4>🌿 The leaf</h4>
-    <p>Nano-ground “pimp grade” green — and the base strain with the menu’s most uniform record: six reviews, every one 5★. 25g $5 · 1kg $69; COA 1.36% <span class="cmp" data-t="mitragynine">mitragynine</span>. It also fronts the Horseman enhanced blend and half of Moon Drops.</p>
+    <p>Nano-ground <span class="hlg">“pimp grade”</span> green — and the base strain with the menu’s most uniform record: six reviews, every one 5★. 25g $5 · 1kg $69; COA 1.36% <span class="cmp" data-t="mitragynine">mitragynine</span>. It also fronts the Horseman enhanced blend and half of Moon Drops.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“My personal favorite green vein strain that I carry”</span> (Candis, owner). Owner favorites are marketing until the reviews agree — here, unusually, they do.</p>
+    <p><span class="hlg">“My personal favorite green vein strain that I carry”</span> (Candis, owner). Owner favorites are marketing until the reviews agree — here, unusually, they do.</p>
     <h4>💬 Community reports</h4>
-    <p><span class="pq">“Nice mid upper energy, strong mood boost and does fantastic job of keeping me focused… this GMD keeps me where I need to be mentally”</span> (Miller). <span class="pq">“Focused, but not jittery. Relaxed, but not spacey”</span> (Mathias). <span class="pq">“the best md I’ve had… best kept secret”</span> (Hanson). The only knock anywhere: it <span class="pq">“lasts a bit less than most”</span> (Miller).</p>
+    <p><span class="hlg">“Nice mid upper energy, strong mood boost and does fantastic job of keeping me focused… this GMD keeps me where I need to be mentally”</span> (Miller). <span class="hlg">“Focused, but not jittery. Relaxed, but not spacey”</span> (Mathias). <span class="hlg">“the best md I’ve had… best kept secret”</span> (Hanson). The only knock anywhere: it <span class="hlg">“lasts a bit less than most”</span> (Miller).</p>
     <div class="popbox star">The strongest all-around base card in this guide: top-tier energy, mood and clarity scores with a perfect review average — at plain base-strain prices.</div>
   </div>
 </div>
@@ -495,16 +498,16 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>The product that built this shop’s name — filed with the base strains, though the vendor herself calls it a blend. Sold in small bags only: <b>15g $9 · 125g $17</b>, no 250g, no kilo. It is also the base inside Cleopatra and Supernova.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“my personal favorite and… my best-selling blend. I have become INFAMOUS in the small batch kratom community for this gold bali”</span> (Candis). No COA is published for it — the flagship sails without lab paper.</p>
+    <p><span class="hly">“my personal favorite and… my best-selling blend. I have become INFAMOUS in the small batch kratom community for this gold bali”</span> (Candis). No COA is published for it — the flagship sails without lab paper.</p>
     <h4>💬 Community reports</h4>
-    <p>The record is genuinely split (4.20 average, the softest score of any staple here). Loyalists: <span class="pq">“staple… Perfect for any time of the day”</span> (ChelcieC); a <span class="pq">“complete different experience [vs vape-shop gold]”</span> (Thomas). Skeptics: <span class="pq">“moderate clean energy. It’s decent, but not special”</span> (Crinzi, 3★); <span class="pq">“The results from this strain are a little bit unpredictable for me”</span> (Andrews, 3★). Both camps are printed because both are real.</p>
+    <p>The record is genuinely split (4.20 average, the softest score of any staple here). Loyalists: <span class="hly">“staple… Perfect for any time of the day”</span> (ChelcieC); a <span class="hly">“complete different experience [vs vape-shop gold]”</span> (Thomas). Skeptics: <span class="hly">“moderate clean energy. It’s decent, but not special”</span> (Crinzi, 3★); <span class="hly">“The results from this strain are a little bit unpredictable for me”</span> (Andrews, 3★). Both camps are printed because both are real.</p>
     <div class="popbox deep">Read this card as a coin flip with good odds: a devoted following, the shop’s biggest seller — and the base line’s most divided reviews, no COA, and a 125g size cap that keeps it a tasting, not a staple buy.</div>
   </div>
 </div>
 
 <!-- ================= CLASSIC BLENDS ================= -->
 <div class="colorband band-blend" id="classic">
-  <h2>🧪 Classic blends — hand-built recipes</h2>
+  <h2><span class="icobtn" style="--bb:#efe9f7;--bm:#b39ddb;--bd:#4a3369">🧪</span> Classic blends — hand-built recipes</h2>
   <p>Ten unenhanced blends: customer collaborations, memorials, and a few recipes that outperform the strains inside them.</p>
   <div class="bigicon">🧪</div>
 </div>
@@ -515,11 +518,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:62%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid+ · 62%</b> — Classic Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>White Borneo fused with <span class="pq">“our proprietary yellow formulation,”</span> tagged Daytime by the vendor. 25g $7 · 1kg $79.</p>
+    <p>White Borneo fused with <span class="hlw">“our proprietary yellow formulation,”</span> tagged Daytime by the vendor. 25g $7 · 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“bold, forward-looking fusion.”</span> The recipe’s yellow half is proprietary — the ratio is not published.</p>
+    <p><span class="hlw">“bold, forward-looking fusion.”</span> The recipe’s yellow half is proprietary — the ratio is not published.</p>
     <h4>💬 Community reports</h4>
-    <p>Three reviews, one of which is not about kratom at all: a longtime customer’s 1★ protest over AI-generated product artwork (<span class="pq">“The use of AI for the artwork is extremely disappointing… It’s enough to turn me off from even trying this blend”</span>). The actual effect report is Crinzi’s: <span class="pq">“mild analgesic effect with moderate-strong energy.”</span> The 3.33 average is partly a protest score — judge the powder by the effect report, and the shop’s art choices separately.</p>
+    <p>Three reviews, one of which is not about kratom at all: a longtime customer’s 1★ protest over AI-generated product artwork (<span class="hlw">“The use of AI for the artwork is extremely disappointing… It’s enough to turn me off from even trying this blend”</span>). The actual effect report is Crinzi’s: <span class="hlw">“mild analgesic effect with moderate-strong energy.”</span> The 3.33 average is partly a protest score — judge the powder by the effect report, and the shop’s art choices separately.</p>
   </div>
 </div>
 <div class="strain green" id="strain-liminal-space">
@@ -529,9 +532,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>White Borneo + Green Monster — a steadiness white poured over the menu’s boldest green. 25g $7 · 1kg $79. One of the eight products in my own orders (250g, order #62230).</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“surreal, beautifully balanced… find your balance in the in-between.”</span> The vendor promises a “smooth, steady presence” with a “vibrant” green lift.</p>
+    <p><span class="hlg">“surreal, beautifully balanced… find your balance in the in-between.”</span> The vendor promises a <span class="hlg">“smooth, steady presence”</span> with a <span class="hlg">“vibrant”</span> green lift.</p>
     <h4>💬 Community reports</h4>
-    <p><b>No detailed community effect reports exist.</b> The product’s single review says only <span class="pq">“One of my faves”</span> (Jessica) — affection without data. The profile on this card is interpolated from its two (well-documented) components and the vendor’s copy, and is labeled accordingly; my own 250g bag is the corroboration still to come.</p>
+    <p><b>No detailed community effect reports exist.</b> The product’s single review says only <span class="hlg">“One of my faves”</span> (Jessica) — affection without data. The profile on this card is interpolated from its two (well-documented) components and the vendor’s copy, and is labeled accordingly; my own 250g bag is the corroboration still to come.</p>
     <div class="popbox deep">Vendor-described profile: the chart shows what the recipe predicts, not what a review corpus measured. This is one of two cards in the guide with no detailed community effect record.</div>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 250g in my order #62230 (Oct 10, 2026), bought alongside 1692, Cleopatra and the 4078 Blend.</div>
   </div>
@@ -543,9 +546,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>70% White Panji + 30% Green Panji — the two fastest Panji leaves in one bag. 25g $7 · 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“easy, uplifting summer blend… gentle sea breeze.”</span> The name is Japanese for “sea breeze,” and the copy leans into the metaphor.</p>
+    <p><span class="hlw">“easy, uplifting summer blend… gentle sea breeze.”</span> The name is Japanese for <span class="hlw">“sea breeze,”</span> and the copy leans into the metaphor.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Thin evidence — one review</b>, but a precise one from the corpus’s most systematic reviewer: <span class="pq">“mid-fast longer-legged clean energy. It’s potent and recommendable”</span> (Crinzi). “Longer-legged” is the detail that matters — the Panji pair is known for drive, and this blend reportedly keeps it burning.</p>
+    <p><b>Thin evidence — one review</b>, but a precise one from the corpus’s most systematic reviewer: <span class="hlw">“mid-fast longer-legged clean energy. It’s potent and recommendable”</span> (Crinzi). <span class="hlw">“Longer-legged”</span> is the detail that matters — the Panji pair is known for drive, and this blend reportedly keeps it burning.</p>
   </div>
 </div>
 <div class="strain white" id="strain-crythos">
@@ -555,9 +558,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>50% White Panji + 50% White Borneo — the hardest-tested white tempered by the steadiest one. 25g $7 · 1kg $79. The fastest position of any classic blend on the map.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“potent, enduring… stand strong amidst the chaos.”</span> For once, the reviews out-shout the copy.</p>
+    <p><span class="hlw">“potent, enduring… stand strong amidst the chaos.”</span> For once, the reviews out-shout the copy.</p>
     <h4>💬 Community reports</h4>
-    <p>Two reviews, both 5★, both unusually specific: <span class="pq">“Strong Fast Energy with substantial analgesia”</span> (Crinzi) — real pain relief at full speed is the rare trick here — and <span class="pq">“great for energy but no jitters and so smooth with a lovely mood boost and the longest legs!!!”</span> (Mandy jeanne). A natural (unenhanced) powder performing at the enhanced tier’s altitude.</p>
+    <p>Two reviews, both 5★, both unusually specific: <span class="hlw">“Strong Fast Energy with substantial analgesia”</span> (Crinzi) — real pain relief at full speed is the rare trick here — and <span class="hlw">“great for energy but no jitters and so smooth with a lovely mood boost and the longest legs!!!”</span> (Mandy jeanne). A natural (unenhanced) powder performing at the enhanced tier’s altitude.</p>
     <div class="popbox star">The natural-powder headline of the classic line: fastest classic on the map, with analgesia numbers most whites never post.</div>
   </div>
 </div>
@@ -568,9 +571,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>70% White Borneo + 30% Red Maeng Da per the spec line — a fast white with a red undertow. 25g $7 · 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“bright charm with a little edge — holiday rebellion.”</span> Copy flag, stated plainly: the prose under the recipe praises “White Ketapang” and “Red Dragon,” which are <b>not</b> in the stated recipe. The spec line and the reviews agree with each other; the marketing paragraph is drift.</p>
+    <p><span class="hlw">“bright charm with a little edge — holiday rebellion.”</span> Copy flag, stated plainly: the prose under the recipe praises <span class="hlw">“White Ketapang”</span> and <span class="hlw">“Red Dragon,”</span> which are <b>not</b> in the stated recipe. The spec line and the reviews agree with each other; the marketing paragraph is drift.</p>
     <h4>💬 Community reports</h4>
-    <p>Six reviews, warm and consistent: <span class="pq">“a moderate-strong clean energizer”</span> (Crinzi); <span class="pq">“10/10 pain re-leaf, 10/10 clean energy”</span> (Soto); <span class="pq">“at first, it felt like a really fast strain, but after a few tries, it mellowed out… one of my favorites for mood and energy”</span> (Robins). The one service note in the file: <span class="pq">“Good quality blend but wish shipping was cheaper”</span> (3★).</p>
+    <p>Six reviews, warm and consistent: <span class="hlw">“a moderate-strong clean energizer”</span> (Crinzi); <span class="hlw">“10/10 pain re-leaf, 10/10 clean energy”</span> (Soto); <span class="hlw">“at first, it felt like a really fast strain, but after a few tries, it mellowed out… one of my favorites for mood and energy”</span> (Robins). The one service note in the file: <span class="hlw">“Good quality blend but wish shipping was cheaper”</span> (3★).</p>
   </div>
 </div>
 <div class="strain gold" id="strain-marandas-masquerade">
@@ -580,9 +583,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>Equal parts Yellow Maeng Da, Green Bali, Summon and the Bewitched Signature Blend — a four-way built as a memorial to a late customer. Sold one way only: <b>125g, $15 flat</b> (12¢/g).</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“clarity, comfort, and a touch of magic.”</span> Several blends in this shop are collaborations or memorials; this is the one whose reason for existing is the recipe.</p>
+    <p><span class="hly">“clarity, comfort, and a touch of magic.”</span> Several blends in this shop are collaborations or memorials; this is the one whose reason for existing is the recipe.</p>
     <h4>💬 Community reports</h4>
-    <p>Seven reviews, mostly tribute rather than testing — the community reviewing its own. The single measured effect report: <span class="pq">“mild-moderate energy &amp; mood boost”</span> (Crinzi, 3★). Buy it for what it is: a gentle mid-spectrum blend carrying a person’s name with care.</p>
+    <p>Seven reviews, mostly tribute rather than testing — the community reviewing its own. The single measured effect report: <span class="hly">“mild-moderate energy &amp; mood boost”</span> (Crinzi, 3★). Buy it for what it is: a gentle mid-spectrum blend carrying a person’s name with care.</p>
   </div>
 </div>
 <div class="strain green" id="strain-evocation">
@@ -590,11 +593,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:58%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid · 58%</b> — Classic Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>An equal-parts mix of all the shop’s top-rated green strains — and a moving target by design: the recipe is <span class="pq">“updated with each new harvest.”</span> 25g $7 · 1kg $79.</p>
+    <p>An equal-parts mix of all the shop’s top-rated green strains — and a moving target by design: the recipe is <span class="hlg">“updated with each new harvest.”</span> 25g $7 · 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“The premier green blend… the centerpiece of the collection.”</span> The biggest language on the classic menu.</p>
+    <p><span class="hlg">“The premier green blend… the centerpiece of the collection.”</span> The biggest language on the classic menu.</p>
     <h4>💬 Community reports</h4>
-    <p>And the menu’s lowest rating: <b>3.00 from a single review</b> — <span class="pq">“The current iteration of Evocation is a moderate energizer with noticeable analgesic effect”</span> (Crinzi, 3★). Moderate is not a failure; it is simply not a centerpiece. Because the blend reformulates every harvest, no review — including this one — can permanently pin it. The gap between the copy and the record is the finding.</p>
+    <p>And the menu’s lowest rating: <b>3.00 from a single review</b> — <span class="hlg">“The current iteration of Evocation is a moderate energizer with noticeable analgesic effect”</span> (Crinzi, 3★). Moderate is not a failure; it is simply not a centerpiece. Because the blend reformulates every harvest, no review — including this one — can permanently pin it. The gap between the copy and the record is the finding.</p>
     <div class="popbox deep">Hype-gap card: vendor superlatives vs. the thinnest, coolest review file in the classic line. The powder may be fine; the crown is unearned so far.</div>
   </div>
 </div>
@@ -603,11 +606,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:60%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid+ · 60%</b> — Classic Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>The red-vein blend of the vendor’s “Necromancy series” — components not itemized. 25g $7 · 1kg $79.</p>
+    <p>The red-vein blend of the vendor’s <span class="hlr">“Necromancy series”</span> — components not itemized. 25g $7 · 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“a powerful red vein kratom blend.”</span> Everything else about its build is the shop’s secret.</p>
+    <p><span class="hlr">“a powerful red vein kratom blend.”</span> Everything else about its build is the shop’s secret.</p>
     <h4>💬 Community reports</h4>
-    <p>The surprise of the classic line: <span class="pq">“moderate-strong energy &amp; mild analgesic effect. This is NOT a sleepy red”</span> (Crinzi — who backed the read with a kilo order); <span class="pq">“kept me up all night with so much energy”</span> plus relief (elisa2476); daytime pain, tension and low-mood relief (dreadiscussions). At 60%, it is the fastest red on this menu by a wide margin. One value note: <span class="pq">“Not bad. A little expensive for me but it’s a good blend”</span> (3★).</p>
+    <p>The surprise of the classic line: <span class="hlr">“moderate-strong energy &amp; mild analgesic effect. This is NOT a sleepy red”</span> (Crinzi — who backed the read with a kilo order); <span class="hlr">“kept me up all night with so much energy”</span> plus relief (elisa2476); daytime pain, tension and low-mood relief (dreadiscussions). At 60%, it is the fastest red on this menu by a wide margin. One value note: <span class="hlr">“Not bad. A little expensive for me but it’s a good blend”</span> (3★).</p>
     <div class="popbox star">If your reds must work daytime hours, this is the one: a red with a green’s schedule and a kilo-buyer’s endorsement.</div>
   </div>
 </div>
@@ -618,9 +621,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>60% Yellow Maeng Da + 40% Green Maeng Da — two of the base line’s friendliest leaves, crossed. 25g $7 · 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“cosmic uplift and timeless beauty.”</span></p>
+    <p><span class="hly">“cosmic uplift and timeless beauty.”</span></p>
     <h4>💬 Community reports</h4>
-    <p><b>Split record — two reviews, two products, seemingly.</b> <span class="pq">“a powerful calming strain… incredible euphoria and considerable pain relief”</span> (Crinzi) versus <span class="pq">“awesome blend to get your day started! Energetic but not overwhelming”</span> (christine). The likely reconciler is dose: gentle at breakfast portions, sedating-euphoric higher up. The chart splits the difference; your mileage is the experiment.</p>
+    <p><b>Split record — two reviews, two products, seemingly.</b> <span class="hly">“a powerful calming strain… incredible euphoria and considerable pain relief”</span> (Crinzi) versus <span class="hly">“awesome blend to get your day started! Energetic but not overwhelming”</span> (christine). The likely reconciler is dose: gentle at breakfast portions, sedating-euphoric higher up. The chart splits the difference; your mileage is the experiment.</p>
   </div>
 </div>
 <div class="strain green" id="strain-relentless-troll">
@@ -630,16 +633,16 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>A green/red/gold three-way (ratios unpublished), named — with love — for the owner’s online trolls. Currently sale-priced from $5 at the 25g rung; 1kg $79.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“A gold, red and green blend.. this is a fan favorite!”</span> Understated, for once.</p>
+    <p><span class="hlg">“A gold, red and green blend.. this is a fan favorite!”</span> Understated, for once.</p>
     <h4>💬 Community reports</h4>
-    <p>Three reviews, all 5★, and the strongest natural-powder claim in the corpus: <span class="pq">“easily one of the strongest natural powders I’ve ever had from any site… potent clean energy”</span> (Crinzi, with a kilo follow-up). An unenhanced blend running at 80% on the map, in Wishbone’s neighborhood, at classic-blend prices.</p>
+    <p>Three reviews, all 5★, and the strongest natural-powder claim in the corpus: <span class="hlg">“easily one of the strongest natural powders I’ve ever had from any site… potent clean energy”</span> (Crinzi, with a kilo follow-up). An unenhanced blend running at 80% on the map, in Wishbone’s neighborhood, at classic-blend prices.</p>
     <div class="popbox star">The joke name is camouflage: by the review record, this is one of the two or three most potent natural powders the shop sells.</div>
   </div>
 </div>
 
 <!-- ================= ENHANCED BLENDS ================= -->
 <div class="colorband band-arcane" id="enhanced">
-  <h2>⚗️ Enhanced blends — the extract line</h2>
+  <h2><span class="icobtn" style="--bb:#efe9f7;--bm:#b39ddb;--bd:#4a3369">⚗️</span> Enhanced blends — the extract line</h2>
   <p>Fourteen extract-layered blends — the shop’s reputation line, its best value claim, and its two biggest honesty flags.</p>
   <div class="bigicon">⚗️</div>
 </div>
@@ -654,7 +657,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>The build is the pitch: two exclusive Panji leaves plus a gold extract layer, pitched dead-center on the spectrum — and the reviews land it exactly there.</p>
     <h4>💬 Community reports</h4>
-    <p>Three reviews, one cooler voice among the praise: <span class="pq">“moderately energetic and strongly analgesic”</span> (Crinzi, 3★); <span class="pq">“The perfect mix of energy and relaxation… Absolute banger”</span> (David (sleep)); <span class="pq">“smooth mellow energy… 10/10”</span> (Napolitano). The relief score (4) is the headline — this is the enhanced line’s balance point.</p>
+    <p>Three reviews, one cooler voice among the praise: <span class="hlb">“moderately energetic and strongly analgesic”</span> (Crinzi, 3★); <span class="hlb">“The perfect mix of energy and relaxation… Absolute banger”</span> (David (sleep)); <span class="hlb">“smooth mellow energy… 10/10”</span> (Napolitano). The relief score (4) is the headline — this is the enhanced line’s balance point.</p>
   </div>
 </div>
 <div class="strain blend" id="strain-cleopatra">
@@ -666,7 +669,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>A gold-vein blend wearing three extract layers — the vendor’s most ambitious recipe, built on her flagship base.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Thin evidence — two reviews, both 5★, one detailed.</b> That one is a flare: <span class="pq">“super potent… BIG ENERGY &amp; FOCUS… Plus pain relief… I literally could stay awake and felt better”</span> (Thomas). Unusually fast and bright for anything gold-based — that is what the thin evidence says, and the card is labeled for exactly that thinness.</p>
+    <p><b>Thin evidence — two reviews, both 5★, one detailed.</b> That one is a flare: <span class="hlb">“super potent… BIG ENERGY &amp; FOCUS… Plus pain relief… I literally could stay awake and felt better”</span> (Thomas). Unusually fast and bright for anything gold-based — that is what the thin evidence says, and the card is labeled for exactly that thinness.</p>
     <div class="popbox deep">Thin-evidence card: two reviews deep. The profile is exciting and plausible given the build, but it awaits a crowd — my own 250g bag among the witnesses still to be heard from.</div>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 250g in my order #62230 (Oct 10, 2026).</div>
   </div>
@@ -676,11 +679,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:70%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid-Upper · 70%</b> — Enhanced Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>Green Monster + White Panji + Gold Bali — a collaboration with “Sean from Unlikely Pack,” and the only blend sold in <b>both classic and enhanced versions of every size</b>. Enhanced: 25g $8 · 1kg $89.</p>
+    <p>Green Monster + White Panji + Gold Bali — a collaboration with <span class="hlb">“Sean from Unlikely Pack,”</span> and the only blend sold in <b>both classic and enhanced versions of every size</b>. Enhanced: 25g $8 · 1kg $89.</p>
     <h4>📡 Vendor notes</h4>
     <p>The collab model is this shop’s social fabric in product form: customers don’t just review here, they co-author.</p>
     <h4>💬 Community reports</h4>
-    <p>Two reviews of the enhanced version, both 5★: <span class="pq">“pleasant and strong, longer lasting burn. Very uplifting and energetic, yet quite smooth”</span> (Blue); <span class="pq">“My favorite morning blend so far! A little kick to get the day going and some sweet golden Bali to ease my joints”</span> (DeLong). The Gold Bali third explains the joint note — and the smoothness.</p>
+    <p>Two reviews of the enhanced version, both 5★: <span class="hlb">“pleasant and strong, longer lasting burn. Very uplifting and energetic, yet quite smooth”</span> (Blue); <span class="hlb">“My favorite morning blend so far! A little kick to get the day going and some sweet golden Bali to ease my joints”</span> (DeLong). The Gold Bali third explains the joint note — and the smoothness.</p>
   </div>
 </div>
 <div class="strain blend" id="strain-1692">
@@ -688,9 +691,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:25%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid-Low / Slow · 25%</b> — Enhanced Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>85% Signature Red Panji + 15% Gold Bali + “a touch of Gold Extract” — a red-forward build named for the Salem year. 25g $8 · 1kg $89. One of the eight products in my own orders (250g, order #62230).</p>
+    <p>85% Signature Red Panji + 15% Gold Bali + <span class="hlb">“a touch of Gold Extract”</span> — a red-forward build named for the Salem year. 25g $8 · 1kg $89. One of the eight products in my own orders (250g, order #62230).</p>
     <h4>📡 Vendor notes</h4>
-    <p>One of only two products on the menu with vendor speed tags: <b>Moderate/Slow</b>. The vendor frames it as <span class="pq">“a red forward blend that fits comfortably from midday into the evening.”</span></p>
+    <p>One of only two products on the menu with vendor speed tags: <b>Moderate/Slow</b>. The vendor frames it as <span class="hlb">“a red forward blend that fits comfortably from midday into the evening.”</span></p>
     <h4>💬 Community reports</h4>
     <p><b>Zero community reports exist — this product has no reviews at all.</b> Nothing in this card’s chart comes from a customer. The profile shown is the vendor’s description plus what the recipe predicts (Red Panji-dominant calm with a gold cushion), published so the menu is complete — and labeled so no reader mistakes it for measured fact.</p>
     <div class="popbox deep">Vendor-claim-only card: the honest empty chair of this guide. If a future edition fills it, the data will come from reports — or from my own bag, first-hand.</div>
@@ -704,9 +707,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>Green Panji touched with Red Diamond Extract at just 2g per kilo — on paper, the lightest enhancement on the menu. 25g $8 · 1kg $89.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Great for midday going into night time.”</span> The vendor positions it as the enhanced line’s bridge into evening.</p>
+    <p><span class="hlb">“Great for midday going into night time.”</span> The vendor positions it as the enhanced line’s bridge into evening.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Thin evidence — two reviews, no effect detail at all</b> (<span class="pq">“Fabulous”</span>; <span class="pq">“10 stars”</span>). Enthusiasm without data: the chart leans on the recipe and the vendor’s framing, and the card says so.</p>
+    <p><b>Thin evidence — two reviews, no effect detail at all</b> (<span class="hlb">“Fabulous”</span>; <span class="hlb">“10 stars”</span>). Enthusiasm without data: the chart leans on the recipe and the vendor’s framing, and the card says so.</p>
     <div class="popbox deep">Thin-evidence card: two applause lines, zero measurements. Included at profile level for menu completeness only.</div>
   </div>
 </div>
@@ -715,11 +718,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:68%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid+ · 68%</b> — Enhanced Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>Green Maeng Da + Red Panji + “a touch of 7% Red and Black extract” — a 2025 limited Halloween blend that earned its way into the standing menu. 25g $8 · 1kg tops at $97 here. One of the eight products in my own orders (125g, order #62190).</p>
+    <p>Green Maeng Da + Red Panji + <span class="hlb">“a touch of 7% Red and Black extract”</span> — a 2025 limited Halloween blend that earned its way into the standing menu. 25g $8 · 1kg tops at $97 here. One of the eight products in my own orders (125g, order #62190).</p>
     <h4>📡 Vendor notes</h4>
     <p>The vendor’s own speed tags say <b>Moderate/Slow</b> — and the review record flatly disagrees. One of only two tagged products on the menu, and the tag undersells it.</p>
     <h4>💬 Community reports</h4>
-    <p>Six reviews, all 5★: <span class="pq">“an elite Energy blend in the Bewitched Enhanced roster, &amp; ranks alongside SuperNova, WishBone &amp; Enchanted Full Moon”</span> (Crinzi — a kilo buyer); <span class="pq">“so comfortable and at ease… my favorite of the 2025 Halloween blends”</span> (Drea Discussions); <span class="pq">“chill and focus”</span> (Schneider). Trust the corpus over the tag: this is an energy blend with manners.</p>
+    <p>Six reviews, all 5★: <span class="hlb">“an elite Energy blend in the Bewitched Enhanced roster, &amp; ranks alongside SuperNova, WishBone &amp; Enchanted Full Moon”</span> (Crinzi — a kilo buyer); <span class="hlb">“so comfortable and at ease… my favorite of the 2025 Halloween blends”</span> (Drea Discussions); <span class="hlb">“chill and focus”</span> (Schneider). Trust the corpus over the tag: this is an energy blend with manners.</p>
     <div class="popbox deep">Tag-vs-record mismatch: the vendor files Horseman at Moderate/Slow; six unanimous reviews file it with the elite energy tier. The map follows the record.</div>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 125g in my order #62190 (Oct 4, 2026), in an all-enhanced first order with Screams Of Green, Wishbone and Supernova.</div>
   </div>
@@ -731,9 +734,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>🌿 The leaf</h4>
     <p>99% Green Bali + 1% White Diamond extract — the menu’s most conservative enhancement ratio, built on its most consistent base. 25g $8 · 1kg $89.</p>
     <h4>📡 Vendor notes</h4>
-    <p>Sold as <span class="pq">“high-velocity.”</span> The build (1% extract) makes that a bold word for a gentle nudge.</p>
+    <p>Sold as <span class="hlb">“high-velocity.”</span> The build (1% extract) makes that a bold word for a gentle nudge.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Genuinely split, four reviews.</b> The highs: <span class="pq">“top 3 all time for me… energy and mood uplifting”</span> (Peebles); <span class="pq">“both calming and energizing”</span> (dreadiscussions). The shrug: <span class="pq">“fairly average… It’s decent and will stay in my rotation, but it’s not special”</span> (Crinzi, 3★). If you love Green Bali, the 1% spark is a garnish; if you wanted transformation, the ratio never promised it.</p>
+    <p><b>Genuinely split, four reviews.</b> The highs: <span class="hlb">“top 3 all time for me… energy and mood uplifting”</span> (Peebles); <span class="hlb">“both calming and energizing”</span> (dreadiscussions). The shrug: <span class="hlb">“fairly average… It’s decent and will stay in my rotation, but it’s not special”</span> (Crinzi, 3★). If you love Green Bali, the 1% spark is a garnish; if you wanted transformation, the ratio never promised it.</p>
   </div>
 </div>
 <div class="strain blend" id="strain-supernova">
@@ -745,7 +748,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>A layered build on paper: two gold-family bases, two gold-family enhancers. The recipe reads like the experience reviewers describe — lift first, warmth after.</p>
     <h4>💬 Community reports</h4>
-    <p>Four reviews, all 5★: <span class="pq">“the site’s #2 enhanced powder for strong clean energy, after Wishbone”</span> (Crinzi — a kilo buyer); <span class="pq">“Amazing mood, sense of well being, and slight motivation that slowly melts into a warm relaxation”</span> (Degerick); <span class="pq">“very smooth, anxiety relieving and chill”</span> (Thomas). The energy-to-warmth arc is the signature.</p>
+    <p>Four reviews, all 5★: <span class="hlb">“the site’s #2 enhanced powder for strong clean energy, after Wishbone”</span> (Crinzi — a kilo buyer); <span class="hlb">“Amazing mood, sense of well being, and slight motivation that slowly melts into a warm relaxation”</span> (Degerick); <span class="hlb">“very smooth, anxiety relieving and chill”</span> (Thomas). The energy-to-warmth arc is the signature.</p>
     <div class="popbox star">The enhanced line’s best-balanced crowd-pleaser: flagship-tier energy with a landing, at standard enhanced prices.</div>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 250g in my order #62190 (Oct 4, 2026).</div>
   </div>
@@ -759,7 +762,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>The build is a fast-leaning trio under a black-diamond sparkle — and in 2024, the record matched the blueprint perfectly.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Two eras, printed side by side because printing only one would mislead.</b> 2024: <span class="pq">“Best blend I’ve ever had. Hands down.”</span> (Gray); <span class="pq">“Clean, sharp focus without any jitters… eased my joint pain”</span> (Driscoll); <span class="pq">“First time in a year that I’ve actually gotten the warm and fuzzies from leaf!”</span> (Sarah). October 2025: <span class="pq">“All the reviews lauding Scream Queen are quite old… I got nothing off this powder”</span> (Crinzi, 1★) — and on retest at <b>four times</b> his usual enhanced dose, <span class="pq">“Strong Energy &amp; mild analgesia… I just wish it didn’t take such a heavy dose to get it”</span> (2★). The 4.43 average hides the split; this card does not. (The corpus also holds two near-identical 5★ posts from one reviewer on one day in Oct 2026 — enthusiasm, counted with care.)</p>
+    <p><b>Two eras, printed side by side because printing only one would mislead.</b> 2024: <span class="hlb">“Best blend I’ve ever had. Hands down.”</span> (Gray); <span class="hlb">“Clean, sharp focus without any jitters… eased my joint pain”</span> (Driscoll); <span class="hlb">“First time in a year that I’ve actually gotten the warm and fuzzies from leaf!”</span> (Sarah). October 2025: <span class="hlb">“All the reviews lauding Scream Queen are quite old… I got nothing off this powder”</span> (Crinzi, 1★) — and on retest at <b>four times</b> his usual enhanced dose, <span class="hlb">“Strong Energy &amp; mild analgesia… I just wish it didn’t take such a heavy dose to get it”</span> (2★). The 4.43 average hides the split; this card does not. (The corpus also holds two near-identical 5★ posts from one reviewer on one day in Oct 2026 — enthusiasm, counted with care.)</p>
     <div class="popbox deep">Batch-variability flag — the most important honesty note in this guide. Either the current batch runs far weaker than the 2024 original, or something else changed. Buy the current file, not the legend: the 2024 chart above describes the blend at its documented best.</div>
   </div>
 </div>
@@ -772,7 +775,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>The build straddles the spectrum on purpose: yellow brightness over red depth, with extracts on both ends.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Split record — the two camps describe different products.</b> Energy camp: <span class="pq">“strong clean energy… among the better enhanced powders”</span> and a ranking beside Screams Of Green and Enchanted Full Moon (Crinzi). Sedation camp: <span class="pq">“bedtime relaxation and relief from pain”</span> (DeLong); <span class="pq">“the most comforting blend I have ever had”</span> (dreadiscussions). Four reviews deep, the honest summary is that dose, timing, or the drinker decides which Corvus shows up.</p>
+    <p><b>Split record — the two camps describe different products.</b> Energy camp: <span class="hlb">“strong clean energy… among the better enhanced powders”</span> and a ranking beside Screams Of Green and Enchanted Full Moon (Crinzi). Sedation camp: <span class="hlb">“bedtime relaxation and relief from pain”</span> (DeLong); <span class="hlb">“the most comforting blend I have ever had”</span> (dreadiscussions). Four reviews deep, the honest summary is that dose, timing, or the drinker decides which Corvus shows up.</p>
   </div>
 </div>
 <div class="strain blend" id="strain-wishbone">
@@ -784,7 +787,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>Another co-authored recipe: the customer designed it, the shop built it, and the review corpus crowned it.</p>
     <h4>💬 Community reports</h4>
-    <p>Four reviews, and the strongest comparative claim on the site: <span class="pq">“In terms of strong clean energy, Wishbone is the most potent powder on the site. A tiny dose yields exceptional energy + focus, with faint analgesia”</span> (Crinzi — who bought a kilo). A second voice tempers the dose-dependence: <span class="pq">“Well balanced and motivating… Not too stimulating”</span> (Vanbrunt). Small servings, large effect — dose like it matters.</p>
+    <p>Four reviews, and the strongest comparative claim on the site: <span class="hlb">“In terms of strong clean energy, Wishbone is the most potent powder on the site. A tiny dose yields exceptional energy + focus, with faint analgesia”</span> (Crinzi — who bought a kilo). A second voice tempers the dose-dependence: <span class="hlb">“Well balanced and motivating… Not too stimulating”</span> (Vanbrunt). Small servings, large effect — dose like it matters.</p>
     <div class="popbox star">The clean-energy ceiling of this entire guide: fastest enhanced on the map, top clarity score, and a kilo-buyer’s superlative behind it.</div>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 250g in my order #62190 (Oct 4, 2026).</div>
   </div>
@@ -794,11 +797,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:80%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Fast · 80%</b> — Enhanced Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>A green + white blend <span class="pq">“infused with 30% full-spectrum extract”</span> — the heaviest stated infusion ratio on the menu. 25g $8 · 1kg $89. One of the eight products in my own orders (125g, order #62190).</p>
+    <p>A green + white blend <span class="hlb">“infused with 30% full-spectrum extract”</span> — the heaviest stated infusion ratio on the menu. 25g $8 · 1kg $89. One of the eight products in my own orders (125g, order #62190).</p>
     <h4>📡 Vendor notes</h4>
     <p>The name is the billboard and the dare at once: this is the enhanced line turned up.</p>
     <h4>💬 Community reports</h4>
-    <p>Five reviews of strong, clean lift: <span class="pq">“strong clean energy, similar in magnitude to Ragnarok, Enchanted Full Moon, &amp; Drea’s Corvus”</span> (Crinzi, kilo follow-up); <span class="pq">“Great energy and mood boost”</span> (Soto); <span class="pq">“Great energizing green. Well balanced.”</span> (Vanbrunt). It also has a tiny media footprint — the Kratom Planet channel’s review “#050 Screams of Green” is one of the few YouTube takes on this vendor.</p>
+    <p>Five reviews of strong, clean lift: <span class="hlb">“strong clean energy, similar in magnitude to Ragnarok, Enchanted Full Moon, &amp; Drea’s Corvus”</span> (Crinzi, kilo follow-up); <span class="hlb">“Great energy and mood boost”</span> (Soto); <span class="hlb">“Great energizing green. Well balanced.”</span> (Vanbrunt). It also has a tiny media footprint — the Kratom Planet channel’s review “#050 Screams of Green” is one of the few YouTube takes on this vendor.</p>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 125g in my order #62190 (Oct 4, 2026) — my first Bewitched order was four enhanced blends, and this was the loudest name in the box.</div>
   </div>
 </div>
@@ -807,11 +810,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:30%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid-Low · 30%</b> — Enhanced Blend</div></div>
     <h4>🌿 The leaf</h4>
-    <p>Gold + Black Maeng Da, “triple enhanced” — and <b>infused with coffee</b>. That last fact is the headline: the vendor prints the caffeine note in all caps, and so does this guide. 25g $8 · 1kg $89.</p>
+    <p>Gold + Black Maeng Da, <span class="hlb">“triple enhanced”</span> — and <b>infused with coffee</b>. That last fact is the headline: the vendor prints the caffeine note in all caps, and so does this guide. 25g $8 · 1kg $89.</p>
     <h4>📡 Vendor notes</h4>
-    <p>The coffee is not a garnish; by the corpus’s own tasting note the leaf is <span class="pq">“thoroughly saturated with coffee.”</span> Caffeine-sensitive readers: this is the one product on the menu where that matters.</p>
+    <p>The coffee is not a garnish; by the corpus’s own tasting note the leaf is <span class="hlb">“thoroughly saturated with coffee.”</span> Caffeine-sensitive readers: this is the one product on the menu where that matters.</p>
     <h4>💬 Community reports</h4>
-    <p><b>Split record, six reviews.</b> The majority (2023–24) file it as a night blend: <span class="pq">“my night-time go-to… I sleep like a baby”</span> (dreadiscussions); <span class="pq">“warmth and relaxation gently washes over mind and body… drift off to sleep”</span> at half dose (Pattycliffy9993). The dissent is bewildered and specific: <span class="pq">“strong clean energy… best-tasting”</span> (Crinzi). Caffeine may explain both files — a sedative-leaning blend that wakes one reviewer in ten. The chart follows the majority; the dissent stays printed.</p>
+    <p><b>Split record, six reviews.</b> The majority (2023–24) file it as a night blend: <span class="hlb">“my night-time go-to… I sleep like a baby”</span> (dreadiscussions); <span class="hlb">“warmth and relaxation gently washes over mind and body… drift off to sleep”</span> at half dose (Pattycliffy9993). The dissent is bewildered and specific: <span class="hlb">“strong clean energy… best-tasting”</span> (Crinzi). Caffeine may explain both files — a sedative-leaning blend that wakes one reviewer in ten. The chart follows the majority; the dissent stays printed.</p>
     <div class="popbox deep">Coffee-infusion flag: the only caffeinated product in this guide. Its spectrum mark (30%) follows the majority night-blend record, not the one energetic dissent.</div>
   </div>
 </div>
@@ -824,7 +827,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
     <h4>📡 Vendor notes</h4>
     <p>Uniquely on this menu, the 4078 lists <i>component</i> COAs (Red Maeng Da, White Panji, Yellow Maeng Da — batch 16.06.888) in its product attributes: no finished-blend certificate, but real lab paper under the ingredients.</p>
     <h4>💬 Community reports</h4>
-    <p>The strongest consensus in this guide, sustained across three years of repeat buyers (2023–2026): <span class="pq">“the most well balanced, and reliable blend I’ve found. Very strong, yet chill”</span> (Dylyn Blue); <span class="pq">“If you need numbing &amp; also need to be alert/productive, 4078 is my first recommendation from the Bewitched roster”</span> (Crinzi — who ranks its energy+focus with the top enhanced tier, then adds “a lot more analgesia”). It is the rare chart with no weak axis: energy, mood, clarity and relief all post top marks.</p>
+    <p>The strongest consensus in this guide, sustained across three years of repeat buyers (2023–2026): <span class="hlb">“the most well balanced, and reliable blend I’ve found. Very strong, yet chill”</span> (Dylyn Blue); <span class="hlb">“If you need numbing &amp; also need to be alert/productive, 4078 is my first recommendation from the Bewitched roster”</span> (Crinzi — who ranks its energy+focus with the top enhanced tier, then adds <span class="hlb">“a lot more analgesia”</span>). It is the rare chart with no weak axis: energy, mood, clarity and relief all post top marks.</p>
     <div class="popbox star">The roster’s flagship by acclamation — and the profile this guide would hand a first-time buyer who asked for one bag that does everything.</div>
     <div class="popbox tip">🛒 <b>Verified buyer:</b> 250g in my order #62230 (Oct 10, 2026).</div>
   </div>
@@ -832,7 +835,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= CAPSULES & FORMATS ================= -->
 <div class="colorband band-neutral" id="capsules">
-  <h2>💊 Capsules, kilos &amp; more — formats &amp; bulk</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">💊</span> Capsules, kilos &amp; more — formats &amp; bulk</h2>
   <p>Pre-filled capsules (including strains sold no other way), the kilo wall, sample packs — and one caffeinated exception that gets its own full card.</p>
   <div class="bigicon">💊</div>
 </div>
@@ -842,11 +845,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="strain-body">
     <div class="specwrap"><div class="specbar"><div class="specmark" style="left:20%"></div></div><div class="specends"><span>Slow</span><span>Fast</span></div><div class="spectag">Spectrum position (report-derived): <b>Mid-Low / Slow · 20%</b> — Capsules</div></div>
     <h4>🌿 The leaf</h4>
-    <p>Green Maeng Da + Yellow Maeng Da plus <b>25mg of 20% MIT extract in every capsule</b> — 20/30/60 caps at $12.50–$35. Currently shipped in clear caps; the vendor notes she <span class="pq">“cannot currently locate any black capsules.”</span></p>
+    <p>Green Maeng Da + Yellow Maeng Da plus <b>25mg of 20% MIT extract in every capsule</b> — 20/30/60 caps at $12.50–$35. Currently shipped in clear caps; the vendor notes she <span class="hlb">“cannot currently locate any black capsules.”</span></p>
     <h4>📡 Vendor notes</h4>
     <p>The strain names suggest a daytime green-yellow capsule. The extract dose says otherwise — and the vendor’s own recipe is the evidence.</p>
     <h4>💬 Community reports</h4>
-    <p>Six reviews, all 5★, all pointing the same direction: <span class="pq">“Each Moon Drop has 0.5g of strongly sedative enhanced powder… Very Potent… night caps”</span> (Crinzi), with repeated pain- and anxiety-relief praise and convenience love. <b>The review record flatly contradicts the daytime impression the strain names give</b> — file Moon Drops under evening, whatever the label colors say.</p>
+    <p>Six reviews, all 5★, all pointing the same direction: <span class="hlb">“Each Moon Drop has 0.5g of strongly sedative enhanced powder… Very Potent… night caps”</span> (Crinzi), with repeated pain- and anxiety-relief praise and convenience love. <b>The review record flatly contradicts the daytime impression the strain names give</b> — file Moon Drops under evening, whatever the label colors say.</p>
     <div class="popbox deep">Name-vs-record flag: the only product in this guide whose reviews reverse its framing. Evening product; the extract, not the leaf colors, is in charge.</div>
   </div>
 </div>
@@ -886,7 +889,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </div>
 <div class="popbox tip"><b>Footnote — Turmeric Curcumin Gummies ($5, pack of 10).</b> The menu’s one potentiator: 550mg gummies with black pepper and ginger; the vendor’s use note is 2 gummies 15 minutes before a serving. A checkout extra, not a kratom product — listed so the catalog in this guide is complete.</div>
 <div class="colorband band-neutral" id="matrix">
-  <h2>📊 Master comparison matrix</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📊</span> Master comparison matrix</h2>
   <p>Every profiled product, its line, its character, its report-derived spectrum position, and its on-site review record.</p>
   <div class="bigicon">📊</div>
 </div>
@@ -932,12 +935,12 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= COA / LAB ================= -->
 <div class="colorband band-neutral" id="coa">
-  <h2>🧪 Alkaloid &amp; lab reference</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧪</span> Alkaloid &amp; lab reference</h2>
   <p>What is published, what is claimed, and what isn’t.</p>
   <div class="bigicon">🧪</div>
 </div>
 <div class="catintro">
-  <p><b>Real COAs — for six base strains.</b> Against the vendor’s Labs-page promise (<span class="pq">“we believe you deserve to know exactly what’s in the products you buy”</span>), certificates from <b>Wonderland Labs</b> are genuinely published inside the product galleries, all under a single batch number, <b>16.06.888</b>:</p>
+  <p><b>Real COAs — for six base strains.</b> Against the vendor’s Labs-page promise (<span class="hlb">“we believe you deserve to know exactly what’s in the products you buy”</span>), certificates from <b>Wonderland Labs</b> are genuinely published inside the product galleries, all under a single batch number, <b>16.06.888</b>:</p>
   <table class="grid">
     <tr><th>Strain</th><th><span class="cmp" data-t="mitragynine">Mitragynine</span></th><th>Certificate</th></tr>
     <tr><td>White Panji</td><td><b>2.04%</b></td><td><a href="https://bewitchedbotanical.com/wp-content/uploads/2025/12/Bewitched-Botanical-White-Panji-1606888-COA.jpg">view COA</a></td></tr>
@@ -954,19 +957,19 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
 <!-- ================= SOURCING / THE SHOP ================= -->
 <div class="colorband band-neutral" id="sourcing">
-  <h2>🌱 The shop: one woman, small batches, honest drift</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🌱</span> The shop: one woman, small batches, honest drift</h2>
   <p>Who is behind the counter, how ordering actually works, and where the website doesn’t keep up with the shelves.</p>
   <div class="bigicon">🌱</div>
 </div>
 <div class="catintro">
-  <p><b>The operation.</b> Bewitched Botanical LLC is a one-woman shop: Candis, in the Tishomingo area of Oklahoma, blending personally since 2020. <span class="pq">“Hi there, I’m Candis! I’m obsessed with all things natural, magical, and a little mysterious.”</span> The catalog runs 43 kratom products (34 powders, 4 capsule products, 2 kilos, 2 sample packs, 1 potentiator) plus a “Mystical Goods” side shop. The community texture is real: blends are collaborations with customers and memorials to them, reviewers write like friends of the house, and orders arrive fast with a free sample tucked in — <span class="pq">“Candis is sweet and has the cutest packaging ever.”</span></p>
-  <p><b>How ordering works.</b> Charmingly manual: kilos, split kilos and sample-pack picks are specified in <b>free-text checkout notes</b> (<span class="pq">“Tell me what you want in the notes section at checkout please!!!”</span>). That is a genuine error surface — note an out-of-stock pick and it cannot be filled. Exchanges or store credit only, notice within 5 days, product unopened with heat seal intact; payment is due within 24 hours or the order auto-cancels. Shipments to West Virginia (my state) require ID verification. <b>No shipping rate is published anywhere</b> — cost appears at checkout only, and at least one reviewer has complained about it on the record.</p>
-  <p><b>Honest drift, itemized.</b> A credible guide names these: the FAQ page is unfinished placeholder Latin, published and never completed. Pink Elf’s prose praises two strains that are not in its own recipe. Red Panji’s copy says “Unavailable” on a product you can order. The banner’s no-ship state list and the Shipping page’s list do not match. Gold Bali’s page still carries an old “18 years old” template block while the rest of the site enforces 21+. None of it is product fraud — it is a single operator’s website trailing her shelves. Practical consequence: treat recipes and stock status as best confirmed at checkout.</p>
+  <p><b>The operation.</b> Bewitched Botanical LLC is a one-woman shop: Candis, in the Tishomingo area of Oklahoma, blending personally since 2020. <span class="hlb">“Hi there, I’m Candis! I’m obsessed with all things natural, magical, and a little mysterious.”</span> The catalog runs 43 kratom products (34 powders, 4 capsule products, 2 kilos, 2 sample packs, 1 potentiator) plus a “Mystical Goods” side shop. The community texture is real: blends are collaborations with customers and memorials to them, reviewers write like friends of the house, and orders arrive fast with a free sample tucked in — <span class="hlb">“Candis is sweet and has the cutest packaging ever.”</span></p>
+  <p><b>How ordering works.</b> Charmingly manual: kilos, split kilos and sample-pack picks are specified in <b>free-text checkout notes</b> (<span class="hlb">“Tell me what you want in the notes section at checkout please!!!”</span>). That is a genuine error surface — note an out-of-stock pick and it cannot be filled. Exchanges or store credit only, notice within 5 days, product unopened with heat seal intact; payment is due within 24 hours or the order auto-cancels. Shipments to West Virginia (my state) require ID verification. <b>No shipping rate is published anywhere</b> — cost appears at checkout only, and at least one reviewer has complained about it on the record.</p>
+  <p><b>Honest drift, itemized.</b> A credible guide names these: the FAQ page is unfinished placeholder Latin, published and never completed. Pink Elf’s prose praises two strains that are not in its own recipe. Red Panji’s copy says <span class="hlb">“Unavailable”</span> on a product you can order. The banner’s no-ship state list and the Shipping page’s list do not match. Gold Bali’s page still carries an old <span class="hlb">“18 years old”</span> template block while the rest of the site enforces 21+. None of it is product fraud — it is a single operator’s website trailing her shelves. Practical consequence: treat recipes and stock status as best confirmed at checkout.</p>
 </div>
 
 <!-- ================= CATALOG & VALUE ================= -->
 <div class="colorband band-neutral" id="catalog">
-  <h2>🛒 Current catalog, pricing &amp; value analysis</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🛒</span> Current catalog, pricing &amp; value analysis</h2>
   <p>October 2026 pricing as published — verified endpoints, my own receipts, and what the smart money does.</p>
   <div class="bigicon">🛒</div>
 </div>
@@ -990,13 +993,13 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <div class="pricecard"><div class="big">+$4</div><div class="plabel">Split Kilo Upgrade</div><p>$73–$93 split four ways. Four dollars converts one commitment into four trials — the best first big order here.</p></div>
   <div class="pricecard"><div class="big">20–32<small>¢/g</small></div><div class="plabel">25g Samplers</div><p>$5 / $7 / $8 by line. A standard sampler premium; the two sample packs (~17–25¢/g) shave it slightly.</p></div>
   <div class="pricecard"><div class="big">~50<small>¢/g</small></div><div class="plabel">Capsules</div><p>Pre-filled convenience at ~2.5× the powder route (enhanced ≈58.5¢/g). Pay for the filling, not the leaf.</p></div>
-  <div class="pricecard"><div class="big">15–18<small>¢/g</small></div><div class="plabel">My Actual Orders</div><p>What mid-ladder 125g/250g bags really cost me across two October orders — the “before” picture for the kilo advice above.</p></div>
+  <div class="pricecard"><div class="big">15–18<small>¢/g</small></div><div class="plabel">My Actual Orders</div><p>What mid-ladder 125g/250g bags really cost me across two October orders — the <span class="hlb">“before”</span> picture for the kilo advice above.</p></div>
 </div>
 <div class="popbox tip"><b>Best-value playbook:</b> (1) explore with the split kilo; (2) commit to straight kilos of proven favorites at 6.9–9.7¢/g; (3) treat enhanced kilos as the anomaly they are — enhanced product at single-digit cents per gram; (4) capsules only when convenience is the point; (5) remember SPOOKY25 excludes kilos, so October’s promo favors mid-size bags; (6) the Panji trio and Green Monster can’t be kilo’d at any price.</div>
 
 <!-- ================= BIBLIO ================= -->
 <div class="colorband band-neutral" id="biblio">
-  <h2>📚 Sources &amp; bibliography</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📚</span> Sources &amp; bibliography</h2>
   <p>Everything below was checked in October 2026.</p>
   <div class="bigicon">📚</div>
 </div>
@@ -1012,19 +1015,9 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
   <p><i>Negative findings stated plainly: Reddit could not be retrieved with the research tools available and no Bewitched-specific Reddit threads surfaced in general search — Reddit sentiment is an open gap, not a finding. No large YouTube reviewer has covered this vendor. Mid-ladder per-size prices are not publicly exposed by the storefront. A third-party “subscription cancellation” page circulating for this brand is generic boilerplate (it invents a subscription the shop does not appear to sell) and was excluded as evidence.</i></p>
 </div>
 
-<div class="disclaimer">This guide is published for research and educational purposes only.<br>✋ Independent customer review — no affiliation with Bewitched Botanical.</div>
 
-<footer class="site">Independent Customer Review · Bewitched Botanical · October 2026</footer>
-<footer class="peptopia-ftr">
-<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
-<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
-<div class="peptopia-ftr-icons">
-<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia home" class="logo-dark"><img src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia home" class="logo-light"></a>
-<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
-<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
-<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
-</div>
-</footer>
+<footer class="site">Complete Strain Guide for Bewitched Botanical · Independent Customer Research · October 2026</footer>
+
 </div><!-- /wrap -->
 <script>
 document.querySelectorAll('svg.pie').forEach(function(svg){

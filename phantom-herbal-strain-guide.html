@@ -123,9 +123,7 @@ table.grid tr:nth-child(even) td{background:#fbf9f3}
 .biblio li{margin:6px 0;font-size:14px}
 .biblio a{color:var(--accent);word-break:break-all}
 footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
-.toc-top{position:fixed;bottom:18px;right:18px;background:#23402f;color:#fff;border-radius:999px;
-  width:46px;height:46px;display:flex;align-items:center;justify-content:center;text-decoration:none;
-  font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #23402f;color:#23402f;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.35);z-index:50}
 @media print{.toc-top,.print-btn{display:none}.strain,.panel{break-inside:avoid}}
 .print-btn{position:fixed;top:18px;right:18px;background:#23402f;color:#fff;border:0;border-radius:999px;
   padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;
@@ -179,6 +177,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
 
+/* ===== Emphatic highlights (David 2026-10-24) ===== */
+.hlr,.hlg,.hlw,.hly,.hlb{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;border-radius:2px}
+.hlr{background:#fbe3de}.hlg{background:#e0f1e4}.hlw{background:#eef4dc}.hly{background:#fdf0cd}.hlb{background:#e9e2f7}
+/* ===== Raised circular icon buttons (David 2026-10-24) ===== */
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
 </style>
 </head>
 <body id="top">
@@ -217,7 +220,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </div>
 
 <!-- ================= INDEX ================= -->
-<h2>📖 Index</h2>
+<h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📖</span> Index</h2>
 <div class="card indexcard">
 <ol>
 <li><a href="#howto">How to use this guide &amp; the color map</a></li>
@@ -236,7 +239,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </ol>
 </div>
 
-<h2 id="howto">🧭 How to use this guide &amp; the color map</h2>
+<h2 id="howto"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧭</span> How to use this guide &amp; the color map</h2>
 <div class="card">
 <p>Strains are grouped by vein color — the industry's rough shorthand for character. <b>Reds</b> trend
 slow and heavy, <b>greens</b> sit in the balanced middle, <b>whites</b> trend bright and driving,
@@ -252,7 +255,7 @@ of what the vendor claims versus what can be verified. Read the <a href="#realit
 <a href="#reddit">Reddit record</a> before buying.</div>
 </div>
 
-<h2 id="thefour">📦 The Four — the October order, product by product</h2>
+<h2 id="thefour"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📦</span> The Four — the October order, product by product</h2>
 <div class="card">
 <p>Four items arrived in the October 2026 order: <b>Sunrise Blend 100g</b>, <b>Happy Phantom 100g</b>,
 <b>Phantom Yellow Haze 100g</b> (each $14.99), and a <b>free red sample</b> ($0.00). What follows is
@@ -273,7 +276,7 @@ for any of them — product pages state "Sold without directions or intended use
     <p>No community reviews found — not on Reddit, YouTube, the vendor's own product pages (which show "Reviews (0)"), or any indexed social venue. There is no public record of what this blend does.</p>
     <div class="popbox star">The focus-and-mood positioning suggests a white/green-leaning blend, but that is inference — the vendor says nothing.</div>
     <h4>🧪 Lab notes</h4>
-    <p class="coa-note">No COAs published. Phantom Herbal claims "lab-tested" site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
+    <p class="coa-note">No COAs published. Phantom Herbal claims <span class="hlb">"lab-tested"</span> site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
   </div>
 </div>
 
@@ -287,7 +290,7 @@ for any of them — product pages state "Sold without directions or intended use
     <p>No community reviews found anywhere indexed. Zero on-site reviews. Nothing to corroborate or contradict.</p>
     <div class="popbox star">A completely undisclosed recipe. You are buying the name and the price.</div>
     <h4>🧪 Lab notes</h4>
-    <p class="coa-note">No COAs published. Phantom Herbal claims "lab-tested" site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
+    <p class="coa-note">No COAs published. Phantom Herbal claims <span class="hlb">"lab-tested"</span> site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
   </div>
 </div>
 
@@ -301,7 +304,7 @@ for any of them — product pages state "Sold without directions or intended use
     <p>No community reviews found anywhere indexed. Zero on-site reviews.</p>
     <div class="popbox star">Don't read 'Yellow Haze' as a vein claim — the vendor files it with the blends.</div>
     <h4>🧪 Lab notes</h4>
-    <p class="coa-note">No COAs published. Phantom Herbal claims "lab-tested" site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
+    <p class="coa-note">No COAs published. Phantom Herbal claims <span class="hlb">"lab-tested"</span> site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
   </div>
 </div>
 
@@ -315,12 +318,12 @@ for any of them — product pages state "Sold without directions or intended use
     <p>No community reviews exist for any Phantom red to compare against. The sample's character will tell you more than the label does — if it impresses, ask the vendor which red it was, then buy that SKU.</p>
     <div class="popbox star">Mystery partially solved: it's a red, 10g, 1.5–1.7% on the label. The exact strain remains undisclosed.</div>
     <h4>🧪 Lab notes</h4>
-    <p class="coa-note">No COAs published. Phantom Herbal claims "lab-tested" site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
+    <p class="coa-note">No COAs published. Phantom Herbal claims <span class="hlb">"lab-tested"</span> site-wide but names no lab and publishes no certificates — see the <a href="#lab">lab reference</a>. The retail bags themselves print label-claimed ranges: <b>mitragynine 1.5–1.7%</b> (checked), 7-hydroxymitragynine 0.008–0.012%. Label claims are not lab certificates.</p>
   </div>
 </div>
 
-<h2 id="reds">🔴 Red strains — the catalog</h2>
-<div class="card"><p>Six red powders, each also sold "Enhanced (3%+)." Region-named, no farm or origin detail.
+<h2 id="reds"><span class="icobtn" style="--bb:#f7e8e4;--bm:#d98c8c;--bd:#7e241a">🔴</span> Red strains — the catalog</h2>
+<div class="card"><p>Six red powders, each also sold <span class="hlr">"Enhanced (3%+)."</span> Region-named, no farm or origin detail.
 No community data exists for any of them — the cards below are catalog facts, not reviews.</p></div>
 
 <table class="cattable">
@@ -332,9 +335,9 @@ No community data exists for any of them — the cards below are catalog facts, 
 <tr><td><b>Red Bentuangie</b></td><td>Fermented-style red; region-named, no origin detail given.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 <tr><td><b>Super Red</b></td><td>House &#x27;super&#x27; red line; no composition detail given.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 </table>
-<p class="note"> Every strain above is also sold in an "Enhanced (3%+)" version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
+<p class="note"> Every strain above is also sold in an <span class="hlr">"Enhanced (3%+)"</span> version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
 
-<h2 id="greens">🟢 Green strains — the catalog</h2>
+<h2 id="greens"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🟢</span> Green strains — the catalog</h2>
 <div class="card"><p>Five green powders plus Enhanced versions. Note the sloppy cataloging: Green Borneo, Green Malay,
 Green Vietnam and Super Green are all filed under the <b>"Green Maeng Da"</b> site category.</p></div>
 
@@ -346,9 +349,9 @@ Green Vietnam and Super Green are all filed under the <b>"Green Maeng Da"</b> si
 <tr><td><b>Green Vietnam</b></td><td>Classic green; listed under &#x27;Green Maeng Da&#x27; category on-site.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 <tr><td><b>Super Green</b></td><td>House &#x27;super&#x27; green; listed under &#x27;Green Maeng Da&#x27; category on-site.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 </table>
-<p class="note"> Every strain above is also sold in an "Enhanced (3%+)" version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
+<p class="note"> Every strain above is also sold in an <span class="hlg">"Enhanced (3%+)"</span> version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
 
-<h2 id="whites">⚪ White strains — the catalog</h2>
+<h2 id="whites"><span class="icobtn" style="--bb:#eef4e2;--bm:#b9d18a;--bd:#3c5f1d">⚪</span> White strains — the catalog</h2>
 <div class="card"><p>Five white powders plus Enhanced versions. Same pattern: region names, no origin detail,
 no community data.</p></div>
 
@@ -360,9 +363,9 @@ no community data.</p></div>
 <tr><td><b>White Sumatra</b></td><td>White vein; region-named, no origin detail given.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 <tr><td><b>Super White</b></td><td>House &#x27;super&#x27; white; no composition detail given.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 </table>
-<p class="note"> Every strain above is also sold in an "Enhanced (3%+)" version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
+<p class="note"> Every strain above is also sold in an <span class="hlw">"Enhanced (3%+)"</span> version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
 
-<h2 id="blends">🟡 House / Exotic Blends</h2>
+<h2 id="blends"><span class="icobtn" style="--bb:#fdf0cd;--bm:#e8c95a;--bd:#7d5f06">🟡</span> House / Exotic Blends</h2>
 <div class="card"><p>Phantom's branded blends — the line the vendor pushes hardest. Compositions undisclosed across the board.</p></div>
 
 <table class="cattable">
@@ -374,40 +377,40 @@ no community data.</p></div>
 <tr><td><b>Phantom Pink Lips</b></td><td>Exotic Blends house blend (newer, ~Jun 2026). Reviewer-described as a red + white combination; see community report below.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 <tr><td><b>Phantom Food</b></td><td>Enhanced-line blend; also in capsules. No composition disclosed.</td><td>$14.99–$80 <span class='note'>(100g–1kg)</span></td></tr>
 </table>
-<p class="note">Sleepy Phantom is described on-site as 'formulated for calm, rest' — the only blend with any effects copy beyond Sunrise Blend. Every strain above is also sold in an "Enhanced (3%+)" version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
+<p class="note">Sleepy Phantom is described on-site as 'formulated for calm, rest' — the only blend with any effects copy beyond Sunrise Blend. Every strain above is also sold in an <span class="hly">"Enhanced (3%+)"</span> version at $24.99–$104.99 (100g–1kg). Capsules (100/400/800ct, $25.99–$119.99) exist for Red Maeng Da, Green Maeng Da, White Maeng Da and Phantom Food.</p>
 
-<h2 id="reddit">🚨 What customers actually report — the Reddit record</h2>
+<h2 id="reddit"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🚨</span> What customers actually report — the Reddit record</h2>
 <div class="card">
 <p>Three Reddit threads name this vendor directly. Here is what they say — the bad <i>and</i> the good,
 in the reviewers' own words.</p>
 
 <h3>Thread 1: "Phantom Kratom" — r/TrueKratomReviews (Oct 2025) — customer-service disaster</h3>
-<p>A reviewer (u/TMVtaketheveil888) who never even got to try the product: <b>"Don't even bother. They are
-the absolute worst customer service I've ever dealt with in my life."</b> She emailed three times about a
+<p>A reviewer (u/TMVtaketheveil888) who never even got to try the product: <b><span class="hlb">"Don't even bother. They are
+the absolute worst customer service I've ever dealt with in my life."</span></b> She emailed three times about a
 sample offer, got no response — then says the vendor, whom she names as <b>"Kyle,"</b> publicly called her
-a liar instead of helping: <b>"He continued to call me a liar, instead of trying to make it right."</b>
-<b>"I have never, in my 45 years of living had such an awful customer service experience."</b></p>
+a liar instead of helping: <b><span class="hlb">"He continued to call me a liar, instead of trying to make it right."</span></b>
+<b><span class="hlb">"I have never, in my 45 years of living had such an awful customer service experience."</span></b></p>
 <p>The thread also contains a <b>shilling accusation</b>: a defender (u/Low-Molasses733) who told the
-complainant "That is a straight out lie on your part" was accused by another user of <i>being</i> the vendor
-("Dude, you ARE phantom vein lol"). He denied it — but admitted <b>"I have been helping him test his blends
-and he gave me some free stuff."</b> A free-product recipient attacking a complainant in a review thread is
+complainant <span class="hlb">"That is a straight out lie on your part"</span> was accused by another user of <i>being</i> the vendor
+(<span class="hlb">"Dude, you ARE phantom vein lol"</span>). He denied it — but admitted <b><span class="hlb">"I have been helping him test his blends
+and he gave me some free stuff."</span></b> A free-product recipient attacking a complainant in a review thread is
 exactly what shilling looks like, whether or not he is on payroll.</p>
-<p>Same thread, genuine product notes from u/slipperyspeciosa (Nov 2025): <i>"The white md had energy and
+<p>Same thread, genuine product notes from u/slipperyspeciosa (Nov 2025): <i><span class="hlb">"The white md had energy and
 good mood, not spectacular but good. Green md didnt hit for me. Red md was much stronger than expected,
-slow and relieving but I didn't get a mood boost."</i></p>
+slow and relieving but I didn't get a mood boost."</span></i></p>
 
 <h3>Thread 2: "Anyone get a Phantom Herbal free sample?" — r/kratomreview100 (Oct 2026) — mixed, leans negative</h3>
-<p>The original poster: <b>"Mine never showed. Contacted them and no response."</b> Another buyer:
-<b>"I ordered the sample, waited months just for them to ship it... took them weeks to respond and just to
-tell me to basically wait longer... Terrible first time impression."</b> The site offered a 30g strain of
+<p>The original poster: <b><span class="hlb">"Mine never showed. Contacted them and no response."</span></b> Another buyer:
+<b><span class="hlb">"I ordered the sample, waited months just for them to ship it... took them weeks to respond and just to
+tell me to basically wait longer... Terrible first time impression."</span></b> The site offered a 30g strain of
 choice; he got three 10g bags he didn't pick.</p>
-<p>On the product itself, one buyer is blunt: <b>"White Maeng Da was garbage. No positive effects, just nausea
-and headaches. Tasted old. Still have most of it."</b> Another: <i>"I tried the red and didn't feel much
-and it gave me a headache."</i></p>
-<p>But the same thread praises the <b>Enhanced</b> line: <i>"with phantom I have only paid money for Enhanced
-leaf and their 60% extract and its always been fire"</i> and <i>"I got the Enhanced Sunrise Blend and its
-really really fire, some of the best powder out their no joke."</i> Defenders say samples do arrive —
-slowly, because <i>"its like one guy alone that runs it."</i></p>
+<p>On the product itself, one buyer is blunt: <b><span class="hlb">"White Maeng Da was garbage. No positive effects, just nausea
+and headaches. Tasted old. Still have most of it."</span></b> Another: <i><span class="hlb">"I tried the red and didn't feel much
+and it gave me a headache."</span></i></p>
+<p>But the same thread praises the <b>Enhanced</b> line: <i><span class="hlb">"with phantom I have only paid money for Enhanced
+leaf and their 60% extract and its always been fire"</span></i> and <i><span class="hlb">"I got the Enhanced Sunrise Blend and its
+really really fire, some of the best powder out their no joke."</span></i> Defenders say samples do arrive —
+slowly, because <i><span class="hlb">"its like one guy alone that runs it."</span></i></p>
 <div class="popbox star">The pattern: <b>regular leaf gets called garbage; the Enhanced line gets called fire.</b>
 When the cheap line is weak and the premium line is strong, the honest question is what the premium line
 is spiked with — and with zero published COAs, there is no answer.</div>
@@ -419,9 +422,9 @@ it is not evidence about this vendor.</p>
 
 <h3>Discord: Sleepy Phantom (Red Vein) review — positive</h3>
 <p>A detailed Discord review of <b>Sleepy Phantom</b> describes a dark fermented red: pain relief with a
-clear head, <i>"relaxes the body and takes the edge off discomfort, but without dragging your energy
-down,"</i> a steady mood uplift, coarser grind (~110–115 micron), fresh smell, and <i>"almost no
-bitterness"</i> for a fermented red. The reviewer recommends it for chronic pain without sedation. <b>This
+clear head, <i><span class="hlb">"relaxes the body and takes the edge off discomfort, but without dragging your energy
+down,"</span></i> a steady mood uplift, coarser grind (~110–115 micron), fresh smell, and <i><span class="hlb">"almost no
+bitterness"</span></i> for a fermented red. The reviewer recommends it for chronic pain without sedation. <b>This
 is a genuinely positive data point</b> — and it is included because this guide reports what exists, not
 what flatters a narrative.</p>
 
@@ -431,7 +434,7 @@ accusations, the regular leaf gets called stale garbage, and samples vanish into
 does not excuse a rotten counter.</div>
 </div>
 
-<h2 id="pinklips">💬 Community report — Phantom Pink Lips</h2>
+<h2 id="pinklips"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">💬</span> Community report — Phantom Pink Lips</h2>
 <div class="card">
 <p>One of several community reviews now on record — from
 <b>r/TrueKratomReviews</b> (a small review sub, ~500 weekly visitors), posted ~August 2026 by u/JJ-1027,
@@ -439,13 +442,13 @@ with a photo of the actual 100g "PHANTOM PREMIUM KRATOM" bag.</p>
 <div class="quote">"Red + white combination. It has smooth, comforting warmth to it, while still giving me that noticeable lift of motivation."<cite>— u/JJ-1027, r/TrueKratomReviews, ~Aug 2026</cite></div>
 <div class="quote">"For me, it hits that sweet spot between feeling relaxed and feeling motivated throughout the day. Definitely an interesting blend."<cite>— u/JJ-1027, r/TrueKratomReviews, ~Aug 2026</cite></div>
 <div class="quote">"Pink Lips = smooth, balanced &amp; uplifting."<cite>— u/JJ-1027, r/TrueKratomReviews, ~Aug 2026</cite></div>
-<p>The same reviewer noted Phantom sells <b>10g of 60% mitragynine extract for $60</b> ("10 grams of Mit 60%
-for 60 doll hairz!!"). One review is not a consensus — but it is a genuine data point, and a positive one:
+<p>The same reviewer noted Phantom sells <b>10g of 60% mitragynine extract for $60</b> (<span class="hlb">"10 grams of Mit 60%
+for 60 doll hairz!!"</span>). One review is not a consensus — but it is a genuine data point, and a positive one:
 a balanced red-white blend character, comfort plus daytime motivation.</p>
 <div class="popbox star">Evidence level: one reviewer, one product. Honest weight: light, but real.</div>
 </div>
 
-<h2 id="reality">🔍 Vendor reality check — claims vs. verifiable evidence</h2>
+<h2 id="reality"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🔍</span> Vendor reality check — claims vs. verifiable evidence</h2>
 <div class="card">
 <p>This section audits Phantom Herbal's own statements against what can actually be verified.
 Every item below was checked directly on 2026-10-13.</p>
@@ -458,25 +461,25 @@ and phone <b>+1 (702) 313-2764</b> — the <b>same address and phone number</b> 
 roughly <b>14 months old</b>. This is not the profile of a dedicated kratom-only operation.</p>
 
 <h3>2. "Lab-tested" — unsubstantiated</h3>
-<p>The site claims "lab-tested" and "third-party lab tested" throughout. <b>No lab is named. Zero COAs
-are published. No alkaloid numbers are given.</b> The only potency figure anywhere is a <b>"(3%+)"</b>
+<p>The site claims <span class="hlb">"lab-tested"</span> and <span class="hlb">"third-party lab tested"</span> throughout. <b>No lab is named. Zero COAs
+are published. No alkaloid numbers are given.</b> The only potency figure anywhere is a <b><span class="hlb">"(3%+)"</span></b>
 marketing badge on Enhanced-line product images — 3%+ mitragynine would be exceptionally high for plain
 leaf (typical: 1–2%), and with no lab data there is no way to check whether the number is real or the
 product is extract-adulterated. The vendor also sells 60% extract and 120mg mitragynine tablets, so
 adulteration is mechanically plausible. Treat every potency claim as marketing.</p>
 
 <h3>3. False "FDA-certified" claim</h3>
-<p>Product pages state the powder is <b>"FDA-certified."</b> The FDA certifies no kratom products — the claim
-is false on its face. The same pages then disclaim "Not approved by the FDA." Both cannot be true.</p>
+<p>Product pages state the powder is <b><span class="hlb">"FDA-certified."</span></b> The FDA certifies no kratom products — the claim
+is false on its face. The same pages then disclaim <span class="hlb">"Not approved by the FDA."</span> Both cannot be true.</p>
 
 <h3>4. Guarantee vs. Terms — direct contradiction</h3>
-<p>The homepage advertises a <b>"30-day satisfaction"</b> guarantee ("Phantom Promise"). The Terms page says
-<b>"all sales are final"</b> unless the item arrives defective or incorrect (claims within 7 days).
+<p>The homepage advertises a <b><span class="hlb">"30-day satisfaction"</span></b> guarantee ("Phantom Promise"). The Terms page says
+<b><span class="hlb">"all sales are final"</span></b> unless the item arrives defective or incorrect (claims within 7 days).
 The Terms are the enforceable policy; the guarantee is marketing. The Terms page still contains the
 template placeholder <b>"[Insert Phantom email]"</b> — published unfinished.</p>
 
 <h3>5. Wrong chemistry vocabulary</h3>
-<p>Product copy repeatedly writes <b>"hydroxymitragynine"</b> instead of 7-hydroxymitragynine — the wrong
+<p>Product copy repeatedly writes <b><span class="hlb">"hydroxymitragynine"</span></b> instead of 7-hydroxymitragynine — the wrong
 name for the compound, across the product line. The copy was written by marketers, not anyone who knows
 the chemistry.</p>
 
@@ -485,24 +488,24 @@ the chemistry.</p>
 of Reddit threads and one Discord review</b> — and it cuts both ways. The <a href="#reddit">full Reddit
 record</a> includes: a scathing Oct 2025 customer-service complaint (a reviewer who says the vendor, "Kyle,"
 publicly called her a liar after ignoring her emails); a shilling accusation against a free-product
-recipient attacking that complainant; regular leaf called <b>"garbage... nausea and headaches... tasted
-old"</b>; months-long sample fulfillment with weeks-long email silences — <i>alongside</i> genuine praise
-for the Enhanced line ("really really fire") and a detailed positive Discord review of Sleepy Phantom.
+recipient attacking that complainant; regular leaf called <b><span class="hlb">"garbage... nausea and headaches... tasted
+old"</span></b>; months-long sample fulfillment with weeks-long email silences — <i>alongside</i> genuine praise
+for the Enhanced line (<span class="hlb">"really really fire"</span>) and a detailed positive Discord review of Sleepy Phantom.
 "Reviews (0)" still sits on the vendor's own product pages. Thin, mixed, and partly ugly: there is no
 enthusiast consensus to lean on, and the worst of the record is about how customers get treated.</p>
 
 <h3>8. The SEO network — daisyherbal.co</h3>
 <p>Brand mentions for Phantom Vein turn up in spun SEO articles on <b>whizolosophy.com</b> and — notably —
-<b>daisyherbal.co</b> ("find-pure-lab-tested-kratom-at-daisy"), plus directory listings. These are
+<b>daisyherbal.co</b> (<span class="hlb">"find-pure-lab-tested-kratom-at-daisy"</span>), plus directory listings. These are
 planted-link advertorials, not organic discussion. The "Daisy Herbal" domain name sitting in the same
 SEO network as the kratom vendor — while <b>Daisy Peptides</b> shares the vendor's phone and address — is
 another thread tying the Daisy-named operations together. When the marketing is manufactured and the
 reviews are absent, the SEO <i>is</i> the reputation strategy.</p>
 
 <h3>9. The Enhanced line is alkaloid-fortified — by their own alt text</h3>
-<p>Product image alt text for the "Enhanced (3%+)" line describes <b>added</b> mitragynine and
+<p>Product image alt text for the <span class="hlb">"Enhanced (3%+)"</span> line describes <b>added</b> mitragynine and
 hydroxymitragynine. This is not inference: the vendor's own markup says the alkaloids are added. Combined
-with the community pattern — regular leaf called "garbage," Enhanced called "fire" — the honest read is
+with the community pattern — regular leaf called <span class="hlb">"garbage,"</span> Enhanced called <span class="hlb">"fire"</span> — the honest read is
 that the premium line's strength comes from fortification, not superior leaf. And with zero published COAs,
 no one outside that Las Vegas unit knows the actual dose in the bag.</p>
 
@@ -510,7 +513,7 @@ no one outside that Las Vegas unit knows the actual dose in the bag.</p>
 <p>The site's "What Our Customers Say" carousel carries three testimonials — Tyler R. (Austin, TX) on
 affordability/potency, Aaliyah M. (Denver, CO) on gummies, Jordan P. (Brooklyn, NY) on shots. Vendor-written
 or vendor-selected, unverifiable, and no substitute for independent reviews. The vendor is absent from every
-2026 "best kratom vendor" list.</p>
+2026 <span class="hlb">"best kratom vendor"</span> list.</p>
 <h3>7. The name-collision warning</h3>
 <p><b>"Phantom Herbal Incense"</b> is a legacy <b>K2/Spice synthetic-cannabinoid brand</b> (circa 2017).
 Anyone searching "Phantom Herbal reviews" will hit it — and K2-brand reviews are overwhelmingly negative
@@ -526,7 +529,7 @@ mystery Enhanced line gets praised.</b> The price is the attraction; everything 
 leaf is good is currently a coin flip, not a reputation.</div>
 </div>
 
-<h2 id="matrix">📊 Master comparison matrix</h2>
+<h2 id="matrix"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📊</span> Master comparison matrix</h2>
 <div class="card">
 <table class="num">
 <tr><th>Product</th><th>Vein</th><th>Type</th><th>100g</th><th>Evidence</th></tr>
@@ -549,7 +552,7 @@ leaf is good is currently a coin flip, not a reputation.</div>
 <p class="note">Enhanced (3%+) versions of most strains: $24.99/100g. "Evidence" = indexed community reviews found as of 2026-10-13.</p>
 </div>
 
-<h2 id="lab">🧪 Alkaloid &amp; lab reference</h2>
+<h2 id="lab"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧪</span> Alkaloid &amp; lab reference</h2>
 <div class="card">
 <p><b>No certificates of analysis are published.</b> Phantom Herbal names no laboratory and provides no
 batch-specific alkaloid data for any product. What exists instead is <b>label-claimed</b> data printed on
@@ -561,21 +564,21 @@ the retail bags themselves (photographed October 2026):</p>
 </table>
 <p>The 1.5–1.7% mitragynine checkbox was marked on all three 100g bags (Sunrise Blend, Happy Phantom,
 Phantom Yellow Haze) and on the 10g red sample. Note the packaging spells the alkaloid correctly as
-<b>7-hydroxymitragynine</b> — unlike the website copy, which writes "hydroxymitragynine."</p>
-<p>The sole other numeric potency claim in the vendor's catalog remains the <b>"(3%+)"</b> badge on
+<b>7-hydroxymitragynine</b> — unlike the website copy, which writes <span class="hlb">"hydroxymitragynine."</span></p>
+<p>The sole other numeric potency claim in the vendor's catalog remains the <b><span class="hlb">"(3%+)"</span></b> badge on
 Enhanced-line product imagery — a marketing graphic, not a lab result. For context, plain-leaf kratom
 typically tests at roughly 1–2% mitragynine, so the label-claimed 1.5–1.7% sits in the normal range;
 a genuine 3%+ plain-leaf result would be exceptional and cannot be evaluated without a COA.</p>
 <h3>Packaging notes (from the October order)</h3>
 <p>Bags are branded <b>"PHANTOM PREMIUM KRATOM"</b> with the phantomvein.com URL and the line
-"For botanical research only. Not for human consumption. Keep out of reach of children. 18 only."
+<span class="hlb">"For botanical research only. Not for human consumption. Keep out of reach of children. 18 only."</span>
 The sample bag carries a strain/alkaloid checkbox label (Green/Red/White × Malay/Maeng Da/Bali/Sumatra)
 — the mechanism by which the free sample was identified as a red at 1.5–1.7%.</p>
 <div class="popbox">If Phantom Herbal publishes verifiable COAs in the future, this section gets a real table.
 Until then, the honest entry is: <b>label claims only, no data.</b></div>
 </div>
 
-<h2 id="catalog">🛒 Current Phantom Herbal catalog snapshot <span class="note">(observed 2026-10-13)</span></h2>
+<h2 id="catalog"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🛒</span> Current Phantom Herbal catalog snapshot <span class="note">(observed 2026-10-13)</span></h2>
 <div class="card">
 <table class="num">
 <tr><th>Line</th><th>Items</th><th>Price range</th></tr>
@@ -588,10 +591,10 @@ Until then, the honest entry is: <b>label claims only, no data.</b></div>
 <tr><td>Split kilos</td><td>2-way / 4-way customizers</td><td>$80.00 / $85.00</td></tr>
 <tr><td>THC-A flower 5g</td><td>Gelato Cake, Tropicana Cookies</td><td>$34.99</td></tr>
 </table>
-<p class="note">54 SKUs total. Free shipping on orders $50+. Ships "to all US states where products are legal." 21+ only.</p>
+<p class="note">54 SKUs total. Free shipping on orders $50+. Ships <span class="hlb">"to all US states where products are legal."</span> 21+ only.</p>
 </div>
 
-<h2 id="sources">📚 Sources &amp; bibliography</h2>
+<h2 id="sources"><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📚</span> Sources &amp; bibliography</h2>
 <div class="card biblio"><ul>
 <li>Phantom Herbal homepage, shop pages 1–5, product pages, Terms &amp; Conditions — <i>phantomherbal.com</i> (observed 2026-10-13)</li>
 <li>Phantom Vein (alias storefront) — <i>phantomvein.com</i> (observed 2026-10-13; identical site)</li>
@@ -604,22 +607,11 @@ Until then, the honest entry is: <b>label claims only, no data.</b></div>
 <li>Discord — Phantom Vein Sleepy Phantom red-vein review (positive: pain relief, mood, no sedation)</li>
 <li>Community search: Reddit, YouTube, Instagram/Threads/Facebook, X, kratom forums — <b>thin record: the threads above plus one prior Pink Lips review; no YouTube reviews found</b> (2026-10-13)</li>
 </ul>
-<div class="disclaimer">Disclaimer: These statements have not been evaluated by the Food and Drug Administration.
-This guide is published for research and educational purposes only. Effect descriptions summarize community
-and vendor-published reports; individual experiences vary.</div>
 <div style="margin-top:14px"><span class="affil">✋ Independent customer research — no affiliation with, sponsorship from, or business relationship with Phantom Herbal (Phantom Vein). The author is a customer only and does not represent the company. No personal information is published in this guide.</span></div>
 </div>
 
 </div>
-<footer class="peptopia-ftr">
-<div>&copy; 2026 Peptopia Health &bull; All rights reserved &bull; <a class="ftr-email" href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
-<div class="peptopia-ftr-icons">
-<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="data:image/webp;base64,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" alt="Peptopia home"></a>
-<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
-<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
-<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
-</div>
-</footer>
+<footer class="site">Complete Strain Guide for Phantom Herbal · Independent Customer Research · October 2026</footer>
 <script>
 /* Peptopia theme: light default, toggle persists via localStorage */
 var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();

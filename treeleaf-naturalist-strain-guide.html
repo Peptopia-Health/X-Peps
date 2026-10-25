@@ -132,9 +132,7 @@ a.specdot{cursor:pointer;z-index:2}
 .biblio li{margin:6px 0;font-size:14px}
 .biblio a{color:var(--accent);word-break:break-all}
 footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
-.toc-top{position:fixed;bottom:18px;right:18px;background:#23402f;color:#fff;border-radius:999px;
-  width:46px;height:46px;display:flex;align-items:center;justify-content:center;text-decoration:none;
-  font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #23402f;color:#23402f;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.35);z-index:50}
 @media print{.toc-top,.print-btn{display:none}.strain,.panel{break-inside:avoid}}
 .print-btn{position:fixed;top:18px;right:18px;background:#23402f;color:#fff;border:0;border-radius:999px;
   padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;
@@ -275,6 +273,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 .peptopia-iconbtn svg{width:17px;height:17px}
 .peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}
 /* injected standard header CSS */
+/* ===== Emphatic highlights (David 2026-10-24) ===== */
+.hlr,.hlg,.hlw,.hly,.hlb{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;border-radius:2px}
+.hlr{background:#fbe3de}.hlg{background:#e0f1e4}.hlw{background:#eef4dc}.hly{background:#fdf0cd}.hlb{background:#e9e2f7}
+/* ===== Raised circular icon buttons (David 2026-10-24) ===== */
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
 </style>
 </head>
 <body id="top">
@@ -311,7 +314,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= INDEX ================= -->
 <div class="index">
-  <h2>📖 Index</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📖</span> Index</h2>
   <ol>
     <li><a href="#howto">How to use this guide &amp; the spectrum map</a></li>
     <li><a href="#science">The spectrum system</a></li>
@@ -334,7 +337,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= HOW TO USE ================= -->
 <div class="colorband band-neutral" id="howto">
-  <h2>🧭 How to use this guide &amp; the spectrum map</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧭</span> How to use this guide &amp; the spectrum map</h2>
   <p>Tree Leaf Naturalist organizes its menu on a <b>slow → fast spectrum</b> rather than by vein color alone. Find your speed below, glance at the map, then jump to the section that fits the moment.</p>
   <div class="bigicon">🧭</div>
 </div>
@@ -411,18 +414,18 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2>🔬 The spectrum system</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🔬</span> The spectrum system</h2>
   <p>How the vendor grades its own leaf — and what is (and isn’t) verified.</p>
   <div class="bigicon">🔬</div>
 </div>
 <div class="catintro">
-  <p>Every Tree Leaf Naturalist powder carries the vendor’s own speed marker: <b>Slow, Mid-Low, Mid, Mid-Upper, or Fast</b> (with in-betweens like Mid/Mid-Low). In the vendor’s words, <span class="pq">“almost anything that leans under mid I personally consider slow.”</span> The markers come from the public menu and from the vendor’s direct strain-by-strain guidance — they are one experienced palate’s read, and the vendor is upfront that <span class="pq">“everyone is different.”</span></p>
+  <p>Every Tree Leaf Naturalist powder carries the vendor’s own speed marker: <b>Slow, Mid-Low, Mid, Mid-Upper, or Fast</b> (with in-betweens like Mid/Mid-Low). In the vendor’s words, <span class="hlb">“almost anything that leans under mid I personally consider slow.”</span> The markers come from the public menu and from the vendor’s direct strain-by-strain guidance — they are one experienced palate’s read, and the vendor is upfront that <span class="hlb">“everyone is different.”</span></p>
   <p>Tree Leaf Naturalist launched around April 2026, so the independent record is young but real: three Reddit review posts (r/kratomreview100 and r/TrueKratomReviews, August–September 2026) cover seven strains — Green Bali Emerald, Green Malay (rated A+), White Java, Green Forest, Green Melt, Yellow Dream, and Deep River Red — all positive, with the vendor replying in the threads as u/Tree-Leaf-Naturalist. No YouTube reviews or forum trip reports were found. Strain characterizations below are the vendor’s own (menu markers plus direct guidance), marked as such; community findings are quoted under <span class="pq">“Community reports”</span> where they exist. Nothing here is invented to fill the gap.</p>
-  <p>On lab testing: the brand claims <span class="pq">“Lab Tested,”</span> but <b>no certificates of analysis are publicly posted</b> anywhere — not on the site, not in the menus. The vendor discusses COAs privately and describes the Red Clay ferment’s COA as the cleanest he has seen; that claim is vendor-asserted, not independently verified. See the <a href="#coa">lab reference</a>.</p>
+  <p>On lab testing: the brand claims <span class="hlb">“Lab Tested,”</span> but <b>no certificates of analysis are publicly posted</b> anywhere — not on the site, not in the menus. The vendor discusses COAs privately and describes the Red Clay ferment’s COA as the cleanest he has seen; that claim is vendor-asserted, not independently verified. See the <a href="#coa">lab reference</a>.</p>
 </div>
 
 <div class="colorband band-white" id="white">
-  <h2>⚪ White strains — clean drive &amp; focus</h2>
+  <h2><span class="icobtn" style="--bb:#eef4e2;--bm:#b9d18a;--bd:#3c5f1d">⚪</span> White strains — clean drive &amp; focus</h2>
   <p>The fast end of the menu: energetic whites for mood lift, drive and focus. All three core whites sit at Mid-Upper, with White Dragon the fastest of the trio.</p>
   <div class="bigicon">⚡</div>
 </div>
@@ -439,9 +442,9 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>One of the three core whites of the 01 Drop — the vendor’s first recommendation for anyone chasing mood lift.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Very popular for mood lift.”</span> Positioned as the mood-lift white of the trio.</p>
+    <p><span class="hlw">“Very popular for mood lift.”</span> Positioned as the mood-lift white of the trio.</p>
     <h4>💬 Community reports</h4>
-    <p>"Pure mood boost with an ok amount of energy" — called one of the more unique whites the reviewer had tried. Also a favorite in a 5-sample set.</p>
+    <p><span class="hlw">"Pure mood boost with an ok amount of energy"</span> — called one of the more unique whites the reviewer had tried. Also a favorite in a 5-sample set.</p>
     <div class="quote">"pure mood boost with an ok amount of energy I absolutely loved it"<cite>— Reddit, r/kratomreview100, Sep 2026; r/TrueKratomReviews, Aug 2026</cite></div>
     <div class="popbox star">🏆 The vendor’s most-recommended white for mood.</div>
   </div>
@@ -458,7 +461,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The second core white, framed around relief rather than lift.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Good reviews for relief.”</span> The relief-oriented member of the white trio.</p>
+    <p><span class="hlw">“Good reviews for relief.”</span> The relief-oriented member of the white trio.</p>
   </div>
 </div>
 
@@ -473,7 +476,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The fastest of the three core whites.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Arguably the faster choice.”</span></p>
+    <p><span class="hlw">“Arguably the faster choice.”</span></p>
     <div class="popbox tip">⚡ The fastest white on the regular menu — the pick for maximum drive.</div>
   </div>
 </div>
@@ -520,13 +523,13 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A whites-and-greens founder’s reserve microbatch, hand-selected from the founder’s stash.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Above mid spec”</span> and <span class="pq">“getting great feedback, becoming a community favorite.”</span></p>
+    <p><span class="hlw">“Above mid spec”</span> and <span class="hlw">“getting great feedback, becoming a community favorite.”</span></p>
     <div class="popbox star">🌟 The vendor’s community-favorite white-leaning reserve.</div>
   </div>
 </div>
 
 <div class="colorband band-green" id="green">
-  <h2>🟢 Green strains — balanced energy &amp; mood</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🟢</span> Green strains — balanced energy &amp; mood</h2>
   <p>The middle of the spectrum, and the deepest bench: nine greens from the fast Green Dragon down to the slow Green Giant base strain.</p>
   <div class="bigicon">🌿</div>
 </div>
@@ -543,7 +546,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The fast green of the 01 Drop.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“If you like fast leaf than Green Dragon is a must.”</span></p>
+    <p><span class="hlg">“If you like fast leaf than Green Dragon is a must.”</span></p>
     <div class="popbox tip">⚡ The vendor’s must-try for fast-leaf lovers.</div>
   </div>
 </div>
@@ -559,9 +562,9 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A slightly-above-mid green with a broad effect profile.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Leans slightly above mid and it has a very full spectrum effect with good mood lift.”</span></p>
+    <p><span class="hlg">“Leans slightly above mid and it has a very full spectrum effect with good mood lift.”</span></p>
     <h4>💬 Community reports</h4>
-    <p>A favorite from a 5-sample set (white Java, green forest, green melt, deep river red, yellow dream) — "They were all very good but the white Java, green forest and green melt stood out as my favorites."</p>
+    <p>A favorite from a 5-sample set (white Java, green forest, green melt, deep river red, yellow dream) — <span class="hlg">"They were all very good but the white Java, green forest and green melt stood out as my favorites."</span></p>
   </div>
 </div>
 
@@ -578,7 +581,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>📡 Vendor notes</h4>
     <p>Menu marker: Mid+. A steady mid-plus green.</p>
     <h4>💬 Community reports</h4>
-    <p>Rated A+ by the reviewer: the classic green feel "with the octane turned up a bit" and "really nice legs." Powder described as extremely fresh and fluffy.</p>
+    <p>Rated A+ by the reviewer: the classic green feel <span class="hlg">"with the octane turned up a bit"</span> and <span class="hlg">"really nice legs."</span> Powder described as extremely fresh and fluffy.</p>
     <div class="quote">"an A+ green malay — "your classic feel but with the octane turned up a bit and it had some really nice legs on it"<cite>— Reddit, r/kratomreview100, Sep 2026</cite></div>
   </div>
 </div>
@@ -594,7 +597,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>Noted for freshness above all else.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Mid for some people and mid low for others. It is extremely fresh powder with a great smell.”</span></p>
+    <p><span class="hlg">“Mid for some people and mid low for others. It is extremely fresh powder with a great smell.”</span></p>
     <h4>💬 Community reports</h4>
     <p>A favorite from the same 5-sample set.</p>
   </div>
@@ -613,7 +616,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>📡 Vendor notes</h4>
     <p>Menu marker: Mid-Low.</p>
     <h4>💬 Community reports</h4>
-    <p>Mid-slow onset with a warm beginning building into a strong mood boost — "a mid slow dream."</p>
+    <p>Mid-slow onset with a warm beginning building into a strong mood boost — <span class="hlg">"a mid slow dream."</span></p>
     <div class="quote">"This green bali emerald is a mid slow dream! Its got a great warm beginning that builds into a mood boost from out of this world!"<cite>— Reddit, r/kratomreview100, Aug 2026</cite></div>
   </div>
 </div>
@@ -629,7 +632,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>An all-greens founder’s reserve microbatch with a fruit-cultivar name.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Great mood, a little stronger than the Red Honeycrisp and it has long legs but for most people it ends around mid low.”</span></p>
+    <p><span class="hlg">“Great mood, a little stronger than the Red Honeycrisp and it has long legs but for most people it ends around mid low.”</span></p>
     <div class="popbox star">🌟 A founder’s favorite green — mood with staying power.</div>
   </div>
 </div>
@@ -645,7 +648,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A 100% B-supplier base green — sold as-is and used as a blending component (part of the Deep Red formula). Released after tester demand; limited supply.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Definitely under mid for me”</span> — though some testers read it as a balanced mid. <span class="pq">“Liked by many.”</span></p>
+    <p><span class="hlg">“Definitely under mid for me”</span> — though some testers read it as a balanced mid. <span class="hlg">“Liked by many.”</span></p>
   </div>
 </div>
 
@@ -675,12 +678,12 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>An unreleased base strain, held back from the menu for blending — similar in character to Green Giant.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Similar to the green giant… leans under mid.”</span> A few kilos exist; offered by request.</p>
+    <p><span class="hlg">“Similar to the green giant… leans under mid.”</span> A few kilos exist; offered by request.</p>
   </div>
 </div>
 
 <div class="colorband band-red" id="red">
-  <h2>🔴 Red strains — deep calm &amp; evening ease</h2>
+  <h2><span class="icobtn" style="--bb:#f7e8e4;--bm:#d98c8c;--bd:#7e241a">🔴</span> Red strains — deep calm &amp; evening ease</h2>
   <p>The wind-down color: reds cluster at the slow end of the vendor’s spectrum, from mid down to mid-low/slow.</p>
   <div class="bigicon">🌙</div>
 </div>
@@ -697,7 +700,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The 100% base red vein — the foundation the Deep Red blend is built on.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Very popular”</span>; the vendor places it under mid (mid to mid-low).</p>
+    <p><span class="hlr">“Very popular”</span>; the vendor places it under mid (mid to mid-low).</p>
   </div>
 </div>
 
@@ -712,7 +715,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A reds-and-greens founder’s reserve microbatch with a fruit-cultivar name.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“MID spec with good mood.”</span></p>
+    <p><span class="hlr">“MID spec with good mood.”</span></p>
   </div>
 </div>
 
@@ -729,7 +732,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>📡 Vendor notes</h4>
     <p>Menu marker: Mid-Low / Slow.</p>
     <h4>💬 Community reports</h4>
-    <p>Included in the 5-sample set; all samples described as "very good."</p>
+    <p>Included in the 5-sample set; all samples described as <span class="hlr">"very good."</span></p>
   </div>
 </div>
 
@@ -744,7 +747,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>An all-reds microbatch from the 02 Drop reserves.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Definitely under mid.”</span> One customer described it as making him feel <span class="pq">“chatty”</span> — the vendor is awaiting more feedback.</p>
+    <p><span class="hlr">“Definitely under mid.”</span> One customer described it as making him feel <span class="hlr">“chatty”</span> — the vendor is awaiting more feedback.</p>
   </div>
 </div>
 
@@ -774,7 +777,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A popular red sitting just under the middle of the spectrum.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Leans towards the slower side of the spectrum”</span>; <span class="pq">“very popular”</span> but under mid in the vendor’s read.</p>
+    <p><span class="hlr">“Leans towards the slower side of the spectrum”</span>; <span class="hlr">“very popular”</span> but under mid in the vendor’s read.</p>
   </div>
 </div>
 
@@ -785,12 +788,12 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A bentuangie strain announced in September 2026 — no spectrum marker or description published yet.</p>
     <h4>📡 Vendor notes</h4>
-    <p>Announced via the vendor’s community channel; not yet on the menu. One customer reply noted a third order placed around the same time, "loving his leaf."</p>
+    <p>Announced via the vendor’s community channel; not yet on the menu. One customer reply noted a third order placed around the same time, <span class="hlr">"loving his leaf."</span></p>
   </div>
 </div>
 
 <div class="colorband band-gold" id="gold">
-  <h2>🟡 Yellows, golds &amp; ferments — mellow warmth</h2>
+  <h2><span class="icobtn" style="--bb:#fdf0cd;--bm:#e8c95a;--bd:#7d5f06">🟡</span> Yellows, golds &amp; ferments — mellow warmth</h2>
   <p>Mellow yellows, the slowest gold on the menu, and the two fermented offerings — including the vapor-steamed Red Clay, the most technically distinctive product in the catalog.</p>
   <div class="bigicon">🍯</div>
 </div>
@@ -807,7 +810,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>Partly fermented yellow finished with the vapor-steaming process for a hygienic, clean powder. The fermented counterpart runs lower in mitragynine, so the vendor advises dosing up about 32%.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Arguably the best strain for stress relief”</span> — the vendor’s own favorite <span class="pq">“when I need to take the edge off.”</span> Lands around MID.</p>
+    <p><span class="hly">“Arguably the best strain for stress relief”</span> — the vendor’s own favorite <span class="hly">“when I need to take the edge off.”</span> Lands around MID.</p>
     <div class="popbox star">🏆 The vendor’s personal pick for stress relief.</div>
   </div>
 </div>
@@ -823,9 +826,9 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A calming yellow with a growing following.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Calming and a lot of people are loving this one as a mid low option.”</span></p>
+    <p><span class="hly">“Calming and a lot of people are loving this one as a mid low option.”</span></p>
     <h4>💬 Community reports</h4>
-    <p>"Very euphoric and a great one for those of you who like a slow burn before bedtime." (The reviewer notes they are personally "not big on super slow" strains.)</p>
+    <p><span class="hly">"Very euphoric and a great one for those of you who like a slow burn before bedtime."</span> (The reviewer notes they are personally <span class="hly">"not big on super slow"</span> strains.)</p>
     <div class="quote">"The yellow dream was very euphoric and a great one for those of you who like a slow burn before bedtime."<cite>— Reddit, r/TrueKratomReviews, Aug 2026</cite></div>
   </div>
 </div>
@@ -841,7 +844,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The slowest marker on the regular menu.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Leaning slow.”</span> The deep-slow end of the gold lineup.</p>
+    <p><span class="hly">“Leaning slow.”</span> The deep-slow end of the gold lineup.</p>
   </div>
 </div>
 
@@ -854,9 +857,9 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
       <div class="spectag">Vendor spectrum marker: <b>Mid-Low / Slow</b></div>
     </div>
     <h4>🌿 The leaf</h4>
-    <p>The house signature ferment: leaf fermented then finished with hot-water vapor steaming — <span class="pq">“not a regular fermentation process”</span> — yielding a silky, clean texture that preserves aroma. The vendor calls it the cleanest ferment COA he has seen; the steaming acts as a sterilization step that shifts the alkaloid profile. Mitragynine runs about half of average, so the vendor’s own guidance is roughly double the dose minus half a gram.</p>
+    <p>The house signature ferment: leaf fermented then finished with hot-water vapor steaming — <span class="hly">“not a regular fermentation process”</span> — yielding a silky, clean texture that preserves aroma. The vendor calls it the cleanest ferment COA he has seen; the steaming acts as a sterilization step that shifts the alkaloid profile. Mitragynine runs about half of average, so the vendor’s own guidance is roughly double the dose minus half a gram.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Definitely under mid if dosed properly.”</span> <span class="pq">“One of my favorite ferments and I dont usually even like ferments that much.”</span></p>
+    <p><span class="hly">“Definitely under mid if dosed properly.”</span> <span class="hly">“One of my favorite ferments and I dont usually even like ferments that much.”</span></p>
     <div class="popbox deep">🧪 The most technically distinctive product in the catalog — fermentation plus vapor-steam sterilization.</div>
   </div>
 </div>
@@ -877,7 +880,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 
 <div class="colorband band-blend" id="blends">
-  <h2>🟣 Blends, reserves &amp; enhanced — house specialties</h2>
+  <h2><span class="icobtn" style="--bb:#efe9f7;--bm:#b39ddb;--bd:#4a3369">🟣</span> Blends, reserves &amp; enhanced — house specialties</h2>
   <p>The 02 Drop microbatches, the Lucky 7 trainwrecks, complex blends, and the enhanced/extract line built on premium salt extracts.</p>
   <div class="bigicon">⚗️</div>
 </div>
@@ -894,7 +897,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A seven-strain wreck built entirely from 01 Drop strains, every one mid or under.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Lands mid–mid low”</span> and is <span class="pq">“not super slow surprisingly.”</span></p>
+    <p><span class="hlb">“Lands mid–mid low”</span> and is <span class="hlb">“not super slow surprisingly.”</span></p>
   </div>
 </div>
 
@@ -909,7 +912,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>The mirror-image wreck: seven all-different counterparts, every one mid or above.</p>
     <h4>📡 Vendor notes</h4>
-    <p><span class="pq">“Not super stimulating but it has a great body feel.”</span></p>
+    <p><span class="hlb">“Not super stimulating but it has a great body feel.”</span></p>
   </div>
 </div>
 
@@ -1015,7 +1018,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>Red vein powder layered with a proprietary blend of premium extracts. 28g $14.50 · 50g $23.30 · 100g $44.02 · 250g $97.10.</p>
     <h4>📡 Vendor notes</h4>
-    <p>Vendor spec: <span class="pq">“Total couch lock- heavy &amp; slow - Max Relief.”</span> One of six new releases in the enhanced line, which the vendor makes with premium-grade extracts from natural leaf powder using food-grade solvents.</p>
+    <p>Vendor spec: <span class="hlr">“Total couch lock- heavy &amp; slow - Max Relief.”</span> One of six new releases in the enhanced line, which the vendor makes with premium-grade extracts from natural leaf powder using food-grade solvents.</p>
   </div>
 </div>
 
@@ -1030,7 +1033,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
     <h4>🌿 The leaf</h4>
     <p>A carefully curated blend of Energy Wreck, Silver Haze, and Green Dragon, layered with an 80% salt extract from the vendor’s Thai extract manufacturer. 28g $16 · 50g $26 · 100g $49 · 250g $107.</p>
     <h4>📡 Vendor notes</h4>
-    <p>Vendor spec: <span class="pq">“strong and energetic.”</span> A limited release — DK previewed it to customers on October 10, 2026, ahead of its menu debut.</p>
+    <p>Vendor spec: <span class="hlb">“strong and energetic.”</span> A limited release — DK previewed it to customers on October 10, 2026, ahead of its menu debut.</p>
   </div>
 </div>
 
@@ -1080,7 +1083,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 
 <div class="colorband band-neutral" id="matrix">
-  <h2>📊 Master comparison matrix</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📊</span> Master comparison matrix</h2>
   <p>Every strain, its menu line, and its place on the slow → fast spectrum.</p>
   <div class="bigicon">📊</div>
 </div>
@@ -1130,19 +1133,19 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 <div class="popbox tip">Reading the spectrum: <b>Slow</b> = wind-down end · <b>Mid</b> = balanced middle · <b>Fast</b> = drive end. Markers are the vendor’s own, from the public menu.</div>
 
 <div class="colorband band-neutral" id="coa">
-  <h2>🧪 Alkaloid &amp; lab reference</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧪</span> Alkaloid &amp; lab reference</h2>
   <p>What is published, what is claimed, and what isn’t.</p>
   <div class="bigicon">🧪</div>
 </div>
 <div class="catintro">
   <p><b>No public COAs.</b> Despite the <span class="pq">“Lab Tested”</span> tagline, no certificates of analysis are posted on the site or in any menu as of October 2026. Any alkaloid figures below are vendor-stated, not independently verified.</p>
-  <p><b>Vendor-stated extract figures:</b> Thai Pathom Gold 75% — 75% mitragynine (<span class="pq">“nearly pure mitragynine, lean secondary-alkaloid spectrum”</span>); Margarita 65% — 65% mitragynine / 83% total alkaloids (<span class="pq">“warm secondary-alkaloid spectrum”</span>); Shock Wave enhanced powder — 2.1% (a 3.0% double-stack is in testing).</p>
+  <p><b>Vendor-stated extract figures:</b> Thai Pathom Gold 75% — 75% mitragynine (<span class="hlb">“nearly pure mitragynine, lean secondary-alkaloid spectrum”</span>); Margarita 65% — 65% mitragynine / 83% total alkaloids (<span class="hlb">“warm secondary-alkaloid spectrum”</span>); Shock Wave enhanced powder — 2.1% (a 3.0% double-stack is in testing).</p>
   <p><b>Label serving facts</b> (from product photography): 2,000–3,000 mg Mitragyna speciosa per serving; Red Clay — 2–3 g servings, 33–50 servings per bag. Printed label protocol: start under 2 g weighed on an empty stomach, max 2 servings/day, max 5 days/week, take regular breaks, stay hydrated.</p>
-  <p><b>Fermentation note:</b> the vendor reports that fermentation roughly halves mitragynine content versus average leaf — hence the <span class="pq">“dose up 32%”</span> guidance on Yellow Lush and the doubled-dose guidance on Red Clay. The Red Clay vapor-steam step is described as a sterilization-like process that shifts the alkaloid profile; the vendor calls its COA the cleanest ferment panel he has seen. Vendor-asserted; no public document.</p>
+  <p><b>Fermentation note:</b> the vendor reports that fermentation roughly halves mitragynine content versus average leaf — hence the <span class="hlb">“dose up 32%”</span> guidance on Yellow Lush and the doubled-dose guidance on Red Clay. The Red Clay vapor-steam step is described as a sterilization-like process that shifts the alkaloid profile; the vendor calls its COA the cleanest ferment panel he has seen. Vendor-asserted; no public document.</p>
 </div>
 
 <div class="colorband band-neutral" id="sourcing">
-  <h2>🌱 Sourcing: menu drops, fermentation &amp; supply</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🌱</span> Sourcing: menu drops, fermentation &amp; supply</h2>
   <p>How the catalog is organized and what the vendor discloses.</p>
   <div class="bigicon">🌱</div>
 </div>
@@ -1154,7 +1157,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 </div>
 
 <div class="colorband band-neutral" id="catalog">
-  <h2>🛒 Current catalog &amp; pricing snapshot</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🛒</span> Current catalog &amp; pricing snapshot</h2>
   <p>October 2026 menu pricing (subject to change; split tiers as published).</p>
   <div class="bigicon">🛒</div>
 </div>
@@ -1178,7 +1181,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 <div class="popbox tip">Shipping: flat $6, free on orders $59+. Newsletter signup offers an 8% first-time discount. 21+ for kratom; no shipping to restricted areas. Split tiers cover powder only — capsules, extracts and enhanced lines are not splittable.</div>
 
 <div class="colorband band-neutral" id="biblio">
-  <h2>📚 Sources &amp; bibliography</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📚</span> Sources &amp; bibliography</h2>
   <p>Everything below was checked in October 2026.</p>
   <div class="bigicon">📚</div>
 </div>
@@ -1199,9 +1202,8 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <p><i>Negative findings stated plainly: the only independent customer reviews found as of October 2026 are the Reddit posts cited above; no YouTube reviews, forum trip reports, or review-aggregator listings were found; no public COAs were found anywhere. These are bounded findings, not proof of absence.</i></p>
 </div>
 
-<div class="disclaimer">This guide is published for research and educational purposes only.<br>✋ Independent customer review — no affiliation with Tree Leaf Naturalist.</div>
 
-<footer class="site">Independent Customer Review · Tree Leaf Naturalist · October 2026</footer>
+<footer class="site">Complete Strain Guide for Tree Leaf Naturalist · Independent Customer Research · October 2026</footer>
 </div><!-- /wrap -->
 <script>
 document.querySelectorAll('svg.pie').forEach(function(svg){

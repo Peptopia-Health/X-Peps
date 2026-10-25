@@ -123,9 +123,7 @@ table.grid tr:nth-child(even) td{background:#fbf9f3}
 .biblio li{margin:6px 0;font-size:14px}
 .biblio a{color:var(--accent);word-break:break-all}
 footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
-.toc-top{position:fixed;bottom:18px;right:18px;background:#23402f;color:#fff;border-radius:999px;
-  width:46px;height:46px;display:flex;align-items:center;justify-content:center;text-decoration:none;
-  font-size:20px;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #23402f;color:#23402f;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.35);z-index:50}
 @media print{.toc-top,.print-btn{display:none}.strain,.panel{break-inside:avoid}}
 .print-btn{position:fixed;top:18px;right:18px;background:#23402f;color:#fff;border:0;border-radius:999px;
   padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;
@@ -225,6 +223,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 .peptopia-iconbtn svg{width:17px;height:17px}
 .peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}
 /* injected standard header CSS */
+/* ===== Emphatic highlights (David 2026-10-24) ===== */
+.hlr,.hlg,.hlw,.hly,.hlb{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;border-radius:2px}
+.hlr{background:#fbe3de}.hlg{background:#e0f1e4}.hlw{background:#eef4dc}.hly{background:#fdf0cd}.hlb{background:#e9e2f7}
+/* ===== Raised circular icon buttons (David 2026-10-24) ===== */
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
 </style>
 </head>
 <body id="top">
@@ -263,7 +266,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= INDEX ================= -->
 <div class="index">
-  <h2>📖 Index</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📖</span> Index</h2>
   <ol>
     <li><a href="#howto">How to use this guide &amp; the color map</a></li>
     <li><a href="#science">Vein colors &amp; what consumers report</a></li>
@@ -285,7 +288,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= HOW TO USE ================= -->
 <div class="colorband band-neutral" id="howto">
-  <h2>🧭 How to use this guide &amp; the color map</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧭</span> How to use this guide &amp; the color map</h2>
   <p>Find your color below, glance at the map, then jump straight to the section that fits the moment.</p>
   <div class="bigicon">🧭</div>
 </div>
@@ -369,7 +372,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2>🔬 Vein colors &amp; what consumers report</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🔬</span> Vein colors &amp; what consumers report</h2>
   <p>What the community's experience shows — recorded here as fact, batch by batch.</p>
   <div class="bigicon">🔬</div>
 </div>
@@ -391,7 +394,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= RED ================= -->
 <div class="colorband band-red" id="red">
-  <h2>🔴 Red strains — deep calm &amp; evening ease</h2>
+  <h2><span class="icobtn" style="--bb:#f7e8e4;--bm:#d98c8c;--bd:#7e241a">🔴</span> Red strains — deep calm &amp; evening ease</h2>
   <p>The wind-down color: deep relaxation &amp; relief, calming body effects, and mental calm for restful rest.</p>
   <div class="bigicon">🌙</div>
 </div>
@@ -433,7 +436,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <p>A heavy-ferment red — and half of the Pain Blend formula (Farmer R red bent + yellow boyan).</p>
     <h4>💬 What the community reports</h4>
     <p>On-site rating 4.50/5 across 2 reviews. The vendor's own characterization is the most useful public note:
-    a heavy ferment that is "not too sedating" — relaxation with the lights still on. Currently sold out, which
+    a heavy ferment that is <span class="hlr">"not too sedating"</span> — relaxation with the lights still on. Currently sold out, which
     also took the Pain Blend (its sibling) off the shelf.</p>
     <div class="popbox tip">Fermented reds are the slow lane of the red family — deeper body ease than unfermented reds, at the cost of daytime utility.</div>
   </div>
@@ -469,7 +472,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>—</b></span><span>⚡ <b>—</b></span><span>🧘 <b>—</b></span><span>🌙 <b>—</b></span><span>⏳ —</span></div>
     <h4>🌿 The leaf</h4>
-    <p>The vendor's entire public description: "heavily darkened red. Relaxing." Zero on-site reviews.</p>
+    <p>The vendor's entire public description: <span class="hlr">"heavily darkened red. Relaxing."</span> Zero on-site reviews.</p>
     <h4>💬 What the community reports</h4>
     <p>No public reports. Dark-cured reds are the nighttime end of the spectrum by community convention —
     anything beyond that would be guessing.</p>
@@ -491,7 +494,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= GREEN ================= -->
 <div class="colorband band-green" id="green">
-  <h2>🟢 Green strains — balanced energy &amp; mood</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🟢</span> Green strains — balanced energy &amp; mood</h2>
   <p>The daily-driver color: balanced energy &amp; vibe, mental clarity &amp; uplift, mild calm &amp; well-being.</p>
   <div class="bigicon">🌅</div>
 </div>
@@ -511,7 +514,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="iconrow"><span>😊 <b>4.8</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>1.5</b></span><span>⏳ 4–5h</span></div>
     <h4>💬 What the community reports</h4>
     <p>The most-reviewed green in the catalog: <b>13 on-site reviews at 4.92/5</b>. kratom.org's editorial calls
-    out "excellent mood and energy boost without the jitters," and secondhand Reddit commentary claims it
+    out <span class="hlg">"excellent mood and energy boost without the jitters,"</span> and secondhand Reddit commentary claims it
     outperforms competitors' higher-mitragynine offerings — a reminder that the number on a COA isn't the whole
     story. The profile is classic balanced green: uplifted mood, clean energy, no edge.</p>
     <div class="quote">"Excellent mood and energy boost without the jitters."<cite>— kratom.org editorial review</cite></div>
@@ -524,8 +527,8 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>3.2</b></span><span>🌙 <b>1.2</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
-    <p><b>8 on-site reviews, all 5 stars</b>, plus a YouTube review from Drea ("Discussions with Drea"). The
-    vendor's description is unusually specific for WestKoast: "uplifting mid, mood, focus, no jitters" — and the
+    <p><b>8 on-site reviews, all 5 stars</b>, plus a YouTube review from Drea (<span class="hlg">"Discussions with Drea"</span>). The
+    vendor's description is unusually specific for WestKoast: <span class="hlg">"uplifting mid, mood, focus, no jitters"</span> — and the
     reviews agree. This is the catalog's focus green: uplifting, clear, productive.</p>
     <div class="quote">"Uplifting mid, mood, focus, no jitters."<cite>— WestKoast vendor description, confirmed by 8 five-star reviews</cite></div>
   </div>
@@ -547,8 +550,8 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>3.3</b></span><span>🌙 <b>1.2</b></span><span>⏳ 4–5h</span></div>
     <h4>💬 What the community reports</h4>
-    <p>On-site 5.00/5, and kratom.org's "most popularly reviewed" nano green: "zero anxiety, clean energy and
-    mood boost, can last for hours." The nano grind is WestKoast's signature — finer than ultra-fine — and the
+    <p>On-site 5.00/5, and kratom.org's <span class="hlg">"most popularly reviewed"</span> nano green: <span class="hlg">"zero anxiety, clean energy and
+    mood boost, can last for hours."</span> The nano grind is WestKoast's signature — finer than ultra-fine — and the
     Devil is its most talked-about expression.</p>
     <div class="quote">"Zero anxiety, clean energy and mood boost, can last for hours."<cite>— kratom.org editorial review</cite></div>
   </div>
@@ -559,8 +562,8 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>3.0</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
-    <p>On-site 4.88/5. kratom.org: "hits hard and fast… very cerebral." The fast-onset green of the nano line —
-    quicker to arrive and more head-forward than the Devil. (Note: the clearance "1KG green Vietnam" listing
+    <p>On-site 4.88/5. kratom.org: <span class="hlg">"hits hard and fast… very cerebral."</span> The fast-onset green of the nano line —
+    quicker to arrive and more head-forward than the Devil. (Note: the clearance <span class="hlg">"1KG green Vietnam"</span> listing
     appears to be this leaf in bulk.)</p>
     <div class="quote">"Hits hard and fast… very cerebral."<cite>— kratom.org editorial review</cite></div>
   </div>
@@ -571,11 +574,11 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.1</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>1.3</b></span><span>⏳ 4–5h</span></div>
     <h4>🌿 The leaf</h4>
-    <p>Vendor description, in full: "mid/ fast mood." Two on-site reviews at 4.50/5.</p>
+    <p>Vendor description, in full: <span class="hlg">"mid/ fast mood."</span> Two on-site reviews at 4.50/5.</p>
     <h4>💬 What the community reports</h4>
-    <p>Kevin N (4/5, Feb 2025) found it "a little speedy" next to the Nano Green Vietnam; Colin (5/5, Sep 2025)
-    called it "fast but not jittery, awesome mood boost, and long legs." kratom.org's take captures the arc:
-    it "flows from inspirational energy to a slower calm" — lift first, ease later.</p>
+    <p>Kevin N (4/5, Feb 2025) found it <span class="hlg">"a little speedy"</span> next to the Nano Green Vietnam; Colin (5/5, Sep 2025)
+    called it <span class="hlg">"fast but not jittery, awesome mood boost, and long legs."</span> kratom.org's take captures the arc:
+    it <span class="hlg">"flows from inspirational energy to a slower calm"</span> — lift first, ease later.</p>
     <div class="quote">"Fast but not jittery, awesome mood boost, and long legs."<cite>— Colin, on-site review, Sep 2025</cite></div>
     <h4>🧪 Lab notes</h4>
     <p class="coa-note">WestKoast's COA library keys to farmer codes, not strain names — but the July 2026
@@ -590,7 +593,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>3.1</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
-    <p>Six on-site reviews at 5.00/5, with buyers praising freshness — "freshest kratom in the game" is the
+    <p>Six on-site reviews at 5.00/5, with buyers praising freshness — <span class="hlg">"freshest kratom in the game"</span> is the
     recurring theme. The Maeng Da that behaves like one: potent, driven, clean.</p>
   </div>
 </div>
@@ -610,7 +613,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= WHITE ================= -->
 <div class="colorband band-white" id="white">
-  <h2>⚪ White strains — clean drive &amp; focus</h2>
+  <h2><span class="icobtn" style="--bb:#eef4e2;--bm:#b9d18a;--bd:#3c5f1d">⚪</span> White strains — clean drive &amp; focus</h2>
   <p>The morning color: high, jitter-free energy, mental clarity &amp; alertness, strong productivity boost.</p>
   <div class="bigicon">⚡</div>
 </div>
@@ -629,7 +632,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.5</b></span><span>🧘 <b>2.4</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
     <p>The only WestKoast white with a genuine off-site report: a Reddit user (r/vendorsofkratom2) called it
-    their go-to — "great mood, energy and get up and go without the jittery feeling!" On-site rating holds at
+    their go-to — <span class="hlw">"great mood, energy and get up and go without the jittery feeling!"</span> On-site rating holds at
     5.00. The profile is the ideal white archetype: strong lift, clean landing, no jitters tax.</p>
     <div class="quote">"Great mood, energy and get up and go without the jittery feeling!"<cite>— Reddit user, r/vendorsofkratom2</cite></div>
   </div>
@@ -640,8 +643,8 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>1.0</b></span><span>⏳ 3.5–4h</span></div>
     <h4>💬 What the community reports</h4>
-    <p>On-site 4.50/5, and the only white with third-party editorial: kratom.org says "it gives good energy
-    without the jittery feel and uplifts your mood." The batch code rolled 0726 → 1026 within months —
+    <p>On-site 4.50/5, and the only white with third-party editorial: kratom.org says <span class="hlw">"it gives good energy
+    without the jittery feel and uplifts your mood."</span> The batch code rolled 0726 → 1026 within months —
     rapid churn is the norm here, so read the code on the bag, not the name alone.</p>
     <div class="quote">"Good energy without the jittery feel and uplifts your mood."<cite>— kratom.org editorial review</cite></div>
   </div>
@@ -652,11 +655,11 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>4.6</b></span><span>🧘 <b>2.2</b></span><span>🌙 <b>1.0</b></span><span>⏳ ~1.5h peak</span></div>
     <h4>🌿 The leaf</h4>
-    <p>Vendor description: "fast. typically mid/fast depending on batch. calm mood." One on-site review at 4/5.</p>
+    <p>Vendor description: <span class="hlw">"fast. typically mid/fast depending on batch. calm mood."</span> One on-site review at 4/5.</p>
     <h4>💬 What the community reports</h4>
-    <p>A single verified-owner review (apcrinzi, Apr 2025) sets the terms: "a caffeine-rivaling 90 minutes of
-    energy per serving." Short, sharp, honest — this is a sprinter, not a marathoner. Batch variance is
-    explicitly flagged by the vendor ("depending on batch").</p>
+    <p>A single verified-owner review (apcrinzi, Apr 2025) sets the terms: <span class="hlw">"a caffeine-rivaling 90 minutes of
+    energy per serving."</span> Short, sharp, honest — this is a sprinter, not a marathoner. Batch variance is
+    explicitly flagged by the vendor (<span class="hlw">"depending on batch"</span>).</p>
     <div class="quote">"A caffeine-rivaling 90 minutes of energy per serving."<cite>— apcrinzi, verified owner review, Apr 2025</cite></div>
     <div class="popbox tip">The most coffee-like white in the catalog by community description — plan the serving around that 90-minute window.</div>
   </div>
@@ -678,7 +681,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= GOLD / YELLOW & BLENDS ================= -->
 <div class="colorband band-gold" id="gold">
-  <h2>🟡 Golds, yellows &amp; blends — mellow warmth and house specialties</h2>
+  <h2><span class="icobtn" style="--bb:#fdf0cd;--bm:#e8c95a;--bd:#7d5f06">🟡</span> Golds, yellows &amp; blends — mellow warmth and house specialties</h2>
   <p>Sunset strains and the blender's playground: gentle calm, cozy warmth, and WestKoast's most-reviewed specialty of all.</p>
   <div class="bigicon">🌅</div>
 </div>
@@ -700,8 +703,8 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     specialty: <b>7 on-site reviews, all 5 stars</b>, several with detailed text.</p>
     <h4>💬 What the community reports</h4>
     <p>Pain relief is the headline, with mood lift and calm close behind. Buyers describe it as stronger than
-    plain leaf at around 2 grams: "fantastic for pain," and "pain relief, mood lift, calm, happy and a sense
-    of well-being.. Superb!" The coffee-soak is more than a gimmick in the reports — it reads as a genuinely
+    plain leaf at around 2 grams: <span class="hly">"fantastic for pain,"</span> and <span class="hly">"pain relief, mood lift, calm, happy and a sense
+    of well-being.. Superb!"</span> The coffee-soak is more than a gimmick in the reports — it reads as a genuinely
     different, heavier experience than standard leaf.</p>
     <div class="quote">"Pain relief, mood lift, calm, happy and a sense of well-being.. Superb!"<cite>— marcie21067, on-site review</cite></div>
     <div class="popbox star">The blend wall of the catalog: if the reds are for sleep and the greens are for day, Black MD is the heavy-comfort middle.</div>
@@ -713,8 +716,8 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>2.3</b></span><span>🧘 <b>4.5</b></span><span>🌙 <b>2.8</b></span><span>⏳ 3.5–4.5h</span></div>
     <h4>🌿 The leaf</h4>
-    <p>Vendor description: "slow, relaxing cozy. Great mixed with reds as well." One on-site 5-star review:
-    "The Best Big Mood!"</p>
+    <p>Vendor description: <span class="hly">"slow, relaxing cozy. Great mixed with reds as well."</span> One on-site 5-star review:
+    <span class="hly">"The Best Big Mood!"</span></p>
     <h4>💬 What the community reports</h4>
     <p>Thin record, clear character: a slow yellow built for mixing — the vendor explicitly positions it as a
     reds companion, and it's half the Pain Blend formula. Expect mellow, cozy, mood-warm rather than driven.</p>
@@ -727,10 +730,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.8</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.3</b></span><span>⏳ 4–5h</span></div>
     <h4>🌿 The blend</h4>
-    <p>"Original pain blend is back! Blend of Farmer R red bent and yellow boyan." Currently sold out —
+    <p><span class="hlb">"Original pain blend is back! Blend of Farmer R red bent and yellow boyan."</span> Currently sold out —
     as is its red-bent half.</p>
     <h4>💬 What the community reports</h4>
-    <p>One on-site 5-star review, and it's a love letter: "probably my all-time favorite for night pain"
+    <p>One on-site 5-star review, and it's a love letter: <span class="hlb">"probably my all-time favorite for night pain"</span>
     (TDeJ, Mar 2026). The formula makes sense on paper — heavy-ferment red bent for body ease plus slow
     yellow boyan for cozy mood. Worth watching for a restock.</p>
     <div class="quote">"Probably my all-time favorite for night pain."<cite>— TDeJ, on-site review, Mar 2026</cite></div>
@@ -742,7 +745,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>2.8</b></span><span>🌙 <b>1.0</b></span><span>⏳ 3.5–4h</span></div>
     <h4>🌿 The blend</h4>
-    <p>Vendor description: "white and Green blend." One on-site 5-star rating, no text.</p>
+    <p>Vendor description: <span class="hlb">"white and Green blend."</span> One on-site 5-star rating, no text.</p>
     <h4>💬 What the community reports</h4>
     <p>Single-rating record. The name and formula say it all: a daytime white-green driver. Nothing more can
     be honestly claimed.</p>
@@ -772,7 +775,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= MASTER MATRIX ================= -->
 <div class="colorband band-neutral" id="matrix">
-  <h2>📊 Master comparison matrix</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📊</span> Master comparison matrix</h2>
   <p>Every characterized strain in this guide, side by side — community consensus scores out of 5.0.</p>
   <div class="bigicon">📊</div>
 </div>
@@ -780,7 +783,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 😊 mood &amp; euphoria · ⚡ energy &amp; drive · 🧘 relaxation · 🌙 restfulness. — = not enough data. Evidence grades:
 <b>STRONG</b> = deep review base · <b>MODERATE</b> = several consistent reports · <b>THIN</b> = vendor-hosted stars only.</div>
 <table class="grid">
-<tr><th>Strain</th><th>Color</th><th>😊</th><th>⚡</th><th>🧘</th><th>🌙</th><th>⏳</th><th>Evidence</th></tr>
+<tr><th>Strain</th><th>Color</th><th><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">😊</span></th><th><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">⚡</span></th><th><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🧘</span></th><th><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🌙</span></th><th><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">⏳</span></th><th>Evidence</th></tr>
 <tr><td colspan="8" style="background:#f7e8e4;font-weight:700">🔴 Reds</td></tr>
 <tr class="mr1"><td>Red Fuzzy Blanket 0926</td><td>🔴</td><td>4.7</td><td>1.5</td><td>4.9</td><td>4.8</td><td>4–5h</td><td>STRONG</td></tr>
 <tr class="mr2"><td>Red Bent 0726</td><td>🔴</td><td>4.3</td><td>2.0</td><td>4.5</td><td>3.8</td><td>4–5h</td><td>MODERATE</td></tr>
@@ -809,7 +812,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= COA REFERENCE ================= -->
 <div class="colorband band-neutral" id="coa">
-  <h2>🧪 Alkaloid &amp; lab reference (COAs)</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧪</span> Alkaloid &amp; lab reference (COAs)</h2>
   <p>Measured numbers from WestKoast's published lab reports — vein-level batch data, presented honestly.</p>
   <div class="bigicon">🧪</div>
 </div>
@@ -818,7 +821,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   (Northglenn, CO)</b>, alkaloids by HPLC-UV. One critical honesty note: <b>every COA is keyed to a farmer code
   (FC#AR, FC#B, FC#T, FC#D), never to a retail strain name.</b> The tables below are therefore <i>vein-level
   batch data</i> — what July 2026 red/green/white leaf tested at — not strain-specific fingerprints. Any guide
-  that maps these numbers onto "Nano Red Devil" by name would be fabricating. Cleanliness panels show
+  that maps these numbers onto <span class="hlb">"Nano Red Devil"</span> by name would be fabricating. Cleanliness panels show
   Salmonella/STEC absent and S. aureus &lt;100 CFU/g per batch; heavy-metals panels are published for the
   0526 lots.</p>
 </div>
@@ -851,7 +854,7 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 
 <!-- ================= SOURCING ================= -->
 <div class="colorband band-neutral" id="sourcing">
-  <h2>🌱 Sourcing: batch codes, grinds &amp; farmer lines</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🌱</span> Sourcing: batch codes, grinds &amp; farmer lines</h2>
   <p>How to read a WestKoast bag.</p>
   <div class="bigicon">🌱</div>
 </div>
@@ -871,7 +874,7 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 
 <!-- ================= CATALOG ================= -->
 <div class="colorband band-neutral" id="catalog">
-  <h2>🛒 Current WestKoast catalog snapshot</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🛒</span> Current WestKoast catalog snapshot</h2>
   <p>What’s on the shelf as of October 2026 — 79 products across the color lines.</p>
   <div class="bigicon">🛒</div>
 </div>
@@ -888,7 +891,7 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 
 <!-- ================= BIBLIOGRAPHY ================= -->
 <div class="biblio" id="biblio">
-  <h2>📚 Sources &amp; bibliography</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📚</span> Sources &amp; bibliography</h2>
   <ol>
     <li>WestKoast Botanicals — product catalog &amp; COA Reports page. <a href="https://westkoastbotanicals.com/">westkoastbotanicals.com</a> · <a href="https://westkoastbotanicals.com/coa-reports/">COA Reports</a></li>
     <li>MBL — Murray-Brown Laboratories (Northglenn, CO) — Certificates of Analysis, farmer-code batches 0526 &amp; 0726 (HPLC-UV alkaloids; microbial &amp; heavy-metals panels), via WestKoast COA page.</li>
@@ -900,19 +903,8 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
   </ol>
 </div>
 
-<div class="disclaimer">
-  <b>Disclaimer:</b> These statements have not been evaluated by the Food and Drug Administration. This guide is
-  published for research and educational purposes only, and is not intended to diagnose, treat, cure, or prevent
-  any disease. Effect descriptions summarize community and vendor-published reports; individual experiences vary,
-  and batch codes denote distinct harvests whose character may differ from earlier batches.
-  <br><br>
-  <b>No affiliation:</b> This guide was written by an independent customer of WestKoast Botanicals who
-  purchases their products. The author has no affiliation with, sponsorship from, employment by, or business
-  relationship with WestKoast Botanicals, and does not represent the company in any capacity. Product names and batch
-  codes referenced are the property of their respective owner.
-</div>
 
-<footer class="site">WestKoast Botanicals — Complete Strain Guide · Independent customer research · October 2026</footer>
+<footer class="site">Complete Strain Guide for WestKoast Botanicals · Independent Customer Research · October 2026</footer>
 </div><!-- /wrap -->
 <script>
 document.querySelectorAll('.iconrow span').forEach(function(sp){
