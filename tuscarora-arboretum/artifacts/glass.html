@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glass — Tuscarora Arboretum</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);--sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);--sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);--t1:#0F172A;--t2:#475569;--t3:#94A3B8;--cyan:#06B6D4;--cyan-dark:#0891B2;--emerald:#10B981;--amber:#F59E0B;--slate:#64748B;--vivid-purple:#8B5CF6}
+html.dark{--bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);--sh:none;--sh-h:0 0 0 0 transparent;--t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;line-height:1.6;display:flex;flex-direction:column;transition:background-color .35s ease,color .35s ease}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 15% 20%,rgba(245,158,11,.05) 0%,transparent 55%),radial-gradient(ellipse at 85% 80%,rgba(180,120,40,.04) 0%,transparent 50%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:0}
+html.dark body::after{background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)}
+main{flex:1;width:100%}
+.section{max-width:1200px;margin:0 auto;padding:0 24px 48px;width:100%;position:relative;z-index:1}
+.page-head{max-width:1200px;margin:0 auto;padding:34px 24px 8px;width:100%;position:relative;z-index:1}
+.page-head h1{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:800;line-height:1.2}
+.page-head p{color:var(--t2);max-width:720px;margin-top:8px}
+.crumbs{font-size:.85rem;color:var(--t3);margin-bottom:10px}
+.crumbs a{color:var(--t2);text-decoration:none}
+.crumbs a:hover{color:var(--t1)}
+.section-title{font-family:'Outfit',sans-serif;font-size:1.35rem;font-weight:700;padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid var(--border)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;box-shadow:var(--sh);position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,background .35s ease,border-color .35s ease;text-decoration:none;color:var(--t1)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;transition:height .3s ease}
+a.card:hover{transform:translateY(-4px);box-shadow:var(--sh-h)}
+.card-hdr{display:flex;align-items:center;gap:16px;margin-bottom:16px;width:100%}
+.card-ico{width:48px;height:48px;min-width:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;transition:transform .3s ease}
+a.card:hover .card-ico{transform:scale(1.05)}
+.card-ico-img{width:64px;height:64px;min-width:64px;padding:0;overflow:hidden}
+.card-ico-img img{width:100%;height:100%;object-fit:cover;display:block}
+.card.ac-amber::before{background:var(--amber)}
+.card.ac-amber .card-ico{background:rgba(245,158,11,.12);color:var(--amber)}
+.card.ac-emerald::before{background:var(--emerald)}
+.card.ac-emerald .card-ico{background:rgba(16,185,129,.12);color:var(--emerald)}
+.card.ac-cyan::before{background:var(--cyan)}
+.card.ac-cyan .card-ico{background:rgba(6,182,212,.12);color:var(--cyan)}
+.card.ac-slate::before{background:var(--slate)}
+.card.ac-slate .card-ico{background:rgba(100,116,139,.12);color:var(--slate)}
+.card h2{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;line-height:1.3}
+.card p{color:var(--t2);font-size:.9rem;line-height:1.5;margin-bottom:24px;flex-grow:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:8px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff;width:100%;transition:filter .3s ease}
+.b-amber{background:linear-gradient(135deg,#D97706,var(--amber))}
+.b-emerald{background:linear-gradient(135deg,#059669,var(--emerald))}
+.b-cyan{background:linear-gradient(135deg,var(--cyan-dark),var(--cyan))}
+.btn-soon{background:rgba(100,116,139,.18);color:var(--t3)}
+.card.soon{opacity:.75}
+a,.card{-webkit-tap-highlight-color:transparent}
+
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50;width:100%}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+.peptopia-logo.logo-light{display:none}
+html.dark .peptopia-logo.logo-light{display:block}
+html.dark .peptopia-logo.logo-dark{display:none}
+.peptopia-wordmark{display:flex;flex-direction:column;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.15;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-nav>a{font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font-size:.8rem;line-height:1.6;color:#64748b;position:relative;z-index:1}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
+html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+@media(max-width:640px){.peptopia-hdr{padding:10px 12px;gap:8px}.peptopia-brand{gap:8px}.peptopia-logo{width:38px;height:38px}.peptopia-wordmark{font-size:.85rem}.peptopia-nav{gap:.6rem}.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}.peptopia-iconbtn{width:34px;height:34px;flex:none}}
+@media print{.peptopia-hdr,.peptopia-ftr{display:none!important}}
+</style>
+</head>
+<body>
+<header class="peptopia-hdr">
+<a class="peptopia-brand" href="../index.html">
+<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Tuscarora Arboretum"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Tuscarora Arboretum">
+<span class="peptopia-wordmark">TUSCARORA<span class="peptopia-tagline">ARBORETUM</span></span>
+</a>
+<nav class="peptopia-nav" aria-label="Site">
+<a href="https://x-peps.com/">HOME</a><a href="../index.html">ARBORETUM</a>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+</nav>
+</header>
+<main>
+<div class="page-head">
+<div class="crumbs"><a href="../index.html">Tuscarora Arboretum</a> &rsaquo; Artifacts &rsaquo; Glass</div>
+<h1>Glass</h1>
+<p>Glass is the great survivor of the historic backyard — chemically near-immortal in the ground, it outlasts the labels, the houses, and sometimes the streets themselves. Three families of glass finds are tracked here.</p>
+</div>
+<section class="section">
+<h2 class="section-title">Glass Artifacts</h2>
+<div class="grid">
+<a href="bottles/queen-street-bottle.html" class="card ac-amber">
+<div class="card-hdr">
+<div class="card-ico"><i class="fa-solid fa-wine-bottle"></i></div>
+<h2>Bottles</h2>
+</div>
+<p>Drugstore, toiletry, and household bottles from Martinsburg ground. First entry: Artifact No. 1, the Queen Street Bottle — a ribbed flat-oval flask dug at 117 South Queen Street, researched through its patent marking, its glass, and its ground.</p>
+<span class="btn b-amber"><i class="fa-solid fa-arrow-right"></i> View Bottles</span>
+</a>
+<div class="card ac-emerald soon">
+<div class="card-hdr">
+<div class="card-ico"><i class="fa-solid fa-circle-dot"></i></div>
+<h2>Marbles</h2>
+</div>
+<p>Handmade and machine-made glass marbles — clay-era transitions, German swirls, and early machine marbles turn up wherever children played and privies were filled. The first marble entries are being prepared.</p>
+<span class="btn btn-soon"><i class="fa-solid fa-clock"></i> Coming Soon</span>
+</div>
+<div class="card ac-cyan soon">
+<div class="card-hdr">
+<div class="card-ico"><i class="fa-solid fa-mug-saucer"></i></div>
+<h2>China</h2>
+</div>
+<p>Broken porcelain and earthenware — transferware shards, hotel china, and tableware fragments that date a yard as surely as any document. The first china entries are being prepared.</p>
+<span class="btn btn-soon"><i class="fa-solid fa-clock"></i> Coming Soon</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="peptopia-ftr">
+<div>&copy; 2026 Tuscarora Arboretum &bull; A Peptopia project &bull; Martinsburg, West Virginia</div>
+<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Tuscarora%20Arboretum%20Website">Peptopia@x-peps.com</a></div>
+<div class="peptopia-ftr-icons">
+<a class="ftr-logo" href="https://x-peps.com/" title="Peptopia home" aria-label="Peptopia home"><img src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia home" class="logo-dark"><img src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia home" class="logo-light"></a>
+</div>
+</footer><script>
+function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('ta-theme',d?'dark':'light')}catch(e){}}
+try{if(localStorage.getItem('ta-theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}
+</script>
+</body>
+</html>
