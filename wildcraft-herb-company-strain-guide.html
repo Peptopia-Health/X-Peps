@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildcraft Herb Company — Complete Strain Guide</title>
+<style>
+
+
+
+
+
+
+
+
+:root{
+  --paper:#faf7ef; --paper2:#f3eee1; --ink:#2e2a24; --muted:#6f675a;
+  --red:#b03a2e; --red-dk:#7e241a; --red-soft:#f7e8e4;
+  --green:#2e7d4f; --green-dk:#1c5433; --green-soft:#e6f2ea;
+  --white:#5c8a2f; --white-dk:#3c5f1d; --white-soft:#eef4e2;
+  --gold:#b8860b; --gold-dk:#7d5f06; --gold-soft:#faf3dd;
+  --blend:#6a4c93; --blend-dk:#4a3369; --blend-soft:#efe9f7;
+  --accent:#1E4D3B; --line:#ddd3bd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;line-height:1.65}
+h1,h2,h3,.serif{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+/* ---------- title page ---------- */
+.titlepage{min-height:auto;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;
+  text-align:center;padding:26px 24px 12px;position:relative;overflow:hidden;
+  background:radial-gradient(1200px 600px at 50% -10%,#e9f3e4 0%,var(--paper) 60%);}
+
+
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:14px}
+.titlepage h1{font-size:clamp(38px,6vw,64px);margin:0 0 10px;color:#1E4D3B;line-height:1.12}
+.titlepage .sub{font-size:clamp(17px,2.4vw,22px);color:var(--muted);max-width:640px;margin:0 0 26px}
+.titlepage .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:13px;background:#fff;color:var(--muted)}
+.titlepage .date{font-size:14px;color:var(--muted)}
+
+/* ---------- index ---------- */
+.index{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 30px;margin:34px 0;
+  box-shadow:0 4px 18px rgba(60,50,30,.06)}
+.index h2{margin-top:0;color:#1E4D3B}
+.index ol{columns:2;column-gap:34px;margin:0;padding-left:22px}
+.index li{margin:7px 0;break-inside:avoid}
+.index a{color:var(--accent);text-decoration:none}
+.index a:hover{text-decoration:underline}
+@media(max-width:640px){.index ol{columns:1}}
+/* ---------- section headers ---------- */
+.colorband{border-radius:14px;padding:26px 28px;margin:44px 0 20px;color:#fff;position:relative;overflow:hidden}
+.colorband h2{margin:0 0 6px;font-size:30px}
+.colorband p{margin:0;opacity:.94;max-width:700px}
+.colorband .bigicon{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:64px;opacity:.12}
+.band-red{background:linear-gradient(120deg,var(--red-dk),var(--red))}
+.band-green{background:linear-gradient(120deg,var(--green-dk),var(--green))}
+.band-white{background:linear-gradient(120deg,var(--white-dk),var(--white))}
+.band-gold{background:linear-gradient(120deg,var(--gold-dk),#cf9a1b)}
+.band-blend{background:linear-gradient(120deg,var(--blend-dk),var(--blend))}
+.band-neutral{background:linear-gradient(120deg,#1E4D3B,#1f6f5c)}
+.catintro{background:#fff;border:1px solid var(--line);border-left:6px solid var(--accent);
+  border-radius:10px;padding:18px 22px;margin:0 0 22px;font-size:16px}
+/* ---------- strain cards ---------- */
+.strain{background:#fff;border:1px solid var(--line);border-radius:12px;margin:0 0 22px;overflow:hidden;
+  box-shadow:0 3px 12px rgba(60,50,30,.05)}
+.strain-head{display:flex;align-items:center;gap:12px;padding:16px 20px;color:#fff;flex-wrap:wrap}
+.strain-head h3{margin:0;font-size:21px;flex:1;min-width:200px}
+.strain.red .strain-head{background:linear-gradient(100deg,var(--red-dk),var(--red))}
+.strain.green .strain-head{background:linear-gradient(100deg,var(--green-dk),var(--green))}
+.strain.white .strain-head{background:linear-gradient(100deg,var(--white-dk),var(--white))}
+.strain.gold .strain-head{background:linear-gradient(100deg,var(--gold-dk),#cf9a1b)}
+.strain.blend .strain-head{background:linear-gradient(100deg,var(--blend-dk),var(--blend))}
+.batch{font-size:12px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4);
+  padding:3px 12px;border-radius:999px;white-space:nowrap}
+.strain-body{padding:18px 22px}
+.iconrow{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 12px;font-size:14px}
+.iconrow span{background:var(--paper2);border:1px solid var(--line);border-radius:8px;padding:5px 12px}
+.strain h4{margin:16px 0 6px;color:#1E4D3B;font-size:16px}
+.strain p{margin:8px 0}
+.strain ul{margin:8px 0;padding-left:22px}
+.strain li{margin:4px 0}
+.score{display:inline-block;min-width:44px;text-align:center;font-weight:700;border-radius:8px;
+  padding:2px 8px;color:#fff;font-size:14px}
+.s5{background:#2e7d4f}.s4{background:#5c8a2f}.s3{background:#b8860b}.s2{background:#c96a1b}.s1{background:#b03a2e}
+.quote{border-left:4px solid var(--line);margin:10px 0;padding:8px 14px;background:var(--paper2);
+  border-radius:0 8px 8px 0;font-style:italic;color:#4a4438;font-size:14.5px}
+.quote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:4px}
+/* ---------- pop-up boxes ---------- */
+.popbox{border-radius:12px;padding:16px 20px;margin:16px 0;border:1px solid}
+.popbox.tip{background:#eef7f0;border-color:#bfe0c9}
+.popbox.tip::before{content:"🌿 Field note — ";font-weight:700;color:var(--green-dk)}
+.popbox.deep{background:#f4efe4;border-color:#e0d3ae}
+.popbox.deep::before{content:"🔬 Sourcing deep-dive — ";font-weight:700;color:var(--gold-dk)}
+.popbox.star{background:#fdf6ec;border-color:#f0d9a8}
+.popbox.star::before{content:"⭐ Community standout — ";font-weight:700;color:#8a6d1a}
+/* ---------- tables ---------- */
+table.grid{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff}
+table.grid th{background:#1E4D3B;color:#fff;padding:10px 12px;text-align:left;font-size:13px}
+table.grid td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.grid tr:nth-child(even) td{background:#fbf9f3}
+.coa-note{font-size:13px;color:var(--muted)}
+/* ---------- comparison panels ---------- */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+@media(max-width:680px){.panels{grid-template-columns:1fr}}
+.panel{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.panel .phead{text-align:center;padding:10px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:22px;color:#fff}
+.panel .pbody{display:flex;gap:14px;padding:16px;align-items:center}
+.panel .pleft,.panel .pright{flex:1;font-size:13px;font-weight:700;line-height:1.4}
+.panel .pfoot{padding:0 16px 16px;font-size:13.5px;color:#4a4438}
+.panel a.golink{display:block;text-align:center;padding:9px;background:rgba(0,0,0,.06);
+  color:#1E4D3B;font-weight:700;text-decoration:none;font-size:14px}
+.p-white .phead{background:#7cb342}.p-green .phead{background:#26a69a}
+.p-yellow .phead{background:#d4a017}.p-red .phead{background:#c62828}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:14px 0;font-size:13px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:-2px}
+/* ---------- misc ---------- */
+.disclaimer{margin:50px 0 30px;padding:22px 26px;border:1px dashed #b9ac8d;border-radius:12px;
+  background:#fbf8ee;font-size:13.5px;color:var(--muted)}
+.biblio{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 28px;margin:30px 0}
+.biblio li{margin:6px 0;font-size:14px}
+.biblio a{color:var(--accent);word-break:break-all}
+footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #1E4D3B;color:#1E4D3B;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.35);z-index:50}
+@media print{.toc-top,.print-btn{display:none}.strain,.panel{break-inside:avoid}}
+@page{size:Letter;margin:13mm}
+@media print{*{print-color-adjust:exact;-webkit-print-color-adjust:exact}.peptopia-hdr,#donut-modal{display:none!important}.strain,.wc-card,.wc-stat,.panel,.quote,.popbox,.wc-ev,table,tr{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}body{background:#fff!important}a{color:inherit;text-decoration:none}}
+.print-btn{position:fixed;top:18px;right:18px;background:#1E4D3B;color:#fff;border:0;border-radius:999px;
+  padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
+.print-btn:hover{background:#2e7d4f}
+
+.mr1 td{background:#fcecea}.mr2 td{background:#f9dcd6}
+.mg1 td{background:#e9f5ec}.mg2 td{background:#dcebdd}
+.mw1 td{background:#f2f8e6}.mw2 td{background:#e7f0d4}
+.my1 td{background:#fff8e1}.my2 td{background:#fdecC4}
+.mb1 td{background:#f4effa}.mb2 td{background:#eae1f5}
+.iconrow span{display:inline-block;min-width:88px}
+.meter{height:5px;background:#e7dfc9;border-radius:3px;margin-top:5px;overflow:hidden}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,#8bc34a,#2e7d4f);border-radius:3px}
+.index ol ol{list-style-type:lower-alpha;margin-top:6px}
+.index ol ol li{margin:4px 0}
+.subtitle{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:clamp(20px,3vw,30px);color:#1f6f5c;letter-spacing:2px;text-transform:uppercase;margin:0 0 20px}
+.affil{display:inline-block;margin-top:18px;font-size:13.5px;color:var(--muted);border:1px dashed #c9bd9d;border-radius:999px;padding:7px 18px;background:#fff}
+.leafdiv{text-align:center;color:#b9ac8d;font-size:20px;letter-spacing:14px;margin:30px 0 10px}
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+
+html.dark .peptopia-wordmark{color:#f1f5f9}
+
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+
+html.dark .peptopia-tagline{color:#94a3b8}
+
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+
+html.dark .peptopia-nav>a{color:#cbd5e1}
+
+.peptopia-nav>a:hover{color:#be185d}
+
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-hdr .peptopia-nav,.peptopia-ftr .peptopia-ftr-icons{display:none!important}
+
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+
+/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
+.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
+
+html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
+
+html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
+
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+
+html.dark .peptopia-wordmark{color:#f1f5f9}
+
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+
+html.dark .peptopia-tagline{color:#94a3b8}
+
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-hdr{padding:10px 12px;gap:8px}
+.peptopia-brand{gap:8px}
+.peptopia-logo{width:38px;height:38px}
+.peptopia-wordmark{font-size:.85rem}
+.peptopia-nav{gap:.6rem}
+.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}
+.peptopia-iconbtn{width:34px;height:34px;flex:none}
+
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+
+html.dark .peptopia-nav>a{color:#cbd5e1}
+
+.peptopia-nav>a:hover{color:#be185d}
+
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}
+/* injected standard header CSS */
+/* ===== Emphatic highlights (David 2026-10-24) ===== */
+.hlr,.hlg,.hlw,.hly,.hlb{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;border-radius:2px}
+.hlr{background:#fbe3de}.hlg{background:#e0f1e4}.hlw{background:#eef4dc}.hly{background:#fdf0cd}.hlb{background:#e9e2f7}
+/* ===== Raised circular icon buttons (David 2026-10-24) ===== */
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
+
+/* ---------- WildCraft flagship additions (wc-) ---------- */
+.wc-stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.wc-stat{flex:1;min-width:140px;background:#fff;border:1px solid var(--line);border-top:5px solid #1E4D3B;border-radius:12px;padding:14px 16px;text-align:center}
+.wc-stat b{display:block;font-size:26px;color:#1E4D3B;line-height:1.1}
+.wc-stat span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.wc-bars{margin:12px 0}
+.wc-bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px}
+.wc-bar .wc-bl{flex:0 0 210px;text-align:right;color:var(--ink)}
+.wc-bar .wc-bt{flex:1;background:var(--paper2);border:1px solid var(--line);border-radius:8px;height:20px;overflow:hidden}
+.wc-bar .wc-bf{height:100%;border-radius:7px}
+.wc-bar .wc-bv{flex:0 0 92px;font-weight:700;color:#1E4D3B}
+.wc-tl{position:relative;margin:20px 0 8px;padding-left:26px}
+.wc-tl:before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:3px;background:#7A9E8D;border-radius:2px}
+.wc-ev{position:relative;margin:0 0 16px}
+.wc-ev:before{content:"";position:absolute;left:-25px;top:5px;width:13px;height:13px;border-radius:50%;background:#1E4D3B;border:3px solid #e6f2ea}
+.wc-ev b{color:#1E4D3B}
+.wc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:14px 0}
+.wc-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.wc-card h4{margin:0 0 8px;color:#1E4D3B;font-size:16px}
+.wc-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff}
+.wc-table th{background:#1E4D3B;color:#fff;text-align:left;padding:9px 12px}
+.wc-table td{border-bottom:1px solid var(--line);padding:8px 12px}
+.wc-table tr:nth-child(even) td{background:var(--paper2)}
+.stars{color:#b8860b;font-weight:700}
+.oos{display:inline-block;background:#f7e8e4;color:#7e241a;border:1px solid #e3b7ae;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
+.avail{display:inline-block;background:#e6f2ea;color:#1E4D3B;border:1px solid #bfe0c9;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
+@media print{.wc-stat,.wc-card{break-inside:avoid}}
+</style>
+</head>
+<body id="top">
+<header class="peptopia-hdr">
+<a class="peptopia-brand" href="https://x-peps.com/">
+<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
+<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
+</a>
+<nav class="peptopia-nav" aria-label="Site">
+<a href="https://x-peps.com/">HOME</a>
+<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+</nav>
+</header>
+<a class="toc-top" href="#top" title="Back to top">↑</a>
+<button class="print-btn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
+<div class="wrap">
+<!-- ================= TITLE PAGE ================= -->
+<div class="titlepage">
+  <div class="kicker">Independent Customer Research</div>
+  <h1>Wildcraft Herb Company</h1>
+  <div class="subtitle">Complete Strain Guide</div>
+  <p class="sub">An independent, product-by-product analysis of the WildCraft lineup — a small, family-run,
+  craft kratom house from Epping, New Hampshire, built on numbered small batches, published lab reports,
+  and leaf that sells out faster than it can be restocked. Every strain line is covered: Premium Select,
+  the OG Wild signature leaf, Private Garden micro-batches, house blends, heritage and Thai lines, and the
+  Cargo value range — with verified alkaloid data, community reports, and honest comparisons.</p>
+  <div class="badges">
+    <span class="pill">⭐ Premium Select</span><span class="pill">🌿 OG Wild</span>
+    <span class="pill">🏡 Private Garden</span><span class="pill">🟣 House Blends</span>
+    <span class="pill">🇹🇭 Thai Line</span><span class="pill">📦 Cargo</span>
+  </div>
+  <div><span class="affil">✋ Independent customer research — no affiliation with, sponsorship from, or business relationship with Wildcraft Herb Company. The author does not represent the company.</span></div>
+  <div class="date" style="margin-top:14px">Compiled October 2026</div>
+</div>
+
+<!-- ================= INDEX ================= -->
+<div class="index">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📖</span> Index</h2>
+  <ol>
+    <li><a href="#howto">How to use this guide &amp; the color map</a></li>
+    <li><a href="#science">Vein colors &amp; what consumers report</a></li>
+    <li><a href="#company">The company — a family craft house in New Hampshire</a></li>
+    <li>Strain analyses by line
+      <ol>
+        <li><a href="#premium">⭐ Premium Select — the flagship line</a></li>
+        <li><a href="#signature">🌿 Signature &amp; Private Garden — the OG wild leaf</a></li>
+        <li><a href="#blends">🟣 House blends — the recipes buyers ask for by name</a></li>
+        <li><a href="#heritage">🟡 Heritage &amp; village leaf — vintage, Hutan &amp; ferments</a></li>
+        <li><a href="#thai">🇹🇭 The Thai line — a different tradition</a></li>
+        <li><a href="#cargo">📦 Cargo Line — the value door</a></li>
+      </ol>
+    </li>
+    <li><a href="#matrix">Master comparison matrix</a></li>
+    <li><a href="#coa">Alkaloid &amp; lab reference (COAs)</a></li>
+    <li><a href="#value">Price &amp; value — what the premium buys</a></li>
+    <li><a href="#voices">What buyers say — the community record</a></li>
+    <li><a href="#critique">The honest critique — where WildCraft can do better</a></li>
+    <li><a href="#ordering">Ordering, shipping &amp; policies</a></li>
+    <li><a href="#verdict">The verdict — scorecard</a></li>
+    <li><a href="#biblio">Sources &amp; bibliography</a></li>
+  </ol>
+</div>
+
+<!-- ================= HOW TO USE ================= -->
+<div class="colorband band-neutral" id="howto">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧭</span> How to use this guide &amp; the color map</h2>
+  <p>Find your color below, glance at the map, then jump straight to the section that fits the moment.</p>
+  <div class="bigicon">🧭</div>
+</div>
+<div class="legend">
+  <span><i style="background:#7cb342"></i>High Energy &amp; Productivity</span>
+  <span><i style="background:#f9a825"></i>Mood &amp; Well-being</span>
+  <span><i style="background:#90caf9"></i>Balance &amp; Clarity</span>
+  <span><i style="background:#ef6c00"></i>Calm &amp; Relaxation</span>
+  <span><i style="background:#c62828"></i>Relief &amp; Warmth</span>
+</div>
+
+<div class="panels">
+  <div class="panel p-white">
+    <div class="phead">White</div>
+    <div class="pbody">
+      <div class="pleft">⚡ HIGH, JITTER-FREE ENERGY<br><b>40%</b></div>
+      <svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">☀️ MENTAL CLARITY &amp; ALERTNESS<br><b>35%</b><br><br>📈 STRONG PRODUCTIVITY BOOST<br><b>25%</b></div>
+    </div>
+    <div class="pfoot">Best for brisk energy, clean motivation, substitute for coffee.</div>
+    <a class="golink" href="#white">→ Browse white strains</a>
+  </div>
+  <div class="panel p-green">
+    <div class="phead">Green</div>
+    <div class="pbody">
+      <div class="pleft">🌅 BALANCED ENERGY &amp; VIBE<br><b>35%</b></div>
+      <svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">👁️ MENTAL CLARITY &amp; UPLIFT<br><b>30%</b><br><br>🍃 MILD CALM &amp; WELL-BEING<br><b>35%</b></div>
+    </div>
+    <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
+    <a class="golink" href="#green">→ Browse green strains</a>
+  </div>
+  <div class="panel p-yellow">
+    <div class="phead">Yellow</div>
+    <div class="pbody">
+      <div class="pleft">😌 MELLOW MOOD &amp; RELAXATION<br><b>45%</b><br><br>🤗 GENTLE CALM &amp; WARMTH<br><b>35%</b></div>
+      <svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">⛅ BALANCED WELL-BEING<br><b>20%</b></div>
+    </div>
+    <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
+    <a class="golink" href="#gold">→ Browse gold &amp; yellow strains</a>
+  </div>
+  <div class="panel p-red">
+    <div class="phead">Red</div>
+    <div class="pbody">
+      <div class="pleft">🛌 DEEP RELAXATION &amp; RELIEF<br><b>50%</b><br><br>😴 CALMING EFFECTS<br><b>30%</b></div>
+      <svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <div class="pright">🌙 MENTAL CALM &amp; RESTFUL REST<br><b>20%</b></div>
+    </div>
+    <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
+    <a class="golink" href="#red">→ Browse red strains</a>
+  </div>
+</div>
+<script>
+document.querySelectorAll('svg.pie').forEach(function(svg){
+  var NS='http://www.w3.org/2000/svg';
+  var slices=svg.dataset.slices.split(',').map(function(s){var p=s.split(':');return{c:p[0],v:+p[1]};});
+  var r=44,cx=55,cy=55,circ=2*Math.PI*r,off=0;
+  slices.forEach(function(sl){
+    var frac=sl.v/100,c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);
+    c.setAttribute('fill','none');c.setAttribute('stroke',sl.c);c.setAttribute('stroke-width','22');
+    c.setAttribute('stroke-dasharray',Math.max(frac*circ-1.5,0.1)+' '+circ);
+    c.setAttribute('stroke-dashoffset',-off);
+    c.setAttribute('transform','rotate(-90 '+cx+' '+cy+')');
+    svg.appendChild(c);off+=frac*circ;
+  });
+});
+</script>
+<div class="catintro">
+  <b>Reading a strain card:</b> each card opens with the strain name and its line or batch tag —
+  WildCraft works in <span class="batch" style="background:#eee;color:#333;border-color:#ccc">numbered batches</span>:
+  signature-supplier harvests carry numbers (#1005 through the current #1020), Premium Select batches carry
+  PR Select numbers, and individual lots carry MS codes (MS1021-2, MS1001-7). The icon row gives the
+  one-glance profile — 😊 mood &amp; euphoria, ⚡ energy, 🧘 relaxation, 🌙 restfulness &amp; relief, ⏳ duration.
+  Scores (0.0–5.0) reflect the evidence gathered across on-site reviews, Reddit, editorial review sites, and
+  the vendor's own published lab data: <span class="score s5">4.5+</span> elite · <span class="score s4">3.5–4.4</span> strong ·
+  <span class="score s3">2.0–3.4</span> moderate · <span class="score s2">0.5–1.9</span> subtle · — = not enough data.
+  Tap the small pie beside any strain name for its effect-profile chart. Evidence strength is stated on every
+  card — where the community record is thin, the card says so plainly.
+</div>
+
+<!-- ================= SCIENCE NOTE ================= -->
+<div class="colorband band-neutral" id="science">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔬</span> Vein colors &amp; what consumers report</h2>
+  <p>What the community's experience shows — recorded here as fact, batch by batch.</p>
+  <div class="bigicon">🔬</div>
+</div>
+<div class="catintro">
+  <p>The color system is the community's own language: reds for winding down, whites for lift-off, greens for
+  the all-day middle, golds and yellows for mellow warmth. Across years of reports — on-site reviews, Reddit
+  threads, podcasts, and buyer discussions — <b>consumers consistently describe distinct, reproducible
+  effect profiles per color</b>. Those reports are the factual record this guide is built on.</p>
+  <p>What lab work adds to the picture: WildCraft's published Murray Brown Laboratories panels (HPLC-UV) put
+  the current Premium Select line at <b>1.53–1.70% mitragynine</b> with total alkaloids of 2.28–2.60% — the
+  high end of what natural, unenhanced leaf typically tests at. That is a measured finding about
+  <i>major-alkaloid percentages</i>, not a verdict on the colors themselves. Why leaf presents so differently
+  by color in consumers' hands — minor alkaloids, curing and fermentation, grind, leaf maturity — remains an
+  open research question. The community's answer, recorded across thousands of reports, is simpler:
+  <b>the colors present differently, reliably, and usefully.</b> This guide treats those consumer reports as
+  its primary evidence and presents them without speculation.</p>
+</div>
+
+<!-- ================= COMPANY ================= -->
+<div class="colorband band-neutral" id="company">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏡</span> The company — a family craft house in New Hampshire</h2>
+  <p>Small-batch premium is not a slogan here; it is the entire operating model.</p>
+  <div class="bigicon">🌿</div>
+</div>
+<div class="wc-stats">
+  <div class="wc-stat"><b>68</b><span>Strains listed</span></div>
+  <div class="wc-stat"><b>20+</b><span>Lab reports published</span></div>
+  <div class="wc-stat"><b>1.70%</b><span>Top tested mitragynine</span></div>
+  <div class="wc-stat"><b>4.3 / 5</b><span>kratom.org vendor rating</span></div>
+  <div class="wc-stat"><b>#28</b><span>of 211 vendors ranked</span></div>
+</div>
+<div class="catintro">
+  <p><b>Wildcraft Herb Company</b> describes itself, in its own words, as <i>"a small family owned craft
+  Kratom company out of Epping, New Hampshire."</i> The family behind it holds degrees in Sustainable
+  Agriculture and Herbal Medicine, forages and grows its own plants, and runs the kratom side of the business
+  on a philosophy borrowed from craft brewing: source smaller quantities of only the highest-quality leaf,
+  freshly harvested at the peak of maturity, rather than warehousing bulk leaf. Their farmers in Indonesia —
+  described as part of the family — hand-select leaf from cultivated and wild trees on family farms, harvesting
+  the same fields in sustainable rotation, batch after batch, for consistency.</p>
+  <p>The model has a cost, and the company is unusually open about it: small, frequent harvests mean thin
+  inventory, and thin inventory means the catalog is a moving target. Shipments have been delayed six months
+  by Indonesian export issues; an entire signature batch (#1020) was held up in 2026 while the company bridged
+  the gap with its Premium Select line. Every batch that does arrive is quarantined and sent to
+  <b>Murray Brown Laboratories</b> for third-party testing before it is packed and released — alkaloid panel,
+  heavy metals, and microbial screening — and the reports are posted publicly on the site's lab page.</p>
+  <p>Beyond kratom, the same homestead ethos fills out an Herbal Apothecary (kanna extracts, mushroom
+  tinctures, shilajit, ceremonial blends) and an Herbal Boutique of handmade soaps, salves and cleansers —
+  a reminder that this is an herbalism business first and a kratom vendor second. The kratom catalog is
+  organized into lines, and understanding the lines is the key to the whole menu:</p>
+</div>
+<div class="wc-grid">
+  <div class="wc-card"><h4>⭐ Premium Select</h4><p>The flagship line — exceptional small-batch harvests from a premium supplier, chosen for quality, freshness and consistency, and the line with the strongest published lab numbers (1.53–1.70% mitragynine). Veins, a golden, and three blends built from the same leaf.</p></div>
+  <div class="wc-card"><h4>🌿 Signature (OG Wild) Leaf</h4><p>The original WildCraft leaf from the signature supplier's numbered batches — wild and cultivated Borneo trees, some of the oldest on record with the vendor. The OG Wilds are the strains long-time customers wait for by batch number.</p></div>
+  <div class="wc-card"><h4>🏡 Private Garden</h4><p>Micro-batches harvested from private gardens across Indonesia and Thailand — the personal stashes of the people who live with the plant, sometimes from a handful of trees around family homes. No two releases are the same; when one is gone, it may never return.</p></div>
+  <div class="wc-card"><h4>🇹🇭 Thai Line</h4><p>Leaf from Thailand rather than Indonesia — a coarser, grittier grind and a different experience that the vendor itself flags honestly: some buyers love it, others don't.</p></div>
+  <div class="wc-card"><h4>📦 Cargo Line</h4><p>The value door — pure veins in sizes up to a full kilo at the lowest per-gram prices in the catalog, with its own published batch labs (C-002).</p></div>
+  <div class="wc-card"><h4>🎁 Flights, Splits &amp; Capsules</h4><p>Sample packs ($15), 80 g two/three/five-bag bundles ($28/$40/$64), half-kilo and full-kilo splits — including a Premium Select four-way kilo at $105 — plus pre-filled capsules in all three veins.</p></div>
+</div>
+<div class="catintro">
+  <b>The road to Batch #1020</b> — how the numbered-batch system actually played out in 2026:
+  <div class="wc-tl">
+    <div class="wc-ev"><b>Batch #1005 → #1015</b> — the early numbered signature harvests; their lab reports still anchor the site's lab page, alongside trial lines (PSB-001, Cargo C01/C-002).</div>
+    <div class="wc-ev"><b>Batch #1016</b> — a dry-season drop that carried the limited Full Send Blend and Hutan Village Green (1.69% mitragynine).</div>
+    <div class="wc-ev"><b>Batch #1018</b> — the blend batch: Breakfast Blend and the Bodhisattva Blend, two of the highest-rated products in the catalog.</div>
+    <div class="wc-ev"><b>June 2026 — PR Select 01</b> — the Premium Select line's defining COA: Green 1.70%, Red 1.53%, White 1.53% mitragynine (Murray Brown Labs, Report 2606E84).</div>
+    <div class="wc-ev"><b>2026 — the #1020 saga</b> — the signature restock was delayed for months by shipping and paperwork problems; the company kept customers informed by newsletter at every step, and bridged the gap with PR Select 01 while alkaloid labs for #1020 came back at a 1.6% average.</div>
+    <div class="wc-ev"><b>October 2026</b> — Premium Select restocked (Green 1.7%, Red and White 1.53%); the #1020 release follows, with exact dates announced by newsletter.</div>
+  </div>
+</div>
+
+<div class="colorband band-green" id="premium">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">⭐</span> Premium Select — the flagship line</h2>
+  <p>Small-batch harvests chosen for quality, freshness and consistency — and tested to prove it.</p>
+  <div class="bigicon">⭐</div>
+</div>
+<div class="catintro"><b>Premium Select</b> is WildCraft's flagship: leaf from a premium supplier, released in numbered
+  PR Select batches, with the strongest published lab numbers in the catalog — a 1.59% average mitragynine
+  across the three veins, peaking at <b>1.70%</b> in the green. When the signature #1020 batch was delayed in
+  2026, this line carried the company — and earned its place at the top of the menu on merit.</div>
+
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 30], [&quot;calm&quot;, 22], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;mid-spec upper with long legs and a real mood lift&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — Green Vein</h3><span class="batch">PR Select 01 · Premium Select</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.83 / 5 (6 reviews)</span> on-site · $7–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The flagship green of the Premium Select line — a small-batch harvest from WildCraft's premium supplier, and the strongest-testing natural leaf in this entire guide. The vendor calls it a potent green with an uplifting, energetic and balanced profile.</p>
+    <h4>💬 What the community reports</h4>
+    <p>The vendor's own description — a <i>mid spec upper with long legs and noticeable mood boost, perfect for daytime use</i> — matches the community pattern for high-alkaloid greens: bright, driven, and longer-lasting than the average green. It anchors the Premium Select blends below, which buyers ask for by name.</p>
+    <div class="popbox star">The line's benchmark: the green against which the rest of the Premium Select family is blended.</div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Murray Brown Labs COA (Report 2606E84, June 2026): <b>mitragynine 1.70%</b>, total alkaloids 2.60%, 7-OH &lt;0.0196% — full panel in the <a href="#coa">lab reference</a>.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;the Premium Select evening anchor \u2014 warm, heavy, complete&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — Red Vein</h3><span class="batch">PR Select 01 · Premium Select</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.8</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.6</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $7–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The red of the PR Select 01 batch — same premium harvest, red vein. It is also half of the Here Comes the Sun Premium Select blend, which gives a useful reference point: this is the warm, settling half of that recipe.</p>
+    <h4>💬 What the community reports</h4>
+    <p>A perfect 5.00 on-site rating and a 1.53% mitragynine test put it in the top tier of natural reds. Community-wide, reds testing at this level are the ones buyers describe as genuinely heavy rather than merely mild — full evening comfort with the mood warmth reds are prized for.</p>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Murray Brown Labs COA (Report 2606E84): <b>mitragynine 1.53%</b>, total alkaloids 2.28%, 7-OH &lt;0.0196%.</p>
+  </div>
+</div>
+<div class="strain white">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 38], [&quot;mood&quot;, 32], [&quot;calm&quot;, 18], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;the line&#x27;s lift-off white \u2014 clean drive at 1.53%&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — White Vein</h3><span class="batch">PR Select 01 · Premium Select</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>4.7</b></span><span>🧘 <b>2.4</b></span><span>🌙 <b>2.2</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 4.75 / 5</span> on-site · $7–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The white of PR Select 01, and the energy engine of the Premium Select Breakfast Blend (60/40 white/green). Whites live or die on cleanliness — lift without jitters — and a 1.53% test on fresh small-batch leaf is exactly the raw material that delivers it.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.75 on site. In blend form (Breakfast Blend, below) the white's drive is what buyers single out; on its own it is the catalog's purest morning option — the coffee-replacement slot in the Premium Select line.</p>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Murray Brown Labs COA (Report 2606E84, sample -003): <b>mitragynine 1.53%</b>, total alkaloids 2.31% (also published in the vendor's own COA Quick Guide).</p>
+  </div>
+</div>
+<div class="strain gold">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;calm&quot;, 32], [&quot;relief&quot;, 22], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;mellow gold warmth from the premium harvest&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Golden Powdered Leaf — Premium Select</h3><span class="batch">Premium Select · Golden</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>2.6</b></span><span>🧘 <b>4.2</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ — (no rating yet)</span> on-site · $9–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The golden expression of the Premium Select harvest — cured leaf with the family's characteristic warmth: mood and calm in equal measure, energy dialed down, the late-afternoon bridge between green drive and red rest.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Too new for an on-site rating, but its lab report is already public (below) — a pattern worth praising: WildCraft publishes the numbers before the reviews accumulate. Gold buyers should expect the standard line's potency with a mellower presentation.</p>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Murray Brown Labs (Report 2609725, Sept 2026): <b>mitragynine 1.32%</b>, total alkaloids 1.99%.</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 27], [&quot;energy&quot;, 20], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the sunshine blend, upgraded to Premium Select leaf&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Here Comes the Sun — Premium Select</h3><span class="batch">Premium Select Blend · 50/50 Red/Green</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>3.2</b></span><span>🧘 <b>3.8</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$30 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The beloved Here Comes the Sun recipe — half Premium Select Red, half Premium Select Green — rebuilt entirely from PR Select 01 leaf. The concept is balance you can feel from both directions at once: green lift carried on red warmth.</p>
+    <h4>💬 What the community reports</h4>
+    <p>A perfect 5.00 on site, and the blend buyers ask about by name in community recommendation threads (<i>Breakfast vs Here Comes the Sun vs Full Spectrum</i> is a standing debate). Currently sold out — the drop model in action.</p>
+    <div class="popbox star">When it restocks, it goes fast. The newsletter is the only reliable alarm clock.</div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Built from the PR Select 01 batch: component leaf tested at 1.70% (green) and 1.53% (red) mitragynine.</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 34], [&quot;mood&quot;, 34], [&quot;calm&quot;, 18], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the morning blend \u2014 white drive softened by green&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Breakfast Blend — Premium Select</h3><span class="batch">Premium Select Blend · 60/40 White/Green</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>2.4</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$30 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Sixty percent Premium Select White to forty percent Premium Select Green — a deliberate recipe: the white brings the lift, the green keeps it smooth and adds the legs. It is the catalog's most purposeful morning product.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated a perfect 5.00 on site. In community threads it is the blend most often recommended to buyers choosing their first WildCraft order for daytime use — the recipe is transparent, the components are lab-tested, and the effect brief (clean morning drive) is one it reliably fills.</p>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Components: PS White 1.53% and PS Green 1.70% mitragynine (Report 2606E84).</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;calm&quot;, 26], [&quot;energy&quot;, 22], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;all three veins in equal thirds \u2014 the whole spectrum at once&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Spectrum — Premium Select</h3><span class="batch">Premium Select Blend · Red/White/Green thirds</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>3.4</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.2</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$30 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Equal thirds of the Premium Select red, white and green — the full alkaloid spectrum of the PR Select 01 harvest in a single bag. Full-spectrum blends are the connoisseur's format: nothing emphasized, everything present.</p>
+    <h4>💬 What the community reports</h4>
+    <p>A perfect 5.00 on site, echoing the standard Full Spectrum Blend's reputation (below) as the line's reliable all-rounder. For buyers who rotate veins daily, this is the one-bag answer — at premium-leaf potency.</p>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Components tested 1.53–1.70% mitragynine across the three veins (Report 2606E84).</p>
+  </div>
+</div>
+<div class="colorband band-neutral" id="signature">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🌿</span> Signature &amp; Private Garden — the OG wild leaf</h2>
+  <p>Old trees, numbered batches, and gardens you could walk across in a minute.</p>
+  <div class="bigicon">🌿</div>
+</div>
+<div class="catintro">The <b>signature line</b> is the original WildCraft: numbered harvests from the signature supplier,
+  including the OG Wild leaf from some of the oldest kratom trees in Borneo. Beside it sits the
+  <b>Private Garden</b> experiment — micro-batches from family gardens in Indonesia and Thailand. Between them,
+  this section holds both the catalog's highest-rated powder and its most individual product.</div>
+
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 27], [&quot;calm&quot;, 25], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the highest-rated core powder in the catalog&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>OG Wild Green</h3><span class="batch">Signature Supplier · OG Wild</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>3.8</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.95 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The signature green — harvested, per editorial coverage of the vendor, from some of the oldest existing trees in Borneo, in very small batches. This is the leaf the numbered signature batches are famous for, and the standard the Premium Select line is measured against.</p>
+    <h4>💬 What the community reports</h4>
+    <p>At 4.95 it is the highest-rated core powder WildCraft sells. The catch is structural: only small amounts can be stocked, and it sells out quickly — the OG Wilds are the strains customers set newsletter alerts for.</p>
+    <div class="popbox star">The connoisseur's green: old-tree leaf, tiny lots, gone in days.</div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Covered by the signature batches' published lab reports (#1005–#1019 series) on the vendor's lab page.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 35], [&quot;relief&quot;, 31], [&quot;mood&quot;, 27], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;the red the community calls perfect&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>OG Wild Red</h3><span class="batch">Signature Supplier · OG Wild</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.6</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.7</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 4.88 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The red half of the OG Wild pair, from the same old-tree Borneo harvests. Signature-supplier reds are the reason the numbered batches have a following: deep, warm, and complete in a way commodity reds rarely are.</p>
+    <h4>💬 What the community reports</h4>
+    <p>The single strongest strain-specific endorsement found anywhere in this guide's research came for this red — a Reddit reviewer, in a vendor-recommendation analysis spanning the major kratom subreddits, singled it out by name:</p>
+    <div class="quote">"Wildcraft OG red has been one of the most perfect reds I've ever had."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis (r/kratomreview100 / r/Vendorsofkratom2)</cite></div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Covered by the signature batches' published lab reports (#1005–#1019 series).</p>
+  </div>
+</div>
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 29], [&quot;calm&quot;, 24], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the straight green \u2014 no recipe, just the leaf&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure Green Vein Powdered Leaf</h3><span class="batch">Signature Line · Pure Vein</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>3.9</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.92 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>WildCraft's unblended green in its standard (non-Premium) line — the control sample for the whole catalog. Pure-vein powders are how experienced buyers judge a vendor: there is nowhere for mediocre leaf to hide.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.92 on site — a score commodity greens almost never hold. Together with its red and white siblings (4.92 / 4.93), the Pure line is the quiet evidence that WildCraft's baseline quality, not just its flagship line, sits well above the market's middle.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;the straight red \u2014 evening comfort, unadorned&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure Red Vein Powdered Leaf</h3><span class="batch">Signature Line · Pure Vein</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.7</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>4.5</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 4.92 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The standard line's pure red (also listed as the OG Wild Red's sibling listing) — the evening baseline of the catalog and the red most first-time buyers meet.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.92 on site. In a catalog full of recipes and micro-batches, the Pure Red's score is the one that speaks for the everyday leaf — the harvest quality that everything else is built on.</p>
+  </div>
+</div>
+<div class="strain white">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 37], [&quot;mood&quot;, 32], [&quot;calm&quot;, 18], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;the straight white \u2014 clean morning drive&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure White Vein Powdered Leaf</h3><span class="batch">Signature Line · Pure Vein</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>4.6</b></span><span>🧘 <b>2.5</b></span><span>🌙 <b>2.2</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 4.93 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The standard line's pure white — brisk, bright, and the natural comparison point for the Premium Select White above: same role, standard harvest, slightly kinder price.</p>
+    <h4>💬 What the community reports</h4>
+    <p>At 4.93 it out-rates even its Premium sibling on site (4.75) — a reminder that in this catalog the line between 'standard' and 'premium' is about harvest selection, not about a weak baseline.</p>
+  </div>
+</div>
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;a single garden&#x27;s leaf \u2014 the most individual product in the catalog&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Private Garden Green</h3><span class="batch">Private Garden · Batch PGG 01 / MS1001</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.6</b></span><span>🧘 <b>3.7</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.50 / 5 (2 reviews)</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The first release in the Private Garden series: leaf harvested from a private garden in Borneo — not a plantation lot, but the personal stash of people who live with the plant, sometimes from a handful of trees around family homes. Different soil, different trees, different hands: each release is a snapshot of a place, and once it is gone, that exact leaf may never exist again.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Only two on-site reviews so far (4.50) — the community record is genuinely thin, and this guide says so plainly. What can be verified is the lab work (below): a full published panel with numbers most vendors never release for a micro-batch. As a concept, it is the purest expression of what WildCraft is trying to do.</p>
+    <div class="popbox star">Buy it as an experience, not a staple: by design, there is no restock of the same leaf.</div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Murray Brown Labs (Report 2607E68, July 2026): <b>mitragynine 1.46%</b>, total alkaloids 2.23%; arsenic 0.262, lead 0.530, cadmium 0.0257, mercury 0.0151 mg/kg; Salmonella and STEC E. coli absent — the fullest COA in this guide.</p>
+  </div>
+</div>
+<div class="colorband band-blend" id="blends">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟣</span> House blends — the recipes buyers ask for by name</h2>
+  <p>Transparent recipes, numbered batches, and the most debated shelf in the catalog.</p>
+  <div class="bigicon">🟣</div>
+</div>
+<div class="catintro">WildCraft publishes its blend recipes — <b>60/40, 50/50, equal thirds</b> — which is rarer than it should
+  be, and the blends repay the honesty: they dominate community recommendation threads, where
+  <i>Breakfast vs Here Comes the Sun vs Full Spectrum</i> is a standing debate. Every blend here is built from
+  named, lab-tested component leaf.</div>
+
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 27], [&quot;energy&quot;, 20], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the famous one \u2014 sunshine in a bag&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Here Comes the Sun Blend</h3><span class="batch">House Blend · Signature Leaf</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>3.2</b></span><span>🧘 <b>3.8</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.88 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The original Here Comes the Sun, built on signature leaf rather than the Premium Select harvest — the blend that made the recipe's reputation before its premium sibling existed. Red-green balance aimed squarely at brightness: the name is the brief, and buyers say it delivers it.</p>
+    <h4>💬 What the community reports</h4>
+    <p>The most-quoted single line about any WildCraft product in customer reviews belongs to this blend:</p>
+    <div class="quote">"I got 80 grams of the here comes the sun blend and it's honestly one of the best strains i've had yet."<cite>— WildCraft customer review, via review aggregations of the vendor's customer feedback</cite></div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Built on signature-supplier leaf; covered by the numbered batches' published reports.</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 34], [&quot;calm&quot;, 19], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the #1018 morning recipe&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Breakfast Blend — Batch #1018</h3><span class="batch">Batch #1018 · House Blend</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>2.7</b></span><span>🌙 <b>2.4</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 4.86 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The Batch #1018 expression of the Breakfast recipe — white-forward morning blending on signature leaf. Batch-numbered blends are a WildCraft signature: the recipe is constant, the harvest changes, and the number lets buyers track which iteration they loved.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.86 on site. Community recommendation threads treat 'Breakfast' as a first-order choice at this vendor — the morning slot is where WildCraft's blending is most often praised.</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;calm&quot;, 26], [&quot;energy&quot;, 22], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;the reliable all-rounder&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Spectrum Blend</h3><span class="batch">House Blend · All Veins</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>3.4</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.2</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.86 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The standard-leaf Full Spectrum — all veins together, the rotation-killer: one bag that covers morning through evening by adjusting the moment, not the strain.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Editorial buyer coverage singles this blend out by name as <i>reliable and well-balanced</i> — the phrase that recurs for WildCraft's blending generally. Rated 4.86 on site; its Premium sibling holds a 5.00.</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 29], [&quot;energy&quot;, 18], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the contemplative blend \u2014 the catalog&#x27;s quiet masterpiece&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Bodhisattva Blend — Batch #1018</h3><span class="batch">Batch #1018 · House Blend</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>3.0</b></span><span>🧘 <b>4.0</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.96 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Named for the enlightened being of Buddhist tradition, Bodhisattva is the #1018 batch's meditative blend — mood and calm in front, energy in a supporting role. It suits the company's own ethos (its owners' practice includes meditation and yoga) without leaning on it.</p>
+    <h4>💬 What the community reports</h4>
+    <p>At 4.96 it is the highest-rated blend in the catalog and the second-highest-rated powder overall. Evidence is rating-deep rather than text-deep — few written reviews — but the consistency of the score across the #1018 line is itself a signal.</p>
+  </div>
+</div>
+<div class="strain blend">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 29], [&quot;calm&quot;, 22], [&quot;relief&quot;, 16]], &quot;caption&quot;: &quot;the limited #1016 rocket \u2014 full send, no half measures&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Send Blend — Batch #1016</h3><span class="batch">Batch #1016 · Limited Supply</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.2</b></span><span>🌙 <b>2.8</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>A limited-supply blend from the #1016 dry-season batch, sold under a name that tells buyers exactly what to expect: the strongest-foot-forward recipe of its drop.</p>
+    <h4>💬 What the community reports</h4>
+    <p>A perfect 5.00 on site. Limited blends like this are the drop model's double edge — the excitement is real, and so is the disappearance. Buyers who loved it cannot reorder it; the batch system giveth and taketh away.</p>
+  </div>
+</div>
+<div class="colorband band-gold" id="heritage">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟡</span> Heritage &amp; village leaf — vintage, Hutan &amp; ferments</h2>
+  <p>Mature micro-lots, a forest village harvest, and the traditional ferments.</p>
+  <div class="bigicon">🟡</div>
+</div>
+<div class="catintro">The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots of mature leaf, a green
+  hand-selected from a forest village with its test result published before sale, two distinct high-scoring
+  house reds, a traditional ferment sold by the kilo, and a calm-forward limited green. Buyers who only know
+  the Premium Select line are missing half the argument for this vendor.</div>
+
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 27], [&quot;calm&quot;, 25], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;micro-lot green with a connoisseur&#x27;s following&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro Green</h3><span class="batch">Vintage Micro · Heritage</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.7</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.96 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The Vintage Micro line works in micro-lots of mature leaf — smaller, older-harvest selections ground fine. The green is the line's flagship and one of the catalog's elite scores.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.96 on site — tied with Bodhisattva near the very top of the catalog. Micro-lot greens are a specialist taste; the score says the specialists are pleased.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 33], [&quot;relief&quot;, 29], [&quot;mood&quot;, 29], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;the heritage red \u2014 mature leaf, deep ease&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro Red</h3><span class="batch">Vintage Micro · Heritage</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.8</b></span><span>🧘 <b>4.6</b></span><span>🌙 <b>4.4</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 4.82 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The red of the Vintage Micro line — mature-leaf selection in the evening register, for buyers who find standard reds too thin.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.82 on site, in line with its green (4.96) and white (5.00) siblings: the Vintage Micro line as a whole is one of the most consistently scored families WildCraft sells.</p>
+  </div>
+</div>
+<div class="strain white">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;mood&quot;, 33], [&quot;calm&quot;, 18], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;micro-lot white at a perfect score&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro White</h3><span class="batch">Vintage Micro · Heritage</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>4.5</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>2.2</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The white of the Vintage Micro line — a perfect on-site score on micro-lot leaf. Whites at this rating are rare anywhere; the micro-lot selection is the plausible reason.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 5.00 on site. Together with its siblings it makes the case that WildCraft's heritage lines, not only the headline Premium Select harvest, carry the company's quality argument.</p>
+  </div>
+</div>
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 28], [&quot;calm&quot;, 24], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;forest-village leaf with a published 1.69% test&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Hutan Village Green — Batch #1016</h3><span class="batch">Batch #1016 · Village Leaf</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.8</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.74 / 5</span> on-site · $9.00 (25G shown) · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Hand-selected by WildCraft's farmers from a neighboring forest village ('hutan' is Indonesian for forest) — a mid-spec green in the vendor's own description, and one of the few village-line products with a publicly stated alkaloid number.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.74 on site. The vendor's newsletter published its test result openly — 1.69% mitragynine, essentially tied with the Premium Select Green — which makes this modestly-priced village green one of the best-documented value picks in the catalog.</p>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Vendor newsletter (Batch #1016): <b>mitragynine 1.69%</b> — published by the vendor ahead of sale.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;grounded, deep, dependable red comfort&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Rooted in Red</h3><span class="batch">Heritage · House Red</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.7</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.6</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 4.93 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>A heritage house red whose name states its intent — rooted, grounded, steady. In a catalog of rotating batches, Rooted in Red is positioned as the dependable evening constant.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.93 on site — the highest-rated named red in the standard catalog, ahead of the Pure Red (4.92) and just behind the OG Wild Red's community reputation.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 35], [&quot;relief&quot;, 31], [&quot;mood&quot;, 27], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;the deepest red \u2014 blended for maximum evening weight&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Deep Red Blend</h3><span class="batch">Heritage · House Blend</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.5</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.7</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 4.91 / 5</span> on-site · $9–$35 · 5 sizes to 1000G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>A red-on-red blend built for depth, and one of the few heritage products sold up to a full kilo — the evening user's bulk option inside the craft catalog.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.91 on site. Deep Red and Rooted in Red give the standard line two distinct high-scoring reds with different briefs: depth by blending, steadiness by selection.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;traditional ferment \u2014 the warmest presentation of red&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fermented Powdered Leaf</h3><span class="batch">Heritage · Fermented</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.6</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.6</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 4.90 / 5</span> on-site · $9–$115 · to 1000G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Fermentation is the oldest trick in the red-leaf book: it deepens color, softens edges, and shifts the presentation warmer and heavier. WildCraft's fermented red is sold from 25 g all the way to a $115 kilo — craft leaf at a bulk format.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.90 on site. Ferment fans are loyalists, and a 4.90 on a traditional ferment — in a catalog whose buyers score harshly elsewhere (see the Thai line) — is a strong mark.</p>
+  </div>
+</div>
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;calm&quot;, 29], [&quot;energy&quot;, 23], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;the centered green \u2014 calm-forward limited release&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Grounded in Green — Limited Release</h3><span class="batch">Limited Release · Heritage</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.4</b></span><span>🧘 <b>3.9</b></span><span>🌙 <b>3.1</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.50 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>A limited-release green blended toward the calm end of the spectrum — the mirror image of the morning blends: green body, evening manners.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.50 on site — respectable, and notably not inflated: the same reviewers who hand out 4.9s elsewhere scored this one honestly in the middle. That spread is what a real review ecosystem looks like.</p>
+  </div>
+</div>
+<div class="colorband band-white" id="thai">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🇹🇭</span> The Thai line — a different tradition</h2>
+  <p>Thai-grown leaf: coarser, grittier, rawer — and the vendor says so upfront.</p>
+  <div class="bigicon">🇹🇭</div>
+</div>
+<div class="catintro">Everything else in this catalog is Indonesian. The <b>Thai line</b> is a second tradition — different
+  soil, different curing, a coarser grind — and WildCraft flags the difference on the product pages instead of
+  letting buyers discover it. The ratings tell the story honestly: a divisive first round, a refined second,
+  and a fermented red at a perfect score.</div>
+
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 30], [&quot;calm&quot;, 23], [&quot;relief&quot;, 16]], &quot;caption&quot;: &quot;the honest Thai \u2014 coarser, grittier, different&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Green Thai GV1</h3><span class="batch">Thai Line · GV1</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.2</b></span><span>🌙 <b>2.8</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 4.63 / 5 (8 reviews)</span> on-site · $8–$32 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Thai-grown green, first feedback round (GV1). Thai leaf is a different tradition from the Indonesian harvests that fill the rest of this catalog — coarser grind, grittier texture, a rawer presentation.</p>
+    <h4>💬 What the community reports</h4>
+    <p>The most-reviewed powder in the catalog (8 reviews) and its lowest-rated — and the vendor itself says why, upfront, on the product page: the Thai leaf is a different experience that some buyers will love and others won't. That candor, printed where it costs sales, is worth more than a tenth of a star.</p>
+    <div class="popbox star">The guide's advice, in the vendor's own spirit: sample the Thai line at 25 g before committing.</div>
+  </div>
+</div>
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;energy&quot;, 29], [&quot;calm&quot;, 24], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;old-tree Thai green \u2014 the refined second round&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>20 Year Green Thai GV2</h3><span class="batch">Thai Line · GV2</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>3.9</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>2.9</b></span><span>⏳ 4–5h</span></div>
+    <p><span class="stars">★ 4.86 / 5</span> on-site · $8–$32 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The GV2 round of the Thai line, named for the age of its trees — mature Thai leaf, and a clear step up in reception from GV1.</p>
+    <h4>💬 What the community reports</h4>
+    <p>Rated 4.86 against GV1's 4.63: the second Thai round landed. For buyers curious about the Thai tradition, GV2 is the safer door.</p>
+  </div>
+</div>
+<div class="strain red">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;Thai bentuangie \u2014 fermented red from the other tradition&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Thai Bentuangie (Red Ferment) R1</h3><span class="batch">Thai Line · Red Ferment R1</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.7</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>4.5</b></span><span>⏳ 4–6h</span></div>
+    <p><span class="stars">★ 5.00 / 5</span> on-site · $8–$32 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>Bentuangie — the fermented red style — grown in Thailand. Fermentation plus the Thai tradition's rawer character makes this the most distinctive red in the catalog.</p>
+    <h4>💬 What the community reports</h4>
+    <p>A perfect 5.00 on site. Between GV1's honesty and this red's score, the Thai line earns its place as a genuine second tradition rather than a catalog filler.</p>
+  </div>
+</div>
+<div class="colorband band-neutral" id="cargo">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📦</span> Cargo Line — the value door</h2>
+  <p>Pure veins by the kilo, at half the flagship's per-gram price — labs still published.</p>
+  <div class="bigicon">📦</div>
+</div>
+<div class="catintro">A craft vendor's budget line usually means quiet compromises. <b>Cargo</b> instead means bigger bags,
+  pure veins, and the same habit of publishing batch labs. It is the correct first order for anyone who wants
+  to test WildCraft's sourcing before paying flagship prices.</div>
+
+<div class="strain green">
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;energy&quot;, 26], [&quot;calm&quot;, 25], [&quot;relief&quot;, 19]], &quot;caption&quot;: &quot;the value door \u2014 pure veins by the kilo, labs included&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Cargo Line — Pure Green / Red / White</h3><span class="batch">Cargo Line · Batch C-002</span></div>
+  <div class="strain-body">
+    <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>3.6</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.2</b></span><span>⏳ 3–5h</span></div>
+    <p><span class="stars">★ 5.00 / 5 (Green &amp; Red)</span> on-site · $11–$65 · 80G / 250G / 500G / 1000G<span class="avail">Listed in stock</span></p>
+    <h4>🌿 The leaf</h4>
+    <p>The Cargo Line is WildCraft's answer to the bulk market: pure green, red and white veins in sizes up to a full kilo at $65 — $0.065 per gram, roughly half the per-gram cost of the Premium Select line — with its own published batch labs (C-002) rather than a budget line's usual silence.</p>
+    <h4>💬 What the community reports</h4>
+    <p>The Green and Red carry perfect 5.00 on-site ratings; the White is not yet rated. Editorial coverage of the vendor notes the premium positioning of the main lines — Cargo is the deliberate exception, and the smart entry point for buyers who want the vendor's sourcing without the flagship price.</p>
+    <div class="popbox star">Best first order at WildCraft for the price-sensitive: Cargo quality control, craft-vendor sourcing.</div>
+    <h4>🧪 Lab notes</h4>
+    <p class="coa-note">Cargo batch C-002 lab report is published on the vendor's lab page, alongside the trial sea-cargo batch C01.</p>
+  </div>
+</div>
+<div class="colorband band-neutral" id="matrix">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📊</span> Master comparison matrix</h2>
+  <p>Every strain in this guide, one glance — scores are the guide's evidence-weighted synthesis.</p>
+  <div class="bigicon">📊</div>
+</div>
+<table class="wc-table">
+<tr><th>Strain</th><th>Line</th><th>😊 Mood</th><th>⚡ Energy</th><th>🧘 Calm</th><th>🌙 Relief</th><th>★ On-site</th><th>Price</th></tr>
+<tr><td><b>Premium Select — Green Vein</b></td><td>PR Select 01</td><td>4.6</td><td>4.2</td><td>3.4</td><td>3.0</td><td>4.83 / 5</td><td>$7–$30</td></tr>
+<tr><td><b>Premium Select — Red Vein</b></td><td>PR Select 01</td><td>4.4</td><td>1.8</td><td>4.8</td><td>4.6</td><td>5.00 / 5</td><td>$7–$30</td></tr>
+<tr><td><b>Premium Select — White Vein</b></td><td>PR Select 01</td><td>4.3</td><td>4.7</td><td>2.4</td><td>2.2</td><td>4.75 / 5</td><td>$7–$30</td></tr>
+<tr><td><b>Golden Powdered Leaf — Premium Select</b></td><td>Premium Select</td><td>4.2</td><td>2.6</td><td>4.2</td><td>3.4</td><td>— (no rating yet)</td><td>$9–$30</td></tr>
+<tr><td><b>Here Comes the Sun — Premium Select</b></td><td>Premium Select Blend</td><td>4.7</td><td>3.2</td><td>3.8</td><td>3.4</td><td>5.00 / 5</td><td>$9–$30</td></tr>
+<tr><td><b>Breakfast Blend — Premium Select</b></td><td>Premium Select Blend</td><td>4.5</td><td>4.4</td><td>2.6</td><td>2.4</td><td>5.00 / 5</td><td>$9–$30</td></tr>
+<tr><td><b>Full Spectrum — Premium Select</b></td><td>Premium Select Blend</td><td>4.6</td><td>3.4</td><td>3.6</td><td>3.2</td><td>5.00 / 5</td><td>$9–$30</td></tr>
+<tr><td><b>OG Wild Green</b></td><td>Signature Supplier</td><td>4.6</td><td>3.8</td><td>3.6</td><td>3.0</td><td>4.95 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>OG Wild Red</b></td><td>Signature Supplier</td><td>4.5</td><td>1.6</td><td>4.9</td><td>4.7</td><td>4.88 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Pure Green Vein Powdered Leaf</b></td><td>Signature Line</td><td>4.4</td><td>3.9</td><td>3.5</td><td>3.0</td><td>4.92 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Pure Red Vein Powdered Leaf</b></td><td>Signature Line</td><td>4.4</td><td>1.7</td><td>4.7</td><td>4.5</td><td>4.92 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Pure White Vein Powdered Leaf</b></td><td>Signature Line</td><td>4.4</td><td>4.6</td><td>2.5</td><td>2.2</td><td>4.93 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Private Garden Green</b></td><td>Private Garden</td><td>4.5</td><td>3.6</td><td>3.7</td><td>3.0</td><td>4.50 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Here Comes the Sun Blend</b></td><td>House Blend</td><td>4.7</td><td>3.2</td><td>3.8</td><td>3.4</td><td>4.88 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Breakfast Blend — Batch #1018</b></td><td>Batch #1018</td><td>4.5</td><td>4.3</td><td>2.7</td><td>2.4</td><td>4.86 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Full Spectrum Blend</b></td><td>House Blend</td><td>4.6</td><td>3.4</td><td>3.6</td><td>3.2</td><td>4.86 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Bodhisattva Blend — Batch #1018</b></td><td>Batch #1018</td><td>4.7</td><td>3.0</td><td>4.0</td><td>3.4</td><td>4.96 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Full Send Blend — Batch #1016</b></td><td>Batch #1016</td><td>4.6</td><td>4.0</td><td>3.2</td><td>2.8</td><td>5.00 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Vintage Micro Green</b></td><td>Vintage Micro</td><td>4.5</td><td>3.7</td><td>3.6</td><td>3.0</td><td>4.96 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Vintage Micro Red</b></td><td>Vintage Micro</td><td>4.4</td><td>1.8</td><td>4.6</td><td>4.4</td><td>4.82 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Vintage Micro White</b></td><td>Vintage Micro</td><td>4.4</td><td>4.5</td><td>2.6</td><td>2.2</td><td>5.00 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Hutan Village Green — Batch #1016</b></td><td>Batch #1016</td><td>4.5</td><td>3.8</td><td>3.5</td><td>3.0</td><td>4.74 / 5</td><td>$9.00 (25G shown)</td></tr>
+<tr><td><b>Rooted in Red</b></td><td>Heritage</td><td>4.5</td><td>1.7</td><td>4.8</td><td>4.6</td><td>4.93 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Deep Red Blend</b></td><td>Heritage</td><td>4.5</td><td>1.5</td><td>4.9</td><td>4.7</td><td>4.91 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Red Fermented Powdered Leaf</b></td><td>Heritage</td><td>4.4</td><td>1.6</td><td>4.8</td><td>4.6</td><td>4.90 / 5</td><td>$9–$115</td></tr>
+<tr><td><b>Grounded in Green — Limited Release</b></td><td>Limited Release</td><td>4.5</td><td>3.4</td><td>3.9</td><td>3.1</td><td>4.50 / 5</td><td>$9–$35</td></tr>
+<tr><td><b>Premium Green Thai GV1</b></td><td>Thai Line</td><td>4.2</td><td>4.0</td><td>3.2</td><td>2.8</td><td>4.63 / 5</td><td>$8–$32</td></tr>
+<tr><td><b>20 Year Green Thai GV2</b></td><td>Thai Line</td><td>4.4</td><td>3.9</td><td>3.4</td><td>2.9</td><td>4.86 / 5</td><td>$8–$32</td></tr>
+<tr><td><b>Thai Bentuangie (Red Ferment) R1</b></td><td>Thai Line</td><td>4.4</td><td>1.7</td><td>4.7</td><td>4.5</td><td>5.00 / 5</td><td>$8–$32</td></tr>
+<tr><td><b>Cargo Line — Pure Green / Red / White</b></td><td>Cargo Line</td><td>4.2</td><td>3.6</td><td>3.6</td><td>3.2</td><td>5.00 / 5 (Green &amp; Red)</td><td>$11–$65</td></tr>
+</table>
+<p class="coa-note">On-site stars are the vendor's own WooCommerce ratings (small counts on several products — see each card). Scores 0.0–5.0 synthesize community reports, editorial coverage and lab data; they are this guide's editorial synthesis, not laboratory measurements.</p>
+
+<div class="colorband band-neutral" id="coa">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧪</span> Alkaloid &amp; lab reference (COAs)</h2>
+  <p>Every number below is from a published third-party report or the vendor's own published lab summary.</p>
+  <div class="bigicon">🧪</div>
+</div>
+<div class="catintro">
+  <p>WildCraft quarantines every incoming batch and sends it to <b>Murray Brown Laboratories</b>
+  (Northglenn, Colorado) before release. The full panel — shown complete on the Private Garden Green report —
+  covers seven alkaloids by HPLC-UV, four heavy metals by ICP-MS (arsenic, lead, cadmium, mercury), and
+  microbial screening (aerobic plate count, yeast &amp; mold, Salmonella, STEC E. coli). More than twenty batch
+  reports are linked from the vendor's public lab page, going back to Batch #1005. That archive is itself a
+  finding: one widely-circulated Reddit comment lumped WildCraft in with vendors who 'don't have lab reports' —
+  the perception is simply wrong, and the lab page is the proof.</p>
+</div>
+<div class="wc-bars">
+  <div class="wc-bar"><span class="wc-bl">Premium Select Green</span><span class="wc-bt"><span class="wc-bf" style="width:100%;background:#2E7D4F"></span></span><span class="wc-bv">1.70% MIT</span></div>
+  <div class="wc-bar"><span class="wc-bl">Hutan Village Green</span><span class="wc-bt"><span class="wc-bf" style="width:99%;background:#2E7D4F"></span></span><span class="wc-bv">1.69% MIT</span></div>
+  <div class="wc-bar"><span class="wc-bl">Batch #1020 (line average)</span><span class="wc-bt"><span class="wc-bf" style="width:94%;background:#7A9E8D"></span></span><span class="wc-bv">~1.6% MIT</span></div>
+  <div class="wc-bar"><span class="wc-bl">Premium Select Red</span><span class="wc-bt"><span class="wc-bf" style="width:90%;background:#B03A3A"></span></span><span class="wc-bv">1.53% MIT</span></div>
+  <div class="wc-bar"><span class="wc-bl">Premium Select White</span><span class="wc-bt"><span class="wc-bf" style="width:90%;background:#5C8A2F"></span></span><span class="wc-bv">1.53% MIT</span></div>
+  <div class="wc-bar"><span class="wc-bl">Private Garden Green</span><span class="wc-bt"><span class="wc-bf" style="width:86%;background:#2E7D4F"></span></span><span class="wc-bv">1.46% MIT</span></div>
+  <div class="wc-bar"><span class="wc-bl">Golden Leaf (Premium Select)</span><span class="wc-bt"><span class="wc-bf" style="width:78%;background:#B8860B"></span></span><span class="wc-bv">1.32% MIT</span></div>
+</div>
+<table class="wc-table">
+<tr><th>Batch / product</th><th>Report</th><th>Mitragynine</th><th>Total alkaloids</th><th>7-OH</th></tr>
+<tr><td>Premium Select Green (PR Select 01)</td><td>Murray Brown 2606E84 · Jun 2026</td><td><b>1.70%</b></td><td>2.60%</td><td>&lt;0.0196%</td></tr>
+<tr><td>Premium Select Red (PR Select 01)</td><td>Murray Brown 2606E84 · Jun 2026</td><td><b>1.53%</b></td><td>2.28%</td><td>&lt;0.0196%</td></tr>
+<tr><td>Premium Select White (PR Select 01)</td><td>Murray Brown 2606E84 · Jun 2026</td><td><b>1.53%</b></td><td>2.31%</td><td>&lt;0.0196%</td></tr>
+<tr><td>Private Garden Green (PGG 01)</td><td>Murray Brown 2607E68 · Jul 2026</td><td><b>1.46%</b></td><td>2.23%</td><td>&lt;0.0196%</td></tr>
+<tr><td>Golden Leaf — Premium Select</td><td>Murray Brown 2609725 · Sep 2026</td><td><b>1.32%</b></td><td>1.99%</td><td>—</td></tr>
+<tr><td>Hutan Village Green (#1016)</td><td>Vendor newsletter lab summary</td><td><b>1.69%</b></td><td>—</td><td>—</td></tr>
+</table>
+<div class="catintro">
+  <p><b>Private Garden Green — the full panel</b> (the most complete report in this guide): paynantheine
+  0.268%, speciogynine 0.175%, speciociliatine 0.326%; arsenic 0.262 mg/kg, lead 0.530, cadmium 0.0257,
+  mercury 0.0151; aerobic plate count 21,000 CFU/g; yeast &amp; mold 3,600 CFU/g; <b>Salmonella spp. absent;
+  STEC E. coli absent</b>. For context across the market: ordinary natural leaf commonly tests between roughly
+  0.8% and 1.5% mitragynine — WildCraft's published line sits at or above the top of that range, with the
+  paperwork public.</p>
+</div>
+
+<div class="colorband band-neutral" id="value">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💵</span> Price &amp; value — what the premium buys</h2>
+  <p>Premium per gram, honest about it — and with a value door built in.</p>
+  <div class="bigicon">💵</div>
+</div>
+<div class="catintro">
+  <p>The most consistent criticism of WildCraft in editorial coverage is price: small bags run to
+  $0.30–0.40 per gram at the 25 g size, against $0.05–0.10 per gram for bulk vendors. Both halves of that
+  sentence matter. This is freshly harvested, small-batch, fully lab-tested leaf from named harvests — the
+  inputs cost more, and the lab archive shows where the money goes. The per-gram picture improves fast with
+  size, and the splits are where the value hides:</p>
+</div>
+<div class="wc-bars">
+  <div class="wc-bar"><span class="wc-bl">Premium Select — 25G ($7)</span><span class="wc-bt"><span class="wc-bf" style="width:70%;background:#B8860B"></span></span><span class="wc-bv">$0.28 / g</span></div>
+  <div class="wc-bar"><span class="wc-bl">Standard lines — 25G ($9)</span><span class="wc-bt"><span class="wc-bf" style="width:90%;background:#B8860B"></span></span><span class="wc-bv">$0.36 / g</span></div>
+  <div class="wc-bar"><span class="wc-bl">Premium Select — 250G ($30)</span><span class="wc-bt"><span class="wc-bf" style="width:30%;background:#2E7D4F"></span></span><span class="wc-bv">$0.12 / g</span></div>
+  <div class="wc-bar"><span class="wc-bl">Premium Select 4-Way Kilo ($105)</span><span class="wc-bt"><span class="wc-bf" style="width:26%;background:#2E7D4F"></span></span><span class="wc-bv">$0.105 / g</span></div>
+  <div class="wc-bar"><span class="wc-bl">Standard 4-Way Kilo ($120)</span><span class="wc-bt"><span class="wc-bf" style="width:30%;background:#7A9E8D"></span></span><span class="wc-bv">$0.12 / g</span></div>
+  <div class="wc-bar"><span class="wc-bl">Cargo Line — 1000G ($65)</span><span class="wc-bt"><span class="wc-bf" style="width:16%;background:#1E4D3B"></span></span><span class="wc-bv">$0.065 / g</span></div>
+</div>
+<div class="catintro">
+  <p><b>The fair reading:</b> at sample sizes WildCraft is a premium vendor and prices like one. At 250 g the
+  Premium Select line lands at $0.12/g — mid-market money for top-decile tested leaf — and the Cargo kilo at
+  $0.065/g undercuts most of the 'craft' field outright. The premium is real; so is the ladder down from it.
+  First-order strategy: sample at 25–80 g, commit at 250 g or by the split.</p>
+</div>
+
+<div class="colorband band-neutral" id="voices">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💬</span> What buyers say — the community record</h2>
+  <p>Freshness, consistency, and service that feels personal — in the community's own words.</p>
+  <div class="bigicon">💬</div>
+</div>
+<div class="catintro">
+  <p>Three themes dominate every corner of the public record — on-site reviews, Reddit recommendation
+  threads, editorial buyer coverage, and podcast endorsements. <b>Freshness and potency</b> first:
+  editorial synthesis of buyer feedback at kratom.org reports that buyers describe the leaf as
+  <i>unusually fresh and potent compared to other vendors</i>, and — the harder trick — <i>consistent across
+  batches</i>. <b>Tier placement</b> second: in Reddit's vendor-recommendation ecosystem, WildCraft is
+  routinely placed in the top tier of the entire market, in the same breath as the most decorated small-batch
+  names. <b>Service</b> third: coverage describes the handling of customers as <i>very personal</i> — free
+  samples, early access to releases, and handwritten notes are recurring details.</p>
+</div>
+<div class="quote">"Wildcraft is my #1 for regular kratom."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
+<div class="quote">"Wildcraft and DTE are on another level to me."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
+<div class="quote">"TOP is great, but not quite on the same level as DTE or Wildcraft."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
+<div class="quote">"Wildcraft OG red has been one of the most perfect reds I've ever had."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
+<div class="quote">"I got 80 grams of the here comes the sun blend and it's honestly one of the best strains i've had yet."<cite>— WildCraft customer review, via review aggregations of the vendor's customer feedback</cite></div>
+<div class="catintro">
+  <p>The Kratom Stories podcast lists WildCraft on its page of <i>companies I personally trust, use, and
+  recommend</i> (an affiliate relationship, disclosed on that page). kratom.org's editorial review — the
+  largest independent vendor index — rates the company <b>4.3 / 5, ranked #28 of 211 vendors</b>. No negative
+  product reviews, scam allegations, or call-out threads were found anywhere in this guide's research —
+  the criticisms that do exist are about price, policy, and availability, and they get their own section next.</p>
+</div>
+
+<div class="colorband band-neutral" id="critique">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔍</span> The honest critique — where WildCraft can do better</h2>
+  <p>Strong leaf, strong labs — and four fixable weaknesses.</p>
+  <div class="bigicon">🔍</div>
+</div>
+<div class="wc-grid">
+  <div class="wc-card"><h4>💲 The premium is steep at the door</h4><p>At 25 g sizes, $0.28–0.36 per gram is three to five times bulk-vendor money. The quality case is documented in this guide — but a first-time buyer pays the most per gram exactly when they know the vendor least. A standing first-order discount or a cheaper discovery flight would close the gap; the $15 sample pack only partly does.</p></div>
+  <div class="wc-card"><h4>🧾 All sales are final</h4><p>The returns policy is absolute — ALL SALES ARE FINAL — with issues handled case-by-case by email. For a vendor whose whole pitch is trust, a satisfaction guarantee on first orders would be cheap insurance and a strong signal. As it stands, the risk sits with the buyer.</p></div>
+  <div class="wc-card"><h4>📉 The drop model starves the catalog</h4><p>At this guide's last check, most signature products — both Here Comes the Sun versions, the OG Wilds, the Pure veins, the Vintage Micros — were flagged out of stock. Small-batch freshness is the point, but a customer who finds a favorite here cannot reliably keep it in rotation. A standing 'next batch ETA' on each product page would soften the model's sharpest edge.</p></div>
+  <div class="wc-card"><h4>⭐ Thin public review counts</h4><p>On-site ratings are glowing but small — several flagship products rest on two to six reviews, and there is no Trustpilot or Google presence to triangulate against. The kratom.org rating (4.3/5) helps, but the vendor would be stronger with a third-party review channel it doesn't control.</p></div>
+  <div class="wc-card"><h4>🔗 Small site frictions</h4><p>The lab page is a bare list of PDF links with no summary table (this guide's lab section exists partly because the vendor's own page doesn't); the footer 'Shipping and Refund Policy' link resolves to a privacy-policy URL; and the footer Instagram link is malformed. Minor — and all fixable in an afternoon.</p></div>
+  <div class="wc-card"><h4>📦 Shipping is plain, not fast</h4><p>Processing runs 48–72 hours by the vendor's own statement, with no Saturday shipping and delays during high-volume drops. Orders in this guide's research shipped by USPS both Ground and Priority ($5.75–$9.75 at checkout). Nothing unreasonable — but same-day craft competitors set a bar WildCraft doesn't currently chase.</p></div>
+</div>
+
+<div class="colorband band-neutral" id="ordering">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🛒</span> Ordering, shipping &amp; policies</h2>
+  <p>The practical page — how buying from WildCraft actually works.</p>
+  <div class="bigicon">🛒</div>
+</div>
+<div class="wc-grid">
+  <div class="wc-card"><h4>🚚 Shipping</h4><p>US only. The vendor aims for same-day shipping and states 48–72 hours for processing; no Saturday shipping; expect delays around big drops. USPS is the carrier named in policy; observed checkout options included Ground and Priority at $5.75–$9.75. Historical offers of free shipping over $130 have appeared in review coverage — check the site banner for the current threshold, as none is stated in the standing policy.</p></div>
+  <div class="wc-card"><h4>💳 Payment</h4><p>All major cards at checkout (USD). Money order, check, Zelle and Venmo are available by emailing the company for a manual order.</p></div>
+  <div class="wc-card"><h4>↩️ Returns</h4><p><b>All sales are final.</b> Problems are handled case-by-case — email <b>wildcraftherbcompany@proton.me</b>.</p></div>
+  <div class="wc-card"><h4>🗺️ Where they don't ship</h4><p>No shipping to Alabama, Arkansas, Indiana, Louisiana, Rhode Island (ban overturned, not yet in effect per the vendor), Vermont or Wisconsin, nor to a list of local jurisdictions (including San Diego &amp; Oceanside CA, Denver/Parker/Monument CO, Sarasota County FL, several Illinois and Massachusetts towns, Union County &amp; Columbus MS, Franklin City NH, Ontario OR). Buyers are responsible for their local laws.</p></div>
+  <div class="wc-card"><h4>📬 Contact &amp; community</h4><p>Email wildcraftherbcompany@proton.me · phone/text (603) 416-4825 · PO Box 714, Epping, NH (contact page: Brentwood, NH). Community: a private Facebook group (1,000+ members), their own subreddit r/kratomforwellbeing, a Discord server, Instagram and TikTok. The newsletter is the drop-alert system — batch dates are announced there first.</p></div>
+  <div class="wc-card"><h4>🎟️ Discounts</h4><p>No standing loyalty or subscription program is published. Discount codes circulate through the community (an 11% code via the Kratom Stories podcast, disclosed as an affiliate arrangement) and through the newsletter and community servers — worth a search before checkout.</p></div>
+</div>
+
+<div class="colorband band-green" id="verdict">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏆</span> The verdict — scorecard</h2>
+  <p>One of the strongest small-batch vendors in the American market — with a premium to match.</p>
+  <div class="bigicon">🏆</div>
+</div>
+<div class="wc-bars">
+<div class="wc-bar"><span class="wc-bl">Leaf quality &amp; potency</span><span class="wc-bt"><span class="wc-bf" style="width:94%;background:#2E7D4F"></span></span><span class="wc-bv">4.7 / 5</span></div>
+<div class="wc-bar"><span class="wc-bl">Lab transparency</span><span class="wc-bt"><span class="wc-bf" style="width:96%;background:#1E4D3B"></span></span><span class="wc-bv">4.8 / 5</span></div>
+<div class="wc-bar"><span class="wc-bl">Consistency across batches</span><span class="wc-bt"><span class="wc-bf" style="width:92%;background:#2E7D4F"></span></span><span class="wc-bv">4.6 / 5</span></div>
+<div class="wc-bar"><span class="wc-bl">Customer service &amp; community</span><span class="wc-bt"><span class="wc-bf" style="width:92%;background:#7A9E8D"></span></span><span class="wc-bv">4.6 / 5</span></div>
+<div class="wc-bar"><span class="wc-bl">Catalog depth &amp; creativity</span><span class="wc-bt"><span class="wc-bf" style="width:90%;background:#6A4C93"></span></span><span class="wc-bv">4.5 / 5</span></div>
+<div class="wc-bar"><span class="wc-bl">Value for money</span><span class="wc-bt"><span class="wc-bf" style="width:72%;background:#B8860B"></span></span><span class="wc-bv">3.6 / 5</span></div>
+<div class="wc-bar"><span class="wc-bl">Availability</span><span class="wc-bt"><span class="wc-bf" style="width:56%;background:#B03A3A"></span></span><span class="wc-bv">2.8 / 5</span></div>
+</div>
+<div class="catintro">
+  <p><b>Wildcraft Herb Company earns its top-tier reputation the verifiable way:</b> numbered batches,
+  published third-party labs that most vendors would keep private, the highest tested mitragynine in this
+  guide series (1.70%, natural leaf), and a community record — across Reddit, editorial indexes, and its own
+  review pages — that is consistent in a way marketing cannot manufacture. The OG Wild Red is called perfect
+  by the hardest audience in the market; the blends are debated by name; the standard Pure line out-scores
+  most vendors' flagships.</p>
+  <p>The costs of the model are equally real: flagship prices at small sizes, an all-sales-final policy, and a
+  catalog that is perpetually half sold out. None of those is a quality failure — they are the structural
+  price of fresh, small, tested leaf. For buyers who value freshness, paperwork, and craft over bulk pricing,
+  <b>WildCraft is one of the two or three strongest vendors in the country</b>, and this guide's flagship for a
+  reason. For buyers whose priority is the lowest cost per gram, the Cargo Line is the honest compromise —
+  and the fact that it exists, with labs, says everything about how this company operates.</p>
+</div>
+
+<div class="colorband band-neutral" id="biblio">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📚</span> Sources &amp; bibliography</h2>
+  <p>Primary documents first — the vendor's own published labs and pages, then the independent record.</p>
+  <div class="bigicon">📚</div>
+</div>
+<div class="catintro">
+  <ol>
+    <li>Wildcraft Herb Company — official site: catalog &amp; product pages, About Us, Lab Results page, shipping/returns policy, contact page (audited October 30, 2026). <a href="https://www.wildcraftherbcompany.com/">wildcraftherbcompany.com</a></li>
+    <li>Murray Brown Laboratories COA, Report 2606E84 (June 2026) — Premium Select Green / Red / White alkaloid panels (PR Select 01). <a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/07/WCHC-LABS-PR.Select01.pdf">COA PDF</a></li>
+    <li>Murray Brown Laboratories COA, Report 2607E68 (July 2026) — Private Garden Green full panel (alkaloids, heavy metals, microbials).</li>
+    <li>Murray Brown Laboratories COA, Report 2609725 (September 2026) — Golden Leaf, Premium Select.</li>
+    <li>WildCraft newsletters (Mailchimp archive): Batch #1020 updates, Premium Select restock &amp; COA Quick Guide (Green 1.7% / Red 1.53% / White 1.53%), Private Garden Green announcement, Premium Select blend recipes (July 2026), Hutan Village Green 1.69% (Batch #1016).</li>
+    <li>kratom.org — Wildcraft Herb Company vendor review: 4.3/5, ranked 28 of 211 vendors; buyer-experience synthesis; pricing and policy notes. <a href="https://kratom.org/vendors/wildcraft-herb-company/">kratom.org</a></li>
+    <li>Gummysearch — Reddit vendor-recommendation analysis (r/kratomreview100, r/Vendorsofkratom2): verbatim buyer quotes on the WildCraft brand and OG Wild Red. <a href="https://gummysearch.com/tools/best-products/vendor-recommendations/">gummysearch.com</a></li>
+    <li>Kratom Stories podcast — approved-vendor page (affiliate relationship disclosed on the page). <a href="https://www.podpage.com/kratom-stories-podcast/vendors/">podpage.com</a></li>
+    <li>WildCraft on-site WooCommerce product ratings and review counts (checked October 30, 2026; counts are small on several products and are stated on each card).</li>
+    <li>ScamAdviser — wildcraftherbcompany.com trust check (internal-review-system caveat noted in the critique).</li>
+    <li>Community recommendation threads, r/Vendorsofkratom2 (blend-selection discussions).</li>
+  </ol>
+</div>
+
+<footer class="site">Complete Strain Guide for Wildcraft Herb Company · Independent Customer Research · October 2026</footer>
+</div><!-- /wrap -->
+<script>
+document.querySelectorAll('.iconrow span').forEach(function(sp){
+  var b=sp.querySelector('b'); if(!b) return;
+  var v=parseFloat(b.textContent); if(isNaN(v)) return;
+  var m=document.createElement('div'); m.className='meter';
+  var i=document.createElement('i'); i.style.width=Math.round(v/5*100)+'%';
+  m.appendChild(i); sp.appendChild(m);
+});
+</script>
+<!-- Donut chart popup (STRICT REQUIREMENT: all strain-comparison guides) -->
+<div id="donut-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
+<div id="donut-modal-box" style="background:#FFFEF9;border-radius:16px;padding:24px;width:66vw;max-width:900px;max-height:90vh;overflow:auto;box-shadow:0 8px 32px rgba(0,0,0,.4);"></div>
+<style>
+@media(max-width:768px){
+  #donut-modal-box{width:94vw!important;padding:16px!important;}
+}
+</style>
+</div>
+<script>
+(function(){
+  var COLORS = {energy:'#F59E0B', mood:'#2E7D4F', clarity:'#5BA3D9', calm:'#E8873A', relief:'#B03A3A'};
+  var LABELS = {energy:'High Energy', mood:'Mood & Well-being', clarity:'Balance & Clarity', calm:'Calm & Relaxation', relief:'Relief & Warmth'};
+  var VEIN = {green:['#B5C49A','#2F3A24','#7A8F6A'], red:['#D98C8C','#4A1414','#B03A3A'], white:['#EDEDED','#333333','#BDBDBD'], gold:['#F2C94C','#4A3A10','#F2C94C'], yellow:['#F2C94C','#4A3A10','#F2C94C']};
+  var modal = document.getElementById('donut-modal');
+  var box = document.getElementById('donut-modal-box');
+  function renderDonut(name, data){
+    var v = VEIN[data.vein] || VEIN.green;
+    var cx=280, cy=210, R=110, r=58;
+    var svg = '<svg viewBox="0 0 560 420" style="width:100%;height:auto;display:block;">';
+    svg += '<rect x="4" y="4" width="552" height="64" rx="14" fill="'+v[0]+'"/>';
+    svg += '<text x="280" y="46" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="'+v[1]+'">'+name+'</text>';
+    var start = -90, segs = [];
+    data.effects.forEach(function(e){
+      var sweep = e[1]/100*360, mid = start + sweep/2;
+      segs.push({k:e[0], p:e[1], mid:mid});
+      var a0 = start*Math.PI/180, a1 = (start+sweep)*Math.PI/180;
+      var x0=cx+R*Math.cos(a0), y0=cy+R*Math.sin(a0), x1=cx+R*Math.cos(a1), y1=cy+R*Math.sin(a1);
+      var ix0=cx+r*Math.cos(a0), iy0=cy+r*Math.sin(a0), ix1=cx+r*Math.cos(a1), iy1=cy+r*Math.sin(a1);
+      var large = sweep > 180 ? 1 : 0;
+      svg += '<path d="M'+x0+','+y0+' A'+R+','+R+' 0 '+large+' 1 '+x1+','+y1+' L'+ix1+','+iy1+' A'+r+','+r+' 0 '+large+' 0 '+ix0+','+iy0+' Z" fill="'+COLORS[e[0]]+'" stroke="white" stroke-width="2"/>';
+      start += sweep;
+    });
+    segs.forEach(function(s){
+      var a = s.mid*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+      var x0=cx+(R-8)*ca, y0=cy+(R-8)*sa, x1=cx+(R+14)*ca, y1=cy+(R+14)*sa;
+      var label = LABELS[s.k], pct = s.p + '%';
+      if(ca >= 0){
+        var tx = cx+R+24;
+        svg += '<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<line x1="'+x1+'" y1="'+y1+'" x2="'+(tx-4)+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="white"/>';
+        svg += '<text x="'+tx+'" y="'+(y1-4)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#222">'+label+'</text>';
+        svg += '<text x="'+tx+'" y="'+(y1+16)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="14" fill="#555">'+pct+'</text>';
+      } else {
+        var tw = Math.max(label.length*8.5, 30);
+        var tx2 = cx-R-24-tw;
+        svg += '<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<line x1="'+x1+'" y1="'+y1+'" x2="'+(tx2+tw+4)+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
+        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="white"/>';
+        svg += '<text x="'+tx2+'" y="'+(y1-4)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#222">'+label+'</text>';
+        svg += '<text x="'+tx2+'" y="'+(y1+16)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="14" fill="#555">'+pct+'</text>';
+      }
+    });
+    svg += '<text x="280" y="398" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="16" fill="#444">'+data.caption+'</text>';
+    svg += '</svg>';
+    return svg;
+  }
+  document.querySelectorAll('.donut-trigger').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var data = JSON.parse(el.getAttribute('data-strain').replace(/&quot;/g, '"'));
+      var h3 = el.closest('h3');
+      var name = h3 ? h3.textContent.trim() : 'Effect chart';
+      box.innerHTML = renderDonut(name, data);
+      modal.style.display = 'flex';
+    });
+  });
+  modal.addEventListener('click', function(){ modal.style.display = 'none'; });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
+})();
+</script>
+</body>
+</html>
