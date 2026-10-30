@@ -243,6 +243,17 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 .badges a.pill:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(30,77,59,.35)}
 .wc-card[id],.colorband[id],.strain[id]{scroll-margin-top:96px}
 .wc-lablink{display:inline-block;margin-top:6px;font-weight:700;color:#1E4D3B;text-decoration:underline;text-underline-offset:3px}
+.index{min-height:96px;box-sizing:border-box}
+.index ol{display:none}
+.index.open ol{display:block}
+.index .idx-hint{font-size:.78rem;color:#5c6b62;font-weight:600}
+.index.open .idx-hint{display:none}
+.index h2 .icobtn{cursor:pointer}
+.panel .pbody{justify-content:center}
+.peffects{white-space:nowrap;text-align:center;font-weight:700;font-size:clamp(.64rem,1.8vw,.8rem);color:#263238;padding:2px 0 7px}
+.peffects b{color:#1E4D3B}
+.vw-r{color:#B03A3A;font-weight:800}.vw-w{color:#607D8B;font-weight:800}.vw-g{color:#2E7D4F;font-weight:800}.vw-y{color:#B8860B;font-weight:800}
+@media print{.index ol{display:block!important}.index .idx-hint{display:none!important}}
 
 .wc-stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
 .wc-stat{flex:1;min-width:140px;background:#fff;border:1px solid var(--line);border-top:5px solid #1E4D3B;border-radius:12px;padding:14px 16px;text-align:center}
@@ -304,11 +315,11 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= INDEX ================= -->
 <div class="index">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📖</span> Index</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📖</span> Index <span class="idx-hint">— tap the book to open</span></h2>
   <ol>
     <li><a href="#howto">How to use this guide &amp; the color map</a></li>
-    <li><a href="#science">Vein colors &amp; what consumers report</a></li>
-    <li><a href="#company">The company — a family craft house in New Hampshire</a></li>
+    <li><a href="#science">Vein Color Feedback</a></li>
+    <li><a href="#company">The company</a></li>
     <li>Strain analyses by line
       <ol>
         <li><a href="#premium">⭐ Premium Select — the flagship line</a></li>
@@ -348,40 +359,36 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <div class="panel p-white">
     <div class="phead">White</div>
     <div class="pbody">
-      <div class="pleft">⚡ HIGH, JITTER-FREE ENERGY<br><b>40%</b></div>
       <svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">☀️ MENTAL CLARITY &amp; ALERTNESS<br><b>35%</b><br><br>📈 STRONG PRODUCTIVITY BOOST<br><b>25%</b></div>
     </div>
+    <div class="peffects">⚡ Energy <b>40%</b> · 👁 Alertness <b>35%</b> · 📈 Motivation <b>25%</b></div>
     <div class="pfoot">Best for brisk energy, clean motivation, substitute for coffee.</div>
     <a class="golink" href="#strain-premium-select-white-vein">→ Browse white strains</a>
   </div>
   <div class="panel p-green">
     <div class="phead">Green</div>
     <div class="pbody">
-      <div class="pleft">🌅 BALANCED ENERGY &amp; VIBE<br><b>35%</b></div>
       <svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">👁️ MENTAL CLARITY &amp; UPLIFT<br><b>30%</b><br><br>🍃 MILD CALM &amp; WELL-BEING<br><b>35%</b></div>
     </div>
+    <div class="peffects">⚡ Energy <b>35%</b> · 😊 Mood <b>30%</b> · 🍃 Calming <b>35%</b></div>
     <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
     <a class="golink" href="#strain-premium-select-green-vein">→ Browse green strains</a>
   </div>
   <div class="panel p-yellow">
     <div class="phead">Yellow</div>
     <div class="pbody">
-      <div class="pleft">😌 MELLOW MOOD &amp; RELAXATION<br><b>45%</b><br><br>🤗 GENTLE CALM &amp; WARMTH<br><b>35%</b></div>
       <svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">⛅ BALANCED WELL-BEING<br><b>20%</b></div>
     </div>
+    <div class="peffects">😌 Relaxation <b>45%</b> · 🤗 Warmth <b>35%</b> · ⛅ Well-Being <b>20%</b></div>
     <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
     <a class="golink" href="#strain-golden-powdered-leaf-premium-select">→ Browse gold &amp; yellow strains</a>
   </div>
   <div class="panel p-red">
     <div class="phead">Red</div>
     <div class="pbody">
-      <div class="pleft">🛌 DEEP RELAXATION &amp; RELIEF<br><b>50%</b><br><br>😴 CALMING EFFECTS<br><b>30%</b></div>
       <svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">🌙 MENTAL CALM &amp; RESTFUL REST<br><b>20%</b></div>
     </div>
+    <div class="peffects">🛌 Relief <b>50%</b> · 🧘 Relaxation <b>30%</b> · 🌙 Rest <b>20%</b></div>
     <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
     <a class="golink" href="#strain-premium-select-red-vein">→ Browse red strains</a>
   </div>
@@ -417,28 +424,28 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔬</span> Vein colors &amp; what consumers report</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔬</span> Vein Color Feedback</h2>
   <p>What the community's experience shows — recorded here as fact, batch by batch.</p>
   <div class="bigicon">🔬</div>
 </div>
 <div class="catintro">
-  <p>The color system is the community's own language: reds for winding down, whites for lift-off, greens for
-  the all-day middle, golds and yellows for mellow warmth. Across years of reports — on-site reviews, Reddit
-  threads, podcasts, and buyer discussions — <b>consumers consistently describe distinct, reproducible
-  effect profiles per color</b>. Those reports are the factual record this guide is built on.</p>
-  <p>What lab work adds to the picture: WildCraft's published Murray Brown Laboratories panels (HPLC-UV) put
-  the current Premium Select line at <b>1.53–1.70% mitragynine</b> with total alkaloids of 2.28–2.60% — the
+  <p>The color system is the community's own language: <span class="vw-r">reds</span> for winding down, <span class="vw-w">whites</span> for lift-off, <span class="vw-g">greens</span> for
+  the all-day middle, <span class="vw-y">golds and yellows</span> for mellow warmth. Across years of reports — on-site reviews, Reddit
+  threads, podcasts, and buyer discussions — consumers consistently describe <span class="hlg">distinct, reproducible
+  effect profiles per color</span>. Those reports are <b>the factual record this guide is built on</b>.</p>
+  <p><b>What lab work adds to the picture:</b> WildCraft's published Murray Brown Laboratories panels (HPLC-UV) put
+  the current Premium Select line at <b><span class="hlg">1.53–1.70% mitragynine</span></b> with total alkaloids of 2.28–2.60% — the
   high end of what natural, unenhanced leaf typically tests at. That is a measured finding about
   <i>major-alkaloid percentages</i>, not a verdict on the colors themselves. Why leaf presents so differently
   by color in consumers' hands — minor alkaloids, curing and fermentation, grind, leaf maturity — remains an
   open research question. The community's answer, recorded across thousands of reports, is simpler:
-  <b>the colors present differently, reliably, and usefully.</b> This guide treats those consumer reports as
+  <b><span class="hlg">the colors present differently, reliably, and usefully.</span></b> This guide treats those consumer reports as
   its primary evidence and presents them without speculation.</p>
 </div>
 
 <!-- ================= COMPANY ================= -->
 <div class="colorband band-neutral" id="company">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏡</span> The company — a family craft house in New Hampshire</h2>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏡</span> The company</h2>
   <p>Small-batch premium is not a slogan here; it is the entire operating model.</p>
   <div class="bigicon">🌿</div>
 </div>
@@ -453,19 +460,19 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <p><b>Wildcraft Herb Company</b> describes itself, in its own words, as <i>"a small family owned craft
   Kratom company out of Epping, New Hampshire."</i> The family behind it holds degrees in Sustainable
   Agriculture and Herbal Medicine, forages and grows its own plants, and runs the kratom side of the business
-  on a philosophy borrowed from craft brewing: source smaller quantities of only the highest-quality leaf,
-  freshly harvested at the peak of maturity, rather than warehousing bulk leaf. Their farmers in Indonesia —
+  on a philosophy borrowed from <b>craft brewing</b>: <span class="hlg">source smaller quantities of only the highest-quality leaf</span>,
+  freshly harvested at the <b>peak of maturity</b>, rather than warehousing bulk leaf. Their farmers in Indonesia —
   described as part of the family — hand-select leaf from cultivated and wild trees on family farms, harvesting
   the same fields in sustainable rotation, batch after batch, for consistency.</p>
   <p>The model has a cost, and the company is unusually open about it: small, frequent harvests mean thin
-  inventory, and thin inventory means the catalog is a moving target. Shipments have been delayed six months
+  inventory, and thin inventory means <span class="hlg">the catalog is a moving target</span>. Shipments have been delayed <b>six months</b>
   by Indonesian export issues; an entire signature batch (#1020) was held up in 2026 while the company bridged
   the gap with its Premium Select line. Every batch that does arrive is quarantined and sent to
   <b>Murray Brown Laboratories</b> for third-party testing before it is packed and released — alkaloid panel,
-  heavy metals, and microbial screening — and the reports are posted publicly on the site's lab page.</p>
-  <p>Beyond kratom, the same homestead ethos fills out an Herbal Apothecary (kanna extracts, mushroom
+  heavy metals, and microbial screening — and <span class="hlg">the reports are posted publicly</span> on the site's lab page.</p>
+  <p><b>Beyond kratom</b>, the same homestead ethos fills out an Herbal Apothecary (kanna extracts, mushroom
   tinctures, shilajit, ceremonial blends) and an Herbal Boutique of handmade soaps, salves and cleansers —
-  a reminder that this is an herbalism business first and a kratom vendor second. The kratom catalog is
+  a reminder that this is <span class="hlg">an herbalism business first and a kratom vendor second</span>. The kratom catalog is
   organized into lines, and understanding the lines is the key to the whole menu:</p>
 </div>
 <div class="wc-grid">
@@ -974,13 +981,13 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="bigicon">🧪</div>
 </div>
 <div class="catintro">
-  <p>WildCraft quarantines every incoming batch and sends it to <b>Murray Brown Laboratories</b>
+  <p><b>WildCraft quarantines every incoming batch</b> and sends it to <b>Murray Brown Laboratories</b>
   (Northglenn, Colorado) before release. The full panel — shown complete on the Private Garden Green report —
   covers seven alkaloids by HPLC-UV, four heavy metals by ICP-MS (arsenic, lead, cadmium, mercury), and
   microbial screening (aerobic plate count, yeast &amp; mold, Salmonella, STEC E. coli). More than twenty batch
   reports are linked from the vendor's public lab page, going back to Batch #1005. That archive is itself a
   finding: one widely-circulated Reddit comment lumped WildCraft in with vendors who 'don't have lab reports' —
-  the perception is simply wrong, and the lab page is the proof.</p>
+  the perception is simply wrong — <span class="hlg">the lab page is the proof</span>.</p>
 </div>
 <div class="wc-bars">
   <div class="wc-bar"><span class="wc-bl">Premium Select Green</span><span class="wc-bt"><span class="wc-bf" style="width:100%;background:#2E7D4F"></span></span><span class="wc-bv">1.70% MIT</span></div>
@@ -1019,7 +1026,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   $0.30–0.40 per gram at the 25 g size, against $0.05–0.10 per gram for bulk vendors. Both halves of that
   sentence matter. This is freshly harvested, small-batch, fully lab-tested leaf from named harvests — the
   inputs cost more, and the lab archive shows where the money goes. The per-gram picture improves fast with
-  size, and the splits are where the value hides:</p>
+  size, and <span class="hlg">the splits are where the value hides</span>:</p>
 </div>
 <div class="wc-bars">
   <div class="wc-bar"><span class="wc-bl">Premium Select — 25G ($7)</span><span class="wc-bt"><span class="wc-bf" style="width:70%;background:#B8860B"></span></span><span class="wc-bv">$0.28 / g</span></div>
@@ -1116,7 +1123,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <p>The costs of the model are equally real: flagship prices at small sizes, an all-sales-final policy, and a
   catalog that is perpetually half sold out. None of those is a quality failure — they are the structural
   price of fresh, small, tested leaf. For buyers who value freshness, paperwork, and craft over bulk pricing,
-  <b>WildCraft is one of the two or three strongest vendors in the country</b>, and this guide's flagship for a
+  <b><span class="hlg">WildCraft is one of the two or three strongest vendors in the country</span></b>, and this guide's flagship for a
   reason. For buyers whose priority is the lowest cost per gram, the Cargo Line is the honest compromise —
   and the fact that it exists, with labs, says everything about how this company operates.</p>
 </div>
@@ -1224,6 +1231,9 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
   modal.addEventListener('click', function(){ modal.style.display = 'none'; });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
 })();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var idx=document.querySelector('.index');if(!idx)return;var btn=idx.querySelector('h2 .icobtn');if(!btn)return;btn.title='Open the index';btn.addEventListener('click',function(){idx.classList.toggle('open');btn.title=idx.classList.contains('open')?'Close the index':'Open the index';});});
 </script>
 </body>
 </html>
