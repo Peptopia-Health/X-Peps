@@ -258,6 +258,10 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 .oos{display:inline-block;background:#f7e8e4;color:#7e241a;border:1px solid #e3b7ae;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
 .avail{display:inline-block;background:#e6f2ea;color:#1E4D3B;border:1px solid #bfe0c9;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
 @media print{.wc-stat,.wc-card{break-inside:avoid}}
+
+/* wc-toolbar-fix: keep header theme/print controls visible */
+.peptopia-hdr .peptopia-nav{display:flex!important}
+.peptopia-nav .peptopia-iconbtn{display:inline-flex!important}
 </style>
 </head>
 <body id="top">
@@ -436,7 +440,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="bigicon">🌿</div>
 </div>
 <div class="wc-stats">
-  <div class="wc-stat"><b>68</b><span>Strains listed</span></div>
+  <div class="wc-stat"><b>68</b><span>Strains on their menu</span></div>
   <div class="wc-stat"><b>20+</b><span>Lab reports published</span></div>
   <div class="wc-stat"><b>1.70%</b><span>Top tested mitragynine</span></div>
   <div class="wc-stat"><b>4.3 / 5</b><span>kratom.org vendor rating</span></div>
@@ -1042,7 +1046,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <div class="colorband band-neutral" id="critique">
   <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔍</span> The honest critique — where WildCraft can do better</h2>
-  <p>Strong leaf, strong labs — and four fixable weaknesses.</p>
+  <p>Strong leaf, strong labs — and six honest findings.</p>
   <div class="bigicon">🔍</div>
 </div>
 <div class="wc-grid">
