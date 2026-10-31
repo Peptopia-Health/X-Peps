@@ -253,10 +253,10 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(35,64,
 .idx-btn{cursor:pointer;padding:0;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 10px rgba(0,0,0,.3);transition:transform .07s ease,box-shadow .07s ease}
 .idx-btn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.3)}
 /* slim centered fit-content bands, gloss push-button at right (WildCraft V4+V5+V6) */
-.colorband{padding:9px 14px;padding-left:16px;padding-right:70px;margin:26px auto 14px;width:fit-content;max-width:100%;text-align:center;cursor:pointer;border-bottom:3px solid transparent}
+.colorband{padding:9px 14px;padding-left:16px;padding-right:70px;margin:26px auto 14px;width:var(--uw,fit-content);max-width:100%;text-align:center;cursor:pointer;border-bottom:3px solid transparent}
 .colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;text-align:center;color:#fff}
 .colorband p{margin:0;opacity:.95;line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(.7rem,2.5vw,.95rem);max-width:none}
-.colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;font-size:22px;opacity:1;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffffff,var(--bb,#e6f2ea) 48%,var(--bm,#bcd8c4));border:2px solid var(--bd,#0d2c1e);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 6px 12px rgba(0,0,0,.4);cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
+.colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:24px;opacity:1;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffffff,var(--bb,#e6f2ea) 48%,var(--bm,#bcd8c4));border:2px solid var(--bd,#0d2c1e);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 6px 12px rgba(0,0,0,.4);cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
 .colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.3)}
 /* open state: brighter variant of the band's own color + orange in-use ring */
 .colorband.open{box-shadow:0 0 0 3px rgba(234,88,12,.65),0 8px 20px rgba(0,0,0,.28);border-bottom:3px solid #EA580C}
@@ -317,6 +317,16 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(35,64,
 .wc-logdel{background:#fdf1f1;border:1.5px solid #b03a3a;color:#b03a3a;border-radius:8px;width:28px;height:28px;cursor:pointer;flex:none}
 .wc-logempty{color:#6f675a;text-align:center;padding:16px 6px}
 .wc-logfoot{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid #e7e2d6}
+/* uniform width (David, Oct 31): the widest title band sets ONE width for every body container */
+.wcsec{width:var(--uw,auto);margin-left:auto;margin-right:auto}
+.wk-lead{width:var(--uw,auto);margin-left:auto;margin-right:auto}
+.strain{width:100%}
+.index,.legend,.panels{width:var(--uw,auto);margin-left:auto;margin-right:auto}
+.wcqp{width:var(--uw,100%);max-width:100%}
+/* strain cards auto-collapse under their vein band (David, Oct 31) */
+.strain-head{cursor:pointer}
+.strain-body[hidden]{display:none}
+.wk-chev{flex:none;margin-left:10px;font-weight:800;font-size:13px;opacity:.85}
 /* dark theme (visit-only; light is always the default) */
 html.dark{--paper:#131711;--paper2:#1D231C;--ink:#EDEAE0;--muted:#ABA291;--line:#3C463A;--accent:#7FB069}
 html.dark body{background:var(--paper);color:var(--ink)}
@@ -347,6 +357,8 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
 @media print{
  *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
  .wcsec{display:block!important}
+ .strain-body[hidden]{display:block!important}
+ :root{--uw:100%!important}
  .colorband{width:auto!important;margin-left:0;margin-right:0;break-after:avoid}
  .colorband .bigicon,.wc-tbtn:not(.static),.toc-top,.print-btn,#donut-modal,.wc-logbtn,.wc-logmodal{display:none!important}
  .index ol{display:block!important}.index .idx-hint{display:none!important}
@@ -376,7 +388,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
   </div>
   <h1>WestKoast Botanicals</h1>
   <div class="subtitle">Complete Strain Guide</div>
-  <p class="sub">An independent, product-by-product analysis and characterization of the WestKoast lineup — every strain organized by vein color, with community reports, batch notes, alkaloid profiles, and honest comparisons.</p>
+  <p class="sub">An independent analysis of the WestKoast lineup, strain by strain, organized by vein color.</p>
   <div class="badges">
     <a class="pill" href="#red">🔴 Reds</a><a class="pill" href="#green">🟢 Greens</a>
     <a class="pill" href="#white">⚪ Whites</a><a class="pill" href="#gold">🟡 Golds &amp; Yellows</a>
@@ -1143,11 +1155,14 @@ document.addEventListener('DOMContentLoaded',function(){
   bands.forEach(function(band){
     var wrap=document.createElement('div');wrap.className='wcsec';wrap.hidden=true;
     band.parentNode.insertBefore(wrap,band.nextSibling);
+    var isVein=(band.id==='red'||band.id==='green'||band.id==='white'||band.id==='gold');
     while(wrap.nextSibling){
       var nx=wrap.nextSibling;
       if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'||nx.id==='wkQuickPick'))break;
+      if(isVein&&!(nx.nodeType===1&&nx.classList.contains('strain'))){nx.classList.add('wk-lead');band.parentNode.insertBefore(nx,wrap);continue;}
       wrap.appendChild(nx);
     }
+    band._wcWrap=wrap;wrap._wcBand=band;
     var btn=band.querySelector('.wc-tgl');
     band._wcSet=function(open){wrap.hidden=!open;band.classList.toggle('open',!!open);if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
     if(btn){btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
@@ -1157,7 +1172,8 @@ document.addEventListener('DOMContentLoaded',function(){
     var el=document.getElementById(id);if(!el)return;
     if(el.classList.contains('colorband')){el._wcSet&&el._wcSet(true);return;}
     var sec=el.closest?el.closest('.wcsec'):null;
-    if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}
+    if(sec&&sec._wcBand)sec._wcBand._wcSet(true);
+    if(el.classList.contains('strain')&&window.__wkOpenCard)window.__wkOpenCard(el);
   }
   window.addEventListener('hashchange',openTarget);
   openTarget();
@@ -1244,9 +1260,9 @@ document.addEventListener('DOMContentLoaded',function(){
 <script>
 /* ---- whole band toggles its section; reliable in-page jumps that open collapsed targets ---- */
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.colorband').forEach(function(band){band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var w=band.nextElementSibling;if(w&&band._wcSet)band._wcSet(w.hidden);});});
+  document.querySelectorAll('.colorband').forEach(function(band){band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;if(band._wcSet&&band._wcWrap)band._wcSet(band._wcWrap.hidden);});});
 });
-document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var id=a.getAttribute('href').slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();if(el.classList.contains('colorband')&&el._wcSet)el._wcSet(true);var sec=el.closest?el.closest('.wcsec'):null;if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}try{history.replaceState(null,'','#'+id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
+document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var id=a.getAttribute('href').slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();if(el.classList.contains('colorband')&&el._wcSet)el._wcSet(true);var sec=el.closest?el.closest('.wcsec'):null;if(sec&&sec._wcBand)sec._wcBand._wcSet(true);if(el.classList.contains('strain')&&window.__wkOpenCard)window.__wkOpenCard(el);try{history.replaceState(null,'','#'+id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
 </script>
 
 <script>
@@ -1265,6 +1281,36 @@ function render(){var H=hist();var el=document.getElementById('logList');if(!el)
 function open(){var m=document.getElementById('logModal');if(!m)return;render();m.hidden=false;}
 function close(){var m=document.getElementById('logModal');if(m)m.hidden=true;}
 document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Quick Pick log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
+})();
+</script>
+<script>
+/* ---- strain cards: auto-collapsed; header click opens the card (David, Oct 31) ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  window.__wkOpenCard=function(card){var b=card.querySelector('.strain-body');if(b)b.hidden=false;var c=card.querySelector('.wk-chev');if(c)c.textContent='\u25BE';};
+  document.querySelectorAll('.strain').forEach(function(card){
+    var head=card.querySelector('.strain-head'),body=card.querySelector('.strain-body');
+    if(!head||!body)return;
+    body.hidden=true;
+    var chev=document.createElement('span');chev.className='wk-chev';chev.textContent='\u25B8';head.appendChild(chev);
+    head.addEventListener('click',function(e){if(e.target.closest('a,button'))return;body.hidden=!body.hidden;chev.textContent=body.hidden?'\u25B8':'\u25BE';});
+  });
+});
+/* ---- uniform width: the widest title band sets --uw for every body container ---- */
+(function(){
+  function measure(){
+    var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
+    if(!bands.length)return;
+    bands.forEach(function(b){b.style.width='fit-content';});
+    var w=0;bands.forEach(function(b){w=Math.max(w,b.offsetWidth);});
+    var wrap=document.querySelector('.wrap');
+    if(wrap)w=Math.min(w,wrap.clientWidth);
+    bands.forEach(function(b){b.style.width='';});
+    if(w>0)document.documentElement.style.setProperty('--uw',w+'px');
+  }
+  function go(){requestAnimationFrame(measure);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(measure,30);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(measure,180);});
 })();
 </script>
 </body>
