@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Standards — How Our Guides Are Built | Peptopia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#232733;--muted:#5D6579;--line:#E3E1F2;--paper:#FAF8FF;--purp:#5B21B6;--purp-dk:#4C1D95;--cyan:#0891B2;--orange:#EA580C;--green:#1E4D3B;--amber:#B45309}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.5;font-size:15px}
+.wrap{max-width:1060px;margin:0 auto;padding:18px 20px 26px}
+.kicker{letter-spacing:3.5px;text-transform:uppercase;font-size:12px;color:var(--orange);font-weight:700;margin:4px 0 0}
+h1{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(28px,4.6vw,42px);color:var(--orange);margin:4px 0 2px;line-height:1.08}
+.sub{font-weight:600;color:var(--purp-dk);margin:0 0 14px;font-size:16px}
+h2.section-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:19px;color:var(--purp-dk);margin:16px 0 8px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--purp);border-radius:12px;padding:12px 14px}
+.card h3{font-family:'Outfit',sans-serif;margin:0 0 5px;font-size:16px;color:var(--ink)}
+.card p,.card li{font-size:13.5px;color:#39415A}
+.card ul{margin:4px 0 0;padding-left:17px}
+.card li{margin:3px 0}
+.card.c-cyan{border-top-color:var(--cyan)} .card.c-orange{border-top-color:var(--orange)} .card.c-green{border-top-color:var(--green)} .card.c-amber{border-top-color:var(--amber)} .card.c-purple{border-top-color:var(--purp)}
+.tag{display:inline-block;font:700 .66rem 'Outfit',sans-serif;letter-spacing:.6px;text-transform:uppercase;border-radius:999px;padding:2px 9px;margin-bottom:6px;background:#EDE9FE;color:var(--purp-dk);border:1.5px solid var(--purp)}
+.tag.t-cyan{background:#E0F5FB;color:#0B6E85;border-color:var(--cyan)} .tag.t-orange{background:#FDE8D7;color:#9A3412;border-color:var(--orange)} .tag.t-green{background:#E4F0E9;color:var(--green);border-color:var(--green)} .tag.t-amber{background:#FBF0DC;color:#92400E;border-color:var(--amber)}
+.skel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.skel ul{columns:2;column-gap:30px;margin:4px 0;padding-left:18px}
+@media(max-width:700px){.skel ul{columns:1}}
+.skel li{margin:3.5px 0;font-size:13.5px;color:#39415A;break-inside:avoid}
+b.k{color:var(--purp-dk)}
+.foot{border-top:1px solid var(--line);margin:16px 0 0;padding:10px 0 0;text-align:center;color:var(--muted);font-size:.85rem}
+@page{size:Letter;margin:.5in}
+@media print{*{print-color-adjust:exact;-webkit-print-color-adjust:exact}.card,.skel{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Peptopia · Build Standards</div>
+  <h1>How Our Guides Are Built</h1>
+  <p class="sub">One skeleton, family skins — every guide shares the same bones; only the colors, content rules, and delivery route change.</p>
+
+  <h2 class="section-title">The Universal Skeleton — Every Guide, No Exceptions</h2>
+  <div class="skel">
+    <ul>
+      <li><b class="k">Standalone page</b> — no site header or nav inside a guide</li>
+      <li><b class="k">Top-right cluster</b> — date pill · theme · print, small matched buttons</li>
+      <li><b class="k">One-line intro</b> — a single concise sentence under the title, never a paragraph</li>
+      <li><b class="k">Collapsed index</b> — title + icon; the icon opens it; print shows all</li>
+      <li><b class="k">Slim title bands</b> — centered Title-Case titles, one-line subtitles, minimal height</li>
+      <li><b class="k">Bands hug their titles</b> — fit-content width, centered; never wider than the widest band</li>
+      <li><b class="k">Icons are buttons</b> — one unique gloss push-button per band, at the right; the whole band opens its section</li>
+      <li><b class="k">Sections start collapsed</b> — an open section's band changes color to show it's in use</li>
+      <li><b class="k">Light theme by default</b> — dark is a per-visit toggle, never remembered</li>
+      <li><b class="k">Visuals carry weight</b> — diagrams, stat cards, comparison graphics; never bare prose</li>
+      <li><b class="k">Zero dead links</b> — every pill, bubble, and anchor is audited before publishing</li>
+      <li><b class="k">Print standard</b> — Letter, exact colors, nothing slices across a page break</li>
+      <li><b class="k">Fonts</b> — Outfit headings, DM Sans body; never a serif, anywhere</li>
+      <li><b class="k">One-line footer</b> — the family's credit line, nothing more</li>
+      <li><b class="k">Restyles preserve content</b> — structure changes; the substance never gets dropped</li>
+      <li><b class="k">Verified live</b> — opened, clicked, and measured in a real browser before it's called done</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">The Families — Where the Lines Are Drawn</h2>
+  <div class="grid">
+    <div class="card c-green">
+      <span class="tag t-green">Kratom Strain Guides</span>
+      <h3>The Vendor's Own Colors</h3>
+      <ul>
+        <li>Each vendor keeps its own palette (WildCraft forest green, WestKoast greens, TreeLeaf, DTE…)</li>
+        <li>Quick Pick wheel built only from that vendor's strains; pie popups from the guide's own ratings</li>
+        <li>Experience-led: community reports over official positions; <b>no warning or caution statements, ever</b></li>
+        <li>Footer: “Complete Strain Guide for [Vendor] · Independent Customer Research”</li>
+        <li>Home: Kratom Reviews hub · Drive: Kratom Strain Guides</li>
+      </ul>
+    </div>
+    <div class="card c-purple">
+      <span class="tag">Nursing Education</span>
+      <h3>Always Purple</h3>
+      <ul>
+        <li>One purple identity for the whole family — guides and their cards (Learning section + Health Psychology)</li>
+        <li>Clinical and sourced: every number traced to a source actually read; contested points hedged in the text</li>
+        <li>Shape: normals first → level-by-level deep dive → mirror image → emergencies → treatment → nursing assessment</li>
+        <li>Footer: “[Topic] — A Nursing Guide · Independent Nursing Education”</li>
+        <li>The TSH guide is the permanent exemplar for this family</li>
+      </ul>
+    </div>
+    <div class="card c-orange">
+      <span class="tag t-orange">VA Unit Guides</span>
+      <h3>Print-First Workflow</h3>
+      <ul>
+        <li>Orange headline family; built to be followed at the desk, step by step</li>
+        <li>Exact CPRS note names in the true order (Intake: Screen → Data Base → Agreement → Education → Skin → Suite)</li>
+        <li>Full guide, 2-page Short, 1-page Mini — same workflow, three depths</li>
+        <li>Delivery is gated: chat approval → Drive 🏥 VA Guides → second approval → VA email</li>
+        <li>Never carries sample patient data — field names and order only</li>
+      </ul>
+    </div>
+    <div class="card c-cyan">
+      <span class="tag t-cyan">Peptopia Education · GLP</span>
+      <h3>Cyan Research Reports</h3>
+      <ul>
+        <li>Cyan accent family on the Education index (Cagrilintide, Eloralintide…)</li>
+        <li>Trial data leads: named studies, exact percentages, comparison bars with the promoted compound bold green</li>
+        <li>News articles follow the article bones: icon before headline, date bubble, slim hero, graph before Sources, no disclaimer text</li>
+        <li>Weekly GLP update lands on Biohacking News, not the index</li>
+      </ul>
+    </div>
+    <div class="card c-amber">
+      <span class="tag t-amber">Simple Guides</span>
+      <h3>One Page, His Steps</h3>
+      <ul>
+        <li>Triggered by “Simple Guide: [topic]” — a distilled instruction set, not a production</li>
+        <li>Numbered step cards; at most one before-you-start and one what-you-get note</li>
+        <li>No research phase, no popups, no charts, no sources</li>
+        <li>A step that switches apps says so in its heading</li>
+      </ul>
+    </div>
+    <div class="card c-purple">
+      <span class="tag">Tuscarora Artifacts</span>
+      <h3>Story-First Doctrine</h3>
+      <ul>
+        <li>Awning-orange display family on its own portal</li>
+        <li>One fascinating story per artifact — maker, era, culture woven in plain language</li>
+        <li>Findspots in general terms only; no owner's name, no version talk</li>
+        <li>Clickable timeline in every guide; audio capped at two minutes, fireside style</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">Guide Standards · Peptopia Health · October 2026</div>
+</div>
+</body>
+</html>
