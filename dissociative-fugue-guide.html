@@ -2,421 +2,626 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="apple-touch-icon" href="/X-Peps/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dissociative Fugue Study Guide | Peptopia Health Psychology</title>
+<title>Dissociative Fugue — A Nursing Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#F4F6FA;--card:#fff;--t1:#0F172A;--t2:#475569;--t3:#94A3B8;--border:rgba(15,23,42,.1);--p1:#7C3AED;--p2:#4F46E5;--pink:#EC4899;--pinkd:#BE185D;--teal:#0D9488;--amber:#D97706}
-html.dark{--bg:#0B1120;--card:#111a2e;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#64748B;--border:rgba(255,255,255,.12)}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7}
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:14px 24px}
-.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.peptopia-logo{width:46px;height:46px;border-radius:50%;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
-.peptopia-wordmark{display:flex;flex-direction:column;font-weight:800;font-size:1.02rem;letter-spacing:.14em;color:var(--t1);line-height:1.15}
-.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:var(--t3)}
-.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
-.peptopia-nav a{font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--t2);text-decoration:none}
-.peptopia-nav a:hover{color:var(--pinkd)}
-.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--t2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-.peptopia-iconbtn:hover{border-color:var(--pink);color:var(--pinkd)}
-.peptopia-iconbtn svg{width:17px;height:17px}
-.peptopia-theme-toggle .pp-sun{display:none}
-html.dark .peptopia-theme-toggle .pp-sun{display:block}
-html.dark .peptopia-theme-toggle .pp-moon{display:none}
-main{max-width:940px;margin:0 auto;padding:8px 24px 40px}
-.hero{border-radius:18px;padding:36px 32px;margin:18px 0 26px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#6D28D9,#4F46E5 55%,#0EA5E9)}
-.hero h1{font-size:2rem;line-height:1.25;margin:10px 0 8px;font-weight:800}
-.hero .tag{display:inline-block;background:rgba(255,255,255,.22);padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.08em}
-.hero .ico{font-size:2.8rem;display:block}
-.hero .sub{opacity:.94;font-size:1rem;max-width:660px}
-h2.sec{font-size:1.35rem;margin:34px 0 14px;padding-bottom:8px;border-bottom:3px solid var(--p1);display:flex;align-items:center;gap:10px}
-p.body,li.body{margin:12px 0;font-size:1rem}
-.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:22px 0}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.stat .n{font-size:1.75rem;font-weight:800;color:var(--p1)}
-html.dark .stat .n{color:#C4B5FD}
-.stat .l{font-size:.78rem;color:var(--t2);margin-top:4px}
-.callout{border-radius:12px;padding:16px 20px;margin:20px 0;font-size:.95rem;border-left:6px solid var(--p1);background:var(--card);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.callout.teach{border-left-color:var(--amber)}
-.callout.clin{border-left-color:var(--teal)}
-.callout h4{margin:0 0 6px;font-size:1rem}
-.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
-@media(max-width:640px){.cols2{grid-template-columns:1fr}}
-.tcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
-.tcard h4{margin-bottom:8px;font-size:1.02rem}
-.tcard.pdy{border-top:4px solid var(--p1)}
-.tcard.neu{border-top:4px solid var(--teal)}
-.crit{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:20px 0}
-.crit .c{display:flex;gap:14px;margin:14px 0}
-.crit .cl{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
-.timeline{position:relative;margin:26px 0;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--amber),var(--p1),var(--teal));border-radius:2px}
-.tstep{position:relative;margin:0 0 18px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px}
-.tstep::before{content:'';position:absolute;left:-24px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--p1);border:3px solid var(--bg)}
-.tstep h4{margin:0 0 4px}
-table.diff{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88rem;background:var(--card);border-radius:12px;overflow:hidden}
-table.diff th{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;text-align:left;padding:10px 12px;font-size:.82rem}
-table.diff td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
-table.diff tr:last-child td{border-bottom:none}
-table.diff td:first-child{font-weight:700;white-space:nowrap}
-.casegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
-.case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;border-top:4px solid var(--p2)}
-.case h4{margin:0 0 6px;font-size:1rem}
-.case .yr{font-size:.75rem;color:var(--t3);font-weight:700;letter-spacing:.06em}
-.check{list-style:none;padding:0}
-.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--border)}
-.check li::before{content:'\2713';position:absolute;left:4px;color:var(--teal);font-weight:800}
-.nanda{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.nanda span{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);color:var(--p1);border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:600}
-html.dark .nanda span{color:#C4B5FD}
-.kt{background:var(--card);border:1px solid var(--border);border-left:6px solid var(--pink);border-radius:12px;padding:20px 24px;margin:26px 0}
-.kt h2{font-size:1.05rem;margin-bottom:10px;border:none;padding:0}
-.kt ul{padding-left:20px}
-.kt li{margin:7px 0}
-.bib{margin:34px 0 10px;font-size:.84rem;color:var(--t2)}
-.bib h2{font-size:1rem;border:none;padding:0;margin-bottom:8px}
-.bib li{margin:5px 0;list-style:none}
-.bib a{color:var(--pinkd)}
-.peptopia-ftr{border-top:1px solid var(--border);margin-top:40px;padding:22px 24px;text-align:center;font-size:.8rem;color:var(--t3)}.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
-.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
-.peptopia-ftr a{color:var(--t3)}
-.peptopia-ftr a:hover{color:var(--pinkd)}
-.peptopia-ftr svg{width:18px;height:18px;vertical-align:middle}
-.ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
-@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr .peptopia-ftr-icons{display:none!important}body{background:#fff!important}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.stat,.tcard,.case,.tstep,.callout,.kt,.crit,table.diff{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2.sec,h3,h4{break-after:avoid!important}}
-@media(max-width:640px){.hero h1{font-size:1.5rem}table.diff{font-size:.78rem}}
-
-/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
-.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
-/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
-.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
-html.dark .peptopia-wordmark{color:#f1f5f9}
-.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
-html.dark .peptopia-tagline{color:#94a3b8}
-.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
-.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
-html.dark .peptopia-nav>a{color:#cbd5e1}
-.peptopia-nav>a:hover{color:#be185d}
-.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
-html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
-.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
-.peptopia-iconbtn svg{width:17px;height:17px}
-.peptopia-theme-toggle .pp-sun{display:none}
-html.dark .peptopia-theme-toggle .pp-sun{display:block}
-html.dark .peptopia-theme-toggle .pp-moon{display:none}
-.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
-html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
-.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
-.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
-html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
-.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
-html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
-.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
-.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
-.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
-html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
-.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
-@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
-/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
-.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
-/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
-.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
-html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
-html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
-.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
-html.dark .peptopia-wordmark{color:#f1f5f9}
-.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
-html.dark .peptopia-tagline{color:#94a3b8}
-.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
-@media(max-width:640px){.peptopia-hdr{padding:10px 12px;gap:8px}.peptopia-brand{gap:8px}.peptopia-logo{width:38px;height:38px}.peptopia-wordmark{font-size:.85rem}.peptopia-nav{gap:.6rem}.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}.peptopia-iconbtn{width:34px;height:34px;flex:none}}
-.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
-html.dark .peptopia-nav>a{color:#cbd5e1}
-.peptopia-nav>a:hover{color:#be185d}
-.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
-html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
-.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
-.peptopia-iconbtn svg{width:17px;height:17px}
-.peptopia-theme-toggle .pp-sun{display:none}
-html.dark .peptopia-theme-toggle .pp-sun{display:block}
-html.dark .peptopia-theme-toggle .pp-moon{display:none}
-.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
-html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
-.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
-.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
-html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
-.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
-html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
-.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
-.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
-.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
-html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
-.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
-@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
+:root{
+  --paper:#FAF8FF; --paper2:#F1EDFB; --ink:#2B2440; --muted:#6E6590;
+  --purp:#5B21B6; --purp-dk:#4C1D95; --purp-deep:#3B1470;
+  --lav:#EDE9FE; --lav2:#DCD0FA; --lavline:#D8CCF5;
+  --accent:#EA580C; --line:#DCD2F2;
+  --red:#B03A3A; --red-dk:#7E241A; --red-soft:#FAECEA;
+  --amber:#C97A2B; --green:#3E7D52; --green-soft:#E7F2EA;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.62;font-size:16.5px}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+a{color:var(--purp)}
+b,strong{font-weight:700}
+.hl{background:#E4DBFB;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+.hl-o{background:#FDE8D7;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+.qin{font-style:italic;background:#EFE9FC;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+/* ---------- title page ---------- */
+.titlepage{display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 24px 8px;position:relative;
+  background:radial-gradient(1100px 520px at 50% -10%,#E9E1FC 0%,var(--paper) 62%)}
+.wc-toprow{width:100%;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);font-weight:700;text-align:left;margin:6px 0 0}
+.wc-topbtns{display:flex;gap:8px;flex:none}
+.wc-tbtn{font:700 .8rem 'Outfit',sans-serif;color:var(--purp-dk);background:linear-gradient(180deg,#FFFFFF,#EFE9FC);
+  border:2px solid var(--purp-dk);border-radius:9px;padding:6px 12px;cursor:pointer;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.95),inset 0 -3px 5px rgba(76,29,149,.14),0 3px 6px rgba(76,29,149,.22)}
+.wc-tbtn:active{transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(76,29,149,.3),0 1px 2px rgba(76,29,149,.2)}
+.wc-tbtn.static{cursor:default}
+.wc-tbtn.static:active{transform:none}
+.titlepage h1{font-size:clamp(40px,6.4vw,66px);font-weight:800;margin:10px 0 4px;color:var(--accent);line-height:1.08}
+.subtitle{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(17px,2.6vw,24px);color:var(--purp-dk);letter-spacing:2.5px;text-transform:uppercase;margin:0 0 14px}
+.titlepage .sub{white-space:nowrap;font-size:clamp(.66rem,3.1vw,1.02rem);max-width:none;font-weight:600;color:var(--purp-dk);margin:0 0 8px}
+/* ---------- index ---------- */
+.index{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 26px;margin:26px 0;min-height:84px;box-shadow:0 3px 14px rgba(76,29,149,.06)}
+.index h2{margin:0;color:var(--purp-dk);font-size:1.35rem;display:flex;align-items:center;gap:12px}
+.index ol{display:none;columns:2;column-gap:34px;margin:16px 0 4px;padding-left:22px}
+.index.open ol{display:block}
+.index li{margin:7px 0;break-inside:avoid}
+.index a{color:var(--purp);text-decoration:none;font-weight:500}
+.index a:hover{text-decoration:underline}
+.index .idx-hint{font-size:.8rem;color:var(--muted);font-weight:600}
+.index.open .idx-hint{display:none}
+@media(max-width:640px){.index ol{columns:1}}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid var(--purp-dk);color:var(--purp-dk);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(76,29,149,.25),0 5px 10px rgba(76,29,149,.3);
+  font-size:20px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
+.icobtn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(76,29,149,.35),0 1px 2px rgba(76,29,149,.25)}
+/* ---------- section bands (V4/V5 pattern: slim, centered, gloss button) ---------- */
+.colorband{border-radius:12px;padding:9px 14px;padding-right:70px;padding-left:70px;margin:22px 0 12px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,var(--purp-dk),var(--purp));cursor:pointer;text-align:center;scroll-margin-top:18px;
+  box-shadow:0 4px 14px rgba(76,29,149,.25)}
+.colorband.deep{background:linear-gradient(120deg,var(--purp-deep),var(--purp-dk))}
+.colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;text-align:center;color:#fff}
+.colorband p{margin:0;opacity:.95;line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(.7rem,2.5vw,.95rem)}
+.colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;font-size:22px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;padding:0;font-family:inherit;cursor:pointer;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid #2A0A54;
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(42,10,84,.28),0 6px 12px rgba(20,5,45,.45);
+  transition:transform .07s ease,box-shadow .07s ease}
+.colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(42,10,84,.4),0 1px 2px rgba(20,5,45,.3)}
+/* ---------- section content ---------- */
+.wcsec{margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 3px 12px rgba(76,29,149,.05)}
+.card h3{color:var(--purp-dk);margin:2px 0 8px;font-size:1.18rem}
+.card h4{color:var(--purp-dk);margin:14px 0 6px;font-size:1.02rem}
+.card p{margin:8px 0}
+ul.tight{margin:8px 0;padding-left:22px}
+ul.tight li{margin:5px 0}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.cols2{grid-template-columns:1fr}}
+.statrow{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-top:5px solid var(--purp);border-radius:12px;padding:14px 16px;text-align:center}
+.stat b{display:block;font-family:'Outfit',sans-serif;font-size:27px;color:var(--purp-dk);line-height:1.12}
+.stat span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.stat.orange{border-top-color:var(--accent)} .stat.orange b{color:var(--accent)}
+.stat.red{border-top-color:var(--red)} .stat.red b{color:var(--red)}
+table.vals{width:100%;border-collapse:collapse;margin:12px 0;font-size:.97rem}
+table.vals th{font-family:'Outfit',sans-serif;background:var(--purp-dk);color:#fff;text-align:left;padding:9px 12px}
+table.vals td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.vals tr:nth-child(even) td{background:#F6F2FE}
+table.vals td.n{font-weight:700;color:var(--purp-dk);white-space:nowrap}
+.alert{border:2px solid var(--red);background:var(--red-soft);border-radius:12px;padding:14px 18px;margin:14px 0}
+.alert h3,.alert h4{color:var(--red-dk)}
+.notebox{border:2px solid var(--purp);background:#F4EFFF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.notebox h3,.notebox h4{color:var(--purp-dk)}
+.svgbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px 8px;margin:14px 0;overflow-x:auto}
+.svgbox .cap{text-align:center;color:var(--muted);font-size:.88rem;margin:6px 4px 10px}
+.bar-row{display:grid;grid-template-columns:118px 1fr 118px;gap:10px;align-items:center;margin:9px 0;font-size:.92rem}
+.bar-row .lab{text-align:right;font-weight:700;color:var(--purp-dk)}
+.bar-row .lab2{font-weight:700;color:var(--red-dk)}
+.bar-track{height:16px;background:var(--paper2);border-radius:8px;position:relative}
+.bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:8px}
+.tag{display:inline-block;font:700 .72rem 'Outfit',sans-serif;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;vertical-align:2px}
+.tag.p{background:var(--lav);color:var(--purp-dk);border:1.5px solid var(--purp)}
+.tag.r{background:var(--red-soft);color:var(--red-dk);border:1.5px solid var(--red)}
+.foot{border-top:1px solid var(--line);margin:34px 0 0;padding:16px 0 30px;text-align:center;color:var(--muted);font-size:.9rem}
+.toc-top{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid var(--purp-dk);color:var(--purp-dk);
+  font-size:20px;text-decoration:none;box-shadow:0 6px 14px rgba(76,29,149,.35);z-index:50}
+/* ---------- dark theme (visit only, never persisted) ---------- */
+html.dark body{background:#171126;color:#E9E4F8}
+html.dark .titlepage{background:radial-gradient(1100px 520px at 50% -10%,#2A1A52 0%,#171126 62%)}
+html.dark .card,html.dark .index,html.dark .stat,html.dark .svgbox{background:#221840;border-color:#3D2A6E}
+html.dark .stat span,html.dark .svgbox .cap,html.dark .foot{color:#A79CC9}
+html.dark table.vals td{border-color:#3D2A6E}
+html.dark table.vals tr:nth-child(even) td{background:#271C4C}
+html.dark .hl{background:#3D2A6E}
+html.dark .qin{background:#33255F}
+html.dark .notebox{background:#241845}
+html.dark .bar-track{background:#2C2054}
+html.dark .wc-tbtn{background:linear-gradient(180deg,#2C2054,#241845);color:#DCD0FA}
+html.dark .subtitle{color:#C9B8F5}
+html.dark .titlepage .sub{color:#C9B8F5}
+/* ---------- print ---------- */
+@page{size:Letter;margin:.6in}
+@media print{
+  *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .wcsec{display:block!important}
+  .colorband{width:auto!important;break-after:avoid}
+  .colorband .bigicon,.wc-tbtn:not(.static),.toc-top{display:none!important}
+  .index ol{display:block!important}.index .idx-hint{display:none!important}
+  .card,.stat,.alert,.notebox,.svgbox,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+  h1,h2,h3,h4{break-after:avoid!important}
+  p,li{orphans:3;widows:3}
+  body{background:#fff!important;color:#2B2440!important}
+  html.dark body{background:#fff!important;color:#2B2440!important}
+  html.dark .card,html.dark .index,html.dark .stat,html.dark .svgbox{background:#fff!important}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+<style>
+/* Band width rule (David, Oct 31): bands hug their content, centered; no band wider than the widest band's content, desktop or mobile. Print keeps full width (handled above). */
+.colorband{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;padding-left:16px}
 </style>
 </head>
+<style>
+/* Fugue components carried over from the original guide, restyled to the template palette */
+.critrow{display:flex;gap:14px;margin:14px 0}
+.critrow p{margin:0}
+.critl{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purp),var(--purp-dk));color:#fff;font:800 1rem 'Outfit',sans-serif;display:flex;align-items:center;justify-content:center}
+ul.check{list-style:none;margin:8px 0;padding:0}
+ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--line)}
+ul.check li:last-child{border-bottom:none}
+ul.check li::before{content:'\2713';position:absolute;left:4px;color:var(--green);font-weight:800}
+.nanda{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.nanda span{background:var(--lav);border:1px solid var(--lavline);color:var(--purp-dk);border-radius:999px;padding:5px 14px;font-size:.85rem;font-weight:600}
+.tl{position:relative;margin:14px 0 6px 6px;padding-left:30px}
+.tl::before{content:'';position:absolute;left:9px;top:10px;bottom:10px;width:3px;border-radius:2px;background:linear-gradient(180deg,var(--accent),var(--purp),var(--green))}
+.tlstep{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:0 0 14px;box-shadow:0 3px 12px rgba(76,29,149,.05)}
+.tlstep::before{content:'';position:absolute;left:-28px;top:20px;width:13px;height:13px;border-radius:50%;background:var(--purp);border:3px solid var(--paper)}
+.tlstep h4{color:var(--purp-dk);margin:0 0 4px;font-size:1.05rem}
+.tlstep p{margin:0}
+.caseyr{margin:0 0 4px}
+html.dark .nanda span{color:#DCD0FA;background:#33255F;border-color:#3D2A6E}
+html.dark .tlstep{background:#221840;border-color:#3D2A6E}
+html.dark .tlstep::before{border-color:#171126}
+@media print{.tlstep,.critrow{break-inside:avoid!important;page-break-inside:avoid!important}}
+</style>
+
 <body>
-<header class="peptopia-hdr">
-<a class="peptopia-brand" href="https://x-peps.com/">
-<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
-<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
-</a>
-<nav class="peptopia-nav" aria-label="Site">
-<a href="https://x-peps.com/">HOME</a>
-<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
-<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
-<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
-</nav>
-</header>
-<main>
+<div class="wrap">
 
-<section class="hero">
-<span class="ico">&#x1F9E0;</span>
-<span class="tag">HEALTH PSYCHOLOGY &bull; STUDY GUIDE 01 &bull; DISSOCIATIVE DISORDERS</span>
-<h1>Dissociative Fugue</h1>
-<p class="sub">Pronounced "fyoog." Reversible amnesia for personal identity &mdash; plus sudden, unexpected travel. The mind's most dramatic escape hatch, and one of psychiatry's rarest diagnoses.</p>
-</section>
-
-<div class="statgrid">
-<div class="stat"><div class="n">0.2%</div><div class="l">Estimated prevalence &mdash; one of the rarest psychiatric diagnoses</div></div>
-<div class="stat"><div class="n">300.13</div><div class="l">DSM-5-TR: F44.1 &mdash; Dissociative Amnesia <em>with</em> fugue specifier</div></div>
-<div class="stat"><div class="n">Hrs&ndash;Mos</div><div class="l">Typical episode duration; usually a single lifetime episode</div></div>
-<div class="stat"><div class="n">30s&ndash;40s</div><div class="l">Peak onset: third and fourth decades of life</div></div>
+<!-- ================= TITLE PAGE ================= -->
+<div class="titlepage" id="top">
+  <div class="wc-toprow">
+    <div class="kicker">Nursing Education · Mental Health</div>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 October 2026</span>
+      <button type="button" class="wc-tbtn" id="fugueThemeBtn" title="Switch light / dark theme">🌙 Theme</button>
+      <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
+    </div>
+  </div>
+  <h1>Dissociative Fugue</h1>
+  <div class="subtitle">Health Psychology · Study Guide 01 · Dissociative Disorders</div>
+  <p class="sub">Reversible amnesia for identity + sudden unexpected travel + possible new identity.</p>
 </div>
 
-<h2 class="sec">&#x1F4D6; What It Is</h2>
-<p class="body"><strong>Dissociative fugue</strong> &mdash; also called <em>fugue state</em> or <em>psychogenic fugue</em> &mdash; is a rare psychiatric condition defined by <strong>reversible amnesia for personal identity, accompanied by sudden, unexpected travel or wandering</strong> away from home or customary surroundings. The person may assume an entirely new identity &mdash; new name, occupation, social history &mdash; and be unable to recall anything about who they were before onset.</p>
-<p class="body">During the fugue the person may <strong>appear and act entirely normal</strong>: holding a job, forming relationships, navigating daily life. New learning stays intact &mdash; they can function and form fresh memories while remaining amnestic for their identity. Distress about the situation is rare <em>during</em> the episode; it arrives afterward.</p>
-
-<div class="callout teach">
-<h4>&#x1F3AF; Key Teaching Point &mdash; DSM-5-TR vs. ICD</h4>
-<p class="body" style="margin:0">In <strong>DSM-5-TR, dissociative fugue is NOT a standalone diagnosis</strong> &mdash; it is a <strong>specifier</strong> under Dissociative Amnesia (300.12/F44.0 without fugue; <strong>300.13/F44.1</strong> with fugue). ICD-10 and ICD-11 still list it as a <strong>distinct code (F44.1)</strong>. This classification split is a favorite exam question.</p>
+<!-- ================= INDEX ================= -->
+<div class="index">
+  <h2><button type="button" class="icobtn idx-btn" title="Open the index">📖</button> Index <span class="idx-hint">— tap the book to open</span></h2>
+  <ol>
+    <li><a href="#overview">What It Is</a></li>
+    <li><a href="#criteria">DSM-5-TR Diagnostic Criteria</a></li>
+    <li><a href="#epidemiology">Epidemiology</a></li>
+    <li><a href="#etiology">Etiology — Why It Happens</a></li>
+    <li><a href="#presentation">Clinical Presentation — The Three Phases</a></li>
+    <li><a href="#differential">Differential Diagnosis</a></li>
+    <li><a href="#bipolar">Comorbidity Focus: Bipolar Disorder</a></li>
+    <li><a href="#assessment">Assessment</a></li>
+    <li><a href="#treatment">Treatment &amp; Prognosis</a></li>
+    <li><a href="#cases">Famous Cases</a></li>
+    <li><a href="#nursing">Nursing Care — VA Inpatient Focus</a></li>
+    <li><a href="#takeaways">Key Takeaways — Exam Review</a></li>
+    <li><a href="#sources">Sources &amp; Further Reading</a></li>
+  </ol>
 </div>
 
-<h2 class="sec">&#x1F4CB; DSM-5-TR Diagnostic Criteria (Dissociative Amnesia)</h2>
-<p class="body">All four criteria must be met; the fugue specifier is added when purposeful travel accompanies the amnesia.</p>
-<div class="crit">
-<div class="c"><span class="cl">A</span><div><strong>Inability to recall important autobiographical information</strong> &mdash; usually of a traumatic or stressful nature &mdash; that is inconsistent with ordinary forgetting. In fugue the amnesia is <em>generalized</em>: identity and life history, not just isolated events.</div></div>
-<div class="c"><span class="cl">B</span><div><strong>Clinically significant distress or impairment</strong> in social, occupational, or other important areas of functioning.</div></div>
-<div class="c"><span class="cl">C</span><div><strong>Not attributable</strong> to the physiological effects of a substance or a neurological/medical condition (e.g., complex partial seizures, transient global amnesia, closed head injury).</div></div>
-<div class="c"><span class="cl">D</span><div><strong>Not better explained</strong> by dissociative identity disorder, PTSD, acute stress disorder, somatic symptom disorder, or a major/mild neurocognitive disorder.</div></div>
-<div class="callout clin" style="margin:14px 0 0"><h4>Fugue specifier</h4><p class="body" style="margin:0"><em>"With dissociative fugue: apparently purposeful travel or bewildered wandering associated with amnesia for identity or for other important autobiographical information."</em></p></div>
+<!-- ================= 1. WHAT IT IS ================= -->
+<div class="colorband" id="overview">
+  <h2>What It Is</h2>
+  <p>Reversible Amnesia for Personal Identity — Plus Sudden, Unexpected Travel</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📖</button>
+</div>
+<div class="wcsec">
+  <div class="statrow">
+    <div class="stat"><b>0.2%</b><span>Estimated prevalence — one of the rarest psychiatric diagnoses</span></div>
+    <div class="stat"><b>300.13</b><span>DSM-5-TR: F44.1 — Dissociative Amnesia with fugue specifier</span></div>
+    <div class="stat"><b>Hrs–Mos</b><span>Typical episode duration; usually a single lifetime episode</span></div>
+    <div class="stat"><b>30s–40s</b><span>Peak onset: third and fourth decades of life</span></div>
+  </div>
+  <div class="card">
+    <p>Pronounced "fyoog." Reversible amnesia for personal identity — plus sudden, unexpected travel. The mind's most dramatic escape hatch, and one of psychiatry's rarest diagnoses.</p>
+    <p><b>Dissociative fugue</b> — also called <i>fugue state</i> or <i>psychogenic fugue</i> — is a rare psychiatric condition defined by <b>reversible amnesia for personal identity, accompanied by sudden, unexpected travel or wandering</b> away from home or customary surroundings. The person may assume an entirely new identity — new name, occupation, social history — and be unable to recall anything about who they were before onset.</p>
+    <p>During the fugue the person may <b>appear and act entirely normal</b>: holding a job, forming relationships, navigating daily life. New learning stays intact — they can function and form fresh memories while remaining amnestic for their identity. Distress about the situation is rare <i>during</i> the episode; it arrives afterward.</p>
+  </div>
+  <div class="notebox">
+    <h4>🎯 Key Teaching Point — DSM-5-TR vs. ICD</h4>
+    <p>In <b>DSM-5-TR, dissociative fugue is NOT a standalone diagnosis</b> — it is a <b>specifier</b> under Dissociative Amnesia (300.12/F44.0 without fugue; <b>300.13/F44.1</b> with fugue). ICD-10 and ICD-11 still list it as a <b>distinct code (F44.1)</b>. This classification split is a favorite exam question.</p>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F4CA; Epidemiology</h2>
-<div class="statgrid">
-<div class="stat"><div class="n">0.2&ndash;1.8%</div><div class="l">Fugue-type presentations in case-report literature</div></div>
-<div class="stat"><div class="n">1.8&ndash;7.3%</div><div class="l">Dissociative amnesia (parent category) &mdash; the most common dissociative disorder</div></div>
-<div class="stat"><div class="n">~6%</div><div class="l">Of the general population reports high dissociative symptom levels</div></div>
-<div class="stat"><div class="n">&#x26A0;</div><div class="l">Frequency rises during wartime and natural disasters</div></div>
+<!-- ================= 2. DSM-5-TR CRITERIA ================= -->
+<div class="colorband" id="criteria">
+  <h2>DSM-5-TR Diagnostic Criteria</h2>
+  <p>Dissociative Amnesia — All Four Criteria Must Be Met</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📋</button>
 </div>
-<p class="body">No strong sex predominance is established. Episodes are <strong>usually single</strong>; recurrent fugue is documented but uncommon. Most patients recover their missing memories and the amnesia resolves &mdash; though some cases are refractory, and dissociative capacity may decrease with age.</p>
-
-<h2 class="sec">&#x1F300; Etiology &mdash; Why It Happens</h2>
-<div class="callout">
-<h4>&#x1F494; The trauma link is central</h4>
-<p class="body" style="margin:0">Fugue is most strongly associated with <strong>prolonged traumatic experience, especially childhood sexual abuse</strong> &mdash; patients often first developed dissociative amnesia to suppress abuse memories. Adult precipitants include combat, natural disasters, violent crime (as victim, witness, or perpetrator), suicide attempts, and serious accidents. The fugue often follows the <strong>reappearance of a person or event representing the earlier trauma</strong>. Avoidant coping styles increase susceptibility.</p>
-</div>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F4AD; Psychodynamic Theory</h4>
-<p class="body" style="margin:0">Dissociation as defense: an "armoring" personality emerges in response to overwhelming threat &mdash; a logical escape when neither fight nor flight is possible. Children, whose identities are still forming, can "step outside" themselves during chronic abuse and reflexively reuse this coping into adulthood.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F9EC; Neurobiological Theory</h4>
-<p class="body" style="margin:0">Severe stress disrupts the integration of sensory and emotional input, fragmenting consciousness. Trauma affects hippocampal&ndash;prefrontal circuitry involved in autobiographical memory. Critically, <strong>new learning remains intact</strong> during fugue &mdash; distinguishing it from organic amnesic syndromes.</p>
-</div>
+<div class="wcsec">
+  <div class="card">
+    <p>All four criteria must be met; the fugue specifier is added when purposeful travel accompanies the amnesia.</p>
+    <div class="critrow"><span class="critl">A</span><div><p><b>Inability to recall important autobiographical information</b> — usually of a traumatic or stressful nature — that is inconsistent with ordinary forgetting. In fugue the amnesia is <i>generalized</i>: identity and life history, not just isolated events.</p></div></div>
+    <div class="critrow"><span class="critl">B</span><div><p><b>Clinically significant distress or impairment</b> in social, occupational, or other important areas of functioning.</p></div></div>
+    <div class="critrow"><span class="critl">C</span><div><p><b>Not attributable</b> to the physiological effects of a substance or a neurological/medical condition (e.g., complex partial seizures, transient global amnesia, closed head injury).</p></div></div>
+    <div class="critrow"><span class="critl">D</span><div><p><b>Not better explained</b> by dissociative identity disorder, PTSD, acute stress disorder, somatic symptom disorder, or a major/mild neurocognitive disorder.</p></div></div>
+  </div>
+  <div class="notebox">
+    <h4>Fugue specifier</h4>
+    <p><span class="qin">"With dissociative fugue: apparently purposeful travel or bewildered wandering associated with amnesia for identity or for other important autobiographical information."</span></p>
+  </div>
 </div>
 
-<h2 class="sec">&#x23F1; Clinical Presentation &mdash; The Three Phases</h2>
-<div class="timeline">
-<div class="tstep">
-<h4>&#x1F4A5; Before: The Trigger</h4>
-<p class="body" style="margin:0">Severe stressor or trauma reminder &mdash; often echoing earlier, usually childhood, trauma. The person is functioning normally; diagnosis at this stage is impossible prospectively.</p>
+<!-- ================= 3. EPIDEMIOLOGY ================= -->
+<div class="colorband" id="epidemiology">
+  <h2>Epidemiology</h2>
+  <p>Rare · Stress-Linked · Usually a Single Episode</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📊</button>
 </div>
-<div class="tstep">
-<h4>&#x1F6B6; During: The Fugue</h4>
-<p class="body" style="margin:0"><strong>Sudden, unplanned travel</strong> &mdash; purposeful-appearing wandering that may cross cities or countries. <strong>Identity confusion or a full new identity</strong> (sometimes elaborate and sustained for years). Mild confusion, but otherwise the person may seem entirely normal &mdash; working, socializing. Rarely expresses distress while in the fugue.</p>
-</div>
-<div class="tstep">
-<h4>&#x1F441;&#xFE0F; After: "Coming To"</h4>
-<p class="body" style="margin:0">Prior memories <strong>usually return intact</strong>; complete amnesia for the fugue episode itself typically remains. Emotional aftermath: <strong>depression, grief, shame, anger, extreme disorientation</strong> on finding oneself in unfamiliar circumstances. The realization of "lost time" can itself be traumatic. Diagnosis is usually <strong>retrospective</strong>.</p>
-</div>
-</div>
-
-<h2 class="sec">&#x2696;&#xFE0F; Differential Diagnosis</h2>
-<p class="body">Eleven conditions to rule out &mdash; the table below is the core exam material.</p>
-<table class="diff">
-<thead><tr><th>Condition</th><th>Distinguishing Features</th></tr></thead>
-<tbody>
-<tr><td>Dissoc. amnesia (no fugue)</td><td>Same amnesia, but <strong>no travel/wandering</strong> &mdash; travel is the sole distinguishing feature</td></tr>
-<tr><td>Dissoc. identity disorder</td><td>Chronic alternate identities with switching; fugue is single-episode identity loss + travel</td></tr>
-<tr><td>Malingering</td><td>Conscious fabrication for external gain (legal/financial); fugue shows genuine confusion and profound distress on recovery</td></tr>
-<tr><td>Factitious disorder</td><td>Symptoms produced for the "sick role" (psychological gratification), not external gain</td></tr>
-<tr><td>Temporal lobe epilepsy</td><td>EEG abnormalities; stereotyped, brief episodes; postictal confusion</td></tr>
-<tr><td>Transient global amnesia</td><td>Anterograde amnesia in middle-aged/older adults, often after exertion; no identity loss or travel</td></tr>
-<tr><td>Substance-induced</td><td>Toxicology positive; blackout pattern with history of use</td></tr>
-<tr><td>Delirium / dementia / TBI</td><td>Clouded consciousness, progressive course, or head-injury history; new learning impaired</td></tr>
-<tr><td>PTSD / acute stress</td><td>Amnesia limited to aspects of the traumatic event itself</td></tr>
-<tr><td>Bipolar mania</td><td>Goal-directed hyperactivity with intact (if grandiose) identity and no amnesia; decreased need for sleep</td></tr>
-<tr><td>Conversion disorder</td><td>Neurological-type symptoms without the dissociative amnesia core</td></tr>
-</tbody>
-</table>
-<div class="callout clin">
-<h4>&#x1FA7A; Organic Workup</h4>
-<p class="body" style="margin:0">Always rule out medical causes: neurological exam, <strong>EEG</strong> (seizures), <strong>MRI/CT</strong> (lesions), labs, <strong>toxicology screen</strong>, medication review, sleep history.</p>
+<div class="wcsec">
+  <div class="statrow">
+    <div class="stat"><b>0.2–1.8%</b><span>Fugue-type presentations in case-report literature</span></div>
+    <div class="stat"><b>1.8–7.3%</b><span>Dissociative amnesia (parent category) — the most common dissociative disorder</span></div>
+    <div class="stat"><b>~6%</b><span>Of the general population reports high dissociative symptom levels</span></div>
+    <div class="stat"><b>⚠</b><span>Frequency rises during wartime and natural disasters</span></div>
+  </div>
+  <div class="card">
+    <p>No strong sex predominance is established. Episodes are <b>usually single</b>; recurrent fugue is documented but uncommon. Most patients recover their missing memories and the amnesia resolves — though some cases are refractory, and dissociative capacity may decrease with age.</p>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F504; Comorbidity Focus: Bipolar Disorder</h2>
-<div class="callout teach">
-<h4>&#x1F3AF; The Requested Pairing</h4>
-<p class="body" style="margin:0"><strong>Bipolar Disorder, Current Episode Depressed, Severe, Without Psychotic Features</strong> &mdash; how it intersects with fugue is high-yield material.</p>
+<!-- ================= 4. ETIOLOGY ================= -->
+<div class="colorband" id="etiology">
+  <h2>Etiology — Why It Happens</h2>
+  <p>The Trauma Link Is Central</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🌀</button>
 </div>
-<p class="body">A scoping review found dissociative symptoms are <strong>more common in bipolar disorder than in healthy controls or unipolar depression</strong>, linked to childhood trauma and associated with suicide attempts and poorer treatment response. In one SCID-D study of 51 bipolar patients: dissociative amnesia 7.8%, <strong>dissociative fugue 1.9%</strong>, DID 3.9%, depersonalization 17.6%.</p>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F9ED; Fugue vs. Manic Travel</h4>
-<p class="body" style="margin:0"><strong>Mania:</strong> impulsive, goal-directed travel with <em>intact</em> (grandiose) identity, no amnesia, decreased need for sleep.<br><strong>Fugue:</strong> amnestic wandering with <em>identity loss</em>. Sleep pattern is a key differentiator.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F50D; Diagnostic Traps</h4>
-<p class="body" style="margin:0">DID-linked mood shifts are commonly <strong>misdiagnosed as bipolar II</strong>. Post-fugue grief/shame/depression is expected &mdash; distinguish it from a true major depressive episode by course and criteria. A single past manic episode reclassifies "MDD" as <strong>bipolar I</strong> &mdash; always take a full mood history.</p>
-</div>
-</div>
-<p class="body"><strong>Treatment implication:</strong> comorbid dissociation predicts poorer bipolar treatment response &mdash; <strong>stabilize mood first</strong> (mood stabilizer/antipsychotic as indicated), then trauma-focused work. Childhood trauma is the common soil: screen bipolar patients with trauma histories for dissociative symptoms.</p>
-
-<h2 class="sec">&#x1F50E; Assessment</h2>
-<ul class="check">
-<li><strong>Clinical interview</strong> &mdash; detailed history: circumstances before departure, the travel, the alternate life. Collateral from family, employers, police, hospitals is <em>essential</em> (the patient cannot report the fugue period).</li>
-<li><strong>DES</strong> (Dissociative Experiences Scale) &mdash; screening; widely used and validated.</li>
-<li><strong>MID</strong> (Multidimensional Inventory of Dissociation) &mdash; comprehensive measure.</li>
-<li><strong>SCID-D</strong> &mdash; gold-standard structured diagnostic interview for dissociative disorders.</li>
-<li><strong>Medical workup</strong> &mdash; neuro exam, EEG, MRI/CT, labs, toxicology, medication review, sleep history.</li>
-<li><strong>Mental status exam</strong> &mdash; may be entirely unremarkable between episodes (case reports note normal MMSE, e.g., 27/30).</li>
-<li><strong>Malingering assessment</strong> &mdash; evaluate external incentives; genuine cases show confusion and distress inconsistent with fabrication.</li>
-</ul>
-
-<h2 class="sec">&#x1FA79; Treatment &amp; Prognosis</h2>
-<p class="body"><strong>Psychotherapy is the primary treatment.</strong> Goals: restore continuity of identity, integrate dissociated material, build non-dissociative coping, prevent recurrence.</p>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F4AC; Trauma-Focused Therapy</h4>
-<p class="body" style="margin:0">Address the precipitating trauma; give it meaning; resolve inappropriate guilt. The front-line approach.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F9E0; CBT &bull; EMDR &bull; DBT</h4>
-<p class="body" style="margin:0"><strong>CBT:</strong> challenge maladaptive thought patterns. <strong>EMDR:</strong> process traumatic memories. <strong>DBT skills:</strong> distress tolerance and emotion regulation. <strong>Psychodynamic:</strong> explore unconscious conflicts.</p>
-</div>
-</div>
-<div class="callout teach">
-<h4>&#x23F3; Hypnosis &mdash; The Controversy (exam favorite)</h4>
-<p class="body"><strong>For:</strong> historically used (sometimes with amobarbital interviews) to retrieve lost memories; proponents cite recovered material later confirmed and real therapeutic progress.</p>
-<p class="body" style="margin:0"><strong>Against:</strong> critics warn of <strong>false-memory risk</strong> &mdash; hypnotically facilitated recall may cause patients to mislabel fantasy as real memory. A 2022 meta-analysis (Wieder et al.) examined hypnotic suggestibility in dissociative disorders.</p>
-</div>
-<p class="body"><strong>Pharmacology:</strong> no medication treats fugue specifically. Treat comorbidities &mdash; <strong>SSRIs</strong> (paroxetine showed efficacy for dissociative symptoms in PTSD in one study), anxiolytics for distress &mdash; to stabilize the patient enough to engage in psychotherapy.</p>
-<div class="callout clin">
-<h4>&#x1F4C8; Prognosis</h4>
-<p class="body" style="margin:0">Recovery is <strong>usually rapid</strong>, especially once removed from the stressful situation; <strong>most patients recover</strong> their memories. Some cases are refractory with persistent amnesia. Usually a <strong>single episode</strong>; dissociative capacity may decrease with age.</p>
+<div class="wcsec">
+  <div class="notebox">
+    <h4>💔 The trauma link is central</h4>
+    <p>Fugue is most strongly associated with <b>prolonged traumatic experience, especially childhood sexual abuse</b> — patients often first developed dissociative amnesia to suppress abuse memories. Adult precipitants include combat, natural disasters, violent crime (as victim, witness, or perpetrator), suicide attempts, and serious accidents. The fugue often follows the <b>reappearance of a person or event representing the earlier trauma</b>. Avoidant coping styles increase susceptibility.</p>
+  </div>
+  <div class="cols2">
+    <div class="card">
+      <h4>💭 Psychodynamic Theory</h4>
+      <p>Dissociation as defense: an "armoring" personality emerges in response to overwhelming threat — a logical escape when neither fight nor flight is possible. Children, whose identities are still forming, can "step outside" themselves during chronic abuse and reflexively reuse this coping into adulthood.</p>
+    </div>
+    <div class="card">
+      <h4>🧬 Neurobiological Theory</h4>
+      <p>Severe stress disrupts the integration of sensory and emotional input, fragmenting consciousness. Trauma affects hippocampal–prefrontal circuitry involved in autobiographical memory. Critically, <b>new learning remains intact</b> during fugue — distinguishing it from organic amnesic syndromes.</p>
+    </div>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F4DC; Famous Cases</h2>
-<div class="casegrid">
-<div class="case"><div class="yr">2008 &ndash; 2017</div><h4>&#x1F469;&zwj;&#x1F3EB; Hannah Upp</h4><p class="body" style="margin:0;font-size:.9rem">Teacher who vanished from NYC (2008), found in New York Harbor 20 days later; second fugue 2013; missing again since 2017. Subject of a <em>New Yorker</em> piece on stigma toward dissociative conditions.</p></div>
-<div class="case"><div class="yr">1994 &ndash; 2007</div><h4>&#x1F468; Jeff Ingram</h4><p class="body" style="margin:0;font-size:.9rem">Appeared in Denver (2006) with no memory of his identity; identified via TV appeal. Three documented amnestic episodes.</p></div>
-<div class="case"><div class="yr">1985 &ndash; 1997</div><h4>&#x1F4F0; Jody Roberts</h4><p class="body" style="margin:0;font-size:.9rem"><em>Tacoma News Tribune</em> reporter; disappeared 1985, found 12 years later in Sitka, Alaska living as "Jane Dee Williams." Experts concluded genuine protracted fugue.</p></div>
-<div class="case"><div class="yr">1926</div><h4>&#x1F4DA; Agatha Christie</h4><p class="body" style="margin:0;font-size:.9rem">Vanished after traumatic stressors; found at a hotel registered under another name claiming amnesia. Historian Lucy Worsley posited a fugue state.</p></div>
-<div class="case"><div class="yr">2005</div><h4>&#x1F4F9; David Fitzpatrick</h4><p class="body" style="margin:0;font-size:.9rem">UK documentary profile; entered a fugue on December 4, 2005.</p></div>
-<div class="case"><div class="yr">VARIOUS</div><h4>&#x1F68B; Doug Bruce &amp; Others</h4><p class="body" style="margin:0;font-size:.9rem">"Came to" on a subway with no memory or ID. The Bruneri-Canella case &mdash; alleged WWI missing-person reappearance &mdash; remains a historical curiosity.</p></div>
+<!-- ================= 5. CLINICAL PRESENTATION ================= -->
+<div class="colorband" id="presentation">
+  <h2>Clinical Presentation — The Three Phases</h2>
+  <p>Before · During · After</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">⏱</button>
+</div>
+<div class="wcsec">
+  <div class="tl">
+    <div class="tlstep">
+      <h4>💥 Before: The Trigger</h4>
+      <p>Severe stressor or trauma reminder — often echoing earlier, usually childhood, trauma. The person is functioning normally; diagnosis at this stage is impossible prospectively.</p>
+    </div>
+    <div class="tlstep">
+      <h4>🚶 During: The Fugue</h4>
+      <p><b>Sudden, unplanned travel</b> — purposeful-appearing wandering that may cross cities or countries. <b>Identity confusion or a full new identity</b> (sometimes elaborate and sustained for years). Mild confusion, but otherwise the person may seem entirely normal — working, socializing. Rarely expresses distress while in the fugue.</p>
+    </div>
+    <div class="tlstep">
+      <h4>👁️ After: "Coming To"</h4>
+      <p>Prior memories <b>usually return intact</b>; complete amnesia for the fugue episode itself typically remains. Emotional aftermath: <b>depression, grief, shame, anger, extreme disorientation</b> on finding oneself in unfamiliar circumstances. The realization of "lost time" can itself be traumatic. Diagnosis is usually <b>retrospective</b>.</p>
+    </div>
+  </div>
 </div>
 
-<h2 class="sec">&#x1FA7A; Nursing Care &mdash; VA Inpatient Focus</h2>
-<div class="callout clin">
-<h4>&#x1F6A8; Safety Is Priority One</h4>
-<p class="body" style="margin:0"><strong>Elopement risk:</strong> a patient with fugue history may wander &mdash; q15&ndash;q30 safety checks per acuity, secure-unit awareness, belongings/ID safeguards. <strong>Screen for suicidal/homicidal ideation</strong> on admission and ongoing &mdash; post-fugue shame and depression elevate risk.</p>
+<!-- ================= 6. DIFFERENTIAL DIAGNOSIS ================= -->
+<div class="colorband" id="differential">
+  <h2>Differential Diagnosis</h2>
+  <p>Eleven Conditions to Rule Out</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">⚖️</button>
 </div>
-<h4 style="margin:18px 0 8px">&#x1F4AC; Therapeutic Communication</h4>
-<ul class="check">
-<li><strong>Introduce and re-introduce yourself</strong> &mdash; the patient may not remember you from shift to shift.</li>
-<li><strong>Explain all procedures before beginning</strong>; allow extra time; repeat as needed.</li>
-<li>Validate confusion and fear <strong>without confronting the amnesia</strong> ("It makes sense this is frightening").</li>
-<li>Support expression of fear/anger without harm to self or others.</li>
-</ul>
-<h4 style="margin:18px 0 8px">&#x1F3E5; Milieu Management</h4>
-<p class="body"><strong>Calm, consistent, predictable routine</strong> &mdash; stress and unpredictability worsen dissociative symptoms; consistency is itself therapeutic. Low-stimulation environment during acute confusion; gradual reorientation using collateral-verified facts (avoid "quizzing" the patient). Coordinate the team so messaging stays consistent.</p>
-<h4 style="margin:18px 0 8px">&#x1F4CB; NANDA-Style Nursing Diagnoses</h4>
-<div class="nanda">
-<span>Ineffective individual coping</span><span>Risk for injury</span><span>Risk for violence: self-directed</span><span>Anxiety</span><span>Social isolation</span><span>Impaired social interaction</span>
-</div>
-<h4 style="margin:18px 0 8px">&#x1F46A; Family &amp; Discharge</h4>
-<p class="body">Teach family about the disorder, triggers, and support strategies; encourage participation in the regimen. Discharge planning: <strong>outpatient trauma-informed therapy referral, crisis plan, medical follow-up</strong>, and address the practical fallout of the episode (employment, legal, financial).</p>
-<p class="body"><strong>Documentation:</strong> objective behavioral descriptions (what the patient did/said), safety checks, response to reorientation, collateral sources &mdash; avoid charting diagnostic conclusions beyond RN scope.</p>
-
-<div class="kt">
-<h2>&#x1F4CC; Key Takeaways &mdash; Exam Review</h2>
-<ul>
-<li><strong>DSM-5-TR:</strong> fugue is a <em>specifier</em> of Dissociative Amnesia (300.13/F44.1), not a standalone diagnosis; ICD retains it separately.</li>
-<li><strong>Core triad:</strong> reversible amnesia for identity + sudden unexpected travel + possible new identity.</li>
-<li><strong>Prevalence ~0.2%</strong>; onset typically in the 30s&ndash;40s; usually a single episode lasting hours to months.</li>
-<li><strong>Strongest risk factor:</strong> prolonged childhood trauma, especially sexual abuse.</li>
-<li><strong>New learning intact</strong> &mdash; the patient can work and form fresh memories; this separates fugue from organic amnesia.</li>
-<li><strong>Diagnosis is retrospective</strong>; collateral history is essential.</li>
-<li><strong>Rule out:</strong> seizures (EEG), TGA, substances (tox screen), TBI, malingering (motive check).</li>
-<li><strong>Bipolar link:</strong> dissociative symptoms more common in BD; fugue 1.9% in one BD sample; mania = goal-directed travel with intact identity, fugue = amnestic wandering.</li>
-<li><strong>Treatment:</strong> psychotherapy first (trauma-focused, CBT, EMDR); hypnosis is controversial (false-memory risk); no drug treats fugue itself.</li>
-<li><strong>Nursing:</strong> elopement precautions, q15 checks, re-introduce self, calm predictable milieu, validate without confronting.</li>
-</ul>
+<div class="wcsec">
+  <div class="card">
+    <p>Eleven conditions to rule out — the table below is the core exam material.</p>
+    <table class="vals">
+      <tr><th style="width:26%">Condition</th><th>Distinguishing Features</th></tr>
+      <tr><td class="n">Dissoc. amnesia (no fugue)</td><td>Same amnesia, but <b>no travel/wandering</b> — travel is the sole distinguishing feature</td></tr>
+      <tr><td class="n">Dissoc. identity disorder</td><td>Chronic alternate identities with switching; fugue is single-episode identity loss + travel</td></tr>
+      <tr><td class="n">Malingering</td><td>Conscious fabrication for external gain (legal/financial); fugue shows genuine confusion and profound distress on recovery</td></tr>
+      <tr><td class="n">Factitious disorder</td><td>Symptoms produced for the "sick role" (psychological gratification), not external gain</td></tr>
+      <tr><td class="n">Temporal lobe epilepsy</td><td>EEG abnormalities; stereotyped, brief episodes; postictal confusion</td></tr>
+      <tr><td class="n">Transient global amnesia</td><td>Anterograde amnesia in middle-aged/older adults, often after exertion; no identity loss or travel</td></tr>
+      <tr><td class="n">Substance-induced</td><td>Toxicology positive; blackout pattern with history of use</td></tr>
+      <tr><td class="n">Delirium / dementia / TBI</td><td>Clouded consciousness, progressive course, or head-injury history; new learning impaired</td></tr>
+      <tr><td class="n">PTSD / acute stress</td><td>Amnesia limited to aspects of the traumatic event itself</td></tr>
+      <tr><td class="n">Bipolar mania</td><td>Goal-directed hyperactivity with intact (if grandiose) identity and no amnesia; decreased need for sleep</td></tr>
+      <tr><td class="n">Conversion disorder</td><td>Neurological-type symptoms without the dissociative amnesia core</td></tr>
+    </table>
+  </div>
+  <div class="notebox">
+    <h4>🩺 Organic Workup</h4>
+    <p>Always rule out medical causes: neurological exam, <b>EEG</b> (seizures), <b>MRI/CT</b> (lesions), labs, <b>toxicology screen</b>, medication review, sleep history.</p>
+  </div>
 </div>
 
-<div class="bib">
-<h2>&#x1F4DA; Bibliography</h2>
-<ul>
-<li>1. Wikipedia &mdash; "Dissociative fugue" (<a href="https://en.wikipedia.org/wiki/Dissociative_fugue">en.wikipedia.org/wiki/Dissociative_fugue</a>)</li>
-<li>2. MSD Manual, Professional Edition &mdash; "Dissociative Amnesia" (<a href="https://www.msdmanuals.com/professional/psychiatric-disorders/dissociative-disorders/dissociative-amnesia">msdmanuals.com</a>)</li>
-<li>3. MSD Manual, Consumer Version &mdash; "Dissociative Amnesia" (<a href="https://www.msdmanuals.com/home/mental-health-disorders/dissociative-disorders/dissociative-amnesia">msdmanuals.com</a>)</li>
-<li>4. WebMD &mdash; "Mental Health: Dissociative Fugue" (<a href="https://www.webmd.com/mental-health/dissociative-fugue">webmd.com</a>)</li>
-<li>5. PsychCentral &mdash; DSM-5 Diagnostic Codes (300.12/F44.0; 300.13/F44.1)</li>
-<li>6. Rajkumar, R.P. &mdash; scoping review on dissociative comorbidity in bipolar disorder (ResearchGate)</li>
-<li>7. Raval et al. (2015) &mdash; "Dissociative fugue: Recurrent episodes in a young adult," <em>Industrial Psychiatry Journal</em> 24(1):88&ndash;90</li>
-<li>8. Angothu &amp; Pabbathi (2016) &mdash; recurrent dissociative fugue, <em>Indian J Psychol Med</em> 38(2):160&ndash;162</li>
-<li>9. Liu-Barbaro &amp; Stein &mdash; psychopharmacologic treatment of dissociative fugue + PTSD case (psychiatrist.com)</li>
-<li>10. Wieder et al. (2022) &mdash; hypnotic suggestibility meta-analysis, <em>Neurosci Biobehav Rev</em> 139:104751</li>
-<li>11. Harrison et al. (2017) &mdash; psychogenic amnesia syndromes/outcome, <em>Brain</em> 140(9):2498&ndash;2510</li>
-<li>12. Kopelman (2002) &mdash; "Disorders of memory," <em>Brain</em> 125(10):2152&ndash;2190</li>
-<li>13. Aviv, R. (2018) &mdash; "How a Young Woman Lost Her Identity," <em>The New Yorker</em> (Hannah Upp)</li>
-<li>14. Nursing care-plan references: docmoates.com dissociative disorders care plan; standard nursing texts on dissociative disorders</li>
-</ul>
+<!-- ================= 7. COMORBIDITY: BIPOLAR ================= -->
+<div class="colorband" id="bipolar">
+  <h2>Comorbidity Focus: Bipolar Disorder</h2>
+  <p>The Requested Pairing — Dissociation Meets Mood Disorder</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔄</button>
+</div>
+<div class="wcsec">
+  <div class="notebox">
+    <h4>🎯 The Requested Pairing</h4>
+    <p><b>Bipolar Disorder, Current Episode Depressed, Severe, Without Psychotic Features</b> — how it intersects with fugue is high-yield material.</p>
+  </div>
+  <div class="card">
+    <p>A scoping review found dissociative symptoms are <b>more common in bipolar disorder than in healthy controls or unipolar depression</b>, linked to childhood trauma and associated with suicide attempts and poorer treatment response. In one SCID-D study of 51 bipolar patients: dissociative amnesia 7.8%, <b>dissociative fugue 1.9%</b>, DID 3.9%, depersonalization 17.6%.</p>
+  </div>
+  <div class="cols2">
+    <div class="card">
+      <h4>🧭 Fugue vs. Manic Travel</h4>
+      <p><b>Mania:</b> impulsive, goal-directed travel with <i>intact</i> (grandiose) identity, no amnesia, decreased need for sleep.<br><b>Fugue:</b> amnestic wandering with <i>identity loss</i>. Sleep pattern is a key differentiator.</p>
+    </div>
+    <div class="card">
+      <h4>🔍 Diagnostic Traps</h4>
+      <p>DID-linked mood shifts are commonly <b>misdiagnosed as bipolar II</b>. Post-fugue grief/shame/depression is expected — distinguish it from a true major depressive episode by course and criteria. A single past manic episode reclassifies "MDD" as <b>bipolar I</b> — always take a full mood history.</p>
+    </div>
+  </div>
+  <div class="card">
+    <p><b>Treatment implication:</b> comorbid dissociation predicts poorer bipolar treatment response — <b>stabilize mood first</b> (mood stabilizer/antipsychotic as indicated), then trauma-focused work. Childhood trauma is the common soil: screen bipolar patients with trauma histories for dissociative symptoms.</p>
+  </div>
 </div>
 
-</main>
-<footer class="peptopia-ftr">
-<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
-<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
-<div class="peptopia-ftr-icons">
-<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia home" class="logo-dark"><img src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia home" class="logo-light"></a>
-<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
-<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
-<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
+<!-- ================= 8. ASSESSMENT ================= -->
+<div class="colorband" id="assessment">
+  <h2>Assessment</h2>
+  <p>Interview · Scales · Structured Diagnosis · Medical Workup</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔎</button>
 </div>
-</footer>
+<div class="wcsec">
+  <div class="card">
+    <ul class="check">
+      <li><b>Clinical interview</b> — detailed history: circumstances before departure, the travel, the alternate life. Collateral from family, employers, police, hospitals is <i>essential</i> (the patient cannot report the fugue period).</li>
+      <li><b>DES</b> (Dissociative Experiences Scale) — screening; widely used and validated.</li>
+      <li><b>MID</b> (Multidimensional Inventory of Dissociation) — comprehensive measure.</li>
+      <li><b>SCID-D</b> — gold-standard structured diagnostic interview for dissociative disorders.</li>
+      <li><b>Medical workup</b> — neuro exam, EEG, MRI/CT, labs, toxicology, medication review, sleep history.</li>
+      <li><b>Mental status exam</b> — may be entirely unremarkable between episodes (case reports note normal MMSE, e.g., 27/30).</li>
+      <li><b>Malingering assessment</b> — evaluate external incentives; genuine cases show confusion and distress inconsistent with fabrication.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 9. TREATMENT & PROGNOSIS ================= -->
+<div class="colorband" id="treatment">
+  <h2>Treatment &amp; Prognosis</h2>
+  <p>Psychotherapy First — No Drug Treats Fugue Itself</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🩹</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Psychotherapy is the primary treatment.</b> Goals: restore continuity of identity, integrate dissociated material, build non-dissociative coping, prevent recurrence.</p>
+  </div>
+  <div class="cols2">
+    <div class="card">
+      <h4>💬 Trauma-Focused Therapy</h4>
+      <p>Address the precipitating trauma; give it meaning; resolve inappropriate guilt. The front-line approach.</p>
+    </div>
+    <div class="card">
+      <h4>🧠 CBT • EMDR • DBT</h4>
+      <p><b>CBT:</b> challenge maladaptive thought patterns. <b>EMDR:</b> process traumatic memories. <b>DBT skills:</b> distress tolerance and emotion regulation. <b>Psychodynamic:</b> explore unconscious conflicts.</p>
+    </div>
+  </div>
+  <div class="notebox">
+    <h4>⏳ Hypnosis — The Controversy (exam favorite)</h4>
+    <p><b>For:</b> historically used (sometimes with amobarbital interviews) to retrieve lost memories; proponents cite recovered material later confirmed and real therapeutic progress.</p>
+    <p><b>Against:</b> critics warn of <b>false-memory risk</b> — hypnotically facilitated recall may cause patients to mislabel fantasy as real memory. A 2022 meta-analysis (Wieder et al.) examined hypnotic suggestibility in dissociative disorders.</p>
+  </div>
+  <div class="card">
+    <p><b>Pharmacology:</b> no medication treats fugue specifically. Treat comorbidities — <b>SSRIs</b> (paroxetine showed efficacy for dissociative symptoms in PTSD in one study), anxiolytics for distress — to stabilize the patient enough to engage in psychotherapy.</p>
+  </div>
+  <div class="notebox">
+    <h4>📈 Prognosis</h4>
+    <p>Recovery is <b>usually rapid</b>, especially once removed from the stressful situation; <b>most patients recover</b> their memories. Some cases are refractory with persistent amnesia. Usually a <b>single episode</b>; dissociative capacity may decrease with age.</p>
+  </div>
+</div>
+
+<!-- ================= 10. FAMOUS CASES ================= -->
+<div class="colorband" id="cases">
+  <h2>Famous Cases</h2>
+  <p>Six Documented Stories</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📜</button>
+</div>
+<div class="wcsec">
+  <div class="cols2">
+    <div class="card">
+      <p class="caseyr"><span class="tag p">2008 – 2017</span></p>
+      <h4>👩‍🏫 Hannah Upp</h4>
+      <p>Teacher who vanished from NYC (2008), found in New York Harbor 20 days later; second fugue 2013; missing again since 2017. Subject of a <i>New Yorker</i> piece on stigma toward dissociative conditions.</p>
+    </div>
+    <div class="card">
+      <p class="caseyr"><span class="tag p">1994 – 2007</span></p>
+      <h4>👨 Jeff Ingram</h4>
+      <p>Appeared in Denver (2006) with no memory of his identity; identified via TV appeal. Three documented amnestic episodes.</p>
+    </div>
+    <div class="card">
+      <p class="caseyr"><span class="tag p">1985 – 1997</span></p>
+      <h4>📰 Jody Roberts</h4>
+      <p><i>Tacoma News Tribune</i> reporter; disappeared 1985, found 12 years later in Sitka, Alaska living as "Jane Dee Williams." Experts concluded genuine protracted fugue.</p>
+    </div>
+    <div class="card">
+      <p class="caseyr"><span class="tag p">1926</span></p>
+      <h4>📚 Agatha Christie</h4>
+      <p>Vanished after traumatic stressors; found at a hotel registered under another name claiming amnesia. Historian Lucy Worsley posited a fugue state.</p>
+    </div>
+    <div class="card">
+      <p class="caseyr"><span class="tag p">2005</span></p>
+      <h4>📹 David Fitzpatrick</h4>
+      <p>UK documentary profile; entered a fugue on December 4, 2005.</p>
+    </div>
+    <div class="card">
+      <p class="caseyr"><span class="tag p">VARIOUS</span></p>
+      <h4>🚋 Doug Bruce &amp; Others</h4>
+      <p>"Came to" on a subway with no memory or ID. The Bruneri-Canella case — alleged WWI missing-person reappearance — remains a historical curiosity.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 11. NURSING CARE ================= -->
+<div class="colorband" id="nursing">
+  <h2>Nursing Care — VA Inpatient Focus</h2>
+  <p>Safety First · Communication · Milieu · Family</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🩺</button>
+</div>
+<div class="wcsec">
+  <div class="alert">
+    <h4>🚨 Safety Is Priority One</h4>
+    <p><b>Elopement risk:</b> a patient with fugue history may wander — q15–q30 safety checks per acuity, secure-unit awareness, belongings/ID safeguards. <b>Screen for suicidal/homicidal ideation</b> on admission and ongoing — post-fugue shame and depression elevate risk.</p>
+  </div>
+  <div class="card">
+    <h4>💬 Therapeutic Communication</h4>
+    <ul class="check">
+      <li><b>Introduce and re-introduce yourself</b> — the patient may not remember you from shift to shift.</li>
+      <li><b>Explain all procedures before beginning</b>; allow extra time; repeat as needed.</li>
+      <li>Validate confusion and fear <b>without confronting the amnesia</b> ("It makes sense this is frightening").</li>
+      <li>Support expression of fear/anger without harm to self or others.</li>
+    </ul>
+    <h4>🏥 Milieu Management</h4>
+    <p><b>Calm, consistent, predictable routine</b> — stress and unpredictability worsen dissociative symptoms; consistency is itself therapeutic. Low-stimulation environment during acute confusion; gradual reorientation using collateral-verified facts (avoid "quizzing" the patient). Coordinate the team so messaging stays consistent.</p>
+    <h4>📋 NANDA-Style Nursing Diagnoses</h4>
+    <div class="nanda">
+      <span>Ineffective individual coping</span><span>Risk for injury</span><span>Risk for violence: self-directed</span><span>Anxiety</span><span>Social isolation</span><span>Impaired social interaction</span>
+    </div>
+    <h4>👪 Family &amp; Discharge</h4>
+    <p>Teach family about the disorder, triggers, and support strategies; encourage participation in the regimen. Discharge planning: <b>outpatient trauma-informed therapy referral, crisis plan, medical follow-up</b>, and address the practical fallout of the episode (employment, legal, financial).</p>
+    <p><b>Documentation:</b> objective behavioral descriptions (what the patient did/said), safety checks, response to reorientation, collateral sources — avoid charting diagnostic conclusions beyond RN scope.</p>
+  </div>
+</div>
+
+<!-- ================= 12. KEY TAKEAWAYS ================= -->
+<div class="colorband" id="takeaways">
+  <h2>Key Takeaways — Exam Review</h2>
+  <p>The Ten Points to Carry Into the Exam</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📌</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <ul class="tight">
+      <li><b>DSM-5-TR:</b> fugue is a <i>specifier</i> of Dissociative Amnesia (300.13/F44.1), not a standalone diagnosis; ICD retains it separately.</li>
+      <li><b>Core triad:</b> reversible amnesia for identity + sudden unexpected travel + possible new identity.</li>
+      <li><b>Prevalence ~0.2%</b>; onset typically in the 30s–40s; usually a single episode lasting hours to months.</li>
+      <li><b>Strongest risk factor:</b> prolonged childhood trauma, especially sexual abuse.</li>
+      <li><b>New learning intact</b> — the patient can work and form fresh memories; this separates fugue from organic amnesia.</li>
+      <li><b>Diagnosis is retrospective</b>; collateral history is essential.</li>
+      <li><b>Rule out:</b> seizures (EEG), TGA, substances (tox screen), TBI, malingering (motive check).</li>
+      <li><b>Bipolar link:</b> dissociative symptoms more common in BD; fugue 1.9% in one BD sample; mania = goal-directed travel with intact identity, fugue = amnestic wandering.</li>
+      <li><b>Treatment:</b> psychotherapy first (trauma-focused, CBT, EMDR); hypnosis is controversial (false-memory risk); no drug treats fugue itself.</li>
+      <li><b>Nursing:</b> elopement precautions, q15 checks, re-introduce self, calm predictable milieu, validate without confronting.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 13. SOURCES ================= -->
+<div class="colorband" id="sources">
+  <h2>Sources &amp; Further Reading</h2>
+  <p>Bibliography — The References Behind This Guide</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📚</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <ul class="tight">
+      <li>1. Wikipedia — "Dissociative fugue" (<a href="https://en.wikipedia.org/wiki/Dissociative_fugue" target="_blank" rel="noopener">en.wikipedia.org/wiki/Dissociative_fugue</a>)</li>
+      <li>2. MSD Manual, Professional Edition — "Dissociative Amnesia" (<a href="https://www.msdmanuals.com/professional/psychiatric-disorders/dissociative-disorders/dissociative-amnesia" target="_blank" rel="noopener">msdmanuals.com</a>)</li>
+      <li>3. MSD Manual, Consumer Version — "Dissociative Amnesia" (<a href="https://www.msdmanuals.com/home/mental-health-disorders/dissociative-disorders/dissociative-amnesia" target="_blank" rel="noopener">msdmanuals.com</a>)</li>
+      <li>4. WebMD — "Mental Health: Dissociative Fugue" (<a href="https://www.webmd.com/mental-health/dissociative-fugue" target="_blank" rel="noopener">webmd.com</a>)</li>
+      <li>5. PsychCentral — DSM-5 Diagnostic Codes (300.12/F44.0; 300.13/F44.1)</li>
+      <li>6. Rajkumar, R.P. — scoping review on dissociative comorbidity in bipolar disorder (ResearchGate)</li>
+      <li>7. Raval et al. (2015) — "Dissociative fugue: Recurrent episodes in a young adult," <i>Industrial Psychiatry Journal</i> 24(1):88–90</li>
+      <li>8. Angothu &amp; Pabbathi (2016) — recurrent dissociative fugue, <i>Indian J Psychol Med</i> 38(2):160–162</li>
+      <li>9. Liu-Barbaro &amp; Stein — psychopharmacologic treatment of dissociative fugue + PTSD case (psychiatrist.com)</li>
+      <li>10. Wieder et al. (2022) — hypnotic suggestibility meta-analysis, <i>Neurosci Biobehav Rev</i> 139:104751</li>
+      <li>11. Harrison et al. (2017) — psychogenic amnesia syndromes/outcome, <i>Brain</i> 140(9):2498–2510</li>
+      <li>12. Kopelman (2002) — "Disorders of memory," <i>Brain</i> 125(10):2152–2190</li>
+      <li>13. Aviv, R. (2018) — "How a Young Woman Lost Her Identity," <i>The New Yorker</i> (Hannah Upp)</li>
+      <li>14. Nursing care-plan references: docmoates.com dissociative disorders care plan; standard nursing texts on dissociative disorders</li>
+    </ul>
+  </div>
+</div>
+
+<a class="toc-top" href="#top" title="Back to top">↑</a>
+<div class="foot">Dissociative Fugue — A Nursing Guide · Independent Nursing Education · October 2026</div>
+
+</div>
 <script>
-var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
-function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
-(function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+/* Light theme is ALWAYS the default: the page loads in light theme; a dark
+   choice lasts only for the current visit and is never persisted. */
+(function(){
+  var b=document.getElementById('fugueThemeBtn');
+  if(!b)return;
+  function paint(){b.textContent=document.documentElement.classList.contains('dark')?'☀️ Theme':'🌙 Theme';}
+  b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');paint();fitBandsSoon();});
+  paint();
+})();
+</script>
+<script>
+/* Index box: collapsed by default; the book button toggles it. */
+(function(){
+  var idx=document.querySelector('.index'),btn=document.querySelector('.idx-btn');
+  if(!idx||!btn)return;
+  btn.addEventListener('click',function(){idx.classList.toggle('open');});
+})();
+/* Sections: load collapsed; the WHOLE title band is the toggle. */
+(function(){
+  var bands=document.querySelectorAll('.colorband');
+  bands.forEach(function(band){
+    var sec=band.nextElementSibling;
+    if(!sec||!sec.classList||!sec.classList.contains('wcsec'))return;
+    band._ssec=sec;
+    band._set=function(open){sec.hidden=!open;var t=band.querySelector('.wc-tgl');if(t)t.setAttribute('aria-expanded',open?'true':'false');};
+    band._set(false);
+    band.addEventListener('click',function(){band._set(sec.hidden);});
+  });
+  function openHash(){
+    if(!location.hash)return;
+    var el=document.querySelector(location.hash);
+    if(el&&el.classList&&el.classList.contains('colorband')&&el._set)el._set(true);
+  }
+  openHash();
+  /* In-page links: open the target section, then smooth-scroll to it. */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var id=a.getAttribute('href');
+    if(!id||id.length<2)return;
+    var el=document.querySelector(id);
+    if(!el)return;
+    e.preventDefault();
+    if(el.classList.contains('colorband')&&el._set)el._set(true);
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+    if(history.replaceState)history.replaceState(null,'',id);
+  });
+})();
+/* Bands: one uniform width — no band wider than the widest band, never wider
+   than the content column. */
+function fitBands(){
+  var bands=[].slice.call(document.querySelectorAll('.colorband'));
+  if(!bands.length)return;
+  var wrap=document.querySelector('.wrap');
+  var colW=wrap?wrap.clientWidth-44:0;
+  bands.forEach(function(b){b.style.width='max-content';});
+  var w=0;
+  bands.forEach(function(b){w=Math.max(w,b.getBoundingClientRect().width);});
+  if(colW>0)w=Math.min(w,colW);
+  bands.forEach(function(b){b.style.width=w+'px';b.style.marginLeft='auto';b.style.marginRight='auto';});
+}
+var _fbT=null;
+function fitBandsSoon(){if(_fbT)clearTimeout(_fbT);_fbT=setTimeout(fitBands,60);}
+window.addEventListener('load',fitBands);
+window.addEventListener('resize',fitBandsSoon);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitBandsSoon);
 </script>
 </body>
 </html>

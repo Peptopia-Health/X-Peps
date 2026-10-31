@@ -2,498 +2,697 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="apple-touch-icon" href="/X-Peps/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dissociative Identity Disorder Study Guide | Peptopia Health Psychology</title>
+<title>Dissociative Identity Disorder — A Nursing Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#F4F6FA;--card:#fff;--t1:#0F172A;--t2:#475569;--t3:#94A3B8;--border:rgba(15,23,42,.1);--p1:#0D9488;--p2:#0E7490;--pink:#EC4899;--pinkd:#BE185D;--teal:#0D9488;--amber:#D97706}
-html.dark{--bg:#0B1120;--card:#111a2e;--t1:#F1F5F9;--t2:#CBD5E1;--t3:#64748B;--border:rgba(255,255,255,.12)}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t1);line-height:1.7}
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:14px 24px}
-.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.peptopia-logo{width:46px;height:46px;border-radius:50%;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
-.peptopia-wordmark{display:flex;flex-direction:column;font-weight:800;font-size:1.02rem;letter-spacing:.14em;color:var(--t1);line-height:1.15}
-.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:var(--t3)}
-.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
-.peptopia-nav a{font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--t2);text-decoration:none}
-.peptopia-nav a:hover{color:var(--pinkd)}
-.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--t2);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-.peptopia-iconbtn:hover{border-color:var(--pink);color:var(--pinkd)}
-.peptopia-iconbtn svg{width:17px;height:17px}
-.peptopia-theme-toggle .pp-sun{display:none}
-html.dark .peptopia-theme-toggle .pp-sun{display:block}
-html.dark .peptopia-theme-toggle .pp-moon{display:none}
-main{max-width:940px;margin:0 auto;padding:8px 24px 40px}
-.hero{border-radius:18px;padding:36px 32px;margin:18px 0 26px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#0F766E,#0E7490 55%,#4F46E5)}
-.hero h1{font-size:2rem;line-height:1.25;margin:10px 0 8px;font-weight:800}
-.hero .tag{display:inline-block;background:rgba(255,255,255,.22);padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.08em}
-.hero .ico{font-size:2.8rem;display:block}
-.hero .sub{opacity:.94;font-size:1rem;max-width:660px}
-h2.sec{font-size:1.35rem;margin:34px 0 14px;padding-bottom:8px;border-bottom:3px solid var(--p1);display:flex;align-items:center;gap:10px}
-p.body,li.body{margin:12px 0;font-size:1rem}
-.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:22px 0}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.stat .n{font-size:1.75rem;font-weight:800;color:var(--p1)}
-html.dark .stat .n{color:#C4B5FD}
-.stat .l{font-size:.78rem;color:var(--t2);margin-top:4px}
-.callout{border-radius:12px;padding:16px 20px;margin:20px 0;font-size:.95rem;border-left:6px solid var(--p1);background:var(--card);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-.callout.teach{border-left-color:var(--amber)}
-.callout.clin{border-left-color:var(--teal)}
-.callout h4{margin:0 0 6px;font-size:1rem}
-.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
-@media(max-width:640px){.cols2{grid-template-columns:1fr}}
-.tcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
-.tcard h4{margin-bottom:8px;font-size:1.02rem}
-.tcard.pdy{border-top:4px solid var(--p1)}
-.tcard.neu{border-top:4px solid var(--teal)}
-.crit{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:20px 0}
+:root{
+  --paper:#FAF8FF; --paper2:#F1EDFB; --ink:#2B2440; --muted:#6E6590;
+  --purp:#5B21B6; --purp-dk:#4C1D95; --purp-deep:#3B1470; --violet:#7C3AED;
+  --lav:#EDE9FE; --lav2:#DCD0FA; --lavline:#D8CCF5;
+  --accent:#EA580C; --line:#DCD2F2;
+  --red:#B03A3A; --red-dk:#7E241A; --red-soft:#FAECEA;
+  --amber:#C97A2B; --green:#3E7D52; --green-soft:#E7F2EA;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.62;font-size:16.5px}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+a{color:var(--purp)}
+b,strong{font-weight:700}
+.hl{background:#E4DBFB;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+.hl-o{background:#FDE8D7;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+.qin{font-style:italic;background:#EFE9FC;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+/* ---------- title page ---------- */
+.titlepage{display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 24px 8px;position:relative;
+  background:radial-gradient(1100px 520px at 50% -10%,#E9E1FC 0%,var(--paper) 62%)}
+.wc-toprow{width:100%;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);font-weight:700;text-align:left;margin:6px 0 0}
+.wc-topbtns{display:flex;gap:8px;flex:none}
+.wc-tbtn{font:700 .8rem 'Outfit',sans-serif;color:var(--purp-dk);background:linear-gradient(180deg,#FFFFFF,#EFE9FC);
+  border:2px solid var(--purp-dk);border-radius:9px;padding:6px 12px;cursor:pointer;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.95),inset 0 -3px 5px rgba(76,29,149,.14),0 3px 6px rgba(76,29,149,.22)}
+.wc-tbtn:active{transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(76,29,149,.3),0 1px 2px rgba(76,29,149,.2)}
+.wc-tbtn.static{cursor:default}
+.wc-tbtn.static:active{transform:none}
+.titlepage h1{font-size:clamp(34px,5.6vw,58px);font-weight:800;margin:10px 0 4px;color:var(--accent);line-height:1.08}
+.subtitle{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(17px,2.6vw,24px);color:var(--purp-dk);letter-spacing:2.5px;text-transform:uppercase;margin:0 0 14px}
+.titlepage .sub{white-space:nowrap;font-size:clamp(.66rem,3.1vw,1.02rem);max-width:none;font-weight:600;color:var(--purp-dk);margin:0 0 8px}
+/* ---------- index ---------- */
+.index{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 26px;margin:26px 0;min-height:84px;box-shadow:0 3px 14px rgba(76,29,149,.06)}
+.index h2{margin:0;color:var(--purp-dk);font-size:1.35rem;display:flex;align-items:center;gap:12px}
+.index ol{display:none;columns:2;column-gap:34px;margin:16px 0 4px;padding-left:22px}
+.index.open ol{display:block}
+.index li{margin:7px 0;break-inside:avoid}
+.index a{color:var(--purp);text-decoration:none;font-weight:500}
+.index a:hover{text-decoration:underline}
+.index .idx-hint{font-size:.8rem;color:var(--muted);font-weight:600}
+.index.open .idx-hint{display:none}
+@media(max-width:640px){.index ol{columns:1}}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid var(--purp-dk);color:var(--purp-dk);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(76,29,149,.25),0 5px 10px rgba(76,29,149,.3);
+  font-size:20px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
+.icobtn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(76,29,149,.35),0 1px 2px rgba(76,29,149,.25)}
+/* ---------- section bands (V4/V5 pattern: slim, centered, gloss button) ---------- */
+.colorband{border-radius:12px;padding:9px 14px;padding-right:70px;padding-left:70px;margin:22px 0 12px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,var(--purp-dk),var(--purp));cursor:pointer;text-align:center;scroll-margin-top:18px;
+  box-shadow:0 4px 14px rgba(76,29,149,.25)}
+.colorband.deep{background:linear-gradient(120deg,var(--purp-deep),var(--purp-dk))}
+.colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;text-align:center;color:#fff}
+.colorband p{margin:0;opacity:.95;line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(.7rem,2.5vw,.95rem)}
+.colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;font-size:22px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;padding:0;font-family:inherit;cursor:pointer;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid #2A0A54;
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(42,10,84,.28),0 6px 12px rgba(20,5,45,.45);
+  transition:transform .07s ease,box-shadow .07s ease}
+.colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(42,10,84,.4),0 1px 2px rgba(20,5,45,.3)}
+/* ---------- section content ---------- */
+.wcsec{margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 3px 12px rgba(76,29,149,.05)}
+.card h3{color:var(--purp-dk);margin:2px 0 8px;font-size:1.18rem}
+.card h4{color:var(--purp-dk);margin:14px 0 6px;font-size:1.02rem}
+.card p{margin:8px 0}
+ul.tight{margin:8px 0;padding-left:22px}
+ul.tight li{margin:5px 0}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.cols2{grid-template-columns:1fr}}
+.statrow{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-top:5px solid var(--purp);border-radius:12px;padding:14px 16px;text-align:center}
+.stat b{display:block;font-family:'Outfit',sans-serif;font-size:27px;color:var(--purp-dk);line-height:1.12}
+.stat span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.stat.orange{border-top-color:var(--accent)} .stat.orange b{color:var(--accent)}
+.stat.red{border-top-color:var(--red)} .stat.red b{color:var(--red)}
+table.vals{width:100%;border-collapse:collapse;margin:12px 0;font-size:.97rem}
+table.vals th{font-family:'Outfit',sans-serif;background:var(--purp-dk);color:#fff;text-align:left;padding:9px 12px}
+table.vals td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.vals tr:nth-child(even) td{background:#F6F2FE}
+table.vals td.n{font-weight:700;color:var(--purp-dk);white-space:nowrap}
+.alert{border:2px solid var(--red);background:var(--red-soft);border-radius:12px;padding:14px 18px;margin:14px 0}
+.alert h3,.alert h4{color:var(--red-dk)}
+.notebox{border:2px solid var(--purp);background:#F4EFFF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.notebox h3,.notebox h4{color:var(--purp-dk)}
+.svgbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px 8px;margin:14px 0;overflow-x:auto}
+.svgbox .cap{text-align:center;color:var(--muted);font-size:.88rem;margin:6px 4px 10px}
+.bar-row{display:grid;grid-template-columns:118px 1fr 118px;gap:10px;align-items:center;margin:9px 0;font-size:.92rem}
+.bar-row .lab{text-align:right;font-weight:700;color:var(--purp-dk)}
+.bar-row .lab2{font-weight:700;color:var(--red-dk)}
+.bar-track{height:16px;background:var(--paper2);border-radius:8px;position:relative}
+.bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:8px}
+.tag{display:inline-block;font:700 .72rem 'Outfit',sans-serif;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;vertical-align:2px}
+.tag.p{background:var(--lav);color:var(--purp-dk);border:1.5px solid var(--purp)}
+.tag.r{background:var(--red-soft);color:var(--red-dk);border:1.5px solid var(--red)}
+.foot{border-top:1px solid var(--line);margin:34px 0 0;padding:16px 0 30px;text-align:center;color:var(--muted);font-size:.9rem}
+.toc-top{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid var(--purp-dk);color:var(--purp-dk);
+  font-size:20px;text-decoration:none;box-shadow:0 6px 14px rgba(76,29,149,.35);z-index:50}
+/* ---------- DID components (restyled to the purple standard) ---------- */
+.crit{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 20px;margin:14px 0;box-shadow:0 3px 12px rgba(76,29,149,.05)}
 .crit .c{display:flex;gap:14px;margin:14px 0}
-.crit .cl{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
-.timeline{position:relative;margin:26px 0;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--amber),var(--p1),var(--teal));border-radius:2px}
-.tstep{position:relative;margin:0 0 18px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px}
-.tstep::before{content:'';position:absolute;left:-24px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--p1);border:3px solid var(--bg)}
-.tstep h4{margin:0 0 4px}
-table.diff{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88rem;background:var(--card);border-radius:12px;overflow:hidden}
-table.diff th{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;text-align:left;padding:10px 12px;font-size:.82rem}
-table.diff td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
-table.diff tr:last-child td{border-bottom:none}
-table.diff td:first-child{font-weight:700;white-space:nowrap}
-.casegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
-.case{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;border-top:4px solid var(--p2)}
-.case h4{margin:0 0 6px;font-size:1rem}
-.case .yr{font-size:.75rem;color:var(--t3);font-weight:700;letter-spacing:.06em}
-.check{list-style:none;padding:0}
-.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--border)}
-.check li::before{content:'\2713';position:absolute;left:4px;color:var(--teal);font-weight:800}
-.nanda{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.nanda span{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);color:var(--p1);border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:600}
+.crit .cl{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purp),var(--purp-dk));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif}
+.timeline{position:relative;margin:14px 0 14px 6px;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--purp),var(--purp-dk),var(--purp-deep));border-radius:2px}
+.tstep{position:relative;margin:0 0 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:0 3px 12px rgba(76,29,149,.05)}
+.tstep::before{content:'';position:absolute;left:-24px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--purp);border:3px solid var(--paper)}
+.tstep h4{color:var(--purp-dk);margin:0 0 4px}
+.tstep p{margin:4px 0}
+.casegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:14px 0}
+.case{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;border-top:5px solid var(--purp)}
+.case h4{color:var(--purp-dk);margin:0 0 6px}
+.case .yr{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.case p{margin:4px 0;font-size:.93rem}
+ul.check{list-style:none;padding-left:2px;margin:8px 0}
+ul.check li{padding:7px 0 7px 30px;position:relative;border-bottom:1px dashed var(--lavline)}
+ul.check li:last-child{border-bottom:none}
+ul.check li::before{content:'✓';position:absolute;left:4px;color:var(--purp);font-weight:800}
+.tcard{border-top:5px solid var(--purp)}
+.tcard.alt{border-top-color:var(--violet)}
+.teachbox{border:2px solid var(--accent);background:#FDF3E7;border-radius:12px;padding:14px 18px;margin:14px 0}
+.teachbox h3,.teachbox h4{color:#9A4A12}
+.nanda{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.nanda span{background:var(--lav);border:1.5px solid var(--purp);color:var(--purp-dk);border-radius:20px;padding:5px 14px;font-size:.82rem;font-weight:600}
+.kt{border-left:6px solid var(--purp)}
+.biblist{list-style:none;padding-left:2px;margin:8px 0}
+.biblist li{margin:6px 0}
+/* ---------- dark theme (visit only, never persisted) ---------- */
+html.dark body{background:#171126;color:#E9E4F8}
+html.dark .titlepage{background:radial-gradient(1100px 520px at 50% -10%,#2A1A52 0%,#171126 62%)}
+html.dark .card,html.dark .index,html.dark .stat,html.dark .svgbox,html.dark .crit,html.dark .tstep,html.dark .case{background:#221840;border-color:#3D2A6E}
+html.dark .stat span,html.dark .svgbox .cap,html.dark .foot,html.dark .case .yr{color:#A79CC9}
+html.dark table.vals td{border-color:#3D2A6E}
+html.dark table.vals tr:nth-child(even) td{background:#271C4C}
+html.dark .hl{background:#3D2A6E}
+html.dark .qin{background:#33255F}
+html.dark .notebox{background:#241845}
+html.dark .teachbox{background:#2E1E0E}
+html.dark .bar-track{background:#2C2054}
+html.dark .wc-tbtn{background:linear-gradient(180deg,#2C2054,#241845);color:#DCD0FA}
+html.dark .subtitle{color:#C9B8F5}
+html.dark .titlepage .sub{color:#C9B8F5}
+html.dark .tstep::before{border-color:#171126}
 html.dark .nanda span{color:#C4B5FD}
-.kt{background:var(--card);border:1px solid var(--border);border-left:6px solid var(--pink);border-radius:12px;padding:20px 24px;margin:26px 0}
-.kt h2{font-size:1.05rem;margin-bottom:10px;border:none;padding:0}
-.kt ul{padding-left:20px}
-.kt li{margin:7px 0}
-.bib{margin:34px 0 10px;font-size:.84rem;color:var(--t2)}
-.bib h2{font-size:1rem;border:none;padding:0;margin-bottom:8px}
-.bib li{margin:5px 0;list-style:none}
-.bib a{color:var(--pinkd)}
-.peptopia-ftr{border-top:1px solid var(--border);margin-top:40px;padding:22px 24px;text-align:center;font-size:.8rem;color:var(--t3)}
-.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
-.peptopia-ftr a{color:var(--t3)}
-.peptopia-ftr a:hover{color:var(--pinkd)}
-.peptopia-ftr svg{width:18px;height:18px;vertical-align:middle}
-.ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
-@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr .peptopia-ftr-icons{display:none!important}body{background:#fff!important}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.stat,.tcard,.case,.tstep,.callout,.kt,.crit,table.diff{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2.sec,h3,h4{break-after:avoid!important}}
-@media(max-width:640px){.hero h1{font-size:1.5rem}table.diff{font-size:.78rem}}
-
-.ftr-email-line{text-align:center;margin:6px 0}
-.ftr-email-line a{color:var(--t2);text-decoration:none}
-.ftr-email-line a:hover{color:var(--pinkd)}
-/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
-.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
-/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
-.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
-html.dark .peptopia-wordmark{color:#f1f5f9}
-.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
-html.dark .peptopia-tagline{color:#94a3b8}
-.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
-.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
-html.dark .peptopia-nav>a{color:#cbd5e1}
-.peptopia-nav>a:hover{color:#be185d}
-.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
-html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
-.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
-.peptopia-iconbtn svg{width:17px;height:17px}
-.peptopia-theme-toggle .pp-sun{display:none}
-html.dark .peptopia-theme-toggle .pp-sun{display:block}
-html.dark .peptopia-theme-toggle .pp-moon{display:none}
-.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
-html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
-.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
-.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
-html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
-.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
-html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
-.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
-.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
-.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
-html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
-.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
-@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
-/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
-.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
-/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
-.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
-html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
-html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
-.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
-html.dark .peptopia-wordmark{color:#f1f5f9}
-.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
-html.dark .peptopia-tagline{color:#94a3b8}
-.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
-@media(max-width:640px){.peptopia-hdr{padding:10px 12px;gap:8px}.peptopia-brand{gap:8px}.peptopia-logo{width:38px;height:38px}.peptopia-wordmark{font-size:.85rem}.peptopia-nav{gap:.6rem}.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}.peptopia-iconbtn{width:34px;height:34px;flex:none}}
-.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
-html.dark .peptopia-nav>a{color:#cbd5e1}
-.peptopia-nav>a:hover{color:#be185d}
-.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
-html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
-.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
-.peptopia-iconbtn svg{width:17px;height:17px}
-.peptopia-theme-toggle .pp-sun{display:none}
-html.dark .peptopia-theme-toggle .pp-sun{display:block}
-html.dark .peptopia-theme-toggle .pp-moon{display:none}
-.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
-html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
-.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
-.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
-html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
-.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
-html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
-.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
-.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
-.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
-.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
-html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
-.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
-.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
-@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
+/* ---------- print ---------- */
+@page{size:Letter;margin:.6in}
+@media print{
+  *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .wcsec{display:block!important}
+  .colorband{width:auto!important;break-after:avoid}
+  .colorband .bigicon,.wc-tbtn:not(.static),.toc-top{display:none!important}
+  .index ol{display:block!important}.index .idx-hint{display:none!important}
+  .card,.stat,.alert,.notebox,.svgbox,.crit,.tstep,.case,.teachbox,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+  h1,h2,h3,h4{break-after:avoid!important}
+  p,li{orphans:3;widows:3}
+  body{background:#fff!important;color:#2B2440!important}
+  html.dark body{background:#fff!important;color:#2B2440!important}
+  html.dark .card,html.dark .index,html.dark .stat,html.dark .svgbox{background:#fff!important}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+<style>
+/* Band width rule (David, Oct 31): bands hug their content, centered; no band wider than the widest band's content, desktop or mobile. Print keeps full width (handled above). */
+.colorband{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;padding-left:16px}
 </style>
 </head>
 <body>
-<header class="peptopia-hdr">
-<a class="peptopia-brand" href="https://x-peps.com/">
-<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
-<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
-</a>
-<nav class="peptopia-nav" aria-label="Site">
-<a href="https://x-peps.com/">HOME</a>
-<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
-<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
-<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
-</nav>
-</header>
-<main>
+<div class="wrap">
 
-
-<section class="hero">
-<span class="ico">&#x1F9E9;</span>
-<span class="tag">HEALTH PSYCHOLOGY &bull; STUDY GUIDE 02 &bull; DISSOCIATIVE DISORDERS</span>
-<h1>Dissociative Identity Disorder</h1>
-<p class="sub">Two or more distinct personality states take turns in control &mdash; with gaps in memory that ordinary forgetting can't explain. Formerly "multiple personality disorder," DID is psychiatry's most debated diagnosis and its most tightly linked to childhood trauma.</p>
-</section>
-
-<div class="statgrid">
-<div class="stat"><div class="n">1.5%</div><div class="l">Lifetime prevalence in U.S. adults (300.14 / F44.81) &mdash; more common than schizophrenia</div></div>
-<div class="stat"><div class="n">&gt;90%</div><div class="l">Report severe childhood abuse or neglect before onset &mdash; the trauma model</div></div>
-<div class="stat"><div class="n">70%</div><div class="l">Have attempted suicide or engaged in self-injury &mdash; safety is the nursing priority</div></div>
-<div class="stat"><div class="n">9:1</div><div class="l">Female-to-male ratio in adult clinical settings (far narrower in children)</div></div>
+<!-- ================= TITLE PAGE ================= -->
+<div class="titlepage" id="top">
+  <div class="wc-toprow">
+    <div class="kicker">Nursing Education · Mental Health</div>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 October 2026</span>
+      <button type="button" class="wc-tbtn" id="didThemeBtn" title="Switch light / dark theme">🌙 Theme</button>
+      <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
+    </div>
+  </div>
+  <h1>Dissociative Identity Disorder</h1>
+  <div class="subtitle">Health Psychology · Study Guide 02 · Dissociative Disorders</div>
+  <p class="sub">Psychiatry's most debated diagnosis — and its most tightly linked to childhood trauma.</p>
 </div>
 
-<h2 class="sec">&#x1F4D6; What It Is</h2>
-<p class="body"><strong>Dissociative identity disorder (DID)</strong> &mdash; formerly <em>multiple personality disorder</em> &mdash; is a <strong>disruption of identity characterized by two or more distinct personality states</strong> (called "alters"), with a marked discontinuity in the sense of self and sense of agency, plus alterations in affect, behavior, consciousness, memory, perception, cognition, and/or sensory-motor functioning. The discontinuity may be observed by others or reported by the patient.</p>
-<p class="body">Core features include <strong>recurrent gaps in recall</strong> of everyday events, important personal information, or traumatic events &mdash; far beyond ordinary forgetting &mdash; and <strong>"switching"</strong> between identity states, often triggered by stress or trauma reminders. Between switches, many patients experience <strong>depersonalization</strong> (feeling detached from self) and <strong>derealization</strong> (world feels unreal), and describe "coming to" in unfamiliar places with no memory of how they got there.</p>
-
-<div class="callout">
-<h4>&#x1F300; Possession Form vs. Nonpossession Form</h4>
-<p class="body" style="margin:0">DSM-5-TR and clinical sources describe two presentations. In the <strong>possession form</strong>, alternate identities appear to come from outside and "take over" &mdash; the person may speak with a different voice, use a different name, and behave as though possessed. In the <strong>nonpossession form</strong>, the disruption is subtler: sudden shifts in affect, voice, demeanor, or memory that the person experiences as intrusions ("made" feelings, thoughts, or actions) rather than full takeovers. Both forms meet the same criteria.</p>
+<!-- ================= INDEX ================= -->
+<div class="index">
+  <h2><button type="button" class="icobtn idx-btn" title="Open the index">📖</button> Index <span class="idx-hint">— tap the book to open</span></h2>
+  <ol>
+    <li><a href="#overview">What It Is</a></li>
+    <li><a href="#criteria">DSM-5-TR Diagnostic Criteria</a></li>
+    <li><a href="#epidemiology">Epidemiology</a></li>
+    <li><a href="#etiology">Etiology — Why It Happens</a></li>
+    <li><a href="#presentation">Clinical Presentation — The Alter System</a></li>
+    <li><a href="#course">Developmental Course</a></li>
+    <li><a href="#differential">Differential Diagnosis</a></li>
+    <li><a href="#ptsd">Comorbidity Focus — PTSD</a></li>
+    <li><a href="#assessment">Assessment</a></li>
+    <li><a href="#treatment">Treatment — Phase-Oriented Trauma Therapy</a></li>
+    <li><a href="#cases">Famous Cases</a></li>
+    <li><a href="#nursing">Nursing Care — VA Inpatient Focus</a></li>
+    <li><a href="#takeaways">Key Takeaways — Exam Review</a></li>
+    <li><a href="#sources">Sources &amp; Further Reading</a></li>
+  </ol>
 </div>
 
-<div class="callout teach">
-<h4>&#x1F3AF; Key Teaching Point &mdash; Why the Name Changed</h4>
-<p class="body" style="margin:0">DSM-III (1980) called it <strong>multiple personality disorder</strong>. DSM-IV (1994) renamed it <strong>dissociative identity disorder</strong> to reflect that the core problem is a <strong>failure to integrate identity, memory, and consciousness</strong> &mdash; not the presence of fully formed separate "people." The rename also acknowledges that many patients experience identity <em>fragmentation</em> rather than cleanly distinct personalities, and it reduced the sensationalism that harmed clinical credibility.</p>
+<!-- ================= 1. WHAT IT IS ================= -->
+<div class="colorband" id="overview">
+  <h2>What It Is</h2>
+  <p>A Fragmented Identity — Not Extra People</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧩</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p>Two or more distinct personality states take turns in control — with gaps in memory that ordinary forgetting can't explain. Formerly "multiple personality disorder," DID is psychiatry's most debated diagnosis and its most tightly linked to childhood trauma.</p>
+  </div>
+  <div class="statrow">
+    <div class="stat"><b>1.5%</b><span>Lifetime prevalence in U.S. adults (300.14 / F44.81) — more common than schizophrenia</span></div>
+    <div class="stat"><b>&gt;90%</b><span>Report severe childhood abuse or neglect before onset — the trauma model</span></div>
+    <div class="stat red"><b>70%</b><span>Have attempted suicide or engaged in self-injury — safety is the nursing priority</span></div>
+    <div class="stat"><b>9:1</b><span>Female-to-male ratio in adult clinical settings (far narrower in children)</span></div>
+  </div>
+  <div class="card">
+    <p><strong>Dissociative identity disorder (DID)</strong> — formerly <em>multiple personality disorder</em> — is a <strong>disruption of identity characterized by two or more distinct personality states</strong> (called "alters"), with a marked discontinuity in the sense of self and sense of agency, plus alterations in affect, behavior, consciousness, memory, perception, cognition, and/or sensory-motor functioning. The discontinuity may be observed by others or reported by the patient.</p>
+    <p>Core features include <strong>recurrent gaps in recall</strong> of everyday events, important personal information, or traumatic events — far beyond ordinary forgetting — and <strong>"switching"</strong> between identity states, often triggered by stress or trauma reminders. Between switches, many patients experience <strong>depersonalization</strong> (feeling detached from self) and <strong>derealization</strong> (world feels unreal), and describe "coming to" in unfamiliar places with no memory of how they got there.</p>
+  </div>
+  <div class="notebox">
+    <h4>🌀 Possession Form vs. Nonpossession Form</h4>
+    <p>DSM-5-TR and clinical sources describe two presentations. In the <strong>possession form</strong>, alternate identities appear to come from outside and "take over" — the person may speak with a different voice, use a different name, and behave as though possessed. In the <strong>nonpossession form</strong>, the disruption is subtler: sudden shifts in affect, voice, demeanor, or memory that the person experiences as intrusions ("made" feelings, thoughts, or actions) rather than full takeovers. Both forms meet the same criteria.</p>
+  </div>
+  <div class="teachbox">
+    <h4>🎯 Key Teaching Point — Why the Name Changed</h4>
+    <p>DSM-III (1980) called it <strong>multiple personality disorder</strong>. DSM-IV (1994) renamed it <strong>dissociative identity disorder</strong> to reflect that the core problem is a <strong>failure to integrate identity, memory, and consciousness</strong> — not the presence of fully formed separate "people." The rename also acknowledges that many patients experience identity <em>fragmentation</em> rather than cleanly distinct personalities, and it reduced the sensationalism that harmed clinical credibility.</p>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F4CB; DSM-5-TR Diagnostic Criteria (300.14 / F44.81)</h2>
-<p class="body">All five criteria (A&ndash;E) must be met.</p>
-<div class="crit">
-<div class="c"><span class="cl">A</span><div><strong>Disruption of identity</strong> characterized by two or more distinct personality states, marked by discontinuity in sense of self and sense of agency, with related alterations in affect, behavior, consciousness, memory, perception, cognition, and/or sensory-motor functioning. Observed by others or reported by the individual.</div></div>
-<div class="c"><span class="cl">B</span><div><strong>Recurrent gaps in recall</strong> of everyday events, important personal information, and/or traumatic events that are <strong>inconsistent with ordinary forgetting</strong>.</div></div>
-<div class="c"><span class="cl">C</span><div><strong>Clinically significant distress or impairment</strong> in social, occupational, or other important areas of functioning.</div></div>
-<div class="c"><span class="cl">D</span><div><strong>Not a normal part of a broadly accepted cultural or religious practice</strong> &mdash; in children, fantasy play or imaginary friends don't count; in adults, ritual possession states with community sanction are excluded.</div></div>
-<div class="c"><span class="cl">E</span><div><strong>Not attributable</strong> to the physiological effects of a substance (e.g., blackouts, intoxication) or another medical condition (e.g., complex partial seizures).</div></div>
+<!-- ================= 2. DSM-5-TR CRITERIA ================= -->
+<div class="colorband" id="criteria">
+  <h2>DSM-5-TR Diagnostic Criteria</h2>
+  <p>300.14 / F44.81 · All Five Criteria Must Be Met</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📋</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p>All five criteria (A–E) must be met.</p>
+  </div>
+  <div class="crit">
+    <div class="c"><span class="cl">A</span><div><strong>Disruption of identity</strong> characterized by two or more distinct personality states, marked by discontinuity in sense of self and sense of agency, with related alterations in affect, behavior, consciousness, memory, perception, cognition, and/or sensory-motor functioning. Observed by others or reported by the individual.</div></div>
+    <div class="c"><span class="cl">B</span><div><strong>Recurrent gaps in recall</strong> of everyday events, important personal information, and/or traumatic events that are <strong>inconsistent with ordinary forgetting</strong>.</div></div>
+    <div class="c"><span class="cl">C</span><div><strong>Clinically significant distress or impairment</strong> in social, occupational, or other important areas of functioning.</div></div>
+    <div class="c"><span class="cl">D</span><div><strong>Not a normal part of a broadly accepted cultural or religious practice</strong> — in children, fantasy play or imaginary friends don't count; in adults, ritual possession states with community sanction are excluded.</div></div>
+    <div class="c"><span class="cl">E</span><div><strong>Not attributable</strong> to the physiological effects of a substance (e.g., blackouts, intoxication) or another medical condition (e.g., complex partial seizures).</div></div>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F4CA; Epidemiology</h2>
-<div class="statgrid">
-<div class="stat"><div class="n">1.5%</div><div class="l">Lifetime prevalence in U.S. adults (APA, 2022)</div></div>
-<div class="stat"><div class="n">1&ndash;3%</div><div class="l">Lifetime prevalence range across community studies</div></div>
-<div class="stat"><div class="n">5&ndash;10</div><div class="l">Typical age of onset &mdash; early childhood, after repeated trauma</div></div>
-<div class="stat"><div class="n">&#x26A0;</div><div class="l">Most cases are misdiagnosed for years &mdash; often as bipolar, BPD, or schizophrenia</div></div>
+<!-- ================= 3. EPIDEMIOLOGY ================= -->
+<div class="colorband" id="epidemiology">
+  <h2>Epidemiology</h2>
+  <p>More Common Than Schizophrenia, Far Less Recognized</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📊</button>
 </div>
-<p class="body"><strong>DID is not rare &mdash; it is under-recognized.</strong> Onset is in early childhood (typically ages 5&ndash;10), when severe, repeated trauma meets a still-forming identity. Symptoms often go unnoticed or are misattributed to <strong>ADHD or conduct problems</strong> in children, and the full disorder may not be identified until adolescence or adulthood. Diagnosis <strong>declines with age</strong>; the adult female-to-male ratio of roughly 9:1 narrows dramatically in children (about 5:4), suggesting many male cases are missed &mdash; men with DID more often end up in criminal-justice or substance-abuse settings than in mental-health care. No racial or ethnic predilection has been established.</p>
-<p class="body"><strong>Comorbidity is the rule, not the exception:</strong> up to <strong>90% meet criteria for PTSD</strong> at some point, 75&ndash;80% for major depressive disorder, and high rates of anxiety disorders, substance-use disorders, eating disorders, and borderline personality features. Overlapping symptoms &mdash; mood swings, impulsivity, auditory "voices," self-harm &mdash; are why misdiagnosis is so common.</p>
-
-<h2 class="sec">&#x1F300; Etiology &mdash; Why It Happens</h2>
-<div class="callout">
-<h4>&#x1F494; The trauma model is dominant</h4>
-<p class="body" style="margin:0">DID is best understood as a <strong>developmental, trauma-based disorder</strong>. When a child faces overwhelming, inescapable abuse &mdash; usually chronic physical, sexual, or emotional abuse and neglect, often by caregivers &mdash; <strong>dissociation becomes a survival strategy</strong>: the child "steps outside" the experience because neither fight nor flight is possible. Repeated use of this defense during the critical years of identity formation (before about age 9) fragments the developing self into compartments that can hold incompatible experiences. Risk factors include early and severe trauma, lack of soothing/recovery afterward, and the absence of a safe attachment figure.</p>
-</div>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F4AD; Posttraumatic / Developmental Theory</h4>
-<p class="body" style="margin:0">Severe childhood trauma disrupts the normal integration of consciousness, memory, and identity. The child learns to compartmentalize: one part holds the abuse, another holds school-day normalcy. Over years these compartments develop distinct names, ages, genders, and roles. This model has the strongest empirical support &mdash; 90%+ of patients report severe early trauma, and dissociation severity tracks trauma severity.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F9EC; Neurobiological Findings</h4>
-<p class="body" style="margin:0">Structural imaging shows <strong>smaller hippocampal and amygdala volumes</strong> than normal; functional studies show <strong>decreased limbic activity with increased frontal activity</strong> during switching. The pattern reflects a brain organized around containing threat: emotion-processing regions dampened, control regions working overtime. Critically, <strong>switching is measurable</strong> &mdash; distinct physiological patterns across identity states, which argues against pure fabrication.</p>
-</div>
-</div>
-<div class="callout teach">
-<h4>&#x1F3AF; The Sociocognitive Model &mdash; Know the Controversy</h4>
-<p class="body" style="margin:0">A minority position holds that DID is partly <strong>shaped by cultural expectation and therapeutic suggestion</strong> &mdash; that media portrayals and leading clinical techniques can elaborate alter systems. This view drove the 1990s "false memory" lawsuits. The mainstream response: while iatrogenic <em>elaboration</em> is possible, the trauma histories, physiological switching data, and cross-cultural cases are difficult to explain away. <strong>Exam stance: trauma model is the accepted etiology; sociocognitive influence is a recognized controversy, not the consensus.</strong></p>
+<div class="wcsec">
+  <div class="statrow">
+    <div class="stat"><b>1.5%</b><span>Lifetime prevalence in U.S. adults (APA, 2022)</span></div>
+    <div class="stat"><b>1–3%</b><span>Lifetime prevalence range across community studies</span></div>
+    <div class="stat"><b>5–10</b><span>Typical age of onset — early childhood, after repeated trauma</span></div>
+    <div class="stat orange"><b>⚠</b><span>Most cases are misdiagnosed for years — often as bipolar, BPD, or schizophrenia</span></div>
+  </div>
+  <div class="card">
+    <p><strong>DID is not rare — it is under-recognized.</strong> Onset is in early childhood (typically ages 5–10), when severe, repeated trauma meets a still-forming identity. Symptoms often go unnoticed or are misattributed to <strong>ADHD or conduct problems</strong> in children, and the full disorder may not be identified until adolescence or adulthood. Diagnosis <strong>declines with age</strong>; the adult female-to-male ratio of roughly 9:1 narrows dramatically in children (about 5:4), suggesting many male cases are missed — men with DID more often end up in criminal-justice or substance-abuse settings than in mental-health care. No racial or ethnic predilection has been established.</p>
+    <p><strong>Comorbidity is the rule, not the exception:</strong> up to <strong>90% meet criteria for PTSD</strong> at some point, 75–80% for major depressive disorder, and high rates of anxiety disorders, substance-use disorders, eating disorders, and borderline personality features. Overlapping symptoms — mood swings, impulsivity, auditory "voices," self-harm — are why misdiagnosis is so common.</p>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F464;&zwj;&#x1F465; Clinical Presentation &mdash; The Alter System</h2>
-<p class="body">Patients commonly describe a "system" of identity states. Alters often have <strong>different names, ages, genders, voices, handwriting, and even physiological responses</strong> (allergies, eyeglass prescriptions). Common roles include:</p>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F3E0; Host</h4>
-<p class="body" style="margin:0">The identity that handles daily life and usually presents for treatment. Often amnestic for the trauma and for other alters' activities &mdash; the one who "loses time."</p>
+<!-- ================= 4. ETIOLOGY ================= -->
+<div class="colorband" id="etiology">
+  <h2>Etiology — Why It Happens</h2>
+  <p>The Trauma Model, the Brain, the Controversy</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🌀</button>
 </div>
-<div class="tcard neu">
-<h4>&#x1F6E1;&#xFE0F; Protector / Persecutor</h4>
-<p class="body" style="margin:0"><strong>Protectors</strong> (sometimes called "Ragen," after one of Billy Milligan's best-known alters) defend the system, often aggressively. <strong>Persecutors</strong> reenact abuser behavior, punish the host, or drive self-harm &mdash; they hold the internalized abuser's voice.</p>
-</div>
-<div class="tcard pdy">
-<h4>&#x1F476; Child Alters ("Littles")</h4>
-<p class="body" style="margin:0">Identity states frozen at the age the trauma occurred. They may speak, draw, and play like children, and often hold the most direct traumatic memories.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F4CB; Caretaker / Gatekeeper</h4>
-<p class="body" style="margin:0">Manages daily functioning, keeps schedules, or <strong>controls which alter is "out"</strong> and who can access traumatic memories. Often the most cooperative in therapy.</p>
-</div>
-</div>
-<div class="timeline">
-<div class="tstep">
-<h4>&#x1F4A5; Switching</h4>
-<p class="body" style="margin:0">Shifts between states, triggered by <strong>stress, trauma reminders, strong emotion, or perceived threat</strong>. May be seconds to days; the new state may deny knowledge of what the last one did. Sudden changes in voice, posture, vocabulary, and affect are observable markers.</p>
-</div>
-<div class="tstep">
-<h4>&#x1F441;&#xFE0F; Amnesic Gaps &amp; "Lost Time"</h4>
-<p class="body" style="margin:0">Finding unfamiliar purchases, being called by a different name, "coming to" somewhere unknown. <strong>Micro-amnesias</strong> (minutes) are common; <strong>macro-amnesias</strong> (days to years of childhood) are characteristic.</p>
-</div>
-<div class="tstep">
-<h4>&#x1F5E3;&#xFE0F; First-Rank Symptoms</h4>
-<p class="body" style="margin:0"><strong>Auditory hallucinations</strong> (the "voices" are usually the alters arguing, commenting, or commanding &mdash; experienced as <em>inside</em> the head, unlike psychotic voices); <strong>made feelings, impulses, and actions</strong> (passive influence); thought withdrawal/insertion. These Schneiderian symptoms are why <strong>schizophrenia is the most common misdiagnosis</strong>.</p>
-</div>
-<div class="tstep">
-<h4>&#x1F4AD; Co-consciousness</h4>
-<p class="body" style="margin:0">Later in treatment, alters may become aware of one another &mdash; hearing each other, leaving internal messages, negotiating control. Co-consciousness is a <strong>therapeutic milestone</strong>: it precedes cooperation and, for some, integration.</p>
-</div>
+<div class="wcsec">
+  <div class="notebox">
+    <h4>💔 The Trauma Model Is Dominant</h4>
+    <p>DID is best understood as a <strong>developmental, trauma-based disorder</strong>. When a child faces overwhelming, inescapable abuse — usually chronic physical, sexual, or emotional abuse and neglect, often by caregivers — <strong>dissociation becomes a survival strategy</strong>: the child "steps outside" the experience because neither fight nor flight is possible. Repeated use of this defense during the critical years of identity formation (before about age 9) fragments the developing self into compartments that can hold incompatible experiences. Risk factors include early and severe trauma, lack of soothing/recovery afterward, and the absence of a safe attachment figure.</p>
+  </div>
+  <div class="cols2">
+    <div class="card tcard">
+      <h4>💭 Posttraumatic / Developmental Theory</h4>
+      <p>Severe childhood trauma disrupts the normal integration of consciousness, memory, and identity. The child learns to compartmentalize: one part holds the abuse, another holds school-day normalcy. Over years these compartments develop distinct names, ages, genders, and roles. This model has the strongest empirical support — 90%+ of patients report severe early trauma, and dissociation severity tracks trauma severity.</p>
+    </div>
+    <div class="card tcard alt">
+      <h4>🧬 Neurobiological Findings</h4>
+      <p>Structural imaging shows <strong>smaller hippocampal and amygdala volumes</strong> than normal; functional studies show <strong>decreased limbic activity with increased frontal activity</strong> during switching. The pattern reflects a brain organized around containing threat: emotion-processing regions dampened, control regions working overtime. Critically, <strong>switching is measurable</strong> — distinct physiological patterns across identity states, which argues against pure fabrication.</p>
+    </div>
+  </div>
+  <div class="teachbox">
+    <h4>🎯 The Sociocognitive Model — Know the Controversy</h4>
+    <p>A minority position holds that DID is partly <strong>shaped by cultural expectation and therapeutic suggestion</strong> — that media portrayals and leading clinical techniques can elaborate alter systems. This view drove the 1990s "false memory" lawsuits. The mainstream response: while iatrogenic <em>elaboration</em> is possible, the trauma histories, physiological switching data, and cross-cultural cases are difficult to explain away. <strong>Exam stance: trauma model is the accepted etiology; sociocognitive influence is a recognized controversy, not the consensus.</strong></p>
+  </div>
 </div>
 
-<h2 class="sec">&#x23F1; Developmental Course</h2>
-<div class="timeline">
-<div class="tstep">
-<h4>Ages 5&ndash;10 &mdash; Onset</h4>
-<p class="body" style="margin:0">Severe repeated trauma; dissociation as coping. Symptoms <strong>often missed or mistaken for ADHD</strong> &mdash; inattention, "daydreaming," behavioral outbursts.</p>
+<!-- ================= 5. CLINICAL PRESENTATION ================= -->
+<div class="colorband deep" id="presentation">
+  <h2>Clinical Presentation — The Alter System</h2>
+  <p>Hosts, Protectors, Littles, and Gatekeepers</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">👥</button>
 </div>
-<div class="tstep">
-<h4>Adolescence &mdash; Emergence</h4>
-<p class="body" style="margin:0">Identity fragmentation becomes harder to hide: self-harm, substance use, "mood swings" misread as bipolar or borderline personality features. First psychiatric contacts &mdash; usually with the wrong diagnosis.</p>
-</div>
-<div class="tstep">
-<h4>Adulthood &mdash; Recognition</h4>
-<p class="body" style="margin:0">Full criteria evident; average patient has seen <strong>multiple clinicians over several years</strong> before DID is named. Without treatment the course is chronic and often disabling.</p>
-</div>
-<div class="tstep">
-<h4>Treatment &mdash; Years, Non-Linear</h4>
-<p class="body" style="margin:0">Phase-oriented therapy unfolds over years with setbacks. Early treatment and a stable therapeutic alliance predict the best outcomes; even without full integration, symptoms and functioning can improve substantially.</p>
-</div>
-</div>
-
-<h2 class="sec">&#x2696;&#xFE0F; Differential Diagnosis</h2>
-<p class="body">The exam-critical table &mdash; DID must be separated from look-alikes that share voices, mood shifts, or amnesia.</p>
-<table class="diff">
-<thead><tr><th>Condition</th><th>Distinguishing Features</th></tr></thead>
-<tbody>
-<tr><td>Dissociative amnesia (w/ fugue)</td><td>Identity <em>loss</em> with amnesia, but <strong>no chronic alternating identity states</strong>; fugue adds travel</td></tr>
-<tr><td>Depersonalization/derealization</td><td>Detachment from self or world <strong>without</strong> distinct identity states or amnesic gaps</td></tr>
-<tr><td>PTSD (dissociative subtype)</td><td>Dissociation tied to trauma reminders; <strong>no elaborated alter system</strong> &mdash; though 90% of DID patients also meet PTSD criteria</td></tr>
-<tr><td>OSDD</td><td>"Almost DID" &mdash; identity disruption <strong>without full amnesia</strong> (OSDD-1) or with atypical features</td></tr>
-<tr><td>Borderline personality disorder</td><td>Identity <em>disturbance</em> (unstable self-image) but <strong>no distinct states with amnesia</strong>; dissociation usually stress-triggered and transient</td></tr>
-<tr><td>Bipolar disorder</td><td>Alter-driven mood/behavior shifts <strong>misread as rapid cycling</strong>; true bipolar episodes last days&ndash;weeks, lack amnesia, respond to mood stabilizers</td></tr>
-<tr><td>Schizophrenia</td><td><strong>Voices experienced as external</strong> vs. DID's internal alter voices; DID shows <strong>no formal thought disorder</strong>; Schneiderian symptoms overlap but context differs</td></tr>
-<tr><td>Malingering / factitious</td><td>DID shows <strong>genuine distress, shame, and attempts to hide symptoms</strong>; malingering seeks external gain (legal/financial), factitious seeks the sick role</td></tr>
-<tr><td>Substance / medical</td><td>Blackouts (alcohol), seizures (TLE), head injury &mdash; <strong>tox screen, EEG, MRI</strong> rule these out; substance-induced states lack alter structure</td></tr>
-<tr><td>Cultural / religious possession</td><td>Normative, community-sanctioned, time-limited possession &mdash; <strong>excluded by Criterion D</strong>; DID possession is involuntary and distressing</td></tr>
-</tbody>
-</table>
-<div class="callout clin">
-<h4>&#x1FA7A; Organic &amp; Safety Workup</h4>
-<p class="body" style="margin:0">Neurological exam, <strong>EEG</strong> (temporal lobe epilepsy), <strong>MRI/CT</strong>, labs, <strong>toxicology screen</strong>, medication review, sleep history &mdash; plus <strong>suicide/self-harm risk assessment at every contact</strong> given the 70% attempt rate.</p>
-</div>
-
-<h2 class="sec">&#x1F504; Comorbidity Focus: PTSD</h2>
-<div class="callout teach">
-<h4>&#x1F3AF; The Signature Pairing</h4>
-<p class="body" style="margin:0"><strong>Up to 90% of people with DID meet criteria for PTSD</strong> at some point &mdash; the highest PTSD overlap of any diagnosis. Understand this pairing and you understand the disorder's treatment logic.</p>
-</div>
-<p class="body">DID and PTSD share the same soil: <strong>overwhelming trauma the nervous system could not process</strong>. In PTSD the trauma memory intrudes (flashbacks, nightmares); in DID the memory is <strong>compartmentalized</strong> &mdash; held by alters the host cannot access. This is why treating the PTSD without addressing the dissociative structure fails, and why the <strong>dissociative subtype of PTSD</strong> (added in DSM-5) sits on a spectrum with DID. Childhood trauma is the common root: screen every PTSD patient with early-onset trauma for dissociative symptoms &mdash; and screen every DID patient for full PTSD criteria.</p>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F9ED; DID vs. PTSD Dissociation</h4>
-<p class="body" style="margin:0"><strong>PTSD:</strong> depersonalization/derealization during flashbacks; memory is <em>intrusive</em> (too present).<br><strong>DID:</strong> amnesic barriers between identity states; memory is <em>inaccessible</em> (too absent). Both involve disrupted memory integration &mdash; in opposite directions.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F50D; Treatment Implication</h4>
-<p class="body" style="margin:0"><strong>Stabilize before processing:</strong> trauma work attempted before the patient can stay present risks flooding and decompensation. Phase 1 of DID treatment (safety, coping, co-consciousness) <em>is</em> PTSD stabilization &mdash; the disorders are treated on the same timeline.</p>
-</div>
+<div class="wcsec">
+  <div class="card">
+    <p>Patients commonly describe a "system" of identity states. Alters often have <strong>different names, ages, genders, voices, handwriting, and even physiological responses</strong> (allergies, eyeglass prescriptions). Common roles include:</p>
+  </div>
+  <div class="cols2">
+    <div class="card tcard">
+      <h4>🏠 Host</h4>
+      <p>The identity that handles daily life and usually presents for treatment. Often amnestic for the trauma and for other alters' activities — the one who "loses time."</p>
+    </div>
+    <div class="card tcard alt">
+      <h4>🛡️ Protector / Persecutor</h4>
+      <p><strong>Protectors</strong> (sometimes called "Ragen," after one of Billy Milligan's best-known alters) defend the system, often aggressively. <strong>Persecutors</strong> reenact abuser behavior, punish the host, or drive self-harm — they hold the internalized abuser's voice.</p>
+    </div>
+    <div class="card tcard">
+      <h4>👶 Child Alters ("Littles")</h4>
+      <p>Identity states frozen at the age the trauma occurred. They may speak, draw, and play like children, and often hold the most direct traumatic memories.</p>
+    </div>
+    <div class="card tcard alt">
+      <h4>📋 Caretaker / Gatekeeper</h4>
+      <p>Manages daily functioning, keeps schedules, or <strong>controls which alter is "out"</strong> and who can access traumatic memories. Often the most cooperative in therapy.</p>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="tstep">
+      <h4>💥 Switching</h4>
+      <p>Shifts between states, triggered by <strong>stress, trauma reminders, strong emotion, or perceived threat</strong>. May be seconds to days; the new state may deny knowledge of what the last one did. Sudden changes in voice, posture, vocabulary, and affect are observable markers.</p>
+    </div>
+    <div class="tstep">
+      <h4>👁️ Amnesic Gaps &amp; "Lost Time"</h4>
+      <p>Finding unfamiliar purchases, being called by a different name, "coming to" somewhere unknown. <strong>Micro-amnesias</strong> (minutes) are common; <strong>macro-amnesias</strong> (days to years of childhood) are characteristic.</p>
+    </div>
+    <div class="tstep">
+      <h4>🗣️ First-Rank Symptoms</h4>
+      <p><strong>Auditory hallucinations</strong> (the "voices" are usually the alters arguing, commenting, or commanding — experienced as <em>inside</em> the head, unlike psychotic voices); <strong>made feelings, impulses, and actions</strong> (passive influence); thought withdrawal/insertion. These Schneiderian symptoms are why <strong>schizophrenia is the most common misdiagnosis</strong>.</p>
+    </div>
+    <div class="tstep">
+      <h4>💭 Co-consciousness</h4>
+      <p>Later in treatment, alters may become aware of one another — hearing each other, leaving internal messages, negotiating control. Co-consciousness is a <strong>therapeutic milestone</strong>: it precedes cooperation and, for some, integration.</p>
+    </div>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F50E; Assessment</h2>
-<ul class="check">
-<li><strong>Clinical interview</strong> &mdash; trauma history taken gently and slowly; ask about lost time, "voices," feeling controlled from inside, finding unfamiliar belongings. Collateral from family/partners is often revelatory.</li>
-<li><strong>DES</strong> (Dissociative Experiences Scale) &mdash; 28-item screen; scores <strong>&ge; 30</strong> suggest high dissociation warranting full evaluation. Quick, validated, widely used.</li>
-<li><strong>MID</strong> (Multidimensional Inventory of Dissociation) &mdash; 218 items; maps specific dissociative symptoms and is harder to fake.</li>
-<li><strong>SCID-D</strong> (Structured Clinical Interview for DSM Dissociative Disorders) &mdash; <strong>gold-standard</strong> structured diagnostic interview; distinguishes DID from look-alikes.</li>
-<li><strong>Observe for switching</strong> &mdash; note abrupt changes in voice, affect, posture, vocabulary, handwriting across the interview; ask "who am I speaking with now?" if a shift occurs.</li>
-<li><strong>Medical workup</strong> &mdash; neuro exam, EEG, MRI/CT, labs, toxicology, medication review; rule out TLE, TBI, substances.</li>
-<li><strong>Malingering assessment</strong> &mdash; genuine patients typically <strong>minimize and hide</strong> symptoms (shame, fear of disbelief); dramatic volunteering of alters for gain points the other way.</li>
-</ul>
-
-<h2 class="sec">&#x1FA79; Treatment &mdash; Phase-Oriented Trauma Therapy</h2>
-<p class="body"><strong>Psychotherapy is the primary &mdash; essentially the only &mdash; treatment for DID itself.</strong> The <strong>ISSTD (International Society for the Study of Trauma and Dissociation) guidelines</strong> define a three-phase, long-term approach. It is non-linear: patients cycle back through phases as new material surfaces.</p>
-<div class="timeline">
-<div class="tstep">
-<h4>Phase 1 &mdash; Safety, Stabilization, Symptom Reduction</h4>
-<p class="body" style="margin:0">Build the therapeutic alliance (often the patient's first safe relationship); <strong>safety planning for suicide/self-harm</strong>; teach grounding and coping; contain impulsive or dangerous alters; negotiate <strong>co-consciousness and internal cooperation</strong>. This phase can take months to years &mdash; and it is never skipped.</p>
+<!-- ================= 6. DEVELOPMENTAL COURSE ================= -->
+<div class="colorband" id="course">
+  <h2>Developmental Course</h2>
+  <p>Onset at Five to Ten, Recognition in Adulthood</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">⏱️</button>
 </div>
-<div class="tstep">
-<h4>Phase 2 &mdash; Confronting Traumatic Memories</h4>
-<p class="body" style="margin:0">Carefully paced processing of traumatic material &mdash; giving the trauma meaning, resolving inappropriate guilt, grieving. Moved into <strong>only when the patient can stay present and regulated</strong>; flooding the system causes setbacks.</p>
-</div>
-<div class="tstep">
-<h4>Phase 3 &mdash; Identity Integration &amp; Rehabilitation</h4>
-<p class="body" style="margin:0">Two legitimate endpoints: <strong>integration/fusion</strong> (alters merge into a cohesive identity &mdash; the classic goal) or <strong>functional multiplicity</strong> (alters remain but cooperate smoothly, as artist Kim Noble's system does). Either way: rebuild work, relationships, and daily life.</p>
-</div>
-</div>
-<div class="cols2">
-<div class="tcard pdy">
-<h4>&#x1F4AC; Adjunctive Modalities</h4>
-<p class="body" style="margin:0"><strong>CBT:</strong> challenge maladaptive beliefs ("I deserved it"). <strong>DBT skills:</strong> distress tolerance and emotion regulation &mdash; especially valuable with self-harm and borderline features. <strong>EMDR:</strong> used cautiously for traumatic memories. <strong>Group/family therapy:</strong> psychoeducation and support.</p>
-</div>
-<div class="tcard neu">
-<h4>&#x1F48A; Pharmacology</h4>
-<p class="body" style="margin:0"><strong>No medication treats DID itself.</strong> Meds target comorbidities so the patient can engage in therapy: <strong>SSRIs/SNRIs</strong> for depression, PTSD, anxiety; mood stabilizers or antipsychotics only if a true comorbid bipolar or psychotic disorder exists. Anxiolytics for acute distress &mdash; short-term, given substance-use risk.</p>
-</div>
-</div>
-<div class="callout teach">
-<h4>&#x23F3; Hypnosis &mdash; The Controversy (exam favorite)</h4>
-<p class="body"><strong>For:</strong> historically used to facilitate alter communication and retrieve dissociated memories; proponents cite material later corroborated and real therapeutic progress.</p>
-<p class="body" style="margin:0"><strong>Against:</strong> critics warn of <strong>false-memory risk and iatrogenic elaboration</strong> &mdash; hypnotically facilitated recall may blur fantasy and memory, and leading techniques can shape alter presentations. Modern ISSTD guidance: use sparingly, with informed consent, never as the primary tool.</p>
-</div>
-<div class="callout clin">
-<h4>&#x1F4C8; Prognosis</h4>
-<p class="body" style="margin:0">DID is <strong>chronic without treatment &mdash; there is no quick cure</strong>, and management is often lifelong. But treatment works: the <strong>TOP DD study (Brand et al., ~280 patients)</strong> found phase-oriented therapy reduced dissociation, PTSD, depression, suicide attempts, self-harm, and hospitalizations over time. <strong>Earlier diagnosis and a stable therapeutic alliance predict the best outcomes.</strong> Prevention centers on protecting children: early intervention after abuse, safe caregiving, and trauma-informed schools and clinics.</p>
+<div class="wcsec">
+  <div class="timeline">
+    <div class="tstep">
+      <h4>Ages 5–10 — Onset</h4>
+      <p>Severe repeated trauma; dissociation as coping. Symptoms <strong>often missed or mistaken for ADHD</strong> — inattention, "daydreaming," behavioral outbursts.</p>
+    </div>
+    <div class="tstep">
+      <h4>Adolescence — Emergence</h4>
+      <p>Identity fragmentation becomes harder to hide: self-harm, substance use, "mood swings" misread as bipolar or borderline personality features. First psychiatric contacts — usually with the wrong diagnosis.</p>
+    </div>
+    <div class="tstep">
+      <h4>Adulthood — Recognition</h4>
+      <p>Full criteria evident; average patient has seen <strong>multiple clinicians over several years</strong> before DID is named. Without treatment the course is chronic and often disabling.</p>
+    </div>
+    <div class="tstep">
+      <h4>Treatment — Years, Non-Linear</h4>
+      <p>Phase-oriented therapy unfolds over years with setbacks. Early treatment and a stable therapeutic alliance predict the best outcomes; even without full integration, symptoms and functioning can improve substantially.</p>
+    </div>
+  </div>
 </div>
 
-<h2 class="sec">&#x1F4DC; Famous Cases</h2>
-<div class="casegrid">
-<div class="case"><div class="yr">1977 &ndash; 2014</div><h4>&#x2696;&#xFE0F; Billy Milligan</h4><p class="body" style="margin:0;font-size:.9rem">24 alters; 1978 &mdash; the <strong>first insanity acquittal on MPD grounds</strong> in U.S. history (kidnapping/rape charges, Ohio). Evaluated by nine professionals including Sybil's psychiatrist Cornelia Wilbur.</p></div>
-<div class="case"><div class="yr">1973</div><h4>&#x1F4D6; Shirley Mason &mdash; "Sybil"</h4><p class="body" style="margin:0;font-size:.9rem">16 alters; Flora Rheta Schreiber's bestseller and the 1976 TV film made MPD a household term &mdash; and, critics argue, shaped a generation of diagnoses. Real identity revealed posthumously.</p></div>
-<div class="case"><div class="yr">1957</div><h4>&#x1F3AD; Chris Costner Sizemore &mdash; "Eve"</h4><p class="body" style="margin:0;font-size:.9rem"><em>The Three Faces of Eve</em> (book and Oscar-winning film). Later reported the "three faces" were an undercount &mdash; closer to 22 &mdash; and became a mental-health advocate after integration.</p></div>
-<div class="case"><div class="yr">1989</div><h4>&#x1F408; Truddi Chase &mdash; "When Rabbit Howls"</h4><p class="body" style="margin:0;font-size:.9rem">92 alters, called "The Troops." Never integrated &mdash; instead negotiated internal cooperation, and used her story to educate the public about ritual childhood abuse.</p></div>
-<div class="case"><div class="yr">2000s &ndash; PRESENT</div><h4>&#x1F3A8; Kim Noble</h4><p class="body" style="margin:0;font-size:.9rem">British artist with DID who paints in distinct styles as different alters. A living example of <strong>functional multiplicity</strong> &mdash; alters with negotiated roles, including parenting.</p></div>
-<div class="case"><div class="yr">2008</div><h4>&#x1F3C8; Herschel Walker</h4><p class="body" style="margin:0;font-size:.9rem">NFL star and Heisman winner; disclosed DID in <em>Breaking Free</em>. His openness did more to reduce stigma than any textbook &mdash; proof the disorder doesn't preclude elite functioning.</p></div>
+<!-- ================= 7. DIFFERENTIAL DIAGNOSIS ================= -->
+<div class="colorband" id="differential">
+  <h2>Differential Diagnosis</h2>
+  <p>Ten Look-Alikes to Rule Out</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">⚖️</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p>The exam-critical table — DID must be separated from look-alikes that share voices, mood shifts, or amnesia.</p>
+  </div>
+  <table class="vals">
+    <thead><tr><th>Condition</th><th>Distinguishing Features</th></tr></thead>
+    <tbody>
+    <tr><td class="n">Dissociative amnesia (w/ fugue)</td><td>Identity <em>loss</em> with amnesia, but <strong>no chronic alternating identity states</strong>; fugue adds travel</td></tr>
+    <tr><td class="n">Depersonalization/derealization</td><td>Detachment from self or world <strong>without</strong> distinct identity states or amnesic gaps</td></tr>
+    <tr><td class="n">PTSD (dissociative subtype)</td><td>Dissociation tied to trauma reminders; <strong>no elaborated alter system</strong> — though 90% of DID patients also meet PTSD criteria</td></tr>
+    <tr><td class="n">OSDD</td><td>"Almost DID" — identity disruption <strong>without full amnesia</strong> (OSDD-1) or with atypical features</td></tr>
+    <tr><td class="n">Borderline personality disorder</td><td>Identity <em>disturbance</em> (unstable self-image) but <strong>no distinct states with amnesia</strong>; dissociation usually stress-triggered and transient</td></tr>
+    <tr><td class="n">Bipolar disorder</td><td>Alter-driven mood/behavior shifts <strong>misread as rapid cycling</strong>; true bipolar episodes last days–weeks, lack amnesia, respond to mood stabilizers</td></tr>
+    <tr><td class="n">Schizophrenia</td><td><strong>Voices experienced as external</strong> vs. DID's internal alter voices; DID shows <strong>no formal thought disorder</strong>; Schneiderian symptoms overlap but context differs</td></tr>
+    <tr><td class="n">Malingering / factitious</td><td>DID shows <strong>genuine distress, shame, and attempts to hide symptoms</strong>; malingering seeks external gain (legal/financial), factitious seeks the sick role</td></tr>
+    <tr><td class="n">Substance / medical</td><td>Blackouts (alcohol), seizures (TLE), head injury — <strong>tox screen, EEG, MRI</strong> rule these out; substance-induced states lack alter structure</td></tr>
+    <tr><td class="n">Cultural / religious possession</td><td>Normative, community-sanctioned, time-limited possession — <strong>excluded by Criterion D</strong>; DID possession is involuntary and distressing</td></tr>
+    </tbody>
+  </table>
+  <div class="notebox">
+    <h4>🩺 Organic &amp; Safety Workup</h4>
+    <p>Neurological exam, <strong>EEG</strong> (temporal lobe epilepsy), <strong>MRI/CT</strong>, labs, <strong>toxicology screen</strong>, medication review, sleep history — plus <strong>suicide/self-harm risk assessment at every contact</strong> given the 70% attempt rate.</p>
+  </div>
 </div>
 
-<h2 class="sec">&#x1FA7A; Nursing Care &mdash; VA Inpatient Focus</h2>
-<div class="callout clin">
-<h4>&#x1F6A8; Safety Is Priority One</h4>
-<p class="body" style="margin:0"><strong>70%+ have attempted suicide or self-injured</strong> &mdash; screen for SI/HI and self-harm urges on admission and every shift; persecutor alters may command self-harm. <strong>1:1 observation or q15 safety checks per acuity</strong>; sharps/belongings protocols; secure the milieu. Treat every switch as a potential risk reassessment &mdash; a cooperative alter can yield to a self-destructive one without warning.</p>
+<!-- ================= 8. COMORBIDITY: PTSD ================= -->
+<div class="colorband" id="ptsd">
+  <h2>Comorbidity Focus — PTSD</h2>
+  <p>Two Disorders, One Root in Trauma</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔄</button>
 </div>
-<h4 style="margin:18px 0 8px">&#x1F9E0; Grounding Techniques &mdash; Teach and Coach</h4>
-<ul class="check">
-<li><strong>5-4-3-2-1 sensory grounding:</strong> name 5 things seen, 4 felt, 3 heard, 2 smelled, 1 tasted &mdash; anchors the patient in the present during dissociation or flashback.</li>
-<li><strong>Orienting statements:</strong> "You are at the VA in Martinsburg. It is 2026. You are safe." Repeat calmly; avoid quizzing.</li>
-<li><strong>Cold water / strong sensation:</strong> holding ice or splashing cold water interrupts dissociative episodes for many patients.</li>
-<li><strong>Safe-place imagery:</strong> a rehearsed mental location the patient can retreat to instead of switching.</li>
-<li><strong>Internal communication tools:</strong> journaling between alters, scheduled "check-in" times &mdash; supports co-consciousness and reduces surprise switching.</li>
-</ul>
-<h4 style="margin:18px 0 8px">&#x1F4AC; Therapeutic Communication</h4>
-<ul class="check">
-<li><strong>Address whoever is present</strong> &mdash; ask "Who am I speaking with right now?" and use the name they give; never mock or argue with an alter.</li>
-<li><strong>Introduce and re-introduce yourself</strong> &mdash; the incoming alter may not know you from the last interaction.</li>
-<li><strong>Be consistent across staff and shifts</strong> &mdash; unpredictability triggers switching; coordinate messaging in handoff.</li>
-<li>Validate fear and confusion <strong>without confronting the dissociation</strong> ("It makes sense this is frightening").</li>
-<li><strong>Avoid sudden touch or looming</strong> &mdash; announce yourself, explain every procedure before beginning, allow extra time.</li>
-<li>Do <strong>not</strong> try to "call out" specific alters for curiosity &mdash; switching on demand is destabilizing.</li>
-</ul>
-<h4 style="margin:18px 0 8px">&#x1F3E5; Milieu Management</h4>
-<p class="body"><strong>Calm, consistent, predictable routine</strong> &mdash; structure is itself therapeutic for a fragmented identity system. Low-stimulation environment during acute switching; identify and minimize known triggers (loud confrontation, certain topics, anniversary dates). <strong>De-escalation over restraint</strong> wherever safety allows &mdash; restraints can reenact abuse dynamics and fracture trust. Coordinate the whole team so limits and expectations stay identical across shifts.</p>
-<h4 style="margin:18px 0 8px">&#x1F4CB; NANDA-Style Nursing Diagnoses</h4>
-<div class="nanda">
-<span>Disturbed personal identity</span><span>Risk for suicide</span><span>Risk for self-mutilation</span><span>Ineffective coping</span><span>Chronic low self-esteem</span><span>Anxiety</span><span>Risk for trauma</span><span>Social isolation</span>
-</div>
-<h4 style="margin:18px 0 8px">&#x1F46A; Family &amp; Discharge</h4>
-<p class="body">Teach family about DID, common triggers, and how to respond to switching <strong>without fear or ridicule</strong>; encourage participation in the treatment plan. Discharge planning: <strong>outpatient trauma-informed therapy referral</strong> (continuity matters more than modality), written <strong>crisis/safety plan</strong> the patient helped author, medical follow-up, and connection to supports &mdash; the ISSTD therapist locator and crisis resources such as <strong>988</strong> (call or text) and <strong>911</strong> for emergencies.</p>
-<p class="body"><strong>Documentation:</strong> objective behavioral descriptions (which name the patient gave, observed voice/affect changes, what each state said/did), safety checks, response to grounding, collateral sources &mdash; chart facts, not diagnostic conclusions beyond RN scope.</p>
-
-<div class="kt">
-<h2>&#x1F4CC; Key Takeaways &mdash; Exam Review</h2>
-<ul>
-<li><strong>DSM-5-TR 300.14 / F44.81:</strong> disruption of identity (2+ states) + recurrent amnesic gaps + distress/impairment + not cultural/religious + not substance/medical.</li>
-<li><strong>Prevalence ~1.5%</strong> of U.S. adults &mdash; more common than schizophrenia; under-recognized, not rare.</li>
-<li><strong>Etiology:</strong> severe, repeated childhood trauma (ages 5&ndash;10) &mdash; dissociation as survival; 90%+ report abuse/neglect.</li>
-<li><strong>Possession vs. nonpossession</strong> forms &mdash; dramatic takeover vs. subtle intrusions; same criteria.</li>
-<li><strong>Schneiderian symptoms</strong> (internal voices, made actions) &rarr; schizophrenia is the classic misdiagnosis; bipolar rapid-cycling is the other.</li>
-<li><strong>90% PTSD comorbidity;</strong> DID and PTSD share trauma soil &mdash; stabilize before processing trauma.</li>
-<li><strong>Assessment:</strong> DES (&ge;30 = high), MID, SCID-D (gold standard); observe switching; rule out TLE/substances.</li>
-<li><strong>Treatment:</strong> ISSTD three phases &mdash; safety/stabilization &rarr; trauma processing &rarr; integration or functional multiplicity. No drug treats DID; meds target comorbidities.</li>
-<li><strong>Hypnosis is controversial</strong> &mdash; false-memory/iatrogenic risk; never the primary tool.</li>
-<li><strong>Nursing:</strong> 70% suicide/self-harm rate &mdash; safety first; grounding (5-4-3-2-1); address whoever is present; calm predictable milieu; document behavior objectively.</li>
-</ul>
+<div class="wcsec">
+  <div class="teachbox">
+    <h4>🎯 The Signature Pairing</h4>
+    <p><strong>Up to 90% of people with DID meet criteria for PTSD</strong> at some point — the highest PTSD overlap of any diagnosis. Understand this pairing and you understand the disorder's treatment logic.</p>
+  </div>
+  <div class="card">
+    <p>DID and PTSD share the same soil: <strong>overwhelming trauma the nervous system could not process</strong>. In PTSD the trauma memory intrudes (flashbacks, nightmares); in DID the memory is <strong>compartmentalized</strong> — held by alters the host cannot access. This is why treating the PTSD without addressing the dissociative structure fails, and why the <strong>dissociative subtype of PTSD</strong> (added in DSM-5) sits on a spectrum with DID. Childhood trauma is the common root: screen every PTSD patient with early-onset trauma for dissociative symptoms — and screen every DID patient for full PTSD criteria.</p>
+  </div>
+  <div class="cols2">
+    <div class="card tcard">
+      <h4>🧭 DID vs. PTSD Dissociation</h4>
+      <p><strong>PTSD:</strong> depersonalization/derealization during flashbacks; memory is <em>intrusive</em> (too present).<br><strong>DID:</strong> amnesic barriers between identity states; memory is <em>inaccessible</em> (too absent). Both involve disrupted memory integration — in opposite directions.</p>
+    </div>
+    <div class="card tcard alt">
+      <h4>🔍 Treatment Implication</h4>
+      <p><strong>Stabilize before processing:</strong> trauma work attempted before the patient can stay present risks flooding and decompensation. Phase 1 of DID treatment (safety, coping, co-consciousness) <em>is</em> PTSD stabilization — the disorders are treated on the same timeline.</p>
+    </div>
+  </div>
 </div>
 
-<div class="bib">
-<h2>&#x1F4DA; Bibliography</h2>
-<ul>
-<li>1. Cleveland Clinic &mdash; "Dissociative Identity Disorder (DID)" (source handout, 7-page PDF)</li>
-<li>2. American Psychiatric Association &mdash; <em>DSM-5-TR</em> (2022), Dissociative Identity Disorder 300.14 (F44.81)</li>
-<li>3. Wikipedia &mdash; "Dissociative identity disorder" (<a href="https://en.wikipedia.org/wiki/Dissociative_identity_disorder">en.wikipedia.org/wiki/Dissociative_identity_disorder</a>)</li>
-<li>4. MSD Manual, Professional Edition &mdash; "Dissociative Identity Disorder" (<a href="https://www.msdmanuals.com/professional/psychiatric-disorders/dissociative-disorders/dissociative-identity-disorder">msdmanuals.com</a>)</li>
-<li>5. ISSTD &mdash; Guidelines for Treating Dissociative Identity Disorder in Adults, 3rd revision (<em>Journal of Trauma &amp; Dissociation</em>, 2011)</li>
-<li>6. Brand, B.L. et al. &mdash; TOP DD Network Study: treatment outcomes in ~280 DID patients (dissociation, PTSD, depression, suicidality)</li>
-<li>7. Dorahy, M.J., Brand, B.L. &amp; Sar, V. &mdash; review of dissociative identity disorder (<em>Lancet Psychiatry</em>)</li>
-<li>8. Sar, V. et al. (2014) &mdash; childhood onset and adolescent emergence of dissociative disorders</li>
-<li>9. NAMI &mdash; "Dissociative Disorders" (<a href="https://www.nami.org">nami.org</a>)</li>
-<li>10. Merck Manual, Consumer Version &mdash; "Dissociative Identity Disorder"</li>
-<li>11. A&amp;E True Crime &mdash; "Billy Milligan: Can Someone With DID Be Accountable for Violent Crimes?" (<a href="https://www.aetv.com/real-crime/billy-milligan-diagnosis">aetv.com</a>)</li>
-<li>12. Schreiber, F.R. (1973) &mdash; <em>Sybil</em>; Thigpen &amp; Cleckley (1957) &mdash; <em>The Three Faces of Eve</em>; Chase, T. (1987) &mdash; <em>When Rabbit Howls</em>; Walker, H. (2008) &mdash; <em>Breaking Free</em></li>
-</ul>
+<!-- ================= 9. ASSESSMENT ================= -->
+<div class="colorband" id="assessment">
+  <h2>Assessment</h2>
+  <p>DES, MID, and the Gold-Standard SCID-D</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔎</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <ul class="check">
+      <li><strong>Clinical interview</strong> — trauma history taken gently and slowly; ask about lost time, "voices," feeling controlled from inside, finding unfamiliar belongings. Collateral from family/partners is often revelatory.</li>
+      <li><strong>DES</strong> (Dissociative Experiences Scale) — 28-item screen; scores <strong>≥ 30</strong> suggest high dissociation warranting full evaluation. Quick, validated, widely used.</li>
+      <li><strong>MID</strong> (Multidimensional Inventory of Dissociation) — 218 items; maps specific dissociative symptoms and is harder to fake.</li>
+      <li><strong>SCID-D</strong> (Structured Clinical Interview for DSM Dissociative Disorders) — <strong>gold-standard</strong> structured diagnostic interview; distinguishes DID from look-alikes.</li>
+      <li><strong>Observe for switching</strong> — note abrupt changes in voice, affect, posture, vocabulary, handwriting across the interview; ask "who am I speaking with now?" if a shift occurs.</li>
+      <li><strong>Medical workup</strong> — neuro exam, EEG, MRI/CT, labs, toxicology, medication review; rule out TLE, TBI, substances.</li>
+      <li><strong>Malingering assessment</strong> — genuine patients typically <strong>minimize and hide</strong> symptoms (shame, fear of disbelief); dramatic volunteering of alters for gain points the other way.</li>
+    </ul>
+  </div>
 </div>
 
-
-</main>
-<footer class="peptopia-ftr">
-<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
-<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
-<div class="peptopia-ftr-icons">
-<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia home" class="logo-dark"><img src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia home" class="logo-light"></a>
-<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
-<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
-<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
+<!-- ================= 10. TREATMENT ================= -->
+<div class="colorband" id="treatment">
+  <h2>Treatment — Phase-Oriented Trauma Therapy</h2>
+  <p>The ISSTD Three-Phase Model</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🩹</button>
 </div>
-</footer>
+<div class="wcsec">
+  <div class="card">
+    <p><strong>Psychotherapy is the primary — essentially the only — treatment for DID itself.</strong> The <strong>ISSTD (International Society for the Study of Trauma and Dissociation) guidelines</strong> define a three-phase, long-term approach. It is non-linear: patients cycle back through phases as new material surfaces.</p>
+  </div>
+  <div class="timeline">
+    <div class="tstep">
+      <h4>Phase 1 — Safety, Stabilization, Symptom Reduction</h4>
+      <p>Build the therapeutic alliance (often the patient's first safe relationship); <strong>safety planning for suicide/self-harm</strong>; teach grounding and coping; contain impulsive or dangerous alters; negotiate <strong>co-consciousness and internal cooperation</strong>. This phase can take months to years — and it is never skipped.</p>
+    </div>
+    <div class="tstep">
+      <h4>Phase 2 — Confronting Traumatic Memories</h4>
+      <p>Carefully paced processing of traumatic material — giving the trauma meaning, resolving inappropriate guilt, grieving. Moved into <strong>only when the patient can stay present and regulated</strong>; flooding the system causes setbacks.</p>
+    </div>
+    <div class="tstep">
+      <h4>Phase 3 — Identity Integration &amp; Rehabilitation</h4>
+      <p>Two legitimate endpoints: <strong>integration/fusion</strong> (alters merge into a cohesive identity — the classic goal) or <strong>functional multiplicity</strong> (alters remain but cooperate smoothly, as artist Kim Noble's system does). Either way: rebuild work, relationships, and daily life.</p>
+    </div>
+  </div>
+  <div class="cols2">
+    <div class="card tcard">
+      <h4>💬 Adjunctive Modalities</h4>
+      <p><strong>CBT:</strong> challenge maladaptive beliefs ("I deserved it"). <strong>DBT skills:</strong> distress tolerance and emotion regulation — especially valuable with self-harm and borderline features. <strong>EMDR:</strong> used cautiously for traumatic memories. <strong>Group/family therapy:</strong> psychoeducation and support.</p>
+    </div>
+    <div class="card tcard alt">
+      <h4>💊 Pharmacology</h4>
+      <p><strong>No medication treats DID itself.</strong> Meds target comorbidities so the patient can engage in therapy: <strong>SSRIs/SNRIs</strong> for depression, PTSD, anxiety; mood stabilizers or antipsychotics only if a true comorbid bipolar or psychotic disorder exists. Anxiolytics for acute distress — short-term, given substance-use risk.</p>
+    </div>
+  </div>
+  <div class="teachbox">
+    <h4>⏳ Hypnosis — The Controversy (Exam Favorite)</h4>
+    <p><strong>For:</strong> historically used to facilitate alter communication and retrieve dissociated memories; proponents cite material later corroborated and real therapeutic progress.</p>
+    <p><strong>Against:</strong> critics warn of <strong>false-memory risk and iatrogenic elaboration</strong> — hypnotically facilitated recall may blur fantasy and memory, and leading techniques can shape alter presentations. Modern ISSTD guidance: use sparingly, with informed consent, never as the primary tool.</p>
+  </div>
+  <div class="notebox">
+    <h4>📈 Prognosis</h4>
+    <p>DID is <strong>chronic without treatment — there is no quick cure</strong>, and management is often lifelong. But treatment works: the <strong>TOP DD study (Brand et al., ~280 patients)</strong> found phase-oriented therapy reduced dissociation, PTSD, depression, suicide attempts, self-harm, and hospitalizations over time. <strong>Earlier diagnosis and a stable therapeutic alliance predict the best outcomes.</strong> Prevention centers on protecting children: early intervention after abuse, safe caregiving, and trauma-informed schools and clinics.</p>
+  </div>
+</div>
+
+<!-- ================= 11. FAMOUS CASES ================= -->
+<div class="colorband" id="cases">
+  <h2>Famous Cases</h2>
+  <p>Six Lives That Shaped the Diagnosis</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📜</button>
+</div>
+<div class="wcsec">
+  <div class="casegrid">
+    <div class="case"><div class="yr">1977 – 2014</div><h4>⚖️ Billy Milligan</h4><p>24 alters; 1978 — the <strong>first insanity acquittal on MPD grounds</strong> in U.S. history (kidnapping/rape charges, Ohio). Evaluated by nine professionals including Sybil's psychiatrist Cornelia Wilbur.</p></div>
+    <div class="case"><div class="yr">1973</div><h4>📖 Shirley Mason — "Sybil"</h4><p>16 alters; Flora Rheta Schreiber's bestseller and the 1976 TV film made MPD a household term — and, critics argue, shaped a generation of diagnoses. Real identity revealed posthumously.</p></div>
+    <div class="case"><div class="yr">1957</div><h4>🎭 Chris Costner Sizemore — "Eve"</h4><p><em>The Three Faces of Eve</em> (book and Oscar-winning film). Later reported the "three faces" were an undercount — closer to 22 — and became a mental-health advocate after integration.</p></div>
+    <div class="case"><div class="yr">1989</div><h4>🐈 Truddi Chase — "When Rabbit Howls"</h4><p>92 alters, called "The Troops." Never integrated — instead negotiated internal cooperation, and used her story to educate the public about ritual childhood abuse.</p></div>
+    <div class="case"><div class="yr">2000s – Present</div><h4>🎨 Kim Noble</h4><p>British artist with DID who paints in distinct styles as different alters. A living example of <strong>functional multiplicity</strong> — alters with negotiated roles, including parenting.</p></div>
+    <div class="case"><div class="yr">2008</div><h4>🏈 Herschel Walker</h4><p>NFL star and Heisman winner; disclosed DID in <em>Breaking Free</em>. His openness did more to reduce stigma than any textbook — proof the disorder doesn't preclude elite functioning.</p></div>
+  </div>
+</div>
+
+<!-- ================= 12. NURSING CARE ================= -->
+<div class="colorband deep" id="nursing">
+  <h2>Nursing Care — VA Inpatient Focus</h2>
+  <p>Safety First — Grounding, Milieu, Documentation</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🩺</button>
+</div>
+<div class="wcsec">
+  <div class="alert">
+    <h4>🚨 Safety Is Priority One</h4>
+    <p><strong>70%+ have attempted suicide or self-injured</strong> — screen for SI/HI and self-harm urges on admission and every shift; persecutor alters may command self-harm. <strong>1:1 observation or q15 safety checks per acuity</strong>; sharps/belongings protocols; secure the milieu. Treat every switch as a potential risk reassessment — a cooperative alter can yield to a self-destructive one without warning.</p>
+  </div>
+  <div class="card">
+    <h4>🧠 Grounding Techniques — Teach and Coach</h4>
+    <ul class="check">
+      <li><strong>5-4-3-2-1 sensory grounding:</strong> name 5 things seen, 4 felt, 3 heard, 2 smelled, 1 tasted — anchors the patient in the present during dissociation or flashback.</li>
+      <li><strong>Orienting statements:</strong> "You are at the VA in Martinsburg. It is 2026. You are safe." Repeat calmly; avoid quizzing.</li>
+      <li><strong>Cold water / strong sensation:</strong> holding ice or splashing cold water interrupts dissociative episodes for many patients.</li>
+      <li><strong>Safe-place imagery:</strong> a rehearsed mental location the patient can retreat to instead of switching.</li>
+      <li><strong>Internal communication tools:</strong> journaling between alters, scheduled "check-in" times — supports co-consciousness and reduces surprise switching.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>💬 Therapeutic Communication</h4>
+    <ul class="check">
+      <li><strong>Address whoever is present</strong> — ask "Who am I speaking with right now?" and use the name they give; never mock or argue with an alter.</li>
+      <li><strong>Introduce and re-introduce yourself</strong> — the incoming alter may not know you from the last interaction.</li>
+      <li><strong>Be consistent across staff and shifts</strong> — unpredictability triggers switching; coordinate messaging in handoff.</li>
+      <li>Validate fear and confusion <strong>without confronting the dissociation</strong> ("It makes sense this is frightening").</li>
+      <li><strong>Avoid sudden touch or looming</strong> — announce yourself, explain every procedure before beginning, allow extra time.</li>
+      <li>Do <strong>not</strong> try to "call out" specific alters for curiosity — switching on demand is destabilizing.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>🏥 Milieu Management</h4>
+    <p><strong>Calm, consistent, predictable routine</strong> — structure is itself therapeutic for a fragmented identity system. Low-stimulation environment during acute switching; identify and minimize known triggers (loud confrontation, certain topics, anniversary dates). <strong>De-escalation over restraint</strong> wherever safety allows — restraints can reenact abuse dynamics and fracture trust. Coordinate the whole team so limits and expectations stay identical across shifts.</p>
+  </div>
+  <div class="card">
+    <h4>📋 NANDA-Style Nursing Diagnoses</h4>
+    <div class="nanda">
+      <span>Disturbed personal identity</span><span>Risk for suicide</span><span>Risk for self-mutilation</span><span>Ineffective coping</span><span>Chronic low self-esteem</span><span>Anxiety</span><span>Risk for trauma</span><span>Social isolation</span>
+    </div>
+  </div>
+  <div class="card">
+    <h4>👪 Family &amp; Discharge</h4>
+    <p>Teach family about DID, common triggers, and how to respond to switching <strong>without fear or ridicule</strong>; encourage participation in the treatment plan. Discharge planning: <strong>outpatient trauma-informed therapy referral</strong> (continuity matters more than modality), written <strong>crisis/safety plan</strong> the patient helped author, medical follow-up, and connection to supports — the ISSTD therapist locator and crisis resources such as <strong>988</strong> (call or text) and <strong>911</strong> for emergencies.</p>
+    <p><strong>Documentation:</strong> objective behavioral descriptions (which name the patient gave, observed voice/affect changes, what each state said/did), safety checks, response to grounding, collateral sources — chart facts, not diagnostic conclusions beyond RN scope.</p>
+  </div>
+</div>
+
+<!-- ================= 13. KEY TAKEAWAYS ================= -->
+<div class="colorband" id="takeaways">
+  <h2>Key Takeaways — Exam Review</h2>
+  <p>Ten High-Yield Points for the Exam</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📌</button>
+</div>
+<div class="wcsec">
+  <div class="card kt">
+    <ul class="tight">
+      <li><strong>DSM-5-TR 300.14 / F44.81:</strong> disruption of identity (2+ states) + recurrent amnesic gaps + distress/impairment + not cultural/religious + not substance/medical.</li>
+      <li><strong>Prevalence ~1.5%</strong> of U.S. adults — more common than schizophrenia; under-recognized, not rare.</li>
+      <li><strong>Etiology:</strong> severe, repeated childhood trauma (ages 5–10) — dissociation as survival; 90%+ report abuse/neglect.</li>
+      <li><strong>Possession vs. nonpossession</strong> forms — dramatic takeover vs. subtle intrusions; same criteria.</li>
+      <li><strong>Schneiderian symptoms</strong> (internal voices, made actions) → schizophrenia is the classic misdiagnosis; bipolar rapid-cycling is the other.</li>
+      <li><strong>90% PTSD comorbidity;</strong> DID and PTSD share trauma soil — stabilize before processing trauma.</li>
+      <li><strong>Assessment:</strong> DES (≥30 = high), MID, SCID-D (gold standard); observe switching; rule out TLE/substances.</li>
+      <li><strong>Treatment:</strong> ISSTD three phases — safety/stabilization → trauma processing → integration or functional multiplicity. No drug treats DID; meds target comorbidities.</li>
+      <li><strong>Hypnosis is controversial</strong> — false-memory/iatrogenic risk; never the primary tool.</li>
+      <li><strong>Nursing:</strong> 70% suicide/self-harm rate — safety first; grounding (5-4-3-2-1); address whoever is present; calm predictable milieu; document behavior objectively.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 14. SOURCES ================= -->
+<div class="colorband" id="sources">
+  <h2>Sources &amp; Further Reading</h2>
+  <p>Guidelines · Reviews · Classic Case Literature</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📚</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <ul class="biblist">
+      <li>1. Cleveland Clinic — "Dissociative Identity Disorder (DID)" (source handout, 7-page PDF)</li>
+      <li>2. American Psychiatric Association — <em>DSM-5-TR</em> (2022), Dissociative Identity Disorder 300.14 (F44.81)</li>
+      <li>3. Wikipedia — "Dissociative identity disorder" (<a href="https://en.wikipedia.org/wiki/Dissociative_identity_disorder" target="_blank" rel="noopener">en.wikipedia.org/wiki/Dissociative_identity_disorder</a>)</li>
+      <li>4. MSD Manual, Professional Edition — "Dissociative Identity Disorder" (<a href="https://www.msdmanuals.com/professional/psychiatric-disorders/dissociative-disorders/dissociative-identity-disorder" target="_blank" rel="noopener">msdmanuals.com</a>)</li>
+      <li>5. ISSTD — Guidelines for Treating Dissociative Identity Disorder in Adults, 3rd revision (<em>Journal of Trauma &amp; Dissociation</em>, 2011)</li>
+      <li>6. Brand, B.L. et al. — TOP DD Network Study: treatment outcomes in ~280 DID patients (dissociation, PTSD, depression, suicidality)</li>
+      <li>7. Dorahy, M.J., Brand, B.L. &amp; Sar, V. — review of dissociative identity disorder (<em>Lancet Psychiatry</em>)</li>
+      <li>8. Sar, V. et al. (2014) — childhood onset and adolescent emergence of dissociative disorders</li>
+      <li>9. NAMI — "Dissociative Disorders" (<a href="https://www.nami.org" target="_blank" rel="noopener">nami.org</a>)</li>
+      <li>10. Merck Manual, Consumer Version — "Dissociative Identity Disorder"</li>
+      <li>11. A&amp;E True Crime — "Billy Milligan: Can Someone With DID Be Accountable for Violent Crimes?" (<a href="https://www.aetv.com/real-crime/billy-milligan-diagnosis" target="_blank" rel="noopener">aetv.com</a>)</li>
+      <li>12. Schreiber, F.R. (1973) — <em>Sybil</em>; Thigpen &amp; Cleckley (1957) — <em>The Three Faces of Eve</em>; Chase, T. (1987) — <em>When Rabbit Howls</em>; Walker, H. (2008) — <em>Breaking Free</em></li>
+    </ul>
+  </div>
+</div>
+
+<div class="foot">Dissociative Identity Disorder — A Nursing Guide · Independent Nursing Education · October 2026</div>
+</div>
+<a class="toc-top" href="#top" title="Back to top">↑</a>
+
 <script>
-var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
-function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
-(function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+/* Light theme is ALWAYS the default: the page loads in light theme; a dark
+   choice lasts only for the current visit and is never persisted. */
+(function(){
+  var b=document.getElementById('didThemeBtn');
+  if(!b)return;
+  function paint(){b.textContent=document.documentElement.classList.contains('dark')?'☀️ Theme':'🌙 Theme';}
+  b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');paint();fitBandsSoon();});
+  paint();
+})();
+</script>
+<script>
+/* Index box: collapsed by default; the book button toggles it. */
+(function(){
+  var idx=document.querySelector('.index'),btn=document.querySelector('.idx-btn');
+  if(!idx||!btn)return;
+  btn.addEventListener('click',function(){idx.classList.toggle('open');});
+})();
+/* Sections: load collapsed; the WHOLE title band is the toggle. */
+(function(){
+  var bands=document.querySelectorAll('.colorband');
+  bands.forEach(function(band){
+    var sec=band.nextElementSibling;
+    if(!sec||!sec.classList||!sec.classList.contains('wcsec'))return;
+    band._ssec=sec;
+    band._set=function(open){sec.hidden=!open;var t=band.querySelector('.wc-tgl');if(t)t.setAttribute('aria-expanded',open?'true':'false');};
+    band._set(false);
+    band.addEventListener('click',function(){band._set(sec.hidden);});
+  });
+  function openHash(){
+    if(!location.hash)return;
+    var el=document.querySelector(location.hash);
+    if(el&&el.classList&&el.classList.contains('colorband')&&el._set)el._set(true);
+  }
+  openHash();
+  /* In-page links: open the target section, then smooth-scroll to it. */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var id=a.getAttribute('href');
+    if(!id||id.length<2)return;
+    var el=document.querySelector(id);
+    if(!el)return;
+    e.preventDefault();
+    if(el.classList.contains('colorband')&&el._set)el._set(true);
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+    if(history.replaceState)history.replaceState(null,'',id);
+  });
+})();
+/* Bands: one uniform width — no band wider than the widest band, never wider
+   than the content column. */
+function fitBands(){
+  var bands=[].slice.call(document.querySelectorAll('.colorband'));
+  if(!bands.length)return;
+  var wrap=document.querySelector('.wrap');
+  var colW=wrap?wrap.clientWidth-44:0;
+  bands.forEach(function(b){b.style.width='max-content';});
+  var w=0;
+  bands.forEach(function(b){w=Math.max(w,b.getBoundingClientRect().width);});
+  if(colW>0)w=Math.min(w,colW);
+  bands.forEach(function(b){b.style.width=w+'px';b.style.marginLeft='auto';b.style.marginRight='auto';});
+}
+var _fbT=null;
+function fitBandsSoon(){if(_fbT)clearTimeout(_fbT);_fbT=setTimeout(fitBands,60);}
+window.addEventListener('load',fitBands);
+window.addEventListener('resize',fitBandsSoon);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitBandsSoon);
 </script>
 </body>
 </html>
