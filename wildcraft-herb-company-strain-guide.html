@@ -406,6 +406,14 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 .colorband{cursor:pointer}
 @media print{.wc-gate-body{display:block!important}.wc-gate-lock{display:none!important}.wc-labmodal{display:none!important}.wc-return{display:none!important}}
 </style>
+<style>
+/* V4 (Oct 31, David): slim section bands - minimum height, standardized */
+.colorband{padding:9px 14px;padding-right:70px;margin:22px 0 12px;border-radius:12px}
+.colorband h2{font-size:24px;line-height:1.1;margin:0 0 2px}
+.colorband p{line-height:1.25}
+.colorband .icobtn{width:28px;height:28px;font-size:16px}
+.bigicon{width:44px;height:44px;font-size:23px;right:12px}
+</style>
 <div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="labClose" aria-label="Close lab report">✕</button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
 <a class="toc-top" href="#top" title="Back to top">↑</a>
 <div class="wrap">
