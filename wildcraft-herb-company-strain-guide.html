@@ -414,7 +414,30 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 .colorband .icobtn{width:28px;height:28px;font-size:16px}
 .bigicon{width:44px;height:44px;font-size:23px;right:12px}
 </style>
+<style>
+/* V5 (Oct 31, David): centered slim bands, gloss push-button, width cap, log viewer */
+.wcqp{position:relative}
+.wc-logbtn{position:absolute;top:10px;right:10px;font:700 .82rem 'Outfit',sans-serif;color:#1E4D3B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:2px solid #1E4D3B;border-radius:999px;padding:5px 12px;cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 4px 8px rgba(0,0,0,.25);z-index:3}
+.wc-logbtn:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.25)}
+.colorband{text-align:center;padding-left:70px}
+.colorband h2,.colorband p{text-align:center}
+.colorband .bigicon{width:42px;height:42px;font-size:22px;right:12px;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:2px solid #0d2c1e;box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 6px 12px rgba(0,0,0,.4)}
+.colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.3)}
+.wc-logmodal{position:fixed;inset:0;background:rgba(10,20,14,.66);z-index:10001;display:flex;align-items:center;justify-content:center}
+.wc-logmodal[hidden]{display:none}
+.wc-logbox{background:#fff;width:min(560px,94vw);max-height:86vh;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 18px 60px rgba(0,0,0,.5)}
+.wc-logbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:#1E4D3B;color:#F7F4EC;font:700 .95rem 'Outfit',sans-serif}
+.wc-logbar button{background:#F7F4EC;border:none;border-radius:8px;width:32px;height:32px;font-size:1rem;cursor:pointer}
+.wc-loglist{overflow-y:auto;padding:10px 14px}
+.wc-logrow{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:8px 4px;border-bottom:1px solid #e7e2d6}
+.wc-logrow small{color:#6f675a}
+.wc-logdel{background:#fdf1f1;border:1.5px solid #b03a3a;color:#b03a3a;border-radius:8px;width:28px;height:28px;cursor:pointer;flex:none}
+.wc-logempty{color:#6f675a;text-align:center;padding:16px 6px}
+.wc-logfoot{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid #e7e2d6}
+@media print{.colorband{width:auto!important}.wc-logbtn{display:none!important}.wc-logmodal{display:none!important}}
+</style>
 <div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="labClose" aria-label="Close lab report">✕</button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
+<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Quick Pick Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
 <a class="toc-top" href="#top" title="Back to top">↑</a>
 <div class="wrap">
 
@@ -432,6 +455,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <div class="subtitle">Complete Strain Guide</div>
   
 <div class="wcqp">
+  <button type="button" class="wc-logbtn" id="wcLogBtn" title="See your Quick Pick log">📓 Log</button>
   <h2>🌿 Kratom Quick Pick</h2>
   <p class="sub2">Tap How You Feel — Get the Pick · WildCraft Strains Only</p>
   <div class="qp-wheel" id="qpWheel">
@@ -477,7 +501,6 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
     <li><a href="#coa">Alkaloid &amp; Lab Reference (COAs)</a></li>
     <li><a href="#value">Price &amp; Value — What the Premium Buys</a></li>
     <li><a href="#voices">What Buyers Say — The Community Record</a></li>
-    <li><a href="#critique">The Honest Critique — Where WildCraft Can Do Better</a></li>
     <li><a href="#ordering">Ordering, Shipping &amp; Policies</a></li>
     <li><a href="#verdict">The Verdict — Scorecard</a></li>
     <li><a href="#biblio">Sources &amp; Bibliography</a></li>
@@ -487,7 +510,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 
 <!-- ================= HOW TO USE ================= -->
 <div class="colorband band-neutral" id="howto">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧭</span> How to Use This Guide &amp; the Color Map</h2>
+  <h2>How to Use This Guide &amp; the Color Map</h2>
   <p>Find Your Color · Jump to Your Section</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧭</button>
 </div>
@@ -563,7 +586,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔬</span> Vein Color Feedback</h2>
+  <h2>Vein Color Feedback</h2>
   <p>Community Reports · Recorded as Fact</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔬</button>
 </div>
@@ -584,9 +607,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= COMPANY ================= -->
 <div class="colorband band-neutral" id="company">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏡</span> The Company</h2>
+  <h2>The Company</h2>
   <p>Small-Batch Premium · The Whole Operating Model</p>
-  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🌿</button>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🏡</button>
 </div>
 <div class="wc-stats">
   <div class="wc-stat"><b>68</b><span>Strains on their menu</span></div>
@@ -635,7 +658,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="colorband band-neutral" id="catalog">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🛒</span> Catalog Snapshot</h2>
+  <h2>Catalog Snapshot</h2>
   <p>The Whole Menu · One Glance</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🛒</button>
 </div>
@@ -657,7 +680,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="colorband band-green" id="premium">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">⭐</span> Premium Select — the Flagship Line</h2>
+  <h2>Premium Select — the Flagship Line</h2>
   <p>Small-Batch Harvests · Tested to Prove It</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">⭐</button>
 </div>
@@ -766,7 +789,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-neutral" id="signature">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🌿</span> Signature &amp; Private Garden — the OG Wild Leaf</h2>
+  <h2>Signature &amp; Private Garden — the OG Wild Leaf</h2>
   <p>Old Trees · Numbered Batches · Private Gardens</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🌿</button>
 </div>
@@ -854,7 +877,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-blend" id="blends">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟣</span> House Blends — Buyer Requests</h2>
+  <h2>House Blends — Buyer Requests</h2>
   <p>Published Recipes · Named Batches</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🟣</button>
 </div>
@@ -928,7 +951,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-gold" id="heritage">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟡</span> Heritage &amp; Village Leaf — Vintage, Hutan &amp; Ferments</h2>
+  <h2>Heritage &amp; Village Leaf — Vintage, Hutan &amp; Ferments</h2>
   <p>Vintage Lots · Village Harvests · Traditional Ferments</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🟡</button>
 </div>
@@ -1037,7 +1060,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
   </div>
 </div>
 <div class="colorband band-white" id="thai">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🇹🇭</span> The Thai Line — A Different Tradition</h2>
+  <h2>The Thai Line — A Different Tradition</h2>
   <p>Thai-Grown Leaf · A Different Tradition</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🇹🇭</button>
 </div>
@@ -1083,7 +1106,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
   </div>
 </div>
 <div class="colorband band-neutral" id="cargo">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📦</span> Cargo Line — The Value Door</h2>
+  <h2>Cargo Line — The Value Door</h2>
   <p>Pure Veins by the Kilo · Labs Published</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📦</button>
 </div>
@@ -1106,7 +1129,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
   </div>
 </div>
 <div class="colorband band-neutral" id="matrix">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📊</span> Master Comparison Matrix</h2>
+  <h2>Master Comparison Matrix</h2>
   <p>Every Strain · One Glance</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📊</button>
 </div>
@@ -1145,9 +1168,9 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
 </table>
 <p class="coa-note">Reviews stars are the vendor's own WooCommerce ratings (small counts on several products — see each card).</p>
 <div class="colorband band-neutral" id="batches">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧪</span> Batch Index</h2>
+  <h2>Batch Index</h2>
   <p>Every Batch · Its Strains Only</p>
-  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧪</button>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🗂️</button>
 </div><div class="batchgrp"><h3 class="wc-batchhd" id="batch-pr-select-01">PR Select 01</h3><table class="wc-table wc-sortable">
 <tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
 <tr><td><a href='#strain-premium-select-green-vein'><b>Premium Select — Green Vein</b></a></td><td>PR Select 01</td><td>4.6</td><td>4.2</td><td>3.4</td><td>3.0</td><td>4.83 / 5</td><td>$7–$30</td></tr>
@@ -1243,7 +1266,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
 </table></div>
 
 <div class="colorband band-neutral" id="coa">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧪</span> Alkaloid &amp; Lab Reference (COAs)</h2>
+  <h2>Alkaloid &amp; Lab Reference (COAs)</h2>
   <p>Published Third-Party Reports Only</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧪</button>
 </div>
@@ -1298,7 +1321,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
 </table>
 
 <div class="colorband band-neutral" id="value">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💵</span> Price &amp; Value — What the Premium Buys</h2>
+  <h2>Price &amp; Value — What the Premium Buys</h2>
   <p>Premium Per Gram · A Value Door Built In</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">💵</button>
 </div>
@@ -1325,7 +1348,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
 </div>
 
 <div class="colorband band-neutral" id="voices">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💬</span> What Buyers Say — The Community Record</h2>
+  <h2>What Buyers Say — The Community Record</h2>
   <p>Freshness · Consistency · Personal Service</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">💬</button>
 </div>
@@ -1359,26 +1382,10 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
   the criticisms that do exist are about price, policy, and availability, and they get their own section next.</p>
 </div>
 
-<div class="colorband band-neutral" id="critique">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔍</span> The Honest Critique — Where WildCraft Can Do Better</h2>
-  <p>Six Honest Findings</p>
-  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔍</button>
-</div>
-<div class="wc-gate" id="critiqueGate"><div class="wc-gate-lock"><p>🔒 <b>The critique is behind the author gate.</b> Enter the author number to read it.</p><button type="button" class="wc-tbtn" id="wcGateBtn">🔓 Unlock the Critique</button></div><div class="wc-gate-body" hidden>
-<div class="wc-grid">
-  <div class="wc-card"><h4>💲 The premium is steep at the door</h4><p>At 25 g sizes, $0.28–0.36 per gram is three to five times bulk-vendor money. The quality case is documented in this guide — but a first-time buyer pays the most per gram exactly when they know the vendor least. A standing first-order discount or a cheaper discovery flight would close the gap; the $15 sample pack only partly does.</p></div>
-  <div class="wc-card"><h4>🧾 All sales are final</h4><p>The returns policy is absolute — ALL SALES ARE FINAL — with issues handled case-by-case by email. For a vendor whose whole pitch is trust, a satisfaction guarantee on first orders would be cheap insurance and a strong signal. As it stands, the risk sits with the buyer.</p></div>
-  <div class="wc-card"><h4>📉 The drop model starves the catalog</h4><p>At this guide's last check, most signature products — both Here Comes the Sun versions, the OG Wilds, the Pure veins, the Vintage Micros — were flagged out of stock. Small-batch freshness is the point, but a customer who finds a favorite here cannot reliably keep it in rotation. A standing 'next batch ETA' on each product page would soften the model's sharpest edge.</p></div>
-  <div class="wc-card"><h4>⭐ Thin public review counts</h4><p>On-site ratings are glowing but small — several flagship products rest on two to six reviews, and there is no Trustpilot or Google presence to triangulate against. The kratom.org rating (4.3/5) helps, but the vendor would be stronger with a third-party review channel it doesn't control.</p></div>
-  <div class="wc-card"><h4>🔗 Small site frictions</h4><p>The lab page is a bare list of PDF links with no summary table (this guide's lab section exists partly because the vendor's own page doesn't); the footer 'Shipping and Refund Policy' link resolves to a privacy-policy URL; and the footer Instagram link is malformed. Minor — and all fixable in an afternoon.</p></div>
-  <div class="wc-card"><h4>📦 Shipping is plain, not fast</h4><p>Processing runs 48–72 hours by the vendor's own statement, with no Saturday shipping and delays during high-volume drops. Orders in this guide's research shipped by USPS both Ground and Priority ($5.75–$9.75 at checkout). Nothing unreasonable — but same-day craft competitors set a bar WildCraft doesn't currently chase.</p></div>
-</div>
-</div></div>
-
 <div class="colorband band-neutral" id="ordering">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🛒</span> Ordering, Shipping &amp; Policies</h2>
+  <h2>Ordering, Shipping &amp; Policies</h2>
   <p>How Buying From WildCraft Actually Works</p>
-  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🛒</button>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🚚</button>
 </div>
 <div class="wc-grid">
   <div class="wc-card"><h4>✉️ Email</h4><p>wildcraftherbcompany@proton.me</p></div>
@@ -1396,7 +1403,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
 </div>
 
 <div class="colorband band-green" id="verdict">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏆</span> The Verdict — Scorecard</h2>
+  <h2>The Verdict — Scorecard</h2>
   <p>Top-Tier Leaf · A Premium to Match</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🏆</button>
 </div>
@@ -1425,7 +1432,7 @@ The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots o
 </div>
 
 <div class="colorband band-neutral" id="biblio">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📚</span> Sources &amp; Bibliography</h2>
+  <h2>Sources &amp; Bibliography</h2>
   <p>Vendor-Published Labs | Independent Reviews</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📚</button>
 </div>
@@ -1643,6 +1650,7 @@ function showPick(sit){
     b.addEventListener('click',function(){
       var s=(b.getAttribute('data-n')===curWin.n)?curWin:curRot;if(!s)return;
       logPick(curSit,s);
+      try{var _fd=new FormData();_fd.append('_subject','WildCraft Quick Pick: '+SITN[curSit]+' \u2014 '+s.n);_fd.append('Feeling',SITN[curSit]);_fd.append('Strain',s.n);_fd.append('Line',s.v);_fd.append('When',new Date().toLocaleString());_fd.append('_captcha','false');_fd.append('_template','table');fetch('https://formsubmit.co/ajax/peptopia@x-peps.com',{method:'POST',headers:{'Accept':'application/json'},body:_fd}).catch(function(){});}catch(_e){}
       var lg=b.parentElement.parentElement.querySelector('.qp-logged');
       b.style.display='none';lg.style.display='block';lg.textContent='✓ Logged — '+s.n+' for '+SITN[curSit]+'.';
     });
@@ -1665,8 +1673,6 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 <script>
-/* ---- v3: critique gate (author number 57) ---- */
-document.addEventListener('DOMContentLoaded',function(){var g=document.getElementById('critiqueGate');if(!g)return;var body=g.querySelector('.wc-gate-body'),lock=g.querySelector('.wc-gate-lock'),btn=document.getElementById('wcGateBtn');function open(){if(body)body.hidden=false;if(lock)lock.style.display='none';try{sessionStorage.setItem('wcCrit57','1');}catch(e){}}try{if(sessionStorage.getItem('wcCrit57')==='1')open();}catch(e){}if(btn)btn.addEventListener('click',function(){var v=window.prompt('Enter the author number to view the critique:');if(v==='57'){open();}else if(v!==null){window.alert('That number is not correct.');}});});
 /* ---- v3: whole band toggles its section; return links; reliable in-page jumps ---- */
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.colorband').forEach(function(band){band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var w=band.nextElementSibling;if(w&&band._wcSet)band._wcSet(w.hidden);});});
@@ -1677,6 +1683,26 @@ document.addEventListener('click',function(e){var a=e.target.closest?e.target.cl
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('table.wc-sortable').forEach(function(tbl){var ths=Array.prototype.slice.call(tbl.querySelectorAll('th.sortable'));ths.forEach(function(th){th.addEventListener('click',function(){var k=+th.getAttribute('data-k');var dir=th.getAttribute('data-dir')==='desc'?'asc':'desc';ths.forEach(function(x){x.removeAttribute('data-dir');});th.setAttribute('data-dir',dir);var tbody=tbl.tBodies[0];if(!tbody)return;var rows=Array.prototype.slice.call(tbody.rows).filter(function(r){return !r.querySelector('th');});rows.sort(function(a,b){var x=a.cells[k]?a.cells[k].textContent.trim():'',y=b.cells[k]?b.cells[k].textContent.trim():'';var nx=parseFloat(x),ny=parseFloat(y);var c=(isNaN(nx)||isNaN(ny))?(x<y?-1:(x>y?1:0)):(nx-ny);return dir==='desc'?-c:c;});rows.forEach(function(r){tbody.appendChild(r);});});});});});
 /* ---- v3: lab reports open in a popup overlay ---- */
 document.addEventListener('DOMContentLoaded',function(){var modal=document.getElementById('labModal');if(!modal)return;var frame=document.getElementById('labFrame'),title=document.getElementById('labTitle'),openA=document.getElementById('labOpen'),closeB=document.getElementById('labClose');function show(url,label){frame.src=url;title.textContent=label||'Lab report';openA.href=url;modal.hidden=false;}function hide(){modal.hidden=true;frame.src='about:blank';}document.querySelectorAll('a[href*="wp-content/uploads"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show(a.href,a.textContent.trim());});});closeB.addEventListener('click',hide);modal.addEventListener('click',function(e){if(e.target===modal)hide();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)hide();});});
+</script>
+<script>
+(function(){
+function hist(){try{return JSON.parse(localStorage.getItem('wcQpHistory')||'[]');}catch(e){return[];}}
+function save(h){try{localStorage.setItem('wcQpHistory',JSON.stringify(h));}catch(e){}}
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Relief',calm:'Calm'};
+var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function render(){var H=hist();var el=document.getElementById('logList');if(!el)return;
+ if(!H.length){el.innerHTML='<p class="wc-logempty">No picks logged yet. Tap a feeling on the wheel, then \u201cTake this one.\u201d</p>';return;}
+ var rev=H.slice().reverse();
+ el.innerHTML=rev.map(function(e,i){var oi=H.length-1-i;var d=new Date(e.d);return '<div class="wc-logrow"><div><b>'+esc(e.n)+'</b><br><small>'+(SITN[e.sit]||e.sit)+' \u00b7 '+esc(e.v)+' \u00b7 '+(COLN[e.col]||'')+' \u2014 '+d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' '+d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})+'</small></div><button type="button" class="wc-logdel" data-i="'+oi+'" title="Remove this entry">\u2715</button></div>';}).join('');
+ Array.prototype.forEach.call(el.querySelectorAll('.wc-logdel'),function(b){b.addEventListener('click',function(){var h=hist();h.splice(parseInt(b.getAttribute('data-i'),10),1);save(h);render();});});}
+function open(){var m=document.getElementById('logModal');if(!m)return;render();m.hidden=false;}
+function close(){var m=document.getElementById('logModal');if(m)m.hidden=true;}
+document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Quick Pick log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
+function fitBands(){var bs=Array.prototype.slice.call(document.querySelectorAll('.colorband'));if(!bs.length)return;bs.forEach(function(b){b.style.width='';});var max=0;bs.forEach(function(b){b.style.width='max-content';var w=b.offsetWidth;if(w>max)max=w;b.style.width='';});var wrap=bs[0].parentElement;var avail=wrap?wrap.clientWidth:0;if(avail&&max>avail)max=avail;if(max>0)bs.forEach(function(b){b.style.width=max+'px';});}
+var rzT=null;window.addEventListener('resize',function(){clearTimeout(rzT);rzT=setTimeout(fitBands,180);});
+document.addEventListener('DOMContentLoaded',function(){fitBands();setTimeout(fitBands,350);});
+})();
 </script>
 </body>
 </html>
