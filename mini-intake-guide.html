@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Intake — 6A Mental Health Unit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2430; --muted:#5b6675; --orange:#ea580c; --orange-dark:#9a3412;
+    --orange-soft:#fff3e8; --card:#ffffff; --line:#e6e2da; --bg:#faf7f1;
+    --violet:#7c3aed; --violet-soft:#fdf4ff; --violet-line:#e9d5ff;
+    --green:#16a34a; --green-soft:#f0fdf4; --green-line:#bbf7d0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background:var(--bg); color:var(--ink);
+    padding:24px 18px 36px; line-height:1.32; font-size:12px;
+  }
+  .wrap{max-width:720px; margin:0 auto;}
+  header{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:7px;}
+  .kicker{
+    display:inline-block; font-family:"Outfit",sans-serif; font-weight:700;
+    font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--orange); background:var(--orange-soft);
+    padding:3px 10px; border-radius:999px; margin-bottom:4px;
+  }
+  h1{
+    font-family:"Outfit",sans-serif; font-weight:800; color:var(--orange);
+    font-size:24px; line-height:1.05; letter-spacing:-.01em;
+  }
+  .sub{color:var(--muted); font-size:11.5px; margin-top:3px;}
+  .rule{font-family:"Outfit",sans-serif; font-weight:700; font-size:11px; color:var(--violet);
+    background:var(--violet-soft); border:1.5px solid var(--violet-line); border-radius:10px;
+    padding:7px 10px; max-width:250px; text-align:center; line-height:1.35;}
+  .strip{border-radius:11px; padding:6px 11px; margin-bottom:6px;}
+  .strip .lbl{
+    font-family:"Outfit",sans-serif; font-weight:800; font-size:11px;
+    letter-spacing:.12em; text-transform:uppercase; margin-bottom:3px;
+  }
+  .strip.first{background:var(--violet-soft); border:1.5px solid var(--violet-line);}
+  .strip.first .lbl{color:var(--violet);}
+  .strip.finish{background:var(--green-soft); border:1.5px solid var(--green-line);}
+  .strip.finish .lbl{color:var(--green);}
+  .strip ul{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:1px 18px;}
+  .strip li{font-size:11px; padding-left:13px; position:relative;}
+  .strip li::before{content:"▸"; position:absolute; left:0; color:var(--orange); font-weight:700;}
+  .strip li strong{color:var(--ink);}
+  .note{
+    background:var(--card); border:1.5px solid var(--line); border-radius:11px;
+    padding:5px 11px 6px; margin-bottom:6px;
+  }
+  .notehd{display:flex; align-items:baseline; gap:8px; margin-bottom:2px;}
+  .notenum{
+    flex:0 0 auto; font-family:"Outfit",sans-serif; font-weight:800; font-size:10px;
+    letter-spacing:.08em; text-transform:uppercase; color:#fff;
+    background:linear-gradient(180deg,#f97316,var(--orange)); border:1.5px solid var(--orange-dark);
+    border-radius:6px; padding:2px 7px;
+  }
+  .notehd h2{font-family:"Outfit",sans-serif; font-weight:700; font-size:13.5px; color:var(--ink);}
+  .notehd .open{margin-left:auto; font-size:10.5px; color:var(--muted); text-align:right; flex:0 1 auto;}
+  .note ul{list-style:none;}
+  .note li{font-size:11px; padding-left:13px; position:relative; margin:1px 0;}
+  .note li::before{content:"•"; position:absolute; left:2px; color:var(--orange); font-weight:700;}
+  .note li strong{color:var(--ink);}
+  .ticks{display:grid; grid-template-columns:repeat(3,1fr); gap:1px 14px;}
+  .tick{display:flex; gap:6px; align-items:flex-start; font-size:10.2px; line-height:1.22; padding:0.5px 0;}
+  .tick .box{flex:0 0 auto; width:11px; height:11px; border:1.6px solid var(--orange); border-radius:3px; margin-top:1.5px; background:#fff;}
+  .tick .tn{font-family:"Outfit",sans-serif; font-weight:700; color:var(--muted); font-size:9.5px; margin-right:1px;}
+  footer{margin-top:2px; text-align:center; color:var(--muted); font-size:10px;}
+  @page{size:Letter; margin:0.4in 0.45in;}
+  @media print{
+    html,body{background:#fff !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    body{padding:0;}
+    .note,.strip{break-inside:avoid; box-shadow:none;}
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+  /* GUIDE STANDARD: toolbar, dark theme, optimized print */
+  .gd-tools{position:fixed; top:12px; right:12px; z-index:9999; display:flex; gap:8px;}
+  .gd-tools button{font-family:"Outfit",sans-serif; font-weight:700; font-size:13.5px; padding:7px 14px; border-radius:999px; border:2px solid #0d1b34; background:#ffffff; color:#0d1b34; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.20);}
+  .gd-tools button:hover{background:#ffedd5;}
+  html.dark{ --ink:#ece7db; --muted:#a9b2c1; --card:#1b2334; --line:#33405a; --bg:#101623; --orange-soft:#3a2415; --violet:#c4b5fd; --violet-soft:#271b45; --violet-line:#4c3577; --green:#4ade80; --green-soft:#17301f; --green-line:#2c5c3a; }
+  html.dark .tick .box{background:transparent;}
+  @media print{
+    .gd-tools{display:none !important;}
+    p,li{orphans:3; widows:3;}
+  }
+</style>
+</head>
+<body>
+<div class="gd-tools"><button type="button" id="gd-themebtn" title="Switch light / dark theme">🌙 Dark</button><button type="button" onclick="window.print()" title="Print or save as PDF">🖨 Print</button></div>
+<div class="wrap">
+
+  <header>
+    <div>
+      <span class="kicker">Mini Guide · 6A Mental Health Unit</span>
+      <h1>Mini Intake</h1>
+      <p class="sub">One page, start to finish — the arrival tasks, then the five CPRS notes in the order they run.</p>
+    </div>
+    <div class="rule">Off tours: rescue meds PO &amp; IM in place <u>before</u> the patient enters the unit</div>
+  </header>
+
+  <div class="strip first">
+    <div class="lbl">First — Before &amp; On Arrival</div>
+    <ul>
+      <li><strong>Before:</strong> consent signed · admission orders + rescue meds in CPRS · CSRE done · COVID negative</li>
+      <li><strong>Check:</strong> ED vitals &amp; labs · <strong>BAL ≤ 299</strong> for alcohol admissions · equipment needs (CPAP, walker…)</li>
+      <li><strong>ED calls:</strong> get report, evaluate the Veteran, <strong>IV out</strong>, ED staff escort up</li>
+      <li><strong>Vitals + height &amp; weight</strong> · issue <strong>BP cuff labeled name + room</strong></li>
+      <li><strong>Hygiene bag</strong> (+ Oral Care) · <strong>6A folder</strong> · Rules of Behavior · <strong>Behavioral Agreement signed → unit clerk</strong></li>
+      <li><strong>2 staff skin check + hazardous-items search</strong> (under underwear &amp; socks) · clothes washed · white bag + valuables envelope up · extras to baggage · <strong>not on roster → call AOD</strong></li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <div class="notehd"><span class="notenum">Note 1</span><h2>VAAES Mental Health NSG Admission Screen</h2><span class="open">CPRS → Notes tab → New Note → search <strong>“Admission Screen”</strong> · open first · work top to bottom</span></div>
+    <div class="ticks">
+      <div class="tick"><span class="box"></span><span><span class="tn">1</span>Allergy/ADR Review (MRT5)</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">10</span>Pain Assessment (DVPRS)</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">19</span>Risk &amp; Protective Factors</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">2</span>Medication Review (MRR1)</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">11</span>Morse Fall Scale &amp; TIPS</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">20</span>Violence Risk Screen</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">3</span>General Information</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">12</span>Advance Directive</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">21</span>Violence/Abuse Pre-Screen</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">4</span>Admission/Commitment Status</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">13</span>Legal Issues</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">22</span>Stressors &amp; Support</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">5</span>Visitor Information</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">14</span>Infectious Disease Risk</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">23</span>Strengths &amp; Abilities</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">6</span>Environmental Safety Mgmt</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">15</span>Nutrition + Food Insecurity</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">24</span>Restraint/Seclusion Safety</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">7</span>Items at Bedside</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">16</span>Spirituality</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">25</span>TBI History</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">8</span>Activities of Daily Living</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">17</span>Risk Screenings (Alc/Tob/Sub)</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">26</span>Educational Needs/Style</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">9</span>Functional &amp; Sleep</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">18</span>Suicide Screen (C-SSRS ≤ 24 h)</span></div>
+      <div class="tick"><span class="box"></span><span><span class="tn">27</span>Anticipated Discharge Needs</span></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="notehd"><span class="notenum">Note 2</span><h2>Nursing Acute Care Admission Data Base</h2><span class="open">New Note → search <strong>“Acute Care”</strong> · chief complaint = the blurb</span></div>
+    <div class="ticks">
+      <div class="tick"><span class="box"></span><span>Header — vitals auto-pull</span></div>
+      <div class="tick"><span class="box"></span><span>Respiratory</span></div>
+      <div class="tick"><span class="box"></span><span>Psychosocial</span></div>
+      <div class="tick"><span class="box"></span><span>Arrival · handoff · NOK</span></div>
+      <div class="tick"><span class="box"></span><span>Cardiovascular</span></div>
+      <div class="tick"><span class="box"></span><span>Skin + Braden Scale</span></div>
+      <div class="tick"><span class="box"></span><span>Appearance · main concern</span></div>
+      <div class="tick"><span class="box"></span><span>Musculoskeletal</span></div>
+      <div class="tick"><span class="box"></span><span>IV Sites / Infusions</span></div>
+      <div class="tick"><span class="box"></span><span>Neuro</span></div>
+      <div class="tick"><span class="box"></span><span>GI</span></div>
+      <div class="tick"><span class="box"></span><span>Organ Donor</span></div>
+      <div class="tick"><span class="box"></span><span>EENT</span></div>
+      <div class="tick"><span class="box"></span><span>GU</span></div>
+      <div class="tick"><span class="box"></span><span>Disposition of Belongings</span></div>
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="notehd"><span class="notenum">Note 3</span><h2>Behavioral Agreement Note</h2><span class="open">one entry only</span></div>
+    <ul>
+      <li>Under <strong>“Signed Agreement:”</strong> — Veteran <strong>reviewed</strong> the agreement · <strong>denied questions/concerns</strong> · <strong>verbalized understanding</strong> · <strong>signed</strong></li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <div class="notehd"><span class="notenum">Note 4</span><h2>Patient Education</h2><span class="open">standard text for note</span></div>
+    <ul>
+      <li><strong>Tour of the unit</strong> · <strong>Welcome to 6A packet + Recovery handout</strong> given and discussed · told to <strong>notify staff of any changes, concerns, or questions</strong></li>
+      <li><strong>Universal fall precaution education</strong> done · Veteran <strong>verbalized good understanding</strong></li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <div class="notehd"><span class="notenum">Note 5</span><h2>VAAES Skin Inspection/Assessment</h2><span class="open">from the 2-staff inspection · cosign</span></div>
+    <ul>
+      <li><strong>Inspection:</strong> skin color · temperature · moisture · turgor — completed <strong>with a second RN</strong></li>
+      <li><strong>Braden:</strong> Sensory · Moisture · Activity · Mobility · Nutrition · Friction/Shear → <strong>total + risk statement</strong> · <strong>Interventions:</strong> needed / not needed · <strong>Skin integrity</strong></li>
+      <li><strong>Close with:</strong> hazardous items <strong>found / none found</strong> during the skin assessment</li>
+    </ul>
+  </div>
+
+  <div class="strip finish">
+    <div class="lbl">Finish</div>
+    <ul>
+      <li><strong>Mental Health Suite — Care Plan:</strong> New Plan – Profile · 1 problem · 1 goal (their words) · 1 objective · 4+ interventions, daily</li>
+      <li><strong>Blurb:</strong> synopsis in Word → <strong>print → tape on NOK</strong></li>
+      <li><strong>Verify orders</strong> + <strong>VISTA Kardex E, E</strong> (DX · allergies · diet · advance directive · flags · CIWA/COWS · finger sticks · 1:1)</li>
+      <li><strong>Reminders:</strong> COVID reminder complete · PHQ-9 / Columbia done if due</li>
+    </ul>
+  </div>
+
+  <footer>Mini Intake · 6A Mental Health Unit · October 2026 — the full and short Intake Procedures guides carry the detail behind every line.</footer>
+
+</div>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('gd-themebtn');if(!b)return;function paint(){b.textContent=r.classList.contains('dark')?'☀️ Light':'🌙 Dark';}try{if(localStorage.getItem('gd-theme')==='dark'){r.classList.add('dark');}}catch(e){}b.addEventListener('click',function(){r.classList.toggle('dark');try{localStorage.setItem('gd-theme',r.classList.contains('dark')?'dark':'light');}catch(e){}paint();});paint();})();
+</script>
+</body>
+</html>

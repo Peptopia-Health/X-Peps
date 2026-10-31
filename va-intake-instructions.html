@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intake Procedures — Short Guide · 6A Mental Health Unit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2430; --muted:#5b6675; --orange:#ea580c; --orange-soft:#fff3e8;
+    --card:#ffffff; --line:#e6e2da; --bg:#faf7f1; --accent:#7c3aed;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background:var(--bg); color:var(--ink);
+    padding:26px 18px 44px; line-height:1.36;
+  }
+  .wrap{max-width:700px; margin:0 auto;}
+  header{margin-bottom:10px;}
+  .kicker{
+    display:inline-block; font-family:"Outfit",sans-serif; font-weight:700;
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--orange); background:var(--orange-soft);
+    padding:5px 12px; border-radius:999px; margin-bottom:7px;
+  }
+  h1{
+    font-family:"Outfit",sans-serif; font-weight:800; color:var(--orange);
+    font-size:26px; line-height:1.12; letter-spacing:-.01em;
+  }
+  .sub{color:var(--muted); font-size:13.5px; margin-top:5px;}
+  .first{
+    background:#fdf4ff; border:1.5px solid #e9d5ff; border-radius:12px;
+    padding:8px 12px; margin:10px 0 2px;
+  }
+  .first .lbl{
+    font-family:"Outfit",sans-serif; font-weight:700; font-size:11.5px;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:3px;
+  }
+  .first p{font-size:12.8px;}
+  .group{
+    font-family:"Outfit",sans-serif; font-weight:800; font-size:15px;
+    color:var(--orange); margin:11px 0 5px; letter-spacing:.01em;
+  }
+  .group .gn{color:var(--muted); font-weight:700; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; margin-right:8px;}
+  .steps{display:flex; flex-direction:column; gap:5px;}
+  .step{
+    background:var(--card); border:1.5px solid var(--line); border-radius:11px;
+    padding:5px 11px; display:flex; gap:10px; align-items:flex-start;
+    box-shadow:0 1px 3px rgba(28,36,48,.05);
+  }
+  .num{
+    flex:0 0 auto; width:24px; height:24px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #ffd9bd, var(--orange) 55%, #c2410c);
+    border:2px solid #9a3412; color:#fff;
+    font-family:"Outfit",sans-serif; font-weight:800; font-size:12px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+    box-shadow:inset 0 1px 2px rgba(255,255,255,.8), 0 2px 4px rgba(0,0,0,.25);
+  }
+  .step p{color:var(--muted); font-size:12.8px;}
+  .step p strong{color:var(--ink);}
+  .path{
+    display:inline-block; font-weight:700; color:var(--ink);
+    background:var(--orange-soft); border-radius:6px; padding:0 7px; font-size:12.5px;
+  }
+  .result{
+    margin-top:11px; background:#f0fdf4; border:1.5px solid #bbf7d0;
+    border-radius:12px; padding:8px 12px;
+  }
+  .result .lbl{
+    font-family:"Outfit",sans-serif; font-weight:700; font-size:11.5px;
+    letter-spacing:.12em; text-transform:uppercase; color:#16a34a; margin-bottom:3px;
+  }
+  .result p{font-size:12.8px;}
+  footer{
+    margin-top:12px; text-align:center; color:var(--muted); font-size:12px;
+  }
+  @page{size:Letter; margin:0.45in 0.5in;}
+  @media print{
+    html,body{background:#fff !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    body{padding:0;}
+    .step,.first,.result{break-inside:avoid; box-shadow:none;}
+    .group{break-after:avoid;}
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+  /* GUIDE STANDARD: toolbar, dark theme, optimized print */
+  .gd-tools{position:fixed; top:12px; right:12px; z-index:9999; display:flex; gap:8px;}
+  .gd-tools button{font-family:"Outfit",sans-serif; font-weight:700; font-size:13.5px; padding:7px 14px; border-radius:999px; border:2px solid #0d1b34; background:#ffffff; color:#0d1b34; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.20);}
+  .gd-tools button:hover{background:#ffedd5;}
+  html.dark{ --ink:#ece7db; --muted:#a9b2c1; --card:#1b2334; --line:#33405a; --bg:#101623; --orange-soft:#3a2415; }
+  html.dark .first{ background:#241a38; border-color:#4c3577; }
+  html.dark .result{ background:#17301f; border-color:#2c5c3a; }
+  @media print{
+    .gd-tools{display:none !important;}
+    p,li{orphans:3; widows:3;}
+  }
+</style>
+</head>
+<body>
+<div class="gd-tools"><button type="button" id="gd-themebtn" title="Switch light / dark theme">🌙 Dark</button><button type="button" onclick="window.print()" title="Print or save as PDF">🖨 Print</button></div>
+<div class="wrap">
+
+  <header>
+    <span class="kicker">Short Guide · 6A Mental Health Unit</span>
+    <h1>Intake Procedures</h1>
+    <p class="sub">The admission as a straight workflow — before the patient arrives, on arrival, then the five CPRS notes in the order they run, and the finish.</p>
+  </header>
+
+  <div class="first">
+    <div class="lbl">Before You Start</div>
+    <p>On off tours (4:30 PM – 8 AM and weekends), <strong>rescue meds — PO &amp; IM — must be in place before the patient can enter the unit</strong>. Detox admissions: CIWA order with Ativan 1 mg &amp; 2 mg, PO &amp; IM; opioids — COWS with Bentyl, Zofran, Clonidine.</p>
+  </div>
+
+  <div class="group"><span class="gn">Phase 1</span>Before the patient arrives</div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><p>Consent signed; <strong>admission orders in CPRS, including rescue meds</strong>; CSRE completed by Social Work or provider; <strong>COVID test negative</strong>.</p></div>
+    <div class="step"><div class="num">2</div><p>Check ED vitals and labs. <strong>Alcohol admissions: BAL must be 299 or below</strong> — above that goes medical, or fluids and a redraw at 299 or below.</p></div>
+    <div class="step"><div class="num">3</div><p>Note equipment needs: CPAP, prosthetics, walker or wheelchair, fall risk, medical bed.</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Phase 2</span>On arrival</div>
+  <div class="steps">
+    <div class="step"><div class="num">4</div><p>ED calls — go down, <strong>get report from the ED nurse</strong>, evaluate the Veteran. The <strong>IV comes out</strong>. ED staff accompany you and the Veteran up to the unit.</p></div>
+    <div class="step"><div class="num">5</div><p>Take <strong>vitals with height and weight</strong>. <strong>Issue a BP cuff</strong> and <strong>write their name + room number</strong> on it as you take the initial vitals.</p></div>
+    <div class="step"><div class="num">6</div><p><strong>Issue the hygiene bag and explain its purpose</strong> — cover <strong>Oral Care</strong>, a required intake education item. Give them a <strong>6A folder</strong> and cover the <strong>Rules of Behavior</strong>.</p></div>
+    <div class="step"><div class="num">7</div><p><strong>Two 6A staff (at least one RN)</strong> do the skin assessment and hazardous-items search — check <strong>under underwear and socks</strong>; the patient changes clothes and <strong>their clothes get washed</strong>. Street clothes come up in the <strong>white plastic bag</strong>, valuables in the <strong>manila envelope</strong>; extras go to <strong>baggage</strong>.</p></div>
+    <div class="step"><div class="num">8</div><p>Have the patient <strong>sign the Behavioral Agreement</strong> form and <strong>turn it in to the unit clerk</strong>. Not on the 6A roster? <strong>Call the AOD</strong> before settling them.</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Note 1</span>VAAES Mental Health NSG Admission Screen — open first</div>
+  <div class="steps">
+    <div class="step"><div class="num">9</div><p>In CPRS, on the <strong>Notes tab</strong>: go to <strong>New Note</strong>, search <span class="path">Admission Screen</span>, and open the <strong>“VAAES MENTAL HEALTH NSG ADMISSION SCREEN”</strong>. Work it top to bottom — it starts with the <strong>Allergy/ADR Review</strong> and <strong>Medication Review</strong>, then General Information through <strong>Anticipated Discharge Needs</strong> (27 sections).</p></div>
+    <div class="step"><div class="num">10</div><p>Confirm the <strong>C-SSRS was completed within 24 hours</strong> prior to admission. Facility transfers: do the <strong>Columbia on this note</strong> and let Social Work know. Do <strong>PHQ-9 / Columbia if due</strong> in Clinical Reminders, and complete the <strong>COVID reminder</strong>.</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Note 2</span>Nursing Acute Care Admission Data Base</div>
+  <div class="steps">
+    <div class="step"><div class="num">11</div><p>Back to <strong>New Note</strong>, search <span class="path">Acute Care</span>, and open the <strong>“NURSING ACUTE CARE ADMISSION DATABASE, [patient name]”</strong> note. Header vitals auto-pull; then arrival mode, handoff, emergency contact and <strong>Primary Next of Kin</strong>; overall appearance; the <strong>main concern in the patient's words</strong> — use the <strong>chief complaint as the blurb</strong>.</p></div>
+    <div class="step"><div class="num">12</div><p>Work the <strong>systems assessment in order</strong>: Neuro → EENT → Respiratory → Cardiovascular → Musculoskeletal → GI → GU → Psychosocial → <strong>Skin with the Braden Scale</strong> → IV sites/infusions. Close the note with <strong>Organ Donor</strong> and <strong>Disposition of Belongings</strong>.</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Note 3</span>Behavioral Agreement Note</div>
+  <div class="steps">
+    <div class="step"><div class="num">13</div><p>Chart the one entry under <strong>“Signed Agreement:”</strong> — Veteran <strong>reviewed</strong> the behavioral agreement, <strong>denied questions/concerns</strong>, <strong>verbalized understanding</strong>, and <strong>signed</strong> the agreement (the paper form was signed at Step 8 and filed with the unit clerk).</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Note 4</span>Patient Education</div>
+  <div class="steps">
+    <div class="step"><div class="num">14</div><p>Chart the note's standard text: <strong>tour of the unit</strong> given; <strong>Welcome to 6A unit packet and Recovery handout</strong> given and <strong>discussed</strong>; patient told to <strong>notify staff of any changes, concerns, or questions</strong>; <strong>universal fall precaution education</strong> done; Veteran <strong>verbalized good understanding</strong>. (Oral Care was covered at Step 6.)</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Note 5</span>VAAES Skin Inspection/Assessment</div>
+  <div class="steps">
+    <div class="step"><div class="num">15</div><p>Chart from the two-staff inspection (Step 7): <strong>skin color, temperature, moisture, turgor</strong>; the <strong>Braden Skin Assessment</strong> — six subscales, total score and risk statement; <strong>interventions</strong> (needed / not needed); <strong>skin integrity</strong>. Close with the line: <strong>hazardous items found / none found</strong> during the skin assessment completed with another RN — <strong>cosign</strong>.</p></div>
+  </div>
+
+  <div class="group"><span class="gn">Finish</span>Mental Health Suite, blurb, Kardex</div>
+  <div class="steps">
+    <div class="step"><div class="num">16</div><p><strong>Mental Health Suite — Care Plan:</strong> select <strong>New Plan – Profile</strong> and build by section: <strong>1 problem</strong> (nursing focused), <strong>1 goal</strong> in their own words, <strong>1 objective</strong>, and <strong>4 or more nursing interventions</strong>, addressed daily.</p></div>
+    <div class="step"><div class="num">17</div><p><strong>The blurb — switch to Word, print, tape:</strong> write the synopsis of the presentation and precipitants <strong>in Microsoft Word</strong>, <strong>print it</strong>, and <strong>tape it on NOK</strong>.</p></div>
+    <div class="step"><div class="num">18</div><p><strong>Verify orders — and the Kardex:</strong> verify the orders (sometimes the charge nurse does this). Then in <strong>VISTA Kardex: press E for Edit, then E again</strong> — check Admitting DX, Allergies, Diet, Advance Directive, <strong>*** and Flags, CIWAs, COWS, finger sticks, anything unusual, 1:1</strong>.</p></div>
+  </div>
+
+  <div class="result">
+    <div class="lbl">What You Get</div>
+    <p>A complete admission: all five CPRS notes charted in order, Care Plan live in the Mental Health Suite, Behavioral Agreement signed and filed, belongings accounted for, blurb taped, and the Kardex current.</p>
+  </div>
+
+  <footer>Intake Procedures — Short Guide · 6A Mental Health Unit · October 2026</footer>
+
+</div>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('gd-themebtn');if(!b)return;function paint(){b.textContent=r.classList.contains('dark')?'☀️ Light':'🌙 Dark';}try{if(localStorage.getItem('gd-theme')==='dark'){r.classList.add('dark');}}catch(e){}b.addEventListener('click',function(){r.classList.toggle('dark');try{localStorage.setItem('gd-theme',r.classList.contains('dark')?'dark':'light');}catch(e){}paint();});paint();})();
+</script>
+</body>
+</html>
