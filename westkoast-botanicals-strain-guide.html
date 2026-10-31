@@ -1159,7 +1159,7 @@ document.addEventListener('DOMContentLoaded',function(){
     while(wrap.nextSibling){
       var nx=wrap.nextSibling;
       if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'||nx.id==='wkQuickPick'))break;
-      if(isVein&&!(nx.nodeType===1&&nx.classList.contains('strain'))){nx.classList.add('wk-lead');band.parentNode.insertBefore(nx,wrap);continue;}
+      if(isVein&&nx.nodeType===1&&!nx.classList.contains('strain')){nx.classList.add('wk-lead');band.parentNode.insertBefore(nx,wrap);continue;}
       wrap.appendChild(nx);
     }
     band._wcWrap=wrap;wrap._wcBand=band;
