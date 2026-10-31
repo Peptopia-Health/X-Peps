@@ -281,31 +281,164 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 .oos{display:inline-block;background:#f7e8e4;color:#7e241a;border:1px solid #e3b7ae;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
 .avail{display:inline-block;background:#e6f2ea;color:#1E4D3B;border:1px solid #bfe0c9;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
 @media print{.wc-stat,.wc-card{break-inside:avoid}}
+/* ================= v2 overhaul (David, Oct 30) ================= */
+.colorband{padding-right:124px}
+.colorband p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:none;font-size:clamp(.7rem,2.5vw,.97rem)}
+.colorband .bigicon{opacity:1;font-size:39px;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:2px solid #0d2c1e;border-radius:50%;width:76px;height:76px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 10px rgba(0,0,0,.35);cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
+.colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.96);box-shadow:inset 0 2px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.3)}
+@media print{.wcsec{display:block!important}.colorband .bigicon{display:none!important}html.dark body{color:#2e2a24}}
+.idx-btn{cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 10px rgba(0,0,0,.3);transition:transform .07s ease,box-shadow .07s ease}
+.idx-btn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.3)}
+.wc-toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-bottom:8px}
+.wc-toprow .kicker{margin:0;text-align:left}
+.wc-topbtns{display:flex;gap:8px;align-items:center;flex:none}
+.wc-tbtn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:999px;border:2px solid #1E4D3B;background:#F7F4EC;color:#1E4D3B;font:700 .78rem/1 'Outfit',system-ui,sans-serif;letter-spacing:.03em;box-shadow:0 2px 5px rgba(30,77,59,.25);cursor:pointer;white-space:nowrap}
+button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(30,77,59,.3)}
+.wc-tbtn.static{cursor:default}
+.panel .phead{padding:5px 10px;font-size:20px}
+.panel .pbody{padding:10px 12px 0}
+.pfoot{padding:0 14px 9px}
+.panel a.golink{color:#fff;padding:10px}
+.p-white a.golink{background:#7cb342}.p-green a.golink{background:#26a69a}.p-yellow a.golink{background:#d4a017}.p-red a.golink{background:#c62828}
+.batch{font-size:12px;font-weight:700;color:#1E4D3B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #1E4D3B;padding:4px 13px;border-radius:999px;white-space:nowrap;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.22);text-decoration:none;display:inline-block}
+a.batch:active{transform:translateY(1px)}
+.wc-batchbtn{display:inline-block;font:700 .86em/1.4 'Outfit',system-ui,sans-serif;color:#1E4D3B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #1E4D3B;border-radius:999px;padding:0 10px;margin:0 1px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.2);text-decoration:none;white-space:nowrap}
+.wc-batchbtn:active{transform:translateY(1px)}
+.wc-ref{font-weight:800;color:#1E4D3B}
+.qinline{font-style:italic;background:#EFEBFA;padding:0 4px;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.quote{background:#EFEBFA}
+.wc-howlist{margin:8px 0 4px;padding-left:20px;text-align:left}
+.wc-howlist li{margin:7px 0}
+.wc-howlist b{color:#1E4D3B}
+.wc-vhead{display:flex;align-items:center;gap:10px;margin:20px 0 4px;font:800 1.05rem 'Outfit',sans-serif;color:#1E4D3B}
+.wc-vhead i{width:16px;height:16px;border-radius:50%;display:inline-block;border:2px solid rgba(0,0,0,.25);flex:none}
+.wc-idxbrand{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);text-align:center}
+.wc-idxbrand img.logo{width:118px;height:118px;border-radius:50%}
+.wc-socials{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.wc-socials a{width:36px;height:36px;border-radius:8px;background:#111;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px rgba(0,0,0,.3)}
+.wc-socials svg{width:19px;height:19px;fill:#fff}
+/* Quick Pick wheel (ported from the Admin Portal) */
+.wcqp{--card:#ffffff;--mut:#6f675a;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 14px 10px;box-shadow:0 4px 18px rgba(60,50,30,.08);margin:10px auto 4px;max-width:640px;width:100%}
+.wcqp h2{margin:0 0 2px;font-size:1.3rem;color:#EA580C;text-align:left}
+.wcqp .sub2{margin:0 0 4px;color:var(--mut);font-size:.92rem;text-align:left}
+.qp-wheel{position:relative;width:min(390px,94vw);aspect-ratio:1/1;margin:6px auto 2px}
+.qp-spoke{position:absolute;left:50%;top:50%;width:37.5%;height:2px;background:var(--line);transform-origin:0 50%;border-radius:2px}
+.qp-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:color-mix(in srgb,#2E7D4F 13%,var(--card));border:3px solid #17452A;display:flex;align-items:center;justify-content:center;font-size:58px;z-index:2;cursor:pointer;padding:0;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease}
+.qp-hub:active{transform:translate(-50%,-50%) translateY(3px) scale(.96);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
+.qp-node{position:absolute;transform:translate(-50%,-50%);width:106px;height:106px;border-radius:50%;background:color-mix(in srgb,var(--nc) 13%,var(--card));border:3px solid var(--nb,var(--nc));color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;z-index:3;padding:0;font-family:Outfit,sans-serif;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease,background .15s ease}
+.qp-node .qp-emo{font-size:29px;line-height:1}
+.qp-node small{font-size:24px;font-weight:700;letter-spacing:.03em}
+.qp-node.on{background:var(--nc);color:#fff}
+.qp-node:active{transform:translate(-50%,-50%) translateY(3px) scale(.96);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
+.qp-name{font-family:Outfit,sans-serif;font-weight:800;font-size:24px;color:#EA580C;line-height:1.15}
+.qp-meta{color:var(--mut);font-size:14px;margin:2px 0 6px}
+.qp-why{font-size:15px;margin:0 0 6px}
+.qp-bars{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0}
+.qp-bar{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--mut)}
+.qp-dots{display:flex;gap:3px;margin-top:3px}
+.qp-dots i{width:14px;height:8px;border-radius:3px;display:block}
+.qp-runner{font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
+.qp-runner b{color:var(--ink)}
+.qp-note{font-size:12px;color:var(--mut);margin:10px 0 4px}
+.qp-dual{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;text-align:left}
+@media (max-width:560px){.qp-dual{grid-template-columns:1fr}.qp-node{width:92px;height:92px}.qp-node small{font-size:20px}}
+.qp-pick{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card)}
+.qp-tag{font-family:Outfit,sans-serif;font-weight:800;font-size:12px;letter-spacing:.06em;color:#EA580C;text-transform:uppercase;margin-bottom:4px}
+.qp-tag.rot{color:#2E7D4F}
+.qp-pick .qp-name{font-size:21px}
+.qp-rotwhy{font-size:13px;color:var(--mut);margin:4px 0 0}
+.qp-take{margin-top:8px;font-family:Outfit,sans-serif;font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;border:2px solid var(--ink);background:color-mix(in srgb,#F59E0B 16%,var(--card));color:var(--ink);cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.6),inset 0 -3px 5px rgba(0,0,0,.12),0 3px 6px rgba(0,0,0,.2);transition:transform .07s ease,box-shadow .07s ease}
+.qp-take.rot{background:color-mix(in srgb,#2E7D4F 16%,var(--card))}
+.qp-take:active{transform:translateY(2px) scale(.97);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
+.qp-logged{font-size:14px;font-weight:700;color:#2E7D4F;margin-top:8px}
+.wc-spec{position:relative;border:1px solid var(--line);border-radius:12px;padding:12px 14px 8px;background:linear-gradient(90deg,rgba(176,58,58,.10),rgba(232,135,58,.10),rgba(245,158,11,.10),rgba(46,125,79,.10));margin:14px 0 4px}
+.wc-shead{display:flex;justify-content:space-between;font:700 .78rem 'Outfit',sans-serif;color:var(--muted);margin-bottom:6px}
+.wc-lane{position:relative;height:28px;border-top:1px solid var(--line)}
+.wc-lane>span{position:absolute;left:0;top:50%;transform:translateY(-50%);font:700 .72rem 'Outfit',sans-serif;letter-spacing:.04em}
+.wc-track{position:absolute;left:70px;right:4px;top:0;bottom:0}
+.wc-dot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2.5px solid;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);z-index:1}
+.wc-dot:hover{z-index:3;transform:translate(-50%,-50%) scale(1.25)}
+.wc-specnote{font-size:.8rem;color:var(--muted);margin:6px 0 2px}
+html.dark .wc-dot{background:#1C211C}
+/* dark theme */
+html.dark{--paper:#131711;--paper2:#1D231C;--ink:#EDEAE0;--muted:#ABA291;--line:#3C463A;--accent:#7FB069}
+html.dark body{background:var(--paper);color:var(--ink)}
+html.dark .index,html.dark .panel,html.dark .wc-card,html.dark .wc-stat,html.dark .wc-table,html.dark .strain,html.dark table{background:#1C211C;color:var(--ink)}
+html.dark .wc-table td{border-color:var(--line)}
+html.dark .titlepage{background:radial-gradient(1200px 600px at 50% -10%,#1E3325 0%,var(--paper) 72%)}
+html.dark .titlepage h1{color:#E9F3E4}
+html.dark .peffects{color:#EDEAE0}
+html.dark .pfoot{color:#CFC9B8}
+html.dark .quote{background:#2A2440;color:#D8D2F0;border-left-color:#6A4C93}
+html.dark .qinline{background:#2A2440;color:#D8D2F0}
+html.dark .wc-tbtn{background:#1C211C;color:#E9F3E4;border-color:#7FB069}
+html.dark .wc-card h4,html.dark .wc-howlist b{color:#9CC7A8}
+html.dark .wc-vhead{color:#9CC7A8}
+html.dark .wc-ref{color:#9CC7A8}
+html.dark .wcqp{--card:#1C211C;--mut:#ABA291}
+html.dark .strain-head h3{color:#EDEAE0}
+
 </style>
 </head>
 <body id="top">
-<header class="peptopia-hdr">
-<a class="peptopia-brand" href="https://x-peps.com/">
-<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
-<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
-</a>
-<nav class="peptopia-nav" aria-label="Site">
-<a href="https://x-peps.com/">HOME</a>
-<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
-<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
-<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
-</nav>
-</header>
+<style>
+.qp-wheel{width:min(262px,94vw)}
+.qp-hub{width:58px;height:58px;font-size:38px}
+.qp-node{width:72px;height:72px}
+.qp-node .qp-emo{font-size:1.3rem;line-height:1.05}
+.qp-node small{font-size:.62rem}
+.wc-return{text-align:right;margin:2px 0 10px}
+.wc-return a{font:700 .8rem 'Outfit',sans-serif;color:#1E4D3B;text-decoration:none;border:1.5px solid #1E4D3B;border-radius:999px;padding:3px 10px;background:#fff}
+.wc-gate-lock{border:2px solid #1E4D3B;border-radius:12px;padding:18px;text-align:center}
+.wc-labmodal{position:fixed;inset:0;background:rgba(10,20,14,.66);z-index:10000;display:flex;align-items:center;justify-content:center}
+.wc-labmodal[hidden]{display:none}
+.wc-labbox{background:#fff;width:min(860px,94vw);height:min(86vh,900px);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 18px 60px rgba(0,0,0,.5)}
+.wc-labbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:#1E4D3B;color:#F7F4EC;font:700 .9rem 'Outfit',sans-serif}
+.wc-labbar a{color:#F7F4EC;margin-right:12px}
+.wc-labbar button{background:#F7F4EC;border:none;border-radius:8px;width:32px;height:32px;font-size:1rem;cursor:pointer}
+.wc-labbox iframe{flex:1;border:none;width:100%}
+table.wc-sortable th.sortable{cursor:pointer;user-select:none}
+table.wc-sortable th.sortable::after{content:' ⇅';opacity:.55;font-size:.85em}
+table.wc-sortable th.sortable[data-dir="desc"]::after{content:' ▼';opacity:1}
+table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
+.batchgrp{margin:0 0 22px}
+.batchgrp h3{font-family:Outfit,sans-serif;color:#1E4D3B;margin:14px 0 6px}
+.colorband{cursor:pointer}
+@media print{.wc-gate-body{display:block!important}.wc-gate-lock{display:none!important}.wc-labmodal{display:none!important}.wc-return{display:none!important}}
+</style>
+<div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="labClose" aria-label="Close lab report">✕</button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
 <a class="toc-top" href="#top" title="Back to top">↑</a>
-<button class="print-btn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
 <div class="wrap">
+
 <!-- ================= TITLE PAGE ================= -->
-<div class="titlepage">
-  <div class="wc-datepill">October 2026</div>
-  <div class="kicker">Independent Customer Research</div>
+<div class="titlepage" id="top">
+  <div class="wc-toprow">
+    <div class="kicker">Independent Customer Research</div>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 October 2026</span>
+      <button type="button" class="wc-tbtn" id="wcThemeBtn" title="Switch light / dark theme">🌙 Theme</button>
+      <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
+    </div>
+  </div>
   <h1>Wildcraft Herb Company</h1>
   <div class="subtitle">Complete Strain Guide</div>
-  <p class="sub">The WildCraft lineup from a family-run, craft Kratom house.</p>
+  
+<div class="wcqp">
+  <h2>🌿 Kratom Quick Pick</h2>
+  <p class="sub2">Tap How You Feel — Get the Pick · WildCraft Strains Only</p>
+  <div class="qp-wheel" id="qpWheel">
+    <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
+    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel">🌿</button>
+    <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:#F59E0B;--nb:#B45309"><span class="qp-emo">⚡</span><small>Energy</small></button>
+    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:#5BA3D9;--nb:#2F6DA3"><span class="qp-emo">🎯</span><small>Focus</small></button>
+    <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:#2E7D4F;--nb:#17452A"><span class="qp-emo">🧡</span><small>Mood</small></button>
+    <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:#6366F1;--nb:#4338CA"><span class="qp-emo">😴</span><small>Sleep</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:#B03A3A;--nb:#7A2222"><span class="qp-emo">🩹</span><small>Relief</small></button>
+    <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:#E8873A;--nb:#A85A12"><span class="qp-emo">😌</span><small>Calm</small></button>
+  </div>
+  <div id="qpResult"><p class="qp-note">Tap a feeling — the wheel reads all 30 WildCraft strains in this guide and shows the winner plus a rotation pick.</p></div>
+</div>
+
   <div class="badges">
     <a class="pill" href="#co-premium">⭐ Premium Select</a><a class="pill" href="#co-signature">🌿 OG Wild</a>
     <a class="pill" href="#co-garden">🏡 Private Garden</a><a class="pill" href="#blends">🟣 House Blends</a>
@@ -315,37 +448,40 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 <!-- ================= INDEX ================= -->
 <div class="index">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📖</span> Index <span class="idx-hint">— tap the book to open</span></h2>
+  <h2><button type="button" class="icobtn idx-btn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B" title="Open the index">📖</button> Index <span class="idx-hint">— tap the book to open</span></h2>
   <ol>
-    <li><a href="#howto">How to use this guide &amp; the color map</a></li>
+    <li><a href="#howto">How to Use This Guide &amp; the Color Map</a></li>
     <li><a href="#science">Vein Color Feedback</a></li>
-    <li><a href="#company">The company</a></li>
+    <li><a href="#company">The Company</a></li>
+    <li><a href="#catalog">Catalog Snapshot</a></li>
     <li>Strain analyses by line
       <ol>
-        <li><a href="#premium">⭐ Premium Select — the flagship line</a></li>
-        <li><a href="#signature">🌿 Signature &amp; Private Garden — the OG wild leaf</a></li>
-        <li><a href="#blends">🟣 House blends — the recipes buyers ask for by name</a></li>
-        <li><a href="#heritage">🟡 Heritage &amp; village leaf — vintage, Hutan &amp; ferments</a></li>
-        <li><a href="#thai">🇹🇭 The Thai line — a different tradition</a></li>
-        <li><a href="#cargo">📦 Cargo Line — the value door</a></li>
+        <li><a href="#premium">⭐ Premium Select — the Flagship Line</a></li>
+        <li><a href="#signature">🌿 Signature &amp; Private Garden — the OG Wild Leaf</a></li>
+        <li><a href="#blends">🟣 House Blends — Buyer Requests</a></li>
+        <li><a href="#heritage">🟡 Heritage &amp; Village Leaf — Vintage, Hutan &amp; Ferments</a></li>
+        <li><a href="#thai">🇹🇭 The Thai Line — A Different Tradition</a></li>
+        <li><a href="#cargo">📦 Cargo Line — The Value Door</a></li>
       </ol>
     </li>
-    <li><a href="#matrix">Master comparison matrix</a></li>
-    <li><a href="#coa">Alkaloid &amp; lab reference (COAs)</a></li>
-    <li><a href="#value">Price &amp; value — what the premium buys</a></li>
-    <li><a href="#voices">What buyers say — the community record</a></li>
-    <li><a href="#critique">The honest critique — where WildCraft can do better</a></li>
-    <li><a href="#ordering">Ordering, shipping &amp; policies</a></li>
-    <li><a href="#verdict">The verdict — scorecard</a></li>
-    <li><a href="#biblio">Sources &amp; bibliography</a></li>
+    <li><a href="#matrix">Master Comparison Matrix</a></li>
+    <li><a href="#batches">Batch Index — Every Batch, Strain by Strain</a></li>
+    <li><a href="#coa">Alkaloid &amp; Lab Reference (COAs)</a></li>
+    <li><a href="#value">Price &amp; Value — What the Premium Buys</a></li>
+    <li><a href="#voices">What Buyers Say — The Community Record</a></li>
+    <li><a href="#critique">The Honest Critique — Where WildCraft Can Do Better</a></li>
+    <li><a href="#ordering">Ordering, Shipping &amp; Policies</a></li>
+    <li><a href="#verdict">The Verdict — Scorecard</a></li>
+    <li><a href="#biblio">Sources &amp; Bibliography</a></li>
   </ol>
+  </div>
 </div>
 
 <!-- ================= HOW TO USE ================= -->
 <div class="colorband band-neutral" id="howto">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧭</span> How to use this guide &amp; the color map</h2>
-  <p>Find your color below, glance at the map, then jump straight to the section that fits the moment.</p>
-  <div class="bigicon">🧭</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧭</span> How to Use This Guide &amp; the Color Map</h2>
+  <p>Find Your Color · Jump to Your Section</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧭</button>
 </div>
 <div class="legend">
   <span><i style="background:#7cb342"></i>High Energy &amp; Productivity</span>
@@ -358,38 +494,34 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 <div class="panels">
   <div class="panel p-white">
     <div class="phead">White</div>
-    <div class="pbody">
-      <svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg>
+    <div class="pbody"><a href="#strain-premium-select-white-vein" title="Jump to this vein's strains"><svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg></a>
     </div>
     <div class="peffects">⚡ Energy <b>40%</b> · 👁 Alertness <b>35%</b> · 📈 Motivation <b>25%</b></div>
-    <div class="pfoot">Best for brisk energy, clean motivation, substitute for coffee.</div>
+    <div class="pfoot">Brisk energy and clean motivation — the coffee substitute.</div>
     <a class="golink" href="#strain-premium-select-white-vein">→ Browse white strains</a>
   </div>
   <div class="panel p-green">
     <div class="phead">Green</div>
-    <div class="pbody">
-      <svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg>
+    <div class="pbody"><a href="#strain-premium-select-green-vein" title="Jump to this vein's strains"><svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg></a>
     </div>
     <div class="peffects">⚡ Energy <b>35%</b> · 😊 Mood <b>30%</b> · 🍃 Calming <b>35%</b></div>
-    <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
+    <div class="pfoot">The daily driver — clean energy, clarity, and calm in balance.</div>
     <a class="golink" href="#strain-premium-select-green-vein">→ Browse green strains</a>
   </div>
   <div class="panel p-yellow">
     <div class="phead">Yellow</div>
-    <div class="pbody">
-      <svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
+    <div class="pbody"><a href="#strain-golden-powdered-leaf-premium-select" title="Jump to this vein's strains"><svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
     </div>
     <div class="peffects">😌 Relaxation <b>45%</b> · 🤗 Warmth <b>35%</b> · ⛅ Well-Being <b>20%</b></div>
-    <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
+    <div class="pfoot">Mellow warmth and gentle ease, midday into late afternoon.</div>
     <a class="golink" href="#strain-golden-powdered-leaf-premium-select">→ Browse gold &amp; yellow strains</a>
   </div>
   <div class="panel p-red">
     <div class="phead">Red</div>
-    <div class="pbody">
-      <svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
+    <div class="pbody"><a href="#strain-premium-select-red-vein" title="Jump to this vein's strains"><svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
     </div>
     <div class="peffects">🛌 Relief <b>50%</b> · 🧘 Relaxation <b>30%</b> · 🌙 Rest <b>20%</b></div>
-    <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
+    <div class="pfoot">Deep relaxation and relief — made for winding down.</div>
     <a class="golink" href="#strain-premium-select-red-vein">→ Browse red strains</a>
   </div>
 </div>
@@ -409,24 +541,23 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   });
 });
 </script>
+<div class="wc-spec"><div class="wc-shead"><span>← Slow · Relaxing</span><span>Fast · Energizing →</span></div><div class="wc-lane"><span style="color:#9E9E9E">WHITE</span><div class="wc-track"><a class="wc-dot" href="#strain-premium-select-white-vein" style="left:73%;border-color:#9E9E9E" title="Premium Select — White Vein"></a><a class="wc-dot" href="#strain-pure-white-vein-powdered-leaf" style="left:71%;border-color:#9E9E9E" title="Pure White Vein Powdered Leaf"></a><a class="wc-dot" href="#strain-vintage-micro-white" style="left:69%;border-color:#9E9E9E" title="Vintage Micro White"></a></div></div><div class="wc-lane"><span style="color:#2E7D4F">GREEN</span><div class="wc-track"><a class="wc-dot" href="#strain-premium-select-green-vein" style="left:58%;border-color:#2E7D4F" title="Premium Select — Green Vein"></a><a class="wc-dot" href="#strain-og-wild-green" style="left:52%;border-color:#2E7D4F" title="OG Wild Green"></a><a class="wc-dot" href="#strain-pure-green-vein-powdered-leaf" style="left:54%;border-color:#2E7D4F" title="Pure Green Vein Powdered Leaf"></a><a class="wc-dot" href="#strain-private-garden-green" style="left:49%;border-color:#2E7D4F" title="Private Garden Green"></a><a class="wc-dot" href="#strain-vintage-micro-green" style="left:51%;border-color:#2E7D4F" title="Vintage Micro Green"></a><a class="wc-dot" href="#strain-hutan-village-green-batch-1016" style="left:53%;border-color:#2E7D4F" title="Hutan Village Green — Batch #1016"></a><a class="wc-dot" href="#strain-grounded-in-green-limited-release" style="left:45%;border-color:#2E7D4F" title="Grounded in Green — Limited Release"></a><a class="wc-dot" href="#strain-premium-green-thai-gv1" style="left:58%;border-color:#2E7D4F" title="Premium Green Thai GV1"></a><a class="wc-dot" href="#strain-20-year-green-thai-gv2" style="left:55%;border-color:#2E7D4F" title="20 Year Green Thai GV2"></a><a class="wc-dot" href="#strain-cargo-line-pure-green-red-white" style="left:50%;border-color:#2E7D4F" title="Cargo Line — Pure Green / Red / White"></a></div></div><div class="wc-lane"><span style="color:#D4A017">GOLD</span><div class="wc-track"><a class="wc-dot" href="#strain-golden-powdered-leaf-premium-select" style="left:34%;border-color:#D4A017" title="Golden Powdered Leaf — Premium Select"></a></div></div><div class="wc-lane"><span style="color:#B03A3A">RED</span><div class="wc-track"><a class="wc-dot" href="#strain-premium-select-red-vein" style="left:20%;border-color:#B03A3A" title="Premium Select — Red Vein"></a><a class="wc-dot" href="#strain-og-wild-red" style="left:17%;border-color:#B03A3A" title="OG Wild Red"></a><a class="wc-dot" href="#strain-pure-red-vein-powdered-leaf" style="left:20%;border-color:#B03A3A" title="Pure Red Vein Powdered Leaf"></a><a class="wc-dot" href="#strain-vintage-micro-red" style="left:22%;border-color:#B03A3A" title="Vintage Micro Red"></a><a class="wc-dot" href="#strain-rooted-in-red" style="left:19%;border-color:#B03A3A" title="Rooted in Red"></a><a class="wc-dot" href="#strain-deep-red-blend" style="left:16%;border-color:#B03A3A" title="Deep Red Blend"></a><a class="wc-dot" href="#strain-red-fermented-powdered-leaf" style="left:18%;border-color:#B03A3A" title="Red Fermented Powdered Leaf"></a><a class="wc-dot" href="#strain-thai-bentuangie-red-ferment-r1" style="left:20%;border-color:#B03A3A" title="Thai Bentuangie (Red Ferment) R1"></a></div></div><div class="wc-lane"><span style="color:#7A4C93">BLENDS</span><div class="wc-track"><a class="wc-dot" href="#strain-here-comes-the-sun-premium-select" style="left:44%;border-color:#7A4C93" title="Here Comes the Sun — Premium Select"></a><a class="wc-dot" href="#strain-breakfast-blend-premium-select" style="left:68%;border-color:#7A4C93" title="Breakfast Blend — Premium Select"></a><a class="wc-dot" href="#strain-full-spectrum-premium-select" style="left:48%;border-color:#7A4C93" title="Full Spectrum — Premium Select"></a><a class="wc-dot" href="#strain-here-comes-the-sun-blend" style="left:44%;border-color:#7A4C93" title="Here Comes the Sun Blend"></a><a class="wc-dot" href="#strain-breakfast-blend-batch-1018" style="left:66%;border-color:#7A4C93" title="Breakfast Blend — Batch #1018"></a><a class="wc-dot" href="#strain-full-spectrum-blend" style="left:48%;border-color:#7A4C93" title="Full Spectrum Blend"></a><a class="wc-dot" href="#strain-bodhisattva-blend-batch-1018" style="left:40%;border-color:#7A4C93" title="Bodhisattva Blend — Batch #1018"></a><a class="wc-dot" href="#strain-full-send-blend-batch-1016" style="left:58%;border-color:#7A4C93" title="Full Send Blend — Batch #1016"></a></div></div><p class="wc-specnote">Every strain in this guide, plotted from its own card scores (energy against calm) — the guide's synthesis. Tap a dot to jump to its card.</p></div>
 <div class="catintro">
-  <b>Reading a strain card:</b> each card opens with the strain name and its line or batch tag —
-  WildCraft works in <span class="batch" style="background:#eee;color:#333;border-color:#ccc">numbered batches</span>:
-  signature-supplier harvests carry numbers (#1005 through the current #1020), Premium Select batches carry
-  PR Select numbers, and individual lots carry MS codes (MS1021-2, MS1001-7). The icon row gives the
-  one-glance profile — 😊 mood &amp; euphoria, ⚡ energy, 🧘 relaxation, 🌙 restfulness &amp; relief, ⏳ duration.
-  Scores (0.0–5.0) reflect the evidence gathered across on-site reviews, Reddit, editorial review sites, and
-  the vendor's own published lab data: <span class="score s5">4.5+</span> elite · <span class="score s4">3.5–4.4</span> strong ·
-  <span class="score s3">2.0–3.4</span> moderate · <span class="score s2">0.5–1.9</span> subtle · — = not enough data.
-  Tap the small pie beside any strain name for its effect-profile chart. Evidence strength is stated on every
-  card — where the community record is thin, the card says so plainly.
+  <b>Reading a Strain Card</b>
+  <ul class="wc-howlist">
+    <li><b>Batch Tags</b> — every card opens with the strain name and its line or batch tag. WildCraft works in numbered batches: signature-supplier harvests carry numbers (#1005 through the current #1020), Premium Select batches carry PR Select numbers, and individual lots carry MS codes (MS1021-2, MS1001-7).</li>
+    <li><b>Icon Row</b> — the one-glance profile: 😊 mood &amp; euphoria · ⚡ energy · 🧘 relaxation · 🌙 restfulness &amp; relief · ⏳ duration.</li>
+    <li><b>Scores (0.0–5.0)</b> — evidence-weighted across on-site reviews, Reddit, editorial review sites, and the vendor's published lab data: <span class="score s5">4.5+</span> elite · <span class="score s4">3.5–4.4</span> strong · <span class="score s3">2.0–3.4</span> moderate · <span class="score s2">0.5–1.9</span> subtle · — = not enough data.</li>
+    <li><b>Effect Pies</b> — tap the small pie beside any strain name for its effect-profile chart.</li>
+    <li><b>Evidence Strength</b> — stated on every card; where the community record is thin, the card says so plainly.</li>
+  </ul>
 </div>
 
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
   <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔬</span> Vein Color Feedback</h2>
-  <p>What the community's experience shows — recorded here as fact, batch by batch.</p>
-  <div class="bigicon">🔬</div>
+  <p>Community Reports · Recorded as Fact</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔬</button>
 </div>
 <div class="catintro">
   <p>The color system is the community's own language: <span class="vw-r">reds</span> for winding down, <span class="vw-w">whites</span> for lift-off, <span class="vw-g">greens</span> for
@@ -445,9 +576,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= COMPANY ================= -->
 <div class="colorband band-neutral" id="company">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏡</span> The company</h2>
-  <p>Small-batch premium is not a slogan here; it is the entire operating model.</p>
-  <div class="bigicon">🌿</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏡</span> The Company</h2>
+  <p>Small-Batch Premium · The Whole Operating Model</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🌿</button>
 </div>
 <div class="wc-stats">
   <div class="wc-stat"><b>68</b><span>Strains on their menu</span></div>
@@ -495,10 +626,32 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 
+<div class="colorband band-neutral" id="catalog">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🛒</span> Catalog Snapshot</h2>
+  <p>The Whole Menu · One Glance</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🛒</button>
+</div>
+<table class="wc-table">
+<tr><th>Line</th><th>On the Shelf</th><th>Price Guide</th></tr>
+<tr><td>⭐ <b>Premium Select</b></td><td>PR Select 01 Green · Red · White, Golden Leaf, Breakfast Blend, Here Comes the Sun, Full Spectrum</td><td>$0.28/g at 25 g → $0.105/g by the split kilo</td></tr>
+<tr><td>🌿 <b>Signature — OG Wild</b></td><td>OG Wild Green, OG Wild Red, Pure Green / Red / White Vein Powdered Leaf</td><td>$0.36/g at 25 g → $0.12/g by the kilo</td></tr>
+<tr><td>🏡 <b>Private Garden</b></td><td>Private Garden Green (Batch PGG 01) — single-garden micro-lots</td><td>Small lots, standard-line pricing</td></tr>
+<tr><td>🟣 <b>House Blends</b></td><td>Here Comes the Sun, Breakfast Blend, Full Spectrum, Bodhisattva, Full Send</td><td>Standard-line pricing</td></tr>
+<tr><td>🟡 <b>Heritage &amp; Village</b></td><td>Vintage Micro Green / Red / White, Hutan Village Green, Rooted in Red, Deep Red, Red Fermented, Grounded in Green</td><td>Standard-line pricing</td></tr>
+<tr><td>🇹🇭 <b>Thai Line</b></td><td>Premium Green Thai GV1, 20 Year Green Thai GV2, Thai Bentuangie R1</td><td>Standard-line pricing</td></tr>
+<tr><td>📦 <b>Cargo Line</b></td><td>Pure Green / Red / White by the kilo (Batch C-002)</td><td>$65 per kilo — $0.065/g</td></tr>
+<tr><td>🎁 <b>Extras</b></td><td>Sample flights, 80 g two/three/five-bag bundles, half-kilo and full-kilo splits, pre-filled capsules in all three veins</td><td>Flights $15 · bundles $28/$40/$64</td></tr>
+</table>
+<div class="catintro">
+  <p><b>68 strains</b> stand on the menu as of October 2026 — this guide profiles the <b>30</b> with the deepest
+  record. Batches churn: numbered harvests roll forward (#1005 → #1020) and sell out, and the vendor's lab
+  page tracks what is current.</p>
+</div>
+
 <div class="colorband band-green" id="premium">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">⭐</span> Premium Select — the flagship line</h2>
-  <p>Small-batch harvests chosen for quality, freshness and consistency — and tested to prove it.</p>
-  <div class="bigicon">⭐</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">⭐</span> Premium Select — the Flagship Line</h2>
+  <p>Small-Batch Harvests · Tested to Prove It</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">⭐</button>
 </div>
 <div class="catintro"><b>Premium Select</b> is WildCraft's flagship: leaf from a premium supplier, released in numbered
   PR Select batches, with the strongest published lab numbers in the catalog — a 1.59% average mitragynine
@@ -506,7 +659,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   2026, this line carried the company — and earned its place at the top of the menu on merit.</div>
 
 <div class="strain green" id="strain-premium-select-green-vein">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 30], [&quot;calm&quot;, 22], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;mid-spec upper with long legs and a real mood lift&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — Green Vein</h3><span class="batch">PR Select 01 · Premium Select</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 30], [&quot;calm&quot;, 22], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;mid-spec upper with long legs and a real mood lift&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — Green Vein</h3><a class="batch" href="#batch-pr-select-01" title="Jump to this batch in the Batch Index">PR Select 01 · Premium Select</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.83 / 5 (6 reviews)</span> on-site · $7–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
@@ -522,7 +675,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-premium-select-red-vein">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;the Premium Select evening anchor \u2014 warm, heavy, complete&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — Red Vein</h3><span class="batch">PR Select 01 · Premium Select</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;the Premium Select evening anchor \u2014 warm, heavy, complete&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — Red Vein</h3><a class="batch" href="#batch-pr-select-01" title="Jump to this batch in the Batch Index">PR Select 01 · Premium Select</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.8</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.6</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $7–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
@@ -530,12 +683,14 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <p><b>The red of the PR Select 01 batch</b> — same premium harvest, red vein. It is also half of the Here Comes the Sun Premium Select blend, which gives a useful reference point: this is the warm, settling half of that recipe.</p>
     <h4>💬 What the community reports</h4>
     <p>A perfect 5.00 on-site rating and a 1.53% mitragynine test put it in the top tier of natural reds. Community-wide, reds testing at this level are the ones buyers describe as genuinely heavy rather than merely mild — full evening comfort with the mood warmth reds are prized for.</p>
+    <div class="quote">"So smooth and comforting. My top pick"<cite>— danielle m., customer review on the vendor's site</cite></div>
+    <div class="quote">"Bringing the physical relaxation needed after a long day of work without being too sedating."<cite>— Jeff B., customer review on the vendor's site</cite></div>
     <h4>🧪 Lab notes</h4>
     <p class="coa-note">Murray Brown Labs COA (Report 2606E84): <b>mitragynine 1.53%</b>, total alkaloids 2.28%, 7-OH &lt;0.0196%. <a class="wc-lablink" href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/07/WCHC-LABS-PR.Select01.pdf" target="_blank" rel="noopener">📄 Murray Brown report 2606E84 — PR Select 01 ↗</a></p>
   </div>
 </div>
 <div class="strain white" id="strain-premium-select-white-vein">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 38], [&quot;mood&quot;, 32], [&quot;calm&quot;, 18], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;the line&#x27;s lift-off white \u2014 clean drive at 1.53%&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — White Vein</h3><span class="batch">PR Select 01 · Premium Select</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 38], [&quot;mood&quot;, 32], [&quot;calm&quot;, 18], [&quot;relief&quot;, 12]], &quot;caption&quot;: &quot;the line&#x27;s lift-off white \u2014 clean drive at 1.53%&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Select — White Vein</h3><a class="batch" href="#batch-pr-select-01" title="Jump to this batch in the Batch Index">PR Select 01 · Premium Select</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>4.7</b></span><span>🧘 <b>2.4</b></span><span>🌙 <b>2.2</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 4.75 / 5</span> on-site · $7–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
@@ -543,12 +698,14 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <p>The white of PR Select 01, and the energy engine of the Premium Select Breakfast Blend (60/40 white/green). Whites live or die on cleanliness — lift without jitters — and a 1.53% test on fresh small-batch leaf is exactly the raw material that delivers it.</p>
     <h4>💬 What the community reports</h4>
     <p>Rated 4.75 on site. In blend form (Breakfast Blend, below) the white's drive is what buyers single out; on its own it is the catalog's purest morning option — the coffee-replacement slot in the Premium Select line.</p>
+    <div class="quote">"really good white vein gets me going has long legs on it last a long time i love wildcraft they have the best kratom"<cite>— Paul C., customer review on the vendor's site</cite></div>
+    <div class="quote">"A solid white vein. Good energy and focus. Fresh. Very satisfied with this strain."<cite>— George, customer review on the vendor's site</cite></div>
     <h4>🧪 Lab notes</h4>
     <p class="coa-note">Murray Brown Labs COA (Report 2606E84, sample -003): <b>mitragynine 1.53%</b>, total alkaloids 2.31% (also published in the vendor's own COA Quick Guide). <a class="wc-lablink" href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/07/WCHC-LABS-PR.Select01.pdf" target="_blank" rel="noopener">📄 Murray Brown report 2606E84 — PR Select 01 ↗</a></p>
   </div>
 </div>
 <div class="strain gold" id="strain-golden-powdered-leaf-premium-select">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;calm&quot;, 32], [&quot;relief&quot;, 22], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;mellow gold warmth from the premium harvest&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Golden Powdered Leaf — Premium Select</h3><span class="batch">Premium Select · Golden</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;calm&quot;, 32], [&quot;relief&quot;, 22], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;mellow gold warmth from the premium harvest&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Golden Powdered Leaf — Premium Select</h3><a class="batch" href="#batch-premium-select-golden" title="Jump to this batch in the Batch Index">Premium Select · Golden</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>2.6</b></span><span>🧘 <b>4.2</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ — (no rating yet)</span> on-site · $9–$30 · 25G / 80G / 250G<span class="avail">Listed in stock</span></p>
@@ -561,7 +718,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-here-comes-the-sun-premium-select">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 27], [&quot;energy&quot;, 20], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the sunshine blend, upgraded to Premium Select leaf&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Here Comes the Sun — Premium Select</h3><span class="batch">Premium Select Blend · 50/50 Red/Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 27], [&quot;energy&quot;, 20], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the sunshine blend, upgraded to Premium Select leaf&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Here Comes the Sun — Premium Select</h3><a class="batch" href="#batch-premium-select-blend-50-50-red-green" title="Jump to this batch in the Batch Index">Premium Select Blend · 50/50 Red/Green</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>3.2</b></span><span>🧘 <b>3.8</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$30 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -575,7 +732,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-breakfast-blend-premium-select">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 34], [&quot;mood&quot;, 34], [&quot;calm&quot;, 18], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the morning blend \u2014 white drive softened by green&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Breakfast Blend — Premium Select</h3><span class="batch">Premium Select Blend · 60/40 White/Green</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 34], [&quot;mood&quot;, 34], [&quot;calm&quot;, 18], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the morning blend \u2014 white drive softened by green&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Breakfast Blend — Premium Select</h3><a class="batch" href="#batch-premium-select-blend-60-40-white-green" title="Jump to this batch in the Batch Index">Premium Select Blend · 60/40 White/Green</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>2.4</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$30 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -588,7 +745,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-full-spectrum-premium-select">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;calm&quot;, 26], [&quot;energy&quot;, 22], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;all three veins in equal thirds \u2014 the whole spectrum at once&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Spectrum — Premium Select</h3><span class="batch">Premium Select Blend · Red/White/Green thirds</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;calm&quot;, 26], [&quot;energy&quot;, 22], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;all three veins in equal thirds \u2014 the whole spectrum at once&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Spectrum — Premium Select</h3><a class="batch" href="#batch-premium-select-blend-red-white-green-thirds" title="Jump to this batch in the Batch Index">Premium Select Blend · Red/White/Green thirds</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>3.4</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.2</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$30 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -601,9 +758,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-neutral" id="signature">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🌿</span> Signature &amp; Private Garden — the OG wild leaf</h2>
-  <p>Old trees, numbered batches, and gardens you could walk across in a minute.</p>
-  <div class="bigicon">🌿</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🌿</span> Signature &amp; Private Garden — the OG Wild Leaf</h2>
+  <p>Old Trees · Numbered Batches · Private Gardens</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🌿</button>
 </div>
 <div class="catintro">The <b>signature line</b> is the original WildCraft: numbered harvests from the signature supplier,
   including the OG Wild leaf from some of the oldest kratom trees in Borneo. Beside it sits the
@@ -611,7 +768,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   this section holds both the catalog's highest-rated powder and its most individual product.</div>
 
 <div class="strain green" id="strain-og-wild-green">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 27], [&quot;calm&quot;, 25], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the highest-rated core powder in the catalog&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>OG Wild Green</h3><span class="batch">Signature Supplier · OG Wild</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 27], [&quot;calm&quot;, 25], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the highest-rated core powder in the catalog&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>OG Wild Green</h3><a class="batch" href="#batch-signature-supplier-og-wild" title="Jump to this batch in the Batch Index">Signature Supplier · OG Wild</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>3.8</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.95 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -625,7 +782,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-og-wild-red">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 35], [&quot;relief&quot;, 31], [&quot;mood&quot;, 27], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;the red the community calls perfect&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>OG Wild Red</h3><span class="batch">Signature Supplier · OG Wild</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 35], [&quot;relief&quot;, 31], [&quot;mood&quot;, 27], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;the red the community calls perfect&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>OG Wild Red</h3><a class="batch" href="#batch-signature-supplier-og-wild" title="Jump to this batch in the Batch Index">Signature Supplier · OG Wild</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.6</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.7</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 4.88 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -639,7 +796,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain green" id="strain-pure-green-vein-powdered-leaf">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 29], [&quot;calm&quot;, 24], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the straight green \u2014 no recipe, just the leaf&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure Green Vein Powdered Leaf</h3><span class="batch">Signature Line · Pure Vein</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 29], [&quot;calm&quot;, 24], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the straight green \u2014 no recipe, just the leaf&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure Green Vein Powdered Leaf</h3><a class="batch" href="#batch-signature-line-pure-vein" title="Jump to this batch in the Batch Index">Signature Line · Pure Vein</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>3.9</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.92 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -652,7 +809,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-pure-red-vein-powdered-leaf">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;the straight red \u2014 evening comfort, unadorned&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure Red Vein Powdered Leaf</h3><span class="batch">Signature Line · Pure Vein</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;the straight red \u2014 evening comfort, unadorned&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure Red Vein Powdered Leaf</h3><a class="batch" href="#batch-signature-line-pure-vein" title="Jump to this batch in the Batch Index">Signature Line · Pure Vein</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.7</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>4.5</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 4.92 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -663,7 +820,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain white" id="strain-pure-white-vein-powdered-leaf">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 37], [&quot;mood&quot;, 32], [&quot;calm&quot;, 18], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;the straight white \u2014 clean morning drive&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure White Vein Powdered Leaf</h3><span class="batch">Signature Line · Pure Vein</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 37], [&quot;mood&quot;, 32], [&quot;calm&quot;, 18], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;the straight white \u2014 clean morning drive&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pure White Vein Powdered Leaf</h3><a class="batch" href="#batch-signature-line-pure-vein" title="Jump to this batch in the Batch Index">Signature Line · Pure Vein</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>4.6</b></span><span>🧘 <b>2.5</b></span><span>🌙 <b>2.2</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 4.93 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -674,7 +831,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain green" id="strain-private-garden-green">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;a single garden&#x27;s leaf \u2014 the most individual product in the catalog&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Private Garden Green</h3><span class="batch">Private Garden · Batch PGG 01 / MS1001</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;calm&quot;, 27], [&quot;energy&quot;, 25], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;a single garden&#x27;s leaf \u2014 the most individual product in the catalog&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Private Garden Green</h3><a class="batch" href="#batch-pgg-01" title="Jump to this batch in the Batch Index">Private Garden · Batch PGG 01 / MS1001</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.6</b></span><span>🧘 <b>3.7</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.50 / 5 (2 reviews)</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -685,13 +842,13 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="quote">"I found my new favorite leaf… So chill. I feel like I'm just melting into bliss… that combination of deep relaxation + genuine motivation is pretty special."<cite>— Austin Valentine, customer review on the vendor's site</cite></div>
     <div class="popbox star">Buy it as an experience, not a staple: by design, there is no restock of the same leaf.</div>
     <h4>🧪 Lab notes</h4>
-    <p class="coa-note">Murray Brown Labs (Report 2607E68, July 2026): <b>mitragynine 1.46%</b>, total alkaloids 2.23%; arsenic 0.262, lead 0.530, cadmium 0.0257, mercury 0.0151 mg/kg; Salmonella and STEC E. coli absent — the fullest COA in this guide. <a class="wc-lablink" href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/08/COA-and-Lab-Analysis.pdf" target="_blank" rel="noopener">📄 Murray Brown report 2607E68 — PGG 01 full panel ↗</a></p>
+    <p class="coa-note">Murray Brown Labs (Report 2607E68, July 2026): <b>mitragynine 1.46%</b>, total alkaloids 2.23%; arsenic <b>0.262</b>, lead <b>0.530</b>, cadmium <b>0.0257</b>, mercury <b>0.0151</b> mg/kg; Salmonella and STEC E. coli absent — the fullest COA in this guide. <a class="wc-lablink" href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/08/COA-and-Lab-Analysis.pdf" target="_blank" rel="noopener">📄 Murray Brown report 2607E68 — PGG 01 full panel ↗</a></p>
   </div>
 </div>
 <div class="colorband band-blend" id="blends">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟣</span> House blends — the recipes buyers ask for by name</h2>
-  <p>Transparent recipes, numbered batches, and the most debated shelf in the catalog.</p>
-  <div class="bigicon">🟣</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟣</span> House Blends — Buyer Requests</h2>
+  <p>Published Recipes · Named Batches</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🟣</button>
 </div>
 <div class="catintro">WildCraft publishes its blend recipes — <b>60/40, 50/50, equal thirds</b> — which is rarer than it should
   be, and the blends repay the honesty: they dominate community recommendation threads, where
@@ -699,7 +856,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   named, lab-tested component leaf.</div>
 
 <div class="strain blend" id="strain-here-comes-the-sun-blend">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 27], [&quot;energy&quot;, 20], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the famous one \u2014 sunshine in a bag&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Here Comes the Sun Blend</h3><span class="batch">House Blend · Signature Leaf</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 27], [&quot;energy&quot;, 20], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the famous one \u2014 sunshine in a bag&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Here Comes the Sun Blend</h3><a class="batch" href="#batch-house-blend-signature-leaf" title="Jump to this batch in the Batch Index">House Blend · Signature Leaf</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>3.2</b></span><span>🧘 <b>3.8</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.88 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -713,7 +870,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-breakfast-blend-batch-1018">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 34], [&quot;calm&quot;, 19], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the #1018 morning recipe&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Breakfast Blend — Batch #1018</h3><span class="batch">Batch #1018 · House Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 34], [&quot;calm&quot;, 19], [&quot;relief&quot;, 14]], &quot;caption&quot;: &quot;the #1018 morning recipe&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Breakfast Blend — Batch #1018</h3><a class="batch" href="#batch-1018" title="Jump to this batch in the Batch Index">Batch #1018 · House Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>2.7</b></span><span>🌙 <b>2.4</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 4.86 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -726,7 +883,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-full-spectrum-blend">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;calm&quot;, 26], [&quot;energy&quot;, 22], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;the reliable all-rounder&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Spectrum Blend</h3><span class="batch">House Blend · All Veins</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;calm&quot;, 26], [&quot;energy&quot;, 22], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;the reliable all-rounder&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Spectrum Blend</h3><a class="batch" href="#batch-house-blend-all-veins" title="Jump to this batch in the Batch Index">House Blend · All Veins</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>3.4</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.2</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.86 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -737,7 +894,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-bodhisattva-blend-batch-1018">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 29], [&quot;energy&quot;, 18], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the contemplative blend \u2014 the catalog&#x27;s quiet masterpiece&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Bodhisattva Blend — Batch #1018</h3><span class="batch">Batch #1018 · House Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;calm&quot;, 29], [&quot;energy&quot;, 18], [&quot;relief&quot;, 17]], &quot;caption&quot;: &quot;the contemplative blend \u2014 the catalog&#x27;s quiet masterpiece&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Bodhisattva Blend — Batch #1018</h3><a class="batch" href="#batch-1018" title="Jump to this batch in the Batch Index">Batch #1018 · House Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>3.0</b></span><span>🧘 <b>4.0</b></span><span>🌙 <b>3.4</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.96 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -750,7 +907,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain blend" id="strain-full-send-blend-batch-1016">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 29], [&quot;calm&quot;, 22], [&quot;relief&quot;, 16]], &quot;caption&quot;: &quot;the limited #1016 rocket \u2014 full send, no half measures&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Send Blend — Batch #1016</h3><span class="batch">Batch #1016 · Limited Supply</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 29], [&quot;calm&quot;, 22], [&quot;relief&quot;, 16]], &quot;caption&quot;: &quot;the limited #1016 rocket \u2014 full send, no half measures&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Full Send Blend — Batch #1016</h3><a class="batch" href="#batch-1016" title="Jump to this batch in the Batch Index">Batch #1016 · Limited Supply</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.2</b></span><span>🌙 <b>2.8</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -763,17 +920,22 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-gold" id="heritage">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟡</span> Heritage &amp; village leaf — vintage, Hutan &amp; ferments</h2>
-  <p>Mature micro-lots, a forest village harvest, and the traditional ferments.</p>
-  <div class="bigicon">🟡</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🟡</span> Heritage &amp; Village Leaf — Vintage, Hutan &amp; Ferments</h2>
+  <p>Vintage Lots · Village Harvests · Traditional Ferments</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🟡</button>
 </div>
-<div class="catintro">The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots of mature leaf, a green
+<div class="catintro"><div class="wc-grid">
+  <div class="wc-card"><h4>🌿 Natural Leaf</h4><p>Picked mature, dried, and milled — the baseline every other style starts from.</p></div>
+  <div class="wc-card"><h4>☀️ Sun-Cured — the Golds</h4><p>Extended sun-drying yellows the leaf and rounds it out: warmer, mellower, mid-speed.</p></div>
+  <div class="wc-card"><h4>🫙 Fermented — Bentuangie Style</h4><p>The traditional ferment deepens the reds: heavier, warmer, built for the evening.</p></div>
+</div>
+The heritage shelf is where WildCraft's range shows: <b>Vintage Micro</b> lots of mature leaf, a green
   hand-selected from a forest village with its test result published before sale, two distinct high-scoring
   house reds, a traditional ferment sold by the kilo, and a calm-forward limited green. Buyers who only know
   the Premium Select line are missing half the argument for this vendor.</div>
 
 <div class="strain green" id="strain-vintage-micro-green">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 27], [&quot;calm&quot;, 25], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;micro-lot green with a connoisseur&#x27;s following&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro Green</h3><span class="batch">Vintage Micro · Heritage</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 27], [&quot;calm&quot;, 25], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;micro-lot green with a connoisseur&#x27;s following&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro Green</h3><a class="batch" href="#batch-vintage-micro-heritage" title="Jump to this batch in the Batch Index">Vintage Micro · Heritage</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.7</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.96 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -786,7 +948,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-vintage-micro-red">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 33], [&quot;relief&quot;, 29], [&quot;mood&quot;, 29], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;the heritage red \u2014 mature leaf, deep ease&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro Red</h3><span class="batch">Vintage Micro · Heritage</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 33], [&quot;relief&quot;, 29], [&quot;mood&quot;, 29], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;the heritage red \u2014 mature leaf, deep ease&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro Red</h3><a class="batch" href="#batch-vintage-micro-heritage" title="Jump to this batch in the Batch Index">Vintage Micro · Heritage</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.8</b></span><span>🧘 <b>4.6</b></span><span>🌙 <b>4.4</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 4.82 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -797,7 +959,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain white" id="strain-vintage-micro-white">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;mood&quot;, 33], [&quot;calm&quot;, 18], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;micro-lot white at a perfect score&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro White</h3><span class="batch">Vintage Micro · Heritage</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 36], [&quot;mood&quot;, 33], [&quot;calm&quot;, 18], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;micro-lot white at a perfect score&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Vintage Micro White</h3><a class="batch" href="#batch-vintage-micro-heritage" title="Jump to this batch in the Batch Index">Vintage Micro · Heritage</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>4.5</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>2.2</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -808,7 +970,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain green" id="strain-hutan-village-green-batch-1016">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 28], [&quot;calm&quot;, 24], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;forest-village leaf with a published 1.69% test&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Hutan Village Green — Batch #1016</h3><span class="batch">Batch #1016 · Village Leaf</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;energy&quot;, 28], [&quot;calm&quot;, 24], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;forest-village leaf with a published 1.69% test&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Hutan Village Green — Batch #1016</h3><a class="batch" href="#batch-1016" title="Jump to this batch in the Batch Index">Batch #1016 · Village Leaf</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.8</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>3.0</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.74 / 5</span> on-site · $9.00 (25G shown) · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -821,7 +983,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-rooted-in-red">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;grounded, deep, dependable red comfort&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Rooted in Red</h3><span class="batch">Heritage · House Red</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;grounded, deep, dependable red comfort&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Rooted in Red</h3><a class="batch" href="#batch-heritage-house-red" title="Jump to this batch in the Batch Index">Heritage · House Red</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.7</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.6</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 4.93 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -832,7 +994,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-deep-red-blend">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 35], [&quot;relief&quot;, 31], [&quot;mood&quot;, 27], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;the deepest red \u2014 blended for maximum evening weight&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Deep Red Blend</h3><span class="batch">Heritage · House Blend</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 35], [&quot;relief&quot;, 31], [&quot;mood&quot;, 27], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;the deepest red \u2014 blended for maximum evening weight&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Deep Red Blend</h3><a class="batch" href="#batch-heritage-house-blend" title="Jump to this batch in the Batch Index">Heritage · House Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.5</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.7</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 4.91 / 5</span> on-site · $9–$35 · 5 sizes to 1000G<span class="oos">Out of stock at last check</span></p>
@@ -843,7 +1005,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-red-fermented-powdered-leaf">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;traditional ferment \u2014 the warmest presentation of red&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fermented Powdered Leaf</h3><span class="batch">Heritage · Fermented</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;traditional ferment \u2014 the warmest presentation of red&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fermented Powdered Leaf</h3><a class="batch" href="#batch-heritage-fermented" title="Jump to this batch in the Batch Index">Heritage · Fermented</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.6</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.6</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 4.90 / 5</span> on-site · $9–$115 · to 1000G<span class="oos">Out of stock at last check</span></p>
@@ -856,7 +1018,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain green" id="strain-grounded-in-green-limited-release">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;calm&quot;, 29], [&quot;energy&quot;, 23], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;the centered green \u2014 calm-forward limited release&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Grounded in Green — Limited Release</h3><span class="batch">Limited Release · Heritage</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 33], [&quot;calm&quot;, 29], [&quot;energy&quot;, 23], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;the centered green \u2014 calm-forward limited release&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Grounded in Green — Limited Release</h3><a class="batch" href="#batch-limited-release-heritage" title="Jump to this batch in the Batch Index">Limited Release · Heritage</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.4</b></span><span>🧘 <b>3.9</b></span><span>🌙 <b>3.1</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.50 / 5</span> on-site · $9–$35 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -867,9 +1029,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-white" id="thai">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🇹🇭</span> The Thai line — a different tradition</h2>
-  <p>Thai-grown leaf: coarser, grittier, rawer — and the vendor says so upfront.</p>
-  <div class="bigicon">🇹🇭</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🇹🇭</span> The Thai Line — A Different Tradition</h2>
+  <p>Thai-Grown Leaf · A Different Tradition</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🇹🇭</button>
 </div>
 <div class="catintro">Everything else in this catalog is Indonesian. The <b>Thai line</b> is a second tradition — different
   soil, different curing, a coarser grind — and WildCraft flags the difference on the product pages instead of
@@ -877,7 +1039,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   and a fermented red at a perfect score.</div>
 
 <div class="strain green" id="strain-premium-green-thai-gv1">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 30], [&quot;calm&quot;, 23], [&quot;relief&quot;, 16]], &quot;caption&quot;: &quot;the honest Thai \u2014 coarser, grittier, different&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Green Thai GV1</h3><span class="batch">Thai Line · GV1</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 30], [&quot;calm&quot;, 23], [&quot;relief&quot;, 16]], &quot;caption&quot;: &quot;the honest Thai \u2014 coarser, grittier, different&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Premium Green Thai GV1</h3><a class="batch" href="#batch-gv1" title="Jump to this batch in the Batch Index">Thai Line · GV1</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.2</b></span><span>🌙 <b>2.8</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 4.63 / 5 (8 reviews)</span> on-site · $8–$32 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -891,7 +1053,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain green" id="strain-20-year-green-thai-gv2">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;energy&quot;, 29], [&quot;calm&quot;, 24], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;old-tree Thai green \u2014 the refined second round&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>20 Year Green Thai GV2</h3><span class="batch">Thai Line · GV2</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;energy&quot;, 29], [&quot;calm&quot;, 24], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;old-tree Thai green \u2014 the refined second round&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>20 Year Green Thai GV2</h3><a class="batch" href="#batch-gv2" title="Jump to this batch in the Batch Index">Thai Line · GV2</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>3.9</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>2.9</b></span><span>⏳ 4–5h</span></div>
     <p><span class="stars">★ 4.86 / 5</span> on-site · $8–$32 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -902,7 +1064,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="strain red" id="strain-thai-bentuangie-red-ferment-r1">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;Thai bentuangie \u2014 fermented red from the other tradition&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Thai Bentuangie (Red Ferment) R1</h3><span class="batch">Thai Line · Red Ferment R1</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 34], [&quot;relief&quot;, 30], [&quot;mood&quot;, 28], [&quot;energy&quot;, 8]], &quot;caption&quot;: &quot;Thai bentuangie \u2014 fermented red from the other tradition&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Thai Bentuangie (Red Ferment) R1</h3><a class="batch" href="#batch-thai-line-red-ferment-r1" title="Jump to this batch in the Batch Index">Thai Line · Red Ferment R1</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>1.7</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>4.5</b></span><span>⏳ 4–6h</span></div>
     <p><span class="stars">★ 5.00 / 5</span> on-site · $8–$32 · 25G / 80G / 250G<span class="oos">Out of stock at last check</span></p>
@@ -913,16 +1075,16 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-neutral" id="cargo">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📦</span> Cargo Line — the value door</h2>
-  <p>Pure veins by the kilo, at half the flagship's per-gram price — labs still published.</p>
-  <div class="bigicon">📦</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📦</span> Cargo Line — The Value Door</h2>
+  <p>Pure Veins by the Kilo · Labs Published</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📦</button>
 </div>
 <div class="catintro">A craft vendor's budget line usually means quiet compromises. <b>Cargo</b> instead means bigger bags,
   pure veins, and the same habit of publishing batch labs. It is the correct first order for anyone who wants
   to test WildCraft's sourcing before paying flagship prices.</div>
 
 <div class="strain green" id="strain-cargo-line-pure-green-red-white">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;energy&quot;, 26], [&quot;calm&quot;, 25], [&quot;relief&quot;, 19]], &quot;caption&quot;: &quot;the value door \u2014 pure veins by the kilo, labs included&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Cargo Line — Pure Green / Red / White</h3><span class="batch">Cargo Line · Batch C-002</span></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;energy&quot;, 26], [&quot;calm&quot;, 25], [&quot;relief&quot;, 19]], &quot;caption&quot;: &quot;the value door \u2014 pure veins by the kilo, labs included&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Cargo Line — Pure Green / Red / White</h3><a class="batch" href="#batch-c-002" title="Jump to this batch in the Batch Index">Cargo Line · Batch C-002</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>3.6</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>3.2</b></span><span>⏳ 3–5h</span></div>
     <p><span class="stars">★ 5.00 / 5 (Green &amp; Red)</span> on-site · $11–$65 · 80G / 250G / 500G / 1000G<span class="avail">Listed in stock</span></p>
@@ -936,12 +1098,12 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </div>
 </div>
 <div class="colorband band-neutral" id="matrix">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📊</span> Master comparison matrix</h2>
-  <p>Every strain in this guide, one glance — scores are the guide's evidence-weighted synthesis.</p>
-  <div class="bigicon">📊</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📊</span> Master Comparison Matrix</h2>
+  <p>Every Strain · One Glance</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📊</button>
 </div>
-<table class="wc-table">
-<tr><th>Strain</th><th>Line</th><th>😊 Mood</th><th>⚡ Energy</th><th>🧘 Calm</th><th>🌙 Relief</th><th>★ On-site</th><th>Price</th></tr>
+<table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
 <tr><td><a href='#strain-premium-select-green-vein'><b>Premium Select — Green Vein</b></a></td><td>PR Select 01</td><td>4.6</td><td>4.2</td><td>3.4</td><td>3.0</td><td>4.83 / 5</td><td>$7–$30</td></tr>
 <tr><td><a href='#strain-premium-select-red-vein'><b>Premium Select — Red Vein</b></a></td><td>PR Select 01</td><td>4.4</td><td>1.8</td><td>4.8</td><td>4.6</td><td>5.00 / 5</td><td>$7–$30</td></tr>
 <tr><td><a href='#strain-premium-select-white-vein'><b>Premium Select — White Vein</b></a></td><td>PR Select 01</td><td>4.3</td><td>4.7</td><td>2.4</td><td>2.2</td><td>4.75 / 5</td><td>$7–$30</td></tr>
@@ -973,12 +1135,109 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <tr><td><a href='#strain-thai-bentuangie-red-ferment-r1'><b>Thai Bentuangie (Red Ferment) R1</b></a></td><td>Thai Line</td><td>4.4</td><td>1.7</td><td>4.7</td><td>4.5</td><td>5.00 / 5</td><td>$8–$32</td></tr>
 <tr><td><a href='#strain-cargo-line-pure-green-red-white'><b>Cargo Line — Pure Green / Red / White</b></a></td><td>Cargo Line</td><td>4.2</td><td>3.6</td><td>3.6</td><td>3.2</td><td>5.00 / 5 (Green &amp; Red)</td><td>$11–$65</td></tr>
 </table>
-<p class="coa-note">On-site stars are the vendor's own WooCommerce ratings (small counts on several products — see each card). Scores 0.0–5.0 synthesize community reports, editorial coverage and lab data; they are this guide's editorial synthesis, not laboratory measurements.</p>
+<p class="coa-note">Reviews stars are the vendor's own WooCommerce ratings (small counts on several products — see each card).</p>
+<div class="colorband band-neutral" id="batches">
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧪</span> Batch Index</h2>
+  <p>Every Batch · Its Strains Only</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧪</button>
+</div><div class="batchgrp"><h3 class="wc-batchhd" id="batch-pr-select-01">PR Select 01</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-premium-select-green-vein'><b>Premium Select — Green Vein</b></a></td><td>PR Select 01</td><td>4.6</td><td>4.2</td><td>3.4</td><td>3.0</td><td>4.83 / 5</td><td>$7–$30</td></tr>
+<tr><td><a href='#strain-premium-select-red-vein'><b>Premium Select — Red Vein</b></a></td><td>PR Select 01</td><td>4.4</td><td>1.8</td><td>4.8</td><td>4.6</td><td>5.00 / 5</td><td>$7–$30</td></tr>
+<tr><td><a href='#strain-premium-select-white-vein'><b>Premium Select — White Vein</b></a></td><td>PR Select 01</td><td>4.3</td><td>4.7</td><td>2.4</td><td>2.2</td><td>4.75 / 5</td><td>$7–$30</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-premium-select-golden">Premium Select · Golden</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-golden-powdered-leaf-premium-select'><b>Golden Powdered Leaf — Premium Select</b></a></td><td>Premium Select</td><td>4.2</td><td>2.6</td><td>4.2</td><td>3.4</td><td>— (no rating yet)</td><td>$9–$30</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-premium-select-blend-50-50-red-green">Premium Select Blend · 50/50 Red/Green</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-here-comes-the-sun-premium-select'><b>Here Comes the Sun — Premium Select</b></a></td><td>Premium Select Blend</td><td>4.7</td><td>3.2</td><td>3.8</td><td>3.4</td><td>5.00 / 5</td><td>$9–$30</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-premium-select-blend-60-40-white-green">Premium Select Blend · 60/40 White/Green</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-breakfast-blend-premium-select'><b>Breakfast Blend — Premium Select</b></a></td><td>Premium Select Blend</td><td>4.5</td><td>4.4</td><td>2.6</td><td>2.4</td><td>5.00 / 5</td><td>$9–$30</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-premium-select-blend-red-white-green-thirds">Premium Select Blend · Red/White/Green thirds</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-full-spectrum-premium-select'><b>Full Spectrum — Premium Select</b></a></td><td>Premium Select Blend</td><td>4.6</td><td>3.4</td><td>3.6</td><td>3.2</td><td>5.00 / 5</td><td>$9–$30</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-signature-supplier-og-wild">Signature Supplier · OG Wild</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-og-wild-green'><b>OG Wild Green</b></a></td><td>Signature Supplier</td><td>4.6</td><td>3.8</td><td>3.6</td><td>3.0</td><td>4.95 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-og-wild-red'><b>OG Wild Red</b></a></td><td>Signature Supplier</td><td>4.5</td><td>1.6</td><td>4.9</td><td>4.7</td><td>4.88 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-signature-line-pure-vein">Signature Line · Pure Vein</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-pure-green-vein-powdered-leaf'><b>Pure Green Vein Powdered Leaf</b></a></td><td>Signature Line</td><td>4.4</td><td>3.9</td><td>3.5</td><td>3.0</td><td>4.92 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-pure-red-vein-powdered-leaf'><b>Pure Red Vein Powdered Leaf</b></a></td><td>Signature Line</td><td>4.4</td><td>1.7</td><td>4.7</td><td>4.5</td><td>4.92 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-pure-white-vein-powdered-leaf'><b>Pure White Vein Powdered Leaf</b></a></td><td>Signature Line</td><td>4.4</td><td>4.6</td><td>2.5</td><td>2.2</td><td>4.93 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-pgg-01">Batch PGG 01</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-private-garden-green'><b>Private Garden Green</b></a></td><td>Private Garden</td><td>4.5</td><td>3.6</td><td>3.7</td><td>3.0</td><td>4.50 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-house-blend-signature-leaf">House Blend · Signature Leaf</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-here-comes-the-sun-blend'><b>Here Comes the Sun Blend</b></a></td><td>House Blend</td><td>4.7</td><td>3.2</td><td>3.8</td><td>3.4</td><td>4.88 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-1018">Batch #1018</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-breakfast-blend-batch-1018'><b>Breakfast Blend — Batch #1018</b></a></td><td>Batch #1018</td><td>4.5</td><td>4.3</td><td>2.7</td><td>2.4</td><td>4.86 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-bodhisattva-blend-batch-1018'><b>Bodhisattva Blend — Batch #1018</b></a></td><td>Batch #1018</td><td>4.7</td><td>3.0</td><td>4.0</td><td>3.4</td><td>4.96 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-house-blend-all-veins">House Blend · All Veins</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-full-spectrum-blend'><b>Full Spectrum Blend</b></a></td><td>House Blend</td><td>4.6</td><td>3.4</td><td>3.6</td><td>3.2</td><td>4.86 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-1016">Batch #1016</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-full-send-blend-batch-1016'><b>Full Send Blend — Batch #1016</b></a></td><td>Batch #1016</td><td>4.6</td><td>4.0</td><td>3.2</td><td>2.8</td><td>5.00 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-hutan-village-green-batch-1016'><b>Hutan Village Green — Batch #1016</b></a></td><td>Batch #1016</td><td>4.5</td><td>3.8</td><td>3.5</td><td>3.0</td><td>4.74 / 5</td><td>$9.00 (25G shown)</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-vintage-micro-heritage">Vintage Micro · Heritage</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-vintage-micro-green'><b>Vintage Micro Green</b></a></td><td>Vintage Micro</td><td>4.5</td><td>3.7</td><td>3.6</td><td>3.0</td><td>4.96 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-vintage-micro-red'><b>Vintage Micro Red</b></a></td><td>Vintage Micro</td><td>4.4</td><td>1.8</td><td>4.6</td><td>4.4</td><td>4.82 / 5</td><td>$9–$35</td></tr>
+<tr><td><a href='#strain-vintage-micro-white'><b>Vintage Micro White</b></a></td><td>Vintage Micro</td><td>4.4</td><td>4.5</td><td>2.6</td><td>2.2</td><td>5.00 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-heritage-house-red">Heritage · House Red</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-rooted-in-red'><b>Rooted in Red</b></a></td><td>Heritage</td><td>4.5</td><td>1.7</td><td>4.8</td><td>4.6</td><td>4.93 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-heritage-house-blend">Heritage · House Blend</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-deep-red-blend'><b>Deep Red Blend</b></a></td><td>Heritage</td><td>4.5</td><td>1.5</td><td>4.9</td><td>4.7</td><td>4.91 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-heritage-fermented">Heritage · Fermented</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-red-fermented-powdered-leaf'><b>Red Fermented Powdered Leaf</b></a></td><td>Heritage</td><td>4.4</td><td>1.6</td><td>4.8</td><td>4.6</td><td>4.90 / 5</td><td>$9–$115</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-limited-release-heritage">Limited Release · Heritage</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-grounded-in-green-limited-release'><b>Grounded in Green — Limited Release</b></a></td><td>Limited Release</td><td>4.5</td><td>3.4</td><td>3.9</td><td>3.1</td><td>4.50 / 5</td><td>$9–$35</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-gv1">Thai GV1</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-premium-green-thai-gv1'><b>Premium Green Thai GV1</b></a></td><td>Thai Line</td><td>4.2</td><td>4.0</td><td>3.2</td><td>2.8</td><td>4.63 / 5</td><td>$8–$32</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-gv2">Thai GV2</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-20-year-green-thai-gv2'><b>20 Year Green Thai GV2</b></a></td><td>Thai Line</td><td>4.4</td><td>3.9</td><td>3.4</td><td>2.9</td><td>4.86 / 5</td><td>$8–$32</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-thai-line-red-ferment-r1">Thai Line · Red Ferment R1</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-thai-bentuangie-red-ferment-r1'><b>Thai Bentuangie (Red Ferment) R1</b></a></td><td>Thai Line</td><td>4.4</td><td>1.7</td><td>4.7</td><td>4.5</td><td>5.00 / 5</td><td>$8–$32</td></tr>
+</table></div>
+<div class="batchgrp"><h3 class="wc-batchhd" id="batch-c-002">Cargo C-002</h3><table class="wc-table wc-sortable">
+<tr><th class="sortable" data-k="0">Strain</th><th>Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🧘 Calm</th><th class="sortable" data-k="5">🌙 Relief</th><th class="sortable" data-k="6">★ Reviews</th><th>Price</th></tr>
+<tr><td><a href='#strain-cargo-line-pure-green-red-white'><b>Cargo Line — Pure Green / Red / White</b></a></td><td>Cargo Line</td><td>4.2</td><td>3.6</td><td>3.6</td><td>3.2</td><td>5.00 / 5 (Green &amp; Red)</td><td>$11–$65</td></tr>
+</table></div>
 
 <div class="colorband band-neutral" id="coa">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧪</span> Alkaloid &amp; lab reference (COAs)</h2>
-  <p>Every number below is from a published third-party report or the vendor's own published lab summary.</p>
-  <div class="bigicon">🧪</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🧪</span> Alkaloid &amp; Lab Reference (COAs)</h2>
+  <p>Published Third-Party Reports Only</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧪</button>
 </div>
 <div class="catintro">
   <p><b>WildCraft quarantines every incoming batch</b> and sends it to <b>Murray Brown Laboratories</b>
@@ -1005,21 +1264,35 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <tr><td>Premium Select White (PR Select 01)</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/07/WCHC-LABS-PR.Select01.pdf" target="_blank" rel="noopener">Murray Brown 2606E84 · Jun 2026</a></td><td><b>1.53%</b></td><td>2.31%</td><td>&lt;0.0196%</td></tr>
 <tr><td>Private Garden Green (PGG 01)</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/08/COA-and-Lab-Analysis.pdf" target="_blank" rel="noopener">Murray Brown 2607E68 · Jul 2026</a></td><td><b>1.46%</b></td><td>2.23%</td><td>&lt;0.0196%</td></tr>
 <tr><td>Golden Leaf — Premium Select</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/09/COA-and-Lab-Analysis-3.pdf" target="_blank" rel="noopener">Murray Brown 2609725 · Sep 2026</a></td><td><b>1.32%</b></td><td>1.99%</td><td>—</td></tr>
-<tr><td>Hutan Village Green (#1016)</td><td>Vendor newsletter lab summary</td><td><b>1.69%</b></td><td>—</td><td>—</td></tr>
+<tr><td>Hutan Village Green (#1016)</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2025/10/WCHC-LABS-1016-.pdf" target="_blank" rel="noopener">Batch #1016 report (PDF)</a></td><td><b>1.69%</b></td><td>—</td><td>—</td></tr>
+<tr><td>Cargo Line — Pure Green (C-002)</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/06/WCHC-LABS-C-002-.pdf" target="_blank" rel="noopener">Cora Science COA (PDF)</a></td><td><b>1.66%</b></td><td>2.66%</td><td>—</td></tr>
+<tr><td>Pure Green Vein — 1017-D (#1017D/#1018)</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/04/WCHC-LABS-1017D1018-2.pdf" target="_blank" rel="noopener">Murray Brown batch report (PDF)</a></td><td><b>1.63%</b></td><td>2.52%</td><td>—</td></tr>
+<tr><td>Batch #1007 (incl. Vintage Micro Green)</td><td><a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2023/12/Batch-1007-Labs-2.pdf" target="_blank" rel="noopener">Batch report (PDF)</a></td><td>—</td><td>—</td><td>—</td></tr>
 </table>
 <div class="catintro">
   <p><b>Private Garden Green — the full panel</b> (the most complete report in this guide): paynantheine
-  0.268%, speciogynine 0.175%, speciociliatine 0.326%; arsenic 0.262 mg/kg, lead 0.530, cadmium 0.0257,
-  mercury 0.0151; aerobic plate count 21,000 CFU/g; yeast &amp; mold 3,600 CFU/g; <b>Salmonella spp. absent;
+  0.268%, speciogynine 0.175%, speciociliatine 0.326%; arsenic <b>0.262</b> mg/kg, lead <b>0.530</b>, cadmium <b>0.0257</b>,
+  mercury <b>0.0151</b>; aerobic plate count 21,000 CFU/g; yeast &amp; mold 3,600 CFU/g; <b>Salmonella spp. absent;
   STEC E. coli absent</b>. For context across the market: ordinary natural leaf commonly tests between roughly
   0.8% and 1.5% mitragynine — WildCraft's published line sits at or above the top of that range, with the
   paperwork public.</p>
 </div>
+<div class="catintro">
+  <p><b>Reading the Batch Codes</b> — every lot in the catalog carries one of these systems:</p>
+</div>
+<table class="wc-table">
+<tr><th>Code</th><th>What It Means</th></tr>
+<tr><td><b>#1005 – #1020</b></td><td>Numbered signature-supplier harvests — each number is one harvest lot; when it sells out, it is gone.</td></tr>
+<tr><td><b>PR Select NN</b></td><td>Premium Select batches — the flagship line's own numbering; PR Select 01 is the current tested batch.</td></tr>
+<tr><td><b>MS codes</b></td><td>Individual micro-lots (MS1021-2, MS1001-7) — the smallest tracked units in the catalog.</td></tr>
+<tr><td><b>PGG 01</b></td><td>Private Garden Green, batch 01 — the single-garden lot with the full-panel COA.</td></tr>
+<tr><td><b>C-002</b></td><td>Cargo Line batch — the kilo value line, tested by Cora Science.</td></tr>
+</table>
 
 <div class="colorband band-neutral" id="value">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💵</span> Price &amp; value — what the premium buys</h2>
-  <p>Premium per gram, honest about it — and with a value door built in.</p>
-  <div class="bigicon">💵</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💵</span> Price &amp; Value — What the Premium Buys</h2>
+  <p>Premium Per Gram · A Value Door Built In</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">💵</button>
 </div>
 <div class="catintro">
   <p>The most consistent criticism of WildCraft in editorial coverage is price: small bags run to
@@ -1044,24 +1317,31 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="colorband band-neutral" id="voices">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💬</span> What buyers say — the community record</h2>
-  <p>Freshness, consistency, and service that feels personal — in the community's own words.</p>
-  <div class="bigicon">💬</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">💬</span> What Buyers Say — The Community Record</h2>
+  <p>Freshness · Consistency · Personal Service</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">💬</button>
 </div>
 <div class="catintro">
   <p>Three themes dominate every corner of the public record — on-site reviews, Reddit recommendation
   threads, editorial buyer coverage, and podcast endorsements. <b>Freshness and potency</b> first:
   editorial synthesis of buyer feedback at kratom.org reports that buyers describe the leaf as
-  <i>unusually fresh and potent compared to other vendors</i>, and — the harder trick — <i>consistent across
-  batches</i>. <b>Tier placement</b> second: in Reddit's vendor-recommendation ecosystem, WildCraft is
+  <span class="qinline">"unusually fresh and potent compared to other vendors"</span>, and — the harder trick — <span class="qinline">"consistent across batches"</span>. <b>Tier placement</b> second: in Reddit's vendor-recommendation ecosystem, WildCraft is
   routinely placed in the top tier of the entire market, in the same breath as the most decorated small-batch
-  names. <b>Service</b> third: coverage describes the handling of customers as <i>very personal</i> — free
+  names. <b>Service</b> third: coverage describes the handling of customers as <span class="qinline">"very personal"</span> — free
   samples, early access to releases, and handwritten notes are recurring details.</p>
 </div>
+<div class="wc-vhead"><i style="background:#8a8f7a"></i>The Brand — In General</div>
 <div class="quote">"Wildcraft is my #1 for regular kratom."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
 <div class="quote">"Wildcraft and DTE are on another level to me."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
 <div class="quote">"TOP is great, but not quite on the same level as DTE or Wildcraft."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
+<div class="wc-vhead"><i style="background:#f2f2f2"></i>White Vein</div>
+<div class="quote">"really good white vein gets me going has long legs on it last a long time i love wildcraft they have the best kratom"<cite>— Paul C., on Premium Select White Vein, the vendor's site</cite></div>
+<div class="wc-vhead"><i style="background:#2E7D4F"></i>Green Vein</div>
+<div class="quote">"Well-rounded leaf, nice legs, no grit!"<cite>— Jeffrey B., on Premium Select Green Vein, the vendor's site</cite></div>
+<div class="wc-vhead"><i style="background:#c62828"></i>Red Vein</div>
 <div class="quote">"Wildcraft OG red has been one of the most perfect reds I've ever had."<cite>— Reddit user, via Gummysearch's Reddit vendor-recommendation analysis</cite></div>
+<div class="quote">"So smooth and comforting. My top pick"<cite>— danielle m., on Premium Select Red Vein, the vendor's site</cite></div>
+<div class="wc-vhead"><i style="background:#7A4C93"></i>Blends</div>
 <div class="quote">"I got 80 grams of the here comes the sun blend and it's honestly one of the best strains i've had yet."<cite>— WildCraft customer review, via review aggregations of the vendor's customer feedback</cite></div>
 <div class="catintro">
   <p>The Kratom Stories podcast lists WildCraft on its page of <i>companies I personally trust, use, and
@@ -1072,10 +1352,11 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="colorband band-neutral" id="critique">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔍</span> The honest critique — where WildCraft can do better</h2>
-  <p>Strong leaf, strong labs — and six honest findings.</p>
-  <div class="bigicon">🔍</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🔍</span> The Honest Critique — Where WildCraft Can Do Better</h2>
+  <p>Six Honest Findings</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔍</button>
 </div>
+<div class="wc-gate" id="critiqueGate"><div class="wc-gate-lock"><p>🔒 <b>The critique is behind the author gate.</b> Enter the author number to read it.</p><button type="button" class="wc-tbtn" id="wcGateBtn">🔓 Unlock the Critique</button></div><div class="wc-gate-body" hidden>
 <div class="wc-grid">
   <div class="wc-card"><h4>💲 The premium is steep at the door</h4><p>At 25 g sizes, $0.28–0.36 per gram is three to five times bulk-vendor money. The quality case is documented in this guide — but a first-time buyer pays the most per gram exactly when they know the vendor least. A standing first-order discount or a cheaper discovery flight would close the gap; the $15 sample pack only partly does.</p></div>
   <div class="wc-card"><h4>🧾 All sales are final</h4><p>The returns policy is absolute — ALL SALES ARE FINAL — with issues handled case-by-case by email. For a vendor whose whole pitch is trust, a satisfaction guarantee on first orders would be cheap insurance and a strong signal. As it stands, the risk sits with the buyer.</p></div>
@@ -1084,11 +1365,18 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <div class="wc-card"><h4>🔗 Small site frictions</h4><p>The lab page is a bare list of PDF links with no summary table (this guide's lab section exists partly because the vendor's own page doesn't); the footer 'Shipping and Refund Policy' link resolves to a privacy-policy URL; and the footer Instagram link is malformed. Minor — and all fixable in an afternoon.</p></div>
   <div class="wc-card"><h4>📦 Shipping is plain, not fast</h4><p>Processing runs 48–72 hours by the vendor's own statement, with no Saturday shipping and delays during high-volume drops. Orders in this guide's research shipped by USPS both Ground and Priority ($5.75–$9.75 at checkout). Nothing unreasonable — but same-day craft competitors set a bar WildCraft doesn't currently chase.</p></div>
 </div>
+</div></div>
 
 <div class="colorband band-neutral" id="ordering">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🛒</span> Ordering, shipping &amp; policies</h2>
-  <p>The practical page — how buying from WildCraft actually works.</p>
-  <div class="bigicon">🛒</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🛒</span> Ordering, Shipping &amp; Policies</h2>
+  <p>How Buying From WildCraft Actually Works</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🛒</button>
+</div>
+<div class="wc-grid">
+  <div class="wc-card"><h4>✉️ Email</h4><p>wildcraftherbcompany@proton.me</p></div>
+  <div class="wc-card"><h4>📞 Phone</h4><p>(603) 416-4825</p></div>
+  <div class="wc-card"><h4>📬 Mail</h4><p>PO Box 714, Epping, New Hampshire</p></div>
+  <div class="wc-card"><h4>🚚 Ship Window</h4><p>48–72 hours processing · USPS · no Saturday shipping</p></div>
 </div>
 <div class="wc-grid">
   <div class="wc-card"><h4>🚚 Shipping</h4><p>US only. The vendor aims for same-day shipping and states 48–72 hours for processing; no Saturday shipping; expect delays around big drops. USPS is the carrier named in policy; observed checkout options included Ground and Priority at $5.75–$9.75. Historical offers of free shipping over $130 have appeared in review coverage — check the site banner for the current threshold, as none is stated in the standing policy.</p></div>
@@ -1100,9 +1388,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="colorband band-green" id="verdict">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏆</span> The verdict — scorecard</h2>
-  <p>One of the strongest small-batch vendors in the American market — with a premium to match.</p>
-  <div class="bigicon">🏆</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">🏆</span> The Verdict — Scorecard</h2>
+  <p>Top-Tier Leaf · A Premium to Match</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🏆</button>
 </div>
 <div class="wc-bars">
 <div class="wc-bar"><span class="wc-bl">Leaf quality &amp; potency</span><span class="wc-bt"><span class="wc-bf" style="width:94%;background:#2E7D4F"></span></span><span class="wc-bv">4.7 / 5</span></div>
@@ -1129,23 +1417,23 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="colorband band-neutral" id="biblio">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📚</span> Sources &amp; bibliography</h2>
-  <p>Primary documents first — the vendor's own published labs and pages, then the independent record.</p>
-  <div class="bigicon">📚</div>
+  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1E4D3B">📚</span> Sources &amp; Bibliography</h2>
+  <p>Vendor-Published Labs | Independent Reviews</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📚</button>
 </div>
 <div class="catintro">
   <ol>
-    <li>Wildcraft Herb Company — official site: catalog &amp; product pages, About Us, Lab Results page, shipping/returns policy, contact page (audited October 30, 2026). <a href="https://www.wildcraftherbcompany.com/">wildcraftherbcompany.com</a></li>
-    <li>Murray Brown Laboratories COA, Report 2606E84 (June 2026) — Premium Select Green / Red / White alkaloid panels (PR Select 01). <a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/07/WCHC-LABS-PR.Select01.pdf">COA PDF</a></li>
-    <li>Murray Brown Laboratories COA, Report 2607E68 (July 2026) — Private Garden Green full panel (alkaloids, heavy metals, microbials).</li>
-    <li>Murray Brown Laboratories COA, Report 2609725 (September 2026) — Golden Leaf, Premium Select.</li>
+    <li>Wildcraft Herb Company — official site: catalog &amp; product pages, About Us, Lab Results page, shipping/returns policy, contact page (audited October 30, 2026). <a href="https://www.wildcraftherbcompany.com/" target="_blank" rel="noopener">wildcraftherbcompany.com</a> · <a href="https://www.wildcraftherbcompany.com/lab-result-page/" target="_blank" rel="noopener">Lab Results page</a></li>
+    <li>Murray Brown Laboratories COA, Report 2606E84 (June 2026) — Premium Select Green / Red / White alkaloid panels (PR Select 01). <a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/07/WCHC-LABS-PR.Select01.pdf" target="_blank" rel="noopener">COA PDF</a></li>
+    <li>Murray Brown Laboratories COA, Report 2607E68 (July 2026) — Private Garden Green full panel (alkaloids, heavy metals, microbials). <a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/08/COA-and-Lab-Analysis.pdf" target="_blank" rel="noopener">COA PDF</a></li>
+    <li>Murray Brown Laboratories COA, Report 2609725 (September 2026) — Golden Leaf, Premium Select. <a href="https://www.wildcraftherbcompany.com/wp-content/uploads/2026/09/COA-and-Lab-Analysis-3.pdf" target="_blank" rel="noopener">COA PDF</a></li>
     <li>WildCraft newsletters (Mailchimp archive): Batch #1020 updates, Premium Select restock &amp; COA Quick Guide (Green 1.7% / Red 1.53% / White 1.53%), Private Garden Green announcement, Premium Select blend recipes (July 2026), Hutan Village Green 1.69% (Batch #1016).</li>
-    <li>kratom.org — Wildcraft Herb Company vendor review: 4.3/5, ranked 28 of 211 vendors; buyer-experience synthesis; pricing and policy notes. <a href="https://kratom.org/vendors/wildcraft-herb-company/">kratom.org</a></li>
-    <li>Gummysearch — Reddit vendor-recommendation analysis (r/kratomreview100, r/Vendorsofkratom2): verbatim buyer quotes on the WildCraft brand and OG Wild Red. <a href="https://gummysearch.com/tools/best-products/vendor-recommendations/">gummysearch.com</a></li>
-    <li>Kratom Stories podcast — approved-vendor page (affiliate relationship disclosed on the page). <a href="https://www.podpage.com/kratom-stories-podcast/vendors/">podpage.com</a></li>
+    <li>kratom.org — Wildcraft Herb Company vendor review: 4.3/5, ranked 28 of 211 vendors; buyer-experience synthesis; pricing and policy notes. <a href="https://kratom.org/vendors/wildcraft-herb-company/" target="_blank" rel="noopener">kratom.org</a></li>
+    <li>Gummysearch — Reddit vendor-recommendation analysis (r/kratomreview100, r/Vendorsofkratom2): verbatim buyer quotes on the WildCraft brand and OG Wild Red. <a href="https://gummysearch.com/tools/best-products/vendor-recommendations/" target="_blank" rel="noopener">gummysearch.com</a></li>
+    <li>Kratom Stories podcast — approved-vendor page (affiliate relationship disclosed on the page). <a href="https://www.podpage.com/kratom-stories-podcast/vendors/" target="_blank" rel="noopener">podpage.com</a></li>
     <li>WildCraft on-site WooCommerce product ratings and review counts (checked October 30, 2026; counts are small on several products and are stated on each card).</li>
     <li>ScamAdviser — wildcraftherbcompany.com trust check (internal-review-system caveat noted in the critique).</li>
-    <li>Community recommendation threads, r/Vendorsofkratom2 (blend-selection discussions).</li>
+    <li>Community recommendation threads, <a href="https://www.reddit.com/r/Vendorsofkratom2/" target="_blank" rel="noopener">r/Vendorsofkratom2</a> (blend-selection discussions).</li>
   </ol>
 </div>
 
@@ -1233,7 +1521,154 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
 })();
 </script>
 <script>
+/* ---- theme (light/dark, persisted) ---- */
+(function(){try{if(localStorage.getItem('wc-theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}
+function upd(){var b=document.getElementById('wcThemeBtn');if(b){b.textContent=document.documentElement.classList.contains('dark')?'☀️ Theme':'🌙 Theme';}}
+document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wcThemeBtn');if(b){b.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('wc-theme',d?'dark':'light');}catch(e){}upd();});}});
+})();
+/* ---- index collapse ---- */
 document.addEventListener('DOMContentLoaded',function(){var idx=document.querySelector('.index');if(!idx)return;var btn=idx.querySelector('h2 .icobtn');if(!btn)return;btn.title='Open the index';btn.addEventListener('click',function(){idx.classList.toggle('open');btn.title=idx.classList.contains('open')?'Close the index':'Open the index';});});
+/* ---- prose enhancer: batch buttons, bold-green refs, bold lab numbers ---- */
+(function(){
+var SKIP={A:1,BUTTON:1,SCRIPT:1,STYLE:1,TEXTAREA:1};
+function walk(node){
+  if(node.nodeType===3){
+    var par=node.parentNode; if(!par||!par.closest||par.closest('svg'))return;
+    var t=node.nodeValue;
+    if(!/(#10\d\d|PR Select \d|Batch #10\d\d|2606E84|2607E68|2609725|\d+\.\d+%)/.test(t))return;
+    var frag=document.createDocumentFragment(),last=0,m;
+    var re=/(Batch #10\d\d|#10\d\d|PR Select \d+|2606E84|2607E68|2609725|\d+\.\d+%)/g;
+    while((m=re.exec(t))){
+      frag.appendChild(document.createTextNode(t.slice(last,m.index)));
+      var tok=m[0],el;
+      if(tok.indexOf('%')>-1){el=document.createElement('b');el.textContent=tok;}
+      else if(tok.indexOf('PR Select')===0||tok.charAt(0)==='2'){el=document.createElement('span');el.className='wc-ref';el.textContent=tok;}
+      else{var num=tok.replace('Batch ','');el=document.createElement('a');el.className='wc-batchbtn';el.href=document.getElementById('batch-'+num.slice(1))?('#batch-'+num.slice(1)):'#coa';el.textContent=num;if(tok.indexOf('Batch')===0){frag.appendChild(document.createTextNode('Batch '));}}
+      frag.appendChild(el);last=m.index+tok.length;
+    }
+    frag.appendChild(document.createTextNode(t.slice(last)));
+    par.replaceChild(frag,node);
+  }else if(node.nodeType===1){
+    if(SKIP[node.tagName]||node.tagName==='svg')return;
+    if(node.classList&&(node.classList.contains('batch')||node.classList.contains('wc-batchbtn')||node.classList.contains('wc-batchhd')))return;
+    Array.prototype.slice.call(node.childNodes).forEach(walk);
+  }
+}
+document.addEventListener('DOMContentLoaded',function(){var w=document.querySelector('.wrap');if(w)walk(w);});
+})();
+/* ---- section collapse: every band starts closed, its button opens it ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
+  bands.forEach(function(band){
+    var wrap=document.createElement('div');wrap.className='wcsec';wrap.hidden=true;
+    band.parentNode.insertBefore(wrap,band.nextSibling);
+    while(wrap.nextSibling){
+      var nx=wrap.nextSibling;
+      if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'))break;
+      wrap.appendChild(nx);
+    }
+    var btn=band.querySelector('.wc-tgl');
+    band._wcSet=function(open){wrap.hidden=!open;if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
+    if(btn){btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
+  });
+  function openTarget(){
+    var id=location.hash?location.hash.slice(1):'';if(!id)return;
+    var el=document.getElementById(id);if(!el)return;
+    if(el.classList.contains('colorband')){el._wcSet&&el._wcSet(true);return;}
+    var sec=el.closest?el.closest('.wcsec'):null;
+    if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}
+  }
+  window.addEventListener('hashchange',openTarget);
+  openTarget();
+});
+/* ---- Quick Pick wheel (WildCraft pool) ---- */
+(function(){
+var S=[{"n": "Premium Select \u2014 Green Vein", "v": "Premium Select", "b": "PR Select 01 \u00b7 Premium Select", "e": 4, "m": 5, "c": 4, "ca": 3, "r": 3, "col": "green", "sp": "Fast", "w": "mid-spec upper with long legs and a real mood lift", "x": false}, {"n": "Premium Select \u2014 Red Vein", "v": "Premium Select", "b": "PR Select 01 \u00b7 Premium Select", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "the Premium Select evening anchor \u2014 warm, heavy, complete", "x": false}, {"n": "Premium Select \u2014 White Vein", "v": "Premium Select", "b": "PR Select 01 \u00b7 Premium Select", "e": 5, "m": 4, "c": 4, "ca": 2, "r": 2, "col": "white", "sp": "Fast", "w": "the line's lift-off white \u2014 clean drive at 1.53%", "x": false}, {"n": "Golden Powdered Leaf \u2014 Premium Select", "v": "Premium Select", "b": "Premium Select \u00b7 Golden", "e": 3, "m": 4, "c": 3, "ca": 4, "r": 3, "col": "gold", "sp": "Slow", "w": "mellow gold warmth from the premium harvest", "x": false}, {"n": "Here Comes the Sun \u2014 Premium Select", "v": "Premium Select", "b": "Premium Select Blend \u00b7 50/50 Red/Green", "e": 3, "m": 5, "c": 4, "ca": 4, "r": 3, "col": "blend", "sp": "Mid-Fast", "w": "the sunshine blend, upgraded to Premium Select leaf", "x": false}, {"n": "Breakfast Blend \u2014 Premium Select", "v": "Premium Select", "b": "Premium Select Blend \u00b7 60/40 White/Green", "e": 4, "m": 4, "c": 4, "ca": 3, "r": 2, "col": "blend", "sp": "Fast", "w": "the morning blend \u2014 white drive softened by green", "x": false}, {"n": "Full Spectrum \u2014 Premium Select", "v": "Premium Select", "b": "Premium Select Blend \u00b7 Red/White/Green thirds", "e": 3, "m": 5, "c": 4, "ca": 4, "r": 3, "col": "blend", "sp": "Mid-Fast", "w": "all three veins in equal thirds \u2014 the whole spectrum at once", "x": false}, {"n": "OG Wild Green", "v": "Signature & Private Garden", "b": "Signature Supplier \u00b7 OG Wild", "e": 4, "m": 5, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "the highest-rated core powder in the catalog", "x": false}, {"n": "OG Wild Red", "v": "Signature & Private Garden", "b": "Signature Supplier \u00b7 OG Wild", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "the red the community calls perfect", "x": false}, {"n": "Pure Green Vein Powdered Leaf", "v": "Signature & Private Garden", "b": "Signature Line \u00b7 Pure Vein", "e": 4, "m": 4, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "the straight green \u2014 no recipe, just the leaf", "x": false}, {"n": "Pure Red Vein Powdered Leaf", "v": "Signature & Private Garden", "b": "Signature Line \u00b7 Pure Vein", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 4, "col": "red", "sp": "Slow", "w": "the straight red \u2014 evening comfort, unadorned", "x": false}, {"n": "Pure White Vein Powdered Leaf", "v": "Signature & Private Garden", "b": "Signature Line \u00b7 Pure Vein", "e": 5, "m": 4, "c": 4, "ca": 2, "r": 2, "col": "white", "sp": "Fast", "w": "the straight white \u2014 clean morning drive", "x": false}, {"n": "Private Garden Green", "v": "Signature & Private Garden", "b": "Private Garden \u00b7 Batch PGG 01 / MS1001", "e": 4, "m": 4, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "a single garden's leaf \u2014 the most individual product in the catalog", "x": false}, {"n": "Here Comes the Sun Blend", "v": "House Blends", "b": "House Blend \u00b7 Signature Leaf", "e": 3, "m": 5, "c": 4, "ca": 4, "r": 3, "col": "blend", "sp": "Mid-Fast", "w": "the famous one \u2014 sunshine in a bag", "x": false}, {"n": "Breakfast Blend \u2014 Batch #1018", "v": "House Blends", "b": "Batch #1018 \u00b7 House Blend", "e": 4, "m": 4, "c": 4, "ca": 3, "r": 2, "col": "blend", "sp": "Fast", "w": "the #1018 morning recipe", "x": false}, {"n": "Full Spectrum Blend", "v": "House Blends", "b": "House Blend \u00b7 All Veins", "e": 3, "m": 5, "c": 4, "ca": 4, "r": 3, "col": "blend", "sp": "Mid-Fast", "w": "the reliable all-rounder", "x": false}, {"n": "Bodhisattva Blend \u2014 Batch #1018", "v": "House Blends", "b": "Batch #1018 \u00b7 House Blend", "e": 3, "m": 5, "c": 4, "ca": 4, "r": 3, "col": "blend", "sp": "Mid-Slow", "w": "the contemplative blend \u2014 the catalog's quiet masterpiece", "x": false}, {"n": "Full Send Blend \u2014 Batch #1016", "v": "House Blends", "b": "Batch #1016 \u00b7 Limited Supply", "e": 4, "m": 5, "c": 4, "ca": 3, "r": 3, "col": "blend", "sp": "Mid-Fast", "w": "the limited #1016 rocket \u2014 full send, no half measures", "x": false}, {"n": "Vintage Micro Green", "v": "Heritage & Village", "b": "Vintage Micro \u00b7 Heritage", "e": 4, "m": 4, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "micro-lot green with a connoisseur's following", "x": false}, {"n": "Vintage Micro Red", "v": "Heritage & Village", "b": "Vintage Micro \u00b7 Heritage", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 4, "col": "red", "sp": "Slow", "w": "the heritage red \u2014 mature leaf, deep ease", "x": false}, {"n": "Vintage Micro White", "v": "Heritage & Village", "b": "Vintage Micro \u00b7 Heritage", "e": 4, "m": 4, "c": 4, "ca": 3, "r": 2, "col": "white", "sp": "Fast", "w": "micro-lot white at a perfect score", "x": false}, {"n": "Hutan Village Green \u2014 Batch #1016", "v": "Heritage & Village", "b": "Batch #1016 \u00b7 Village Leaf", "e": 4, "m": 4, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "forest-village leaf with a published 1.69% test", "x": false}, {"n": "Rooted in Red", "v": "Heritage & Village", "b": "Heritage \u00b7 House Red", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "grounded, deep, dependable red comfort", "x": false}, {"n": "Deep Red Blend", "v": "Heritage & Village", "b": "Heritage \u00b7 House Blend", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "the deepest red \u2014 blended for maximum evening weight", "x": false}, {"n": "Red Fermented Powdered Leaf", "v": "Heritage & Village", "b": "Heritage \u00b7 Fermented", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "traditional ferment \u2014 the warmest presentation of red", "x": false}, {"n": "Grounded in Green \u2014 Limited Release", "v": "Heritage & Village", "b": "Limited Release \u00b7 Heritage", "e": 3, "m": 4, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "the centered green \u2014 calm-forward limited release", "x": false}, {"n": "Premium Green Thai GV1", "v": "Thai Line", "b": "Thai Line \u00b7 GV1", "e": 4, "m": 4, "c": 4, "ca": 3, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "the honest Thai \u2014 coarser, grittier, different", "x": false}, {"n": "20 Year Green Thai GV2", "v": "Thai Line", "b": "Thai Line \u00b7 GV2", "e": 4, "m": 4, "c": 4, "ca": 3, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "old-tree Thai green \u2014 the refined second round", "x": false}, {"n": "Thai Bentuangie (Red Ferment) R1", "v": "Thai Line", "b": "Thai Line \u00b7 Red Ferment R1", "e": 2, "m": 4, "c": 3, "ca": 5, "r": 4, "col": "red", "sp": "Slow", "w": "Thai bentuangie \u2014 fermented red from the other tradition", "x": false}, {"n": "Cargo Line \u2014 Pure Green / Red / White", "v": "Cargo Line", "b": "Cargo Line \u00b7 Batch C-002", "e": 4, "m": 4, "c": 4, "ca": 4, "r": 3, "col": "green", "sp": "Mid-Fast", "w": "the value door \u2014 pure veins by the kilo, labs included", "x": false}];
+var W={calm:{e:-3,m:1,c:0,ca:3,r:0},energy:{e:3,m:1,c:1,ca:-1,r:0},focus:{e:1,m:0,c:3,ca:1,r:0},mood:{e:1,m:3,c:0,ca:1,r:0},relief:{e:0,m:0,c:0,ca:1,r:3},sleep:{e:-3,m:0,c:0,ca:3,r:2}};
+var DIMS=[['e','Energy','#F59E0B'],['m','Mood','#2E7D4F'],['c','Clarity','#5BA3D9'],['ca','Calm','#E8873A'],['r','Relief','#B03A3A']];
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Relief',calm:'Calm'};
+var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
+function score(s,w){return s.e*w.e+s.m*w.m+s.c*w.c+s.ca*w.ca+s.r*w.r;}
+function rankedFor(sit){var w=W[sit];return S.map(function(s,i){return{s:s,i:i,sc:score(s,w)};}).sort(function(a,b){return b.sc-a.sc||a.i-b.i;}).map(function(x){return x.s;});}
+function hist(){try{return JSON.parse(localStorage.getItem('wcQpHistory')||'[]');}catch(e){return[];}}
+function logPick(sit,s){var h=hist();h.push({sit:sit,n:s.n,v:s.v,col:s.col,x:!!s.x,d:Date.now()});while(h.length>60)h.shift();try{localStorage.setItem('wcQpHistory',JSON.stringify(h));}catch(e){}}
+function lastFor(h,sit){for(var i=h.length-1;i>=0;i--){if(h[i].sit===sit)return h[i];}return null;}
+function fmtD(ts){return new Date(ts).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});}
+function bars(s){return '<div class="qp-bars">'+DIMS.map(function(d){var v=s[d[0]],dots='';for(var i=1;i<=5;i++){dots+='<i style="background:'+(i<=v?d[2]:'var(--line)')+'"></i>';}return '<div class="qp-bar">'+d[1]+'<div class="qp-dots">'+dots+'</div></div>';}).join('')+'</div>';}
+var curSit=null,curWin=null,curRot=null;
+function pickCard(s,tag,rot,rotwhy){
+  var h='<div class="qp-pick"><div class="qp-tag'+(rot?' rot':'')+'">'+tag+'</div><div class="qp-name">'+s.n+'</div>'
+    +'<div class="qp-meta">'+s.v+' · '+s.b+' · '+s.sp+' speed</div>'
+    +'<p class="qp-why">'+s.w+'</p>'+bars(s);
+  if(rot&&rotwhy)h+='<p class="qp-rotwhy">'+rotwhy+'</p>';
+  h+='<div><button type="button" class="qp-take'+(rot?' rot':'')+'" data-n="'+s.n.replace(/"/g,'&quot;')+'">Take this one</button></div><div class="qp-logged" style="display:none"></div></div>';
+  return h;
+}
+function showPick(sit){
+  curSit=sit;var rk=rankedFor(sit);curWin=rk[0];
+  var h=hist(),lastSit=lastFor(h,sit),lastAny=h.length?h[h.length-1]:null;
+  var rot=null,why=[];
+  for(var i=0;i<rk.length;i++){var c=rk[i];
+    if(c===curWin)continue;
+    if(lastSit&&(c.n===lastSit.n||c.v===lastSit.v))continue;
+    if(lastAny&&COLN[c.col]===COLN[lastAny.col])continue;
+    if(lastAny&&lastAny.x&&c.x)continue;
+    rot=c;break;}
+  if(rot){
+    if(lastSit){why.push('Rests <b>'+lastSit.n+'</b> (took it '+fmtD(lastSit.d)+')');if(rot.v!==lastSit.v)why.push('different line');}
+    if(lastAny&&COLN[rot.col]!==COLN[lastAny.col])why.push('different color than your last pick');
+    if(!h.length)why.push('First logged pick starts your rotation history');
+  }else{
+    for(var j=0;j<rk.length;j++){if(rk[j]!==curWin&&(!lastSit||rk[j].n!==lastSit.n)){rot=rk[j];break;}}
+    if(rot)why.push('Rotation rules relaxed — the catalog runs thin here');
+  }
+  curRot=rot;
+  var out='';
+  var lastLine='';
+  if(lastSit)lastLine='<div class="qp-runner">Last time for <b>'+SITN[sit]+'</b>: <b>'+lastSit.n+'</b> · '+fmtD(lastSit.d)+'</div>';
+  if(curWin&&lastSit&&curWin.n===lastSit.n)out+='<p class="qp-note">Won again — you last took it '+fmtD(lastSit.d)+'.</p>';
+  out+='<div class="qp-dual">'+pickCard(curWin,'★ The Winner',false,'')
+    +(rot?pickCard(rot,'↻ The Rotation Pick',true,why.join(' · ')):'<div class="qp-pick"><div class="qp-tag rot">↻ The Rotation Pick</div><p class="qp-why">No second strain clears the rotation rules for this feeling yet.</p></div>')
+    +'</div>'+lastLine;
+  document.getElementById('qpResult').innerHTML=out;
+  Array.prototype.forEach.call(document.querySelectorAll('.qp-take'),function(b){
+    b.addEventListener('click',function(){
+      var s=(b.getAttribute('data-n')===curWin.n)?curWin:curRot;if(!s)return;
+      logPick(curSit,s);
+      var lg=b.parentElement.parentElement.querySelector('.qp-logged');
+      b.style.display='none';lg.style.display='block';lg.textContent='✓ Logged — '+s.n+' for '+SITN[curSit]+'.';
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded',function(){
+  Array.prototype.forEach.call(document.querySelectorAll('.qp-node'),function(n){
+    n.addEventListener('click',function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.qp-node'),function(x){x.classList.remove('on');});
+      n.classList.add('on');showPick(n.getAttribute('data-sit'));
+    });
+  });
+  var hub=document.getElementById('qpHub');
+  if(hub){hub.addEventListener('click',function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.qp-node'),function(x){x.classList.remove('on');});
+    curSit=null;
+    document.getElementById('qpResult').innerHTML='<p class="qp-note">Tap a feeling — the wheel reads all 30 WildCraft strains in this guide and shows the winner plus a rotation pick.</p>';
+  });}
+});
+})();
+</script>
+<script>
+/* ---- v3: critique gate (author number 57) ---- */
+document.addEventListener('DOMContentLoaded',function(){var g=document.getElementById('critiqueGate');if(!g)return;var body=g.querySelector('.wc-gate-body'),lock=g.querySelector('.wc-gate-lock'),btn=document.getElementById('wcGateBtn');function open(){if(body)body.hidden=false;if(lock)lock.style.display='none';try{sessionStorage.setItem('wcCrit57','1');}catch(e){}}try{if(sessionStorage.getItem('wcCrit57')==='1')open();}catch(e){}if(btn)btn.addEventListener('click',function(){var v=window.prompt('Enter the author number to view the critique:');if(v==='57'){open();}else if(v!==null){window.alert('That number is not correct.');}});});
+/* ---- v3: whole band toggles its section; return links; reliable in-page jumps ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.colorband').forEach(function(band){band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var w=band.nextElementSibling;if(w&&band._wcSet)band._wcSet(w.hidden);});});
+  document.querySelectorAll('.wcsec').forEach(function(w){var d=document.createElement('div');d.className='wc-return';d.innerHTML='<a href="#top">\u2191 Return to the Quick Pick</a>';w.insertBefore(d,w.firstChild);});
+});
+document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var id=a.getAttribute('href').slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();if(el.classList.contains('colorband')&&el._wcSet)el._wcSet(true);var sec=el.closest?el.closest('.wcsec'):null;if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}try{history.replaceState(null,'','#'+id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
+/* ---- v3: sortable comparison tables (whole rows move together) ---- */
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('table.wc-sortable').forEach(function(tbl){var ths=Array.prototype.slice.call(tbl.querySelectorAll('th.sortable'));ths.forEach(function(th){th.addEventListener('click',function(){var k=+th.getAttribute('data-k');var dir=th.getAttribute('data-dir')==='desc'?'asc':'desc';ths.forEach(function(x){x.removeAttribute('data-dir');});th.setAttribute('data-dir',dir);var tbody=tbl.tBodies[0];if(!tbody)return;var rows=Array.prototype.slice.call(tbody.rows).filter(function(r){return !r.querySelector('th');});rows.sort(function(a,b){var x=a.cells[k]?a.cells[k].textContent.trim():'',y=b.cells[k]?b.cells[k].textContent.trim():'';var nx=parseFloat(x),ny=parseFloat(y);var c=(isNaN(nx)||isNaN(ny))?(x<y?-1:(x>y?1:0)):(nx-ny);return dir==='desc'?-c:c;});rows.forEach(function(r){tbody.appendChild(r);});});});});});
+/* ---- v3: lab reports open in a popup overlay ---- */
+document.addEventListener('DOMContentLoaded',function(){var modal=document.getElementById('labModal');if(!modal)return;var frame=document.getElementById('labFrame'),title=document.getElementById('labTitle'),openA=document.getElementById('labOpen'),closeB=document.getElementById('labClose');function show(url,label){frame.src=url;title.textContent=label||'Lab report';openA.href=url;modal.hidden=false;}function hide(){modal.hidden=true;frame.src='about:blank';}document.querySelectorAll('a[href*="wp-content/uploads"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show(a.href,a.textContent.trim());});});closeB.addEventListener('click',hide);modal.addEventListener('click',function(e){if(e.target===modal)hide();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)hide();});});
 </script>
 </body>
 </html>
