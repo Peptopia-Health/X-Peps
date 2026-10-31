@@ -1489,6 +1489,7 @@ a.batch{display:inline-block;padding:3px 12px;border-radius:999px;background:rad
 .strain-head{cursor:pointer}
 .strain-body[hidden]{display:none}
 .wk-chev{flex:none;margin-left:10px;font-weight:800;font-size:13px;opacity:.85}
+.wk-open{width:var(--uw,auto);margin-left:auto;margin-right:auto}
 @media print{.strain-body[hidden]{display:block!important}:root{--uw:100%!important}}
 </style>
 </div>
@@ -1609,6 +1610,15 @@ document.addEventListener('DOMContentLoaded',function(){
     band._wcSet=function(open){wrap.hidden=!open;band.classList.toggle('open',!!open);if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
     if(btn){btn.setAttribute('aria-expanded','true');btn.title='Close this section';btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
     band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;band._wcSet(wrap.hidden);});
+  });
+  document.querySelectorAll('.colorband[data-notoggle]').forEach(function(band){
+    var box=document.createElement('div');box.className='wk-open';
+    band.parentNode.insertBefore(box,band.nextSibling);
+    while(box.nextSibling){
+      var nx=box.nextSibling;
+      if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'))break;
+      box.appendChild(nx);
+    }
   });
   function openTarget(){
     var id=location.hash?location.hash.slice(1):'';if(!id)return;
