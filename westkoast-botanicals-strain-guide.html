@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
 <title>WestKoast Botanicals — Complete Strain Guide</title>
 <style>
 
@@ -229,68 +230,187 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 /* ===== Raised circular icon buttons (David 2026-10-24) ===== */
 .icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
 </style>
+<style>
+/* ===== WestKoast v3 overhaul (Oct 31, 2026): TSH header pattern + WildCraft mechanics, WestKoast palette ===== */
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+h1,h2,h3,h4{font-family:'Outfit','DM Sans',sans-serif}
+.panel .phead,.titlepage .subtitle{font-family:'Outfit','DM Sans',sans-serif}
+.wc-toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-bottom:8px}
+.wc-toprow .kicker{margin:0;text-align:left}
+.wc-topbtns{display:flex;gap:8px;align-items:center;flex:none}
+.wc-tbtn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:999px;border:2px solid #23402F;background:#F7F4EC;color:#23402F;font:700 .78rem/1 'Outfit',sans-serif;letter-spacing:.03em;box-shadow:0 2px 5px rgba(35,64,47,.25);cursor:pointer;white-space:nowrap}
+button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(35,64,47,.3)}
+.wc-tbtn.static{cursor:default}
+.badges a.pill{text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.badges a.pill:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(35,64,47,.35)}
+.wc-card[id],.colorband[id],.strain[id]{scroll-margin-top:96px}
+.index{min-height:96px;box-sizing:border-box}
+.index ol{display:none}
+.index.open ol{display:block}
+.index .idx-hint{font-size:.78rem;color:#5c6b62;font-weight:600}
+.index.open .idx-hint{display:none}
+.index h2 .icobtn{cursor:pointer}
+.idx-btn{cursor:pointer;padding:0;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 10px rgba(0,0,0,.3);transition:transform .07s ease,box-shadow .07s ease}
+.idx-btn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.3)}
+/* slim centered fit-content bands, gloss push-button at right (WildCraft V4+V5+V6) */
+.colorband{padding:9px 14px;padding-left:16px;padding-right:70px;margin:26px auto 14px;width:fit-content;max-width:100%;text-align:center;cursor:pointer;border-bottom:3px solid transparent}
+.colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;text-align:center;color:#fff}
+.colorband p{margin:0;opacity:.95;line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(.7rem,2.5vw,.95rem);max-width:none}
+.colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;font-size:22px;opacity:1;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffffff,var(--bb,#e6f2ea) 48%,var(--bm,#bcd8c4));border:2px solid var(--bd,#0d2c1e);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 6px 12px rgba(0,0,0,.4);cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
+.colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.3)}
+/* open state: brighter variant of the band's own color + orange in-use ring */
+.colorband.open{box-shadow:0 0 0 3px rgba(234,88,12,.65),0 8px 20px rgba(0,0,0,.28);border-bottom:3px solid #EA580C}
+.band-neutral.open{background:linear-gradient(120deg,#2F5D40,#22916E)}
+.band-red.open{background:linear-gradient(120deg,#9C2B1B,#C8442F)}
+.band-green.open{background:linear-gradient(120deg,#256B41,#37A05C)}
+.band-white.open{background:linear-gradient(120deg,#4E7524,#6FA836)}
+.band-gold.open{background:linear-gradient(120deg,#96700A,#D9A70F)}
+/* vein panels: WildCraft treatment */
+.panel .pbody{justify-content:center}
+.peffects{white-space:nowrap;text-align:center;font-weight:700;font-size:clamp(.64rem,1.8vw,.8rem);color:#263238;padding:2px 0 7px}
+.peffects b{color:#23402F}
+.vw-r{color:#B03A3A;font-weight:800}.vw-w{color:#607D8B;font-weight:800}.vw-g{color:#2E7D4F;font-weight:800}.vw-y{color:#B8860B;font-weight:800}
+/* Quick Pick wheel (WildCraft implementation) */
+.wcqp{--card:#ffffff;--mut:#6f675a;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 14px 10px;box-shadow:0 4px 18px rgba(60,50,30,.08);margin:10px auto 4px;max-width:640px;width:100%;position:relative}
+.wcqp h2{margin:0 0 2px;font-size:1.3rem;color:#EA580C;text-align:left}
+.wcqp .sub2{margin:0 0 4px;color:var(--mut);font-size:.92rem;text-align:left}
+.qp-wheel{position:relative;width:min(262px,94vw);aspect-ratio:1/1;margin:6px auto 2px}
+.qp-spoke{position:absolute;left:50%;top:50%;width:37.5%;height:2px;background:var(--line);transform-origin:0 50%;border-radius:2px}
+.qp-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:color-mix(in srgb,#2E7D4F 13%,var(--card));border:3px solid #17452A;display:flex;align-items:center;justify-content:center;font-size:38px;z-index:2;cursor:pointer;padding:0;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease}
+.qp-hub:active{transform:translate(-50%,-50%) translateY(3px) scale(.96);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
+.qp-node{position:absolute;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:color-mix(in srgb,var(--nc) 13%,var(--card));border:3px solid var(--nb,var(--nc));color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;z-index:3;padding:0;font-family:Outfit,sans-serif;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease,background .15s ease}
+.qp-node .qp-emo{font-size:1.3rem;line-height:1.05}
+.qp-node small{font-size:.62rem;font-weight:700;letter-spacing:.03em}
+.qp-node.on{background:var(--nc);color:#fff}
+.qp-node:active{transform:translate(-50%,-50%) translateY(3px) scale(.96);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
+.qp-name{font-family:Outfit,sans-serif;font-weight:800;font-size:24px;color:#EA580C;line-height:1.15}
+.qp-meta{color:var(--mut);font-size:14px;margin:2px 0 6px}
+.qp-why{font-size:15px;margin:0 0 6px}
+.qp-bars{display:flex;gap:14px;flex-wrap:wrap;margin:8px 0}
+.qp-bar{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--mut)}
+.qp-dots{display:flex;gap:3px;margin-top:3px}
+.qp-dots i{width:14px;height:8px;border-radius:3px;display:block}
+.qp-runner{font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
+.qp-runner b{color:var(--ink)}
+.qp-note{font-size:12px;color:var(--mut);margin:10px 0 4px}
+.qp-dual{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;text-align:left}
+@media (max-width:560px){.qp-dual{grid-template-columns:1fr}}
+.qp-pick{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--card)}
+.qp-tag{font-family:Outfit,sans-serif;font-weight:800;font-size:12px;letter-spacing:.06em;color:#EA580C;text-transform:uppercase;margin-bottom:4px}
+.qp-tag.rot{color:#2E7D4F}
+.qp-pick .qp-name{font-size:21px}
+.qp-rotwhy{font-size:13px;color:var(--mut);margin:4px 0 0}
+.qp-take{margin-top:8px;font-family:Outfit,sans-serif;font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;border:2px solid var(--ink);background:color-mix(in srgb,#F59E0B 16%,var(--card));color:var(--ink);cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.6),inset 0 -3px 5px rgba(0,0,0,.12),0 3px 6px rgba(0,0,0,.2);transition:transform .07s ease,box-shadow .07s ease}
+.qp-take.rot{background:color-mix(in srgb,#2E7D4F 16%,var(--card))}
+.qp-take:active{transform:translateY(2px) scale(.97);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
+.qp-logged{font-size:14px;font-weight:700;color:#2E7D4F;margin-top:8px}
+.wc-logbtn{position:absolute;top:10px;right:10px;font:700 .82rem 'Outfit',sans-serif;color:#23402F;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:2px solid #23402F;border-radius:999px;padding:5px 12px;cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 4px 8px rgba(0,0,0,.25);z-index:3}
+.wc-logbtn:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.25)}
+.wc-logmodal{position:fixed;inset:0;background:rgba(10,20,14,.66);z-index:10001;display:flex;align-items:center;justify-content:center}
+.wc-logmodal[hidden]{display:none}
+.wc-logbox{background:#fff;width:min(560px,94vw);max-height:86vh;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 18px 60px rgba(0,0,0,.5)}
+.wc-logbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:#23402F;color:#F7F4EC;font:700 .95rem 'Outfit',sans-serif}
+.wc-logbar button{background:#F7F4EC;border:none;border-radius:8px;width:32px;height:32px;font-size:1rem;cursor:pointer}
+.wc-loglist{overflow-y:auto;padding:10px 14px}
+.wc-logrow{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:8px 4px;border-bottom:1px solid #e7e2d6}
+.wc-logrow small{color:#6f675a}
+.wc-logdel{background:#fdf1f1;border:1.5px solid #b03a3a;color:#b03a3a;border-radius:8px;width:28px;height:28px;cursor:pointer;flex:none}
+.wc-logempty{color:#6f675a;text-align:center;padding:16px 6px}
+.wc-logfoot{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid #e7e2d6}
+/* dark theme (visit-only; light is always the default) */
+html.dark{--paper:#131711;--paper2:#1D231C;--ink:#EDEAE0;--muted:#ABA291;--line:#3C463A;--accent:#7FB069}
+html.dark body{background:var(--paper);color:var(--ink)}
+html.dark .index,html.dark .panel,html.dark .wc-card,html.dark .wc-stat,html.dark .wc-table,html.dark .strain,html.dark table,html.dark .catintro,html.dark .biblio{background:#1C211C;color:var(--ink)}
+html.dark .wc-table td{border-color:var(--line)}
+html.dark table.grid td{border-color:var(--line)}
+html.dark table.grid tr td{background:transparent!important}
+html.dark .titlepage{background:radial-gradient(1200px 600px at 50% -10%,#1E3325 0%,var(--paper) 72%)}
+html.dark .titlepage h1{color:#E9F3E4}
+html.dark .titlepage .sub{color:#ABA291}
+html.dark .titlepage .subtitle{color:#CFC9B8}
+html.dark .peffects{color:#EDEAE0}
+html.dark .pfoot{color:#CFC9B8}
+html.dark .quote{background:#2A2440;color:#D8D2F0;border-left-color:#6A4C93}
+html.dark .wc-tbtn{background:#1C211C;color:#E9F3E4;border-color:#7FB069}
+html.dark .wcqp{--card:#1C211C;--mut:#ABA291}
+html.dark .strain-head h3{color:#EDEAE0}
+html.dark .strain h4{color:#9CC7A8}
+html.dark .popbox.tip,html.dark .popbox.deep,html.dark .popbox.star{background:#232B21;color:var(--ink)}
+html.dark .coa-note{color:var(--muted)}
+html.dark .hlr,html.dark .hlg,html.dark .hlw,html.dark .hly,html.dark .hlb{color:#22301F}
+html.dark .wc-logbtn{background:#1C211C;color:#E9F3E4;border-color:#7FB069}
+html.dark .wc-logbox{background:#1C211C;color:var(--ink)}
+html.dark .wc-logrow{border-color:var(--line)}
+html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
+/* print standard */
+@page{size:Letter;margin:13mm}
+@media print{
+ *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .wcsec{display:block!important}
+ .colorband{width:auto!important;margin-left:0;margin-right:0;break-after:avoid}
+ .colorband .bigicon,.wc-tbtn:not(.static),.toc-top,.print-btn,#donut-modal,.wc-logbtn,.wc-logmodal{display:none!important}
+ .index ol{display:block!important}.index .idx-hint{display:none!important}
+ .strain,.panel,.quote,.popbox,table,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+ h1,h2,h3,h4{break-after:avoid!important;page-break-after:avoid!important}
+ p,li{orphans:3;widows:3}
+ body{background:#fff!important}
+ a{color:inherit;text-decoration:none}
+ html.dark body{color:#2e2a24}
+ html.dark .index,html.dark .panel,html.dark .strain,html.dark table,html.dark .catintro,html.dark .biblio{background:#fff!important;color:#2e2a24!important}
+}
+</style>
 </head>
 <body id="top">
-<header class="peptopia-hdr">
-<a class="peptopia-brand" href="https://x-peps.com/">
-<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
-<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
-</a>
-<nav class="peptopia-nav" aria-label="Site">
-<a href="https://x-peps.com/">HOME</a>
-<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
-<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
-<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
-</nav>
-</header>
 <a class="toc-top" href="#top" title="Back to top">↑</a>
-<button class="print-btn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
 <div class="wrap">
 
 <!-- ================= TITLE PAGE ================= -->
 <div class="titlepage">
-  <div class="kicker">Independent Customer Research</div>
+  <div class="wc-toprow">
+    <div class="kicker">Kratom Review • WestKoast Botanicals</div>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 October 2026</span>
+      <button type="button" class="wc-tbtn" id="wkThemeBtn" title="Switch light / dark theme">🌙 Theme</button>
+      <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
+    </div>
+  </div>
   <h1>WestKoast Botanicals</h1>
   <div class="subtitle">Complete Strain Guide</div>
-  <p class="sub">An independent, product-by-product analysis and characterization of the WestKoast lineup —
-  every strain organized by vein color, with community reports, batch notes, alkaloid profiles,
-  and honest comparisons.</p>
+  <p class="sub">An independent, product-by-product analysis and characterization of the WestKoast lineup — every strain organized by vein color, with community reports, batch notes, alkaloid profiles, and honest comparisons.</p>
   <div class="badges">
-    <span class="pill">🔴 Reds</span><span class="pill">🟢 Greens</span>
-    <span class="pill">⚪ Whites</span><span class="pill">🟡 Golds &amp; Yellows</span>
-    <span class="pill">🟣 Blends</span>
+    <a class="pill" href="#red">🔴 Reds</a><a class="pill" href="#green">🟢 Greens</a>
+    <a class="pill" href="#white">⚪ Whites</a><a class="pill" href="#gold">🟡 Golds &amp; Yellows</a>
+    <a class="pill" href="#gold">🟣 Blends</a>
   </div>
-  <div><span class="affil">✋ Written by an independent customer — no affiliation with, sponsorship from, or business relationship with WestKoast Botanicals. The author does not represent the company.</span></div>
-  <div class="date" style="margin-top:14px">Compiled October 2026</div>
 </div>
 
 <!-- ================= INDEX ================= -->
 <div class="index">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📖</span> Index</h2>
+  <h2><button type="button" class="icobtn idx-btn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" title="Open the index" aria-label="Open the index">📖</button> Index <span class="idx-hint">— tap the book icon to open</span></h2>
   <ol>
-    <li><a href="#howto">How to use this guide &amp; the color map</a></li>
-    <li><a href="#science">Vein colors &amp; what consumers report</a></li>
-    <li>Strain analyses by color
+    <li><a href="#howto">How to Use This Guide &amp; the Color Map</a></li>
+    <li><a href="#science">Vein Colors &amp; What Consumers Report</a></li>
+    <li>Strain Analyses by Color
       <ol>
-        <li><a href="#red">🔴 Red strains — deep calm &amp; evening ease</a></li>
-        <li><a href="#green">🟢 Green strains — balanced energy &amp; mood</a></li>
-        <li><a href="#white">⚪ White strains — clean drive &amp; focus</a></li>
-        <li><a href="#gold">🟡 Golds, yellows &amp; blends — mellow warmth and house specialties</a></li>
+        <li><a href="#red">🔴 Red Strains — Deep Calm &amp; Evening Ease</a></li>
+        <li><a href="#green">🟢 Green Strains — Balanced Energy &amp; Mood</a></li>
+        <li><a href="#white">⚪ White Strains — Clean Drive &amp; Focus</a></li>
+        <li><a href="#gold">🟡 Golds, Yellows &amp; Blends</a></li>
       </ol>
     </li>
-    <li><a href="#matrix">Master comparison matrix</a></li>
-    <li><a href="#coa">Alkaloid &amp; lab reference (COAs)</a></li>
-    <li><a href="#sourcing">Sourcing: batch codes, grinds &amp; farmer lines</a></li>
-    <li><a href="#catalog">Current WestKoast catalog snapshot</a></li>
-    <li><a href="#biblio">Sources &amp; bibliography</a></li>
+    <li><a href="#matrix">Master Comparison Matrix</a></li>
+    <li><a href="#coa">Alkaloid &amp; Lab Reference (COAs)</a></li>
+    <li><a href="#sourcing">Sourcing: Batch Codes, Grinds &amp; Farmer Lines</a></li>
+    <li><a href="#catalog">Current WestKoast Catalog Snapshot</a></li>
+    <li><a href="#biblio">Sources &amp; Bibliography</a></li>
   </ol>
 </div>
 
 <!-- ================= HOW TO USE ================= -->
 <div class="colorband band-neutral" id="howto">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧭</span> How to use this guide &amp; the color map</h2>
-  <p>Find your color below, glance at the map, then jump straight to the section that fits the moment.</p>
-  <div class="bigicon">🧭</div>
+  <h2>How to Use This Guide &amp; the Color Map</h2>
+  <p>Find Your Color Below, Glance at the Map, Then Jump Straight to the Section That Fits the Moment.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🧭</button>
 </div>
 <div class="legend">
   <span><i style="background:#7cb342"></i>High Energy &amp; Productivity</span>
@@ -304,42 +424,42 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
   <div class="panel p-white">
     <div class="phead">White</div>
     <div class="pbody">
-      <div class="pleft">⚡ HIGH, JITTER-FREE ENERGY<br><b>40%</b></div>
-      <svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">☀️ MENTAL CLARITY &amp; ALERTNESS<br><b>35%</b><br><br>📈 STRONG PRODUCTIVITY BOOST<br><b>25%</b></div>
+      <a href="#strain-white-hulk" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+    </div>
+    <div class="peffects"><span class="vw-w">White</span> = ⚡ <b>Energy</b> 40% · 👁 <b>Alertness</b> 35% · 📈 <b>Motivation</b> 25%</div>
     </div>
     <div class="pfoot">Best for brisk energy, clean motivation, substitute for coffee.</div>
-    <a class="golink" href="#white">→ Browse white strains</a>
+    <a class="golink" href="#strain-white-hulk">→ Browse white strains</a>
   </div>
   <div class="panel p-green">
     <div class="phead">Green</div>
     <div class="pbody">
-      <div class="pleft">🌅 BALANCED ENERGY &amp; VIBE<br><b>35%</b></div>
-      <svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">👁️ MENTAL CLARITY &amp; UPLIFT<br><b>30%</b><br><br>🍃 MILD CALM &amp; WELL-BEING<br><b>35%</b></div>
+      <a href="#strain-green-bali" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+    </div>
+    <div class="peffects"><span class="vw-g">Green</span> = ⚡ <b>Energy</b> 35% · 😊 <b>Mood</b> 30% · 🍃 <b>Calming</b> 35%</div>
     </div>
     <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
-    <a class="golink" href="#green">→ Browse green strains</a>
+    <a class="golink" href="#strain-green-bali">→ Browse green strains</a>
   </div>
   <div class="panel p-yellow">
     <div class="phead">Yellow</div>
     <div class="pbody">
-      <div class="pleft">😌 MELLOW MOOD &amp; RELAXATION<br><b>45%</b><br><br>🤗 GENTLE CALM &amp; WARMTH<br><b>35%</b></div>
-      <svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">⛅ BALANCED WELL-BEING<br><b>20%</b></div>
+      <a href="#strain-black-md" title="Jump to this vein’s strains"><svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+    </div>
+    <div class="peffects"><span class="vw-y">Yellow</span> = 😌 <b>Relaxation</b> 45% · 🤗 <b>Warmth</b> 35% · ⛅ <b>Well-Being</b> 20%</div>
     </div>
     <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
-    <a class="golink" href="#gold">→ Browse gold &amp; yellow strains</a>
+    <a class="golink" href="#strain-black-md">→ Browse gold &amp; yellow strains</a>
   </div>
   <div class="panel p-red">
     <div class="phead">Red</div>
     <div class="pbody">
-      <div class="pleft">🛌 DEEP RELAXATION &amp; RELIEF<br><b>50%</b><br><br>😴 CALMING EFFECTS<br><b>30%</b></div>
-      <svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
-      <div class="pright">🌙 MENTAL CALM &amp; RESTFUL REST<br><b>20%</b></div>
+      <a href="#strain-red-fuzzy-blanket" title="Jump to this vein’s strains"><svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+    </div>
+    <div class="peffects"><span class="vw-r">Red</span> = 🛌 <b>Relief</b> 50% · 🧘 <b>Relaxation</b> 30% · 🌙 <b>Rest</b> 20%</div>
     </div>
     <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
-    <a class="golink" href="#red">→ Browse red strains</a>
+    <a class="golink" href="#strain-red-fuzzy-blanket">→ Browse red strains</a>
   </div>
 </div>
 <script>
@@ -370,11 +490,28 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   alkaloid table shows the measured numbers.
 </div>
 
+<div class="wcqp" id="wkQuickPick">
+  <button type="button" class="wc-logbtn" id="wcLogBtn" title="See your Quick Pick log">📓 Log</button>
+  <h2>🌿 Kratom Quick Pick</h2>
+  <p class="sub2">Tap How You Feel — Get the Pick · WestKoast Strains Only</p>
+  <div class="qp-wheel" id="qpWheel">
+    <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
+    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel">🌿</button>
+    <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:#F59E0B;--nb:#B45309"><span class="qp-emo">⚡</span><small>Energy</small></button>
+    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:#5BA3D9;--nb:#2F6DA3"><span class="qp-emo">🎯</span><small>Focus</small></button>
+    <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:#2E7D4F;--nb:#17452A"><span class="qp-emo">🧡</span><small>Mood</small></button>
+    <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:#6366F1;--nb:#4338CA"><span class="qp-emo">😴</span><small>Sleep</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:#B03A3A;--nb:#7A2222"><span class="qp-emo">🩹</span><small>Relief</small></button>
+    <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:#E8873A;--nb:#A85A12"><span class="qp-emo">😌</span><small>Calm</small></button>
+  </div>
+  <div id="qpResult"><p class="qp-note">Tap a feeling — the wheel reads all 19 rated WestKoast strains in this guide and shows the winner plus a rotation pick. (Elite Red carries no ratings in this guide, so it sits the wheel out.)</p></div>
+</div>
+
 <!-- ================= SCIENCE NOTE ================= -->
 <div class="colorband band-neutral" id="science">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🔬</span> Vein colors &amp; what consumers report</h2>
-  <p>What the community's experience shows — recorded here as fact, batch by batch.</p>
-  <div class="bigicon">🔬</div>
+  <h2>Vein Colors &amp; What Consumers Report</h2>
+  <p>What the Community's Experience Shows — Recorded Here as Fact, Batch by Batch.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🔬</button>
 </div>
 <div class="catintro">
   <p>The color system is the community's own language: reds for winding down, whites for lift-off, greens for
@@ -394,9 +531,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= RED ================= -->
 <div class="colorband band-red" id="red">
-  <h2><span class="icobtn" style="--bb:#f7e8e4;--bm:#d98c8c;--bd:#7e241a">🔴</span> Red strains — deep calm &amp; evening ease</h2>
-  <p>The wind-down color: deep relaxation &amp; relief, calming body effects, and mental calm for restful rest.</p>
-  <div class="bigicon">🌙</div>
+  <h2>Red Strains — Deep Calm &amp; Evening Ease</h2>
+  <p>The Wind-Down Color: Deep Relaxation &amp; Relief, Calming Body Effects, and Mental Calm for Restful Rest.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#f7e8e4;--bm:#d98c8c;--bd:#7e241a" aria-expanded="false" title="Open this section">🌙</button>
 </div>
 <div class="catintro">
   <b>Reds</b> are the evening shift. WestKoast's red menu leans heavily on two grind lines — <b>UF</b> (ultra-fine)
@@ -407,7 +544,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="popbox star">🏆 Red standouts — deepest evidence: <b>Red Fuzzy Blanket 0926</b> (15× ⭐ 5.0, sleep &amp; pain); heavy ferment: <b>Red Bent 0726</b> ("not too sedating"); blend base: <b>Red Magic 0926</b> (unfermented, the Blanket's foundation).</div>
 
-<div class="strain red">
+<div class="strain red" id="strain-red-fuzzy-blanket">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 30], [&quot;relief&quot;, 30], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;warm, heavy comfort red for the end of the day&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fuzzy Blanket</h3><span class="batch">0926 · Custom Blend</span></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>1.5</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.8</b></span><span>⏳ 4–5h</span></div>
@@ -494,9 +631,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= GREEN ================= -->
 <div class="colorband band-green" id="green">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433">🟢</span> Green strains — balanced energy &amp; mood</h2>
-  <p>The daily-driver color: balanced energy &amp; vibe, mental clarity &amp; uplift, mild calm &amp; well-being.</p>
-  <div class="bigicon">🌅</div>
+  <h2>Green Strains — Balanced Energy &amp; Mood</h2>
+  <p>The Daily-Driver Color: Balanced Energy &amp; Vibe, Mental Clarity &amp; Uplift, Mild Calm &amp; Well-Being.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433" aria-expanded="false" title="Open this section">🌿</button>
 </div>
 <div class="catintro">
   <b>Greens</b> are WestKoast's deepest bench — and the best-evidenced color in the catalog. The Nano-grind line
@@ -508,7 +645,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="popbox star">🏆 Green standouts — most reviewed: <b>Green Bali 1026</b> (13 reviews, 4.92/5); focus pick: <b>Green Lightning 0926</b> (8× ⭐ 5.0, "no jitters"); nano favorite: <b>Nano Green Devil 0926</b> ("most popularly reviewed" nano).</div>
 
-<div class="strain green">
+<div class="strain green" id="strain-green-bali">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 29], [&quot;calm&quot;, 25], [&quot;relief&quot;, 11]], &quot;caption&quot;: &quot;classic balanced green: uplifted mood, clean energy&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Bali</h3><span class="batch">1026 · Current Harvest</span></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.8</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>1.5</b></span><span>⏳ 4–5h</span></div>
@@ -613,9 +750,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= WHITE ================= -->
 <div class="colorband band-white" id="white">
-  <h2><span class="icobtn" style="--bb:#eef4e2;--bm:#b9d18a;--bd:#3c5f1d">⚪</span> White strains — clean drive &amp; focus</h2>
-  <p>The morning color: high, jitter-free energy, mental clarity &amp; alertness, strong productivity boost.</p>
-  <div class="bigicon">⚡</div>
+  <h2>White Strains — Clean Drive &amp; Focus</h2>
+  <p>The Morning Color: High, Jitter-Free Energy, Mental Clarity &amp; Alertness, Strong Productivity Boost.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#eef4e2;--bm:#b9d18a;--bd:#3c5f1d" aria-expanded="false" title="Open this section">⚡</button>
 </div>
 <div class="catintro">
   <b>Whites</b> are the ignition switch — and WestKoast's white bench is honest about what it is: fast,
@@ -626,7 +763,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="popbox star">🏆 White standouts — community-verified: <b>White Hulk 0526/0726</b> (Reddit: "great mood, energy… without the jittery feeling"); editorial pick: <b>White Lemon 1026</b> (kratom.org: energy "without the jittery feel"); fastest reputation: <b>White Ultra 1026</b> ("caffeine-rivaling 90 minutes").</div>
 
-<div class="strain white">
+<div class="strain white" id="strain-white-hulk">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 37], [&quot;energy&quot;, 36], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;get up and go without the jittery feeling&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Hulk</h3><span class="batch">0526 / 0726</span></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.5</b></span><span>🧘 <b>2.4</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
@@ -681,9 +818,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= GOLD / YELLOW & BLENDS ================= -->
 <div class="colorband band-gold" id="gold">
-  <h2><span class="icobtn" style="--bb:#fdf0cd;--bm:#e8c95a;--bd:#7d5f06">🟡</span> Golds, yellows &amp; blends — mellow warmth and house specialties</h2>
-  <p>Sunset strains and the blender's playground: gentle calm, cozy warmth, and WestKoast's most-reviewed specialty of all.</p>
-  <div class="bigicon">🌅</div>
+  <h2>Golds, Yellows &amp; Blends</h2>
+  <p>Sunset Strains and the Blender's Playground: Gentle Calm, Cozy Warmth, and WestKoast's Most-Reviewed Specialty of All.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#fdf0cd;--bm:#e8c95a;--bd:#7d5f06" aria-expanded="false" title="Open this section">🌅</button>
 </div>
 <div class="catintro">
   <b>Golds and yellows</b> are the quiet corner of the WestKoast catalog — fewer strains, thinner evidence —
@@ -694,7 +831,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="popbox star">🏆 Gold &amp; blend standouts — most-reviewed specialty: <b>Black MD 0726</b> (7× ⭐ 5.0, pain + mood); yellow anchor: <b>Yellow Boyan</b> ("slow, relaxing cozy"); night-pain pick: <b>Pain Blend Original</b> ("my all-time favorite for night pain").</div>
 
-<div class="strain gold">
+<div class="strain gold" id="strain-black-md">
   <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;calm&quot;, 31], [&quot;relief&quot;, 24], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;coffee-ground-soaked leaf \u2014 most distinctive prep&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Black MD</h3><span class="batch">0726 · Coffee-Soaked Specialty</span></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>2.2</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>3.6</b></span><span>⏳ 4–5h</span></div>
@@ -775,9 +912,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= MASTER MATRIX ================= -->
 <div class="colorband band-neutral" id="matrix">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📊</span> Master comparison matrix</h2>
-  <p>Every characterized strain in this guide, side by side — community consensus scores out of 5.0.</p>
-  <div class="bigicon">📊</div>
+  <h2>Master Comparison Matrix</h2>
+  <p>Every Characterized Strain in This Guide, Side by Side — Community Consensus Scores Out of 5.0.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">📊</button>
 </div>
 <div class="catintro">Scores reflect community consensus (on-site reviews, Reddit, YouTube, third-party editorials) on a 0–5 scale:
 😊 mood &amp; euphoria · ⚡ energy &amp; drive · 🧘 relaxation · 🌙 restfulness. — = not enough data. Evidence grades:
@@ -812,9 +949,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 
 <!-- ================= COA REFERENCE ================= -->
 <div class="colorband band-neutral" id="coa">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🧪</span> Alkaloid &amp; lab reference (COAs)</h2>
-  <p>Measured numbers from WestKoast's published lab reports — vein-level batch data, presented honestly.</p>
-  <div class="bigicon">🧪</div>
+  <h2>Alkaloid &amp; Lab Reference (COAs)</h2>
+  <p>Measured Numbers from WestKoast's Published Lab Reports — Vein-Level Batch Data, Presented Honestly.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🧪</button>
 </div>
 <div class="catintro">
   <p>WestKoast publishes a genuine COA library (<b>26 reports</b>) from <b>MBL — Murray-Brown Laboratories
@@ -854,9 +991,9 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 
 <!-- ================= SOURCING ================= -->
 <div class="colorband band-neutral" id="sourcing">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🌱</span> Sourcing: batch codes, grinds &amp; farmer lines</h2>
-  <p>How to read a WestKoast bag.</p>
-  <div class="bigicon">🌱</div>
+  <h2>Sourcing: Batch Codes, Grinds &amp; Farmer Lines</h2>
+  <p>How to Read a WestKoast Bag.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🌱</button>
 </div>
 <div class="catintro">
   <p>WestKoast is a small, one-woman operation (Salem, OR). The labeling system is refreshingly literal —
@@ -874,9 +1011,9 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 
 <!-- ================= CATALOG ================= -->
 <div class="colorband band-neutral" id="catalog">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">🛒</span> Current WestKoast catalog snapshot</h2>
-  <p>What’s on the shelf as of October 2026 — 79 products across the color lines.</p>
-  <div class="bigicon">🛒</div>
+  <h2>Current WestKoast Catalog Snapshot</h2>
+  <p>What’s on the Shelf as of October 2026 — 79 Products Across the Color Lines.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🛒</button>
 </div>
 <table class="grid">
 <tr><th>Line</th><th>Examples on the shelf</th><th>Typical price</th></tr>
@@ -890,8 +1027,11 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 <p class="coa-note">Batches churn fast — several strains rolled 0726 → 1026 within months. New customers save with code Newcustomer10; sitewide sales run regularly (e.g., FALL2026). 21+ only.</p>
 
 <!-- ================= BIBLIOGRAPHY ================= -->
-<div class="biblio" id="biblio">
-  <h2><span class="icobtn" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f">📚</span> Sources &amp; bibliography</h2>
+<div class="colorband band-neutral" id="biblio">
+  <h2>Sources &amp; Bibliography</h2>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">📚</button>
+</div>
+<div class="biblio">
   <ol>
     <li>WestKoast Botanicals — product catalog &amp; COA Reports page. <a href="https://westkoastbotanicals.com/">westkoastbotanicals.com</a> · <a href="https://westkoastbotanicals.com/coa-reports/">COA Reports</a></li>
     <li>MBL — Murray-Brown Laboratories (Northglenn, CO) — Certificates of Analysis, farmer-code batches 0526 &amp; 0726 (HPLC-UV alkaloids; microbial &amp; heavy-metals panels), via WestKoast COA page.</li>
@@ -985,6 +1125,146 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
   });
   modal.addEventListener('click', function(){ modal.style.display = 'none'; });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
+})();
+</script>
+<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Quick Pick Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
+
+<script>
+/* ---- theme: light is ALWAYS the default; dark lasts only for this visit, never persisted ---- */
+(function(){
+function upd(){var b=document.getElementById('wkThemeBtn');if(b){b.textContent=document.documentElement.classList.contains('dark')?'\u2600\uFE0F Theme':'\uD83C\uDF19 Theme';}}
+document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wkThemeBtn');if(b){b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');upd();});}});
+})();
+/* ---- index collapse ---- */
+document.addEventListener('DOMContentLoaded',function(){var idx=document.querySelector('.index');if(!idx)return;var btn=idx.querySelector('h2 .icobtn');if(!btn)return;btn.title='Open the index';btn.addEventListener('click',function(){idx.classList.toggle('open');btn.title=idx.classList.contains('open')?'Close the index':'Open the index';});});
+/* ---- section collapse: every band starts closed, its button opens it ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
+  bands.forEach(function(band){
+    var wrap=document.createElement('div');wrap.className='wcsec';wrap.hidden=true;
+    band.parentNode.insertBefore(wrap,band.nextSibling);
+    while(wrap.nextSibling){
+      var nx=wrap.nextSibling;
+      if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'||nx.id==='wkQuickPick'))break;
+      wrap.appendChild(nx);
+    }
+    var btn=band.querySelector('.wc-tgl');
+    band._wcSet=function(open){wrap.hidden=!open;band.classList.toggle('open',!!open);if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
+    if(btn){btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
+  });
+  function openTarget(){
+    var id=location.hash?location.hash.slice(1):'';if(!id)return;
+    var el=document.getElementById(id);if(!el)return;
+    if(el.classList.contains('colorband')){el._wcSet&&el._wcSet(true);return;}
+    var sec=el.closest?el.closest('.wcsec'):null;
+    if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}
+  }
+  window.addEventListener('hashchange',openTarget);
+  openTarget();
+});
+</script>
+
+<script>
+/* ---- Quick Pick wheel (WestKoast pool, built from this guide's own rated cards) ---- */
+(function(){
+var S=[{"n": "Red Fuzzy Blanket", "v": "Red Strains", "b": "0926 · Custom Blend", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "warm, heavy comfort red for the end of the day", "x": false}, {"n": "Red Bent", "v": "Red Strains", "b": "0726 · Heavy Ferment", "e": 2, "m": 4, "c": 0, "ca": 5, "r": 4, "col": "red", "sp": "Slow", "w": "heavy-ferment red — half of the Pain Blend formula", "x": false}, {"n": "Red Magic", "v": "Red Strains", "b": "0926 · Unfermented", "e": 3, "m": 4, "c": 0, "ca": 4, "r": 4, "col": "red", "sp": "Mid-Slow", "w": "unfermented red — base leaf of Red Fuzzy Blanket", "x": false}, {"n": "Chocolate", "v": "Red Strains", "b": "Red Java · House Red", "e": 2, "m": 4, "c": 0, "ca": 4, "r": 4, "col": "red", "sp": "Mid-Slow", "w": "Red Java-line house red, replaces Nano Red Java", "x": false}, {"n": "Green Bali", "v": "Green Strains", "b": "1026 · Current Harvest", "e": 4, "m": 5, "c": 0, "ca": 4, "r": 2, "col": "green", "sp": "Mid-Fast", "w": "classic balanced green: uplifted mood, clean energy", "x": false}, {"n": "Green Lightning", "v": "Green Strains", "b": "0926", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Fast", "w": "uplifting mid, mood, focus — no jitters", "x": false}, {"n": "Mean Green", "v": "Green Strains", "b": "0626", "e": 4, "m": 5, "c": 0, "ca": 4, "r": 2, "col": "green", "sp": "Mid-Fast", "w": "moderate energy, substantial analgesia — a workhorse", "x": false}, {"n": "Nano Green Devil", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Mid-Fast", "w": "zero anxiety, clean energy and mood boost", "x": false}, {"n": "Nano Green Vietnam", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Fast", "w": "fast-onset green — hits hard, very cerebral", "x": false}, {"n": "Nano Green Monster", "v": "Green Strains", "b": "0726 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Mid-Fast", "w": "mid/fast mood green — nano grind", "x": false}, {"n": "Nano Green Maeng Da", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Fast", "w": "potent, driven, clean — freshest in the game", "x": false}, {"n": "White Hulk", "v": "White Strains", "b": "0526 / 0726", "e": 5, "m": 5, "c": 0, "ca": 2, "r": 1, "col": "white", "sp": "Fast", "w": "get up and go without the jittery feeling", "x": false}, {"n": "White Lemon", "v": "White Strains", "b": "1026 · Current Harvest", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "white", "sp": "Fast", "w": "good energy without the jitters — uplifts mood", "x": false}, {"n": "White Ultra", "v": "White Strains", "b": "1026 · Current Harvest", "e": 5, "m": 4, "c": 0, "ca": 2, "r": 1, "col": "white", "sp": "Fast", "w": "fast white — calm mood, short peak", "x": false}, {"n": "Black MD", "v": "Golds, Yellows & Blends", "b": "0726 · Coffee-Soaked Specialty", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 4, "col": "gold", "sp": "Slow", "w": "coffee-ground-soaked leaf — most distinctive prep", "x": false}, {"n": "Yellow Boyan", "v": "Golds, Yellows & Blends", "b": "Yellow/Gold Vein · Mixer", "e": 2, "m": 4, "c": 0, "ca": 5, "r": 3, "col": "gold", "sp": "Slow", "w": "slow, relaxing cozy — great mixed with reds", "x": false}, {"n": "Pain Blend Original", "v": "Golds, Yellows & Blends", "b": "Red Bent + Yellow Boyan · SOLD OUT", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 4, "col": "blend", "sp": "Slow", "w": "red bent + yellow boyan — the pain blend", "x": false}, {"n": "Energy Mood", "v": "Golds, Yellows & Blends", "b": "0926 · White + Green Blend", "e": 4, "m": 4, "c": 0, "ca": 3, "r": 1, "col": "blend", "sp": "Mid-Fast", "w": "white and green blend", "x": false}, {"n": "Hug The Kids", "v": "Golds, Yellows & Blends", "b": "0926 · House Blend", "e": 3, "m": 5, "c": 0, "ca": 4, "r": 3, "col": "blend", "sp": "Mid", "w": "warm prosocial blend — no written reports yet", "x": false}];
+var W={calm:{e:-3,m:1,c:0,ca:3,r:0},energy:{e:3,m:1,c:1,ca:-1,r:0},focus:{e:2,m:0,c:0,ca:0,r:-1},mood:{e:1,m:3,c:0,ca:1,r:0},relief:{e:0,m:0,c:0,ca:1,r:3},sleep:{e:-3,m:0,c:0,ca:3,r:2}};
+var DIMS=[['e','Energy','#F59E0B'],['m','Mood','#2E7D4F'],['c','Clarity','#5BA3D9'],['ca','Calm','#E8873A'],['r','Relief','#B03A3A']];
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Relief',calm:'Calm'};
+var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
+function score(s,w){return s.e*w.e+s.m*w.m+s.c*w.c+s.ca*w.ca+s.r*w.r;}
+function rankedFor(sit){var w=W[sit];return S.map(function(s,i){return{s:s,i:i,sc:score(s,w)};}).sort(function(a,b){return b.sc-a.sc||a.i-b.i;}).map(function(x){return x.s;});}
+function hist(){try{return JSON.parse(localStorage.getItem('wkQpHistory')||'[]');}catch(e){return[];}}
+function logPick(sit,s){var h=hist();h.push({sit:sit,n:s.n,v:s.v,col:s.col,x:!!s.x,d:Date.now()});while(h.length>60)h.shift();try{localStorage.setItem('wkQpHistory',JSON.stringify(h));}catch(e){}}
+function lastFor(h,sit){for(var i=h.length-1;i>=0;i--){if(h[i].sit===sit)return h[i];}return null;}
+function fmtD(ts){return new Date(ts).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});}
+function bars(s){return '<div class="qp-bars">'+DIMS.map(function(d){var v=s[d[0]],dots='';for(var i=1;i<=5;i++){dots+='<i style="background:'+(i<=v?d[2]:'var(--line)')+'"></i>';}return '<div class="qp-bar">'+d[1]+'<div class="qp-dots">'+dots+'</div></div>';}).join('')+'</div>';}
+var curSit=null,curWin=null,curRot=null;
+function pickCard(s,tag,rot,rotwhy){
+  var h='<div class="qp-pick"><div class="qp-tag'+(rot?' rot':'')+'">'+tag+'</div><div class="qp-name">'+s.n+'</div>'
+    +'<div class="qp-meta">'+s.v+' \u00B7 '+s.b+' \u00B7 '+s.sp+' speed</div>'
+    +'<p class="qp-why">'+s.w+'</p>'+bars(s);
+  if(rot&&rotwhy)h+='<p class="qp-rotwhy">'+rotwhy+'</p>';
+  h+='<div><button type="button" class="qp-take'+(rot?' rot':'')+'" data-n="'+s.n.replace(/"/g,'&quot;')+'">Take this one</button></div><div class="qp-logged" style="display:none"></div></div>';
+  return h;
+}
+function showPick(sit){
+  curSit=sit;var rk=rankedFor(sit);curWin=rk[0];
+  var h=hist(),lastSit=lastFor(h,sit),lastAny=h.length?h[h.length-1]:null;
+  var rot=null,why=[];
+  for(var i=0;i<rk.length;i++){var c=rk[i];
+    if(c===curWin)continue;
+    if(lastSit&&(c.n===lastSit.n||c.v===lastSit.v))continue;
+    if(lastAny&&COLN[c.col]===COLN[lastAny.col])continue;
+    if(lastAny&&lastAny.x&&c.x)continue;
+    rot=c;break;}
+  if(rot){
+    if(lastSit){why.push('Rests <b>'+lastSit.n+'</b> (took it '+fmtD(lastSit.d)+')');if(rot.v!==lastSit.v)why.push('different line');}
+    if(lastAny&&COLN[rot.col]!==COLN[lastAny.col])why.push('different color than your last pick');
+    if(!h.length)why.push('First logged pick starts your rotation history');
+  }else{
+    for(var j=0;j<rk.length;j++){if(rk[j]!==curWin&&(!lastSit||rk[j].n!==lastSit.n)){rot=rk[j];break;}}
+    if(rot)why.push('Rotation rules relaxed \u2014 the catalog runs thin here');
+  }
+  curRot=rot;
+  var out='';
+  var lastLine='';
+  if(lastSit)lastLine='<div class="qp-runner">Last time for <b>'+SITN[sit]+'</b>: <b>'+lastSit.n+'</b> \u00B7 '+fmtD(lastSit.d)+'</div>';
+  if(curWin&&lastSit&&curWin.n===lastSit.n)out+='<p class="qp-note">Won again \u2014 you last took it '+fmtD(lastSit.d)+'.</p>';
+  out+='<div class="qp-dual">'+pickCard(curWin,'\u2605 The Winner',false,'')
+    +(rot?pickCard(rot,'\u21BB The Rotation Pick',true,why.join(' \u00B7 ')):'<div class="qp-pick"><div class="qp-tag rot">\u21BB The Rotation Pick</div><p class="qp-why">No second strain clears the rotation rules for this feeling yet.</p></div>')
+    +'</div>'+lastLine;
+  document.getElementById('qpResult').innerHTML=out;
+  Array.prototype.forEach.call(document.querySelectorAll('.qp-take'),function(b){
+    b.addEventListener('click',function(){
+      var s=(b.getAttribute('data-n')===curWin.n)?curWin:curRot;if(!s)return;
+      logPick(curSit,s);
+      var lg=b.parentElement.parentElement.querySelector('.qp-logged');
+      b.style.display='none';lg.style.display='block';lg.textContent='\u2713 Logged \u2014 '+s.n+' for '+SITN[curSit]+'.';
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded',function(){
+  Array.prototype.forEach.call(document.querySelectorAll('.qp-node'),function(n){
+    n.addEventListener('click',function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.qp-node'),function(x){x.classList.remove('on');});
+      n.classList.add('on');showPick(n.getAttribute('data-sit'));
+    });
+  });
+  var hub=document.getElementById('qpHub');
+  if(hub){hub.addEventListener('click',function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.qp-node'),function(x){x.classList.remove('on');});
+    curSit=null;
+    document.getElementById('qpResult').innerHTML='<p class="qp-note">Tap a feeling \u2014 the wheel reads all 19 rated WestKoast strains in this guide and shows the winner plus a rotation pick.</p>';
+  });}
+});
+})();
+</script>
+
+<script>
+/* ---- whole band toggles its section; reliable in-page jumps that open collapsed targets ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.colorband').forEach(function(band){band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var w=band.nextElementSibling;if(w&&band._wcSet)band._wcSet(w.hidden);});});
+});
+document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var id=a.getAttribute('href').slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();if(el.classList.contains('colorband')&&el._wcSet)el._wcSet(true);var sec=el.closest?el.closest('.wcsec'):null;if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}try{history.replaceState(null,'','#'+id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
+</script>
+
+<script>
+/* ---- Quick Pick log viewer (on-device, wkQpHistory) ---- */
+(function(){
+function hist(){try{return JSON.parse(localStorage.getItem('wkQpHistory')||'[]');}catch(e){return[];}}
+function save(h){try{localStorage.setItem('wkQpHistory',JSON.stringify(h));}catch(e){}}
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Relief',calm:'Calm'};
+var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function render(){var H=hist();var el=document.getElementById('logList');if(!el)return;
+ if(!H.length){el.innerHTML='<p class="wc-logempty">No picks logged yet. Tap a feeling on the wheel, then \u201cTake this one.\u201d</p>';return;}
+ var rev=H.slice().reverse();
+ el.innerHTML=rev.map(function(e,i){var oi=H.length-1-i;var d=new Date(e.d);return '<div class="wc-logrow"><div><b>'+esc(e.n)+'</b><br><small>'+(SITN[e.sit]||e.sit)+' \u00B7 '+esc(e.v)+' \u00B7 '+(COLN[e.col]||'')+' \u2014 '+d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' '+d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})+'</small></div><button type="button" class="wc-logdel" data-i="'+oi+'" title="Remove this entry">\u2715</button></div>';}).join('');
+ Array.prototype.forEach.call(el.querySelectorAll('.wc-logdel'),function(b){b.addEventListener('click',function(){var h=hist();h.splice(parseInt(b.getAttribute('data-i'),10),1);save(h);render();});});}
+function open(){var m=document.getElementById('logModal');if(!m)return;render();m.hidden=false;}
+function close(){var m=document.getElementById('logModal');if(m)m.hidden=true;}
+document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Quick Pick log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
 })();
 </script>
 </body>
