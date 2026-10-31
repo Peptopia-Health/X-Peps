@@ -1479,7 +1479,7 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
 }
 
 /* ==== Oct 31 review pass: uniform width + open-by-default model (David) ==== */
-:root{--uw:min(800px,100%)}
+:root{--uw:100%}
 .colorband{width:var(--uw,fit-content);margin-left:auto;margin-right:auto}
 .colorband.open{box-shadow:0 0 0 3px rgba(234,88,12,.55)}
 .wcsec{width:var(--uw,auto);margin-left:auto;margin-right:auto}
@@ -1758,15 +1758,9 @@ document.addEventListener('DOMContentLoaded',function(){
 /* ---- uniform width: the widest title band sets --uw for every body container ---- */
 (function(){
   function measure(){
-    var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
-    if(!bands.length)return;
-    bands.forEach(function(b){b.style.width='fit-content';});
-    var w=0;bands.forEach(function(b){w=Math.max(w,b.offsetWidth);});
     var wrap=document.querySelector('.wrap');
-    if(wrap)w=Math.min(w,wrap.clientWidth);
-    w=Math.min(w,800);
-    bands.forEach(function(b){b.style.width='';});
-    if(w>0)document.documentElement.style.setProperty('--uw',w+'px');
+    if(!wrap)return;
+    document.documentElement.style.setProperty('--uw',wrap.clientWidth+'px');
   }
   function go(){requestAnimationFrame(measure);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
