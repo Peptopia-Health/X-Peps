@@ -317,7 +317,7 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(35,64,
 .wc-logdel{background:#fdf1f1;border:1.5px solid #b03a3a;color:#b03a3a;border-radius:8px;width:28px;height:28px;cursor:pointer;flex:none}
 .wc-logempty{color:#6f675a;text-align:center;padding:16px 6px}
 .wc-logfoot{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid #e7e2d6}
-:root{--uw:min(800px,100%)}
+:root{--uw:100%}
 /* uniform width (David, Oct 31): the widest title band sets ONE width for every body container */
 .panels{display:grid;grid-template-columns:1fr 1fr}
 .wk-batchbtn{display:inline-block;padding:3px 12px;border-radius:999px;background:#eef4ea;border:1.5px solid #23402f;color:#23402f;font-weight:800;font-size:12.5px;text-decoration:none;white-space:nowrap;box-shadow:0 2px 0 #23402f;cursor:pointer}
@@ -1346,15 +1346,9 @@ document.addEventListener('DOMContentLoaded',function(){
 /* ---- uniform width: the widest title band sets --uw for every body container ---- */
 (function(){
   function measure(){
-    var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
-    if(!bands.length)return;
-    bands.forEach(function(b){b.style.width='fit-content';});
-    var w=0;bands.forEach(function(b){w=Math.max(w,b.offsetWidth);});
     var wrap=document.querySelector('.wrap');
-    if(wrap)w=Math.min(w,wrap.clientWidth);
-    w=Math.min(w,800);
-    bands.forEach(function(b){b.style.width='';});
-    if(w>0)document.documentElement.style.setProperty('--uw',w+'px');
+    if(!wrap)return;
+    document.documentElement.style.setProperty('--uw',wrap.clientWidth+'px');
   }
   function go(){requestAnimationFrame(measure);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
