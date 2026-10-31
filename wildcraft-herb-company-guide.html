@@ -1530,9 +1530,9 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
 </script>
 <script>
 /* ---- theme (light/dark, persisted) ---- */
-(function(){try{if(localStorage.getItem('wc-theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}
+(function(){/* Light theme is ALWAYS the default (David, Oct 31): page loads light; dark lasts only for the current visit and is never persisted. */
 function upd(){var b=document.getElementById('wcThemeBtn');if(b){b.textContent=document.documentElement.classList.contains('dark')?'☀️ Theme':'🌙 Theme';}}
-document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wcThemeBtn');if(b){b.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('wc-theme',d?'dark':'light');}catch(e){}upd();});}});
+document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wcThemeBtn');if(b){b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');upd();});}});
 })();
 /* ---- index collapse ---- */
 document.addEventListener('DOMContentLoaded',function(){var idx=document.querySelector('.index');if(!idx)return;var btn=idx.querySelector('h2 .icobtn');if(!btn)return;btn.title='Open the index';btn.addEventListener('click',function(){idx.classList.toggle('open');btn.title=idx.classList.contains('open')?'Close the index':'Open the index';});});
