@@ -593,10 +593,9 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <!-- ================= SCIENCE NOTE ================= -->
-<div class="colorband band-neutral" id="science">
+<div class="colorband band-neutral" id="science" data-notoggle="1">
   <h2>Vein Color Feedback</h2>
   <p>Community Reports · Recorded as Fact</p>
-  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔬</button>
 </div>
 <div class="catintro">
   <p>The color system is the community's own language: <span class="vw-r">reds</span> for winding down, <span class="vw-w">whites</span> for lift-off, <span class="vw-g">greens</span> for
@@ -1478,6 +1477,19 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
 @media(max-width:768px){
   #donut-modal-box{width:94vw!important;padding:16px!important;}
 }
+
+/* ==== Oct 31 review pass: uniform width + open-by-default model (David) ==== */
+:root{--uw:min(800px,100%)}
+.colorband{width:var(--uw,fit-content);margin-left:auto;margin-right:auto}
+.colorband.open{box-shadow:0 0 0 3px rgba(234,88,12,.55)}
+.wcsec{width:var(--uw,auto);margin-left:auto;margin-right:auto}
+.strain{width:100%}
+.index,.wcqp{width:var(--uw);max-width:100%}
+a.batch{display:inline-block;padding:3px 12px;border-radius:999px;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 55%,#bcd8c4);border:1.5px solid #1E4D3B;color:#1E4D3B;font-weight:800;font-size:12.5px;text-decoration:none;white-space:nowrap;box-shadow:0 2px 0 #1E4D3B;cursor:pointer}
+.strain-head{cursor:pointer}
+.strain-body[hidden]{display:none}
+.wk-chev{flex:none;margin-left:10px;font-weight:800;font-size:13px;opacity:.85}
+@media print{.strain-body[hidden]{display:block!important}:root{--uw:100%!important}}
 </style>
 </div>
 <script>
@@ -1566,7 +1578,7 @@ function walk(node){
       var tok=m[0],el;
       if(tok.indexOf('%')>-1){el=document.createElement('b');el.textContent=tok;}
       else if(tok.indexOf('PR Select')===0||tok.charAt(0)==='2'){el=document.createElement('span');el.className='wc-ref';el.textContent=tok;}
-      else{var num=tok.replace('Batch ','');el=document.createElement('a');el.className='wc-batchbtn';el.href=document.getElementById('batch-'+num.slice(1))?('#batch-'+num.slice(1)):'#coa';el.textContent=num;if(tok.indexOf('Batch')===0){frag.appendChild(document.createTextNode('Batch '));}}
+      else{var num=tok.replace('Batch ','');el=document.createElement('a');el.className='wc-batchbtn';el.href=document.getElementById('batch-'+num.slice(1))?('#batch-'+num.slice(1)):'#coa';el.textContent=tok;}
       frag.appendChild(el);last=m.index+tok.length;
     }
     frag.appendChild(document.createTextNode(t.slice(last)));
@@ -1579,27 +1591,32 @@ function walk(node){
 }
 document.addEventListener('DOMContentLoaded',function(){var w=document.querySelector('.wrap');if(w)walk(w);});
 })();
-/* ---- section collapse: every band starts closed, its button opens it ---- */
+/* ---- section collapse: sections start OPEN; the band button collapses/opens. Only strain cards start collapsed. Vein Colors (data-notoggle) never collapses. ---- */
 document.addEventListener('DOMContentLoaded',function(){
   var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
   bands.forEach(function(band){
-    var wrap=document.createElement('div');wrap.className='wcsec';wrap.hidden=true;
+    if(band.hasAttribute('data-notoggle'))return;
+    var wrap=document.createElement('div');wrap.className='wcsec';
     band.parentNode.insertBefore(wrap,band.nextSibling);
     while(wrap.nextSibling){
       var nx=wrap.nextSibling;
       if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'))break;
       wrap.appendChild(nx);
     }
+    band._wcWrap=wrap;wrap._wcBand=band;
     var btn=band.querySelector('.wc-tgl');
-    band._wcSet=function(open){wrap.hidden=!open;if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
-    if(btn){btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
+    band.classList.add('open');
+    band._wcSet=function(open){wrap.hidden=!open;band.classList.toggle('open',!!open);if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
+    if(btn){btn.setAttribute('aria-expanded','true');btn.title='Close this section';btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
+    band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;band._wcSet(wrap.hidden);});
   });
   function openTarget(){
     var id=location.hash?location.hash.slice(1):'';if(!id)return;
     var el=document.getElementById(id);if(!el)return;
     if(el.classList.contains('colorband')){el._wcSet&&el._wcSet(true);return;}
     var sec=el.closest?el.closest('.wcsec'):null;
-    if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}
+    if(sec&&sec._wcBand)sec._wcBand._wcSet(true);
+    if(el.classList.contains('strain')&&window.__wcOpenCard)window.__wcOpenCard(el);
   }
   window.addEventListener('hashchange',openTarget);
   openTarget();
@@ -1686,7 +1703,7 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.colorband').forEach(function(band){band.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var w=band.nextElementSibling;if(w&&band._wcSet)band._wcSet(w.hidden);});});
   document.querySelectorAll('.wcsec').forEach(function(w){var d=document.createElement('div');d.className='wc-return';d.innerHTML='<a href="#top">\u2191 Return to the Quick Pick</a>';w.insertBefore(d,w.firstChild);});
 });
-document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var id=a.getAttribute('href').slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();if(el.classList.contains('colorband')&&el._wcSet)el._wcSet(true);var sec=el.closest?el.closest('.wcsec'):null;if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}try{history.replaceState(null,'','#'+id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
+document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('a[href^="#"]'):null;if(!a)return;var id=a.getAttribute('href').slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;e.preventDefault();if(el.classList.contains('colorband')&&el._wcSet)el._wcSet(true);var sec=el.closest?el.closest('.wcsec'):null;if(sec){var prev=sec.previousElementSibling;if(prev&&prev._wcSet)prev._wcSet(true);}if(el.classList&&el.classList.contains('strain')&&window.__wcOpenCard)window.__wcOpenCard(el);try{history.replaceState(null,'','#'+id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
 /* ---- v3: sortable comparison tables (whole rows move together) ---- */
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('table.wc-sortable').forEach(function(tbl){var ths=Array.prototype.slice.call(tbl.querySelectorAll('th.sortable'));ths.forEach(function(th){th.addEventListener('click',function(){var k=+th.getAttribute('data-k');var dir=th.getAttribute('data-dir')==='desc'?'asc':'desc';ths.forEach(function(x){x.removeAttribute('data-dir');});th.setAttribute('data-dir',dir);var tbody=tbl.tBodies[0];if(!tbody)return;var rows=Array.prototype.slice.call(tbody.rows).filter(function(r){return !r.querySelector('th');});rows.sort(function(a,b){var x=a.cells[k]?a.cells[k].textContent.trim():'',y=b.cells[k]?b.cells[k].textContent.trim():'';var nx=parseFloat(x),ny=parseFloat(y);var c=(isNaN(nx)||isNaN(ny))?(x<y?-1:(x>y?1:0)):(nx-ny);return dir==='desc'?-c:c;});rows.forEach(function(r){tbody.appendChild(r);});});});});});
 /* ---- v3: lab reports open in a popup overlay ---- */
@@ -1708,6 +1725,43 @@ function open(){var m=document.getElementById('logModal');if(!m)return;render();
 function close(){var m=document.getElementById('logModal');if(m)m.hidden=true;}
 document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Quick Pick log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
 /* V6: band width is pure CSS now (fit-content in V6_STYLE) — the old fitBands JS forced every band to the column width on phones and is removed. */
+})();
+</script>
+<script>
+/* ---- strain cards: auto-collapsed; header click opens the card (David, Oct 31) ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  window.__wcOpenCard=function(card){var b=card.querySelector('.strain-body');if(b)b.hidden=false;var c=card.querySelector('.wk-chev');if(c)c.textContent='\u25BE';};
+  document.querySelectorAll('.strain').forEach(function(card){
+    var head=card.querySelector('.strain-head'),body=card.querySelector('.strain-body');
+    if(!head||!body)return;
+    body.hidden=true;
+    var chev=document.createElement('span');chev.className='wk-chev';chev.textContent='\u25B8';head.appendChild(chev);
+    head.addEventListener('click',function(e){if(e.target.closest('a,button'))return;body.hidden=!body.hidden;chev.textContent=body.hidden?'\u25B8':'\u25BE';});
+  });
+  /* batch chips: pill buttons reading Batch #<id>, all bold */
+  document.querySelectorAll('a.batch').forEach(function(a){
+    var t=a.textContent.trim(); if(!t||t.indexOf('Batch')===0)return;
+    var parts=t.split(' \u00B7 ');
+    a.innerHTML='<b>Batch</b> <b>#'+parts[0]+'</b>'+(parts.length>1?' \u00B7 '+parts.slice(1).join(' \u00B7 '):'');
+  });
+});
+/* ---- uniform width: the widest title band sets --uw for every body container ---- */
+(function(){
+  function measure(){
+    var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
+    if(!bands.length)return;
+    bands.forEach(function(b){b.style.width='fit-content';});
+    var w=0;bands.forEach(function(b){w=Math.max(w,b.offsetWidth);});
+    var wrap=document.querySelector('.wrap');
+    if(wrap)w=Math.min(w,wrap.clientWidth);
+    w=Math.min(w,800);
+    bands.forEach(function(b){b.style.width='';});
+    if(w>0)document.documentElement.style.setProperty('--uw',w+'px');
+  }
+  function go(){requestAnimationFrame(measure);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(measure,30);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(measure,180);});
 })();
 </script>
 </body>
