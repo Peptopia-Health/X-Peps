@@ -335,6 +335,7 @@ table.grid td a{color:inherit;font-weight:700;text-decoration:underline;text-dec
 .strain-head{cursor:pointer}
 .strain-body[hidden]{display:none}
 .wk-chev{flex:none;margin-left:10px;font-weight:800;font-size:13px;opacity:.85}
+.wk-open{width:var(--uw,auto);margin-left:auto;margin-right:auto}
 /* dark theme (visit-only; light is always the default) */
 html.dark{--paper:#131711;--paper2:#1D231C;--ink:#EDEAE0;--muted:#ABA291;--line:#3C463A;--accent:#7FB069}
 html.dark body{background:var(--paper);color:var(--ink)}
@@ -445,7 +446,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
     <div class="phead">White</div>
     <div class="pbody">
       <div class="pleft">⚡ HIGH, JITTER-FREE ENERGY<br><b>40%</b></div>
-      <svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <a href="#strain-white-hulk" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg></a>
       <div class="pright">☀️ MENTAL CLARITY &amp; ALERTNESS<br><b>35%</b><br><br>📈 STRONG PRODUCTIVITY BOOST<br><b>25%</b></div>
     </div>
     <div class="pfoot">Best for brisk energy, clean motivation, substitute for coffee.</div>
@@ -455,7 +456,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
     <div class="phead">Green</div>
     <div class="pbody">
       <div class="pleft">🌅 BALANCED ENERGY &amp; VIBE<br><b>35%</b></div>
-      <svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <a href="#strain-green-bali" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg></a>
       <div class="pright">👁️ MENTAL CLARITY &amp; UPLIFT<br><b>30%</b><br><br>🍃 MILD CALM &amp; WELL-BEING<br><b>35%</b></div>
     </div>
     <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
@@ -465,7 +466,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
     <div class="phead">Yellow</div>
     <div class="pbody">
       <div class="pleft">😌 MELLOW MOOD &amp; RELAXATION<br><b>45%</b><br><br>🤗 GENTLE CALM &amp; WARMTH<br><b>35%</b></div>
-      <svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <a href="#strain-black-md" title="Jump to this vein’s strains"><svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
       <div class="pright">⛅ BALANCED WELL-BEING<br><b>20%</b></div>
     </div>
     <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
@@ -475,45 +476,14 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
     <div class="phead">Red</div>
     <div class="pbody">
       <div class="pleft">🛌 DEEP RELAXATION &amp; RELIEF<br><b>50%</b><br><br>😴 CALMING EFFECTS<br><b>30%</b></div>
-      <svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg>
+      <a href="#strain-red-fuzzy-blanket" title="Jump to this vein’s strains"><svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
       <div class="pright">🌙 MENTAL CALM &amp; RESTFUL REST<br><b>20%</b></div>
     </div>
     <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
     <a class="golink" href="#red">→ Browse red strains</a>
   </div>
 </div>
-  <div class="panel p-green">
-    <div class="phead">Green</div>
-    <div class="pbody">
-      <a href="#strain-green-bali" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-    </div>
-    <div class="peffects"><span class="vw-g">Green</span> = ⚡ <b>Energy</b> 35% · 😊 <b>Mood</b> 30% · 🍃 <b>Calming</b> 35%</div>
-    </div>
-    <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
-    <a class="golink" href="#strain-green-bali">→ Browse green strains</a>
-  </div>
-  <div class="panel p-yellow">
-    <div class="phead">Yellow</div>
-    <div class="pbody">
-      <a href="#strain-black-md" title="Jump to this vein’s strains"><svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-    </div>
-    <div class="peffects"><span class="vw-y">Yellow</span> = 😌 <b>Relaxation</b> 45% · 🤗 <b>Warmth</b> 35% · ⛅ <b>Well-Being</b> 20%</div>
-    </div>
-    <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
-    <a class="golink" href="#strain-black-md">→ Browse gold &amp; yellow strains</a>
-  </div>
-  <div class="panel p-red">
-    <div class="phead">Red</div>
-    <div class="pbody">
-      <a href="#strain-red-fuzzy-blanket" title="Jump to this vein’s strains"><svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-    </div>
-    <div class="peffects"><span class="vw-r">Red</span> = 🛌 <b>Relief</b> 50% · 🧘 <b>Relaxation</b> 30% · 🌙 <b>Rest</b> 20%</div>
-    </div>
-    <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
-    <a class="golink" href="#strain-red-fuzzy-blanket">→ Browse red strains</a>
-  </div>
-</div>
-<script>
+  <script>
 document.querySelectorAll('svg.pie').forEach(function(svg){
   var NS='http://www.w3.org/2000/svg';
   var slices=svg.dataset.slices.split(',').map(function(s){var p=s.split(':');return{c:p[0],v:+p[1]};});
@@ -595,7 +565,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 Red standouts — deepest evidence: <b>Red Fuzzy Blanket 0926</b> (15× ⭐ 5.0, sleep &amp; pain); heavy ferment: <b>Red Bent 0726</b> ("not too sedating"); blend base: <b>Red Magic 0926</b> (unfermented, the Blanket's foundation).</div>
 
 <div class="strain red" id="strain-red-fuzzy-blanket">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 30], [&quot;relief&quot;, 30], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;warm, heavy comfort red for the end of the day&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fuzzy Blanket</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · Custom Blend</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 30], [&quot;relief&quot;, 30], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;warm, heavy comfort red for the end of the day&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fuzzy Blanket</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Custom Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>1.5</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.8</b></span><span>⏳ 4–5h</span></div>
     <h4>🌿 The leaf</h4>
@@ -616,7 +586,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain red" id="strain-red-bent">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 29], [&quot;relief&quot;, 26], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;heavy-ferment red \u2014 half of the Pain Blend formula&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Bent</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · · Heavy Ferment</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 29], [&quot;relief&quot;, 26], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;heavy-ferment red \u2014 half of the Pain Blend formula&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Bent</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · Heavy Ferment</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>2.0</b></span><span>🧘 <b>4.5</b></span><span>🌙 <b>3.8</b></span><span>⏳ 4–5h</span></div>
     <h4>🌿 The leaf</h4>
@@ -630,7 +600,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain red" id="strain-red-magic">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;calm&quot;, 29], [&quot;relief&quot;, 24], [&quot;energy&quot;, 17]], &quot;caption&quot;: &quot;unfermented red \u2014 base leaf of Red Fuzzy Blanket&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Magic</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · Unfermented</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;calm&quot;, 29], [&quot;relief&quot;, 24], [&quot;energy&quot;, 17]], &quot;caption&quot;: &quot;unfermented red \u2014 base leaf of Red Fuzzy Blanket&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Magic</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Unfermented</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>2.5</b></span><span>🧘 <b>4.2</b></span><span>🌙 <b>3.5</b></span><span>⏳ 4–4.5h</span></div>
     <h4>🌿 The leaf</h4>
@@ -696,7 +666,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 Green standouts — most reviewed: <b>Green Bali 1026</b> (13 reviews, 4.92/5); focus pick: <b>Green Lightning 0926</b> (8× ⭐ 5.0, "no jitters"); nano favorite: <b>Nano Green Devil 0926</b> ("most popularly reviewed" nano).</div>
 
 <div class="strain green" id="strain-green-bali">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 29], [&quot;calm&quot;, 25], [&quot;relief&quot;, 11]], &quot;caption&quot;: &quot;classic balanced green: uplifted mood, clean energy&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Bali</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · · Current Harvest</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 29], [&quot;calm&quot;, 25], [&quot;relief&quot;, 11]], &quot;caption&quot;: &quot;classic balanced green: uplifted mood, clean energy&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Bali</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.8</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>1.5</b></span><span>⏳ 4–5h</span></div>
     <h4>💬 What the community reports</h4>
@@ -733,7 +703,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-devil">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 31], [&quot;calm&quot;, 25], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;zero anxiety, clean energy and mood boost&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Devil</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 31], [&quot;calm&quot;, 25], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;zero anxiety, clean energy and mood boost&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Devil</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>3.3</b></span><span>🌙 <b>1.2</b></span><span>⏳ 4–5h</span></div>
     <h4>💬 What the community reports</h4>
@@ -745,7 +715,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-vietnam">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 34], [&quot;calm&quot;, 23], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;fast-onset green \u2014 hits hard, very cerebral&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Vietnam</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 34], [&quot;calm&quot;, 23], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;fast-onset green \u2014 hits hard, very cerebral&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Vietnam</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>3.0</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
@@ -757,7 +727,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-monster">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 31], [&quot;calm&quot;, 25], [&quot;relief&quot;, 10]], &quot;caption&quot;: &quot;mid/fast mood green \u2014 nano grind&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Monster</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 31], [&quot;calm&quot;, 25], [&quot;relief&quot;, 10]], &quot;caption&quot;: &quot;mid/fast mood green \u2014 nano grind&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Monster</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.1</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>1.3</b></span><span>⏳ 4–5h</span></div>
     <h4>🌿 The leaf</h4>
@@ -776,7 +746,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-maeng-da">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 33], [&quot;calm&quot;, 24], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;potent, driven, clean \u2014 freshest in the game&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Maeng Da</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 33], [&quot;calm&quot;, 24], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;potent, driven, clean \u2014 freshest in the game&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Maeng Da</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>3.1</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
@@ -814,7 +784,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 White standouts — community-verified: <b>White Hulk 0526/0726</b> (Reddit: "great mood, energy… without the jittery feeling"); editorial pick: <b>White Lemon 1026</b> (kratom.org: energy "without the jittery feel"); fastest reputation: <b>White Ultra 1026</b> ("caffeine-rivaling 90 minutes").</div>
 
 <div class="strain white" id="strain-white-hulk">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 37], [&quot;energy&quot;, 36], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;get up and go without the jittery feeling&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Hulk</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0526</b> · / 0726</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 37], [&quot;energy&quot;, 36], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;get up and go without the jittery feeling&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Hulk</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0526</b> / 0726</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.5</b></span><span>🧘 <b>2.4</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
@@ -826,7 +796,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain white" id="strain-white-lemon">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;energy&quot;, 35], [&quot;calm&quot;, 21], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;good energy without the jitters \u2014 uplifts mood&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Lemon</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · · Current Harvest</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;energy&quot;, 35], [&quot;calm&quot;, 21], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;good energy without the jitters \u2014 uplifts mood&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Lemon</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>1.0</b></span><span>⏳ 3.5–4h</span></div>
     <h4>💬 What the community reports</h4>
@@ -838,7 +808,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain white" id="strain-white-ultra">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 39], [&quot;mood&quot;, 35], [&quot;calm&quot;, 18], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;fast white \u2014 calm mood, short peak&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Ultra</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · · Current Harvest</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 39], [&quot;mood&quot;, 35], [&quot;calm&quot;, 18], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;fast white \u2014 calm mood, short peak&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Ultra</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>4.6</b></span><span>🧘 <b>2.2</b></span><span>🌙 <b>1.0</b></span><span>⏳ ~1.5h peak</span></div>
     <h4>🌿 The leaf</h4>
@@ -882,7 +852,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 Gold &amp; blend standouts — most-reviewed specialty: <b>Black MD 0726</b> (7× ⭐ 5.0, pain + mood); yellow anchor: <b>Yellow Boyan</b> ("slow, relaxing cozy"); night-pain pick: <b>Pain Blend Original</b> ("my all-time favorite for night pain").</div>
 
 <div class="strain gold" id="strain-black-md">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;calm&quot;, 31], [&quot;relief&quot;, 24], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;coffee-ground-soaked leaf \u2014 most distinctive prep&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Black MD</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · · Coffee-Soaked Specialty</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;calm&quot;, 31], [&quot;relief&quot;, 24], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;coffee-ground-soaked leaf \u2014 most distinctive prep&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Black MD</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · Coffee-Soaked Specialty</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>2.2</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>3.6</b></span><span>⏳ 4–5h</span></div>
     <h4>🌿 The leaf</h4>
@@ -928,7 +898,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain blend" id="strain-energy-mood">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 34], [&quot;calm&quot;, 23], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;white and green blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Energy Mood</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · White + Green Blend</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 34], [&quot;calm&quot;, 23], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;white and green blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Energy Mood</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · White + Green Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>2.8</b></span><span>🌙 <b>1.0</b></span><span>⏳ 3.5–4h</span></div>
     <h4>🌿 The blend</h4>
@@ -940,7 +910,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain blend" id="strain-hug-the-kids">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;calm&quot;, 30], [&quot;energy&quot;, 20], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;warm prosocial blend \u2014 no written reports yet&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Hug The Kids</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · · House Blend</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;calm&quot;, 30], [&quot;energy&quot;, 20], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;warm prosocial blend \u2014 no written reports yet&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Hug The Kids</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · House Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>2.8</b></span><span>🧘 <b>4.2</b></span><span>🌙 <b>2.5</b></span><span>⏳ 4–4.5h</span></div>
     <h4>💬 What the community reports</h4>
@@ -1236,6 +1206,15 @@ document.addEventListener('DOMContentLoaded',function(){
     band._wcSet=function(open){wrap.hidden=!open;band.classList.toggle('open',!!open);if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
     if(btn){btn.setAttribute('aria-expanded','true');btn.title='Close this section';btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
   });
+  document.querySelectorAll('.colorband[data-notoggle]').forEach(function(band){
+    var box=document.createElement('div');box.className='wk-open';
+    band.parentNode.insertBefore(box,band.nextSibling);
+    while(box.nextSibling){
+      var nx=box.nextSibling;
+      if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'))break;
+      box.appendChild(nx);
+    }
+  });
   function openTarget(){
     var id=location.hash?location.hash.slice(1):'';if(!id)return;
     var el=document.getElementById(id);if(!el)return;
@@ -1386,9 +1365,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <script>
 /* ---- Master Comparison Matrix: sortable columns (rows reorganize within their color group) ---- */
 document.addEventListener('DOMContentLoaded',function(){
-  var band=document.getElementById('matrix'); if(!band)return;
-  var el=band.nextElementSibling, table=null;
-  while(el){ if(el.tagName==='TABLE'){table=el;break;} el=el.nextElementSibling; }
+  var table=null;
+  document.querySelectorAll('table').forEach(function(t){ if(t.querySelector('td[colspan="8"]')) table=t; });
   if(!table)return;
   var rows=Array.prototype.slice.call(table.querySelectorAll('tr'));
   var head=rows.filter(function(r){return r.querySelector('th');})[0]; if(!head)return;
@@ -1396,7 +1374,8 @@ document.addEventListener('DOMContentLoaded',function(){
   function key(td,idx){
     var t=(td.textContent||'').trim();
     if(idx===7)return evRank[t]||0;
-    var f=parseFloat(t.replace(',','.'));
+    if(t==='\u2014'||t==='-')return -1;
+    var f=parseFloat(t.replace('~','').replace(',','.'));
     if(!isNaN(f)&&/[0-9]/.test(t))return f;
     return t.toLowerCase();
   }
@@ -1417,8 +1396,6 @@ document.addEventListener('DOMContentLoaded',function(){
           var c=(typeof ka==='number'&&typeof kb==='number')?ka-kb:String(ka).localeCompare(String(kb));
           return dir[idx]?c:-c;
         });
-        g.items.forEach(function(r){g.div.parentNode.insertBefore(r, g.div.nextSibling===null?null:g.div.nextSibling); g.div.parentNode.appendChild(r);});
-        // re-append in sorted order right after the divider:
         var ref=g.div;
         g.items.forEach(function(r){ref.after(r); ref=r;});
       });
