@@ -380,6 +380,28 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
  html.dark .index,html.dark .panel,html.dark .strain,html.dark table,html.dark .catintro,html.dark .biblio{background:#fff!important;color:#2e2a24!important}
 }
 </style>
+
+<style id="wk-responsive-print-standard">
+/* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+.panel .pbody{flex-wrap:wrap}
+.panel .pleft,.panel .pright{min-width:0}
+@media (max-width:640px){
+  .panels{grid-template-columns:1fr}
+  .panel .pbody{gap:10px;padding:12px;justify-content:center}
+  .panel .pleft,.panel .pright{font-size:12px}
+  .panel .pie{width:96px;height:96px}
+  .peffects{white-space:normal}
+  .wcsec{overflow-x:auto}
+  table{font-size:12px}
+  th,td{padding:5px 6px}
+}
+@media print{
+  .panels{grid-template-columns:1fr 1fr}
+  .panel .pbody{padding:10px;gap:10px}
+}
+</style>
 </head>
 <body id="top">
 <a class="toc-top" href="#top" title="Back to top">↑</a>
