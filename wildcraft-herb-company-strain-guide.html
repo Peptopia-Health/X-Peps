@@ -436,6 +436,14 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 .wc-logfoot{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-top:1px solid #e7e2d6}
 @media print{.colorband{width:auto!important}.wc-logbtn{display:none!important}.wc-logmodal{display:none!important}}
 </style>
+<style>
+/* V6 (Oct 31, David): each band hugs its own content (fit-content), centered in the column.
+   No band can exceed the widest band's width, and none is stretched to the full column.
+   Left padding returns to 16px (the old symmetric 70px was pure width inflation);
+   the right keeps 70px for the push-button. Print keeps full-width bands. */
+.colorband{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;padding-left:16px}
+@media print{.colorband{width:auto!important;margin-left:0;margin-right:0}}
+</style>
 <div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="labClose" aria-label="Close lab report">✕</button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
 <div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Quick Pick Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
 <a class="toc-top" href="#top" title="Back to top">↑</a>
@@ -1699,9 +1707,7 @@ function render(){var H=hist();var el=document.getElementById('logList');if(!el)
 function open(){var m=document.getElementById('logModal');if(!m)return;render();m.hidden=false;}
 function close(){var m=document.getElementById('logModal');if(m)m.hidden=true;}
 document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Quick Pick log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
-function fitBands(){var bs=Array.prototype.slice.call(document.querySelectorAll('.colorband'));if(!bs.length)return;bs.forEach(function(b){b.style.width='';});var max=0;bs.forEach(function(b){b.style.width='max-content';var w=b.offsetWidth;if(w>max)max=w;b.style.width='';});var wrap=bs[0].parentElement;var avail=wrap?wrap.clientWidth:0;if(avail&&max>avail)max=avail;if(max>0)bs.forEach(function(b){b.style.width=max+'px';});}
-var rzT=null;window.addEventListener('resize',function(){clearTimeout(rzT);rzT=setTimeout(fitBands,180);});
-document.addEventListener('DOMContentLoaded',function(){fitBands();setTimeout(fitBands,350);});
+/* V6: band width is pure CSS now (fit-content in V6_STYLE) — the old fitBands JS forced every band to the column width on phones and is removed. */
 })();
 </script>
 </body>
