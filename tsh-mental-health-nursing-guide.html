@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSH &amp; Mental Health — A Nursing Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF8FF; --paper2:#F1EDFB; --ink:#2B2440; --muted:#6E6590;
+  --purp:#5B21B6; --purp-dk:#4C1D95; --purp-deep:#3B1470;
+  --lav:#EDE9FE; --lav2:#DCD0FA; --lavline:#D8CCF5;
+  --accent:#EA580C; --line:#DCD2F2;
+  --red:#B03A3A; --red-dk:#7E241A; --red-soft:#FAECEA;
+  --amber:#C97A2B; --green:#3E7D52; --green-soft:#E7F2EA;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.62;font-size:16.5px}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:-.01em}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+a{color:var(--purp)}
+b,strong{font-weight:700}
+.hl{background:#E4DBFB;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+.hl-o{background:#FDE8D7;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+.qin{font-style:italic;background:#EFE9FC;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;border-radius:3px}
+/* ---------- title page ---------- */
+.titlepage{display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 24px 8px;position:relative;
+  background:radial-gradient(1100px 520px at 50% -10%,#E9E1FC 0%,var(--paper) 62%)}
+.wc-toprow{width:100%;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);font-weight:700;text-align:left;margin:6px 0 0}
+.wc-topbtns{display:flex;gap:8px;flex:none}
+.wc-tbtn{font:700 .8rem 'Outfit',sans-serif;color:var(--purp-dk);background:linear-gradient(180deg,#FFFFFF,#EFE9FC);
+  border:2px solid var(--purp-dk);border-radius:9px;padding:6px 12px;cursor:pointer;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.95),inset 0 -3px 5px rgba(76,29,149,.14),0 3px 6px rgba(76,29,149,.22)}
+.wc-tbtn:active{transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(76,29,149,.3),0 1px 2px rgba(76,29,149,.2)}
+.wc-tbtn.static{cursor:default}
+.wc-tbtn.static:active{transform:none}
+.titlepage h1{font-size:clamp(40px,6.4vw,66px);font-weight:800;margin:10px 0 4px;color:var(--accent);line-height:1.08}
+.subtitle{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(17px,2.6vw,24px);color:var(--purp-dk);letter-spacing:2.5px;text-transform:uppercase;margin:0 0 14px}
+.titlepage .sub{white-space:nowrap;font-size:clamp(.66rem,3.1vw,1.02rem);max-width:none;font-weight:600;color:var(--purp-dk);margin:0 0 8px}
+/* ---------- index ---------- */
+.index{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 26px;margin:26px 0;min-height:84px;box-shadow:0 3px 14px rgba(76,29,149,.06)}
+.index h2{margin:0;color:var(--purp-dk);font-size:1.35rem;display:flex;align-items:center;gap:12px}
+.index ol{display:none;columns:2;column-gap:34px;margin:16px 0 4px;padding-left:22px}
+.index.open ol{display:block}
+.index li{margin:7px 0;break-inside:avoid}
+.index a{color:var(--purp);text-decoration:none;font-weight:500}
+.index a:hover{text-decoration:underline}
+.index .idx-hint{font-size:.8rem;color:var(--muted);font-weight:600}
+.index.open .idx-hint{display:none}
+@media(max-width:640px){.index ol{columns:1}}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid var(--purp-dk);color:var(--purp-dk);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(76,29,149,.25),0 5px 10px rgba(76,29,149,.3);
+  font-size:20px;line-height:1;cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
+.icobtn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(76,29,149,.35),0 1px 2px rgba(76,29,149,.25)}
+/* ---------- section bands (V4/V5 pattern: slim, centered, gloss button) ---------- */
+.colorband{border-radius:12px;padding:9px 14px;padding-right:70px;padding-left:70px;margin:22px 0 12px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,var(--purp-dk),var(--purp));cursor:pointer;text-align:center;scroll-margin-top:18px;
+  box-shadow:0 4px 14px rgba(76,29,149,.25)}
+.colorband.deep{background:linear-gradient(120deg,var(--purp-deep),var(--purp-dk))}
+.colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;text-align:center;color:#fff}
+.colorband p{margin:0;opacity:.95;line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(.7rem,2.5vw,.95rem)}
+.colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;font-size:22px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;padding:0;font-family:inherit;cursor:pointer;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid #2A0A54;
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(42,10,84,.28),0 6px 12px rgba(20,5,45,.45);
+  transition:transform .07s ease,box-shadow .07s ease}
+.colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(42,10,84,.4),0 1px 2px rgba(20,5,45,.3)}
+/* ---------- section content ---------- */
+.wcsec{margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 3px 12px rgba(76,29,149,.05)}
+.card h3{color:var(--purp-dk);margin:2px 0 8px;font-size:1.18rem}
+.card h4{color:var(--purp-dk);margin:14px 0 6px;font-size:1.02rem}
+.card p{margin:8px 0}
+ul.tight{margin:8px 0;padding-left:22px}
+ul.tight li{margin:5px 0}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.cols2{grid-template-columns:1fr}}
+.statrow{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-top:5px solid var(--purp);border-radius:12px;padding:14px 16px;text-align:center}
+.stat b{display:block;font-family:'Outfit',sans-serif;font-size:27px;color:var(--purp-dk);line-height:1.12}
+.stat span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+.stat.orange{border-top-color:var(--accent)} .stat.orange b{color:var(--accent)}
+.stat.red{border-top-color:var(--red)} .stat.red b{color:var(--red)}
+table.vals{width:100%;border-collapse:collapse;margin:12px 0;font-size:.97rem}
+table.vals th{font-family:'Outfit',sans-serif;background:var(--purp-dk);color:#fff;text-align:left;padding:9px 12px}
+table.vals td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.vals tr:nth-child(even) td{background:#F6F2FE}
+table.vals td.n{font-weight:700;color:var(--purp-dk);white-space:nowrap}
+.alert{border:2px solid var(--red);background:var(--red-soft);border-radius:12px;padding:14px 18px;margin:14px 0}
+.alert h3,.alert h4{color:var(--red-dk)}
+.notebox{border:2px solid var(--purp);background:#F4EFFF;border-radius:12px;padding:14px 18px;margin:14px 0}
+.notebox h3,.notebox h4{color:var(--purp-dk)}
+.svgbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px 8px;margin:14px 0;overflow-x:auto}
+.svgbox .cap{text-align:center;color:var(--muted);font-size:.88rem;margin:6px 4px 10px}
+.bar-row{display:grid;grid-template-columns:118px 1fr 118px;gap:10px;align-items:center;margin:9px 0;font-size:.92rem}
+.bar-row .lab{text-align:right;font-weight:700;color:var(--purp-dk)}
+.bar-row .lab2{font-weight:700;color:var(--red-dk)}
+.bar-track{height:16px;background:var(--paper2);border-radius:8px;position:relative}
+.bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:8px}
+.tag{display:inline-block;font:700 .72rem 'Outfit',sans-serif;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;vertical-align:2px}
+.tag.p{background:var(--lav);color:var(--purp-dk);border:1.5px solid var(--purp)}
+.tag.r{background:var(--red-soft);color:var(--red-dk);border:1.5px solid var(--red)}
+.foot{border-top:1px solid var(--line);margin:34px 0 0;padding:16px 0 30px;text-align:center;color:var(--muted);font-size:.9rem}
+.toc-top{position:fixed;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#EDE9FE 48%,#C9B8F5);border:2px solid var(--purp-dk);color:var(--purp-dk);
+  font-size:20px;text-decoration:none;box-shadow:0 6px 14px rgba(76,29,149,.35);z-index:50}
+/* ---------- dark theme (visit only, never persisted) ---------- */
+html.dark body{background:#171126;color:#E9E4F8}
+html.dark .titlepage{background:radial-gradient(1100px 520px at 50% -10%,#2A1A52 0%,#171126 62%)}
+html.dark .card,html.dark .index,html.dark .stat,html.dark .svgbox{background:#221840;border-color:#3D2A6E}
+html.dark .stat span,html.dark .svgbox .cap,html.dark .foot{color:#A79CC9}
+html.dark table.vals td{border-color:#3D2A6E}
+html.dark table.vals tr:nth-child(even) td{background:#271C4C}
+html.dark .hl{background:#3D2A6E}
+html.dark .qin{background:#33255F}
+html.dark .notebox{background:#241845}
+html.dark .bar-track{background:#2C2054}
+html.dark .wc-tbtn{background:linear-gradient(180deg,#2C2054,#241845);color:#DCD0FA}
+html.dark .subtitle{color:#C9B8F5}
+html.dark .titlepage .sub{color:#C9B8F5}
+/* ---------- print ---------- */
+@page{size:Letter;margin:.6in}
+@media print{
+  *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .wcsec{display:block!important}
+  .colorband{width:auto!important;break-after:avoid}
+  .colorband .bigicon,.wc-tbtn:not(.static),.toc-top{display:none!important}
+  .index ol{display:block!important}.index .idx-hint{display:none!important}
+  .card,.stat,.alert,.notebox,.svgbox,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+  h1,h2,h3,h4{break-after:avoid!important}
+  p,li{orphans:3;widows:3}
+  body{background:#fff!important;color:#2B2440!important}
+  html.dark body{background:#fff!important;color:#2B2440!important}
+  html.dark .card,html.dark .index,html.dark .stat,html.dark .svgbox{background:#fff!important}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+<style>
+/* Band width rule (David, Oct 31): bands hug their content, centered; no band wider than the widest band's content, desktop or mobile. Print keeps full width (handled above). */
+.colorband{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;padding-left:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ================= TITLE PAGE ================= -->
+<div class="titlepage" id="top">
+  <div class="wc-toprow">
+    <div class="kicker">Nursing Education · Mental Health</div>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 October 2026</span>
+      <button type="button" class="wc-tbtn" id="tshThemeBtn" title="Switch light / dark theme">🌙 Theme</button>
+      <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
+    </div>
+  </div>
+  <h1>TSH &amp; the Mind</h1>
+  <div class="subtitle">Thyroid-Stimulating Hormone in Psychiatric Nursing</div>
+  <p class="sub">One pituitary number that can explain a depression, a psychosis, or a patient who "won't get better."</p>
+</div>
+
+<!-- ================= INDEX ================= -->
+<div class="index">
+  <h2><button type="button" class="icobtn idx-btn" title="Open the index">📖</button> Index <span class="idx-hint">— tap the book to open</span></h2>
+  <ol>
+    <li><a href="#axis">The HPT Axis — How TSH Works</a></li>
+    <li><a href="#tests">The Tests — What Each One Answers</a></li>
+    <li><a href="#values">Normal Results — The Numbers</a></li>
+    <li><a href="#algorithm">From Result to Meaning — The Testing Algorithm</a></li>
+    <li><a href="#levels">The Deep Dive — TSH Level by Level</a></li>
+    <li><a href="#mirror">The Mirror Image — Suppressed TSH</a></li>
+    <li><a href="#bipolar">Bipolar Disorder, Lithium &amp; the Thyroid</a></li>
+    <li><a href="#postpartum">Postpartum — Thyroiditis vs Depression vs Psychosis</a></li>
+    <li><a href="#emergencies">The Emergency Bookends</a></li>
+    <li><a href="#treatment">Treatment — Levothyroxine &amp; the Long Game</a></li>
+    <li><a href="#nursing">Nursing Assessment — Reading the Patient</a></li>
+    <li><a href="#admission">Why TSH Belongs in Every Psych Admission</a></li>
+    <li><a href="#sources">Sources &amp; Further Reading</a></li>
+  </ol>
+</div>
+
+<!-- ================= 1. HPT AXIS ================= -->
+<div class="colorband" id="axis">
+  <h2>The HPT Axis — How TSH Works</h2>
+  <p>A Thermostat, a Furnace, and a Brake Pedal</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧭</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> TSH — <b>thyroid-stimulating hormone</b>, also called thyrotropin — is made by the <span class="hl">anterior pituitary gland</span>. It is not a thyroid hormone at all. It is the pituitary's <i>instruction</i> to the thyroid: <span class="qin">"make more hormone."</span> The American Thyroid Association calls TSH the <span class="qin">"early warning system"</span> of thyroid function, because it moves first — and moves the most — when the thyroid begins to fail or to overrun.</p>
+    <p>The system it belongs to is the <b>hypothalamic–pituitary–thyroid (HPT) axis</b>, a classic three-step chain with a feedback brake:</p>
+    <ul class="tight">
+      <li><b>Step 1 — Hypothalamus</b> releases <b>TRH</b> (thyrotropin-releasing hormone).</li>
+      <li><b>Step 2 — Anterior pituitary</b> responds to TRH by releasing <b>TSH</b>.</li>
+      <li><b>Step 3 — Thyroid gland</b> responds to TSH by releasing mostly <b>T4</b> (thyroxine, the storage form) and some <b>T3</b> (triiodothyronine, the active form). Tissues convert T4 into T3 as needed; T3 is roughly <span class="hl">3–4 times as potent</span> as T4, and the brain carries a high density of T3 receptors — which is why this axis is a mental-health axis, not just a metabolic one.</li>
+      <li><b>The brake:</b> as T4/T3 levels rise, they feed back on the pituitary and hypothalamus and <b>turn TSH down</b>. As they fall, the brake releases and TSH climbs.</li>
+    </ul>
+    <p>The single most useful fact in this guide follows from that brake: <span class="hl">TSH moves in the opposite direction to thyroid hormone, and it moves logarithmically</span> — a small fall in free T4 produces a large rise in TSH. That is why a TSH of 15 is not "a little high." The pituitary is shouting.</p>
+  </div>
+  <div class="svgbox">
+    <svg viewBox="0 0 660 316" width="100%" role="img" aria-label="HPT axis feedback loop diagram" font-family="DM Sans, sans-serif">
+      <defs>
+        <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5B21B6"/></marker>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#EA580C"/></marker>
+      </defs>
+      <rect x="230" y="8" width="200" height="52" rx="12" fill="#EDE9FE" stroke="#4C1D95" stroke-width="2"/>
+      <text x="330" y="31" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="16" fill="#4C1D95">HYPOTHALAMUS</text>
+      <text x="330" y="50" text-anchor="middle" font-size="12.5" fill="#2B2440">releases TRH</text>
+      <line x1="330" y1="60" x2="330" y2="86" stroke="#5B21B6" stroke-width="2.5" marker-end="url(#ar1)"/>
+      <rect x="230" y="90" width="200" height="52" rx="12" fill="#DCD0FA" stroke="#4C1D95" stroke-width="2"/>
+      <text x="330" y="113" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="16" fill="#4C1D95">PITUITARY</text>
+      <text x="330" y="132" text-anchor="middle" font-size="12.5" fill="#2B2440">releases TSH</text>
+      <line x1="330" y1="142" x2="330" y2="168" stroke="#5B21B6" stroke-width="2.5" marker-end="url(#ar1)"/>
+      <rect x="230" y="172" width="200" height="52" rx="12" fill="#5B21B6" stroke="#3B1470" stroke-width="2"/>
+      <text x="330" y="195" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">THYROID GLAND</text>
+      <text x="330" y="214" text-anchor="middle" font-size="12.5" fill="#FFFFFF">releases T4 (mostly) + T3</text>
+      <line x1="330" y1="224" x2="330" y2="250" stroke="#5B21B6" stroke-width="2.5" marker-end="url(#ar1)"/>
+      <rect x="200" y="254" width="260" height="52" rx="12" fill="#FFF3E8" stroke="#EA580C" stroke-width="2"/>
+      <text x="330" y="277" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="16" fill="#9A3D06">BODY &amp; BRAIN</text>
+      <text x="330" y="296" text-anchor="middle" font-size="12.5" fill="#2B2440">metabolism · mood · cognition · arousal</text>
+      <path d="M200,280 C70,280 60,120 222,116" fill="none" stroke="#EA580C" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar2)"/>
+      <text x="52" y="180" font-size="13" font-weight="700" fill="#EA580C" transform="rotate(-90 52 180)" text-anchor="middle">T4 / T3 — NEGATIVE FEEDBACK (THE BRAKE)</text>
+      <text x="452" y="76" font-size="13" font-weight="700" fill="#5B21B6">TRH ➜</text>
+      <text x="452" y="158" font-size="13" font-weight="700" fill="#5B21B6">TSH ➜</text>
+      <text x="452" y="240" font-size="13" font-weight="700" fill="#5B21B6">T4 + T3 ➜</text>
+    </svg>
+    <p class="cap">The HPT axis. Down the middle: stimulation. Up the left: the feedback brake. When the furnace (thyroid) under-produces, the thermostat (pituitary) calls louder — TSH rises. When the furnace over-produces, TSH is silenced — it falls, often to undetectable.</p>
+  </div>
+  <div class="card">
+    <h3>The two directions, memorized once</h3>
+    <div class="cols2">
+      <div>
+        <h4>TSH HIGH = thyroid LOW (usually)</h4>
+        <p>The gland is failing (<b>primary hypothyroidism</b>), so the pituitary pushes harder. The higher the TSH, the harder it is pushing. The exception that proves the rule: if the <i>pituitary itself</i> fails, TSH stays low or normal while T4 falls — <b>central (secondary) hypothyroidism</b>. That pattern — <span class="hl">low free T4 without a raised TSH</span> — is rare but must never be missed, because TSH alone will not find it.</p>
+      </div>
+      <div>
+        <h4>TSH LOW = thyroid HIGH (usually)</h4>
+        <p>The gland is over-producing (Graves' disease, toxic nodules, thyroiditis leak, or too much levothyroxine), so the pituitary goes quiet. The same central exception applies in reverse: a pituitary TSH-secreting tumor is a rare cause of high hormone with a non-suppressed TSH.</p>
+      </div>
+    </div>
+    <p><b>Nursing translation:</b> on a psychiatric unit, TSH is a <i>brain</i> lab. Thyroid hormone tunes serotonin, norepinephrine, and dopamine signaling, cerebral metabolism, and sleep architecture. When this axis drifts, the first organ to complain is often the one your unit treats.</p>
+  </div>
+</div>
+
+<!-- ================= 2. THE TESTS ================= -->
+<div class="colorband" id="tests">
+  <h2>The Tests — What Each One Answers</h2>
+  <p>TSH First · Reflex Free T4 · Antibodies When It Matters</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧪</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> the ATA's starting point is simple: <span class="hl">TSH is the single best first test of thyroid function</span> in a patient whose pituitary is intact. Most modern order sets use <b>TSH with reflex free T4</b> — the lab runs TSH first and automatically adds a free T4 when TSH falls outside range. Everything else in the panel answers a specific second question.</p>
+    <table class="vals">
+      <tr><th style="width:22%">Test</th><th style="width:40%">What it answers</th><th>When it is ordered</th></tr>
+      <tr><td class="n">TSH</td><td>Is the pituitary satisfied? The most sensitive single screen for primary thyroid dysfunction — it moves before T4 does.</td><td>First test in every thyroid question: admission screening, depression workup, lithium monitoring, dose checks.</td></tr>
+      <tr><td class="n">Free T4</td><td>How much usable hormone is actually circulating? Splits "subclinical" (free T4 normal) from <b>overt</b> disease (free T4 low or high). The "free" fraction ignores binding-protein noise from estrogen, pregnancy, and illness.</td><td>Automatically (reflex) when TSH is abnormal; always paired with TSH when pituitary disease, pregnancy, or severe illness is in play.</td></tr>
+      <tr><td class="n">Free T3 / Total T3</td><td>Is there T3 excess? T3 rises early in hyperthyroidism and can be high when free T4 is still normal (<b>T3 toxicosis</b>).</td><td>When TSH is suppressed. In hypothyroidism it adds little — per the ATA, T3 is <i>the last test to become abnormal</i> as the gland fails, because the body defends T3 to the end.</td></tr>
+      <tr><td class="n">Total T4 / Total T3</td><td>The whole circulating pool, bound + free. Misleading whenever binding proteins shift — estrogen and pregnancy raise totals while the patient is fine.</td><td>Largely replaced by free hormone assays; still seen on older panels. Interpret against the free values.</td></tr>
+      <tr><td class="n">Anti-TPO antibodies</td><td>Is this autoimmune? Anti-thyroid-peroxidase antibodies mark <b>Hashimoto's thyroiditis</b>, the commonest cause of hypothyroidism in iodine-sufficient countries.</td><td>Once, at diagnosis of a raised TSH. A positive result predicts progression from subclinical to overt disease. Per the ATA, <span class="hl">a positive anti-TPO never needs repeating</span> — but TSH should then be rechecked at least yearly.</td></tr>
+      <tr><td class="n">Anti-thyroglobulin (anti-Tg)</td><td>A second autoimmune marker against the thyroid's storage protein; supports Hashimoto's when anti-TPO is negative.</td><td>Adjunct antibody testing; also followed in thyroid-cancer care (outside this guide's scope).</td></tr>
+      <tr><td class="n">TSI / TRAb</td><td>Is the gland being <i>switched on</i> by an antibody? Thyroid-stimulating immunoglobulin (TSI) and TSH-receptor antibodies (TRAb) activate the TSH receptor — the mechanism of <b>Graves' disease</b>.</td><td>When TSH is suppressed and the cause of hyperthyroidism is unclear; in pregnancy with Graves' history, because these antibodies cross the placenta.</td></tr>
+    </table>
+  </div>
+  <div class="notebox">
+    <h3>🕗 Draw notes that change the answer</h3>
+    <ul class="tight">
+      <li><b>Morning, and the same time every time.</b> TSH is pulsatile with a circadian rhythm — it <span class="hl">peaks overnight and in the early morning</span> and falls through the day. Serial monitoring values are only comparable when drawn at a consistent time; morning draws are the convention.</li>
+      <li><b>Biotin — the fake Graves' panel.</b> High-dose biotin (hair/skin/nail supplements, 5,000–10,000 mcg) hijacks the biotin–streptavidin chemistry most immunoassays use: sandwich assays (TSH) read <b>falsely low</b> while competitive assays (free T4, free T3) read <b>falsely high</b> — a perfect forgery of Graves' disease. The FDA flagged this in a 2017 safety communication (updated 2019). The ATA's rule: <span class="hl">hold biotin for at least 2 days before the draw</span> — and ask every "hyperthyroid" patient what supplements they take before anyone treats the number.</li>
+      <li><b>Heparin.</b> Even small heparin doses (a 5,000-unit subcutaneous prophylactic dose is enough) trigger in-vitro generation of free fatty acids in the sample tube, which displace T4 from its binding proteins and <b>falsely elevate measured free T4</b>. Draw thyroid labs before the heparin dose, or flag the timing to the lab.</li>
+      <li><b>Acute non-thyroidal illness (NTIS).</b> Severe illness of any kind rewrites the panel without any thyroid disease: T3 falls first, then T4 in sicker patients, TSH runs low-normal — and during <i>recovery</i>, TSH can <span class="hl">spike transiently above 20</span> before settling. An acutely medically ill patient's TFTs are a rumor, not a verdict: repeat them when the patient is well. (On a psych unit this cuts both ways — an acutely psychotic, sleepless, not-eating patient is physiologically stressed; a wildly abnormal panel still gets worked up, but a borderline one gets repeated.)</li>
+      <li><b>Levothyroxine timing.</b> For patients already on levothyroxine, draw <i>before</i> the morning dose — a post-dose sample shows a transient free T4 bump that muddies titration.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 3. NORMAL RESULTS ================= -->
+<div class="colorband" id="values">
+  <h2>Normal Results — The Numbers</h2>
+  <p>Reference Ranges · Pregnancy · Age</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📏</button>
+</div>
+<div class="wcsec">
+  <div class="statrow">
+    <div class="stat"><b>0.4–4.5</b><span>mIU/L — normal adult TSH</span></div>
+    <div class="stat orange"><b>&gt; 10</b><span>mIU/L — the treatment threshold</span></div>
+    <div class="stat"><b>6–8 wk</b><span>recheck after any dose change</span></div>
+    <div class="stat"><b>q 6 mo</b><span>thyroid tests on lithium (NICE)</span></div>
+  </div>
+  <div class="card">
+    <p><b>Lead-in:</b> a reference range is the middle 95% of a healthy population — which means <span class="hl">ranges are properties of a lab and a population, not laws of nature</span>. Always read the patient's value against the range printed on their own report. The values below are the widely used adult ranges your report will most likely resemble.</p>
+    <table class="vals">
+      <tr><th style="width:26%">Test</th><th style="width:30%">Typical adult range</th><th>Notes</th></tr>
+      <tr><td class="n">TSH</td><td><b>0.4–4.5 mIU/L</b></td><td>Many labs print 0.4–4.0 or 0.5–4.5. Units mIU/L, mU/L, and µIU/mL are numerically identical.</td></tr>
+      <tr><td class="n">Free T4</td><td><b>0.8–1.8 ng/dL</b></td><td>The titration partner to TSH; normalizes weeks before TSH does.</td></tr>
+      <tr><td class="n">Free T3</td><td><b>2.3–4.1 pg/mL</b></td><td>The active hormone; key in hyperthyroid workups.</td></tr>
+      <tr><td class="n">Total T4</td><td><b>5.0–12.0 mcg/dL</b></td><td>Rises with estrogen/pregnancy (more binding protein) without true hyperthyroidism.</td></tr>
+      <tr><td class="n">Total T3</td><td><b>100–200 ng/dL</b></td><td>Falls early in any severe illness — a sick patient's low T3 is usually NTIS, not thyroid failure.</td></tr>
+      <tr><td class="n">Anti-TPO / anti-Tg</td><td>Negative (below lab cutoff)</td><td>Positive = autoimmune thyroid disease, present or future.</td></tr>
+      <tr><td class="n">TSI / TRAb</td><td>Negative (below lab cutoff)</td><td>Positive = Graves' disease until proven otherwise.</td></tr>
+    </table>
+    <h4>Pregnancy — the range moves down</h4>
+    <p>Pregnancy shifts the whole axis: hCG stimulates the TSH receptor in the first trimester and TSH falls. The ATA's 2017 pregnancy guideline asks labs to use <b>population- and trimester-specific ranges</b>; when those are not available, the practical default is an <span class="hl">upper TSH limit of about 4.0 mIU/L in the first trimester</span>, versus 4.5 outside pregnancy. Approximate trimester ranges consistent with that guideline:</p>
+    <table class="vals">
+      <tr><th>Trimester</th><th>Approximate TSH range (mIU/L)</th><th>Note</th></tr>
+      <tr><td class="n">First</td><td><b>0.1 – 4.0</b></td><td>Lowest point of pregnancy; hCG effect peaks here.</td></tr>
+      <tr><td class="n">Second</td><td><b>0.2 – 4.0</b></td><td>Climbing back toward the non-pregnant range.</td></tr>
+      <tr><td class="n">Third</td><td><b>0.3 – 4.0</b></td><td>Near baseline by delivery.</td></tr>
+    </table>
+    <p>Older fixed cutoffs — 2.5 in the first trimester, 3.0 in the second and third — are still printed in many references and lab systems; know both, and follow your lab's pregnancy-specific range when it exists. On levothyroxine before pregnancy, the dose typically needs to rise early in pregnancy with TSH checked about every 4 weeks until mid-pregnancy (ATA 2017) — flag any pregnant patient on thyroid medication for prompt endocrine/OB coordination.</p>
+    <h4>Age — the range moves up</h4>
+    <p>TSH drifts upward with normal aging. Age-specific data put the upper limit near <span class="hl">5.8 mIU/L at ages 60–79 and 6.7 mIU/L at 80+</span> — so a TSH of 5.2 in a well 84-year-old may be that patient's normal, while the same value in a depressed 30-year-old deserves a second look. This is one reason guidelines are cautious about treating mild elevations in the very old (see the TRUST trial, next sections).</p>
+  </div>
+</div>
+
+<!-- ================= 4. ALGORITHM ================= -->
+<div class="colorband" id="algorithm">
+  <h2>From Result to Meaning — The Testing Algorithm</h2>
+  <p>Read TSH and Free T4 Together — Always</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🗺️</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> no TSH value is interpreted alone. The pattern of <b>TSH + free T4 together</b> sorts nearly every patient into one of six boxes, and each box has a different psychiatric meaning and a different next step.</p>
+  </div>
+  <div class="svgbox">
+    <svg viewBox="0 0 680 452" width="100%" role="img" aria-label="Thyroid testing algorithm flowchart" font-family="DM Sans, sans-serif">
+      <defs>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4C1D95"/></marker>
+      </defs>
+      <rect x="190" y="6" width="300" height="46" rx="12" fill="#4C1D95"/>
+      <text x="340" y="27" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="15" fill="#fff">STEP 1 — TSH (reflex free T4)</text>
+      <text x="340" y="45" text-anchor="middle" font-size="12" fill="#DCD0FA">every result is read as a pair</text>
+      <line x1="260" y1="52" x2="165" y2="82" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <line x1="340" y1="52" x2="340" y2="82" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <line x1="420" y1="52" x2="515" y2="82" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <rect x="55" y="86" width="220" height="46" rx="12" fill="#B03A3A"/>
+      <text x="165" y="107" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="15" fill="#fff">TSH HIGH (&gt; 4.5)</text>
+      <text x="165" y="125" text-anchor="middle" font-size="12" fill="#F6D9D4">furnace failing — look at free T4</text>
+      <rect x="230" y="86" width="220" height="46" rx="12" fill="#3E7D52"/>
+      <text x="340" y="107" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="15" fill="#fff">TSH NORMAL (0.4–4.5)</text>
+      <text x="340" y="125" text-anchor="middle" font-size="12" fill="#D8EBDD">axis satisfied — see exceptions</text>
+      <rect x="405" y="86" width="220" height="46" rx="12" fill="#C97A2B"/>
+      <text x="515" y="107" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="15" fill="#fff">TSH LOW (&lt; 0.4)</text>
+      <text x="515" y="125" text-anchor="middle" font-size="12" fill="#FBEEDC">brake silenced — look at free T4 + T3</text>
+      <line x1="110" y1="132" x2="110" y2="160" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <line x1="220" y1="132" x2="220" y2="160" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <line x1="340" y1="132" x2="340" y2="160" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <line x1="460" y1="132" x2="460" y2="160" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <line x1="570" y1="132" x2="570" y2="160" stroke="#4C1D95" stroke-width="2.5" marker-end="url(#ar3)"/>
+      <rect x="20" y="164" width="180" height="86" rx="12" fill="#FAECEA" stroke="#B03A3A" stroke-width="2"/>
+      <text x="110" y="188" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#7E241A">Free T4 LOW</text>
+      <text x="110" y="208" text-anchor="middle" font-size="12.5" fill="#2B2440">OVERT hypothyroidism</text>
+      <text x="110" y="226" text-anchor="middle" font-size="12.5" fill="#2B2440">treat · anti-TPO once</text>
+      <rect x="210" y="164" width="180" height="86" rx="12" fill="#EDE9FE" stroke="#4C1D95" stroke-width="2"/>
+      <text x="300" y="188" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#4C1D95">Free T4 NORMAL</text>
+      <text x="300" y="208" text-anchor="middle" font-size="12.5" fill="#2B2440">SUBCLINICAL hypothyroidism</text>
+      <text x="300" y="226" text-anchor="middle" font-size="12.5" fill="#2B2440">&gt;10 → treat · 4.5–10 → repeat</text>
+      <rect x="400" y="164" width="120" height="86" rx="12" fill="#E7F2EA" stroke="#3E7D52" stroke-width="2"/>
+      <text x="460" y="188" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#2C5238">EUTHYROID</text>
+      <text x="460" y="208" text-anchor="middle" font-size="12.5" fill="#2B2440">no action —</text>
+      <text x="460" y="226" text-anchor="middle" font-size="12.5" fill="#2B2440">unless ill or on lithium</text>
+      <rect x="530" y="164" width="140" height="86" rx="12" fill="#FFF3E8" stroke="#C97A2B" stroke-width="2"/>
+      <text x="600" y="188" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13.5" fill="#8A4D12">Free T4 ± T3 HIGH</text>
+      <text x="600" y="208" text-anchor="middle" font-size="12.5" fill="#2B2440">OVERT hyperthyroidism</text>
+      <text x="600" y="226" text-anchor="middle" font-size="12.5" fill="#2B2440">TSI/TRAb · urgent referral</text>
+      <rect x="55" y="272" width="570" height="76" rx="12" fill="#F6F2FE" stroke="#4C1D95" stroke-width="1.5"/>
+      <text x="340" y="296" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#4C1D95">THE TWO TRAPS</text>
+      <text x="340" y="318" text-anchor="middle" font-size="13" fill="#2B2440">TSH suppressed + free T4 normal = SUBCLINICAL hyperthyroidism (check T3; watch the heart — AF risk)</text>
+      <text x="340" y="338" text-anchor="middle" font-size="13" fill="#2B2440">Free T4 LOW + TSH low/normal = CENTRAL hypothyroidism — pituitary disease; TSH alone misses it</text>
+      <rect x="55" y="362" width="570" height="76" rx="12" fill="#FAECEA" stroke="#B03A3A" stroke-width="1.5"/>
+      <text x="340" y="386" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="14" fill="#7E241A">BEFORE YOU BELIEVE ANY PANEL, ASK THREE QUESTIONS</text>
+      <text x="340" y="408" text-anchor="middle" font-size="13" fill="#2B2440">Biotin in the last 2 days? · Heparin before the draw? · Acutely medically ill (NTIS)?</text>
+      <text x="340" y="428" text-anchor="middle" font-size="13" fill="#2B2440">If any answer is yes — fix the condition and repeat the test.</text>
+    </svg>
+    <p class="cap">The working algorithm. TSH sorts the direction; free T4 sets the severity; antibodies name the cause; the three artifact questions protect you from treating a lab error.</p>
+  </div>
+  <div class="card">
+    <h3>Repeat before you label</h3>
+    <p>A single mildly elevated TSH is not a diagnosis. Roughly <span class="hl">a quarter of mildly elevated values normalize on a repeat draw</span> in 6–8 weeks — early disease fluctuates, antibodies take time to declare themselves, and transient pushes (illness recovery, a night-shift draw, lab variation) are common. The standard pattern for a first mild elevation (4.5–10) with normal free T4 is: repeat TSH + free T4 in 6–8 weeks, add anti-TPO once, and treat the trend — not the single number.</p>
+  </div>
+</div>
+
+<!-- ================= 5. DEEP DIVE ================= -->
+<div class="colorband deep" id="levels">
+  <h2>The Deep Dive — TSH Level by Level</h2>
+  <p>What a Rising TSH Does to the Mind</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🎚️</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> hypothyroidism is called <span class="qin">"the great imitator"</span> on psychiatric units for a reason: its earliest and loudest symptoms are psychiatric — low mood, apathy, slowed thinking, poor concentration — arriving months before the classic cold, dry, puffy physical picture completes itself. Depression is present in a substantial share of hypothyroid patients in clinical series, and hypothyroidism remains one of the <span class="hl">most common reversible causes of a depressive presentation</span>. Read the bands below as a dimmer switch being turned down: the brain slows in proportion to how hard the pituitary is shouting.</p>
+  </div>
+  <div class="svgbox">
+    <svg viewBox="0 0 700 196" width="100%" role="img" aria-label="TSH severity spectrum with a flag at 15" font-family="DM Sans, sans-serif">
+      <line x1="118" y1="26" x2="118" y2="66" stroke="#EA580C" stroke-width="3"/>
+      <path d="M118,12 L168,20 L118,28 z" fill="#EA580C"/>
+      <text x="176" y="25" font-family="Outfit, sans-serif" font-weight="800" font-size="15" fill="#EA580C">TSH 15 — PAST THE TREAT LINE</text>
+      <rect x="10" y="70" width="95" height="44" rx="8" fill="#C0564B"/>
+      <rect x="105" y="70" width="150" height="44" rx="8" fill="#4E9B6A"/>
+      <rect x="255" y="70" width="140" height="44" rx="8" fill="#D9A441"/>
+      <rect x="395" y="70" width="105" height="44" rx="8" fill="#C97A2B" stroke="#EA580C" stroke-width="3.5"/>
+      <rect x="500" y="70" width="100" height="44" rx="8" fill="#B0503A"/>
+      <rect x="600" y="70" width="90" height="44" rx="8" fill="#7E241A"/>
+      <text x="57" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">&lt; 0.4</text>
+      <text x="57" y="106" text-anchor="middle" font-size="11" fill="#fff">suppressed</text>
+      <text x="180" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">0.4 – 4.5</text>
+      <text x="180" y="106" text-anchor="middle" font-size="11" fill="#fff">normal</text>
+      <text x="325" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">4.5 – 10</text>
+      <text x="325" y="106" text-anchor="middle" font-size="11" fill="#fff">subclinical zone</text>
+      <text x="447" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">10 – 20</text>
+      <text x="447" y="106" text-anchor="middle" font-size="11" fill="#fff">treat zone</text>
+      <text x="550" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">20 – 50</text>
+      <text x="550" y="106" text-anchor="middle" font-size="11" fill="#fff">overt likely</text>
+      <text x="645" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">50 – 100+</text>
+      <text x="645" y="106" text-anchor="middle" font-size="11" fill="#fff">severe</text>
+      <text x="57" y="140" text-anchor="middle" font-size="12" fill="#6E6590">hyper side</text>
+      <text x="180" y="140" text-anchor="middle" font-size="12" fill="#6E6590">euthyroid</text>
+      <text x="325" y="140" text-anchor="middle" font-size="12" fill="#6E6590">repeat + anti-TPO</text>
+      <text x="447" y="140" text-anchor="middle" font-size="12" fill="#6E6590">levothyroxine</text>
+      <text x="550" y="140" text-anchor="middle" font-size="12" fill="#6E6590">symptoms compound</text>
+      <text x="645" y="140" text-anchor="middle" font-size="12" fill="#6E6590">myxedema risk</text>
+      <text x="350" y="172" text-anchor="middle" font-size="12.5" font-style="italic" fill="#6E6590">Schematic spacing — TSH is a logarithmic signal, so equal steps on this bar are not equal steps in dose.</text>
+    </svg>
+    <p class="cap">The severity spectrum. The flag sits at 15 — inside the 10–20 band, on the far side of every major guideline's treatment threshold.</p>
+  </div>
+
+  <div class="card">
+    <h3>Band 1 — TSH 4.5–10: subclinical hypothyroidism</h3>
+    <p><b>Definition:</b> TSH above range with a <b>normal free T4</b> — the gland is compensating, at a cost. It is common (roughly 3–8% of adults, more often women and older patients) and it is a <i>risk state</i>, not yet a hormone deficiency.</p>
+    <p><b>The mind at 4.5–10:</b> many patients feel nothing. A subset report exactly the complaints that fill a psych unit's intake forms — fatigue, low mood, mental fog, weight creeping up. The honest evidence picture: the association with depressive symptoms at this band is real but modest and inconsistent, and the large <b>TRUST trial</b> (levothyroxine vs placebo in adults 65+ with subclinical hypothyroidism) found <span class="hl">no improvement in symptoms or tiredness from treating TSH under 10</span>. A 2019 BMJ rapid recommendation likewise advises against routine treatment of subclinical disease — with named exceptions (pregnancy or planning it, TSH over 20, very young patients, severe symptoms).</p>
+    <p><b>Nursing posture:</b> do not let a 6.8 be charted as "the cause" of a depression — and do not let it be ignored either. The job at this band is <b>surveillance</b>: repeat in 6–8 weeks, anti-TPO once (positive antibodies raise the odds of progression), and document the trend for the prescriber.</p>
+  </div>
+
+  <div class="card">
+    <h3>⭐ Band 2 — TSH 15: the number this guide is about</h3>
+    <p><b>What 15 usually means.</b> Fifteen is roughly <span class="hl">three times the top of the normal range</span> — the pituitary straining against a gland that is losing. Two patients can both read 15 and be in different diseases, and <b>free T4 is what separates them</b>:</p>
+    <ul class="tight">
+      <li><b>15 with a normal free T4</b> = <i>severe subclinical</i> hypothyroidism. Hormone levels are still defended — but the defense is expensive and failing.</li>
+      <li><b>15 with a low free T4</b> = <b>overt hypothyroidism</b>. The gland has lost; circulating hormone is genuinely low; symptoms are expected, not optional.</li>
+    </ul>
+    <p><b>Why &gt;10 is the line.</b> The AACE/ATA hypothyroidism guideline (Garber et al., 2012) recommends <span class="hl">considering levothyroxine for subclinical hypothyroidism once TSH exceeds 10 mIU/L</span> (Grade B). The reasoning is outcomes, not cosmetics: pooled cohort data (Rodondi et al., JAMA 2010) show coronary heart disease events climbing with TSH — a hazard ratio of about <b>1.89 at TSH 10–19.9</b> — and progression to overt failure becomes the rule rather than the exception. Below 10, treatment is a judgment call; <b>above 10, watchful waiting needs a reason</b>. At 15, that reasoning applies with margin to spare — and it applies <i>whether or not</i> the free T4 has fallen yet.</p>
+    <p><b>The mind at 15.</b> This is the band where the psychiatric picture stops being subtle:</p>
+    <ul class="tight">
+      <li><b>Depression</b> — low mood, anhedonia, hypersomnia, psychomotor slowing; frequently the presenting complaint. Antidepressant response is blunted while the thyroid is untreated.</li>
+      <li><b>Apathy that mimics negative symptoms</b> — flat, slow, indifferent; easily misread as schizophrenia's negative syndrome or as "unmotivated" in a personality-disorder frame.</li>
+      <li><b>Cognitive slowing</b> — bradyphrenia, poor concentration, forgetfulness; in older adults a convincing <b>pseudodementia</b> that reverses with hormone replacement, unlike true neurodegeneration.</li>
+      <li><b>The paradox:</b> a minority present <i>wired</i> rather than slowed — irritable, anxious, restless, sleeping poorly. Hypothyroidism does not always look slow, especially early or while it is developing; do not rule the axis out because the patient is agitated.</li>
+    </ul>
+    <p><b>Nursing posture at 15:</b> this value gets <b>same-day prescriber notification</b>, a free T4 confirmation if it is not already paired, an anti-TPO if never drawn, and a note in the treatment plan that <span class="hl">psychiatric symptoms may partly be thyroid symptoms</span> — because the antidepressant plan, the expected-length-of-stay conversation, and the "treatment-resistant" label all change if they are.</p>
+  </div>
+
+  <div class="card">
+    <h3>Band 3 — TSH 25: overt failure, compounding symptoms</h3>
+    <p>By the mid-20s, free T4 is low in most patients — this is <b>overt hypothyroidism</b> until proven otherwise. The physical exam starts agreeing with the lab: bradycardia, cool dry skin, slowed reflex relaxation, weight gain, constipation, cold intolerance. Mentally: deeper depression, marked cognitive slowing, sometimes frank confusion. Patients at this level have often been accumulating "noncompliance" and "won't engage" notes for months; what they have is a failing gland and a brain running on low hormone. Treatment is not optional, and full replacement dosing (weight-based) is usually appropriate in younger patients without cardiac disease.</p>
+  </div>
+
+  <div class="card">
+    <h3>Band 4 — TSH 50: severe, long-standing disease</h3>
+    <p>Fifties and above mean months to years of untreated failure. Expect the full myxedematous picture: periorbital and peripheral non-pitting edema, coarse features, hoarse voice, hypothermia, bradycardia, hypoventilation. The psychiatric risk at this depth escalates from depression to <b>psychosis</b> — the classic <span class="qin">"myxedema madness"</span> described by Richard Asher in 1949 (14 cases; 9 recovered dramatically on thyroid hormone alone). Across the literature, roughly <span class="hl">5–15% of myxedematous patients develop psychosis</span> — paranoid, disorganized, or hallucinating presentations that can be indistinguishable from a primary psychotic disorder until the lab comes back. Every first-episode psychosis workup earns its TSH right here.</p>
+  </div>
+
+  <div class="card">
+    <h3>Band 5 — TSH 100+: the edge of myxedema coma</h3>
+    <p>Triple-digit TSH values — 100, 200, occasionally higher — mark profound, prolonged failure. The patient is one stressor away from <b>myxedema coma</b> (Section: The Emergency Bookends): a cold, sedative dose, an infection, a stroke, or simple nonadherence can tip severe hypothyroidism into a life-threatening decompensation with reported mortality of <span class="hl">30–60%</span>. Nursing care at this band is medical-watch care: temperature, respiratory rate and depth, level of consciousness, and extreme caution with sedating medications — the myxedematous brain and body clear sedatives and opioids dangerously slowly.</p>
+    <p><b>A ceiling note:</b> TSH does not rise forever. Because pituitary output saturates and assays cap out, the number's job at the top end is not precision — it is triage. 60 and 160 both mean the same thing to the nurse: <i>severe, treat now, watch closely.</i></p>
+  </div>
+</div>
+
+<!-- ================= 6. MIRROR ================= -->
+<div class="colorband" id="mirror">
+  <h2>The Mirror Image — Suppressed TSH</h2>
+  <p>Hyperthyroidism: the Brain in Overdrive</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔥</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> flip the axis and the psychiatry flips with it. A suppressed TSH (&lt; 0.4, often &lt; 0.01) with high free T4/T3 — Graves' disease, toxic nodular goiter, a thyroiditis leak, or excess levothyroxine — produces a hyperadrenergic, hypermetabolic brain: <span class="hl">anxiety, panic, insomnia, tremor, pressured energy</span>. Anxiety disorders are strikingly common in hyperthyroid patients in clinical series, and the syndrome can escalate to <b>mania</b> and <b>psychosis</b> — hyperthyroid psychosis is a recognized first-break workup item, especially with a racing pulse that no PRN seems to slow.</p>
+    <ul class="tight">
+      <li><b>The classic tells:</b> resting tachycardia that persists in sleep, fine tremor, heat intolerance and sweating in a cool room, weight loss despite a good appetite, lid lag, frequent stools, new atrial fibrillation in an older patient.</li>
+      <li><b>The subclinical version matters too:</b> TSH suppressed with normal free T4/T3 still carries cardiac risk — in adults over 60, a TSH below 0.3 is associated with roughly <span class="hl">triple the risk of atrial fibrillation</span>.</li>
+      <li><b>The iatrogenic trap:</b> a psychiatric patient "failing" levothyroxine may simply be over-replaced. Always check what dose the TFTs belong to before labeling anxiety as a new disorder.</li>
+    </ul>
+  </div>
+  <div class="svgbox">
+    <svg viewBox="0 0 660 240" width="100%" role="img" aria-label="Hypothyroid versus hyperthyroid comparison bars" font-family="DM Sans, sans-serif">
+      <text x="200" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="16" fill="#4C1D95">HYPO — the dimmer down</text>
+      <text x="470" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="16" fill="#B03A3A">HYPER — the dimmer up</text>
+      <text x="92" y="56" font-size="13" font-weight="700" fill="#4C1D95">Heart rate</text>
+      <rect x="100" y="44" width="200" height="14" rx="7" fill="#EDE9FE"/><rect x="100" y="44" width="70" height="14" rx="7" fill="#5B21B6"/>
+      <rect x="370" y="44" width="200" height="14" rx="7" fill="#FAECEA"/><rect x="370" y="44" width="190" height="14" rx="7" fill="#B03A3A"/>
+      <text x="100" y="56" font-size="11.5" fill="#fff"></text>
+      <text x="92" y="86" font-size="13" font-weight="700" fill="#4C1D95">Energy</text>
+      <rect x="100" y="74" width="200" height="14" rx="7" fill="#EDE9FE"/><rect x="100" y="74" width="55" height="14" rx="7" fill="#5B21B6"/>
+      <rect x="370" y="74" width="200" height="14" rx="7" fill="#FAECEA"/><rect x="370" y="74" width="175" height="14" rx="7" fill="#B03A3A"/>
+      <text x="92" y="116" font-size="13" font-weight="700" fill="#4C1D95">Sleep</text>
+      <rect x="100" y="104" width="200" height="14" rx="7" fill="#EDE9FE"/><rect x="100" y="104" width="180" height="14" rx="7" fill="#5B21B6"/>
+      <rect x="370" y="104" width="200" height="14" rx="7" fill="#FAECEA"/><rect x="370" y="104" width="45" height="14" rx="7" fill="#B03A3A"/>
+      <text x="92" y="146" font-size="13" font-weight="700" fill="#4C1D95">Appetite</text>
+      <rect x="100" y="134" width="200" height="14" rx="7" fill="#EDE9FE"/><rect x="100" y="134" width="80" height="14" rx="7" fill="#5B21B6"/>
+      <rect x="370" y="134" width="200" height="14" rx="7" fill="#FAECEA"/><rect x="370" y="134" width="185" height="14" rx="7" fill="#B03A3A"/>
+      <text x="92" y="176" font-size="13" font-weight="700" fill="#4C1D95">Speech</text>
+      <rect x="100" y="164" width="200" height="14" rx="7" fill="#EDE9FE"/><rect x="100" y="164" width="60" height="14" rx="7" fill="#5B21B6"/>
+      <rect x="370" y="164" width="200" height="14" rx="7" fill="#FAECEA"/><rect x="370" y="164" width="180" height="14" rx="7" fill="#B03A3A"/>
+      <text x="92" y="206" font-size="13" font-weight="700" fill="#4C1D95">Temperature</text>
+      <rect x="100" y="194" width="200" height="14" rx="7" fill="#EDE9FE"/><rect x="100" y="194" width="65" height="14" rx="7" fill="#5B21B6"/>
+      <rect x="370" y="194" width="200" height="14" rx="7" fill="#FAECEA"/><rect x="370" y="194" width="185" height="14" rx="7" fill="#B03A3A"/>
+      <text x="330" y="232" text-anchor="middle" font-size="12.5" font-style="italic" fill="#6E6590">Bars show the typical direction and relative strength of each finding (schematic, not measured data).</text>
+    </svg>
+    <p class="cap">Same six bedside observations, opposite directions. Heart rate low/slow vs high/racing · energy flat vs wired · sleep long vs broken · appetite down vs ravenous · speech slowed vs pressured · temperature cold-intolerant vs heat-intolerant.</p>
+  </div>
+  <div class="card">
+    <h3>The bedside differential in one breath</h3>
+    <p><b>Hypo:</b> bradycardia · hypothermia · weight gain · constipation · dry cool skin · delayed reflexes · slowed speech · hypersomnia. <b>Hyper:</b> tachycardia/AF · heat intolerance · weight loss · diarrhea · warm moist skin · brisk reflexes · pressured speech · insomnia. When a "manic" patient has a resting pulse of 128, a tremor you can see across the room, and has lost 20 pounds eating normally, the differential starts with the thyroid — and the TSH is already in the chart.</p>
+  </div>
+</div>
+
+<!-- ================= 7. BIPOLAR / LITHIUM ================= -->
+<div class="colorband" id="bipolar">
+  <h2>Bipolar Disorder, Lithium &amp; the Thyroid</h2>
+  <p>The Axis Inside the Mood Chart</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🔄</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <h3>Rapid cycling and the low thyroid</h3>
+    <p><b>Lead-in:</b> few links in psychiatry are older or more practical. In the classic study of 30 rapid-cycling bipolar patients (Bauer &amp; Whybrow's line of research, Arch Gen Psychiatry 1990), <span class="hl">23% had grade I (overt) hypothyroidism</span>, with further patients in the milder grades; broader clinical reviews put thyroid abnormalities in roughly <b>20–30% of rapid cyclers</b>, and some reviews report subclinical hypothyroidism in a substantially higher share. The association's strength is debated — at least one matched study found no difference in prevalence — but the clinical rule that survives every version of the argument is the same: <span class="hl">a TSH belongs in the workup of every bipolar patient, and it is mandatory in rapid cycling</span>, because untreated hypothyroidism can drive cycling that no mood stabilizer will settle.</p>
+    <h3>Lithium-induced hypothyroidism</h3>
+    <p>Lithium concentrates in the thyroid and inhibits hormone release; the gland compensates until, in a sizable minority, it cannot. Real-world data: in a large Keele University cohort of lithium patients, <b>19.9% developed an abnormal TSH by 3 years</b>, and <b>91.4% of thyroid dysfunction appeared within the first 3 years</b> of therapy. Psychiatry teaching commonly summarizes the risk as <span class="hl">up to about 1 in 5 lithium patients</span>. Women and patients with pre-existing thyroid antibodies carry the highest risk. Lithium also unmasks or worsens autoimmunity, and rarely does the opposite — hyperthyroidism is described but uncommon.</p>
+    <p><b>The crucial management point:</b> lithium-induced hypothyroidism is <span class="hl">not</span> a reason to stop lithium. The standard move is to <b>keep the mood stabilizer and add levothyroxine</b> — treat the thyroid, protect the mood. Nurses who frame it that way ("we add a thyroid tablet; we don't take away the medicine that keeps you stable") prevent a common adherence panic.</p>
+    <h4>The lithium thyroid monitoring schedule</h4>
+    <ul class="tight">
+      <li><b>Baseline</b> TFTs (TSH ± free T4, antibodies if indicated) before lithium starts — alongside renal function and calcium.</li>
+      <li><b>Every 6 months</b> on therapy — the NICE standard for thyroid (and renal) monitoring on lithium.</li>
+      <li><b>Subclinical on lithium</b> (TSH 5–10, normal free T4): monitor every 4–6 months; many patients stabilize without treatment.</li>
+      <li><b>TSH ≥ 10 on lithium:</b> start levothyroxine — do not stop the lithium.</li>
+      <li><b>Any new fatigue, weight gain, cognitive dulling, or depressive slide</b> on lithium: check TSH out of cycle. Lithium depression and lithium hypothyroidism wear the same clothes.</li>
+    </ul>
+    <h3>Amiodarone — the other great thyroid disruptor</h3>
+    <p>Amiodarone is an iodine bomb with a months-long half-life. Across studies, roughly <span class="hl">14–18% of patients develop overt thyroid dysfunction</span> on it; a nationwide Icelandic cohort found about <b>40% had some thyroid dysfunction by 5 years</b>. It breaks the axis both ways: <b>amiodarone-induced hypothyroidism</b> (the gland, flooded with iodine, shuts down — commoner in iodine-replete regions, ~12–17%) and <b>amiodarone-induced thyrotoxicosis (AIT)</b>, which comes in two types — <b>type 1</b>, excess hormone synthesis in an abnormal gland (nodular goiter, latent Graves'), and <b>type 2</b>, a destructive thyroiditis that leaks stored hormone. Onset can occur at any point in therapy and even after the drug is stopped. Psych-unit relevance: your patients with cardiac histories arrive on it, it interacts with the QTc-conscious prescribing your unit already does, and a "new anxiety with tachycardia" in an amiodarone patient is a TFT order waiting to happen. Baseline TFTs, an early recheck in the first months, and periodic (≈ 6-monthly) checks during and after therapy are the standard surveillance pattern.</p>
+  </div>
+</div>
+
+<!-- ================= 8. POSTPARTUM ================= -->
+<div class="colorband" id="postpartum">
+  <h2>Postpartum — Thyroiditis vs Depression vs Psychosis</h2>
+  <p>Three Diagnoses, One Exhausted Mother</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🤱</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> <b>postpartum thyroiditis (PPT)</b> is a painless autoimmune thyroiditis that strikes <span class="hl">5–10% of women in the first year after delivery</span> — and its two phases impersonate the two psychiatric emergencies of the postpartum period in turn.</p>
+    <div class="cols2">
+      <div>
+        <h4>Phase 1 — thyrotoxic (≈ months 1–4)</h4>
+        <p>The inflamed gland leaks stored hormone: anxiety, irritability, palpitations, tremor, insomnia, weight loss. This is a <i>leak</i>, not overproduction — so <b>antithyroid drugs do not help</b>; beta-blockers cover symptoms. The trap: labeling it "new-mother anxiety" while a destructive thyroiditis runs its course.</p>
+      </div>
+      <div>
+        <h4>Phase 2 — hypothyroid (≈ months 4–8)</h4>
+        <p>The gland, emptied and inflamed, under-produces: fatigue, low mood, poor concentration, weight gain — a presentation that overlaps postpartum depression almost symptom for symptom. The differentiator costs one tube of blood: <b>check TSH in every postpartum depression workup</b>.</p>
+      </div>
+    </div>
+    <ul class="tight">
+      <li><b>Course:</b> most women recover thyroid function by about 12 months — but <span class="hl">20–30% develop permanent hypothyroidism</span>, and recurrence in a later pregnancy is about 70%.</li>
+      <li><b>Risk flag:</b> women with positive anti-TPO in the first trimester develop PPT in roughly a third to a half of cases; the Endocrine Society pattern is to check <b>TSH at 3 and 6 months postpartum</b> in high-risk women.</li>
+      <li><b>Postpartum psychosis is its own emergency</b> — a bipolar-spectrum crisis, usually within the first two weeks, managed psychiatrically and urgently. Thyroid disease does not explain it away; but a TSH still belongs in its medical workup, because thyroiditis and psychosis can share a calendar.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 9. EMERGENCIES ================= -->
+<div class="colorband deep" id="emergencies">
+  <h2>The Emergency Bookends</h2>
+  <p>Myxedema Coma &amp; Thyroid Storm</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🚨</button>
+</div>
+<div class="wcsec">
+  <div class="alert">
+    <h3>❄️ Bookend 1 — Myxedema coma (too little, too long)</h3>
+    <p>The end-stage of severe untreated hypothyroidism — a misnomer (frank coma is not required) and a true ICU emergency with reported mortality of <span class="hl">30–60%</span>. Typically an older woman with known or unknown hypothyroidism, tipped over by a stressor.</p>
+    <ul class="tight">
+      <li><b>Presentation:</b> hypothermia, bradycardia, hypotension, hypoventilation (CO₂ retention), hyponatremia, hypoglycemia, ileus, and altered mentation from lethargy to coma; delayed reflex relaxation (the Woltman sign) if reflexes are testable.</li>
+      <li><b>Precipitants:</b> infection (the commonest), cold exposure, sedatives and opioids, stroke, MI, heart failure, GI bleed, and the quiet one — <b>stopped levothyroxine</b>.</li>
+      <li><b>Nursing priorities:</b> recognize and escalate early; ICU-level monitoring; airway and ventilatory support; <b>passive</b> rewarming (active external rewarming can vasodilate and collapse the patient); IV levothyroxine per orders — and <span class="hl">stress-dose hydrocortisone given with or before the thyroid hormone</span>, because coexisting adrenal insufficiency must be covered before replacement unmasks it; correct hypoglycemia and electrolytes; hunt the precipitant (cultures, antibiotics when infection is suspected); and treat every sedating PRN as a loaded dose — these patients clear sedatives and opioids extremely slowly.</li>
+    </ul>
+  </div>
+  <div class="alert">
+    <h3>🔥 Bookend 2 — Thyroid storm (too much, too fast)</h3>
+    <p>Decompensated thyrotoxicosis: the mirror emergency. Mortality is <span class="hl">10–30% even with treatment, and 80–100% untreated</span> — the fastest-moving endocrine emergency a psych nurse will meet, and the one most likely to be misread as "just mania" or excited delirium.</p>
+    <ul class="tight">
+      <li><b>Presentation:</b> fever (often &gt; 103 °F), marked tachycardia or new AF (frequently &gt; 140), hypertension then collapse, tremor, sweating, vomiting/diarrhea — and CNS signs on a gradient: agitation → delirium/psychosis → seizures → coma.</li>
+      <li><b>Precipitants:</b> infection, surgery, trauma, iodine loads (contrast studies), DKA, hypoglycemia, abrupt cessation of antithyroid medication — and childbirth.</li>
+      <li><b>The Burch–Wartofsky Point Scale (BWPS)</b> formalizes the bedside picture — points for temperature (99–99.9 °F = 5, rising to ≥ 104 °F = 30), CNS effects (agitation 10 · delirium/psychosis 20 · seizure/coma 30), heart rate (99–109 = 5, rising to ≥ 140 = 25), heart failure, GI/hepatic signs, and a present precipitant (10): <span class="hl"><b>≥ 45 = thyroid storm · 25–44 = impending storm · &lt; 25 = unlikely</b></span>. A nurse who can tally a BWPS can move a whole team.</li>
+      <li><b>Treatment sequence (know the order — it is tested and it matters):</b> (1) beta-blocker for rate and adrenergic blockade; (2) a thionamide — <b>propylthiouracil (PTU) is preferred in storm</b> because it also blocks peripheral T4→T3 conversion; (3) <b>iodine at least 1 hour AFTER the thionamide</b> (iodine first would feed new hormone synthesis); (4) hydrocortisone; (5) aggressive cooling with <b>acetaminophen — never aspirin or NSAIDs</b>, which displace T4 from its binding protein and raise free hormone; (6) ICU, treat the precipitant.</li>
+      <li><b>Psych-unit pearl:</b> for the agitated storm patient, <span class="hl">benzodiazepines are the preferred sedative</span> — and every minute spent assuming the agitation is "behavioral" is a minute the fever climbs. Fever + tachycardia + delirium is a medical code picture until proven otherwise.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 10. TREATMENT ================= -->
+<div class="colorband" id="treatment">
+  <h2>Treatment — Levothyroxine &amp; the Long Game</h2>
+  <p>Start Low in the Old &amp; Cardiac · Recheck at 6–8 Weeks</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">💊</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> treatment of primary hypothyroidism is replacement with <b>levothyroxine (synthetic T4)</b> — once daily, inexpensive, and titrated against TSH. The psychiatry of it is a timing problem: the lab recovers first, the brain recovers later, and the nurse's job is to keep everyone — patient, family, and treatment team — from declaring failure in the gap.</p>
+    <h4>Dosing anchors</h4>
+    <ul class="tight">
+      <li><b>Full replacement</b> in a younger adult without cardiac disease ≈ <span class="hl">1.6 mcg/kg/day</span> (about 112 mcg at 70 kg).</li>
+      <li><b>Elderly or cardiac patients start low:</b> <b>25–50 mcg daily</b>, increased by <b>12.5–25 mcg every 6–8 weeks</b> — replacing too fast can provoke angina or arrhythmia in a heart that has run slow for years.</li>
+      <li><b>Target:</b> TSH back in range — a common practical target is <b>0.5–4.5 mIU/L</b>, individualized by age and symptoms.</li>
+      <li><b>Once stable:</b> TSH every 6–12 months, and after any weight change, new interacting drug, or pregnancy.</li>
+    </ul>
+  </div>
+  <div class="svgbox">
+    <svg viewBox="0 0 680 128" width="100%" role="img" aria-label="Levothyroxine titration and recheck timeline" font-family="DM Sans, sans-serif">
+      <line x1="30" y1="46" x2="650" y2="46" stroke="#4C1D95" stroke-width="3"/>
+      <circle cx="60" cy="46" r="13" fill="#5B21B6" stroke="#3B1470" stroke-width="2"/>
+      <circle cx="215" cy="46" r="13" fill="#5B21B6" stroke="#3B1470" stroke-width="2"/>
+      <circle cx="370" cy="46" r="13" fill="#EA580C" stroke="#9A3D06" stroke-width="2"/>
+      <circle cx="520" cy="46" r="13" fill="#5B21B6" stroke="#3B1470" stroke-width="2"/>
+      <circle cx="625" cy="46" r="13" fill="#3E7D52" stroke="#2C5238" stroke-width="2"/>
+      <text x="60" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#4C1D95">DAY 0</text>
+      <text x="60" y="82" text-anchor="middle" font-size="12.5" fill="#2B2440">Start levothyroxine</text>
+      <text x="60" y="99" text-anchor="middle" font-size="12.5" fill="#2B2440">(25–50 mcg if elderly/cardiac)</text>
+      <text x="215" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#4C1D95">WEEKS 2–3</text>
+      <text x="215" y="82" text-anchor="middle" font-size="12.5" fill="#2B2440">Free T4 normalizes</text>
+      <text x="215" y="99" text-anchor="middle" font-size="12.5" fill="#2B2440">— the blood moves first</text>
+      <text x="370" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#EA580C">WEEKS 6–8</text>
+      <text x="370" y="82" text-anchor="middle" font-size="12.5" fill="#2B2440">RECHECK TSH + free T4</text>
+      <text x="370" y="99" text-anchor="middle" font-size="12.5" fill="#2B2440">adjust by 12.5–25 mcg</text>
+      <text x="520" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#4C1D95">WEEKS 6–12+</text>
+      <text x="520" y="82" text-anchor="middle" font-size="12.5" fill="#2B2440">Mood &amp; cognition catch up</text>
+      <text x="520" y="99" text-anchor="middle" font-size="12.5" fill="#2B2440">— the brain lags the lab</text>
+      <text x="625" y="24" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="700" font-size="13" fill="#3E7D52">STABLE</text>
+      <text x="625" y="82" text-anchor="middle" font-size="12.5" fill="#2B2440">TSH q 6–12 mo</text>
+    </svg>
+    <p class="cap">The recheck rhythm. Levothyroxine's long half-life means steady state takes about six weeks — a TSH drawn at week 2 measures the old dose, not the new one.</p>
+  </div>
+  <div class="card">
+    <h3>Why the mind lags the lab</h3>
+    <p>Free T4 typically normalizes within about 2–3 weeks of a correct dose, but <b>TSH takes a further 3–6 weeks</b> to re-equilibrate — and psychiatric recovery trails both. The standard counsel, and the honest one: <span class="hl">give a dose change 6–8 weeks</span> before judging its effect on mood or cognition. Brains remodel slowly; neurotransmitter receptor density, cerebral blood flow, and months of accumulated deconditioning do not reverse on lab time. A patient discharged euthyroid-but-still-flat has not failed treatment — they are mid-course. Document the trajectory, set the outpatient recheck before discharge, and say the quiet part in the discharge teaching: <i>the medicine is working; the feeling follows.</i></p>
+    <h3>The T3 augmentation note</h3>
+    <p>For treatment-resistant depression, psychiatrists sometimes augment an antidepressant with <b>liothyronine (T3)</b> — usually 25 mcg daily, increased toward 50 mcg — even in patients with normal thyroid function. The anchor evidence is STAR*D level 3, where T3 augmentation produced remission in <span class="hl">24.7% versus 15.9% for lithium augmentation</span> after two failed antidepressants; the difference did not reach statistical significance, but T3 was <b>better tolerated</b>, with fewer patients stopping for side effects — which is why it remains in the APA's augmentation toolkit with moderate clinical confidence. Nursing notes: T3 is short-acting (sympathomimetic side effects — palpitations, anxiety, tremor — are dose signals), it suppresses TSH on labs (expected, not an error), and it is augmentation, never a substitute for treating true hypothyroidism with levothyroxine.</p>
+    <h3>Hashimoto's encephalopathy — the rare zebra</h3>
+    <p>One more pattern for the workup file: <b>Hashimoto's encephalopathy</b> (steroid-responsive encephalopathy with autoimmune thyroiditis) — an acute/subacute presentation mixing psychiatric symptoms with seizures, myoclonus, stroke-like episodes, and very high anti-TPO titers, in a patient whose TSH may be only mildly abnormal. Rare, contested, and treatable with corticosteroids — worth a thought when psychosis arrives with neurological signs that do not fit.</p>
+  </div>
+</div>
+
+<!-- ================= 11. NURSING ASSESSMENT ================= -->
+<div class="colorband" id="nursing">
+  <h2>Nursing Assessment — Reading the Patient</h2>
+  <p>Patterns · Red Flags · Teaching</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🩺</button>
+</div>
+<div class="wcsec">
+  <div class="cols2">
+    <div class="card">
+      <h3>🐢 The hypothyroid pattern</h3>
+      <ul class="tight">
+        <li><b>Vitals:</b> bradycardia, low-normal or low temperature, sometimes rising diastolic pressure.</li>
+        <li><b>General:</b> fatigue out of proportion, weight gain, cold intolerance, puffy face/hands (non-pitting).</li>
+        <li><b>Skin/hair:</b> cool, dry, coarse; thinning hair and outer eyebrows.</li>
+        <li><b>Neuro:</b> slowed speech and thought, delayed reflex relaxation, poor concentration, hypersomnia.</li>
+        <li><b>GI/GU:</b> constipation, heavy menses.</li>
+        <li><b>Mood:</b> depressed, apathetic, anhedonic; occasionally irritable/anxious instead.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🐇 The hyperthyroid pattern</h3>
+      <ul class="tight">
+        <li><b>Vitals:</b> tachycardia (including in sleep), widened pulse pressure, fever when decompensating.</li>
+        <li><b>General:</b> restless energy, weight loss with good appetite, heat intolerance, sweating.</li>
+        <li><b>Skin/hair:</b> warm, moist, smooth; fine hair; tremor of outstretched hands.</li>
+        <li><b>Eyes:</b> lid lag, stare; exophthalmos in Graves'.</li>
+        <li><b>Neuro:</b> pressured speech, racing thoughts, brisk reflexes, insomnia.</li>
+        <li><b>Mood:</b> anxious, panicky, labile; escalates to mania/psychosis at the extreme.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="alert">
+    <h3>🚩 Red flags — escalate, do not observe</h3>
+    <ul class="tight">
+      <li>Fever + tachycardia + delirium in a "manic" patient → think <b>thyroid storm</b>, tally a Burch–Wartofsky, call it up the chain now.</li>
+      <li>Hypothermia, bradycardia, hard-to-rouse, or hypoventilating in a hypothyroid patient → think <b>myxedema coma</b>.</li>
+      <li>New atrial fibrillation or a resting pulse that stays &gt; 120 despite PRNs → get TFTs and an ECG, not just another PRN.</li>
+      <li>A hypothyroid patient becoming <i>more</i> sedated after routine sedatives/opioids → reduced clearance; reassess dosing and alert the prescriber.</li>
+      <li>A "depression" with a fresh goiter, vitiligo, or a strong autoimmune family history → antibodies and a prescriber conversation.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Patient teaching points</h3>
+    <ul class="tight">
+      <li><b>Same time, every day, empty stomach:</b> levothyroxine is taken 30–60 minutes before breakfast; consistency matters more than the exact hour.</li>
+      <li><b>Keep the blockers away:</b> iron, calcium supplements, antacids, and bile-acid resins block absorption — separate them from the levothyroxine dose by several hours.</li>
+      <li><b>Do not stop it when you feel better</b> — feeling better is the medicine working; stopping is the commonest on-ramp to severe disease.</li>
+      <li><b>Expect the lag:</b> blood levels improve in weeks; mood and energy follow over 6–8+ weeks. Judge the medicine at the recheck, not at day 10.</li>
+      <li><b>Supplements count:</b> tell every provider about biotin and "thyroid support" products — one corrupts the test, the other can contain unlisted hormone.</li>
+      <li><b>Pregnancy changes the dose:</b> anyone on levothyroxine who becomes pregnant needs prompt follow-up — needs rise early.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= 12. ADMISSION ================= -->
+<div class="colorband" id="admission">
+  <h2>Why TSH Belongs in Every Psych Admission</h2>
+  <p>One Cheap Test Standing Guard Over Every Expensive Label</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📋</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <p><b>Lead-in:</b> every diagnosis on a psychiatric unit is provisional until the medical mimics are cleared, and the thyroid is the mimic with the best effort-to-yield ratio in the building. The admission TSH earns its place five ways:</p>
+    <ul class="tight">
+      <li><b>It finds reversible disease.</b> Hypothyroidism is among the most common reversible causes of depression and of a dementia-like picture; hyperthyroidism is a reversible cause of anxiety, mania, and psychosis. No other single tube changes as many treatment plans.</li>
+      <li><b>It protects the "treatment-resistant" label.</b> Antidepressants underperform in untreated hypothyroidism; a patient can collect two failed trials and an augmentation plan for what is, in part, a TSH of 15. Check the axis before escalating the pharmacy.</li>
+      <li><b>It is wired into the unit's own medications.</b> Lithium monitoring starts with a baseline TSH; rapid-cycling bipolar disorder demands one; amiodarone histories demand one.</li>
+      <li><b>It times the postpartum correctly.</b> Postpartum depression and psychosis workups are incomplete without it — thyroiditis shares their calendar and half their symptoms.</li>
+      <li><b>It catches the emergencies upstream.</b> The storm and the coma both start as an abnormal number on an admission panel that somebody read carefully.</li>
+    </ul>
+    <p><b>The nurse's specific role:</b> verify the pair (TSH <i>with</i> free T4 when abnormal), ask the three artifact questions (biotin, heparin, acute illness), flag any TSH &gt; 10 for same-day prescriber review, and make sure a scheduled 6–8-week recheck survives the discharge paperwork. On a busy unit, that is the whole job — and it is enough to change outcomes.</p>
+  </div>
+</div>
+
+<!-- ================= 13. SOURCES ================= -->
+<div class="colorband" id="sources">
+  <h2>Sources &amp; Further Reading</h2>
+  <p>Guidelines · Reviews · Primary Studies</p>
+  <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📚</button>
+</div>
+<div class="wcsec">
+  <div class="card">
+    <ul class="tight">
+      <li>American Thyroid Association — <a href="http://thyroid.org/wp-content/uploads/patients/brochures/FunctionTests_brochure.pdf" target="_blank" rel="noopener">Thyroid Function Tests</a> (patient brochure: TSH as the early-warning test; biotin hold ≥ 2 days; anti-TPO follow-up; T3 last to become abnormal).</li>
+      <li>American Thyroid Association — <a href="http://www.thyroid.org/wp-content/uploads/patients/brochures/Hypothyroidism_web_booklet.pdf" target="_blank" rel="noopener">Hypothyroidism</a> (patient booklet).</li>
+      <li>StatPearls — <a href="https://www.statpearls.com/point-of-care/23304" target="_blank" rel="noopener">Hypothyroidism</a> (point-of-care summary: patterns incl. low T4 without raised TSH in secondary disease; stress-dose steroids alongside levothyroxine in severe decompensation).</li>
+      <li>StatPearls — <a href="https://www.statpearls.com/point-of-care/27549" target="_blank" rel="noopener">Postpartum Thyroiditis</a> (5–10% incidence; phases at 1–4 and 4–8 months; 20–30% permanent hypothyroidism; TSH at 3 and 6 months in high-risk women).</li>
+      <li>Alexander EK et al. — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5741893/" target="_blank" rel="noopener">2017 ATA Guidelines for Thyroid Disease in Pregnancy</a> (trimester-specific ranges; 4.0 mIU/L first-trimester upper limit when local ranges are unavailable; treatment thresholds).</li>
+      <li>Garber JR et al. — AACE/ATA Clinical Practice Guidelines for Hypothyroidism (the TSH &gt; 10 treatment-consideration threshold for subclinical disease), as summarized in the evidence reviews above.</li>
+      <li>Boddhula S et al. — <a href="https://www.txpsych.org/wp-content/uploads/2026/04/2.-Thyroid_Psychiatry_updated-Boddhula.pdf" target="_blank" rel="noopener">Thyroid Disorders: What Every Psychiatrist Should Know</a> (rapid cycling and thyroid abnormality; lithium hypothyroidism up to ~20%; myxedema psychosis and coma figures; screening pearls; the 6–8-week rule for psychiatric response).</li>
+      <li>WikEM — <a href="https://www.wikem.org/w/index.php?title=Thyroid_storm&amp;oldid=31000" target="_blank" rel="noopener">Thyroid Storm</a> (Burch–Wartofsky thresholds and components; treatment sequence; benzodiazepines for agitation; aspirin warning; mortality figures).</li>
+      <li>Wikipedia (literature summary) — <a href="https://en.wikipedia.org/wiki/Myxedema_psychosis" target="_blank" rel="noopener">Myxedema psychosis</a> (Asher 1949, 14 cases, 9 dramatic recoveries; psychosis in ~5–15% of myxedematous patients).</li>
+      <li>Keele University repository — <a href="https://keele-repository.worktribe.com/OutputFile/462293" target="_blank" rel="noopener">Lithium-induced hypothyroidism: real-world incidence and monitoring</a> (19.9% abnormal TSH by 3 years; 91.4% of dysfunction within 3 years; NICE 6-monthly monitoring).</li>
+      <li>AME Publishing (QIMS) — <a href="https://qims.amegroups.org/article/view/145329/html" target="_blank" rel="noopener">Amiodarone-induced thyroid dysfunction: mechanisms</a> (type 1 vs type 2 AIT; hypothyroidism mechanisms).</li>
+      <li>PubMed — <a href="https://pubmed.ncbi.nlm.nih.gov/2125129/" target="_blank" rel="noopener">Rapid-cycling bipolar disorder and thyroid function</a> (matched evaluation — the counterpoint study in the rapid-cycling debate).</li>
+      <li>Neuropsychiatric Disease and Treatment (Dove) — <a href="https://www.dovepress.com/management-of-treatment-resistant-depression-challenges-and-strategies-peer-reviewed-fulltext-article-NDT" target="_blank" rel="noopener">Management of treatment-resistant depression</a> (STAR*D level 3: T3 remission 24.7% vs lithium 15.9%, not statistically superior, better tolerated).</li>
+      <li>Thyroid Manager (Endotext) — <a href="https://www.thyroidmanager.org/wp-content/uploads/chapters/the-non-thyroidal-illness-syndrome.pdf" target="_blank" rel="noopener">The Non-Thyroidal Illness Syndrome</a> (NTIS patterns; recovery-phase TSH overshoot; heparin artifact on free T4).</li>
+    </ul>
+    <p style="color:var(--muted);font-size:.92rem">Reference ranges are lab-specific: always interpret a result against the range printed on the patient's own report. This guide is an educational summary for nursing staff and students, not a prescribing reference.</p>
+  </div>
+</div>
+
+<div class="foot">TSH &amp; Mental Health — A Nursing Guide · Independent Nursing Education · October 2026</div>
+</div>
+<a class="toc-top" href="#top" title="Back to top">↑</a>
+
+<script>
+/* Light theme is ALWAYS the default: the page loads in light theme; a dark
+   choice lasts only for the current visit and is never persisted. */
+(function(){
+  var b=document.getElementById('tshThemeBtn');
+  if(!b)return;
+  function paint(){b.textContent=document.documentElement.classList.contains('dark')?'☀️ Theme':'🌙 Theme';}
+  b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');paint();fitBandsSoon();});
+  paint();
+})();
+</script>
+<script>
+/* Index box: collapsed by default; the book button toggles it. */
+(function(){
+  var idx=document.querySelector('.index'),btn=document.querySelector('.idx-btn');
+  if(!idx||!btn)return;
+  btn.addEventListener('click',function(){idx.classList.toggle('open');});
+})();
+/* Sections: load collapsed; the WHOLE title band is the toggle. */
+(function(){
+  var bands=document.querySelectorAll('.colorband');
+  bands.forEach(function(band){
+    var sec=band.nextElementSibling;
+    if(!sec||!sec.classList||!sec.classList.contains('wcsec'))return;
+    band._ssec=sec;
+    band._set=function(open){sec.hidden=!open;var t=band.querySelector('.wc-tgl');if(t)t.setAttribute('aria-expanded',open?'true':'false');};
+    band._set(false);
+    band.addEventListener('click',function(){band._set(sec.hidden);});
+  });
+  function openHash(){
+    if(!location.hash)return;
+    var el=document.querySelector(location.hash);
+    if(el&&el.classList&&el.classList.contains('colorband')&&el._set)el._set(true);
+  }
+  openHash();
+  /* In-page links: open the target section, then smooth-scroll to it. */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var id=a.getAttribute('href');
+    if(!id||id.length<2)return;
+    var el=document.querySelector(id);
+    if(!el)return;
+    e.preventDefault();
+    if(el.classList.contains('colorband')&&el._set)el._set(true);
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+    if(history.replaceState)history.replaceState(null,'',id);
+  });
+})();
+/* Bands: one uniform width — no band wider than the widest band, never wider
+   than the content column. */
+function fitBands(){
+  var bands=[].slice.call(document.querySelectorAll('.colorband'));
+  if(!bands.length)return;
+  var wrap=document.querySelector('.wrap');
+  var colW=wrap?wrap.clientWidth-44:0;
+  bands.forEach(function(b){b.style.width='max-content';});
+  var w=0;
+  bands.forEach(function(b){w=Math.max(w,b.getBoundingClientRect().width);});
+  if(colW>0)w=Math.min(w,colW);
+  bands.forEach(function(b){b.style.width=w+'px';b.style.marginLeft='auto';b.style.marginRight='auto';});
+}
+var _fbT=null;
+function fitBandsSoon(){if(_fbT)clearTimeout(_fbT);_fbT=setTimeout(fitBands,60);}
+window.addEventListener('load',fitBands);
+window.addEventListener('resize',fitBandsSoon);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitBandsSoon);
+</script>
+</body>
+</html>
