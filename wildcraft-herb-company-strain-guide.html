@@ -1624,13 +1624,14 @@ function walk(node){
   if(node.nodeType===3){
     var par=node.parentNode; if(!par||!par.closest||par.closest('svg'))return;
     var t=node.nodeValue;
-    if(!/(#10\d\d|PR Select \d|Batch #10\d\d|2606E84|2607E68|2609725|\d+\.\d+%)/.test(t))return;
+    if(!/(#10\d\d|PR Select \d|Batch #10\d\d|2606E84|2607E68|2609725|\d+\.\d+%|Rated \d\.\d\d)/.test(t))return;
     var frag=document.createDocumentFragment(),last=0,m;
-    var re=/(Batch #10\d\d|#10\d\d|PR Select \d+|2606E84|2607E68|2609725|\d+\.\d+%)/g;
+    var re=/(Rated \d\.\d\d|Batch #10\d\d|#10\d\d|PR Select \d+|2606E84|2607E68|2609725|\d+\.\d+%)/g;
     while((m=re.exec(t))){
       frag.appendChild(document.createTextNode(t.slice(last,m.index)));
       var tok=m[0],el;
-      if(tok.indexOf('%')>-1){el=document.createElement('b');el.textContent=tok;}
+      if(tok.indexOf('Rated ')===0){el=document.createElement('span');el.innerHTML='Rated <b>'+tok.slice(6)+'</b>';}
+      else if(tok.indexOf('%')>-1){el=document.createElement('b');el.textContent=tok;}
       else if(tok.indexOf('PR Select')===0||tok.charAt(0)==='2'){el=document.createElement('span');el.className='wc-ref';el.textContent=tok;}
       else{var num=tok.replace('Batch ','');el=document.createElement('a');el.className='wc-batchbtn';el.href=document.getElementById('batch-'+num.slice(1))?('#batch-'+num.slice(1)):'#coa';el.textContent=tok;}
       frag.appendChild(el);last=m.index+tok.length;
