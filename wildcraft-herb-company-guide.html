@@ -1974,6 +1974,13 @@ img,svg{max-width:100%}
   .wc-toprow .kicker{letter-spacing:2px;font-size:12px}
   .wc-topbtns{flex-wrap:wrap;justify-content:flex-end;margin-left:auto}
   .wc-tbtn{padding:0 9px;font-size:.74rem}
+  /* Quick Pick wheel fit (Nov 1): wheel capped by the card's content box and nodes
+     shrunk so every circle (Focus/Mood at 82.5%) sits fully inside the card border */
+  .wcqp{padding-left:10px;padding-right:10px}
+  .qp-wheel{width:min(312px,100%)}
+  .qp-node{width:84px;height:84px}
+  .qp-node .qp-emo{font-size:1.45rem}
+  .qp-node small{font-size:.72rem}
 }
 @media print{
   .panels{grid-template-columns:1fr 1fr}
