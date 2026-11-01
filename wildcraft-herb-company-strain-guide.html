@@ -1966,6 +1966,14 @@ img,svg{max-width:100%}
   .wcsec{overflow-x:auto}
   table{font-size:12px}
   th,td{padding:5px 6px}
+  /* 390px fixes (Nov 1): Log button must not cover the Quick Pick title; top control cluster must not clip */
+  .wc-logbtn{position:static;float:right;margin:0 0 4px 10px}
+  .wcqp h2{min-height:34px}
+  .qp-tagline{white-space:normal}
+  .wc-toprow{flex-wrap:wrap}
+  .wc-toprow .kicker{letter-spacing:2px;font-size:12px}
+  .wc-topbtns{flex-wrap:wrap;justify-content:flex-end;margin-left:auto}
+  .wc-tbtn{padding:0 9px;font-size:.74rem}
 }
 @media print{
   .panels{grid-template-columns:1fr 1fr}
