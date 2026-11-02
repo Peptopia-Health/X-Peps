@@ -455,6 +455,8 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 <div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="labClose" aria-label="Close lab report">✕</button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
 <div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Kratom Picker Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
 <div id="factModal" class="wc-labmodal" hidden><div class="wc-factbox"><div class="wc-labbar"><span id="factTitle">✓ Fact check</span><span><a id="factOpen" href="#" target="_blank" rel="noopener">Open the source ↗</a><button type="button" id="factClose" aria-label="Close fact check">✕</button></span></div><div class="wc-factbody"><blockquote id="factQuote"></blockquote><p class="wc-factsrc" id="factSrc"></p></div></div></div>
+<div id="docModal" class="wc-labmodal" hidden><div class="wc-labbox wc-docbox"><div class="wc-labbar"><span>📰 The Printed Argument — Sakti Botanicals Blog</span><span><a href="https://www.saktibotanicals.com/blog/do-kratom-strains-exist" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="docClose" aria-label="Close document">✕</button></span></div><div class="wc-docbody"><p><b>“The Great Debate: Do Kratom ‘Strains’ Actually Exist?”</b> — the vendor’s own blog post, and the reason this menu has no yellow. The site does not allow the post to be framed inside another page, so here are its key points, in the vendor’s words:</p><blockquote>“Kratom strains do not actually exist! Contrary to popular belief, there is only ONE type of Kratom tree, and it is actually the curing/drying process that is responsible for the end result.”</blockquote><blockquote>“In actuality, there are only THREE traditional curing methods for kratom, each resulting in a powder that differs in color and alkaloids — Green, White, and Red.”</blockquote><blockquote>“The inconvenient truth is that strain/vein names are used as a marketing gimmick… ‘Maeng Da’ is just Thai for ‘the good stuff’ — a term to describe the quality, not to differentiate between actual plant strains.”</blockquote><p>No fourth cure exists in this account — yellow and gold are names, not cures — which is why Sakti’s menu stops at three.</p><a class="wc-docbtn" href="https://www.saktibotanicals.com/blog/do-kratom-strains-exist" target="_blank" rel="noopener">Read the full post on Sakti’s blog ↗</a></div></div></div>
+
 <button type="button" class="toc-back" id="wcBackBtn" title="Back to where you were reading" hidden><svg viewBox="0 0 48 48" width="38" height="38" aria-hidden="true"><defs><marker id="wcRetArr" viewBox="0 0 16 16" refX="12" refY="8" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L15 8L1 15z" fill="#08672B"/></marker></defs><path d="M29.1 9.9 A15 15 0 1 1 13.4 13.4" fill="none" stroke="#08672B" stroke-width="6.5" stroke-linecap="round" marker-end="url(#wcRetArr)"/></svg></button>
 <a class="toc-top" href="#top" title="Back to top"><svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true"><path d="M24 43 V15" stroke="#08672B" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M24 3 L11 20 H37 Z" fill="#08672B"/></svg></a>
 <div class="wrap">
@@ -566,6 +568,8 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   </div>
   <div class="panel p-yellow">
     <div class="phead">Yellow</div>
+    <div class="pbody"><a class="wc-doclink" data-mode="doc" href="https://www.saktibotanicals.com/blog/do-kratom-strains-exist" target="_blank" rel="noopener" title="Read the vendor’s printed argument" aria-label="Open the vendor’s printed argument in a popup"><svg class="wc-docicon" width="110" height="110" viewBox="0 0 110 110" role="img" aria-label="A printed document making the vendor’s argument"><rect x="25" y="15" width="62" height="86" rx="5" fill="#D8D2B8"/><rect x="18" y="8" width="62" height="88" rx="5" fill="#FFFEF9" stroke="#8F8F00" stroke-width="2.5"/><path d="M64 8 L80 24 L64 24 Z" fill="#E9E2C4" stroke="#8F8F00" stroke-width="2"/><rect x="27" y="18" width="36" height="8" rx="2" fill="#3D3400"/><rect x="27" y="31" width="44" height="4" rx="2" fill="#A8A800"/><rect x="27" y="42" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="51" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="60" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="69" width="30" height="3.4" rx="1.7" fill="#8F8F6A"/><circle cx="76" cy="80" r="16" fill="#F0F000" stroke="#8F8F00" stroke-width="2.5"/><text x="76" y="88" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#3D3400">3</text></svg></a>
+    </div>
     <div class="peffects">Not on this menu</div>
     <div class="pfoot">Sakti sells no yellow or gold powder — the three-cure menu stops at three, and the vendor argues the point in print.</div>
     <a class="golink" href="#strain-private-reserve-gmd">→ See the one gold: the Reserve tin</a>
@@ -644,20 +648,20 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <p>Asheville's First Kratom Dispensary · A Storefront First</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🏡</button>
 </div>
-<div class="wc-stats">
+<div class="wc-stats wc-stats-co">
   <div class="wc-stat"><b>2020</b><span>Founded in Asheville</span></div>
-  <div class="wc-stat"><b>9</b><span>Listings on the whole menu</span></div>
-  <div class="wc-stat"><b>#101–#118</b><span>Public batch archive at SC Labs</span></div>
-  <div class="wc-stat"><b>2×</b><span>Every lot tested — Indonesia + US</span></div>
+  <div class="wc-stat"><b>9</b><span>LISTINGS ON MENU</span></div>
+  <div class="wc-stat"><b>#101–#118</b><span>ARCHIVE AT SC LABS</span></div>
+  <div class="wc-stat"><b>2×</b><span>EVERY LOT TESTED</span></div>
 </div>
 <div class="catintro">
-  <p><b>Sakti Botanicals</b> is a working dispensary in Asheville, North Carolina, founded in 2020 — Asheville's first kratom dispensary — with the founder's own upbringing in Indonesia behind the sourcing. Leaf is hand-picked in a remote Borneo forest locals call <i>Sakti Hutan</i>, "Sacred Forest." The mission: wild leaf keeps the forest standing — the alternative land use in that region is palm-oil clearing.</p>
+  <p><b>Sakti Botanicals</b> is a working dispensary in <a class="wc-doclink" data-mode="frame" data-url="https://maps.google.com/maps?q=Asheville%2C%20NC&z=12&output=embed" data-label="🗺️ Asheville, North Carolina" href="https://www.google.com/maps/search/?api=1&query=Asheville,+NC" target="_blank" rel="noopener">Asheville, North Carolina</a>, founded in 2020 — Asheville's first kratom dispensary — with the founder's own upbringing in Indonesia behind the sourcing. Leaf is hand-picked in a remote Borneo forest locals call <a href="https://en.wikipedia.org/wiki/Sacred_grove" target="_blank" rel="noopener"><i>Sakti Hutan</i></a>, "Sacred Forest."<br><span class="hl-purp"><b>The mission</b>: wild leaf keeps the forest <b>standing</b> — a forest that provides is a forest that survives, because the alternative land use in that region is palm-oil <b>clearing</b>.</span></p>
 </div>
 <div class="wc-grid wc-cards-even">
-  <div class="wc-card"><a href="#ordering"><h4>🏪 Visit</h4><p>481 Hendersonville Road, Asheville, NC 28803 — Mon–Wed 12–5, Thu–Sat 10–7, closed Sunday.</p></a></div>
+  <div class="wc-card"><a href="#ordering"><h4>🏪 Visit</h4><p>481 Hendersonville Road, Asheville, NC 28803<br>Mon–Wed 12–5, Thu–Sat 10–7, closed Sunday.</p></a></div>
   <div class="wc-card"><a href="#ordering"><h4>🍵 On the house</h4><p>A free cup of kratom tea with any purchase, and local pickup when you order online.</p></a></div>
   <div class="wc-card"><a href="#value"><h4>🎟️ In-store word</h4><p>$75 Kilo Fridays and loyalty rewards, per DigLocal — deals the website does not run.</p></a></div>
-  <div class="wc-card"><a href="#science"><h4>🌳 The source</h4><p>Sakti Hutan, overseen by a founder who grew up in Indonesia and travels back to run it.</p></a></div>
+  <div class="wc-card"><a href="#science"><h4>🌳 The source</h4><p>Sakti Hutan, overseen by a founder who <b>grew up in Indonesia</b> and travels back to run it.</p></a></div>
 </div>
 
 <div class="colorband band-neutral" id="catalog">
@@ -1543,7 +1547,7 @@ html.dark .wc-idxpanel a{color:#9CC7A8}
 .wc-lane-white{color:#6E6E6E}.wc-lane-green{color:#398555}.wc-lane-gold{color:#8F8F00}.wc-lane-red{color:var(--fx-analgesia)}.wc-lane-blend{color:#7A4C93}
 html.dark .wc-lane-white{color:#B0BEC5}html.dark .wc-lane-green{color:#9CC7A8}html.dark .wc-lane-gold{color:#E3E36A}html.dark .wc-lane-red{color:#FF8A80}html.dark .wc-lane-blend{color:#C9A8E0}
 /* fix 19: readability audit — light/dark contrast fixes */
-.panel.p-white .phead{background:#527A28}
+.panel.p-white .phead{background:#7cb342}
 html.dark .index h2{color:#9CC7A8}
 html.dark .strain h4{color:#9CC7A8}
 html.dark .wc-batchhd{color:#9CC7A8}
@@ -1832,6 +1836,28 @@ html.dark #wcSearchResults a,html.dark #wcSearchResults .wc-sres{background:#fff
   p{orphans:3;widows:3}
   p,.quote,.popbox,.catintro,.wc-card,.panel,.strain,.wc-stat,tr{break-inside:avoid!important;page-break-inside:avoid!important}
 }
+/* §38 Round 3 (David, Nov 2, 2026): 2x2 card groups, stat-tile hugging, hero spacing, mission highlight, document popup */
+/* R3 item 2: a group of exactly 4 cards renders 2x2 — 3-over-1 is a defect */
+.wc-grid:has(> .wc-card:nth-child(4)):not(:has(> .wc-card:nth-child(5))){grid-template-columns:1fr 1fr}
+@media(max-width:640px){.wc-grid:has(> .wc-card:nth-child(4)):not(:has(> .wc-card:nth-child(5))){grid-template-columns:1fr}}
+/* R3 item 3: company stat tiles — captions forced to one line, tiles hug their content */
+.wc-stats-co .wc-stat{padding:11px 14px 6px}
+.wc-stats-co .wc-stat span{white-space:nowrap;display:block;line-height:1.3}
+/* R3 item 7: hero — no dead band under the subtitle */
+.titlepage .subtitle{margin-bottom:6px}
+.titlepage>p{margin-top:2px}
+/* R3 item 5: purple highlight — the mission sentence */
+.hl-purp{background:#DFCFF7;padding:.1em .35em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+html.dark .hl-purp{background:#4A3369;color:#EDE6D6}
+/* R3 items 4 + 9: popup document body, big read button, document icon */
+.wc-docbody{flex:1;overflow:auto;padding:20px 26px;font-size:15.5px;line-height:1.6;background:#FFFEF9}
+.wc-docbody blockquote{margin:12px 0;padding:10px 16px;background:#F3EFE2;border-left:4px solid #08672B;border-radius:0 10px 10px 0;font-style:italic}
+html.dark .wc-docbody{background:#1C211C}
+html.dark .wc-docbody blockquote{background:#262B26}
+.wc-docbtn{display:block;margin:18px 0 6px;text-align:center;background:linear-gradient(180deg,#0E8A3C,#08672B);color:#fff!important;font:800 1.05rem 'Outfit',sans-serif;padding:14px 18px;border:2px solid #054A1F;border-radius:999px;text-decoration:none;box-shadow:inset 0 2px 3px rgba(255,255,255,.4),inset 0 -4px 7px rgba(0,0,0,.28),0 4px 10px rgba(0,0,0,.3)}
+.wc-docbtn:active{transform:translateY(2px)}
+.wc-docicon{display:block;margin:0 auto}
+a.wc-doclink{cursor:pointer}
 </style>
 <style id="wc-responsive-print-standard">
 /* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
@@ -1906,6 +1932,23 @@ document.addEventListener('DOMContentLoaded',function(){
     if(epModal&&!epModal.hidden)epModal.hidden=true;
     else if(nhModal&&!nhModal.hidden)closeNh();
     else if(tlModal&&!tlModal.hidden)closeTl();});
+});
+</script>
+<script>
+/* §38 Round 3: document links — the map opens in the lab popup frame; the vendor blog (which blocks framing) opens in the document popup */
+document.addEventListener('DOMContentLoaded',function(){
+  var lm=document.getElementById('labModal'),lf=document.getElementById('labFrame'),lt=document.getElementById('labTitle'),lo=document.getElementById('labOpen');
+  var dm=document.getElementById('docModal');
+  document.querySelectorAll('.wc-doclink').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      if(a.getAttribute('data-mode')==='doc'){if(dm)dm.hidden=false;}
+      else if(lm&&lf){lf.src=a.getAttribute('data-url');if(lt)lt.textContent=a.getAttribute('data-label')||'Map';if(lo)lo.href=a.getAttribute('data-url');lm.hidden=false;}
+    });
+  });
+  var dc=document.getElementById('docClose');if(dc)dc.addEventListener('click',function(){if(dm)dm.hidden=true;});
+  if(dm)dm.addEventListener('click',function(e){if(e.target===dm)dm.hidden=true;});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dm&&!dm.hidden)dm.hidden=true;});
 });
 </script>
 </body>
