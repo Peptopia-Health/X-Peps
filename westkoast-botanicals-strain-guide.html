@@ -390,11 +390,13 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
   <div class="wc-toprow">
     <div class="kicker">Kratom Review • WestKoast Botanicals</div>
     <div class="wc-topbtns">
-      <span class="wc-tbtn static">📅 October 2026</span>
+      <button type="button" class="wc-tbtn" id="wcSearchBtn" title="Search strains" aria-label="Search strains">🔍</button>
+      <button type="button" class="wc-tbtn" id="datePill" title="November 2026">📅 11/26</button>
       <button type="button" class="wc-tbtn" id="wkThemeBtn" title="Switch light / dark theme">🌙 Theme</button>
       <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
     </div>
   </div>
+  <div class="wc-search" id="wcSearch" hidden><input id="wcSearchInput" type="text" placeholder="Search strains — spelling doesn't have to be perfect" autocomplete="off" aria-label="Search strains"><div class="wc-sresults" id="wcSearchResults"></div></div>
   <h1>WestKoast Botanicals</h1>
   <div class="subtitle">Complete Strain Guide</div>
   <p class="sub">An independent analysis of the WestKoast lineup, strain by strain, organized by vein color.</p>
@@ -420,6 +422,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
       </ol>
     </li>
     <li><a href="#matrix">Master Comparison Matrix</a></li>
+    <li><a href="#batches">Batch Index — Every Harvest, Strain by Strain</a></li>
     <li><a href="#coa">Alkaloid &amp; Lab Reference (COAs)</a></li>
     <li><a href="#sourcing">Sourcing: Batch Codes, Grinds &amp; Farmer Lines</a></li>
     <li><a href="#catalog">Current WestKoast Catalog Snapshot</a></li>
@@ -434,51 +437,60 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
   <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🧭</button>
 </div>
 <div class="legend">
-  <span><i style="background:#7cb342"></i>High Energy &amp; Productivity</span>
-  <span><i style="background:#f9a825"></i>Mood &amp; Well-being</span>
-  <span><i style="background:#90caf9"></i>Balance &amp; Clarity</span>
-  <span><i style="background:#ef6c00"></i>Calm &amp; Relaxation</span>
-  <span><i style="background:#c62828"></i>Relief &amp; Warmth</span>
+  <span><i style="background:var(--fx-energy);border:1.5px solid #9a9a9a"></i>Energy</span>
+  <span><i style="background:var(--fx-focus)"></i>Focus</span>
+  <span><i style="background:var(--fx-mood)"></i>Mood</span>
+  <span><i style="background:var(--fx-sleep);border:1.5px solid #8a8a8a"></i>Sleep</span>
+  <span><i style="background:var(--fx-calm);border:1.5px solid #9a9a00"></i>Calm</span>
+  <span><i style="background:var(--fx-analgesia)"></i>Analgesia</span>
 </div>
 
 <div class="panels">
   <div class="panel p-white">
     <div class="phead">White</div>
     <div class="pbody">
-      <div class="pleft">⚡ HIGH, JITTER-FREE ENERGY<br><b>40%</b></div>
-      <a href="#strain-white-hulk" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:40,#90caf9:35,#f9a825:25" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-      <div class="pright">☀️ MENTAL CLARITY &amp; ALERTNESS<br><b>35%</b><br><br>📈 STRONG PRODUCTIVITY BOOST<br><b>25%</b></div>
+      
+      <a href="#strain-white-hulk" title="Jump to this vein’s strains"><svg class="pie" data-slices="#FFFFFF:40,#F06000:60" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+      
     </div>
+        <div class="peffects">⚡ Energy <b>40%</b> · 🎯 Focus <b>60%</b></div>
+        <div class="pchart-hint">👆 Tap the pie for this vein’s typical effect mix</div>
     <div class="pfoot">Best for brisk energy, clean motivation, substitute for coffee.</div>
     <a class="golink" href="#white">→ Browse white strains</a>
   </div>
   <div class="panel p-green">
     <div class="phead">Green</div>
     <div class="pbody">
-      <div class="pleft">🌅 BALANCED ENERGY &amp; VIBE<br><b>35%</b></div>
-      <a href="#strain-green-bali" title="Jump to this vein’s strains"><svg class="pie" data-slices="#7cb342:35,#90caf9:30,#ef6c00:35" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-      <div class="pright">👁️ MENTAL CLARITY &amp; UPLIFT<br><b>30%</b><br><br>🍃 MILD CALM &amp; WELL-BEING<br><b>35%</b></div>
+      
+      <a href="#strain-green-bali" title="Jump to this vein’s strains"><svg class="pie" data-slices="#FFFFFF:35,#10C000:30,#F0F000:35" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+      
     </div>
+        <div class="peffects">⚡ Energy <b>35%</b> · 😊 Mood <b>30%</b> · 😌 Calm <b>35%</b></div>
+        <div class="pchart-hint">👆 Tap the pie for this vein’s typical effect mix</div>
     <div class="pfoot">Perfect daily shift; blends clean energy, clarity, and calming effects.</div>
     <a class="golink" href="#green">→ Browse green strains</a>
   </div>
   <div class="panel p-yellow">
     <div class="phead">Yellow</div>
     <div class="pbody">
-      <div class="pleft">😌 MELLOW MOOD &amp; RELAXATION<br><b>45%</b><br><br>🤗 GENTLE CALM &amp; WARMTH<br><b>35%</b></div>
-      <a href="#strain-black-md" title="Jump to this vein’s strains"><svg class="pie" data-slices="#f9a825:45,#ef6c00:35,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-      <div class="pright">⛅ BALANCED WELL-BEING<br><b>20%</b></div>
+      
+      <a href="#strain-black-md" title="Jump to this vein’s strains"><svg class="pie" data-slices="#F0F000:45,#E01020:35,#10C000:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+      
     </div>
+        <div class="peffects">😌 Calm <b>45%</b> · 🌙 Analgesia <b>35%</b> · 😊 Mood <b>20%</b></div>
+        <div class="pchart-hint">👆 Tap the pie for this vein’s typical effect mix</div>
     <div class="pfoot">Suited for midday / late afternoon, gentle ease.</div>
     <a class="golink" href="#gold">→ Browse gold &amp; yellow strains</a>
   </div>
   <div class="panel p-red">
     <div class="phead">Red</div>
     <div class="pbody">
-      <div class="pleft">🛌 DEEP RELAXATION &amp; RELIEF<br><b>50%</b><br><br>😴 CALMING EFFECTS<br><b>30%</b></div>
-      <a href="#strain-red-fuzzy-blanket" title="Jump to this vein’s strains"><svg class="pie" data-slices="#c62828:50,#ef6c00:30,#90caf9:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
-      <div class="pright">🌙 MENTAL CALM &amp; RESTFUL REST<br><b>20%</b></div>
+      
+      <a href="#strain-red-fuzzy-blanket" title="Jump to this vein’s strains"><svg class="pie" data-slices="#E01020:50,#F0F000:30,#0A0A0A:20" width="110" height="110" viewBox="0 0 110 110"></svg></a>
+      
     </div>
+        <div class="peffects">🌙 Analgesia <b>50%</b> · 🧘 Calm <b>30%</b> · 💤 Sleep <b>20%</b></div>
+        <div class="pchart-hint">👆 Tap the pie for this vein’s typical effect mix</div>
     <div class="pfoot">Best for a calm take, deep relaxation, and winding down.</div>
     <a class="golink" href="#red">→ Browse red strains</a>
   </div>
@@ -503,35 +515,54 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <b>Reading a strain card:</b> each card opens with the strain name and its harvest
   <span class="batch" style="background:#eee;color:#333;border-color:#ccc">batch code</span> —
   WestKoast codes are dates (0726 = July 2026 harvest). The icon row gives the one-glance profile —
-  ⚡ energy, 😊 mood &amp; euphoria, 🧘 relaxation, 🌙 restfulness, 💪 body comfort, ⏳ duration.
+  😊 Mood, ⚡ Energy, 🧘 Calm, 🌙 Analgesia, ⏳ Duration.
   Scores (0.0–5.0) reflect community consensus gathered across on-site reviews, Reddit, YouTube, and
   third-party writeups: <span class="score s5">4.5+</span> elite · <span class="score s4">3.5–4.4</span> strong ·
   <span class="score s3">2.0–3.4</span> moderate · <span class="score s2">0.5–1.9</span> subtle · — = not enough data.
   Evidence strength is graded on every card — nothing is invented. Where a public lab report exists, the
   alkaloid table shows the measured numbers.
 </div>
+<div class="catintro">
+  <b>Effect pies &amp; the spectrum map:</b> tap the little pie on any strain card for its full effect
+  profile. The pies chart the five effects this guide scores on every card — Energy, Mood, Calm,
+  Analgesia and Sleep. <b>Sleep</b> (the black slice) is a first-class effect here: it has its own lane
+  on the spectrum map below, and a strain's Sleep value is derived from its Calm and Analgesia scores —
+  Sleep = (Calm + Analgesia) ÷ 2, rounded — the same derived value in the pies, on the map, and on the
+  Kratom Picker's score bars. <b>Spectrum map:</b> every dot jumps to its strain's card and opens it;
+  click the card itself to glide back to the map. One strain, Elite Red, carries no ratings, so it has
+  no pie and no dots — nothing is invented for it.
+</div>
+<div class="wk-spec" id="specmap">
+  <div class="wk-shead"><span>← Slow · Relaxing</span><span>Fast · Energizing →</span></div>
+  <div class="wk-lane"><span style="color:#B03A3A">RED</span><div class="wk-rail"><div class="wk-track"></div><a class="wk-dot" href="#strain-red-fuzzy-blanket" style="left:8.5%;border-color:#B03A3A" title="Red Fuzzy Blanket — Slow"></a><a class="wk-dot" href="#strain-red-bent" style="left:15.5%;border-color:#B03A3A" title="Red Bent — Slow"></a><a class="wk-dot" href="#strain-red-magic" style="left:28.5%;border-color:#B03A3A" title="Red Magic — Mid-Slow"></a><a class="wk-dot" href="#strain-chocolate" style="left:35.5%;border-color:#B03A3A" title="Chocolate 🍫 — Mid-Slow"></a></div></div>
+  <div class="wk-lane"><span style="color:#2E7D4F">GREEN</span><div class="wk-rail"><div class="wk-track"></div><a class="wk-dot" href="#strain-green-bali" style="left:56.5%;border-color:#2E7D4F" title="Green Bali — Mid-Fast"></a><a class="wk-dot" href="#strain-green-lightning" style="left:80.9%;border-color:#2E7D4F" title="Green Lightning — Fast"></a><a class="wk-dot" href="#strain-mean-green" style="left:63.5%;border-color:#2E7D4F" title="Mean Green — Mid-Fast"></a><a class="wk-dot" href="#strain-nano-green-devil" style="left:70.5%;border-color:#2E7D4F" title="Nano Green Devil — Mid-Fast"></a><a class="wk-dot" href="#strain-nano-green-vietnam" style="left:87.0%;border-color:#2E7D4F" title="Nano Green Vietnam — Fast"></a><a class="wk-dot" href="#strain-nano-green-monster" style="left:77.5%;border-color:#2E7D4F" title="Nano Green Monster — Mid-Fast"></a><a class="wk-dot" href="#strain-nano-green-maeng-da" style="left:94.0%;border-color:#2E7D4F" title="Nano Green Maeng Da — Fast"></a></div></div>
+  <div class="wk-lane"><span style="color:#7A7A7A">WHITE</span><div class="wk-rail"><div class="wk-track"></div><a class="wk-dot" href="#strain-white-hulk" style="left:80.0%;border-color:#9E9E9E" title="White Hulk — Fast"></a><a class="wk-dot" href="#strain-white-lemon" style="left:87.0%;border-color:#9E9E9E" title="White Lemon — Fast"></a><a class="wk-dot" href="#strain-white-ultra" style="left:94.0%;border-color:#9E9E9E" title="White Ultra — Fast"></a></div></div>
+  <div class="wk-lane"><span style="color:#A85A12">GOLD &amp; BLENDS</span><div class="wk-rail"><div class="wk-track"></div><a class="wk-dot" href="#strain-black-md" style="left:8.5%;border-color:#D9A404" title="Black MD — Slow"></a><a class="wk-dot" href="#strain-yellow-boyan" style="left:15.5%;border-color:#D9A404" title="Yellow Boyan — Slow"></a><a class="wk-dot" href="#strain-pain-blend-original" style="left:12.0%;border-color:#D9A404" title="Pain Blend Original! — Slow"></a><a class="wk-dot" href="#strain-energy-mood" style="left:68.0%;border-color:#D9A404" title="Energy Mood — Mid-Fast"></a><a class="wk-dot" href="#strain-hug-the-kids" style="left:50.0%;border-color:#D9A404" title="Hug The Kids — Mid"></a></div></div>
+  <div class="wk-lane"><span style="color:#0A0A0A">SLEEP</span><div class="wk-rail"><div class="wk-track"></div><a class="wk-dot sleepdot" href="#strain-red-fuzzy-blanket" style="left:91.4%" title="Red Fuzzy Blanket — Sleep 5/5"></a><a class="wk-dot sleepdot" href="#strain-red-bent" style="left:60.8%" title="Red Bent — Sleep 4/5"></a><a class="wk-dot sleepdot" href="#strain-red-magic" style="left:71.0%" title="Red Magic — Sleep 4/5"></a><a class="wk-dot sleepdot" href="#strain-chocolate" style="left:74.4%" title="Chocolate 🍫 — Sleep 4/5"></a><a class="wk-dot sleepdot" href="#strain-green-bali" style="left:47.0%" title="Green Bali — Sleep 3/5"></a><a class="wk-dot sleepdot" href="#strain-green-lightning" style="left:6.0%" title="Green Lightning — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-mean-green" style="left:54.0%" title="Mean Green — Sleep 3/5"></a><a class="wk-dot sleepdot" href="#strain-nano-green-devil" style="left:13.0%" title="Nano Green Devil — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-nano-green-vietnam" style="left:20.0%" title="Nano Green Vietnam — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-nano-green-monster" style="left:27.0%" title="Nano Green Monster — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-nano-green-maeng-da" style="left:34.0%" title="Nano Green Maeng Da — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-white-hulk" style="left:41.0%" title="White Hulk — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-white-lemon" style="left:50.4%" title="White Lemon — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-white-ultra" style="left:57.4%" title="White Ultra — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-black-md" style="left:81.0%" title="Black MD — Sleep 4/5"></a><a class="wk-dot sleepdot" href="#strain-yellow-boyan" style="left:88.0%" title="Yellow Boyan — Sleep 4/5"></a><a class="wk-dot sleepdot" href="#strain-pain-blend-original" style="left:97.5%" title="Pain Blend Original! — Sleep 5/5"></a><a class="wk-dot sleepdot" href="#strain-energy-mood" style="left:67.6%" title="Energy Mood — Sleep 2/5"></a><a class="wk-dot sleepdot" href="#strain-hug-the-kids" style="left:64.2%" title="Hug The Kids — Sleep 3/5"></a></div></div>
+</div>
 
 <div class="wcqp" id="wkQuickPick">
-  <button type="button" class="wc-logbtn" id="wcLogBtn" title="See your Quick Pick log">📓 Log</button>
-  <h2>🌿 Kratom Quick Pick</h2>
+  <button type="button" class="wc-logbtn" id="wcLogBtn" title="See your Kratom Picker log">📓 Log</button>
+  <h2>🌿 Kratom Picker</h2>
   <p class="sub2">Tap How You Feel — Get the Pick · WestKoast Strains Only</p>
   <div class="qp-wheel" id="qpWheel">
     <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
-    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel">🌿</button>
-    <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:#F59E0B;--nb:#B45309"><span class="qp-emo">⚡</span><small>Energy</small></button>
-    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:#5BA3D9;--nb:#2F6DA3"><span class="qp-emo">🎯</span><small>Focus</small></button>
-    <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:#2E7D4F;--nb:#17452A"><span class="qp-emo">🧡</span><small>Mood</small></button>
-    <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:#6366F1;--nb:#4338CA"><span class="qp-emo">😴</span><small>Sleep</small></button>
-    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:#B03A3A;--nb:#7A2222"><span class="qp-emo">🩹</span><small>Relief</small></button>
-    <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:#E8873A;--nb:#A85A12"><span class="qp-emo">😌</span><small>Calm</small></button>
+    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M11 37C9 19 21 8 37 10c2 16-10 27-26 27Z" fill="#0070D0" stroke="#004E96" stroke-width="2"/><path d="M13.5 34.5C20 27 27 20 34.5 13.5" stroke="#F0F000" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M20.5 29.5c-2.4.2-4.6-.3-6.5-1.5M25 25c-2.4.2-4.6-.3-6.5-1.5M29.5 20.5c-2.4.2-4.6-.3-6.5-1.5" stroke="#F0F000" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></button>
+    <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:var(--fx-energy);--nb:var(--fx-energy-dk)"><span class="qp-emo">⚡</span><small>Energy</small></button>
+    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk)"><span class="qp-emo">🎯</span><small>Focus</small></button>
+    <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk)"><span class="qp-emo">🧡</span><small>Mood</small></button>
+    <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:var(--fx-sleep);--nb:var(--fx-sleep-dk)"><span class="qp-emo">😴</span><small>Sleep</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-analgesia);--nb:var(--fx-analgesia-dk)"><span class="qp-emo"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" style="display:block"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" fill="#E01020" stroke="#9E0C18" stroke-width="1.4"/></svg></span><small>Analgesia</small></button>
+    <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:var(--fx-calm);--nb:var(--fx-calm-dk)"><span class="qp-emo">😌</span><small>Calm</small></button>
   </div>
   <div id="qpResult"><p class="qp-note">Tap a feeling — the wheel reads all 19 rated WestKoast strains in this guide and shows the winner plus a rotation pick. (Elite Red carries no ratings in this guide, so it sits the wheel out.)</p></div>
 </div>
 
 <!-- ================= SCIENCE NOTE ================= -->
-<div class="colorband band-neutral" id="science" data-notoggle="1">
+<div class="colorband band-neutral" id="science">
   <h2>Vein Colors &amp; What Consumers Report</h2>
   <p>What the Community's Experience Shows — Recorded Here as Fact, Batch by Batch.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🔬</button>
 </div>
 <div class="catintro">
   <p>The color system is the community's own language: reds for winding down, whites for lift-off, greens for
@@ -565,9 +596,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 Red standouts — deepest evidence: <b>Red Fuzzy Blanket 0926</b> (15× ⭐ 5.0, sleep &amp; pain); heavy ferment: <b>Red Bent 0726</b> ("not too sedating"); blend base: <b>Red Magic 0926</b> (unfermented, the Blanket's foundation).</div>
 
 <div class="strain red" id="strain-red-fuzzy-blanket">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 30], [&quot;relief&quot;, 30], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;warm, heavy comfort red for the end of the day&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Fuzzy Blanket</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Custom Blend</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;sleep&quot;, 24], [&quot;analgesia&quot;, 23], [&quot;calm&quot;, 23], [&quot;mood&quot;, 23], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;warm, heavy comfort red for the end of the day&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.98 11.37 L17.49 11.65 A5.5 5.5 0 0 0 12 6.5 Z" fill="#0A0A0A"/><path d="M21.98 11.37 A10 10 0 0 1 13.87 21.82 L13.03 17.4 A5.5 5.5 0 0 0 17.49 11.65 Z" fill="#E01020"/><path d="M13.87 21.82 A10 10 0 0 1 2.49 15.09 L6.77 13.7 A5.5 5.5 0 0 0 13.03 17.4 Z" fill="#F0F000"/><path d="M2.49 15.09 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.77 13.7 Z" fill="#10C000"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Red Fuzzy Blanket</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · Custom Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>1.5</b></span><span>🧘 <b>4.9</b></span><span>🌙 <b>4.8</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:8.5%"></div></div><span class="wk-specsp">Slow</span></div>
     <h4>🌿 The leaf</h4>
     <p>WestKoast's signature house custom blend — built on unfermented Red Magic 0926. The name tells you the
     mission statement: a warm, heavy comfort red for the end of the day.</p>
@@ -586,9 +618,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain red" id="strain-red-bent">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 29], [&quot;relief&quot;, 26], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;heavy-ferment red \u2014 half of the Pain Blend formula&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Bent</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · Heavy Ferment</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 24], [&quot;mood&quot;, 23], [&quot;sleep&quot;, 22], [&quot;analgesia&quot;, 20], [&quot;energy&quot;, 11]], &quot;caption&quot;: &quot;heavy-ferment red \u2014 half of the Pain Blend formula&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.98 11.37 L17.49 11.65 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F0F000"/><path d="M21.98 11.37 A10 10 0 0 1 13.87 21.82 L13.03 17.4 A5.5 5.5 0 0 0 17.49 11.65 Z" fill="#10C000"/><path d="M13.87 21.82 A10 10 0 0 1 2.7 15.68 L6.89 14.02 A5.5 5.5 0 0 0 13.03 17.4 Z" fill="#0A0A0A"/><path d="M2.7 15.68 A10 10 0 0 1 5.63 4.29 L8.49 7.76 A5.5 5.5 0 0 0 6.89 14.02 Z" fill="#E01020"/><path d="M5.63 4.29 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 8.49 7.76 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Red Bent</h3><a class="wk-batchbtn" href="#batch-0726"><b>Batch</b> <b>#0726</b> · Heavy Ferment</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>2.0</b></span><span>🧘 <b>4.5</b></span><span>🌙 <b>3.8</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:15.5%"></div></div><span class="wk-specsp">Slow</span></div>
     <h4>🌿 The leaf</h4>
     <p>A heavy-ferment red — and half of the Pain Blend formula (Farmer R red bent + yellow boyan).</p>
     <h4>💬 What the community reports</h4>
@@ -600,9 +633,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain red" id="strain-red-magic">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;calm&quot;, 29], [&quot;relief&quot;, 24], [&quot;energy&quot;, 17]], &quot;caption&quot;: &quot;unfermented red \u2014 base leaf of Red Fuzzy Blanket&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Red Magic</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Unfermented</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 23], [&quot;mood&quot;, 23], [&quot;sleep&quot;, 22], [&quot;analgesia&quot;, 19], [&quot;energy&quot;, 13]], &quot;caption&quot;: &quot;unfermented red \u2014 base leaf of Red Fuzzy Blanket&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.92 10.75 L17.46 11.31 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F0F000"/><path d="M21.92 10.75 A10 10 0 0 1 14.49 21.69 L13.37 17.33 A5.5 5.5 0 0 0 17.46 11.31 Z" fill="#10C000"/><path d="M14.49 21.69 A10 10 0 0 1 2.95 16.26 L7.02 14.34 A5.5 5.5 0 0 0 13.37 17.33 Z" fill="#0A0A0A"/><path d="M2.95 16.26 A10 10 0 0 1 4.71 5.15 L7.99 8.23 A5.5 5.5 0 0 0 7.02 14.34 Z" fill="#E01020"/><path d="M4.71 5.15 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 7.99 8.23 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Red Magic</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · Unfermented</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>2.5</b></span><span>🧘 <b>4.2</b></span><span>🌙 <b>3.5</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:28.5%"></div></div><span class="wk-specsp">Mid-Slow</span></div>
     <h4>🌿 The leaf</h4>
     <p>Unfermented red — and the base leaf of the Red Fuzzy Blanket blend. One on-site 5-star rating.</p>
     <h4>💬 What the community reports</h4>
@@ -613,9 +647,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain red" id="strain-chocolate">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 28], [&quot;relief&quot;, 27], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;Red Java-line house red, replaces Nano Red Java&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Chocolate 🍫</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> · Red Java · House Red</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 24], [&quot;mood&quot;, 22], [&quot;sleep&quot;, 22], [&quot;analgesia&quot;, 21], [&quot;energy&quot;, 11]], &quot;caption&quot;: &quot;Red Java-line house red, replaces Nano Red Java&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.98 11.37 L17.49 11.65 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F0F000"/><path d="M21.98 11.37 A10 10 0 0 1 14.49 21.69 L13.37 17.33 A5.5 5.5 0 0 0 17.49 11.65 Z" fill="#10C000"/><path d="M14.49 21.69 A10 10 0 0 1 2.95 16.26 L7.02 14.34 A5.5 5.5 0 0 0 13.37 17.33 Z" fill="#0A0A0A"/><path d="M2.95 16.26 A10 10 0 0 1 5.63 4.29 L8.49 7.76 A5.5 5.5 0 0 0 7.02 14.34 Z" fill="#E01020"/><path d="M5.63 4.29 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 8.49 7.76 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Chocolate 🍫</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> · Red Java · House Red</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.0</b></span><span>⚡ <b>2.0</b></span><span>🧘 <b>4.3</b></span><span>🌙 <b>3.8</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:35.5%"></div></div><span class="wk-specsp">Mid-Slow</span></div>
     <h4>🌿 The leaf</h4>
     <p>A Red Java-line house red — appears to replace the older Nano Red Java listing. On-site 4.00/5.</p>
     <h4>💬 What the community reports</h4>
@@ -666,9 +701,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 Green standouts — most reviewed: <b>Green Bali 1026</b> (13 reviews, 4.92/5); focus pick: <b>Green Lightning 0926</b> (8× ⭐ 5.0, "no jitters"); nano favorite: <b>Nano Green Devil 0926</b> ("most popularly reviewed" nano).</div>
 
 <div class="strain green" id="strain-green-bali">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 29], [&quot;calm&quot;, 25], [&quot;relief&quot;, 11]], &quot;caption&quot;: &quot;classic balanced green: uplifted mood, clean energy&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Bali</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 28], [&quot;energy&quot;, 24], [&quot;calm&quot;, 21], [&quot;sleep&quot;, 18], [&quot;analgesia&quot;, 9]], &quot;caption&quot;: &quot;classic balanced green: uplifted mood, clean energy&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.82 13.87 L17.4 13.03 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.82 13.87 A10 10 0 0 1 10.75 21.92 L11.31 17.46 A5.5 5.5 0 0 0 17.4 13.03 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M10.75 21.92 A10 10 0 0 1 2.08 13.25 L6.54 12.69 A5.5 5.5 0 0 0 11.31 17.46 Z" fill="#F0F000"/><path d="M2.08 13.25 A10 10 0 0 1 6.64 3.56 L9.05 7.36 A5.5 5.5 0 0 0 6.54 12.69 Z" fill="#0A0A0A"/><path d="M6.64 3.56 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.05 7.36 Z" fill="#E01020"/></svg></span>Green Bali</h3><a class="wk-batchbtn" href="#batch-1026"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.8</b></span><span>⚡ <b>4.0</b></span><span>🧘 <b>3.5</b></span><span>🌙 <b>1.5</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:56.5%"></div></div><span class="wk-specsp">Mid-Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>The most-reviewed green in the catalog: <b>13 on-site reviews at 4.92/5</b>. kratom.org's editorial calls
     out <span class="hlg">"excellent mood and energy boost without the jitters,"</span> and secondhand Reddit commentary claims it
@@ -680,9 +716,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-green-lightning">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 32], [&quot;calm&quot;, 24], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;uplifting mid, mood, focus \u2014 no jitters&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Green Lightning</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b></a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;energy&quot;, 28], [&quot;calm&quot;, 21], [&quot;sleep&quot;, 13], [&quot;analgesia&quot;, 8]], &quot;caption&quot;: &quot;uplifting mid, mood, focus \u2014 no jitters&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.51 15.09 L17.23 13.7 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.51 15.09 A10 10 0 0 1 7.18 20.76 L9.35 16.82 A5.5 5.5 0 0 0 17.23 13.7 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M7.18 20.76 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 9.35 16.82 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.18 3.24 L9.35 7.18 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.18 3.24 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.35 7.18 Z" fill="#E01020"/></svg></span>Green Lightning</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b></a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>3.2</b></span><span>🌙 <b>1.2</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:80.9%"></div></div><span class="wk-specsp">Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p><b>8 on-site reviews, all 5 stars</b>, plus a YouTube review from Drea (<span class="hlg">"Discussions with Drea"</span>). The
     vendor's description is unusually specific for WestKoast: <span class="hlg">"uplifting mid, mood, focus, no jitters"</span> — and the
@@ -692,9 +729,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-mean-green">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 28], [&quot;calm&quot;, 27], [&quot;relief&quot;, 11]], &quot;caption&quot;: &quot;moderate energy, substantial analgesia \u2014 a workhorse&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Mean Green</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0626</b></a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 28], [&quot;energy&quot;, 23], [&quot;calm&quot;, 22], [&quot;sleep&quot;, 18], [&quot;analgesia&quot;, 9]], &quot;caption&quot;: &quot;moderate energy, substantial analgesia \u2014 a workhorse&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.82 13.87 L17.4 13.03 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.82 13.87 A10 10 0 0 1 11.37 21.98 L11.65 17.49 A5.5 5.5 0 0 0 17.4 13.03 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M11.37 21.98 A10 10 0 0 1 2.08 13.25 L6.54 12.69 A5.5 5.5 0 0 0 11.65 17.49 Z" fill="#F0F000"/><path d="M2.08 13.25 A10 10 0 0 1 6.64 3.56 L9.05 7.36 A5.5 5.5 0 0 0 6.54 12.69 Z" fill="#0A0A0A"/><path d="M6.64 3.56 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.05 7.36 Z" fill="#E01020"/></svg></span>Mean Green</h3><a class="wk-batchbtn" href="#batch-0626"><b>Batch</b> <b>#0626</b></a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>3.8</b></span><span>🧘 <b>3.6</b></span><span>🌙 <b>1.5</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:63.5%"></div></div><span class="wk-specsp">Mid-Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>Four full-text five-star reviews — rare written detail for this catalog — consistently describing moderate
     energy paired with <b>substantial analgesia</b>. The name suggests aggression; the reports describe a
@@ -703,9 +741,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-devil">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 31], [&quot;calm&quot;, 25], [&quot;relief&quot;, 9]], &quot;caption&quot;: &quot;zero anxiety, clean energy and mood boost&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Devil</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 27], [&quot;calm&quot;, 21], [&quot;sleep&quot;, 13], [&quot;analgesia&quot;, 8]], &quot;caption&quot;: &quot;zero anxiety, clean energy and mood boost&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.3 15.68 L17.11 14.02 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.3 15.68 A10 10 0 0 1 7.18 20.76 L9.35 16.82 A5.5 5.5 0 0 0 17.11 14.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M7.18 20.76 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 9.35 16.82 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.18 3.24 L9.35 7.18 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.18 3.24 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.35 7.18 Z" fill="#E01020"/></svg></span>Nano Green Devil</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>3.3</b></span><span>🌙 <b>1.2</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:70.5%"></div></div><span class="wk-specsp">Mid-Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>On-site 5.00/5, and kratom.org's <span class="hlg">"most popularly reviewed"</span> nano green: <span class="hlg">"zero anxiety, clean energy and
     mood boost, can last for hours."</span> The nano grind is WestKoast's signature — finer than ultra-fine — and the
@@ -715,9 +754,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-vietnam">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 34], [&quot;calm&quot;, 23], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;fast-onset green \u2014 hits hard, very cerebral&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Vietnam</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 29], [&quot;calm&quot;, 20], [&quot;sleep&quot;, 13], [&quot;analgesia&quot;, 7]], &quot;caption&quot;: &quot;fast-onset green \u2014 hits hard, very cerebral&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.3 15.68 L17.11 14.02 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.3 15.68 A10 10 0 0 1 6.12 20.09 L8.77 16.45 A5.5 5.5 0 0 0 17.11 14.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M6.12 20.09 A10 10 0 0 1 2.49 8.91 L6.77 10.3 A5.5 5.5 0 0 0 8.77 16.45 Z" fill="#F0F000"/><path d="M2.49 8.91 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.77 10.3 Z" fill="#0A0A0A"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#E01020"/></svg></span>Nano Green Vietnam</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>3.0</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:87.0%"></div></div><span class="wk-specsp">Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>On-site 4.88/5. kratom.org: <span class="hlg">"hits hard and fast… very cerebral."</span> The fast-onset green of the nano line —
     quicker to arrive and more head-forward than the Devil. (Note: the clearance <span class="hlg">"1KG green Vietnam"</span> listing
@@ -727,9 +767,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain green" id="strain-nano-green-monster">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 34], [&quot;energy&quot;, 31], [&quot;calm&quot;, 25], [&quot;relief&quot;, 10]], &quot;caption&quot;: &quot;mid/fast mood green \u2014 nano grind&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Monster</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;energy&quot;, 27], [&quot;calm&quot;, 22], [&quot;sleep&quot;, 13], [&quot;analgesia&quot;, 8]], &quot;caption&quot;: &quot;mid/fast mood green \u2014 nano grind&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.51 15.09 L17.23 13.7 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.51 15.09 A10 10 0 0 1 7.74 21.05 L9.66 16.98 A5.5 5.5 0 0 0 17.23 13.7 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M7.74 21.05 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 9.66 16.98 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.18 3.24 L9.35 7.18 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.18 3.24 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.35 7.18 Z" fill="#E01020"/></svg></span>Nano Green Monster</h3><a class="wk-batchbtn" href="#batch-0726"><b>Batch</b> <b>#0726</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.1</b></span><span>🧘 <b>3.4</b></span><span>🌙 <b>1.3</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:77.5%"></div></div><span class="wk-specsp">Mid-Fast</span></div>
     <h4>🌿 The leaf</h4>
     <p>Vendor description, in full: <span class="hlg">"mid/ fast mood."</span> Two on-site reviews at 4.50/5.</p>
     <h4>💬 What the community reports</h4>
@@ -741,14 +782,15 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <p class="coa-note">WestKoast's COA library keys to farmer codes, not strain names — but the July 2026
     "Blend (green)" COA (FC#T.06, likely this batch) reads: mitragynine <b>1.69%</b>, 7-OH &lt;0.0199%,
     paynantheine 0.282%, speciogynine 0.191%, speciociliatine 0.310%, total alkaloids 2.47% (MBL, HPLC-UV).
-    Attribution is probable, not certain — see the <a href="#coa">lab reference</a>.</p>
+    Attribution is probable, not certain — see the <a href="#coa">lab reference</a>. <span class="wk-mit" title="Mitragynine 1.69% — bar scaled to this guide's 2.00% maximum"><i style="width:84.5%;background:#2E7D4F"></i></span></p>
   </div>
 </div>
 
 <div class="strain green" id="strain-nano-green-maeng-da">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 33], [&quot;calm&quot;, 24], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;potent, driven, clean \u2014 freshest in the game&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Nano Green Maeng Da</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 28], [&quot;calm&quot;, 21], [&quot;sleep&quot;, 13], [&quot;analgesia&quot;, 7]], &quot;caption&quot;: &quot;potent, driven, clean \u2014 freshest in the game&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.3 15.68 L17.11 14.02 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.3 15.68 A10 10 0 0 1 6.64 20.44 L9.05 16.64 A5.5 5.5 0 0 0 17.11 14.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M6.64 20.44 A10 10 0 0 1 2.49 8.91 L6.77 10.3 A5.5 5.5 0 0 0 9.05 16.64 Z" fill="#F0F000"/><path d="M2.49 8.91 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.77 10.3 Z" fill="#0A0A0A"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#E01020"/></svg></span>Nano Green Maeng Da</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · Nano-Grind</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>4.3</b></span><span>🧘 <b>3.1</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:94.0%"></div></div><span class="wk-specsp">Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>Six on-site reviews at 5.00/5, with buyers praising freshness — <span class="hlg">"freshest kratom in the game"</span> is the
     recurring theme. The Maeng Da that behaves like one: potent, driven, clean.</p>
@@ -784,9 +826,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 White standouts — community-verified: <b>White Hulk 0526/0726</b> (Reddit: "great mood, energy… without the jittery feeling"); editorial pick: <b>White Lemon 1026</b> (kratom.org: energy "without the jittery feel"); fastest reputation: <b>White Ultra 1026</b> ("caffeine-rivaling 90 minutes").</div>
 
 <div class="strain white" id="strain-white-hulk">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 37], [&quot;energy&quot;, 36], [&quot;calm&quot;, 19], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;get up and go without the jittery feeling&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Hulk</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0526</b> / 0726</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;energy&quot;, 31], [&quot;calm&quot;, 16], [&quot;sleep&quot;, 14], [&quot;analgesia&quot;, 7]], &quot;caption&quot;: &quot;get up and go without the jittery feeling&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.05 16.26 L16.98 14.34 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.05 16.26 A10 10 0 0 1 4.71 18.85 L7.99 15.77 A5.5 5.5 0 0 0 16.98 14.34 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M4.71 18.85 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 7.99 15.77 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#E01020"/></svg></span>White Hulk</h3><a class="wk-batchbtn" href="#batch-0526"><b>Batch</b> <b>#0526</b> / 0726</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>4.5</b></span><span>🧘 <b>2.4</b></span><span>🌙 <b>1.0</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:80.0%"></div></div><span class="wk-specsp">Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>The only WestKoast white with a genuine off-site report: a Reddit user (r/vendorsofkratom2) called it
     their go-to — <span class="hlw">"great mood, energy and get up and go without the jittery feeling!"</span> On-site rating holds at
@@ -796,9 +839,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain white" id="strain-white-lemon">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 36], [&quot;energy&quot;, 35], [&quot;calm&quot;, 21], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;good energy without the jitters \u2014 uplifts mood&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Lemon</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;energy&quot;, 30], [&quot;calm&quot;, 18], [&quot;sleep&quot;, 14], [&quot;analgesia&quot;, 7]], &quot;caption&quot;: &quot;good energy without the jitters \u2014 uplifts mood&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.3 15.68 L17.11 14.02 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.3 15.68 A10 10 0 0 1 5.63 19.71 L8.49 16.24 A5.5 5.5 0 0 0 17.11 14.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M5.63 19.71 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 8.49 16.24 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#E01020"/></svg></span>White Lemon</h3><a class="wk-batchbtn" href="#batch-1026"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>4.4</b></span><span>🧘 <b>2.6</b></span><span>🌙 <b>1.0</b></span><span>⏳ 3.5–4h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:87.0%"></div></div><span class="wk-specsp">Fast</span></div>
     <h4>💬 What the community reports</h4>
     <p>On-site 4.50/5, and the only white with third-party editorial: kratom.org says <span class="hlw">"it gives good energy
     without the jittery feel and uplifts your mood."</span> The batch code rolled 0726 → 1026 within months —
@@ -808,9 +852,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain white" id="strain-white-ultra">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 39], [&quot;mood&quot;, 35], [&quot;calm&quot;, 18], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;fast white \u2014 calm mood, short peak&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>White Ultra</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 33], [&quot;mood&quot;, 30], [&quot;calm&quot;, 16], [&quot;sleep&quot;, 14], [&quot;analgesia&quot;, 7]], &quot;caption&quot;: &quot;fast white \u2014 calm mood, short peak&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 20.76 16.82 L16.82 14.65 A5.5 5.5 0 0 0 12 6.5 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M20.76 16.82 A10 10 0 0 1 4.71 18.85 L7.99 15.77 A5.5 5.5 0 0 0 16.82 14.65 Z" fill="#10C000"/><path d="M4.71 18.85 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 7.99 15.77 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#E01020"/></svg></span>White Ultra</h3><a class="wk-batchbtn" href="#batch-1026"><b>Batch</b> <b>#1026</b> · Current Harvest</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.2</b></span><span>⚡ <b>4.6</b></span><span>🧘 <b>2.2</b></span><span>🌙 <b>1.0</b></span><span>⏳ ~1.5h peak</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:94.0%"></div></div><span class="wk-specsp">Fast</span></div>
     <h4>🌿 The leaf</h4>
     <p>Vendor description: <span class="hlw">"fast. typically mid/fast depending on batch. calm mood."</span> One on-site review at 4/5.</p>
     <h4>💬 What the community reports</h4>
@@ -852,9 +897,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="popbox star">🏆 Gold &amp; blend standouts — most-reviewed specialty: <b>Black MD 0726</b> (7× ⭐ 5.0, pain + mood); yellow anchor: <b>Yellow Boyan</b> ("slow, relaxing cozy"); night-pain pick: <b>Pain Blend Original</b> ("my all-time favorite for night pain").</div>
 
 <div class="strain gold" id="strain-black-md">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 31], [&quot;calm&quot;, 31], [&quot;relief&quot;, 24], [&quot;energy&quot;, 14]], &quot;caption&quot;: &quot;coffee-ground-soaked leaf \u2014 most distinctive prep&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Black MD</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0726</b> · Coffee-Soaked Specialty</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 25], [&quot;mood&quot;, 24], [&quot;sleep&quot;, 21], [&quot;analgesia&quot;, 19], [&quot;energy&quot;, 11]], &quot;caption&quot;: &quot;coffee-ground-soaked leaf \u2014 most distinctive prep&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F0F000"/><path d="M22 12 A10 10 0 0 1 12.63 21.98 L12.35 17.49 A5.5 5.5 0 0 0 17.5 12 Z" fill="#10C000"/><path d="M12.63 21.98 A10 10 0 0 1 2.49 15.09 L6.77 13.7 A5.5 5.5 0 0 0 12.35 17.49 Z" fill="#0A0A0A"/><path d="M2.49 15.09 A10 10 0 0 1 5.63 4.29 L8.49 7.76 A5.5 5.5 0 0 0 6.77 13.7 Z" fill="#E01020"/><path d="M5.63 4.29 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 8.49 7.76 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Black MD</h3><a class="wk-batchbtn" href="#batch-0726"><b>Batch</b> <b>#0726</b> · Coffee-Soaked Specialty</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.7</b></span><span>⚡ <b>2.2</b></span><span>🧘 <b>4.7</b></span><span>🌙 <b>3.6</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:8.5%"></div></div><span class="wk-specsp">Slow</span></div>
     <h4>🌿 The leaf</h4>
     <p>Leaf soaked in coffee grounds — WestKoast's most distinctive preparation, and its most-reviewed
     specialty: <b>7 on-site reviews, all 5 stars</b>, several with detailed text.</p>
@@ -869,9 +915,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain gold" id="strain-yellow-boyan">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 33], [&quot;mood&quot;, 31], [&quot;relief&quot;, 20], [&quot;energy&quot;, 16]], &quot;caption&quot;: &quot;slow, relaxing cozy \u2014 great mixed with reds&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Yellow Boyan</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> · Yellow/Gold Vein · Mixer</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;gold&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 25], [&quot;mood&quot;, 24], [&quot;sleep&quot;, 22], [&quot;analgesia&quot;, 16], [&quot;energy&quot;, 13]], &quot;caption&quot;: &quot;slow, relaxing cozy \u2014 great mixed with reds&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F0F000"/><path d="M22 12 A10 10 0 0 1 12.63 21.98 L12.35 17.49 A5.5 5.5 0 0 0 17.5 12 Z" fill="#10C000"/><path d="M12.63 21.98 A10 10 0 0 1 2.31 14.49 L6.67 13.37 A5.5 5.5 0 0 0 12.35 17.49 Z" fill="#0A0A0A"/><path d="M2.31 14.49 A10 10 0 0 1 4.71 5.15 L7.99 8.23 A5.5 5.5 0 0 0 6.67 13.37 Z" fill="#E01020"/><path d="M4.71 5.15 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 7.99 8.23 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Yellow Boyan</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> · Yellow/Gold Vein · Mixer</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.4</b></span><span>⚡ <b>2.3</b></span><span>🧘 <b>4.5</b></span><span>🌙 <b>2.8</b></span><span>⏳ 3.5–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:15.5%"></div></div><span class="wk-specsp">Slow</span></div>
     <h4>🌿 The leaf</h4>
     <p>Vendor description: <span class="hly">"slow, relaxing cozy. Great mixed with reds as well."</span> One on-site 5-star review:
     <span class="hly">"The Best Big Mood!"</span></p>
@@ -883,9 +930,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain blend" id="strain-pain-blend-original">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;mood&quot;, 29], [&quot;relief&quot;, 28], [&quot;energy&quot;, 12]], &quot;caption&quot;: &quot;red bent + yellow boyan \u2014 the pain blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Pain Blend Original!</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> · Red Bent + Yellow Boyan · SOLD OUT</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 24], [&quot;sleep&quot;, 24], [&quot;mood&quot;, 22], [&quot;analgesia&quot;, 21], [&quot;energy&quot;, 9]], &quot;caption&quot;: &quot;red bent + yellow boyan \u2014 the pain blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.98 11.37 L17.49 11.65 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F0F000"/><path d="M21.98 11.37 A10 10 0 0 1 13.25 21.92 L12.69 17.46 A5.5 5.5 0 0 0 17.49 11.65 Z" fill="#0A0A0A"/><path d="M13.25 21.92 A10 10 0 0 1 2.49 15.09 L6.77 13.7 A5.5 5.5 0 0 0 12.69 17.46 Z" fill="#10C000"/><path d="M2.49 15.09 A10 10 0 0 1 6.64 3.56 L9.05 7.36 A5.5 5.5 0 0 0 6.77 13.7 Z" fill="#E01020"/><path d="M6.64 3.56 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.05 7.36 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/></svg></span>Pain Blend Original!</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> · Red Bent + Yellow Boyan · SOLD OUT</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.5</b></span><span>⚡ <b>1.8</b></span><span>🧘 <b>4.8</b></span><span>🌙 <b>4.3</b></span><span>⏳ 4–5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:12.0%"></div></div><span class="wk-specsp">Slow</span></div>
     <h4>🌿 The blend</h4>
     <p><span class="hlb">"Original pain blend is back! Blend of Farmer R red bent and yellow boyan."</span> Currently sold out —
     as is its red-bent half.</p>
@@ -898,9 +946,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain blend" id="strain-energy-mood">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 35], [&quot;energy&quot;, 34], [&quot;calm&quot;, 23], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;white and green blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Energy Mood</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · White + Green Blend</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 30], [&quot;energy&quot;, 29], [&quot;calm&quot;, 20], [&quot;sleep&quot;, 14], [&quot;analgesia&quot;, 7]], &quot;caption&quot;: &quot;white and green blend&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.51 15.09 L17.23 13.7 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.51 15.09 A10 10 0 0 1 6.64 20.44 L9.05 16.64 A5.5 5.5 0 0 0 17.23 13.7 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M6.64 20.44 A10 10 0 0 1 2.31 9.51 L6.67 10.63 A5.5 5.5 0 0 0 9.05 16.64 Z" fill="#F0F000"/><path d="M2.31 9.51 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 6.67 10.63 Z" fill="#0A0A0A"/><path d="M7.74 2.95 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#E01020"/></svg></span>Energy Mood</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · White + Green Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.3</b></span><span>⚡ <b>4.2</b></span><span>🧘 <b>2.8</b></span><span>🌙 <b>1.0</b></span><span>⏳ 3.5–4h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:68.0%"></div></div><span class="wk-specsp">Mid-Fast</span></div>
     <h4>🌿 The blend</h4>
     <p>Vendor description: <span class="hlb">"white and Green blend."</span> One on-site 5-star rating, no text.</p>
     <h4>💬 What the community reports</h4>
@@ -910,9 +959,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 
 <div class="strain blend" id="strain-hug-the-kids">
-  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 32], [&quot;calm&quot;, 30], [&quot;energy&quot;, 20], [&quot;relief&quot;, 18]], &quot;caption&quot;: &quot;warm prosocial blend \u2014 no written reports yet&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 22 12 L17.5 12 A5.5 5.5 0 0 0 12 6.5 Z" fill="#F59E0B"/><path d="M22 12 A10 10 0 0 1 12 22 L12 17.5 A5.5 5.5 0 0 0 17.5 12 Z" fill="#2E7D4F"/><path d="M12 22 A10 10 0 0 1 2 12 L6.5 12 A5.5 5.5 0 0 0 12 17.5 Z" fill="#5BA3D9"/><path d="M2 12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 6.5 12 Z" fill="#E8873A"/></svg></span>Hug The Kids</h3><a class="wk-batchbtn" href="#sourcing"><b>Batch</b> <b>#0926</b> · House Blend</a></div>
+  <div class="strain-head"><h3><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;blend&quot;, &quot;effects&quot;: [[&quot;mood&quot;, 27], [&quot;calm&quot;, 25], [&quot;sleep&quot;, 17], [&quot;energy&quot;, 16], [&quot;analgesia&quot;, 15]], &quot;caption&quot;: &quot;warm prosocial blend \u2014 no written reports yet&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12 2 A10 10 0 0 1 21.92 13.25 L17.46 12.69 A5.5 5.5 0 0 0 12 6.5 Z" fill="#10C000"/><path d="M21.92 13.25 A10 10 0 0 1 10.75 21.92 L11.31 17.46 A5.5 5.5 0 0 0 17.46 12.69 Z" fill="#F0F000"/><path d="M10.75 21.92 A10 10 0 0 1 2.7 15.68 L6.89 14.02 A5.5 5.5 0 0 0 11.31 17.46 Z" fill="#0A0A0A"/><path d="M2.7 15.68 A10 10 0 0 1 3.91 6.12 L7.55 8.77 A5.5 5.5 0 0 0 6.89 14.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.7"/><path d="M3.91 6.12 A10 10 0 0 1 12 2 L12 6.5 A5.5 5.5 0 0 0 7.55 8.77 Z" fill="#E01020"/></svg></span>Hug The Kids</h3><a class="wk-batchbtn" href="#batch-0926"><b>Batch</b> <b>#0926</b> · House Blend</a></div>
   <div class="strain-body">
     <div class="iconrow"><span>😊 <b>4.6</b></span><span>⚡ <b>2.8</b></span><span>🧘 <b>4.2</b></span><span>🌙 <b>2.5</b></span><span>⏳ 4–4.5h</span></div>
+    <div class="wk-specrow"><span class="wk-speclab">Spectrum</span><div class="specbar"><div class="specmark" style="left:50.0%"></div></div><span class="wk-specsp">Mid</span></div>
     <h4>💬 What the community reports</h4>
     <p>One on-site 5-star rating, no text. The name suggests a warm, prosocial blend — but with no written
     reports, that remains a guess, not a finding.</p>
@@ -937,7 +987,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">📊</button>
 </div>
 <div class="catintro">Scores reflect community consensus (on-site reviews, Reddit, YouTube, third-party editorials) on a 0–5 scale:
-😊 mood &amp; euphoria · ⚡ energy &amp; drive · 🧘 relaxation · 🌙 restfulness. — = not enough data. Evidence grades:
+😊 Mood · ⚡ Energy · 🧘 Calm · 🌙 Analgesia. — = not enough data. Evidence grades:
 <b>STRONG</b> = deep review base · <b>MODERATE</b> = several consistent reports · <b>THIN</b> = vendor-hosted stars only.</div>
 <table class="grid">
 <tr><th>Strain</th><th>Color</th><th><button type="button" class="wk-sort" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433" title="Sort by this column">😊</button></th><th><button type="button" class="wk-sort" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433" title="Sort by this column">⚡</button></th><th><button type="button" class="wk-sort" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433" title="Sort by this column">🧘</button></th><th><button type="button" class="wk-sort" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433" title="Sort by this column">🌙</button></th><th><button type="button" class="wk-sort" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#1c5433" title="Sort by this column">⏳</button></th><th>Evidence</th></tr>
@@ -966,6 +1016,109 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <tr class="my2"><td><a href="#strain-energy-mood">Energy Mood 0926</a></td><td><a href="#gold">🟣</a></td><td>4.3</td><td>4.2</td><td>2.8</td><td>1.0</td><td>3.5–4h</td><td>THIN</td></tr>
 <tr class="my1"><td><a href="#strain-hug-the-kids">Hug The Kids 0926</a></td><td><a href="#gold">🟣</a></td><td>4.6</td><td>2.8</td><td>4.2</td><td>2.5</td><td>4–4.5h</td><td>THIN</td></tr>
 </table>
+<p class="coa-note">Reviews stars are the vendor's own WooCommerce ratings (small counts on several products — see each card).</p>
+
+<!-- ================= BATCH INDEX ================= -->
+<div class="colorband band-neutral" id="batches">
+  <h2>Batch Index — Every Harvest, Strain by Strain</h2>
+  <p>Every Strain in This Guide, Gathered Under the Harvest Code Stamped on Its Bag.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">📦</button>
+</div>
+<div class="catintro">
+  <b>How to read this index:</b> a batch code is a harvest date — <b>1026</b> = October 2026 (the full code
+  system is explained under <a href="#sourcing">Sourcing — The Batch-Code System</a>). Every strain card's
+  batch pill jumps straight to its batch here, and the family-table strains are gathered in too. A strain
+  that ran in two batches sits under its first batch, with both codes shown. Tap a column heading to sort
+  a batch's table.
+</div>
+<div class="wk-batchgroup" id="batch-1026">
+  <h4>Batch #1026 — October 2026<span class="wk-bcount">9 strains</span></h4>
+  <table class="grid wk-sortable">
+<tr><th>Strain</th><th>Batch detail</th><th>What’s known</th></tr>
+<tr><td><a href="#strain-green-bali">Green Bali</a></td><td>1026 · Current Harvest</td><td>classic balanced green: uplifted mood, clean energy</td></tr>
+<tr><td><a href="#strain-white-lemon">White Lemon</a></td><td>1026 · Current Harvest</td><td>good energy without the jitters — uplifts mood</td></tr>
+<tr><td><a href="#strain-white-ultra">White Ultra</a></td><td>1026 · Current Harvest</td><td>fast white — calm mood, short peak</td></tr>
+<tr><td>Nano Green Jongong</td><td>1026 · Nano-Grind</td><td>kratom.org: slow kick, mood boost, "not winding." Zero on-site reviews.</td></tr>
+<tr><td>Bright Green</td><td>1026</td><td>On-site ratings only, no written detail.</td></tr>
+<tr><td>Green Hulk</td><td>1026</td><td>On-site ratings only, no written detail.</td></tr>
+<tr><td>White Asia</td><td>1026 (was 0726)</td><td>On-site ratings only. Batch churned 0726 → 1026.</td></tr>
+<tr><td>White Maeng Da</td><td>1026 (was 0726)</td><td>On-site ratings only. Batch churned 0726 → 1026.</td></tr>
+<tr><td>White 46 / Super White</td><td>0726 / 1026</td><td>No reviews found.</td></tr>
+  </table>
+</div>
+<div class="wk-batchgroup" id="batch-0926">
+  <h4>Batch #0926 — September 2026<span class="wk-bcount">16 strains</span></h4>
+  <table class="grid wk-sortable">
+<tr><th>Strain</th><th>Batch detail</th><th>What’s known</th></tr>
+<tr><td><a href="#strain-red-fuzzy-blanket">Red Fuzzy Blanket</a></td><td>0926 · Custom Blend</td><td>warm, heavy comfort red for the end of the day</td></tr>
+<tr><td><a href="#strain-red-magic">Red Magic</a></td><td>0926 · Unfermented</td><td>unfermented red — base leaf of Red Fuzzy Blanket</td></tr>
+<tr><td><a href="#strain-green-lightning">Green Lightning</a></td><td>0926</td><td>uplifting mid, mood, focus — no jitters</td></tr>
+<tr><td><a href="#strain-nano-green-devil">Nano Green Devil</a></td><td>0926 · Nano-Grind</td><td>zero anxiety, clean energy and mood boost</td></tr>
+<tr><td><a href="#strain-nano-green-vietnam">Nano Green Vietnam</a></td><td>0926 · Nano-Grind</td><td>fast-onset green — hits hard, very cerebral</td></tr>
+<tr><td><a href="#strain-nano-green-maeng-da">Nano Green Maeng Da</a></td><td>0926 · Nano-Grind</td><td>potent, driven, clean — freshest in the game</td></tr>
+<tr><td><a href="#strain-energy-mood">Energy Mood</a></td><td>0926 · White + Green Blend</td><td>white and green blend</td></tr>
+<tr><td><a href="#strain-hug-the-kids">Hug The Kids</a></td><td>0926 · House Blend</td><td>warm prosocial blend — no written reports yet</td></tr>
+<tr><td>Nano Red Devil</td><td>0926 · Nano-Grind</td><td>On-site 5.00/5, no review text, no independent reports.</td></tr>
+<tr><td>Nano Super Red</td><td>0926 · Nano-Grind</td><td>On-site 5.00/5, no review text, no independent reports.</td></tr>
+<tr><td>Nano Red Vietnam</td><td>0926 · Nano-Grind</td><td>On-site 5.00/5, no review text, no independent reports.</td></tr>
+<tr><td>OG Green Malay</td><td>0926</td><td>On-site ratings only. A Drea video review of OG Green Malay exists (spoken claims unverified).</td></tr>
+<tr><td>OG Green Elephant</td><td>0926</td><td>On-site ratings only. A Drea video review of OG Green Malay exists (spoken claims unverified).</td></tr>
+<tr><td>Premium Maeng Da</td><td>0926</td><td>No reviews found.</td></tr>
+<tr><td>Elite White</td><td>0926</td><td>On-site ratings only.</td></tr>
+<tr><td>White Bumblebee</td><td>0926</td><td>On-site ratings only.</td></tr>
+  </table>
+</div>
+<div class="wk-batchgroup" id="batch-0726">
+  <h4>Batch #0726 — July 2026<span class="wk-bcount">14 strains</span></h4>
+  <table class="grid wk-sortable">
+<tr><th>Strain</th><th>Batch detail</th><th>What’s known</th></tr>
+<tr><td><a href="#strain-red-bent">Red Bent</a></td><td>0726 · Heavy Ferment</td><td>heavy-ferment red — half of the Pain Blend formula</td></tr>
+<tr><td><a href="#strain-nano-green-monster">Nano Green Monster</a></td><td>0726 · Nano-Grind</td><td>mid/fast mood green — nano grind</td></tr>
+<tr><td><a href="#strain-black-md">Black MD</a></td><td>0726 · Coffee-Soaked Specialty</td><td>coffee-ground-soaked leaf — most distinctive prep</td></tr>
+<tr><td>Nano Red Borneo</td><td>0726 · Nano-Grind</td><td>On-site 5.00/5, no review text. Currently sold out.</td></tr>
+<tr><td>Red Gold</td><td>0726</td><td>Listed, in stock; no rating shown.</td></tr>
+<tr><td>Super Green #2</td><td>0726</td><td>On-site ratings only.</td></tr>
+<tr><td>Nano Super Green</td><td>0726 / 0926</td><td>On-site ratings only.</td></tr>
+<tr><td>Green 46</td><td>0726</td><td>No reviews found.</td></tr>
+<tr><td>Green Jungle</td><td>0726</td><td>No reviews found.</td></tr>
+<tr><td>OG Dark Green</td><td>0726</td><td>No reviews found.</td></tr>
+<tr><td>White Monster</td><td>0726</td><td>On-site ratings only (4.00–5.00), no written detail.</td></tr>
+<tr><td>Nano White Dragon</td><td>0726 · Nano-Grind</td><td>On-site ratings only.</td></tr>
+<tr><td>OG Yellow MD</td><td>0726</td><td>Listed; no reviews found.</td></tr>
+<tr><td>Awesome Sauce</td><td>0726</td><td>No reviews found.</td></tr>
+  </table>
+</div>
+<div class="wk-batchgroup" id="batch-0626">
+  <h4>Batch #0626 — June 2026<span class="wk-bcount">10 strains</span></h4>
+  <table class="grid wk-sortable">
+<tr><th>Strain</th><th>Batch detail</th><th>What’s known</th></tr>
+<tr><td><a href="#strain-mean-green">Mean Green</a></td><td>0626</td><td>moderate energy, substantial analgesia — a workhorse</td></tr>
+<tr><td>Red Thai UF</td><td>0626 · Ultra-Fine</td><td>On-site 5.00/5 ratings, no review text, no independent reports. UF = ultra-fine grind line.</td></tr>
+<tr><td>Red Vein UF</td><td>0626 · Ultra-Fine</td><td>On-site 5.00/5 ratings, no review text, no independent reports. UF = ultra-fine grind line.</td></tr>
+<tr><td>Red JongKong UF</td><td>0626 · Ultra-Fine</td><td>On-site 5.00/5 ratings, no review text, no independent reports. UF = ultra-fine grind line.</td></tr>
+<tr><td>Red Malay UF</td><td>0626 · Ultra-Fine</td><td>On-site 5.00/5 ratings, no review text, no independent reports. UF = ultra-fine grind line.</td></tr>
+<tr><td>Dark Red Elephant UF</td><td>0626 · Ultra-Fine</td><td>On-site 4.50/5, no review text.</td></tr>
+<tr><td>Green Ketapang</td><td>0626</td><td>On-site ratings only, no written detail.</td></tr>
+<tr><td>Green Thunder</td><td>0626</td><td>On-site ratings only, no written detail.</td></tr>
+<tr><td>White Elephant</td><td>0626</td><td>On-site ratings only.</td></tr>
+<tr><td>Pink Dragon</td><td>0626</td><td>No reviews found.</td></tr>
+  </table>
+</div>
+<div class="wk-batchgroup" id="batch-0526">
+  <h4>Batch #0526 — May 2026<span class="wk-bcount">2 strains</span></h4>
+  <table class="grid wk-sortable">
+<tr><th>Strain</th><th>Batch detail</th><th>What’s known</th></tr>
+<tr><td><a href="#strain-white-hulk">White Hulk</a></td><td>0526 / 0726</td><td>get up and go without the jittery feeling</td></tr>
+<tr><td>Yellow Vein</td><td>0526</td><td>Sold out; no reviews found.</td></tr>
+  </table>
+</div>
+<div class="wk-batchgroup" id="batch-1125">
+  <h4>Batch #1125 — November 2025<span class="wk-bcount">1 strains</span></h4>
+  <table class="grid wk-sortable">
+<tr><th>Strain</th><th>Batch detail</th><th>What’s known</th></tr>
+<tr><td>Red Monster</td><td>1125</td><td>Discovered in research; thin public record. A Drea (YouTube/TikTok) review exists but spoken claims unverified.</td></tr>
+  </table>
+</div>
 
 <!-- ================= COA REFERENCE ================= -->
 <div class="colorband band-neutral" id="coa">
@@ -985,25 +1138,25 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <h4 style="color:#23402f">🔴 Red-vein batches — July 2026 (MBL, HPLC-UV)</h4>
 <table class="grid">
 <tr><th>Sample</th><th><b>Mitragynine</b></th><th><b>7-OH</b></th><th>Paynantheine</th><th>Speciogynine</th><th>Speciociliatine</th><th>Total alk.</th></tr>
-<tr class="mr1"><td>FC#AR.01 Red · 0726</td><td><b>1.33%</b></td><td><b>&lt;0.0196%</b></td><td>0.225%</td><td>0.147%</td><td>0.334%</td><td>2.04%</td></tr>
-<tr class="mr2"><td>FC#AR.02 Red · 0726</td><td><b>1.51%</b></td><td><b>&lt;0.0198%</b></td><td>0.251%</td><td>0.173%</td><td>0.347%</td><td>2.28%</td></tr>
+<tr class="mr1"><td>FC#AR.01 Red · 0726</td><td><b>1.33%</b><span class="wk-mit"><i style="width:66.5%;background:#B03A3A"></i></span></td><td><b>&lt;0.0196%</b></td><td>0.225%</td><td>0.147%</td><td>0.334%</td><td>2.04%</td></tr>
+<tr class="mr2"><td>FC#AR.02 Red · 0726</td><td><b>1.51%</b><span class="wk-mit"><i style="width:75.5%;background:#B03A3A"></i></span></td><td><b>&lt;0.0198%</b></td><td>0.251%</td><td>0.173%</td><td>0.347%</td><td>2.28%</td></tr>
 </table>
 <h4 style="color:#23402f">🟢 Green-vein batches — July 2026 (MBL, HPLC-UV)</h4>
 <table class="grid">
 <tr><th>Sample</th><th><b>Mitragynine</b></th><th><b>7-OH</b></th><th>Paynantheine</th><th>Speciogynine</th><th>Speciociliatine</th><th>Total alk.</th></tr>
-<tr class="mg1"><td>FC#B.01 Green · 0726</td><td><b>1.88%</b></td><td><b>&lt;0.0198%</b></td><td>0.322%</td><td>0.221%</td><td>0.287%</td><td>2.71%</td></tr>
-<tr class="mg2"><td>FC#T.06 Blend (green) · 0726</td><td><b>1.69%</b></td><td><b>&lt;0.0199%</b></td><td>0.282%</td><td>0.191%</td><td>0.310%</td><td>2.47%</td></tr>
-<tr class="mg1"><td>FC#T.02 Green · 0726</td><td><b>1.62%</b></td><td><b>&lt;0.0199%</b></td><td>0.283%</td><td>0.180%</td><td>0.310%</td><td>2.40%</td></tr>
-<tr class="mg2"><td>FC#B.07 Green · 0726</td><td><b>1.59%</b></td><td><b>&lt;0.0198%</b></td><td>0.275%</td><td>0.182%</td><td>0.266%</td><td>2.31%</td></tr>
-<tr class="mg1"><td>FC#D.01 Green · 0726</td><td><b>1.20%</b></td><td><b>&lt;0.0197%</b></td><td>0.226%</td><td>0.144%</td><td>0.269%</td><td>1.84%</td></tr>
+<tr class="mg1"><td>FC#B.01 Green · 0726</td><td><b>1.88%</b><span class="wk-mit"><i style="width:94%;background:#2E7D4F"></i></span></td><td><b>&lt;0.0198%</b></td><td>0.322%</td><td>0.221%</td><td>0.287%</td><td>2.71%</td></tr>
+<tr class="mg2"><td>FC#T.06 Blend (green) · 0726</td><td><b>1.69%</b><span class="wk-mit"><i style="width:84.5%;background:#2E7D4F"></i></span></td><td><b>&lt;0.0199%</b></td><td>0.282%</td><td>0.191%</td><td>0.310%</td><td>2.47%</td></tr>
+<tr class="mg1"><td>FC#T.02 Green · 0726</td><td><b>1.62%</b><span class="wk-mit"><i style="width:81%;background:#2E7D4F"></i></span></td><td><b>&lt;0.0199%</b></td><td>0.283%</td><td>0.180%</td><td>0.310%</td><td>2.40%</td></tr>
+<tr class="mg2"><td>FC#B.07 Green · 0726</td><td><b>1.59%</b><span class="wk-mit"><i style="width:79.5%;background:#2E7D4F"></i></span></td><td><b>&lt;0.0198%</b></td><td>0.275%</td><td>0.182%</td><td>0.266%</td><td>2.31%</td></tr>
+<tr class="mg1"><td>FC#D.01 Green · 0726</td><td><b>1.20%</b><span class="wk-mit"><i style="width:60%;background:#2E7D4F"></i></span></td><td><b>&lt;0.0197%</b></td><td>0.226%</td><td>0.144%</td><td>0.269%</td><td>1.84%</td></tr>
 </table>
 <h4 style="color:#23402f">⚪ White-vein batches — 0526 &amp; 0726 (MBL, HPLC-UV)</h4>
 <table class="grid">
 <tr><th>Sample</th><th><b>Mitragynine</b></th><th><b>7-OH</b></th><th>Paynantheine</th><th>Speciogynine</th><th>Speciociliatine</th><th>Total alk.</th></tr>
-<tr class="mw1"><td>FC#T.01 White · 0526</td><td><b>2.00%</b></td><td><b>&lt;0.0170%</b></td><td>0.332%</td><td>0.225%</td><td>0.499%</td><td>3.05%</td></tr>
-<tr class="mw2"><td>FC#B.01 White · 0726</td><td><b>1.48%</b></td><td><b>&lt;0.0197%</b></td><td>0.268%</td><td>0.171%</td><td>0.317%</td><td>2.24%</td></tr>
-<tr class="mw1"><td>FC#T.02 White · 0726</td><td><b>1.51%</b></td><td><b>&lt;0.0198%</b></td><td>0.260%</td><td>0.170%</td><td>0.325%</td><td>2.27%</td></tr>
-<tr class="mw2"><td>FC#B.02 White · 0526</td><td><b>1.40%</b></td><td><b>&lt;0.0199%</b></td><td>0.258%</td><td>0.160%</td><td>0.317%</td><td>2.13%</td></tr>
+<tr class="mw1"><td>FC#T.01 White · 0526</td><td><b>2.00%</b><span class="wk-mit"><i style="width:100%;background:#7A8F3F"></i></span></td><td><b>&lt;0.0170%</b></td><td>0.332%</td><td>0.225%</td><td>0.499%</td><td>3.05%</td></tr>
+<tr class="mw2"><td>FC#B.01 White · 0726</td><td><b>1.48%</b><span class="wk-mit"><i style="width:74%;background:#7A8F3F"></i></span></td><td><b>&lt;0.0197%</b></td><td>0.268%</td><td>0.171%</td><td>0.317%</td><td>2.24%</td></tr>
+<tr class="mw1"><td>FC#T.02 White · 0726</td><td><b>1.51%</b><span class="wk-mit"><i style="width:75.5%;background:#7A8F3F"></i></span></td><td><b>&lt;0.0198%</b></td><td>0.260%</td><td>0.170%</td><td>0.325%</td><td>2.27%</td></tr>
+<tr class="mw2"><td>FC#B.02 White · 0526</td><td><b>1.40%</b><span class="wk-mit"><i style="width:70%;background:#7A8F3F"></i></span></td><td><b>&lt;0.0199%</b></td><td>0.258%</td><td>0.160%</td><td>0.317%</td><td>2.13%</td></tr>
 </table>
 <p class="coa-note">7-hydroxymitragynine reads below the limit of quantification (&lt;0.02%) in every batch —
 consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are published. Older lots
@@ -1054,48 +1207,48 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 <div class="biblio">
   <h3>Vendor &amp; Lab Sources</h3>
   <ol>
-    <li>WestKoast Botanicals — official storefront and product catalog, organized by vein: Green (21), White (12), Red (16), Yellow/Gold (2), Custom Blends (8). <a href="https://westkoastbotanicals.com/" target="_blank" rel="noopener">westkoastbotanicals.com</a> · <a href="https://westkoastbotanicals.com/shop/" target="_blank" rel="noopener">Shop</a> · <a href="https://westkoastbotanicals.com/coa-reports/" target="_blank" rel="noopener">COA Reports</a></li>
-    <li>Murray-Brown Laboratories (MBL), Northglenn, CO — Certificate of Analysis, Report ID 2607994 (green samples, July 2026): 1.88% mitragynine / 2.71% total alkaloids by HPLC-UV (AOAC 2017.14, modified), with pathogen screening. <a href="https://westkoastbotanicals.com/wp-content/uploads/2026/07/COA_2607994_007-FCB.01_Green_v1-1.pdf" target="_blank" rel="noopener">PDF</a></li>
-    <li>Murray-Brown Laboratories — Certificate of Analysis, Report ID 2604E07 (sample FC#T.02 Green, April–May 2026): 1.59% mitragynine / 2.41% total alkaloids; 7-OH below 0.0198%; Salmonella and E. coli absent. <a href="https://westkoastbotanicals.com/wp-content/uploads/2026/05/COA_2604E07_002-FCT.02green_v1.pdf" target="_blank" rel="noopener">PDF</a></li>
-    <li>Murray-Brown Laboratories — WestKoast lab packet, April 2026 (MIT-only, all samples): greens ~1.37–1.59% mitragynine; a red sample at 1.20% / 1.87% total. <a href="https://westkoastbotanicals.com/wp-content/uploads/2026/05/Labs4.26.26MITONLYALL.pdf" target="_blank" rel="noopener">PDF</a></li>
-    <li>Murray Brown Labs — Kratom Testing: the lab's own description of its alkaloid panel (mitragynine, 7-OH, speciociliatine, speciogynine, paynantheine) and HPLC-UV method. <a href="https://mb-labs.com/kratom/" target="_blank" rel="noopener">mb-labs.com/kratom</a></li>
-    <li>WestKoast Botanicals — Terms of Agreement (restricted-shipping states; 21+ purchase rule) and Refund and Returns Policy. <a href="https://westkoastbotanicals.com/terms-of-agreement/" target="_blank" rel="noopener">Terms</a> · <a href="https://westkoastbotanicals.com/refund_returns/" target="_blank" rel="noopener">Refunds</a></li>
-    <li>American Kratom Association — GMP Standards Program: the cGMP qualification benchmark for vendor manufacturing, testing, and labeling. <a href="https://www.americankratom.org/gmp-standards-program" target="_blank" rel="noopener">americankratom.org</a></li>
-    <li>kratom.org — WestKoast Botanicals vendor review (4/5, Verified Vendor). Strain commentary: Green Bali, Green Lightning, Nano Green Devil, Nano Green Vietnam, Nano Green Monster, White Lemon. <a href="https://kratom.org/vendors/west-koast-botanicals/" target="_blank" rel="noopener">kratom.org/vendors/west-koast-botanicals</a></li>
+    <li><a class="wk-srcname" href="https://westkoastbotanicals.com/" target="_blank" rel="noopener"><b>WestKoast Botanicals</b></a> — official storefront and product catalog, organized by vein: Green (21), White (12), Red (16), Yellow/Gold (2), Custom Blends (8). <a href="https://westkoastbotanicals.com/" target="_blank" rel="noopener">westkoastbotanicals.com</a> · <a href="https://westkoastbotanicals.com/shop/" target="_blank" rel="noopener">Shop</a> · <a href="https://westkoastbotanicals.com/coa-reports/" target="_blank" rel="noopener">COA Reports</a></li>
+    <li><a class="wk-srcname" href="https://westkoastbotanicals.com/wp-content/uploads/2026/07/COA_2607994_007-FCB.01_Green_v1-1.pdf" target="_blank" rel="noopener"><b>Murray-Brown Laboratories (MBL), Northglenn, CO</b></a> — Certificate of Analysis, Report ID 2607994 (green samples, July 2026): 1.88% mitragynine / 2.71% total alkaloids by HPLC-UV (AOAC 2017.14, modified), with pathogen screening. <a href="https://westkoastbotanicals.com/wp-content/uploads/2026/07/COA_2607994_007-FCB.01_Green_v1-1.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li><a class="wk-srcname" href="https://westkoastbotanicals.com/wp-content/uploads/2026/05/COA_2604E07_002-FCT.02green_v1.pdf" target="_blank" rel="noopener"><b>Murray-Brown Laboratories</b></a> — Certificate of Analysis, Report ID 2604E07 (sample FC#T.02 Green, April–May 2026): 1.59% mitragynine / 2.41% total alkaloids; 7-OH below 0.0198%; Salmonella and E. coli absent. <a href="https://westkoastbotanicals.com/wp-content/uploads/2026/05/COA_2604E07_002-FCT.02green_v1.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li><a class="wk-srcname" href="https://westkoastbotanicals.com/wp-content/uploads/2026/05/Labs4.26.26MITONLYALL.pdf" target="_blank" rel="noopener"><b>Murray-Brown Laboratories</b></a> — WestKoast lab packet, April 2026 (MIT-only, all samples): greens ~1.37–1.59% mitragynine; a red sample at 1.20% / 1.87% total. <a href="https://westkoastbotanicals.com/wp-content/uploads/2026/05/Labs4.26.26MITONLYALL.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li><a class="wk-srcname" href="https://mb-labs.com/kratom/" target="_blank" rel="noopener"><b>Murray Brown Labs</b></a> — Kratom Testing: the lab's own description of its alkaloid panel (mitragynine, 7-OH, speciociliatine, speciogynine, paynantheine) and HPLC-UV method. <a href="https://mb-labs.com/kratom/" target="_blank" rel="noopener">mb-labs.com/kratom</a></li>
+    <li><a class="wk-srcname" href="https://westkoastbotanicals.com/terms-of-agreement/" target="_blank" rel="noopener"><b>WestKoast Botanicals</b></a> — Terms of Agreement (restricted-shipping states; 21+ purchase rule) and Refund and Returns Policy. <a href="https://westkoastbotanicals.com/terms-of-agreement/" target="_blank" rel="noopener">Terms</a> · <a href="https://westkoastbotanicals.com/refund_returns/" target="_blank" rel="noopener">Refunds</a></li>
+    <li><a class="wk-srcname" href="https://www.americankratom.org/gmp-standards-program" target="_blank" rel="noopener"><b>American Kratom Association</b></a> — GMP Standards Program: the cGMP qualification benchmark for vendor manufacturing, testing, and labeling. <a href="https://www.americankratom.org/gmp-standards-program" target="_blank" rel="noopener">americankratom.org</a></li>
+    <li><a class="wk-srcname" href="https://kratom.org/vendors/west-koast-botanicals/" target="_blank" rel="noopener"><b>kratom.org</b></a> — WestKoast Botanicals vendor review (4/5, Verified Vendor). Strain commentary: Green Bali, Green Lightning, Nano Green Devil, Nano Green Vietnam, Nano Green Monster, White Lemon. <a href="https://kratom.org/vendors/west-koast-botanicals/" target="_blank" rel="noopener">kratom.org/vendors/west-koast-botanicals</a></li>
   </ol>
   <h3>Community Sources</h3>
   <ol>
-    <li>WestKoast Botanicals on-site customer reviews (vendor-hosted): Red Fuzzy Blanket (15), Green Bali (13), Green Lightning (8), Black MD (7), Nano Green Maeng Da (6), Mean Green (4), Nano Green Monster (2), White Ultra (1), Pain Blend (1), Yellow Boyan (1), Energy Mood (1), Hug The Kids (1), and others.</li>
-    <li>r/vendorsofkratom2 — White Hulk community report ("great mood, energy… without the jittery feeling").</li>
-    <li>YouTube — "Discussions with Drea" — WestKoast strain reviews (Green Lightning, OG Green Malay, Red Monster 1125, Red Banjar, Red Vein; spoken claims not transcribed).</li>
+    <li><a class="wk-srcname" href="https://westkoastbotanicals.com/" target="_blank" rel="noopener"><b>WestKoast Botanicals on-site customer reviews</b></a> (vendor-hosted): Red Fuzzy Blanket (15), Green Bali (13), Green Lightning (8), Black MD (7), Nano Green Maeng Da (6), Mean Green (4), Nano Green Monster (2), White Ultra (1), Pain Blend (1), Yellow Boyan (1), Energy Mood (1), Hug The Kids (1), and others.</li>
+    <li><b>r/vendorsofkratom2</b> — White Hulk community report ("great mood, energy… without the jittery feeling"). (Cited by subreddit name; no single public post link.)</li>
+    <li><b>YouTube — "Discussions with Drea"</b> — WestKoast strain reviews (Green Lightning, OG Green Malay, Red Monster 1125, Red Banjar, Red Vein; spoken claims not transcribed). (Channel cited by name; no verified channel link.)</li>
   </ol>
   <h3>Peer-Reviewed Science</h3>
   <ol>
-    <li>Kruegel, A.C. &amp; Grundmann, O. (2018). The medicinal chemistry and neuropharmacology of kratom. <i>Neuropharmacology</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/28830758/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Kruegel, A.C. et al. (2016). Synthetic and receptor signaling explorations of the Mitragyna alkaloids. <i>Journal of the American Chemical Society</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/27192616/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Kruegel, A.C. et al. (2019). 7-Hydroxymitragynine is an active metabolite of mitragynine and a key mediator of its analgesic effects. <i>ACS Central Science</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/31263758/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Grundmann, O. (2017). Patterns of kratom use and health impact in the US — results from an online survey (8,049 users). <i>Drug and Alcohol Dependence</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/28521200/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Garcia-Romeu, A. et al. (2020). Kratom (Mitragyna speciosa): user demographics, use patterns, and implications for the opioid epidemic. <i>Drug and Alcohol Dependence</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/32029298/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Henningfield, J.E., Fant, R.V. &amp; Wang, D.W. (2018). The abuse potential of kratom according to the 8 factors of the Controlled Substances Act. <i>Psychopharmacology</i>. <a href="https://link.springer.com/article/10.1007/s00213-017-4813-4" target="_blank" rel="noopener">Springer</a></li>
-    <li>Ho, N.P., Hiranita, T. et al. (2022). The lack of contribution of 7-hydroxymitragynine to the antinociceptive effects of mitragynine in mice. <i>Drug Metabolism and Disposition</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/34759012/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Behnood-Rod, A. et al. (2020). Evaluation of the rewarding effects of mitragynine and 7-hydroxymitragynine in an intracranial self-stimulation procedure in rats. <i>Drug and Alcohol Dependence</i>. <a href="https://psycnet.apa.org/record/2020-69940-001" target="_blank" rel="noopener">APA PsycNet</a></li>
-    <li>Sengnon, N. et al. (2023). Seasonal and geographic variation in alkaloid content of kratom from Thailand (745 samples; mitragynine 0.31–4.94% by season and region). <i>Plants</i>. <a href="https://www.mdpi.com/2223-7747/12/4/949/pdf" target="_blank" rel="noopener">MDPI (PDF)</a></li>
-    <li>Preliminary examination of mitragynine and 7-hydroxymitragynine synthesis in response to production environment and postharvest techniques of Mitragyna speciosa (2020). <i>Acta Horticulturae</i> 1274. <a href="https://ishs.org/ishs-article/1274_10/" target="_blank" rel="noopener">ISHS</a></li>
-    <li>Huisman, G. et al. (2023). Examining the psychoactive differences between kratom strains. <i>International Journal of Environmental Research and Public Health</i> 20:6425. <a href="https://www.mdpi.com/1660-4601/20/14/6425" target="_blank" rel="noopener">MDPI</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/28830758/" target="_blank" rel="noopener"><b>Kruegel, A.C. &amp; Grundmann, O. (2018)</b></a>. The medicinal chemistry and neuropharmacology of kratom. <i>Neuropharmacology</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/28830758/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/27192616/" target="_blank" rel="noopener"><b>Kruegel, A.C. et al. (2016)</b></a>. Synthetic and receptor signaling explorations of the Mitragyna alkaloids. <i>Journal of the American Chemical Society</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/27192616/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/31263758/" target="_blank" rel="noopener"><b>Kruegel, A.C. et al. (2019)</b></a>. 7-Hydroxymitragynine is an active metabolite of mitragynine and a key mediator of its analgesic effects. <i>ACS Central Science</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/31263758/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/28521200/" target="_blank" rel="noopener"><b>Grundmann, O. (2017)</b></a>. Patterns of kratom use and health impact in the US — results from an online survey (8,049 users). <i>Drug and Alcohol Dependence</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/28521200/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/32029298/" target="_blank" rel="noopener"><b>Garcia-Romeu, A. et al. (2020)</b></a>. Kratom (Mitragyna speciosa): user demographics, use patterns, and implications for the opioid epidemic. <i>Drug and Alcohol Dependence</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/32029298/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://link.springer.com/article/10.1007/s00213-017-4813-4" target="_blank" rel="noopener"><b>Henningfield, J.E., Fant, R.V. &amp; Wang, D.W. (2018)</b></a>. The abuse potential of kratom according to the 8 factors of the Controlled Substances Act. <i>Psychopharmacology</i>. <a href="https://link.springer.com/article/10.1007/s00213-017-4813-4" target="_blank" rel="noopener">Springer</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/34759012/" target="_blank" rel="noopener"><b>Ho, N.P., Hiranita, T. et al. (2022)</b></a>. The lack of contribution of 7-hydroxymitragynine to the antinociceptive effects of mitragynine in mice. <i>Drug Metabolism and Disposition</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/34759012/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://psycnet.apa.org/record/2020-69940-001" target="_blank" rel="noopener"><b>Behnood-Rod, A. et al. (2020)</b></a>. Evaluation of the rewarding effects of mitragynine and 7-hydroxymitragynine in an intracranial self-stimulation procedure in rats. <i>Drug and Alcohol Dependence</i>. <a href="https://psycnet.apa.org/record/2020-69940-001" target="_blank" rel="noopener">APA PsycNet</a></li>
+    <li><a class="wk-srcname" href="https://www.mdpi.com/2223-7747/12/4/949/pdf" target="_blank" rel="noopener"><b>Sengnon, N. et al. (2023)</b></a>. Seasonal and geographic variation in alkaloid content of kratom from Thailand (745 samples; mitragynine 0.31–4.94% by season and region). <i>Plants</i>. <a href="https://www.mdpi.com/2223-7747/12/4/949/pdf" target="_blank" rel="noopener">MDPI (PDF)</a></li>
+    <li><a class="wk-srcname" href="https://ishs.org/ishs-article/1274_10/" target="_blank" rel="noopener"><b>Preliminary examination of mitragynine and 7-hydroxymitragynine synthesis in response to production environment and postharvest techniques of Mitragyna speciosa (2020)</b></a>. <i>Acta Horticulturae</i> 1274. <a href="https://ishs.org/ishs-article/1274_10/" target="_blank" rel="noopener">ISHS</a></li>
+    <li><a class="wk-srcname" href="https://www.mdpi.com/1660-4601/20/14/6425" target="_blank" rel="noopener"><b>Huisman, G. et al. (2023)</b></a>. Examining the psychoactive differences between kratom strains. <i>International Journal of Environmental Research and Public Health</i> 20:6425. <a href="https://www.mdpi.com/1660-4601/20/14/6425" target="_blank" rel="noopener">MDPI</a></li>
   </ol>
   <h3>Authoritative References</h3>
   <ol>
-    <li>U.S. Food and Drug Administration — FDA and Kratom (official position page). <a href="https://www.fda.gov/news-events/public-health-focus/fda-and-kratom" target="_blank" rel="noopener">fda.gov</a></li>
-    <li>National Institute on Drug Abuse (NIDA) — Kratom research summary. <a href="https://nida.nih.gov/research-topics/kratom" target="_blank" rel="noopener">nida.nih.gov</a></li>
-    <li>National Center for Complementary and Integrative Health (NCCIH), NIH — Kratom evidence summary. <a href="https://www.nccih.nih.gov/health/kratom" target="_blank" rel="noopener">nccih.nih.gov</a></li>
-    <li>Veltri, C. &amp; Grundmann, O. (2019). Current perspectives on the impact of kratom use. <i>Substance Abuse and Rehabilitation</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/31308789/" target="_blank" rel="noopener">PubMed</a></li>
-    <li>Eastlack, S.C., Cornett, E.M. &amp; Kaye, A.D. (2020). Kratom — pharmacology, clinical implications, and outlook: a comprehensive review. <i>Pain and Therapy</i>. <a href="https://doi.org/10.1007/s40122-020-00151-x" target="_blank" rel="noopener">DOI</a></li>
-    <li>StatPearls — Kratom Toxicity and Withdrawal (NCBI Bookshelf, continuously updated). <a href="https://www.statpearls.com/point-of-care/148071" target="_blank" rel="noopener">StatPearls</a></li>
+    <li><a class="wk-srcname" href="https://www.fda.gov/news-events/public-health-focus/fda-and-kratom" target="_blank" rel="noopener"><b>U.S. Food and Drug Administration</b></a> — FDA and Kratom (official position page). <a href="https://www.fda.gov/news-events/public-health-focus/fda-and-kratom" target="_blank" rel="noopener">fda.gov</a></li>
+    <li><a class="wk-srcname" href="https://nida.nih.gov/research-topics/kratom" target="_blank" rel="noopener"><b>National Institute on Drug Abuse (NIDA)</b></a> — Kratom research summary. <a href="https://nida.nih.gov/research-topics/kratom" target="_blank" rel="noopener">nida.nih.gov</a></li>
+    <li><a class="wk-srcname" href="https://www.nccih.nih.gov/health/kratom" target="_blank" rel="noopener"><b>National Center for Complementary and Integrative Health (NCCIH), NIH</b></a> — Kratom evidence summary. <a href="https://www.nccih.nih.gov/health/kratom" target="_blank" rel="noopener">nccih.nih.gov</a></li>
+    <li><a class="wk-srcname" href="https://pubmed.ncbi.nlm.nih.gov/31308789/" target="_blank" rel="noopener"><b>Veltri, C. &amp; Grundmann, O. (2019)</b></a>. Current perspectives on the impact of kratom use. <i>Substance Abuse and Rehabilitation</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/31308789/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><a class="wk-srcname" href="https://doi.org/10.1007/s40122-020-00151-x" target="_blank" rel="noopener"><b>Eastlack, S.C., Cornett, E.M. &amp; Kaye, A.D. (2020)</b></a>. Kratom — pharmacology, clinical implications, and outlook: a comprehensive review. <i>Pain and Therapy</i>. <a href="https://doi.org/10.1007/s40122-020-00151-x" target="_blank" rel="noopener">DOI</a></li>
+    <li><a class="wk-srcname" href="https://www.statpearls.com/point-of-care/148071" target="_blank" rel="noopener"><b>StatPearls</b></a> — Kratom Toxicity and Withdrawal (NCBI Bookshelf, continuously updated). <a href="https://www.statpearls.com/point-of-care/148071" target="_blank" rel="noopener">StatPearls</a></li>
   </ol>
 </div>
 
 
-<footer class="site">Complete Strain Guide for WestKoast Botanicals · Independent Customer Research · October 2026</footer>
+<footer class="site">Complete Strain Guide for WestKoast Botanicals · Independent Customer Research · November 2026</footer>
 </div><!-- /wrap -->
 <script>
 document.querySelectorAll('.iconrow span').forEach(function(sp){
@@ -1103,6 +1256,7 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
   var v=parseFloat(b.textContent); if(isNaN(v)) return;
   var m=document.createElement('div'); m.className='meter';
   var i=document.createElement('i'); i.style.width=Math.round(v/5*100)+'%';
+  var em=sp.textContent; i.style.background=em.indexOf('\u26A1')>-1?'#E8E8E8':em.indexOf('\uD83D\uDE0A')>-1?'#10C000':em.indexOf('\uD83E\uDDD8')>-1?'#F0F000':em.indexOf('\uD83C\uDF19')>-1?'#E01020':'';
   m.appendChild(i); sp.appendChild(m);
 });
 </script>
@@ -1117,8 +1271,8 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
 </div>
 <script>
 (function(){
-  var COLORS = {energy:'#F59E0B', mood:'#2E7D4F', clarity:'#5BA3D9', calm:'#E8873A', relief:'#B03A3A'};
-  var LABELS = {energy:'High Energy', mood:'Mood & Well-being', clarity:'Balance & Clarity', calm:'Calm & Relaxation', relief:'Relief & Warmth'};
+  var COLORS = {energy:'#FFFFFF', focus:'#F06000', mood:'#10C000', calm:'#F0F000', analgesia:'#E01020', sleep:'#0A0A0A'};
+  var LABELS = {energy:'Energy', focus:'Focus', mood:'Mood', calm:'Calm', analgesia:'Analgesia', sleep:'Sleep'};
   var VEIN = {green:['#B5C49A','#2F3A24','#7A8F6A'], red:['#D98C8C','#4A1414','#B03A3A'], white:['#EDEDED','#333333','#BDBDBD'], gold:['#F2C94C','#4A3A10','#F2C94C'], yellow:['#F2C94C','#4A3A10','#F2C94C']};
   var modal = document.getElementById('donut-modal');
   var box = document.getElementById('donut-modal-box');
@@ -1136,7 +1290,7 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
       var x0=cx+R*Math.cos(a0), y0=cy+R*Math.sin(a0), x1=cx+R*Math.cos(a1), y1=cy+R*Math.sin(a1);
       var ix0=cx+r*Math.cos(a0), iy0=cy+r*Math.sin(a0), ix1=cx+r*Math.cos(a1), iy1=cy+r*Math.sin(a1);
       var large = sweep > 180 ? 1 : 0;
-      svg += '<path d="M'+x0+','+y0+' A'+R+','+R+' 0 '+large+' 1 '+x1+','+y1+' L'+ix1+','+iy1+' A'+r+','+r+' 0 '+large+' 0 '+ix0+','+iy0+' Z" fill="'+COLORS[e[0]]+'" stroke="white" stroke-width="2"/>';
+      svg += '<path d="M'+x0+','+y0+' A'+R+','+R+' 0 '+large+' 1 '+x1+','+y1+' L'+ix1+','+iy1+' A'+r+','+r+' 0 '+large+' 0 '+ix0+','+iy0+' Z" fill="'+COLORS[e[0]]+'" stroke="'+(e[0]==='energy'?'#9a9a9a':'white')+'" stroke-width="2"/>';
       start += sweep;
     });
     segs.forEach(function(s){
@@ -1147,7 +1301,7 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
         var tx = cx+R+24;
         svg += '<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
         svg += '<line x1="'+x1+'" y1="'+y1+'" x2="'+(tx-4)+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
-        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="white"/>';
+        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="'+(s.k==='energy'?'#9a9a9a':'white')+'"/>';
         svg += '<text x="'+tx+'" y="'+(y1-4)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#222">'+label+'</text>';
         svg += '<text x="'+tx+'" y="'+(y1+16)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="14" fill="#555">'+pct+'</text>';
       } else {
@@ -1155,7 +1309,7 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
         var tx2 = cx-R-24-tw;
         svg += '<line x1="'+x0+'" y1="'+y0+'" x2="'+x1+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
         svg += '<line x1="'+x1+'" y1="'+y1+'" x2="'+(tx2+tw+4)+'" y2="'+y1+'" stroke="#888" stroke-width="1.5"/>';
-        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="white"/>';
+        svg += '<circle cx="'+x0+'" cy="'+y0+'" r="4" fill="'+COLORS[s.k]+'" stroke="'+(s.k==='energy'?'#9a9a9a':'white')+'"/>';
         svg += '<text x="'+tx2+'" y="'+(y1-4)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#222">'+label+'</text>';
         svg += '<text x="'+tx2+'" y="'+(y1+16)+'" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="14" fill="#555">'+pct+'</text>';
       }
@@ -1174,11 +1328,22 @@ document.querySelectorAll('.iconrow span').forEach(function(sp){
       modal.style.display = 'flex';
     });
   });
+  var PANELMIX = {white:[['energy',40],['focus',60]], green:[['energy',35],['mood',30],['calm',35]], yellow:[['calm',45],['analgesia',35],['mood',20]], red:[['analgesia',50],['calm',30],['sleep',20]]};
+  var PANELNAME = {white:'White Vein \u2014 the typical mix', green:'Green Vein \u2014 the typical mix', yellow:'Yellow Vein \u2014 the typical mix', red:'Red Vein \u2014 the typical mix'};
+  document.querySelectorAll('.panel').forEach(function(p){
+    var key = (p.className.match(/p-(white|green|yellow|red)/)||[])[1]; if(!key) return;
+    var a = p.querySelector('.pbody a'); if(!a) return;
+    a.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      box.innerHTML = renderDonut(PANELNAME[key], {vein: key, effects: PANELMIX[key], caption: 'The typical mix for this vein \u2014 tap any strain\u2019s own pie for its personal profile.'});
+      modal.style.display = 'flex';
+    });
+  });
   modal.addEventListener('click', function(){ modal.style.display = 'none'; });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
 })();
 </script>
-<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Quick Pick Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
+<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Kratom Picker Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
 
 <script>
 /* ---- theme: light is ALWAYS the default; dark lasts only for this visit, never persisted ---- */
@@ -1188,11 +1353,10 @@ document.addEventListener('DOMContentLoaded',function(){upd();var b=document.get
 })();
 /* ---- index collapse ---- */
 document.addEventListener('DOMContentLoaded',function(){var idx=document.querySelector('.index');if(!idx)return;var btn=idx.querySelector('h2 .icobtn');if(!btn)return;btn.title='Open the index';btn.addEventListener('click',function(){idx.classList.toggle('open');btn.title=idx.classList.contains('open')?'Close the index':'Open the index';});});
-/* ---- section collapse: sections start OPEN; the band button collapses/opens. Only strain cards start collapsed. Vein Colors (data-notoggle) never collapses. ---- */
+/* ---- section collapse: sections start OPEN; every band button collapses/opens its section. Only strain cards start collapsed. ---- */
 document.addEventListener('DOMContentLoaded',function(){
   var bands=Array.prototype.slice.call(document.querySelectorAll('.colorband'));
   bands.forEach(function(band){
-    if(band.hasAttribute('data-notoggle'))return;
     var wrap=document.createElement('div');wrap.className='wcsec';
     band.parentNode.insertBefore(wrap,band.nextSibling);
     while(wrap.nextSibling){
@@ -1205,15 +1369,6 @@ document.addEventListener('DOMContentLoaded',function(){
     band.classList.add('open');
     band._wcSet=function(open){wrap.hidden=!open;band.classList.toggle('open',!!open);if(btn){btn.setAttribute('aria-expanded',open?'true':'false');btn.title=open?'Close this section':'Open this section';}};
     if(btn){btn.setAttribute('aria-expanded','true');btn.title='Close this section';btn.addEventListener('click',function(){band._wcSet(wrap.hidden);});}
-  });
-  document.querySelectorAll('.colorband[data-notoggle]').forEach(function(band){
-    var box=document.createElement('div');box.className='wk-open';
-    band.parentNode.insertBefore(box,band.nextSibling);
-    while(box.nextSibling){
-      var nx=box.nextSibling;
-      if(nx.nodeType===1&&(nx.classList.contains('colorband')||nx.tagName==='FOOTER'))break;
-      box.appendChild(nx);
-    }
   });
   function openTarget(){
     var id=location.hash?location.hash.slice(1):'';if(!id)return;
@@ -1229,12 +1384,12 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 <script>
-/* ---- Quick Pick wheel (WestKoast pool, built from this guide's own rated cards) ---- */
+/* ---- Kratom Picker wheel (WestKoast pool, built from this guide's own rated cards) ---- */
 (function(){
-var S=[{"n": "Red Fuzzy Blanket", "v": "Red Strains", "b": "0926 · Custom Blend", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 5, "col": "red", "sp": "Slow", "w": "warm, heavy comfort red for the end of the day", "x": false}, {"n": "Red Bent", "v": "Red Strains", "b": "0726 · Heavy Ferment", "e": 2, "m": 4, "c": 0, "ca": 5, "r": 4, "col": "red", "sp": "Slow", "w": "heavy-ferment red — half of the Pain Blend formula", "x": false}, {"n": "Red Magic", "v": "Red Strains", "b": "0926 · Unfermented", "e": 3, "m": 4, "c": 0, "ca": 4, "r": 4, "col": "red", "sp": "Mid-Slow", "w": "unfermented red — base leaf of Red Fuzzy Blanket", "x": false}, {"n": "Chocolate", "v": "Red Strains", "b": "Red Java · House Red", "e": 2, "m": 4, "c": 0, "ca": 4, "r": 4, "col": "red", "sp": "Mid-Slow", "w": "Red Java-line house red, replaces Nano Red Java", "x": false}, {"n": "Green Bali", "v": "Green Strains", "b": "1026 · Current Harvest", "e": 4, "m": 5, "c": 0, "ca": 4, "r": 2, "col": "green", "sp": "Mid-Fast", "w": "classic balanced green: uplifted mood, clean energy", "x": false}, {"n": "Green Lightning", "v": "Green Strains", "b": "0926", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Fast", "w": "uplifting mid, mood, focus — no jitters", "x": false}, {"n": "Mean Green", "v": "Green Strains", "b": "0626", "e": 4, "m": 5, "c": 0, "ca": 4, "r": 2, "col": "green", "sp": "Mid-Fast", "w": "moderate energy, substantial analgesia — a workhorse", "x": false}, {"n": "Nano Green Devil", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Mid-Fast", "w": "zero anxiety, clean energy and mood boost", "x": false}, {"n": "Nano Green Vietnam", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Fast", "w": "fast-onset green — hits hard, very cerebral", "x": false}, {"n": "Nano Green Monster", "v": "Green Strains", "b": "0726 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Mid-Fast", "w": "mid/fast mood green — nano grind", "x": false}, {"n": "Nano Green Maeng Da", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "green", "sp": "Fast", "w": "potent, driven, clean — freshest in the game", "x": false}, {"n": "White Hulk", "v": "White Strains", "b": "0526 / 0726", "e": 5, "m": 5, "c": 0, "ca": 2, "r": 1, "col": "white", "sp": "Fast", "w": "get up and go without the jittery feeling", "x": false}, {"n": "White Lemon", "v": "White Strains", "b": "1026 · Current Harvest", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "col": "white", "sp": "Fast", "w": "good energy without the jitters — uplifts mood", "x": false}, {"n": "White Ultra", "v": "White Strains", "b": "1026 · Current Harvest", "e": 5, "m": 4, "c": 0, "ca": 2, "r": 1, "col": "white", "sp": "Fast", "w": "fast white — calm mood, short peak", "x": false}, {"n": "Black MD", "v": "Golds, Yellows & Blends", "b": "0726 · Coffee-Soaked Specialty", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 4, "col": "gold", "sp": "Slow", "w": "coffee-ground-soaked leaf — most distinctive prep", "x": false}, {"n": "Yellow Boyan", "v": "Golds, Yellows & Blends", "b": "Yellow/Gold Vein · Mixer", "e": 2, "m": 4, "c": 0, "ca": 5, "r": 3, "col": "gold", "sp": "Slow", "w": "slow, relaxing cozy — great mixed with reds", "x": false}, {"n": "Pain Blend Original", "v": "Golds, Yellows & Blends", "b": "Red Bent + Yellow Boyan · SOLD OUT", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 4, "col": "blend", "sp": "Slow", "w": "red bent + yellow boyan — the pain blend", "x": false}, {"n": "Energy Mood", "v": "Golds, Yellows & Blends", "b": "0926 · White + Green Blend", "e": 4, "m": 4, "c": 0, "ca": 3, "r": 1, "col": "blend", "sp": "Mid-Fast", "w": "white and green blend", "x": false}, {"n": "Hug The Kids", "v": "Golds, Yellows & Blends", "b": "0926 · House Blend", "e": 3, "m": 5, "c": 0, "ca": 4, "r": 3, "col": "blend", "sp": "Mid", "w": "warm prosocial blend — no written reports yet", "x": false}];
+var S=[{"n": "Red Fuzzy Blanket", "v": "Red Strains", "b": "0926 · Custom Blend", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 5, "s": 5, "col": "red", "sp": "Slow", "w": "warm, heavy comfort red for the end of the day", "x": false}, {"n": "Red Bent", "v": "Red Strains", "b": "0726 · Heavy Ferment", "e": 2, "m": 4, "c": 0, "ca": 5, "r": 4, "s": 4, "col": "red", "sp": "Slow", "w": "heavy-ferment red — half of the Pain Blend formula", "x": false}, {"n": "Red Magic", "v": "Red Strains", "b": "0926 · Unfermented", "e": 3, "m": 4, "c": 0, "ca": 4, "r": 4, "s": 4, "col": "red", "sp": "Mid-Slow", "w": "unfermented red — base leaf of Red Fuzzy Blanket", "x": false}, {"n": "Chocolate", "v": "Red Strains", "b": "Red Java · House Red", "e": 2, "m": 4, "c": 0, "ca": 4, "r": 4, "s": 4, "col": "red", "sp": "Mid-Slow", "w": "Red Java-line house red, replaces Nano Red Java", "x": false}, {"n": "Green Bali", "v": "Green Strains", "b": "1026 · Current Harvest", "e": 4, "m": 5, "c": 0, "ca": 4, "r": 2, "s": 3, "col": "green", "sp": "Mid-Fast", "w": "classic balanced green: uplifted mood, clean energy", "x": false}, {"n": "Green Lightning", "v": "Green Strains", "b": "0926", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "green", "sp": "Fast", "w": "uplifting mid, mood, focus — no jitters", "x": false}, {"n": "Mean Green", "v": "Green Strains", "b": "0626", "e": 4, "m": 5, "c": 0, "ca": 4, "r": 2, "s": 3, "col": "green", "sp": "Mid-Fast", "w": "moderate energy, substantial analgesia — a workhorse", "x": false}, {"n": "Nano Green Devil", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "green", "sp": "Mid-Fast", "w": "zero anxiety, clean energy and mood boost", "x": false}, {"n": "Nano Green Vietnam", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "green", "sp": "Fast", "w": "fast-onset green — hits hard, very cerebral", "x": false}, {"n": "Nano Green Monster", "v": "Green Strains", "b": "0726 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "green", "sp": "Mid-Fast", "w": "mid/fast mood green — nano grind", "x": false}, {"n": "Nano Green Maeng Da", "v": "Green Strains", "b": "0926 · Nano-Grind", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "green", "sp": "Fast", "w": "potent, driven, clean — freshest in the game", "x": false}, {"n": "White Hulk", "v": "White Strains", "b": "0526 / 0726", "e": 5, "m": 5, "c": 0, "ca": 2, "r": 1, "s": 2, "col": "white", "sp": "Fast", "w": "get up and go without the jittery feeling", "x": false}, {"n": "White Lemon", "v": "White Strains", "b": "1026 · Current Harvest", "e": 4, "m": 5, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "white", "sp": "Fast", "w": "good energy without the jitters — uplifts mood", "x": false}, {"n": "White Ultra", "v": "White Strains", "b": "1026 · Current Harvest", "e": 5, "m": 4, "c": 0, "ca": 2, "r": 1, "s": 2, "col": "white", "sp": "Fast", "w": "fast white — calm mood, short peak", "x": false}, {"n": "Black MD", "v": "Golds, Yellows & Blends", "b": "0726 · Coffee-Soaked Specialty", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 4, "s": 4, "col": "gold", "sp": "Slow", "w": "coffee-ground-soaked leaf — most distinctive prep", "x": false}, {"n": "Yellow Boyan", "v": "Golds, Yellows & Blends", "b": "Yellow/Gold Vein · Mixer", "e": 2, "m": 4, "c": 0, "ca": 5, "r": 3, "s": 4, "col": "gold", "sp": "Slow", "w": "slow, relaxing cozy — great mixed with reds", "x": false}, {"n": "Pain Blend Original", "v": "Golds, Yellows & Blends", "b": "Red Bent + Yellow Boyan · SOLD OUT", "e": 2, "m": 5, "c": 0, "ca": 5, "r": 4, "s": 5, "col": "blend", "sp": "Slow", "w": "red bent + yellow boyan — the pain blend", "x": false}, {"n": "Energy Mood", "v": "Golds, Yellows & Blends", "b": "0926 · White + Green Blend", "e": 4, "m": 4, "c": 0, "ca": 3, "r": 1, "s": 2, "col": "blend", "sp": "Mid-Fast", "w": "white and green blend", "x": false}, {"n": "Hug The Kids", "v": "Golds, Yellows & Blends", "b": "0926 · House Blend", "e": 3, "m": 5, "c": 0, "ca": 4, "r": 3, "s": 3, "col": "blend", "sp": "Mid", "w": "warm prosocial blend — no written reports yet", "x": false}];
 var W={calm:{e:-3,m:1,c:0,ca:3,r:0},energy:{e:3,m:1,c:1,ca:-1,r:0},focus:{e:2,m:0,c:0,ca:0,r:-1},mood:{e:1,m:3,c:0,ca:1,r:0},relief:{e:0,m:0,c:0,ca:1,r:3},sleep:{e:-3,m:0,c:0,ca:3,r:2}};
-var DIMS=[['e','Energy','#F59E0B'],['m','Mood','#2E7D4F'],['c','Clarity','#5BA3D9'],['ca','Calm','#E8873A'],['r','Relief','#B03A3A']];
-var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Relief',calm:'Calm'};
+var DIMS=[['e','Energy','var(--fx-energy)'],['m','Mood','var(--fx-mood)'],['ca','Calm','var(--fx-calm)'],['r','Analgesia','var(--fx-analgesia)'],['s','Sleep','var(--fx-sleep)']];
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Analgesia',calm:'Calm'};
 var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
 function score(s,w){return s.e*w.e+s.m*w.m+s.c*w.c+s.ca*w.ca+s.r*w.r;}
 function rankedFor(sit){var w=W[sit];return S.map(function(s,i){return{s:s,i:i,sc:score(s,w)};}).sort(function(a,b){return b.sc-a.sc||a.i-b.i;}).map(function(x){return x.s;});}
@@ -1314,11 +1469,11 @@ document.addEventListener('click',function(e){var a=e.target.closest?e.target.cl
 </script>
 
 <script>
-/* ---- Quick Pick log viewer (on-device, wkQpHistory) ---- */
+/* ---- Kratom Picker log viewer (on-device, wkQpHistory) ---- */
 (function(){
 function hist(){try{return JSON.parse(localStorage.getItem('wkQpHistory')||'[]');}catch(e){return[];}}
 function save(h){try{localStorage.setItem('wkQpHistory',JSON.stringify(h));}catch(e){}}
-var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Relief',calm:'Calm'};
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Analgesia',calm:'Calm'};
 var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 function render(){var H=hist();var el=document.getElementById('logList');if(!el)return;
@@ -1328,7 +1483,7 @@ function render(){var H=hist();var el=document.getElementById('logList');if(!el)
  Array.prototype.forEach.call(el.querySelectorAll('.wc-logdel'),function(b){b.addEventListener('click',function(){var h=hist();h.splice(parseInt(b.getAttribute('data-i'),10),1);save(h);render();});});}
 function open(){var m=document.getElementById('logModal');if(!m)return;render();m.hidden=false;}
 function close(){var m=document.getElementById('logModal');if(m)m.hidden=true;}
-document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Quick Pick log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
+document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('wcLogBtn');if(b)b.addEventListener('click',open);var c=document.getElementById('logClose');if(c)c.addEventListener('click',close);var dn=document.getElementById('logDone');if(dn)dn.addEventListener('click',close);var cl=document.getElementById('logClear');if(cl)cl.addEventListener('click',function(){if(window.confirm('Clear your whole Kratom Picker log on this device?')){save([]);render();}});var m=document.getElementById('logModal');if(m)m.addEventListener('click',function(e){if(e.target===m)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});});
 })();
 </script>
 <script>
@@ -1395,6 +1550,152 @@ document.addEventListener('DOMContentLoaded',function(){
       });
       head.querySelectorAll('.wk-arrow').forEach(function(a){a.remove();});
       var s=document.createElement('span'); s.className='wk-arrow'; s.textContent=dir[idx]?'\u25B2':'\u25BC'; th.appendChild(s);
+    });
+  });
+});
+</script>
+
+<style id="wk-upgrade-11-02-26">
+:root{--fx-energy:#FFFFFF;--fx-energy-dk:#8A8A8A;--fx-focus:#F06000;--fx-focus-dk:#A63E00;--fx-mood:#10C000;--fx-mood-dk:#0A7300;--fx-calm:#F0F000;--fx-calm-dk:#8F8F00;--fx-analgesia:#E01020;--fx-analgesia-dk:#9E0C18;--fx-sleep:#0A0A0A;--fx-sleep-dk:#5A5A5A;--fx-default:#0070D0;--fx-default-dk:#004E96}
+/* legend: gloss circles (SS12.2/SS10) */
+.legend i{border-radius:50%;box-shadow:inset 0 2px 3px rgba(255,255,255,.75),inset 0 -3px 5px rgba(0,0,0,.30),0 1px 3px rgba(0,0,0,.35)}
+/* batch pills: full push-button gloss (SS10) */
+.wk-batchbtn{background-image:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,0) 55%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -3px 6px rgba(0,0,0,.16),0 2px 5px rgba(0,0,0,.18)}
+.wk-batchbtn:active{transform:translateY(1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 3px rgba(0,0,0,.18),0 1px 2px rgba(0,0,0,.2)}
+/* pull-quotes: lavender + italic #555 (SS20.2) */
+.quote{background:#EDE9F7;color:#555}
+/* tables: one cohesive bordered unit (SS17.4) */
+table.grid{border:2.5px solid #23402f;border-radius:12px;border-collapse:separate;border-spacing:0;overflow:hidden}
+html.dark table.grid{border-color:#3C463A}
+/* batch groups (SS17.2) */
+.wk-batchgroup{border:2.5px solid #23402f;border-radius:12px;overflow:hidden;margin:14px 0;background:#fff;box-shadow:0 2px 8px rgba(30,50,35,.10)}
+.wk-batchgroup>h4{margin:0;padding:10px 14px;background:#e6f2ea;color:#23402f;font:700 15px Outfit,sans-serif}
+.wk-batchgroup>h4 .wk-bcount{font:600 11.5px 'DM Sans',sans-serif;color:#5c7263;margin-left:8px}
+.wk-batchgroup table.grid{border:0;border-radius:0;margin:0;box-shadow:none}
+.wk-batchgroup .wk-bnote{padding:8px 14px 12px;font:italic 500 12.5px 'DM Sans',sans-serif;color:#6d6455}
+html.dark .wk-batchgroup{background:#232A22;border-color:#3C463A}
+html.dark .wk-batchgroup>h4{background:#2C362C;color:#D8E6CF}
+/* MIT fill-only bars (SS17.5) */
+.wk-mit{display:block;height:6px;margin-top:4px}
+.wk-mit i{display:block;height:100%;border-radius:3px}
+/* spectrum map (SS14/SS1.1.5) */
+.wk-spec{border:1.5px solid #d8cfb8;border-radius:14px;background:#FFF9EC;padding:12px 14px 8px;margin:12px 0 4px;box-shadow:0 2px 8px rgba(30,50,35,.08)}
+.wk-shead{display:flex;justify-content:space-between;font:600 11px 'DM Sans',sans-serif;color:#6d6455;margin-bottom:6px}
+.wk-lane{position:relative;height:30px;border-top:1px solid #e7dfc9}
+.wk-lane>span{position:absolute;left:0;top:50%;transform:translateY(-50%);font:700 10px Outfit,sans-serif;letter-spacing:.4px;width:58px}
+.wk-track{position:absolute;left:64px;right:8px;top:50%;height:3px;transform:translateY(-50%);background:linear-gradient(90deg,#5c6bc0,#26a69a 30%,#7cb342 55%,#FFD800 78%,#ef6c00);opacity:.45;border-radius:2px}
+.wk-rail{position:absolute;left:64px;right:8px;top:0;bottom:0}
+.wk-rail .wk-track{left:0;right:0}
+.wk-dot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);background:#fffdf6;border:3px solid;box-shadow:0 1px 3px rgba(0,0,0,.3);z-index:2}
+.wk-dot.sleepdot{background:#0A0A0A;border-color:#5A5A5A}
+html.dark .wk-spec{background:#232A22;border-color:#3C463A}
+html.dark .wk-lane{border-top-color:#3C463A}
+/* per-card spectrum bar (SS1.1.1) */
+.wk-specrow{display:flex;align-items:center;gap:8px;margin:9px 0 2px;font:600 11px 'DM Sans',sans-serif;color:#6d6455}
+.wk-specrow .specbar{position:relative;flex:1;height:8px;border-radius:5px;background:linear-gradient(90deg,#5c6bc0,#26a69a 30%,#7cb342 55%,#FFD800 78%,#ef6c00)}
+.wk-specrow .specmark{position:absolute;top:50%;width:4px;height:16px;background:#1d1a14;border:1.5px solid #fff;border-radius:2px;transform:translate(-50%,-50%);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+html.dark .wk-specrow{color:#A9B39B}
+/* fuzzy search (SS6.8, prototype pattern) */
+.wc-search{margin:10px auto 2px;max-width:640px;text-align:left}
+.wc-search input{width:100%;box-sizing:border-box;padding:11px 14px;border:2px solid #17452A;border-radius:12px;font:500 15px 'DM Sans',sans-serif;background:#fff;color:#2e2a24}
+.wc-sresults{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.wc-sres{display:flex;justify-content:space-between;gap:10px;align-items:center;text-align:left;padding:9px 12px;border-radius:10px;border:1.5px solid #17452A;background:linear-gradient(180deg,#FFFDF4,#FFF3D6);cursor:pointer;font:700 13.5px Outfit,sans-serif;color:#23402f;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 2px 5px rgba(0,0,0,.15)}
+.wc-sres:active{transform:translateY(1px)}
+.wc-sres small{font:500 11.5px 'DM Sans',sans-serif;color:#6d6455}
+.wc-snone{font:italic 500 13px 'DM Sans',sans-serif;color:#6d6455;padding:4px 2px}
+html.dark .wc-search input{background:#232A22;color:#EFE9D8;border-color:#7BAF6E}
+html.dark .wc-sres{background:linear-gradient(180deg,#2C362C,#232A22);color:#D8E6CF;border-color:#7BAF6E}
+html.dark .wc-sres small{color:#A9B39B}
+/* panel typical-mix hint (SS16) */
+.pchart-hint{font:500 11.5px 'DM Sans',sans-serif;color:#6d6455;text-align:center;margin-top:2px}
+html.dark .pchart-hint{color:#A9B39B}
+/* title badges: gloss press (SS10) */
+.pill{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 4px rgba(0,0,0,.14),0 2px 5px rgba(0,0,0,.15)}
+.pill:active{transform:translateY(1px)}
+/* picker: white Energy node keeps readable text when lit (SS9/SS13) */
+.qp-node[data-sit="energy"].on{color:#33302a;text-shadow:none}
+.qp-rbar i{border:1px solid rgba(0,0,0,.28)}
+/* bibliography linked source names (SS21.3) */
+.biblio a.wk-srcname{font-weight:700}
+@media print{.wc-search{display:none}.wk-specrow .specmark,.wk-dot{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+<script>
+/* ---- fuzzy strain search (SS6.8): substring + subsequence + small-typo tolerance ---- */
+(function(){
+  function norm(s){return String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+  function lev(a,b){var m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;var d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++){d[0][j]=j;}for(i=1;i<=m;i++){for(j=1;j<=n;j++){d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));}}return d[m][n];}
+  function subseq(q,s){var i=0;for(var j=0;j<s.length&&i<q.length;j++){if(s[j]===q[i])i++;}return i===q.length;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('wcSearchBtn'),panel=document.getElementById('wcSearch'),input=document.getElementById('wcSearchInput'),res=document.getElementById('wcSearchResults');
+    if(!btn||!panel||!input||!res)return;
+    var VEINL={red:'Red',green:'Green',white:'White',gold:'Gold / Yellow',blend:'Blend'};
+    var cards=Array.prototype.map.call(document.querySelectorAll('.strain'),function(c){
+      var h3=c.querySelector('h3');
+      return {id:c.id,name:h3?h3.textContent.trim():'',vein:(c.className.match(/strain (red|green|white|gold|blend)/)||[])[1]||''};
+    });
+    function render(){
+      var q=norm(input.value);
+      if(!q){res.innerHTML='<div class="wc-snone">Type to search all '+cards.length+' strain cards.</div>';return;}
+      var hits=cards.filter(function(c){
+        var n=norm(c.name);
+        if(n.indexOf(q)>-1)return true;
+        if(subseq(q.replace(/ /g,''),n.replace(/ /g,'')))return true;
+        return q.split(' ').some(function(t){return t.length>2&&n.split(' ').some(function(w){return lev(t,w)<=2;});});
+      }).slice(0,8);
+      res.innerHTML='';
+      if(!hits.length){res.innerHTML='<div class="wc-snone">No strain matches that spelling \u2014 try a shorter one.</div>';return;}
+      hits.forEach(function(c){
+        var b=document.createElement('button');b.type='button';b.className='wc-sres';
+        var s1=document.createElement('span');s1.textContent=c.name;
+        var s2=document.createElement('small');s2.textContent=VEINL[c.vein]||'';
+        b.appendChild(s1);b.appendChild(s2);
+        b.addEventListener('click',function(){location.hash=c.id;});
+        res.appendChild(b);
+      });
+    }
+    btn.addEventListener('click',function(){panel.hidden=!panel.hidden;if(!panel.hidden){render();input.focus();}});
+    input.addEventListener('input',render);
+    input.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.hidden=true;}});
+  });
+})();
+</script>
+<script>
+/* ---- click-card return (SS1.1.2): after arriving from the spectrum map, clicking the card glides back ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  var KEY='wkFromMap';
+  function armed(){try{return sessionStorage.getItem(KEY);}catch(e){return null;}}
+  document.querySelectorAll('#specmap a.wk-dot').forEach(function(d){
+    d.addEventListener('click',function(){try{sessionStorage.setItem(KEY,d.getAttribute('href').slice(1));}catch(e){}});
+  });
+  document.querySelectorAll('.strain').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(armed()!==card.id)return;
+      if(e.target.closest('a,button,input,select,textarea,.donut-trigger'))return;
+      try{sessionStorage.removeItem(KEY);}catch(err){}
+      var m=document.getElementById('specmap');
+      if(m){try{history.replaceState(null,'','#specmap');}catch(err){}m.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>
+<script>
+/* ---- Batch Index tables: sortable by column (SS17.2) ---- */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table.wk-sortable').forEach(function(t){
+    var last=-1,dir=1;
+    Array.prototype.forEach.call(t.querySelectorAll('th'),function(th,ci){
+      th.style.cursor='pointer';th.title='Sort by this column';
+      th.addEventListener('click',function(){
+        dir=(last===ci)?-dir:1;last=ci;
+        var rows=Array.prototype.slice.call(t.querySelectorAll('tr')).slice(1);
+        rows.sort(function(a,b){
+          var x=a.children[ci].textContent.trim(),y=b.children[ci].textContent.trim();
+          var nx=parseFloat(x),ny=parseFloat(y);
+          return ((!isNaN(nx)&&!isNaN(ny))?(nx-ny):x.localeCompare(y))*dir;
+        });
+        rows.forEach(function(r){t.appendChild(r);});
+      });
     });
   });
 });
