@@ -65,6 +65,19 @@ body.dark .harm{background:#2A1818}
 footer{text-align:center;color:var(--sub);font-size:.85rem;margin-top:36px}
 @media(max-width:640px){.hero h1{font-size:1.62rem}.band{font-size:1.08rem}}
 @media print{@page{size:Letter;margin:.5in}body{background:#fff;padding:0}.top-row{display:none!important}[hidden]{display:block!important}.sec-body{display:block!important}.band-btn{display:none}.stat,.harm,.sec-body{break-inside:avoid}}
+
+button.chip{cursor:pointer}button.chip:active{transform:translateY(2px)}
+.step-card{display:flex;gap:13px;background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:13px 15px;margin:10px 0}
+.step-num{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:linear-gradient(180deg,#0D9488,#0F766E);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 2px rgba(255,255,255,.5),inset 0 -3px 5px rgba(0,0,0,.3),0 3px 6px rgba(15,118,110,.35)}
+.step-card h4{font-size:1.02rem;color:var(--ink);margin-bottom:2px}
+.step-card p{margin:0;font-size:.95rem}
+.never{color:#B91C1C;font-weight:800}
+.dose-pill{display:inline-block;font-family:'Outfit',sans-serif;font-weight:800;font-size:.9rem;border-radius:8px;padding:3px 11px;white-space:nowrap}
+.p1{background:#FEF3C7;color:#92400E}.p2{background:#FDE68A;color:#92400E}.p3{background:#FFEDD5;color:#C2410C}.p4{background:#FEE2E2;color:#B91C1C}
+.store-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:10px 0}
+.store-card{background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:11px 13px}
+.store-card h4{color:var(--bronze);font-size:.98rem;margin-bottom:2px}body.dark .store-card h4{color:var(--amber)}
+.store-card p{margin:0;font-size:.92rem}
 </style>
 
 <style id="melanotan-responsive-print-standard">
@@ -72,6 +85,7 @@ html,body{overflow-x:clip}
 @media(max-width:640px){
   .stat-row{grid-template-columns:1fr}
   .harm-grid{grid-template-columns:1fr}
+  .store-row{grid-template-columns:1fr}
   table{font-size:.84rem}
 }
 @media print{
@@ -81,7 +95,7 @@ html,body{overflow-x:clip}
   .top-row,.band-btn{display:none!important}
   [hidden]{display:block!important}
   .sec-body{display:block!important}
-  .stat,.harm,.sec-body,.fig{break-inside:avoid}
+  .stat,.harm,.sec-body,.fig,.step-card{break-inside:avoid}
 }
 </style>
 </head>
@@ -91,16 +105,16 @@ html,body{overflow-x:clip}
   <header class="hero">
     <h1>Melanotan I &amp; Melanotan II</h1>
     <p class="intro">Two peptides, one borrowed name — and almost nothing else in common.</p>
-    <p class="intro2">One became a licensed medicine. The other never did. This guide keeps them separate.</p>
+    <p class="intro2">The simple guide: what they are, how they're mixed, and how they're dosed.</p>
     <div class="chips">
-      <span class="chip" style="background:#0F766E;color:#fff">Melanotan I — Afamelanotide</span>
-      <span class="chip" style="background:#B91C1C;color:#fff">Melanotan II — Unapproved</span>
-      <span class="chip" style="background:#FDE68A">Same Parent Hormone: α-MSH</span>
+      <button class="chip" data-open-card="mt1" style="background:#0F766E;color:#fff">Melanotan I — Afamelanotide</button>
+      <button class="chip" data-open-card="mt2" style="background:#B91C1C;color:#fff">Melanotan II — Unapproved</button>
+      <button class="chip" data-open-card="injection" style="background:#FDE68A">How They're Used →</button>
     </div>
   </header>
-  <details class="index-box"><summary>Index</summary><ul><li><a href="#glance">The Two Compounds at a Glance</a></li><li><a href="#origins">Where They Came From</a></li><li><a href="#chemistry">The Chemistry, Side by Side</a></li><li><a href="#receptors">Receptors Decide Everything</a></li><li><a href="#injection">How They're Used — Injection, Reconstitution & Dosing</a></li><li><a href="#mt1">Melanotan I — Afamelanotide</a></li><li><a href="#mt2">Melanotan II — The Unapproved One</a></li><li><a href="#compare">Side by Side</a></li><li><a href="#practical">Practical Points</a></li><li><a href="#sources">Sources</a></li></ul></details>
+  <details class="index-box"><summary>Index</summary><ul><li><a href="#glance">The Two Compounds at a Glance</a></li><li><a href="#origins">Where They Came From</a></li><li><a href="#chemistry">The Chemistry, Side by Side</a></li><li><a href="#receptors">Receptors Decide Everything</a></li><li><a href="#injection">How They're Used — Reconstitution & Dosing</a></li><li><a href="#mt1">Melanotan I — Afamelanotide</a></li><li><a href="#mt2">Melanotan II — The Unapproved One</a></li><li><a href="#compare">Side by Side</a></li><li><a href="#practical">Practical Points</a></li><li><a href="#sources">Sources</a></li></ul></details>
 <section id="glance"><div class="band-wrap"><button class="band" data-toggle="body-glance" aria-expanded="true">The Two Compounds at a Glance<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-glance">
-<p class="lead">They share a name, a parent hormone, and almost nothing else. <mark>Melanotan I is a licensed medicine</mark> — afamelanotide, a prescription implant for one rare disease. <mark>Melanotan II is an unlicensed research chemical</mark> that has never been approved anywhere, for anything.</p>
+<p class="lead">They share a name and a parent hormone — and almost nothing else. <mark>Melanotan I</mark> is the gentle, skin-only original. <mark>Melanotan II</mark> is the stronger, wider-acting ring that also stirs up libido, appetite, and nausea. Both reach users the same way: a vial, mixed with water, injected under the skin.</p>
 
 <figure class="fig"><svg viewBox="0 0 880 300" font-family="Outfit, sans-serif">
 <text x="220" y="26" text-anchor="middle" font-size="19" font-weight="800" fill="#92400E">Melanotan I — a straight chain of 13</text>
@@ -139,19 +153,17 @@ html,body{overflow-x:clip}
 <text x="662" y="267" text-anchor="middle" font-size="13.5" fill="#6B5D4F">lactam bridge (Asp–Lys, dashed). MW 1024.2</text>
 </svg><figcaption>The two molecules at a glance. Same parent hormone, different engineering — a full-length chain built to last, versus a cut-down ring built to be potent everywhere at once.</figcaption></figure>
 
-<p>Both were engineered in the 1980s from α-MSH, the body's own tanning signal, because the natural hormone breaks down in minutes. Everything that separates them — effects, evidence, legality — flows from one design choice: Melanotan I was built to work mainly on the skin's pigment receptor. Melanotan II was built smaller and stronger, and it works on nearly all of them.</p>
 <div class="stat-row">
 <div class="stat"><div class="big">13</div><div class="cap">amino acids in Melanotan I — a full-length chain</div></div>
 <div class="stat"><div class="big">7</div><div class="cap">amino acids in Melanotan II — a cut-down ring</div></div>
-<div class="stat"><div class="big">1 of 5</div><div class="cap">melanocortin receptors Melanotan I mainly targets</div></div>
-<div class="stat"><div class="big">4 of 5</div><div class="cap">receptors Melanotan II activates at once</div></div>
-<div class="stat"><div class="big">0</div><div class="cap">countries where Melanotan II is an approved medicine</div></div>
+<div class="stat"><div class="big">1 of 5</div><div class="cap">receptors Melanotan I mainly works</div></div>
+<div class="stat"><div class="big">4 of 5</div><div class="cap">receptors Melanotan II works at once</div></div>
+<div class="stat"><div class="big">~$40–50</div><div class="cap">typical price of a 10 mg vial of either</div></div>
 </div>
 </div></section>
-<section id="origins"><div class="band-wrap"><button class="band" data-toggle="body-origins" aria-expanded="false">Where They Came From<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-origins" hidden>
-<p>At the University of Arizona in the 1980s, biologist Mac Hadley and chemist Victor Hruby set out to build a longer-lasting version of α-MSH — hoping a drug-induced tan might protect fair-skinned people from skin cancer. They made hundreds of variants.</p>
-<p><b>Melanotan I</b> (then called NDP-MSH) came first, reported in 1980: the full hormone with two surgical changes that made it roughly a thousand times more potent in early bioassays and far harder for the body to break down. <b>Melanotan II</b> followed in 1989 — just the hormone's active core, closed into a ring.</p>
-<p>Then their paths split. The first molecule was licensed to a company (Clinuvel) that spent decades running proper trials in light-sensitivity diseases. Melanotan II itself was never developed into a medicine — abandoned as a drug candidate, it was picked up by the internet.</p>
+<section id="origins"><div class="band-wrap"><button class="band" data-toggle="body-origins" aria-expanded="true">Where They Came From<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-origins">
+<p>In the 1980s, researchers at the University of Arizona built longer-lasting copies of α-MSH — the body's own tanning signal — hoping a drug-made tan might protect fair skin. <b>Melanotan I</b> came first (1980): the full hormone, toughened with two swaps. <b>Melanotan II</b> followed in 1989: just the active core, closed into a ring.</p>
+<p>Melanotan I went on to become a licensed medicine for a rare light-sensitivity disease. Melanotan II was never licensed anywhere — the internet adopted it instead.</p>
 
 <figure class="fig"><svg viewBox="0 0 880 170" font-family="Outfit, sans-serif">
 <line x1="30" y1="80" x2="850" y2="80" stroke="#92400E" stroke-width="3"/>
@@ -166,16 +178,14 @@ html,body{overflow-x:clip}
 </div></section>
 <section id="chemistry"><div class="band-wrap"><button class="band" data-toggle="body-chemistry" aria-expanded="false">The Chemistry, Side by Side<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-chemistry" hidden>
 <table><tr><th></th><th>Melanotan I · afamelanotide</th><th>Melanotan II</th></tr>
-<tr><td>Also called</td><td>MT-I, NDP-MSH, Scenesse® (the implant)</td><td>MT-II, MT-2</td></tr>
-<tr><td>Shape</td><td>Linear chain, 13 amino acids</td><td>Cyclic ring, 7 amino acids, lactam bridge</td></tr>
-<tr><td>Formula</td><td>C&#8327;&#8328;H&#8321;&#8321;&#8321;N&#8322;&#8321;O&#8321;&#8329;</td><td>C&#8325;&#8320;H&#8326;&#8329;N&#8321;&#8325;O&#8329;</td></tr>
+<tr><td>Also called</td><td>MT-I, NDP-MSH, Scenesse® (the medicine)</td><td>MT-II, MT-2</td></tr>
+<tr><td>Shape</td><td>Straight chain, 13 amino acids</td><td>Ring, 7 amino acids</td></tr>
 <tr><td>Weight</td><td>1646.85 g/mol</td><td>1024.2 g/mol</td></tr>
-<tr><td>CAS</td><td>75921-69-6</td><td>121062-08-6</td></tr>
-<tr><td>Relation to α-MSH</td><td>Full-length copy, 2 substitutions</td><td>The 4–10 fragment only, cyclised</td></tr></table>
-<p>The shared secret is the four-amino-acid core <b>His-Phe-Arg-Trp</b> — the sequence every melanocortin receptor recognises. Both molecules carry it. Melanotan I wraps it in the full hormone so it mostly speaks to one receptor; Melanotan II strips away everything that gave the hormone its selectivity, then locks the core into a ring that enzymes struggle to open. Smaller, tougher, and indiscriminate.</p>
+<tr><td>CAS</td><td>75921-69-6</td><td>121062-08-6</td></tr></table>
+<p>Both carry the same four-letter core — <b>His-Phe-Arg-Trp</b> — that every melanocortin receptor recognises. Melanotan I wraps it in the full hormone, so it mostly speaks to the skin. Melanotan II strips everything else away and locks the core in a ring: smaller, tougher, and heard by almost every receptor in the family.</p>
 </div></section>
 <section id="receptors"><div class="band-wrap"><button class="band" data-toggle="body-receptors" aria-expanded="false">Receptors Decide Everything<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-receptors" hidden>
-<p>Five melanocortin receptors, five different jobs. A drug's personality is simply the list of receptors it can reach.</p>
+<p>Five receptors, five jobs. A compound's personality is just the list of receptors it can reach:</p>
 
 <figure class="fig"><svg viewBox="0 0 880 330" font-family="Outfit, sans-serif">
 <text x="330" y="24" font-size="16" font-weight="800" fill="#292018">Receptor</text>
@@ -199,12 +209,16 @@ html,body{overflow-x:clip}
 <text x="440" y="318" text-anchor="middle" font-size="13" fill="#6B5D4F">● strong activity · ◐ moderate · ○ negligible, at the doses in question</text>
 </svg><figcaption>One row explains the whole guide. Melanotan I works the pigment row and leaves the rest alone; Melanotan II works four rows at once — including the brain rows that drive erections, appetite loss, nausea and blood pressure.</figcaption></figure>
 
-<p>The FDA's own label puts Melanotan I's profile in one careful phrase: it <i>binds predominantly to MC1R</i>. At the licensed dose, its clinical picture is a pigment picture — darker eumelanin, more light tolerance — and nothing else is claimed for it.</p>
-<p>Melanotan II is the pharmacology lab's reference <i>non-selective</i> agonist: potent at MC1R, MC3R, MC4R and MC5R in the same low-nanomolar range, with no useful selectivity window at any real-world dose. That is why one injection can tan the skin <i>and</i> cause an erection, kill appetite, trigger yawning and nausea, and nudge blood pressure — four receptor systems answering at once. Neither compound meaningfully activates MC2R, the adrenal cortisol receptor: whatever else they do, they are not steroid substitutes.</p>
-<div class="callout co-amber"><div class="co-t">The teaching point</div><p>Selectivity is not a detail — it is the difference between a medicine and a hazard profile. Keep MC1R and you get a tan. Keep MC4R too and you get everything the brain rows control.</p></div>
+<p><b>Melanotan I</b> works the pigment row and leaves the rest alone — a tan, and little else. <b>Melanotan II</b> works four rows at once, including the brain rows behind erections, appetite loss, nausea, and blood pressure. That one difference explains everything else in this guide.</p>
 </div></section>
-<section id="injection"><div class="band-wrap"><button class="band" data-toggle="body-injection" aria-expanded="false">How They're Used — Injection, Reconstitution & Dosing<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-injection" hidden>
-<p class="lead">In practice, both compounds reach users the same way: a freeze-dried vial, bacteriostatic water, and an insulin syringe, injected under the skin. This section is the mechanics — what is documented, what is merely reported, and where the two part company.</p>
+<section id="injection"><div class="band-wrap"><button class="band" data-toggle="body-injection" aria-expanded="true">How They're Used — Reconstitution & Dosing<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-injection">
+<p class="lead">Both compounds arrive as freeze-dried powder in a 10 mg vial. Here is the whole routine, start to finish.</p>
+<h3>Reconstitution Basics</h3>
+<p>Lyophilized (freeze-dried) melanotan must be reconstituted with <b>Bacteriostatic Water (BAC)</b> before use. Follow these standard sterile handling protocols:</p>
+<div class="step-card"><div class="step-num">1</div><div><h4>Prep &amp; Sanitize 🧼</h4><p>Wash hands thoroughly. Pop the plastic caps off both the melanotan vial and the BAC water vial. Swab both rubber stoppers with an alcohol prep pad and let air dry.</p></div></div>
+<div class="step-card"><div class="step-num">2</div><div><h4>Draw BAC Water 💉</h4><p>Using a sterile mixing syringe, draw <b>2 mL</b> of Bacteriostatic Water. (Adding 2 mL to a 10 mg vial yields a concentration of 1 mg per 0.2 mL / 20 units.)</p></div></div>
+<div class="step-card"><div class="step-num">3</div><div><h4>Inject &amp; Dissolve 💧</h4><p>Pierce the peptide vial. <b>Do not spray directly onto the powder.</b> Angle the needle so the water drips slowly down the glass wall of the vial to protect the fragile peptide bonds.</p></div></div>
+<div class="step-card"><div class="step-num">4</div><div><h4>Swirl Gently 🔄</h4><p><span class="never">NEVER SHAKE.</span> Gently roll or swirl the vial between your fingers until the solution is completely clear and dissolved. It is now ready for use — and goes straight into the refrigerator.</p></div></div>
 
 <figure class="fig"><svg viewBox="0 0 880 235" font-family="Outfit, sans-serif">
 <rect x="40" y="55" width="110" height="130" rx="12" fill="#F5E8D8" stroke="#92400E" stroke-width="2.5"/>
@@ -225,62 +239,56 @@ html,body{overflow-x:clip}
 <g font-size="12" text-anchor="middle" fill="#6B5D4F"><text x="206" y="218">5 units · 250 µg</text><text x="284" y="218">10 units · 500 µg</text><text x="388" y="218">20 units · 1 mg</text></g>
 </svg><figcaption>The standard reconstitution: a 10 mg vial with 2 mL of bacteriostatic water, read on a U-100 insulin syringe. Every dose figure in this guide uses this mix — change the water volume and every number changes with it.</figcaption></figure>
 
-<h3>Reconstitution, step by step</h3>
-<ul>
-<li>Swab the vial tops. Draw <b>2 mL of bacteriostatic water</b> and inject it slowly down the inside wall of the powder vial — a direct jet can damage the peptide.</li>
-<li>Swirl gently until fully dissolved and clear. <b>Never shake.</b> Cloudy or particle-filled solution is discarded.</li>
-<li>The mix is now <b>5 mg per mL</b>. Refrigerate immediately; the powder vial, before mixing, keeps in a cool dark place or freezer.</li>
-</ul>
 <table><tr><th>Dose</th><th>Volume (5 mg/mL mix)</th><th>U-100 insulin syringe</th></tr>
 <tr><td>250 micrograms</td><td>0.05 mL</td><td>5 units</td></tr>
 <tr><td>500 micrograms</td><td>0.10 mL</td><td>10 units</td></tr>
 <tr><td>750 micrograms</td><td>0.15 mL</td><td>15 units</td></tr>
 <tr><td>1 mg</td><td>0.20 mL</td><td>20 units</td></tr></table>
-<h3>The injection itself</h3>
-<ul>
-<li>Subcutaneous: pinched skin of the abdomen or thigh, needle at 45–90°, sites rotated. New sterile needle every time; sharps into a proper container.</li>
-<li>Evening dosing is the common pattern for Melanotan II — its nausea and flushing arrive within the first couple of hours.</li>
-</ul>
-<h3>Dosing schedules — documented vs reported</h3>
-<div class="callout co-red"><div class="co-t">Read this box first</div><p>No injection schedule for either compound has ever been approved or validated. The only doses on a regulatory record are the implant's 16 mg every 2 months and the experimental regimens below. Everything under "reported" is community practice — real patterns, zero verification — and every nominal dose is only as true as the vial, which independent testing has found holding 43–88% of its label claim.</p></div>
-<p><b>Melanotan II — documented:</b> the controlled trials dosed by body weight at <b>0.025 mg/kg/day</b> under the skin (about 1.75 mg for a 70 kg adult), on repeated days. Tanning appeared in 2 of 3 pilot subjects; nausea was dose-limiting and sometimes severe; erections were a trial <i>endpoint</i>, rigidity 38 vs 3 minutes against placebo.</p>
-<p><b>Melanotan II — reported:</b> a cautious first dose of <b>250 micrograms</b> to test reaction; then 500 micrograms to 1 mg daily through a "loading" stretch of days to weeks until colour develops; then a "maintenance" of 0.5–1 mg one to three times a week, often timed before sun exposure. Reported, not endorsed — the gap between the reported maintenance dose and the trial dose is itself a finding: nobody actually knows the right number.</p>
-<p><b>Melanotan I — documented:</b> only the implant (16 mg, every 2 months, EPP). No injection schedule has a trial or a label behind it.</p>
-<p><b>Melanotan I — reported:</b> injected afamelanotide is used in the same daily pattern as Melanotan II, typically 0.5–1 mg — reported practice only, for a molecule whose studied, regulated form is a two-month implant.</p>
+<p>The injection itself is subcutaneous: pinched skin of the abdomen or thigh, sites rotated, a fresh sterile needle every time. Evening dosing is the common pattern for Melanotan II — nausea and flushing, when they come, arrive in the first couple of hours.</p>
+<h3>Standard Dosing Schedule — Melanotan II</h3>
+<p>To build colour gradually and keep side effects down 🤢, users follow a step-up schedule, injecting <b>once daily</b> while loading:</p>
+<table><tr><th>Timeline</th><th>Daily Dose</th><th>Phase</th><th>Goal / Notes</th></tr>
+<tr><td><b>Days 1 – 2</b></td><td><span class="dose-pill p1">250 mcg</span></td><td>Test Dose</td><td>First exposure. Check your reaction — nausea, flushing, appetite — before going further.</td></tr>
+<tr><td><b>Days 3 – 7</b></td><td><span class="dose-pill p2">500 mcg</span></td><td>Loading</td><td>Daily, ideally in the evening. Colour begins to build with modest sun exposure.</td></tr>
+<tr><td><b>Week 2 +</b></td><td><span class="dose-pill p3">1 mg</span></td><td>Loading</td><td>Daily until the shade you want is reached. Most tans develop over 2–3 weeks.</td></tr>
+<tr><td><b>Ongoing</b></td><td><span class="dose-pill p4">0.5–1 mg</span></td><td>Maintenance</td><td>Once or twice a week holds the colour. More is not darker — it is just more side effects.</td></tr></table>
+<p style="font-size:.92rem">This is the community-standard schedule, not a medical one — no melanotan injection schedule is approved anywhere, and the only dose ever run in controlled trials was 0.025 mg/kg/day. Vial strength varies (independent testing found 43–88% of label in melanotan vials), which is exactly why the test dose comes first.</p>
+<h3>Melanotan I dosing</h3>
+<p>Melanotan I runs the <b>same routine at the same doses</b> — 500 mcg to 1 mg daily while loading, then once or twice a week — but slower and gentler: colour builds over weeks rather than days, with far less of the nausea, flushing, and libido effects. No separate ritual, no separate math.</p>
+<h3>Storage &amp; Handling</h3>
+<div class="store-row">
+<div class="store-card"><h4>🌡️ Temperature</h4><p>Store in the refrigerator (36°F to 46°F) both before and after reconstitution. Do not freeze a mixed vial.</p></div>
+<div class="store-card"><h4>🌑 Light Exposure</h4><p>Peptides are sensitive to UV light. Keep vials in their boxes or a dark container.</p></div>
+<div class="store-card"><h4>📅 Shelf Life</h4><p>Once mixed with BAC water, use the vial within <b>28 days</b> to ensure sterility and potency.</p></div>
+</div>
 </div></section>
 <section id="mt1"><div class="band-wrap"><button class="band" data-toggle="body-mt1" aria-expanded="false">Melanotan I — Afamelanotide<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-mt1" hidden>
-<p class="lead">The same molecule leads two lives. As <b>Scenesse</b> it is a licensed prescription implant for one rare disease. Everywhere else it circulates as a research peptide, dosed by injection — with <mark>no approved injection dose anywhere</mark>.</p>
-<h3>The licensed form — the implant</h3>
-<p>Scenesse is approved only for adults with <b>erythropoietic protoporphyria (EPP)</b>, whose skin reacts to sunlight with severe pain: EMA December 2014, FDA 8 October 2019, the first EPP treatment approved in the US. A clinician inserts a <b>16 mg rod under the skin above the hip every 2 months</b>; it dissolves on its own. It is not approved as a tanning product, cosmetic, or skin-cancer preventive anywhere.</p>
+<p class="lead">The original. A full-length copy of the tanning hormone that works almost entirely on the skin's pigment receptor — so the experience is simple: a slow, even tan, and not much else.</p>
+<p><b>The licensed medicine, briefly:</b> as <b>Scenesse</b>, afamelanotide is approved for one rare disease — erythropoietic protoporphyria, where sunlight causes severe skin pain (EU 2014, US 2019). In that form it is a 16 mg implant a clinician places under the skin every two months, and it roughly doubled-to-multiplied patients' pain-free time in the sun in trials. That is the whole of its medical career — everything below is the injected form users actually meet.</p>
 <div class="stat-row">
-<div class="stat"><div class="big">6.0 vs 0.8 h</div><div class="cap">pain-free sunlight, EU trial — afamelanotide vs vehicle</div></div>
-<div class="stat"><div class="big">64.1 vs 40.5 h</div><div class="cap">pain-free sunlight, US trial (FDA label figures)</div></div>
-<div class="stat"><div class="big">115 patients</div><div class="cap">1,023 implants, up to 8 years — no serious drug-related events</div></div>
+<div class="stat"><div class="big">6.0 vs 0.8 h</div><div class="cap">pain-free sunlight, EU trial — medicine vs vehicle</div></div>
+<div class="stat"><div class="big">115 patients</div><div class="cap">followed up to 8 years on the medicine — no serious drug-related events</div></div>
+<div class="stat"><div class="big">19%</div><div class="cap">nausea rate on the medicine's label — its commonest systemic effect</div></div>
 </div>
-<p>Commonest label side effects: implant-site reaction 21%, nausea 19%, fatigue 6%, hyperpigmentation 4%, dizziness 4%, darkening moles 4%. Because it darkens moles and freckles, the label requires a <b>full-body skin examination twice a year</b>. Severe allergy including anaphylaxis has been reported since marketing. Beyond EPP: vitiligo showed real promise in one 55-person trial (48.6% vs 33.3% repigmentation with light therapy) but remains investigational. No drug-interaction studies have ever been conducted — the label says so plainly.</p>
-<h3>The injected form — what is actually known</h3>
-<p>Injectable afamelanotide exists only as a research chemical: freeze-dried vials, reconstituted and self-injected like Melanotan II (see <b>How They're Used</b>, above). There is no regulator-set dose, no injection trial programme behind the vials, and no purity guarantee — the same product-quality problem documented for Melanotan II in the next section applies to grey-market vials generally. What the implant data do establish is the molecule's character at sustained exposure: pigment-first, with nausea the main systemic complaint and moles that need watching.</p>
+<p><b>As an injection,</b> Melanotan I is bought as a research peptide and used exactly as the How They're Used section describes. What users report is a tan that builds gradually over several weeks of daily dosing, deepening with sun exposure, with mild nausea the only regular complaint — none of Melanotan II's libido surge, appetite crash, or flushing. Two cautions travel with it: it darkens existing moles and freckles (the medicine's label requires a full skin check twice a year), and grey-market vials carry the same purity question as every unregulated peptide — the certificate on a website is a claim, not a measurement you can watch.</p>
 </div></section>
 <section id="mt2"><div class="band-wrap"><button class="band" data-toggle="body-mt2" aria-expanded="false">Melanotan II — The Unapproved One<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-mt2" hidden>
-<p>Melanotan II was never licensed, never put through a Phase 3 trial, and never given an approved dose. What is sold online — vials for self-injection, nasal sprays, drops — is an unregulated product wearing a research chemical's label.</p>
-<h3>The entire controlled evidence base</h3>
+<p class="lead">The ring. Stronger, cheaper to make, and heard by four receptor systems at once — which is why one injection can tan the skin <i>and</i> stir libido, kill appetite, and bring a wave of nausea.</p>
+<h3>What the record actually shows</h3>
 <div class="stat-row">
-<div class="stat"><div class="big">3</div><div class="cap">controlled human studies, all before 2001</div></div>
-<div class="stat"><div class="big">~23</div><div class="cap">men studied, in total, ever</div></div>
-<div class="stat"><div class="big">2 of 3</div><div class="cap">men tanned in the 1996 pilot</div></div>
-<div class="stat"><div class="big">8 of 10</div><div class="cap">men had erections in the 1998 ED trial</div></div>
-<div class="stat"><div class="big">4 of 19</div><div class="cap">injections caused severe nausea (2000 trial)</div></div>
+<div class="stat"><div class="big">3</div><div class="cap">controlled human studies — all before 2001, ~23 men total</div></div>
+<div class="stat"><div class="big">8 of 10</div><div class="cap">men had erections in the 1998 trial</div></div>
+<div class="stat"><div class="big">4 of 19</div><div class="cap">injections caused severe nausea in the 2000 trial</div></div>
 </div>
-<p>Those tiny trials did prove the pharmacology is real: tanning, spontaneous erections (rigidity 38.0 vs 3.0 minutes against placebo in 1998), higher sexual desire, lost appetite, yawning and stretching. They also showed the cost — nausea was dose-limiting and sometimes severe. Claims beyond this — fat loss, physique change, safe cosmetic tanning, "loading schedules" by skin type — have <b>no controlled human evidence behind them at all</b>. There is no honest percentage table for illicit use, because there is no denominator: nobody counts the users.</p>
+<p>Those tiny trials prove the effects are real — tanning, erections, desire, appetite loss, yawning. Everything beyond them is case reports and user accounts: there is no safety database and no honest percentage table for illicit use, because nobody counts the users.</p>
 <h3>What the case reports show</h3>
-<p>Single-patient reports cannot prove cause, and the melanoma link in particular is debated — users often tan heavily as well. Read these as a pattern of severe, biologically plausible events in a product with no safety database to set against them:</p>
 <div class="harm-grid">
-<div class="harm"><div class="h-t">Changing &amp; eruptive moles — and melanoma cases</div><p>Reports of melanomas, atypical moles erupting within days of injections, and moles darkening fast. Whatever the causal share, MT-II changes moles — which can mask the very changes melanoma detection depends on — and no user is getting the twice-yearly specialist skin checks the licensed cousin requires.</p></div>
-<div class="harm"><div class="h-t">Priapism</div><p>Prolonged, painful erection needing emergency urology care. The trial effect, with no off-switch.</p></div>
-<div class="harm"><div class="h-t">Rhabdomyolysis</div><p>Muscle breakdown with sympathomimetic toxicity after a self-injection (2012) — a kidney-threatening emergency.</p></div>
-<div class="harm"><div class="h-t">Renal infarction</div><p>A kidney infarct attributed to MT-II in a 2020 case report and review.</p></div>
-<div class="harm"><div class="h-t">PRES with seizures</div><p>Posterior reversible encephalopathy syndrome — a brain emergency typically driven by a blood-pressure surge — reported in 2013.</p></div>
-<div class="harm"><div class="h-t">Plus the everyday list</div><p>Severe nausea and vomiting, flushing, appetite loss, involuntary stretching and yawning, spontaneous erections — the effects regulators list when they warn against it.</p></div>
+<div class="harm"><div class="h-t">Changing &amp; eruptive moles — and melanoma cases</div><p>Moles darkening fast, erupting within days, and reported melanomas. The causal share is debated — users tan heavily too — but MT-II changes moles, which can mask the changes melanoma detection depends on.</p></div>
+<div class="harm"><div class="h-t">Priapism</div><p>The trial effect with no off-switch: a prolonged, painful erection needing emergency care.</p></div>
+<div class="harm"><div class="h-t">Rhabdomyolysis</div><p>Muscle breakdown after a self-injection (2012) — a kidney-threatening emergency.</p></div>
+<div class="harm"><div class="h-t">Renal infarction</div><p>A kidney infarct attributed to MT-II in a 2020 case report.</p></div>
+<div class="harm"><div class="h-t">PRES with seizures</div><p>A brain emergency typically driven by a blood-pressure surge, reported in 2013.</p></div>
+<div class="harm"><div class="h-t">The everyday list</div><p>Severe nausea and vomiting, flushing, appetite loss, stretching and yawning, spontaneous erections.</p></div>
 </div>
 <h3>The product itself is a second gamble</h3>
 
@@ -295,40 +303,31 @@ html,body{overflow-x:clip}
 <text x="30" y="180" font-size="13" fill="#6B5D4F">Every vial tested was under strength — 43% to 88% of the label — and most carried unknown impurities of 4–6%.</text>
 </svg><figcaption>From Breindahl et al., Drug Testing and Analysis 2015: melanotan II vials bought from three online shops and measured by LC-MS/MS.</figcaption></figure>
 
-<p>Australia's TGA found the same chaos in 2026: seized nasal sprays labelled 30 mg actually held anywhere from <b>22 to 54 mg</b>. With an illicit vial or spray, the user multiplies two unknowns — what the drug does in them, and what is actually in the bottle.</p>
+<p>Australia's regulator found the same chaos in 2026: nasal sprays labelled 30 mg held anywhere from <b>22 to 54 mg</b>. Two unknowns multiply — what the drug does in you, and what is actually in the bottle.</p>
 <blockquote>“Unlicensed, unregulated, and potentially harmful.”<div class="attr">— BMJ, 2009, on melanotan use in the general population</div></blockquote>
-<h3>Regulators, on the record</h3>
-<ul>
-<li><b>FDA (2007):</b> warning letter — an unapproved new drug, marketed illegally; the seller, Melanocorp, later pleaded guilty to federal charges.</li>
-<li><b>Denmark (2008, repeated since):</b> an illegal medicinal product; protection claims "not documented"; stop use and see a doctor if concerned.</li>
-<li><b>UK MHRA (2008 onward):</b> an unlicensed medicine that may not be safe; supply and advertising are illegal (personal use itself is not the offence).</li>
-<li><b>Norway &amp; Ireland (2008–09):</b> "dangerous and illegal tanning" warnings.</li>
-<li><b>Australia TGA (ongoing):</b> prescription-only with no approved product; supplying it in any form — spray, tablet, injection, cream — and advertising it are illegal.</li>
-</ul>
+<p>Regulators have said so for years: the <b>FDA</b> warned in 2007 (the seller later pleaded guilty to federal charges); <b>Denmark</b> and the <b>UK</b> warned in 2008; <b>Australia's TGA</b> treats supply in any form as illegal. None of that has stopped the market — it just means the buyer is the entire quality department.</p>
 </div></section>
 <section id="compare"><div class="band-wrap"><button class="band" data-toggle="body-compare" aria-expanded="false">Side by Side<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-compare" hidden>
 <table><tr><th>Question</th><th>Melanotan I</th><th>Melanotan II</th></tr>
-<tr><td>Approved?</td><td>Yes — EU 2014, US 2019, for EPP only</td><td>Nowhere, for anything</td></tr>
-<tr><td>How given</td><td>Licensed as an implant; in practice circulated as an injectable research peptide</td><td>Self-injected under the skin (illicit); nasal sprays unreliable</td></tr>
-<tr><td>Receptors</td><td>Predominantly MC1R</td><td>MC1R + MC3R + MC4R + MC5R</td></tr>
-<tr><td>Measured half-life</td><td>~15 h apparent, from the implant (label, n=12)</td><td><b>Never properly measured</b> — published figures conflict wildly; treat any single number as invented</td></tr>
-<tr><td>Sexual / appetite effects</td><td>Not a labelled effect</td><td>Erections and desire up, appetite down — proven in tiny trials</td></tr>
-<tr><td>Common side effects</td><td>Site reaction 21%, nausea 19% (label)</td><td>Nausea (sometimes severe), flushing, yawning, appetite loss — no honest percentages exist</td></tr>
-<tr><td>Serious harms</td><td>Anaphylaxis reported post-marketing; none in the 8-year cohort</td><td>Case reports: priapism, rhabdomyolysis, kidney infarct, PRES, debated melanoma link</td></tr>
-<tr><td>Evidence base</td><td>Phase 3 RCTs (n=168) + 8-year cohort (n=115)</td><td>3 small studies, ~23 men, pre-2001</td></tr>
-<tr><td>Sport (WADA)</td><td>Not named; an approved drug, so outside S0 — athletes still need a TUE and a current-List check</td><td>Prohibited at all times under S0 (non-approved substances)</td></tr></table>
+<tr><td>Approved?</td><td>Yes — as an implant, for EPP only</td><td>Nowhere, for anything</td></tr>
+<tr><td>How used</td><td>Injected as a research peptide (the implant is the licensed form)</td><td>Injected under the skin; nasal sprays unreliable</td></tr>
+<tr><td>Receptors</td><td>Mainly MC1R — skin</td><td>MC1R + MC3R + MC4R + MC5R</td></tr>
+<tr><td>Effects</td><td>Gradual tan; mild nausea the main complaint</td><td>Faster tan + libido up, appetite down, nausea, flushing</td></tr>
+<tr><td>Evidence base</td><td>Phase 3 trials (n=168) + 8-year cohort (n=115)</td><td>3 small studies, ~23 men, pre-2001</td></tr>
+<tr><td>Serious harms</td><td>Anaphylaxis reported on the medicine; none in the 8-year cohort</td><td>Case reports: priapism, rhabdomyolysis, kidney infarct, PRES, debated melanoma link</td></tr>
+<tr><td>Sport (WADA)</td><td>Not named — an approved drug; athletes still need a TUE check</td><td>Prohibited at all times under S0</td></tr></table>
 </div></section>
 <section id="practical"><div class="band-wrap"><button class="band" data-toggle="body-practical" aria-expanded="false">Practical Points<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-practical" hidden>
 <h3>Why the nasal spray can't dose honestly</h3>
 <ul>
-<li><b>No study exists.</b> No nasal melanotan product has ever had its absorption measured in humans. The percentages on vendor sites have no published study behind them.</li>
-<li><b>The nose fights back.</b> Peptides are large and water-loving; the nose offers a small surface, clears material to the throat in about 15–20 minutes, and digests peptides with its own enzymes. Approved nasal peptides work because their dose was set for that route in trials — the opposite of an unlabelled spray.</li>
-<li><b>The bottle is unknown.</b> No set amount per spray, peptide degrading in solution, and lab findings of 22–54 mg in bottles all labelled 30 mg. Even a perfect nose can't deliver a known dose from an unknown bottle.</li>
+<li><b>No study exists.</b> No nasal melanotan product has ever had its absorption measured in humans; the percentages on vendor sites have no published study behind them.</li>
+<li><b>The nose fights back.</b> Peptides are large and water-loving; the nose offers a small surface, clears material to the throat in about 15–20 minutes, and digests peptides with its own enzymes.</li>
+<li><b>The bottle is unknown.</b> No set amount per spray, peptide degrading in solution, and lab findings of 22–54 mg in bottles all labelled 30 mg.</li>
 </ul>
 <h3>Injection risks</h3>
-<p>Non-sterile manufacture plus self-injection means bacterial contamination (a haemolytic <i>Bacillus</i> species has been isolated from illegal injectable peptides), abscesses, bloodstream infection, shared-equipment risks, and wrong doses from under- or over-strength vials — with no monitoring, no antidote and no recall system. For contrast: the licensed implant still causes site reactions in 21% of patients <i>despite</i> sterile product, trained inserters and 30 minutes of observation.</p>
+<p>Non-sterile manufacture plus self-injection means contamination, abscess, and wrong-dose risks — with no monitoring and no recall system. Fresh sterile equipment every time is the floor, not a refinement.</p>
 <h3>Interactions — the honest version</h3>
-<p>For Scenesse: no interaction studies have been conducted, full stop. For Melanotan II: none exist either. Warnings about combinations — blood-pressure drugs, erection drugs, appetite suppressants — are pharmacology reasoning about additive effects, not studied facts. Any source presenting a tidy interaction list for either compound is making it up.</p>
+<p>No interaction studies exist for either compound in any form. Warnings about combinations — blood-pressure drugs, erection drugs, appetite suppressants — are reasoning about additive effects, not studied facts.</p>
 <div class="callout co-red"><div class="co-t">If you notice any of these side effects with Melanotan II</div><p>Regulators' advice, in plain terms: stop — don't finish the vial. Get a full skin check promptly, and treat these as emergencies:</p>
 <ul style="list-style:none;margin:8px 0 0">
 <li>🔎&ensp;Any new, changing, or bleeding mole</li>
@@ -342,20 +341,18 @@ html,body{overflow-x:clip}
 </div></section>
 <section id="sources"><div class="band-wrap"><button class="band" data-toggle="body-sources" aria-expanded="false">Sources<span class="band-btn">▾</span></button></div><div class="sec-body" id="body-sources" hidden>
 <ul class="src-list">
-<li><b><a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/210797s007lbl.pdf" target="_blank" rel="noopener">FDA — Scenesse (afamelanotide) Prescribing Information</a></b> — dose, implant, pharmacology, trial and side-effect tables.</li>
-<li><b><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/scenesse" target="_blank" rel="noopener">EMA — Scenesse EPAR</a></b> — EU authorisation 2014, exceptional circumstances, orphan status.</li>
+<li><b><a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/210797s007lbl.pdf" target="_blank" rel="noopener">FDA — Scenesse (afamelanotide) Prescribing Information</a></b> — dose, implant, trial and side-effect tables.</li>
+<li><b><a href="https://www.ema.europa.eu/en/medicines/human/EPAR/scenesse" target="_blank" rel="noopener">EMA — Scenesse EPAR</a></b> — EU authorisation 2014.</li>
 <li><b><a href="https://doi.org/10.1056/NEJMoa1411481" target="_blank" rel="noopener">Langendonk et al., New England Journal of Medicine 2015</a></b> — the two Phase 3 EPP trials.</li>
-<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/25494545/" target="_blank" rel="noopener">Biolcati et al., British Journal of Dermatology 2015</a></b> — 115 patients, 1,023 implants, up to 8 years.</li>
-<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/25230094/" target="_blank" rel="noopener">Lim et al., JAMA Dermatology 2015</a></b> — afamelanotide + narrowband UVB in vitiligo, n=55.</li>
-<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/8637402/" target="_blank" rel="noopener">Dorr et al., Life Sciences 1996</a></b> — the 3-man melanotan II tanning pilot.</li>
-<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/9679884/" target="_blank" rel="noopener">Wessells et al., Journal of Urology 1998</a></b> and <b><a href="https://pubmed.ncbi.nlm.nih.gov/11018622/" target="_blank" rel="noopener">Urology 2000</a></b> — the two erectile-function crossover trials.</li>
-<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/24771717/" target="_blank" rel="noopener">Breindahl et al., Drug Testing and Analysis 2015</a></b> — online vials measured at 4.32–8.84 mg against a 10 mg label.</li>
-<li><b><a href="https://doi.org/10.1136/bmj.b566" target="_blank" rel="noopener">Evans-Brown et al., BMJ 2009</a></b> — melanotan I and II in the general population; the UK, Danish and Norwegian warnings.</li>
-<li><b><a href="https://laegemiddelstyrelsen.dk/en/pharmacies/medicines-imported-from-abroad/warnings-against-products/warning-against-the-product-melanotan/" target="_blank" rel="noopener">Danish Medicines Agency — Warning against Melanotan</a></b></li>
-<li><b><a href="https://www.tga.gov.au/news/blog/dont-risk-using-tanning-products-containing-melanotan" target="_blank" rel="noopener">Australian TGA — Don't risk using tanning products containing melanotan</a></b> and <b><a href="https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/melanotan-ii-tanning-peptide-products-found-be-inconsistently-dosed" target="_blank" rel="noopener">TGA — Melanotan II products found to be inconsistently dosed</a></b> (22–54 mg in sprays labelled 30 mg).</li>
-<li><b>Case reports (PubMed):</b> <a href="https://pubmed.ncbi.nlm.nih.gov/23121206/" target="_blank" rel="noopener">rhabdomyolysis, 2012</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/23537392/" target="_blank" rel="noopener">priapism</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/31953620/" target="_blank" rel="noopener">renal infarction, 2020</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/23648958/" target="_blank" rel="noopener">PRES, 2013</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/24355990/" target="_blank" rel="noopener">melanoma case, 2014</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/28266027/" target="_blank" rel="noopener">melanocytic review, 2017</a>.</li>
+<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/25494545/" target="_blank" rel="noopener">Biolcati et al., British Journal of Dermatology 2015</a></b> — 115 patients, up to 8 years.</li>
+<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/8637402/" target="_blank" rel="noopener">Dorr et al., Life Sciences 1996</a></b> — the melanotan II tanning pilot, 0.025 mg/kg/day.</li>
+<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/9679884/" target="_blank" rel="noopener">Wessells et al., Journal of Urology 1998</a></b> and <b><a href="https://pubmed.ncbi.nlm.nih.gov/11018622/" target="_blank" rel="noopener">Urology 2000</a></b> — the erectile-function trials.</li>
+<li><b><a href="https://pubmed.ncbi.nlm.nih.gov/24771717/" target="_blank" rel="noopener">Breindahl et al., Drug Testing and Analysis 2015</a></b> — vials measured at 4.32–8.84 mg against a 10 mg label.</li>
+<li><b><a href="https://doi.org/10.1136/bmj.b566" target="_blank" rel="noopener">Evans-Brown et al., BMJ 2009</a></b> — melanotan in the general population; the UK, Danish and Norwegian warnings.</li>
+<li><b><a href="https://www.tga.gov.au/news/blog/dont-risk-using-tanning-products-containing-melanotan" target="_blank" rel="noopener">Australian TGA — Don't risk using tanning products containing melanotan</a></b> and the <b><a href="https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/melanotan-ii-tanning-peptide-products-found-be-inconsistently-dosed" target="_blank" rel="noopener">TGA inconsistent-dosing alert</a></b>.</li>
+<li><b>Case reports (PubMed):</b> <a href="https://pubmed.ncbi.nlm.nih.gov/23121206/" target="_blank" rel="noopener">rhabdomyolysis, 2012</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/23537392/" target="_blank" rel="noopener">priapism</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/31953620/" target="_blank" rel="noopener">renal infarction, 2020</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/23648958/" target="_blank" rel="noopener">PRES, 2013</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/24355990/" target="_blank" rel="noopener">melanoma case, 2014</a>.</li>
 </ul>
-<p>Evidence grading used throughout: label and randomised-trial facts are stated plainly; single-patient case reports are named as case reports; vendor and forum claims are identified as such and never presented as evidence. Melanotan II's human half-life is reported as unmeasured because the published figures conflict and none comes from a proper pharmacokinetic study.</p>
+<p>Evidence grading used throughout: label and trial facts are stated plainly; single-patient case reports are named as case reports; the dosing schedule is labelled community-standard because that is what it is. Melanotan II's human half-life has never been properly measured, so this guide prints no figure for it.</p>
 </div></section>
 
   <footer>Peptopia Health · Education — researched from the FDA label, EMA assessment, and the peer-reviewed record.</footer>
@@ -369,6 +366,16 @@ html,body{overflow-x:clip}
       var open = t.hidden;
       t.hidden = !open;
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.querySelectorAll('[data-open-card]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.getAttribute('data-open-card');
+      var body = document.getElementById('body-' + key);
+      var head = document.querySelector('[data-toggle="body-' + key + '"]');
+      if (body && body.hidden) { body.hidden = false; if (head) head.setAttribute('aria-expanded', 'true'); }
+      var sec = document.getElementById(key);
+      if (sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
   var tb = document.getElementById('themeBtn');
