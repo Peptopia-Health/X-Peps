@@ -177,9 +177,9 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(35,64,
 .idx-btn{cursor:pointer;padding:0;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 10px rgba(0,0,0,.3);transition:transform .07s ease,box-shadow .07s ease}
 .idx-btn:active{transform:translateY(2px) scale(.96);box-shadow:inset 0 2px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.3)}
 /* slim centered fit-content bands, gloss push-button at right (WildCraft V4+V5+V6) */
-.colorband{padding:9px 14px;padding-left:16px;padding-right:70px;margin:26px auto 14px;width:var(--uw,fit-content);max-width:100%;text-align:center;cursor:pointer;border-bottom:3px solid transparent}
+.colorband{padding:9px 14px;padding-left:16px;padding-right:70px;margin:26px auto 14px;width:fit-content;max-width:100%;text-align:center;cursor:pointer;border-bottom:3px solid transparent}
 .colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;text-align:center;color:#fff}
-.colorband p{margin:0;opacity:.95;line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(.7rem,2.5vw,.95rem);max-width:none}
+.colorband p{margin:0 auto;opacity:.95;line-height:1.25;text-align:center;font-size:clamp(.7rem,2.5vw,.95rem);max-width:34ch}
 .colorband .bigicon{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:24px;opacity:1;display:flex;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffffff,var(--bb,#e6f2ea) 48%,var(--bm,#bcd8c4));border:2px solid var(--bd,#0d2c1e);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 6px 12px rgba(0,0,0,.4);cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
 .colorband .bigicon:active{transform:translateY(calc(-50% + 3px)) scale(.95);box-shadow:inset 0 3px 7px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.3)}
 /* open state: brighter variant of the band's own color + orange in-use ring */
@@ -289,7 +289,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
 @page{size:Letter;margin:13mm}
 
 /* ===== §35 corrections (Nov 2, 2026) ===== */
-.colorband{padding-top:6px;padding-bottom:6px;margin:16px 0 8px}
+.colorband{padding-top:6px;padding-bottom:6px;margin:16px auto 8px}
 .strain-head{padding-top:6px;padding-bottom:6px}
 .index{padding:16px 20px;margin:16px 0 0}
 #howto{margin-top:10px}
