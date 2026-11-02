@@ -492,10 +492,9 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 </div>
 
   <div class="badges">
-    <a class="pill" href="#catalog">3 Core Powders · green · white · red</a><a class="pill" href="#strain-private-reserve-gmd">1 Private Reserve · Batch #115 · 2.1% MIT</a>
-    <a class="pill" href="#formats">5 Formats · splits · samples · leaf · tea</a><a class="pill" href="#coa">Tested Twice · Indonesia + SC Labs</a>
+    <a class="pill wc-chipbtn" href="#catalog">3 Core Powders · green · white · red</a><a class="pill wc-chipbtn" href="#strain-private-reserve-gmd">1 Private Reserve · Batch #115 · 2.1% MIT</a>
+    <a class="pill wc-chipbtn" href="#formats">5 Formats · splits · samples · leaf · tea</a><a class="pill wc-chipbtn" href="#coa">Tested Twice · Indonesia + SC Labs</a>
   </div>
-  <span class="affil">✋ Independent customer review — no affiliation with Sakti Botanicals.</span>
 </div>
 
 <!-- ================= INDEX ================= -->
@@ -654,11 +653,11 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="catintro">
   <p><b>Sakti Botanicals</b> is a working dispensary in Asheville, North Carolina, founded in 2020 — Asheville's first kratom dispensary — with the founder's own upbringing in Indonesia behind the sourcing. Leaf is hand-picked in a remote Borneo forest locals call <i>Sakti Hutan</i>, "Sacred Forest." The mission: wild leaf keeps the forest standing — the alternative land use in that region is palm-oil clearing.</p>
 </div>
-<div class="wc-grid">
-  <div class="wc-card"><h4>🏪 Visit</h4><p>481 Hendersonville Road, Asheville, NC 28803 — Mon–Wed 12–5, Thu–Sat 10–7, closed Sunday.</p></div>
-  <div class="wc-card"><h4>🍵 On the house</h4><p>A free cup of kratom tea with any purchase, and local pickup when you order online.</p></div>
-  <div class="wc-card"><h4>🎟️ In-store word</h4><p>$75 Kilo Fridays and loyalty rewards, per DigLocal — deals the website does not run.</p></div>
-  <div class="wc-card"><h4>🌳 The source</h4><p>Sakti Hutan, overseen by a founder who grew up in Indonesia and travels back to run it.</p></div>
+<div class="wc-grid wc-cards-even">
+  <div class="wc-card"><a href="#ordering"><h4>🏪 Visit</h4><p>481 Hendersonville Road, Asheville, NC 28803 — Mon–Wed 12–5, Thu–Sat 10–7, closed Sunday.</p></a></div>
+  <div class="wc-card"><a href="#ordering"><h4>🍵 On the house</h4><p>A free cup of kratom tea with any purchase, and local pickup when you order online.</p></a></div>
+  <div class="wc-card"><a href="#value"><h4>🎟️ In-store word</h4><p>$75 Kilo Fridays and loyalty rewards, per DigLocal — deals the website does not run.</p></a></div>
+  <div class="wc-card"><a href="#science"><h4>🌳 The source</h4><p>Sakti Hutan, overseen by a founder who grew up in Indonesia and travels back to run it.</p></a></div>
 </div>
 
 <div class="colorband band-neutral" id="catalog">
@@ -690,6 +689,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="strain green" id="strain-green-maeng-da">
   <div class="strain-head" style="background:linear-gradient(100deg,#00A8B5,#00C8D8);color:#06333A"><h3 style="color:#06333A"><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 24], [&quot;mood&quot;, 23], [&quot;focus&quot;, 23], [&quot;calm&quot;, 15], [&quot;relief&quot;, 15]], &quot;caption&quot;: &quot;The popular green — bright, balanced, tension-easing.&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12.00 2.00 A10 10 0 0 1 21.98 11.37 L17.49 11.65 A5.5 5.5 0 0 0 12.00 6.50 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.8"/><path d="M21.98 11.37 A10 10 0 0 1 13.87 21.82 L13.03 17.40 A5.5 5.5 0 0 0 17.49 11.65 Z" fill="#10C000"/><path d="M13.87 21.82 A10 10 0 0 1 2.49 15.09 L6.77 13.70 A5.5 5.5 0 0 0 13.03 17.40 Z" fill="#F06000"/><path d="M2.49 15.09 A10 10 0 0 1 3.91 6.12 L7.55 8.77 A5.5 5.5 0 0 0 6.77 13.70 Z" fill="#F0F000"/><path d="M3.91 6.12 A10 10 0 0 1 12.00 2.00 L12.00 6.50 A5.5 5.5 0 0 0 7.55 8.77 Z" fill="#E01020"/></svg></span>Green Maeng Da</h3><a class="batch" href="#batch-118">Batch #118 · The Green Cure</a></div>
   <div class="strain-body">
+    <p class="coa-note">Green vein — the bar is aqua because its lead effect is Energy.</p>
     <div class="iconrow"><span>⚡ 24%</span><span>😊 23%</span><span>🎯 23%</span><span>🧘 15%</span><span>🌙 15%</span></div>
     <p>$7.99–$90.00 · 1 oz · 4 oz · 250 g · 500 g · 1 kg · Top Seller</p>
     <h4>🌿 The leaf</h4>
@@ -711,6 +711,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="strain green" id="strain-private-reserve-gmd">
   <div class="strain-head" style="background:linear-gradient(100deg,#00A8B5,#00C8D8);color:#06333A"><h3 style="color:#06333A"><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;green&quot;, &quot;effects&quot;: [[&quot;energy&quot;, 27], [&quot;focus&quot;, 27], [&quot;mood&quot;, 20], [&quot;calm&quot;, 13], [&quot;relief&quot;, 13]], &quot;caption&quot;: &quot;The flagship — the same green, hand-selected at 2.1%.&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12.00 2.00 A10 10 0 0 1 21.92 13.25 L17.46 12.69 A5.5 5.5 0 0 0 12.00 6.50 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.8"/><path d="M21.92 13.25 A10 10 0 0 1 9.51 21.69 L10.63 17.33 A5.5 5.5 0 0 0 17.46 12.69 Z" fill="#F06000"/><path d="M9.51 21.69 A10 10 0 0 1 2.02 12.63 L6.51 12.35 A5.5 5.5 0 0 0 10.63 17.33 Z" fill="#10C000"/><path d="M2.02 12.63 A10 10 0 0 1 4.71 5.15 L7.99 8.23 A5.5 5.5 0 0 0 6.51 12.35 Z" fill="#F0F000"/><path d="M4.71 5.15 A10 10 0 0 1 12.00 2.00 L12.00 6.50 A5.5 5.5 0 0 0 7.99 8.23 Z" fill="#E01020"/></svg></span>Private Reserve GMD</h3><a class="batch" href="#batch-115">Batch #115 · Private Reserve</a></div>
   <div class="strain-body">
+    <p class="coa-note">Green vein — the bar is aqua because its lead effect is Energy.</p>
     <div class="iconrow"><span>⚡ 27%</span><span>🎯 27%</span><span>😊 20%</span><span>🧘 13%</span><span>🌙 13%</span></div>
     <p>$18.00–$120.00 · 250 g · 500 g · 1 kg + limited 50 g gold tin · Private Reserve</p>
     <h4>🌿 The leaf</h4>
@@ -737,6 +738,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="strain white" id="strain-white-borneo">
   <div class="strain-head" style="background:linear-gradient(100deg,#D94E00,#F06000);color:#fff"><h3 style="color:#fff"><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;white&quot;, &quot;effects&quot;: [[&quot;focus&quot;, 31], [&quot;energy&quot;, 30], [&quot;mood&quot;, 23], [&quot;calm&quot;, 8], [&quot;relief&quot;, 8]], &quot;caption&quot;: &quot;The potent white — focus-forward, and the reviewers' favorite.&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12.00 2.00 A10 10 0 0 1 21.30 15.68 L17.11 14.02 A5.5 5.5 0 0 0 12.00 6.50 Z" fill="#F06000"/><path d="M21.30 15.68 A10 10 0 0 1 5.63 19.71 L8.49 16.24 A5.5 5.5 0 0 0 17.11 14.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.8"/><path d="M5.63 19.71 A10 10 0 0 1 3.56 6.64 L7.36 9.05 A5.5 5.5 0 0 0 8.49 16.24 Z" fill="#10C000"/><path d="M3.56 6.64 A10 10 0 0 1 7.18 3.24 L9.35 7.18 A5.5 5.5 0 0 0 7.36 9.05 Z" fill="#F0F000"/><path d="M7.18 3.24 A10 10 0 0 1 12.00 2.00 L12.00 6.50 A5.5 5.5 0 0 0 9.35 7.18 Z" fill="#E01020"/></svg></span>White Borneo</h3><a class="batch" href="#batch-117">Batch #117 · The White Cure</a></div>
   <div class="strain-body">
+    <p class="coa-note">White vein — the bar is tangerine because its lead effect is Focus.</p>
     <div class="iconrow"><span>🎯 31%</span><span>⚡ 30%</span><span>😊 23%</span><span>🧘 8%</span><span>🌙 8%</span></div>
     <p>$7.99–$90.00 · 1 oz · 4 oz · 250 g · 500 g · 1 kg · Top Seller</p>
     <h4>🌿 The leaf</h4>
@@ -766,6 +768,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="strain red" id="strain-red-maeng-da">
   <div class="strain-head" style="background:linear-gradient(100deg,#D8D800,#F0F000);color:#3D3400"><h3 style="color:#3D3400"><span class="donut-trigger" data-strain="{&quot;vein&quot;: &quot;red&quot;, &quot;effects&quot;: [[&quot;calm&quot;, 31], [&quot;relief&quot;, 31], [&quot;mood&quot;, 23], [&quot;focus&quot;, 8], [&quot;energy&quot;, 7]], &quot;caption&quot;: &quot;The mild red — sun-cured calm for the end of the day.&quot;}" title="View effect chart" style="cursor:pointer;margin-right:8px;"><svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align:-3px;" aria-hidden="true"><path d="M12.00 2.00 A10 10 0 0 1 21.30 15.68 L17.11 14.02 A5.5 5.5 0 0 0 12.00 6.50 Z" fill="#F0F000"/><path d="M21.30 15.68 A10 10 0 0 1 5.15 19.29 L8.23 16.01 A5.5 5.5 0 0 0 17.11 14.02 Z" fill="#E01020"/><path d="M5.15 19.29 A10 10 0 0 1 3.91 6.12 L7.55 8.77 A5.5 5.5 0 0 0 8.23 16.01 Z" fill="#10C000"/><path d="M3.91 6.12 A10 10 0 0 1 7.74 2.95 L9.66 7.02 A5.5 5.5 0 0 0 7.55 8.77 Z" fill="#F06000"/><path d="M7.74 2.95 A10 10 0 0 1 12.00 2.00 L12.00 6.50 A5.5 5.5 0 0 0 9.66 7.02 Z" fill="#FFFFFF" stroke="#9a9a9a" stroke-width="0.8"/></svg></span>Red Maeng Da</h3><a class="batch" href="#batch-117">Batch #117 · The Red Cure</a></div>
   <div class="strain-body">
+    <p class="coa-note">Red vein — the bar is gold because its lead effect is Calm.</p>
     <div class="iconrow"><span>🧘 31%</span><span>🌙 31%</span><span>😊 23%</span><span>🎯 8%</span><span>⚡ 7%</span></div>
     <p>$7.99–$90.00 · 1 oz · 4 oz · 250 g · 500 g · 1 kg</p>
     <h4>🌿 The leaf</h4>
@@ -911,7 +914,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="catintro">
   <p>Sakti's storefront runs no product reviews, so there is no on-site star record to mine — the public record is editorial: kratom.org rates the vendor 4/5, #57 of 211, and Kozy Kratom gives it 4 stars in a 22-vendor field. No YouTube review coverage of this vendor was found, and no mentions in kratom Discord servers — for a vendor this small, the editorial record and the lab portal are the record.</p>
-  <div class="wc-venns"><div class="wc-venn"><h5>Key Review Sources</h5><svg class="wc-venn2" viewBox="0 0 400 340" role="img" aria-label="Four overlapping review sources: kratom.org, Kozy Kratom, Kratom Monkey, and Reddit"><a href="https://kratom.org/vendors/sakti-botanicals-review/" target="_blank" rel="noopener"><circle cx="142" cy="112" r="80" fill="#FF4500" fill-opacity="0.42" stroke="#B22E00" stroke-width="2.5"/><text x="102" y="102" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#7A1E00">kratom.org</text></a><a href="https://kozykratom.com/best-kratom-vendors/" target="_blank" rel="noopener"><circle cx="258" cy="112" r="80" fill="#0E7C7B" fill-opacity="0.42" stroke="#084F4E" stroke-width="2.5"/><text x="298" y="94" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#063F3E"><tspan x="298" dy="0">Kozy</tspan><tspan x="298" dy="19">Kratom</tspan></text></a><a href="https://kratommonkey.com/sakti-botanical-kratom-review/" target="_blank" rel="noopener"><circle cx="142" cy="228" r="80" fill="#7C4DBD" fill-opacity="0.42" stroke="#4A2A75" stroke-width="2.5"/><text x="102" y="240" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#3A2160"><tspan x="102" dy="0">Kratom</tspan><tspan x="102" dy="19">Monkey</tspan></text></a><a href="https://www.reddit.com/search/?q=sakti%20botanicals%20kratom" target="_blank" rel="noopener"><circle cx="258" cy="228" r="80" fill="#5B7C99" fill-opacity="0.42" stroke="#38506B" stroke-width="2.5"/><text x="298" y="240" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="17" fill="#2C4258">Reddit</text></a></svg></div></div>
+  <div class="wc-venns"><div class="wc-venn"><h5>Key Review Sources</h5><svg class="wc-venn2" viewBox="0 0 400 340" role="img" aria-label="Four overlapping review sources: kratom.org, Kozy Kratom, Kratom Monkey, and Reddit"><a href="https://kratom.org/vendors/sakti-botanicals/" target="_blank" rel="noopener"><circle cx="142" cy="112" r="80" fill="#FF4500" fill-opacity="0.42" stroke="#B22E00" stroke-width="2.5"/><text x="142" y="117" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="14" fill="#7A1E00">kratom.org</text></a><a href="https://kozykratom.com/kratom-vendor-review/" target="_blank" rel="noopener"><circle cx="258" cy="112" r="80" fill="#0E7C7B" fill-opacity="0.42" stroke="#084F4E" stroke-width="2.5"/><text x="258" y="103" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#063F3E"><tspan x="258" dy="0">Kozy</tspan><tspan x="258" dy="19">Kratom</tspan></text></a><a href="https://kratommonkey.net/sakti-botanicals-brand-review/" target="_blank" rel="noopener"><circle cx="142" cy="228" r="80" fill="#7C4DBD" fill-opacity="0.42" stroke="#4A2A75" stroke-width="2.5"/><text x="142" y="219" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#3A2160"><tspan x="142" dy="0">Kratom</tspan><tspan x="142" dy="19">Monkey</tspan></text></a><a href="https://www.reddit.com/search/?q=sakti%20botanicals%20kratom" target="_blank" rel="noopener"><circle cx="258" cy="228" r="80" fill="#5B7C99" fill-opacity="0.42" stroke="#38506B" stroke-width="2.5"/><text x="258" y="234" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="17" fill="#2C4258">Reddit</text></a></svg></div></div>
 </div>
 <div class="wc-vhead"><i style="background:#8a8f7a"></i>Editorial Voices</div>
 <div class="quote"><button type="button" class="wc-fact" data-fq="5" title="Fact-check this quote">✓</button> a reputable brand that delivers transparency of potency and safety with its lab results, consistency in its products, and decent customer service.<cite>— kratom.org — Sakti Botanicals vendor review (forum sentiment summary)</cite></div>
@@ -981,13 +984,13 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   </ol>
   <h3>Editorial Reviews</h3>
   <ol>
-    <li><a class="wc-srcname" href="https://kratom.org/vendors/sakti-botanicals-review/" target="_blank" rel="noopener">kratom.org — Sakti Botanicals vendor review</a>: 4/5, #57 of 211; per-strain effect notes; Reddit sentiment summary</li>
-    <li><a class="wc-srcname" href="https://kozykratom.com/best-kratom-vendors/" target="_blank" rel="noopener">Kozy Kratom — 22-vendor review</a>: 4 stars; White Borneo favorite</li>
-    <li><a class="wc-srcname" href="https://kratommonkey.com/sakti-botanical-kratom-review/" target="_blank" rel="noopener">Kratom Monkey — Sakti Botanicals brand review</a>: 2023 batch figures; split-kilo format</li>
+    <li><a class="wc-srcname" href="https://kratom.org/vendors/sakti-botanicals/" target="_blank" rel="noopener">kratom.org — Sakti Botanicals vendor review</a>: 4/5, #57 of 211; per-strain effect notes; Reddit sentiment summary</li>
+    <li><a class="wc-srcname" href="https://kozykratom.com/kratom-vendor-review/" target="_blank" rel="noopener">Kozy Kratom — 22-vendor review</a>: 4 stars; White Borneo favorite</li>
+    <li><a class="wc-srcname" href="https://kratommonkey.net/sakti-botanicals-brand-review/" target="_blank" rel="noopener">Kratom Monkey — Sakti Botanicals brand review</a>: 2023 batch figures; split-kilo format</li>
   </ol>
   <h3>Local Coverage</h3>
   <ol>
-    <li><a class="wc-srcname" href="https://diglocal.com/asheville/business/scoop/sakti-botanicals" target="_blank" rel="noopener">DigLocal Asheville — Sakti Botanicals scoop</a>: $75 Kilo Fridays, loyalty rewards</li>
+    <li><a class="wc-srcname" href="https://diglocal.com/asheville-nc/scoops-things-to-do/81604-premium-wild-harvested-kratom-with-ethical-roots-in-asheville-at-sakti-botanicals" target="_blank" rel="noopener">DigLocal Asheville — Sakti Botanicals scoop</a>: $75 Kilo Fridays, loyalty rewards</li>
   </ol>
 </div>
 
@@ -1382,7 +1385,7 @@ html.dark .wc-return a{background:#1C211C;color:#9CC7A8;border-color:#9CC7A8}
 html.dark .index .idx-hint{color:#9CC7A8}
 html.dark .wc-mapwrap h4{color:#9CC7A8}
 </style>
-<script>var WC_FACTS=[{"q": "for a mild boost to energy and focus, release of mental tension, a general sense of well-being, and physical discomfort relief.", "src": "kratom.org — Sakti Botanicals vendor review", "url": "https://kratom.org/vendors/sakti-botanicals-review/"}, {"q": "beyond the quality and potency of most of the vendors on this list.", "src": "Kozy Kratom — 22-vendor review", "url": "https://kozykratom.com/best-kratom-vendors/"}, {"q": "for intense stimulation and nootropic effects, including increased focus and concentration", "src": "kratom.org — Sakti Botanicals vendor review", "url": "https://kratom.org/vendors/sakti-botanicals-review/"}, {"q": "Our personal favorite of theirs is the White Borneo", "src": "Kozy Kratom — 22-vendor review", "url": "https://kozykratom.com/best-kratom-vendors/"}, {"q": "physical and mental discomfort relief, and a soothing, calm feeling", "src": "kratom.org — Sakti Botanicals vendor review", "url": "https://kratom.org/vendors/sakti-botanicals-review/"}, {"q": "a reputable brand that delivers transparency of potency and safety with its lab results, consistency in its products, and decent customer service.", "src": "kratom.org — Sakti Botanicals vendor review (forum sentiment summary)", "url": "https://kratom.org/vendors/sakti-botanicals-review/"}, {"q": "some of the absolute best quality Kratom we have tried.", "src": "Kozy Kratom — 22-vendor review", "url": "https://kozykratom.com/best-kratom-vendors/"}];
+<script>var WC_FACTS=[{"q": "for a mild boost to energy and focus, release of mental tension, a general sense of well-being, and physical discomfort relief.", "src": "kratom.org — Sakti Botanicals vendor review", "url": "https://kratom.org/vendors/sakti-botanicals/"}, {"q": "beyond the quality and potency of most of the vendors on this list.", "src": "Kozy Kratom — 22-vendor review", "url": "https://kozykratom.com/kratom-vendor-review/"}, {"q": "for intense stimulation and nootropic effects, including increased focus and concentration", "src": "kratom.org — Sakti Botanicals vendor review", "url": "https://kratom.org/vendors/sakti-botanicals/"}, {"q": "Our personal favorite of theirs is the White Borneo", "src": "Kozy Kratom — 22-vendor review", "url": "https://kozykratom.com/kratom-vendor-review/"}, {"q": "physical and mental discomfort relief, and a soothing, calm feeling", "src": "kratom.org — Sakti Botanicals vendor review", "url": "https://kratom.org/vendors/sakti-botanicals/"}, {"q": "a reputable brand that delivers transparency of potency and safety with its lab results, consistency in its products, and decent customer service.", "src": "kratom.org — Sakti Botanicals vendor review (forum sentiment summary)", "url": "https://kratom.org/vendors/sakti-botanicals/"}, {"q": "some of the absolute best quality Kratom we have tried.", "src": "Kozy Kratom — 22-vendor review", "url": "https://kozykratom.com/kratom-vendor-review/"}];
 document.addEventListener('DOMContentLoaded',function(){var modal=document.getElementById('factModal');if(!modal)return;var q=document.getElementById('factQuote'),s=document.getElementById('factSrc'),o=document.getElementById('factOpen'),t=document.getElementById('factTitle'),c=document.getElementById('factClose');function hide(){modal.hidden=true;}document.querySelectorAll('.wc-fact').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();var f=WC_FACTS[+b.getAttribute('data-fq')];if(!f)return;q.textContent=f.q;s.textContent='Source: '+f.src;o.href=f.url;t.textContent='\u2713 Fact check';modal.hidden=false;});});c.addEventListener('click',hide);modal.addEventListener('click',function(e){if(e.target===modal)hide();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)hide();});});
 </script>
 <script>
@@ -1611,6 +1614,7 @@ document.addEventListener('DOMContentLoaded',function(){
     sIn.addEventListener('input',render);
     sIn.addEventListener('keydown',function(e){if(e.key==='Enter'){var f=sRes.querySelector('[data-t]');if(f)f.click();}});
     sRes.addEventListener('click',function(e){var b=e.target.closest?e.target.closest('[data-t]'):null;if(!b)return;var el=document.getElementById(b.getAttribute('data-t'));if(!el)return;sBox.hidden=true;var sec=el.closest?el.closest('.wcsec'):null;if(sec&&sec._wcBand)sec._wcBand._wcSet(true);if(el.classList.contains('strain')&&window.__wcOpenCard)window.__wcOpenCard(el);try{history.replaceState(null,'','#'+el.id);}catch(err){}setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
+    document.addEventListener('click',function(e){if(sBox.hidden)return;var inBox=e.target.closest?e.target.closest('#wcSearch'):null;var onBtn=e.target.closest?e.target.closest('#wcSearchBtn'):null;if(!inBox&&!onBtn){sBox.hidden=true;sRes.innerHTML='';}});
   }
   /* ---- fix 27: restricted-state law popups + NH home star ---- */
   var FR='https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2026.1925809/full',
@@ -1799,6 +1803,35 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 /* §37.3 (David, Nov 2, 2026): never white text on yellow */
 .p-yellow .phead{color:#3D3400}
 .p-yellow a.golink{color:#3D3400}
+/* §38 Round 2 presentation fixes (David, Nov 2, 2026) — items 2, 6, 7, 8, 10/11 */
+/* Item 2: Company info cards — strict even 2x2 grid; whole card links to the section it summarizes */
+.wc-cards-even{grid-template-columns:1fr 1fr;grid-auto-rows:1fr;align-items:stretch}
+.wc-cards-even .wc-card{height:100%}
+.wc-cards-even .wc-card>a{display:block;height:100%;color:inherit;text-decoration:none}
+.wc-cards-even .wc-card>a:hover h4{text-decoration:underline}
+@media(max-width:640px){.wc-cards-even{grid-template-columns:1fr;grid-auto-rows:auto}}
+/* Item 8b: header stat chips as raised push buttons (readable size, press-down) */
+.badges .wc-chipbtn{font-size:.98rem;font-weight:700;color:#23402A;padding:10px 18px;border:2px solid #08672B;background:linear-gradient(180deg,#ffffff 0%,#e6f2ea 55%,#bcd8c4 100%);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(8,103,43,.28),0 4px 9px rgba(30,77,59,.35)}
+.badges .wc-chipbtn:active{transform:translateY(2px);box-shadow:inset 0 2px 6px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.3)}
+html.dark .badges .wc-chipbtn{background:linear-gradient(180deg,#3a4a3a 0%,#23402A 60%,#16281B 100%);color:#E9F3E4;border-color:#9CC7A8;box-shadow:inset 0 2px 3px rgba(255,255,255,.25),inset 0 -4px 7px rgba(0,0,0,.5),0 4px 9px rgba(0,0,0,.5)}
+/* Item 6: search field + suggestion dropdown pinned light with dark text — readable in BOTH themes */
+#wcSearchInput{background:#fff!important;color:#111!important}
+#wcSearchInput:focus{background:#fff!important;color:#111!important}
+#wcSearchInput::placeholder{color:#5A5348!important;opacity:1}
+html.dark #wcSearchInput{background:#fff!important;color:#111!important}
+#wcSearchResults a,#wcSearchResults .wc-sres{background:#fff!important;color:#111!important;border-color:#C9BD9D!important}
+#wcSearchResults .wc-snone{background:#fff;color:#3D382E;border:1px solid #C9BD9D;border-radius:10px}
+html.dark #wcSearchResults a,html.dark #wcSearchResults .wc-sres{background:#fff!important;color:#111!important}
+/* Items 10/11: vein color panels — strict 2x2 grid, all four panels the same size */
+.panels{grid-template-columns:1fr 1fr;grid-auto-rows:1fr;align-items:stretch}
+.panels .panel{display:flex;flex-direction:column;height:100%}
+.panels .panel a.golink{margin-top:auto}
+@media(max-width:680px){.panels{grid-auto-rows:auto}}
+/* Item 7: print — never slice a paragraph, quote, callout, card, or table row across pages */
+@media print{
+  p{orphans:3;widows:3}
+  p,.quote,.popbox,.catintro,.wc-card,.panel,.strain,.wc-stat,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+}
 </style>
 <style id="wc-responsive-print-standard">
 /* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
