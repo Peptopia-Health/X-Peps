@@ -1399,6 +1399,7 @@ table.sortable th{cursor:pointer}
 </div>
 
 
+<div class="tl-topsearch tl-bottomsearch" id="tlBottomSearch"><h4>🔍 Search Strains — From the Bottom of the Guide</h4><input id="tlBottomSearchInput" type="search" placeholder="Search strains — spelling doesn't have to be perfect" aria-label="Search strains"><div class="tl-topres" id="tlBottomSearchResults"></div></div>
 <footer class="site">Complete Strain Guide for Tree Leaf Naturalist · Independent Customer Research · November 2026</footer>
 </div><!-- /wrap -->
 <script>
@@ -1644,6 +1645,13 @@ var TLRAW={"strain-white-java": {"effects": [["energy", 49], ["clarity", 26], ["
       b.innerHTML='<b>'+hit.s.name+'</b><span>'+hit.s.vein+' \u00B7 '+hit.s.batch+'</span>';
       b.addEventListener('click',function(){tsBox.style.display='none'; openStrain(hit.s.id,true);}); tsRes.appendChild(b);});});
   if(tsInp)tsInp.addEventListener('keydown',function(e){if(e.key==='Enter'){var f=tsRes?tsRes.querySelector('button'):null; if(f)f.click();}});
+  /* bottom search — §35.1 dual search: same fuzzy find (tsFind) as the top search, own box above the footer */
+  var bsInp=document.getElementById('tlBottomSearchInput'), bsRes=document.getElementById('tlBottomSearchResults');
+  if(bsInp)bsInp.addEventListener('input',function(){if(!bsRes)return; bsRes.innerHTML='';
+    tsFind(bsInp.value).forEach(function(hit){var b=document.createElement('button'); b.type='button'; b.className='tl-sres';
+      b.innerHTML='<b>'+hit.s.name+'</b><span>'+hit.s.vein+' · '+hit.s.batch+'</span>';
+      b.addEventListener('click',function(){openStrain(hit.s.id,true);}); bsRes.appendChild(b);});});
+  if(bsInp)bsInp.addEventListener('keydown',function(e){if(e.key==='Enter'){var f=bsRes?bsRes.querySelector('button'):null; if(f)f.click();}});
   /* company map popup */
   var mm=document.getElementById('tlMapModal');
   var nyt=document.getElementById('tlNyTile'); if(nyt&&mm)nyt.addEventListener('click',function(){mm.classList.add('open');});
@@ -1677,6 +1685,8 @@ var TLRAW={"strain-white-java": {"effects": [["energy", 49], ["clarity", 26], ["
 .badges .pill:active{transform:translateY(2px)}
 .tl-topsearch{margin:10px auto 2px;max-width:640px;text-align:left}
 .tl-topsearch input{width:100%;padding:11px 14px;border:2px solid #08672B;border-radius:12px;font:inherit;background:#fff;color:#1c2b1e;box-sizing:border-box}
+.tl-bottomsearch{margin:24px auto 2px}
+.tl-bottomsearch h4{margin:0 0 8px;font-family:'Outfit',sans-serif;font-size:1.02rem;color:#14532D}
 .tl-topres{display:flex;flex-direction:column;gap:6px;margin-top:8px}
 .tl-sres{display:flex;justify-content:space-between;gap:10px;align-items:center;text-align:left;padding:9px 13px;border-radius:10px;border:2px solid #23402f;background:radial-gradient(circle at 12% 20%,rgba(255,255,255,.9),#e6f2ea 55%,#cfe3d4);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),0 3px 7px rgba(0,0,0,.25);cursor:pointer;font:inherit;color:#1c2b1e}
 .tl-sres span{font-size:.8rem;font-weight:700;opacity:.75;text-transform:capitalize}
@@ -1766,7 +1776,7 @@ img,svg{max-width:100%}
   .strain-body{display:block!important}
   .tl-secbody{display:block!important}
   .index ol{display:block!important}
-  .tl-topbar,.tl-bandbtn,.tl-qpill,.tl-floats,.tl-search,.tl-node{display:none!important}
+  .tl-topbar,.tl-bandbtn,.tl-qpill,.tl-floats,.tl-search,.tl-node,.tl-bottomsearch{display:none!important}
   .tl-wheel{display:none!important}
   .strain,.panel,table,.popbox,.tl-picker,.tl-batchgroup{break-inside:avoid}
   h1,h2,h3,h4{break-after:avoid}
