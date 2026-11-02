@@ -584,8 +584,9 @@ window.__DTE_PANELS={"white": {"energy": 40, "focus": 35, "mood": 25}, "green": 
 <style id="dte-corrections">
 /* §35 corrections pass (Nov 2026) — prototype mechanics, applied additively */
 .colorband{padding-right:124px}
-button.bigicon{position:absolute;right:18px;top:50%;transform:translateY(-50%);opacity:1;font-size:42px;background:#F7F4EC;border:2px solid rgba(13,27,20,.45);border-radius:50%;width:78px;height:78px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 3px 5px rgba(255,255,255,.9),inset 0 -5px 8px rgba(0,0,0,.18),0 4px 9px rgba(0,0,0,.3);cursor:pointer;padding:0}
-button.bigicon:active{transform:translateY(calc(-50% + 2px));box-shadow:inset 0 2px 4px rgba(255,255,255,.7),inset 0 -2px 4px rgba(0,0,0,.22),0 1px 3px rgba(0,0,0,.3)}
+/* Band icon IS the button (§35.3 fix, Nov 2 2026): `.colorband button.bigicon` (0-2-1) outranks the legacy `.colorband .bigicon` watermark rule (0-2-0: opacity:.12, 64px) that was fading the buttons. Raised gloss push-button per TreeLeaf/WestKoast: radial highlight top-left, visible border, inset shading, press-down. */
+.colorband button.bigicon{position:absolute;right:18px;top:50%;transform:translateY(-50%);opacity:1;font-size:42px;line-height:1;font-family:inherit;background:radial-gradient(circle at 32% 28%,#ffffff 0%,#F7F4EC 48%,#ddd3bd 100%);border:2px solid rgba(13,27,20,.45);border-radius:50%;width:78px;height:78px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 3px 5px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 6px 12px rgba(0,0,0,.4);cursor:pointer;padding:0}
+.colorband button.bigicon:active{transform:translateY(-50%) translateY(2px);box-shadow:inset 0 2px 4px rgba(255,255,255,.7),inset 0 -2px 4px rgba(0,0,0,.22),0 1px 3px rgba(0,0,0,.3)}
 .index{padding:16px 20px;margin:22px 0 0}
 #picker{margin-top:20px}
 .icobtn{--bb:#e9f3e4;--bm:#9cc7a8;--bd:#23402f;width:34px;height:34px;border-radius:50%;border:2px solid var(--bd);background:radial-gradient(circle at 32% 28%,#ffffff 0%,var(--bb) 45%,var(--bm) 100%);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -3px 5px rgba(0,0,0,.22),0 3px 6px rgba(0,0,0,.28);font-size:16px;line-height:1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;vertical-align:-9px;margin-right:8px;padding:0}
@@ -667,7 +668,7 @@ img,svg{max-width:100%}
   document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);var b=document.getElementById(id);if(b&&b.classList.contains('colorband')&&window.__dteOpenBand)window.__dteOpenBand(b);});
   if(location.hash){var t=document.querySelector(location.hash);openSecOf(t);}
   var hub=document.querySelector('.dte-hub');
-  if(hub){hub.setAttribute('role','button');hub.setAttribute('tabindex','0');hub.title='Reset the picker';var rs=function(){if(window.__dteServe)window.__dteServe('energy',false);};hub.addEventListener('click',rs);hub.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();rs();}});}
+  if(hub){hub.setAttribute('role','button');hub.setAttribute('tabindex','0');hub.title='Reset the picker';var rs=function(){var r=document.getElementById('dteQpResult');if(r)r.innerHTML='<p class="dte-qp-idle">Tap a feeling — the wheel serves a top-score strain and a rotation pick.</p>';document.querySelectorAll('.dte-node').forEach(function(n){n.classList.remove('sel');});};hub.addEventListener('click',rs);hub.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();rs();}});}
   var mm2=document.getElementById('dteMapModal'),mb=document.getElementById('dteMapBtn'),mx=document.getElementById('dteMapX'),co=document.getElementById('dteCoTile'),cap=document.getElementById('dteMapCap');
   function openMap(){if(mm2){mm2.classList.add('open');document.body.style.overflow='hidden';}}
   function closeMap(){if(mm2){mm2.classList.remove('open');document.body.style.overflow='';}}
