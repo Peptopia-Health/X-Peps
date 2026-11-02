@@ -90,6 +90,10 @@ footer{text-align:center;color:var(--sub);font-size:.85rem;margin-top:34px}
 @media(max-width:640px){.fld-row{grid-template-columns:1fr 1fr}.sess-photos{grid-template-columns:1fr}.fx{grid-template-columns:16px 64px 1fr 30px}.hero h1{font-size:1.8rem}}
 @media print{
   @page{size:Letter;margin:.5in}
+  .print-day-btn{display:none!important}
+  body[data-printing] #strains, body[data-printing] #protocol, body[data-printing] #scoreboard, body[data-printing] .index-box, body[data-printing] header, body[data-printing] .band-wrap.journal-head, body[data-printing] .lead.journal-lead{display:none!important}
+  body[data-printing] .band-sec{display:none!important}
+  body[data-printing="1"] #day1, body[data-printing="2"] #day2, body[data-printing="3"] #day3, body[data-printing="4"] #day4, body[data-printing="5"] #day5{display:block!important}
   body{background:#fff;padding:0}
   .top-row,.band-btn,.btn-row,.chev{display:none!important}
   [hidden]{display:block!important}
@@ -200,16 +204,17 @@ html,body{overflow-x:clip}
       <li><b>Three sessions a day</b> — one per strain, spaced through the day.</li>
       <li><b>Same conditions each session</b> — weighed dose, noted time, ratings filled in while the session is fresh.</li>
       <li><b>Rate every effect 0–10</b> — Energy, Focus, Mood, Calm, Analgesia, Sleep — plus an Overall.</li>
-      <li><b>The journal saves itself</b> — every entry is kept on this device automatically. Use the buttons under the Scoreboard to print a copy or copy a text summary.</li>
+      <li><b>The journal saves itself</b> — every entry is kept on this device automatically. Use the buttons under the Scoreboard to print a copy or copy a text summary, or use any day's own Print Day button for a one-day report.</li>
     </ul></div>
   </section>
 
-  <div class="band-wrap"><h2 class="band">The Journal</h2></div>
-  <p class="lead">Day 1 is open. Each day's band button opens or closes that day.</p>
+  <div class="band-wrap journal-head"><h2 class="band">The Journal</h2></div>
+  <p class="lead journal-lead">Day 1 is open. Each day's band button opens or closes that day.</p>
   
   <section class="band-sec" id="day1">
     <div class="band-wrap"><h2 class="band">Day 1 <span class="band-sub">Mon, Nov 2, 2026</span>
-      <button class="band-btn" data-toggle="daybody1" aria-expanded="true">▾</button></h2></div>
+      <button class="band-btn" data-toggle="daybody1" aria-expanded="true">▾</button></h2>
+      <button class="push print-day-btn" data-print-day="1" style="margin-left:10px;padding:7px 14px">Print Day 1</button></div>
     <div class="band-body" id="daybody1">
     <section class="session" data-strain="white">
       <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
@@ -319,7 +324,8 @@ html,body{overflow-x:clip}
   </section>
   <section class="band-sec" id="day2">
     <div class="band-wrap"><h2 class="band">Day 2 <span class="band-sub">Tue, Nov 3, 2026</span>
-      <button class="band-btn" data-toggle="daybody2" aria-expanded="false">▾</button></h2></div>
+      <button class="band-btn" data-toggle="daybody2" aria-expanded="false">▾</button></h2>
+      <button class="push print-day-btn" data-print-day="2" style="margin-left:10px;padding:7px 14px">Print Day 2</button></div>
     <div class="band-body" id="daybody2" hidden>
     <section class="session" data-strain="white">
       <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
@@ -426,7 +432,8 @@ html,body{overflow-x:clip}
   </section>
   <section class="band-sec" id="day3">
     <div class="band-wrap"><h2 class="band">Day 3 <span class="band-sub">Wed, Nov 4, 2026</span>
-      <button class="band-btn" data-toggle="daybody3" aria-expanded="false">▾</button></h2></div>
+      <button class="band-btn" data-toggle="daybody3" aria-expanded="false">▾</button></h2>
+      <button class="push print-day-btn" data-print-day="3" style="margin-left:10px;padding:7px 14px">Print Day 3</button></div>
     <div class="band-body" id="daybody3" hidden>
     <section class="session" data-strain="white">
       <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
@@ -533,7 +540,8 @@ html,body{overflow-x:clip}
   </section>
   <section class="band-sec" id="day4">
     <div class="band-wrap"><h2 class="band">Day 4 <span class="band-sub">Thu, Nov 5, 2026</span>
-      <button class="band-btn" data-toggle="daybody4" aria-expanded="false">▾</button></h2></div>
+      <button class="band-btn" data-toggle="daybody4" aria-expanded="false">▾</button></h2>
+      <button class="push print-day-btn" data-print-day="4" style="margin-left:10px;padding:7px 14px">Print Day 4</button></div>
     <div class="band-body" id="daybody4" hidden>
     <section class="session" data-strain="white">
       <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
@@ -640,7 +648,8 @@ html,body{overflow-x:clip}
   </section>
   <section class="band-sec" id="day5">
     <div class="band-wrap"><h2 class="band">Day 5 <span class="band-sub">Fri, Nov 6, 2026</span>
-      <button class="band-btn" data-toggle="daybody5" aria-expanded="false">▾</button></h2></div>
+      <button class="band-btn" data-toggle="daybody5" aria-expanded="false">▾</button></h2>
+      <button class="push print-day-btn" data-print-day="5" style="margin-left:10px;padding:7px 14px">Print Day 5</button></div>
     <div class="band-body" id="daybody5" hidden>
     <section class="session" data-strain="white">
       <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
@@ -845,6 +854,15 @@ html,body{overflow-x:clip}
       localStorage.removeItem(KEY); location.reload();
     }
   });
+  document.querySelectorAll('[data-print-day]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.body.setAttribute('data-printing', btn.getAttribute('data-print-day'));
+      setTimeout(function() { window.print(); }, 40);
+    });
+  });
+  window.addEventListener('afterprint', function() { document.body.removeAttribute('data-printing'); });
+  var hm = location.hash.match(/print-day-(\d)/);
+  if (hm) document.body.setAttribute('data-printing', hm[1]);
   render();
 })();
 </script>
