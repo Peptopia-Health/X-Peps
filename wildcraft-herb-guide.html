@@ -2104,12 +2104,45 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('mapZoomReset').addEventListener('click',function(){scale=1;tx=0;ty=0;apply();});
   modal.addEventListener('click',function(e){if(e.target===modal)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
-  var drag=null;
-  view.addEventListener('pointerdown',function(e){drag={x:e.clientX-tx,y:e.clientY-ty};try{view.setPointerCapture(e.pointerId);}catch(err){}});
-  view.addEventListener('pointermove',function(e){if(!drag)return;tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();});
-  view.addEventListener('pointerup',function(){drag=null;});
-  view.addEventListener('pointercancel',function(){drag=null;});
+  /* fix R3b (real-browser root cause): pointer capture must NOT be grabbed on
+     pointerdown. Capturing on every tap makes the browser retarget the
+     pointerup/click to #mapView, so clicks never land on the state cells and
+     every e.target-based popup handler goes dead inside this modal (jsdom does
+     not model capture retargeting, which is why simulations missed it).
+     Capture now engages only after the gesture is unambiguously a drag. */
+  var drag=null,dragMoved=false,downPt=null,suppressClick=false;
+  view.addEventListener('pointerdown',function(e){downPt={x:e.clientX,y:e.clientY};drag={x:e.clientX-tx,y:e.clientY-ty};dragMoved=false;});
+  view.addEventListener('pointermove',function(e){if(!drag)return;
+    if(!dragMoved){if(!downPt||Math.abs(e.clientX-downPt.x)+Math.abs(e.clientY-downPt.y)<=6)return;dragMoved=true;try{view.setPointerCapture(e.pointerId);}catch(err){}}
+    tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();});
+  function dragEnd(){if(drag&&dragMoved)suppressClick=true;drag=null;downPt=null;}
+  view.addEventListener('pointerup',dragEnd);
+  view.addEventListener('pointercancel',dragEnd);
   stage.addEventListener('click',function(e){var t=e.target.closest?e.target.closest('.wc-st'):null;if(t&&readout)readout.textContent=t.getAttribute('title')||'';});
+  /* fix R3b: the enlarged map owns its state clicks. Any click reaching the
+     modal that the document-level law handler has not already served is
+     resolved here — directly from the event target, or, if a browser ever
+     retargets the click to the view/stage, by a real hit test at the click
+     point — and routed to the same showLaw routine the inline map uses.
+     The click trailing a pan drag is swallowed via suppressClick. */
+  modal.addEventListener('click',function(e){
+    if(suppressClick){suppressClick=false;return;}
+    if(e.__wcLawHandled)return;
+    var t=e.target;
+    if(t!==stage&&!stage.contains(t)){
+      if(!document.elementFromPoint)return;
+      var hit=document.elementFromPoint(e.clientX,e.clientY);
+      if(hit&&(hit===stage||stage.contains(hit)))t=hit;else return;
+    }
+    if(!t||!t.closest)return;
+    var star=t.closest('.wc-star');
+    var cell=t.closest('.wc-st[data-law]');
+    if(!star&&!cell)return;
+    var fn=window.__wcShowLaw,LL=window.__wcLAWS;
+    if(!fn||!LL)return;
+    if(star){fn('⭐ New Hampshire — WildCraft’s home state','WildCraft Herb Company is a small family business based in Epping / Brentwood, New Hampshire. Kratom is legal statewide here with minimal restrictions — this is home turf for the vendor.','https://www.wildcraftherbcompany.com/');return;}
+    var L=LL[cell.getAttribute('data-law')];if(L)fn('Kratom in '+cell.getAttribute('data-law'),L.s,L.u,cell.getAttribute('data-law'));
+  });
 });
 })();
 </script>
@@ -2313,15 +2346,18 @@ document.addEventListener('DOMContentLoaded',function(){
     modal.hidden=false;
   }
   function hideLaw(){modal.hidden=true;}
+  /* fix R3b: export the popup routine + law table so the enlarged-map modal
+     can route its own state clicks to the exact same popup as the inline map */
+  window.__wcShowLaw=showLaw;window.__wcLAWS=LAWS;
   if(modal&&lc){
     lc.addEventListener('click',hideLaw);
     modal.addEventListener('click',function(e){if(e.target===modal)hideLaw();});
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)hideLaw();});
     document.addEventListener('click',function(e){
       var star=e.target.closest?e.target.closest('.wc-star'):null;
-      if(star){e.stopPropagation();showLaw('\u2B50 New Hampshire \u2014 WildCraft\u2019s home state','WildCraft Herb Company is a small family business based in Epping / Brentwood, New Hampshire. Kratom is legal statewide here with minimal restrictions \u2014 this is home turf for the vendor.','https://www.wildcraftherbcompany.com/');return;}
+      if(star){e.__wcLawHandled=true;e.stopPropagation();showLaw('\u2B50 New Hampshire \u2014 WildCraft\u2019s home state','WildCraft Herb Company is a small family business based in Epping / Brentwood, New Hampshire. Kratom is legal statewide here with minimal restrictions \u2014 this is home turf for the vendor.','https://www.wildcraftherbcompany.com/');return;}
       var cell=e.target.closest?e.target.closest('.wc-st[data-law]'):null;
-      if(cell){var L=LAWS[cell.getAttribute('data-law')];if(L)showLaw('Kratom in '+cell.getAttribute('data-law'),L.s,L.u,cell.getAttribute('data-law'));}
+      if(cell){var L=LAWS[cell.getAttribute('data-law')];if(L){e.__wcLawHandled=true;showLaw('Kratom in '+cell.getAttribute('data-law'),L.s,L.u,cell.getAttribute('data-law'));}}
     },true);
   }
 });
