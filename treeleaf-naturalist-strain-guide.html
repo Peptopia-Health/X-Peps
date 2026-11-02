@@ -1457,8 +1457,9 @@ var TLRAW={"strain-white-java": {"effects": [["energy", 49], ["clarity", 26], ["
 (function(){
   var modal=document.getElementById('donut-modal'); if(modal)document.body.appendChild(modal);
   /* theme: visit-only, never persisted */
+  window.toggleTheme=function(){var d=document.documentElement.classList.toggle('dark'); var b=document.getElementById('tlThemeBtn'); if(b)b.textContent=d?'\u2600\uFE0F':'\uD83C\uDF19'; return false;};
   var tb=document.getElementById('tlThemeBtn');
-  if(tb)tb.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');tb.textContent=d?'☀️':'🌙';});
+  if(tb)tb.addEventListener('click',function(){window.toggleTheme();});
   /* section grouping + band toggles + picker pills */
   document.querySelectorAll('.colorband').forEach(function(band){
     var wrap=document.createElement('div'); wrap.className='tl-secbody';
