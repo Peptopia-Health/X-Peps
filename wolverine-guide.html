@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolverine Research Guide — BPC-157 + TB-500 | Peptopia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F8FA; --card:#FFFFFF; --t1:#0F172A; --t2:#475569; --t3:#94A3B8;
+  --border:#E6E9EF; --teal:#059669; --teal-bright:#10B981; --teal-tint:#ECFDF5;
+  --violet:#7C3AED; --gold:#B45309; --hl:#D9FBEA;
+  --sh:0 1px 3px rgba(15,23,42,.06),0 4px 14px rgba(15,23,42,.05);
+}
+html.dark{
+  --bg:#0B1220; --card:#111C30; --t1:#E7EDF7; --t2:#A9B8CE; --t3:#64748B;
+  --border:#22314D; --teal:#34D399; --teal-bright:#34D399; --teal-tint:#0A2E22;
+  --violet:#A78BFA; --gold:#FBBF24; --hl:#14532D;
+  --sh:0 1px 3px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px 64px}
+h1,h2,h3,.band-t{font-family:'Outfit',sans-serif}
+a{color:var(--teal)}
+/* ---------- top bar ---------- */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 2px 0}
+.kicker{font-family:'Outfit',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.16em;color:var(--t3);text-transform:uppercase}
+.hdr-cluster{display:flex;gap:8px;align-items:center}
+.push-btn{position:relative;display:inline-flex;align-items:center;gap:.42em;border-radius:999px;padding:.5em 1.05em;font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;line-height:1;text-decoration:none;cursor:pointer;color:#0F172A;background:linear-gradient(180deg,#FDE68A 0%,#F59E0B 55%,#D97706 100%);border:1.5px solid #92400E;box-shadow:inset 0 2px 3px rgba(255,255,255,.75),inset 0 -3px 5px rgba(0,0,0,.28),0 4px 0 #92400E,0 7px 12px rgba(0,0,0,.28);transition:transform .05s ease,box-shadow .05s ease,filter .15s ease}
+.push-btn:hover{filter:brightness(1.06)}
+.push-btn:active{transform:translateY(3px);box-shadow:inset 0 2px 3px rgba(255,255,255,.6),inset 0 -2px 4px rgba(0,0,0,.25),0 1px 0 #92400E,0 3px 6px rgba(0,0,0,.25)}
+.push-btn svg{width:15px;height:15px;flex:none}
+.push-btn .pp-moon{display:none}
+html.dark .push-btn .pp-moon{display:block}
+html.dark .push-btn .pp-sun{display:none}
+/* ---------- header ---------- */
+.guide-header{text-align:center;padding:30px 0 8px}
+.guide-header h1{font-size:clamp(2.1rem,6vw,3.3rem);font-weight:800;letter-spacing:-.01em;line-height:1.08}
+.grad{background:linear-gradient(92deg,var(--teal) 10%,var(--violet) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{margin-top:10px;font-size:clamp(.78rem,2.9vw,1.02rem);color:var(--t2);font-weight:500;white-space:nowrap}
+.chip-row{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:20px 0 4px}
+.chip-row .push-btn{font-size:.78rem}
+/* ---------- section bands ---------- */
+section{margin-top:38px}
+.band{width:fit-content;max-width:100%;border:1.5px solid var(--teal);background:var(--teal-tint);border-radius:14px;padding:13px 70px 13px 16px;margin-bottom:16px;scroll-margin-top:18px}
+.band-t{font-size:1.28rem;font-weight:800;color:var(--t1);line-height:1.25}
+.band-sub{color:var(--t2);font-size:.92rem;max-width:52ch;margin-top:2px}
+/* ---------- cards & boxes ---------- */
+.info-box{position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);padding:22px 22px 18px;overflow:hidden}
+.info-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--violet))}
+.info-box p{color:var(--t2);margin-bottom:12px}
+.info-box p:last-child{margin-bottom:0}
+.info-box .lead{color:var(--t1);font-size:1.04rem}
+.cmp{font-family:'Outfit',sans-serif;font-weight:800;color:var(--teal)}
+.cmp-v{font-family:'Outfit',sans-serif;font-weight:800;color:var(--violet)}
+html.dark .cmp-v{color:#C4B5FD}
+.highlight{background:var(--hl);font-weight:700;padding:0 .18em;border-radius:4px;color:var(--t1)}
+.hl-teal{background:var(--teal-tint);font-weight:700;padding:0 .18em;border-radius:4px;color:var(--t1)}
+.hl-v{background:#EDE9FE;font-weight:700;padding:0 .18em;border-radius:4px;color:var(--t1)}
+html.dark .hl-v{background:#4C1D95;color:#EDE9FE}
+strong{color:var(--t1)}
+/* mechanism cards */
+.mech-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.mech-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);padding:18px}
+.mech-card .cmp,.mech-card .cmp-v{font-size:1.02rem;display:block;margin-bottom:6px}
+.mech-card p{color:var(--t2);font-size:.92rem}
+/* stat cards */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);padding:18px;text-align:center}
+.stat-num{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.9rem;color:var(--teal);line-height:1.1}
+.stat-num small{font-size:.95rem;color:var(--t2);font-weight:700}
+.stat-lbl{color:var(--t2);font-size:.88rem;margin-top:4px}
+.chip{display:inline-block;font-family:'Outfit',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.05em;padding:.28em .7em;border-radius:999px;margin-top:10px;text-transform:uppercase}
+.chip-ok{background:#DCFCE7;color:#166534;border:1.5px solid #16A34A}
+.chip-wait{background:#FEF3C7;color:#92400E;border:1.5px solid #D97706}
+.chip-no{background:#FEE2E2;color:#991B1B;border:1.5px solid #DC2626}
+html.dark .chip-ok{background:#14532D;color:#BBF7D0}
+html.dark .chip-wait{background:#451A03;color:#FDE68A}
+html.dark .chip-no{background:#450A0A;color:#FECACA}
+/* tables */
+.table-wrapper{border:2.5px solid var(--border);border-radius:12px;overflow:hidden;overflow-x:auto;margin:14px 0;background:var(--card);box-shadow:var(--sh)}
+table.dosing-table{width:100%;border-collapse:collapse;font-size:.93rem;min-width:520px}
+table.dosing-table th{font-family:'Outfit',sans-serif;font-weight:700;text-align:left;background:var(--teal-tint);color:var(--t1);padding:11px 14px;border-bottom:2px solid var(--border)}
+table.dosing-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--t2);vertical-align:top}
+table.dosing-table tr:last-child td{border-bottom:none}
+table.dosing-table td.num{font-family:'Outfit',sans-serif;font-weight:700;color:var(--t1);white-space:nowrap}
+table.dosing-table td:first-child{color:var(--t1);font-weight:600}
+/* steps */
+.step-container{margin-top:6px}
+.step-item{display:flex;gap:14px;padding:13px 2px;border-bottom:1px solid var(--border)}
+.step-item:last-child{border-bottom:none}
+.step-num{flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(180deg,var(--teal-bright),var(--teal));color:#fff;font-family:'Outfit',sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 3px rgba(255,255,255,.5),inset 0 -3px 5px rgba(0,0,0,.25),0 3px 6px rgba(0,0,0,.18)}
+.step-item p{color:var(--t2)}
+.step-item p strong{display:block;color:var(--t1);font-family:'Outfit',sans-serif}
+/* storage cards */
+.storage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.storage-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--sh);padding:18px}
+.storage-card h3{font-size:1rem;font-weight:800;margin-bottom:6px}
+.storage-card p{color:var(--t2);font-size:.92rem}
+/* bibliography */
+.src-group{font-family:'Outfit',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:20px 0 8px}
+.src-group:first-of-type{margin-top:4px}
+.src-list{list-style:none}
+.src-list li{padding:9px 2px;border-bottom:1px solid var(--border);color:var(--t2);font-size:.93rem}
+.src-list li:last-child{border-bottom:none}
+a.srcname{font-weight:700;color:var(--t1);text-decoration:none;border-bottom:2px solid var(--teal-bright)}
+a.srcname:hover{color:var(--teal)}
+.srcname-plain{font-weight:700;color:var(--t1)}
+/* footer + top button */
+.guide-footer{text-align:center;color:var(--t3);font-size:.85rem;margin-top:52px;padding-top:20px;border-top:1px solid var(--border)}
+#topBtn{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:1.5px solid #92400E;background:linear-gradient(180deg,#FDE68A,#D97706);color:#0F172A;font-size:1.15rem;cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.7),inset 0 -3px 5px rgba(0,0,0,.25),0 4px 0 #92400E,0 8px 14px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .25s}
+#topBtn.show{opacity:1;pointer-events:auto}
+#topBtn:active{transform:translateY(3px)}
+/* ---------- wolverine additions ---------- */
+.viz-stage{max-width:440px;margin:16px auto 4px}
+.viz-stage svg{width:100%;height:auto;display:block}
+html.dark text[fill="#475569"]{fill:#9FB0C9}
+.wv-wrap{position:relative;height:272px;max-width:580px;margin:14px auto 4px}
+.wv-c{position:absolute;top:50%;transform:translateY(-50%);width:270px;height:270px;border-radius:50%;display:flex;align-items:center}
+.wv-a{left:calc(50% - 233px);background:rgba(16,185,129,.16);border:2px solid #059669;justify-content:flex-start}
+.wv-b{right:calc(50% - 233px);background:rgba(124,58,237,.13);border:2px solid #7C3AED;justify-content:flex-end}
+.wv-l{width:148px;text-align:center;padding:0 6px;flex:none}
+.wv-l .wv-t{font-family:'Outfit',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.05em}
+.wv-a .wv-t{color:#047857}.wv-b .wv-t{color:#6D28D9}
+html.dark .wv-a .wv-t{color:#6EE7B7}html.dark .wv-b .wv-t{color:#C4B5FD}
+.wv-l .wv-d{font-size:.74rem;color:var(--t2);line-height:1.35;margin-top:2px}
+.wv-mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:24%;text-align:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.04em;color:var(--t1);line-height:1.3}
+.grade{display:inline-block;font-family:'Outfit',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.04em;padding:.22em .6em;border-radius:999px;white-space:nowrap}
+.grade-a{background:#ECFDF5;color:#065F46;border:1.5px solid #059669}
+.grade-h{background:#FFF7ED;color:#9A3412;border:1.5px solid #EA580C}
+.grade-m{background:#F1F5F9;color:#475569;border:1.5px solid #94A3B8}
+html.dark .grade-a{background:#0A2E22;color:#6EE7B7}
+html.dark .grade-h{background:#431407;color:#FDBA74}
+html.dark .grade-m{background:#1E293B;color:#CBD5E1}
+.fam-dot{display:inline-block;width:.78em;height:.78em;border-radius:50%;margin-right:.45em;border:1.5px solid rgba(0,0,0,.28);vertical-align:-.06em}
+.w-note{font-size:.86rem;color:var(--t3);margin-top:8px}
+@media(max-width:640px){
+  .wv-wrap{height:212px}
+  .wv-c{width:210px;height:210px}
+  .wv-a{left:calc(50% - 181px)}
+  .wv-b{right:calc(50% - 181px)}
+  .wv-l{width:110px}
+  .wv-l .wv-t{font-size:.66rem}
+  .wv-l .wv-d{font-size:.6rem}
+  .wv-mid{font-size:.58rem;width:26%}
+}
+</style>
+<style id="wolverine-responsive-print-standard">
+/* ===== RESPONSIVE + PRINT STANDARD (guide build script §24/§25 — keep last) ===== */
+img,svg,video{max-width:100%;height:auto}
+table{max-width:100%}
+@media(max-width:640px){
+  body{overflow-x:clip}
+  .wrap{padding-left:12px;padding-right:12px}
+  .mech-grid-3,.stat-grid,.storage-grid{grid-template-columns:1fr}
+  .tagline{white-space:normal}
+  .band{padding-right:16px}
+  table.dosing-table{min-width:0;font-size:.86rem}
+}
+@media print{
+  @page{margin:14mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .topbar,#topBtn{display:none!important}
+  .info-box,.mech-card,.stat-card,.storage-card,.band{break-inside:avoid;box-shadow:none}
+  p,li{break-inside:avoid}
+  section{break-before:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <div class="kicker">Peptide Blend Research Guide</div>
+  <div class="hdr-cluster">
+    <span class="push-btn">📅 November 2026</span>
+    <button class="push-btn" onclick="toggleTheme()" aria-label="Toggle dark theme"><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3L19 19M19 5l-1.7 1.7M6.7 17.3L5 19"/></svg><svg class="pp-moon" viewBox="0 0 24 24" fill="#0F172A"><path d="M20.6 14.2A8.6 8.6 0 1 1 9.8 3.4a7 7 0 1 0 10.8 10.8z"/></svg>Theme</button>
+    <button class="push-btn" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>Print</button>
+  </div>
+</div>
+
+<header class="guide-header">
+  <h1><span class="grad">Wolverine</span></h1>
+  <p class="tagline">BPC-157 + TB-500 — the two-peptide healing blend, covered end to end.</p>
+  <div class="chip-row">
+    <a class="push-btn" href="#what">🧬 2 peptides · 1 vial</a>
+    <a class="push-btn" href="#evidence">🎯 Tendon · Ligament · Joint</a>
+    <a class="push-btn" href="#dosing">📅 Daily meets load-and-maintain</a>
+    <a class="push-btn" href="#recon">🧪 5 units = 250 mcg of each</a>
+  </div>
+</header>
+
+<!-- ================= WHAT ================= -->
+<section>
+  <div class="band" id="what">
+    <div class="band-t">What Is the Wolverine Blend?</div>
+    <div class="band-sub">Two repair peptides in a single vial — the GLOW formula with the copper peptide left out, aimed at deep tissue instead of skin.</div>
+  </div>
+  <div class="info-box">
+    <p class="lead">Wolverine is the research-market name for a fixed blend of <span class="highlight">BPC-157</span> and <span class="hl-v">TB-500</span> — the two most-studied healing peptides, lyophilized together in one vial.</p>
+    <p>The pairing is a division of labor. <strong>BPC-157</strong> works the local repair signal: in animal and cell studies it switches on new blood-vessel growth and makes repair cells more responsive to growth signals at the injury site. <strong>TB-500</strong> works the logistics: it regulates actin, the structural protein cells use to move, so repair cells can migrate into damaged tissue. One peptide raises the signal, the other moves the crew — that is the entire logic of the blend, and the reason it is the healing-family counterpart to GLOW, which adds GHK-Cu for skin and collagen on top of the same two-peptide core.</p>
+    <p>Neither compound is an approved drug, and the blend itself has never been through a human trial. What exists is a deep animal literature for each peptide separately, a handful of small human reports for BPC-157, and a large body of published protocol practice. This guide keeps those three layers separate throughout.</p>
+  </div>
+
+  <div class="mech-grid-3">
+    <div class="mech-card">
+      <span class="cmp">BPC-157 — the local signal</span>
+      <p>A synthetic <strong>15-amino-acid</strong> peptide (sequence GEPPPGKPADDAGLV) modeled on a protective protein found in human gastric juice. In rat tendon fibroblasts it upregulates the <strong>growth hormone receptor</strong> and activates the JAK-2 pathway (Chang 2014), and in endothelial models it raises <strong>VEGFR2</strong> and switches on the VEGFR2–Akt–eNOS chain that builds new capillaries (Hsieh 2017). It also modulates the nitric oxide system (Sikiric 2014).</p>
+    </div>
+    <div class="mech-card">
+      <span class="cmp-v">TB-500 — the migration crew</span>
+      <p>A synthetic fragment of <strong>thymosin beta-4</strong>, a 43-amino-acid protein found in nearly every cell. TB-500 is its <strong>7-amino-acid actin-binding region</strong> (Ac-LKKTETQ, residues 17–23). By binding G-actin, thymosin beta-4 controls the cytoskeleton cells need to crawl — and in animal wound models it speeds cell migration into the wound bed and accelerates closure (Malinda 1999).</p>
+    </div>
+    <div class="mech-card">
+      <span class="cmp">Why they are paired</span>
+      <p>Tendons and ligaments heal slowly largely because they are <span class="highlight">poorly supplied with blood</span>. BPC-157's angiogenesis addresses the supply problem; TB-500's actin regulation addresses the movement problem. The mechanisms are complementary on paper and in animal models — the honest limit is that published synergy data for the pair is thin, and no controlled study has shown the blend beating either peptide alone.</p>
+    </div>
+  </div>
+
+  <div class="wv-wrap" role="img" aria-label="Venn diagram: BPC-157 covers the local repair signal, TB-500 covers cell migration, and they overlap on new blood vessel growth and faster wound closure in animal models.">
+    <div class="wv-c wv-a"><div class="wv-l"><div class="wv-t">BPC-157 · LOCAL SIGNAL</div><div class="wv-d">VEGFR2 angiogenesis · growth hormone receptor · nitric oxide system</div></div></div>
+    <div class="wv-c wv-b"><div class="wv-l"><div class="wv-t">TB-500 · CELL MIGRATION</div><div class="wv-d">Actin regulation · repair-cell movement · systemic reach</div></div></div>
+    <div class="wv-mid">NEW BLOOD VESSELS · FASTER CLOSURE IN ANIMAL WOUND MODELS</div>
+  </div>
+
+  <div class="viz-stage" role="img" aria-label="Wolverine medallion: a Repair core with BPC-157, TB-500, and Synergy satellites.">
+    <svg viewBox="34 2 272 250" fill="none" stroke-linecap="round" stroke-linejoin="round" role="presentation">
+      <defs>
+        <radialGradient id="wol-core" cx="0.35" cy="0.3" r="0.95">
+          <stop offset="0" stop-color="#B9FBC9"/><stop offset=".55" stop-color="#10C000"/><stop offset="1" stop-color="#0B8A00"/>
+        </radialGradient>
+        <radialGradient id="wol-bpc" cx="0.35" cy="0.3" r="0.95">
+          <stop offset="0" stop-color="#A7F3D0"/><stop offset=".55" stop-color="#10B981"/><stop offset="1" stop-color="#065F46"/>
+        </radialGradient>
+        <radialGradient id="wol-tb" cx="0.35" cy="0.3" r="0.95">
+          <stop offset="0" stop-color="#D8CCFF"/><stop offset=".55" stop-color="#7C3AED"/><stop offset="1" stop-color="#5B21B6"/>
+        </radialGradient>
+        <radialGradient id="wol-syn" cx="0.35" cy="0.3" r="0.95">
+          <stop offset="0" stop-color="#FFFFC8"/><stop offset=".55" stop-color="#F0F000"/><stop offset="1" stop-color="#D8D800"/>
+        </radialGradient>
+      </defs>
+      <path d="M104 54 C 122 64, 132 74, 140 84" stroke="#0B8A00" stroke-width="3" stroke-dasharray="0.5 5.5"/>
+      <path d="M236 54 C 218 64, 208 74, 200 84" stroke="#0B8A00" stroke-width="3" stroke-dasharray="0.5 5.5"/>
+      <path d="M170 182 C 170 184, 170 185, 170 186" stroke="#0B8A00" stroke-width="3" stroke-dasharray="0.5 3.5"/>
+      <circle cx="170" cy="117" r="58" fill="url(#wol-core)" stroke="#0F172A" stroke-width="3"/>
+      <ellipse cx="146" cy="82" rx="20" ry="11" fill="#FFFFFF" opacity=".35" transform="rotate(-24 146 82)"/>
+      <text x="170" y="124" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="16" fill="#FFFFFF">REPAIR</text>
+      <circle cx="80" cy="46" r="27" fill="url(#wol-bpc)" stroke="rgba(0,0,0,.28)" stroke-width="3"/>
+      <g transform="translate(80 46)" stroke="#FFFFFF" stroke-width="3" fill="none"><circle r="10"/><circle r="4.5"/></g>
+      <circle cx="260" cy="46" r="27" fill="url(#wol-tb)" stroke="rgba(0,0,0,.28)" stroke-width="3"/>
+      <g transform="translate(260 46)" stroke="#FFFFFF" stroke-width="3" fill="none"><circle cx="-7" cy="0" r="3"/><circle cx="8" cy="-6" r="3"/><circle cx="7" cy="8" r="3"/><path d="M-4.5 1.5 L5 -4 M-4 2.5 L4.5 6.5 M5.5 -3 L6.5 5"/></g>
+      <circle cx="170" cy="208" r="23" fill="url(#wol-syn)" stroke="rgba(0,0,0,.28)" stroke-width="3"/>
+      <g transform="translate(170 208) scale(0.88)" stroke="#3A3400" stroke-width="3" fill="none"><circle cx="-8" cy="0" r="8"/><circle cx="8" cy="0" r="8"/></g>
+      <text x="80" y="88" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="10.5" letter-spacing=".06em" fill="#475569">BPC-157</text>
+      <text x="260" y="88" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="10.5" letter-spacing=".06em" fill="#475569">TB-500</text>
+      <text x="170" y="246" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="10.5" letter-spacing=".06em" fill="#475569">SYNERGY</text>
+    </svg>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="dosing-table">
+      <tr><th>Vial presentation</th><th>Contents</th><th>Notes</th></tr>
+      <tr><td>Standard blend vial</td><td class="num">10 mg + 10 mg (20 mg total)</td><td>The most common listing across vendors — equal parts BPC-157 and TB-500 by mass.</td></tr>
+      <tr><td>Half-size blend vial</td><td class="num">5 mg + 5 mg (10 mg total)</td><td>Same 1:1 ratio, half the material; the format several published blend protocols are written around.</td></tr>
+      <tr><td>Separate vials (the stack)</td><td class="num">5–10 mg each</td><td>Same two peptides, drawn independently — the only format that lets each peptide keep its own schedule (see Dosing).</td></tr>
+    </table>
+  </div>
+  <p class="w-note">A fixed blend fixes the ratio: in a pre-mixed vial the two peptides cannot be dosed independently. That trade — convenience against control — runs through every protocol decision below.</p>
+</section>
+
+<!-- ================= EVIDENCE ================= -->
+<section>
+  <div class="band" id="evidence">
+    <div class="band-t">What It Is Used For — and What the Evidence Shows</div>
+    <div class="band-sub">Five use areas, graded plainly: where the animal data is strong, and where the human record is thin or absent.</div>
+  </div>
+  <div class="table-wrapper">
+    <table class="dosing-table">
+      <tr><th>Use area</th><th>What the research shows</th><th>Evidence</th></tr>
+      <tr>
+        <td>Tendon &amp; ligament</td>
+        <td>The deepest animal record of the five. In rat Achilles tendon transection, BPC-157 improved functional, biomechanical, and microscopic healing through day 14 (Staresinic 2003); tendon fibroblast studies show faster outgrowth and migration (Chang 2011, 2014). No human tendon trial exists.</td>
+        <td><span class="grade grade-a">ANIMAL — STRONG</span></td>
+      </tr>
+      <tr>
+        <td>Muscle tears</td>
+        <td>Rodent muscle crush and transection models heal faster with BPC-157, and thymosin beta-4 supports muscle regeneration and repair-cell recruitment in animal models. Human data: none published for either peptide.</td>
+        <td><span class="grade grade-a">ANIMAL — MODERATE+</span></td>
+      </tr>
+      <tr>
+        <td>Joint pain</td>
+        <td>The one human musculoskeletal report in the literature: a retrospective series of <span class="cmp">12 patients</span> with chronic knee pain given intra-articular BPC-157, of whom <span class="cmp">7 (58%)</span> reported relief lasting more than 6 months. No control group, no blinding — a signal, not a proof.</td>
+        <td><span class="grade grade-h">HUMAN — MINIMAL</span></td>
+      </tr>
+      <tr>
+        <td>Post-surgery &amp; wound healing</td>
+        <td>Thymosin beta-4 accelerated dermal wound closure in rats (Malinda 1999), and BPC-157 improves surgical wound and anastomosis healing across rodent models. Full-length thymosin beta-4 has been through human trials as an eye drop and a skin gel — the TB-500 fragment itself has never been trialed in people.</td>
+        <td><span class="grade grade-a">ANIMAL — STRONG</span></td>
+      </tr>
+      <tr>
+        <td>Gut</td>
+        <td>BPC-157's home territory: extensive rodent ulcer and inflammatory-bowel models, reviewed by its developers (Sikiric 2011). An early industry development program in inflammatory bowel disease never published results, and the FDA's 2026 evaluation of BPC-157 was for ulcerative colitis. Injectable blends are a musculoskeletal format; oral BPC-157 is the gut format in practice.</td>
+        <td><span class="grade grade-a">ANIMAL — STRONG</span></td>
+      </tr>
+    </table>
+  </div>
+  <div class="info-box">
+    <p class="lead">The human record, stated in full: a 2025 systematic review of BPC-157 in orthopaedic sports medicine screened <span class="cmp">544 articles</span> and included <span class="cmp">36 studies — 35 preclinical and 1 clinical</span> (Vasireddi 2025).</p>
+    <p>Across both peptides, the entire published human record for BPC-157 is <span class="highlight">three small uncontrolled reports totaling about 30 people</span> — the knee series above, a 12-person clinic series, and a 2-person intravenous safety pilot in which doses up to 20 mg produced no changes in cardiac, liver, kidney, thyroid, or glucose markers. For TB-500, the FDA's 2026 briefing states the agency <span class="highlight">"has not identified any human exposure data"</span> for the fragment by any route. There is no randomized controlled trial of BPC-157, of TB-500, or of the blend, for any use. Every protocol in the next section is therefore published practice, not trial-derived dosing.</p>
+  </div>
+</section>
+
+<!-- ================= DOSING ================= -->
+<section>
+  <div class="band" id="dosing">
+    <div class="band-t">Dosing: Two Schedules in One Vial</div>
+    <div class="band-sub">The blend's central tension — BPC-157 is a daily microgram peptide, TB-500 is a load-and-maintain milligram peptide — and the three ways published protocols resolve it.</div>
+  </div>
+  <div class="info-box">
+    <p class="lead">The two peptides do not naturally share a schedule, and no published human pharmacokinetic study exists for either one to settle the question.</p>
+    <p><strong>BPC-157</strong> is dosed in <span class="highlight">micrograms, once or twice a day</span> — a small, frequent signal. <strong>TB-500</strong> is dosed in <span class="hl-v">milligrams, a few times a week</span> — per injection roughly <span class="cmp">ten times</span> the BPC-157 amount, front-loaded for 4–6 weeks and then maintained at a lower frequency. Weekly totals land closer than the per-dose gap suggests: about <span class="cmp">4–5 mg</span> of TB-500 per week during loading against <span class="cmp">1.4–3.5 mg</span> of BPC-157 per week. A pre-mixed vial forces one rhythm on both, so blend protocols are compromises — and the compromise each one chooses is visible in its numbers.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-num">250–500 <small>mcg</small></div><div class="stat-lbl">BPC-157 per day, 1–2 injections, in published protocols</div></div>
+    <div class="stat-card"><div class="stat-num">2–2.5 <small>mg</small></div><div class="stat-lbl">TB-500 per injection, twice weekly in the 4–6 week loading phase</div></div>
+    <div class="stat-card"><div class="stat-num">2–2.5 <small>mg</small></div><div class="stat-lbl">TB-500 maintenance dose, once weekly to once every 1–2 weeks</div></div>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="dosing-table">
+      <tr><th>Each peptide on its own schedule</th><th>Loading / standard phase</th><th>Maintenance</th><th>Notes</th></tr>
+      <tr><td><span class="fam-dot" style="background:#10B981"></span>BPC-157 alone</td><td class="num">250–500 mcg, 1–2× daily</td><td class="num">Same range, in 4–8 week cycles</td><td>Subcutaneous near the injury for local work, abdomen for systemic; oral form is the gut format. No loading phase — the dose is the dose.</td></tr>
+      <tr><td><span class="fam-dot" style="background:#7C3AED"></span>TB-500 alone</td><td class="num">2–2.5 mg, 2× weekly · 4–6 weeks</td><td class="num">2–2.5 mg, 1× weekly → every 1–2 weeks</td><td>Systemic — injection site does not need to be near the injury. Some higher-intensity protocols total 5–7.66 mg per week during loading.</td></tr>
+    </table>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="dosing-table">
+      <tr><th>Pre-mixed blend protocols (published)</th><th>Weeks 1–2</th><th>Weeks 3–8</th><th>Cycle</th></tr>
+      <tr><td>Ramp protocol (clinic-published)</td><td class="num">250 mcg of each, daily</td><td class="num">500 mcg of each, daily</td><td>8–12 weeks on</td></tr>
+      <tr><td>Steady protocol (community standard)</td><td class="num">250 mcg of each, daily</td><td class="num">250 mcg of each, daily</td><td>8 weeks on, up to 8 weeks off</td></tr>
+      <tr><td>Higher end (acute injury)</td><td class="num">500 mcg of each, daily</td><td class="num">500 mcg of each, 1–2× daily</td><td>4–8 weeks on, 2–4 weeks off</td></tr>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <p class="lead">The weekly math shows what the blend trades away.</p>
+    <p>At <span class="cmp">250 mcg of each daily</span>, the blend delivers <span class="highlight">1.75 mg of TB-500 per week</span> — below its standalone loading range and roughly at maintenance level. At <span class="cmp">500 mcg of each daily</span>, TB-500 reaches <span class="highlight">3.5 mg per week</span>, approaching loading totals but spread evenly instead of pulsed. Reproducing a true TB-500 loading phase through the blend would mean about 1 mg of each per day — which simultaneously pushes BPC-157 to the top of its reported range. Protocols that want a genuine loading phase therefore keep the peptides in <span class="hl-teal">separate vials</span>: BPC-157 at 250–500 mcg daily alongside TB-500 at 2 mg twice weekly, stepping down to 2 mg weekly. The blend's offer is one injection, one vial, no arithmetic — at maintenance-level TB-500 exposure.</p>
+    <p>Practical notes common across the published protocols: subcutaneous injection, near the injured area for local goals or into abdominal fat for systemic effect; rotate sites; a fresh syringe for every injection; cycle lengths of <span class="cmp">4–8 weeks</span> are typical (up to 12 for long-standing problems), followed by <span class="cmp">2–4 weeks</span> off.</p>
+  </div>
+</section>
+
+<!-- ================= RECONSTITUTION ================= -->
+<section>
+  <div class="band" id="recon">
+    <div class="band-t">Reconstitution &amp; the Worked Math</div>
+    <div class="band-sub">Mixing steps, then three fully worked vial examples — every draw below is arithmetic from the vial label, checked against the published protocols.</div>
+  </div>
+  <div class="info-box">
+    <div class="step-container">
+      <div class="step-item"><div class="step-num">1</div><p><strong>Swab both stoppers</strong>Let the vial come to room temperature briefly, then wipe the peptide vial and the bacteriostatic water vial with alcohol and let them dry.</p></div>
+      <div class="step-item"><div class="step-num">2</div><p><strong>Draw the water</strong>Draw the planned volume of bacteriostatic water — 2 mL in both standard examples below — with a fresh syringe.</p></div>
+      <div class="step-item"><div class="step-num">3</div><p><strong>Add it slowly, down the wall</strong>Angle the needle so the water runs down the inside glass rather than jetting onto the powder cake. Never spray the powder directly.</p></div>
+      <div class="step-item"><div class="step-num">4</div><p><strong>Swirl, never shake</strong>Roll the vial between the palms or swirl gently until fully dissolved and clear. Shaking foams the solution and can damage the peptides.</p></div>
+      <div class="step-item"><div class="step-num">5</div><p><strong>Label and refrigerate</strong>Write the mixing date and concentration on the vial, store it refrigerated, and draw each dose with a fresh syringe.</p></div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="dosing-table">
+      <tr><th>Worked example</th><th>Concentration</th><th>250 mcg of each</th><th>500 mcg of each</th><th>1 mg of each</th></tr>
+      <tr><td>10 mg + 10 mg vial + 2 mL BAC water</td><td class="num">5 mg/mL of each · 50 mcg per unit</td><td class="num">5 units</td><td class="num">10 units</td><td class="num">20 units</td></tr>
+      <tr><td>5 mg + 5 mg vial + 2 mL BAC water</td><td class="num">2.5 mg/mL of each · 25 mcg per unit</td><td class="num">10 units</td><td class="num">20 units</td><td class="num">40 units</td></tr>
+      <tr><td>5 mg + 5 mg vial + 3 mL BAC water</td><td class="num">1.67 mg/mL of each · 16.7 mcg per unit</td><td class="num">15 units</td><td class="num">30 units</td><td class="num">60 units</td></tr>
+    </table>
+  </div>
+  <div class="info-box">
+    <p>Units are U-100 insulin-syringe units (100 units = 1 mL). On the standard 10 + 10 mg vial, the full vial holds <span class="cmp">200 units</span>: at 10 units a day that is <span class="highlight">20 doses — about three weeks</span> of daily use; at 20 units a day, 10 doses. More water per vial means a bigger, easier-to-measure draw for the same dose; the concentration line on the label is what makes the math checkable, which is why step 5 exists.</p>
+  </div>
+</section>
+
+<!-- ================= SAFETY ================= -->
+<section>
+  <div class="band" id="safety">
+    <div class="band-t">Side Effects &amp; Cautions</div>
+    <div class="band-sub">What the small human record shows, what regulators flag, and the one theoretical question the literature keeps open.</div>
+  </div>
+  <div class="mech-grid-3">
+    <div class="mech-card">
+      <span class="cmp">What has been reported</span>
+      <p>Two of the three small BPC-157 clinic reports recorded <strong>no adverse events</strong>; the third did not describe any. Reports that size cannot detect uncommon or delayed harms. In community and clinic use, the recurring complaints are <strong>headache, nausea, dizziness, fatigue, and injection-site redness or itching</strong> — anecdotal, with no measured rates for either peptide.</p>
+    </div>
+    <div class="mech-card">
+      <span class="cmp-v">What regulators flag</span>
+      <p>The FDA's compounding reviews cite <strong>immunogenicity</strong> (immune reactions to injected peptides), <strong>impurity and endotoxin characterization gaps</strong>, and insufficient clinical safety information. In animal toxicology published by BPC-157's developers, no lethal dose was identified and no organ toxicity appeared at tested doses — while reviewers note that most of the BPC-157 literature originates from a single research group, with limited independent replication.</p>
+    </div>
+    <div class="mech-card">
+      <span class="cmp">The angiogenesis question</span>
+      <p>A peptide that grows blood vessels invites an obvious question. The lab record is context-dependent: pro-angiogenic in injured tissue, yet in a tumor-cell-line study BPC-157 <strong>blunted</strong> VEGF-driven signaling. 2026 reviews list possible cancer promotion among <strong>theoretical, unmeasured</strong> concerns. The plain position: long-term human safety is unknown, there are no safety data in pregnancy, and neither peptide has been studied in children.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATUS ================= -->
+<section>
+  <div class="band" id="status">
+    <div class="band-t">Regulatory Status — November 2026</div>
+    <div class="band-sub">Not approved anywhere; the U.S. compounding question moved twice in 2026 and is still not settled by a final rule.</div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-num" style="font-size:1.25rem">FDA Approval</div><div class="stat-lbl">No approved drug product contains BPC-157 or TB-500, in any country</div><span class="chip chip-no">Not Approved</span></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.25rem">Compounding</div><div class="stat-lbl">Advisory committee backed 503A listing in July 2026; no final rule issued</div><span class="chip chip-wait">Unsettled</span></div>
+    <div class="stat-card"><div class="stat-num" style="font-size:1.25rem">Sport</div><div class="stat-lbl">BPC-157 under WADA S0; TB-500 under S2.3 — prohibited at all times</div><span class="chip chip-no">Prohibited</span></div>
+  </div>
+  <div class="info-box">
+    <p><strong>September 2023.</strong> The FDA placed both substances in <span class="highlight">Category 2</span> of its 503A bulk-substances framework — significant safety risks; compounding pharmacies could not use them.</p>
+    <p><strong>April 2026.</strong> The FDA removed 12 peptides, including both compounds, from Category 2; their nominations were recorded as withdrawn. Removal is not authorization — it ended the explicit prohibition designation without placing either substance on the approved bulks list.</p>
+    <p><strong>July 23, 2026.</strong> The FDA's Pharmacy Compounding Advisory Committee voted <span class="cmp">8–6</span>, with one abstention, to recommend adding BPC-157, KPV, and TB-500 to the 503A bulks list. FDA staff had recommended against, citing inadequate chemical characterization, impurity data, and clinical safety information. The vote is advisory only.</p>
+    <p><strong>October 2026.</strong> Compounding was reported to be proceeding under FDA enforcement discretion while formal rulemaking remains pending — a policy posture that can change, not an approval. The FDA's own pages are the live reference for where this stands.</p>
+  </div>
+</section>
+
+<!-- ================= COMPARES ================= -->
+<section>
+  <div class="band" id="compares">
+    <div class="band-t">The Healing Family, Side by Side</div>
+    <div class="band-sub">Wolverine is the middle of a family: the two singles it is built from, and the two bigger blends built on top of it.</div>
+  </div>
+  <div class="table-wrapper">
+    <table class="dosing-table">
+      <tr><th>Blend</th><th>In the vial</th><th>Built for</th><th>Schedule character</th></tr>
+      <tr><td><span class="fam-dot" style="background:#10B981"></span>BPC-157 alone</td><td>BPC-157</td><td>Local repair signal — tendon, ligament, gut</td><td class="num">250–500 mcg, 1–2× daily</td></tr>
+      <tr><td><span class="fam-dot" style="background:#7C3AED"></span>TB-500 alone</td><td>TB-500 (thymosin beta-4 fragment)</td><td>Cell migration, systemic repair support</td><td class="num">2–2.5 mg, load then maintain</td></tr>
+      <tr><td><span class="fam-dot" style="background:linear-gradient(90deg,#10B981,#7C3AED)"></span><strong>Wolverine</strong></td><td>BPC-157 + TB-500, 1:1</td><td>Deep tissue — tendon, ligament, joint, muscle</td><td class="num">250–500 mcg of each, daily</td></tr>
+      <tr><td><span class="fam-dot" style="background:#F0F000"></span>GLOW</td><td>Wolverine's pair + GHK-Cu</td><td>Adds the skin, collagen, and hair axis (30 mg vial class, per the GLOW &amp; KLOW guide)</td><td class="num">Daily</td></tr>
+      <tr><td><span class="fam-dot" style="background:#F06000"></span>KLOW</td><td>GLOW + KPV</td><td>Adds KPV's anti-inflammatory and gut-barrier axis</td><td class="num">Daily</td></tr>
+    </table>
+  </div>
+  <div class="info-box">
+    <p>The family reads as a set of additions. <span class="highlight">Wolverine is GLOW minus the copper peptide</span>: dropping GHK-Cu drops the skin-and-appearance axis and keeps the deep-tissue repair core. KLOW goes the other direction, adding KPV for inflammatory and gut-barrier work. Against its own components, the blend's trade is the one from the Dosing section — one vial and one daily rhythm, in exchange for independent control of each peptide's schedule. <span class="fam-dot" style="background:#0070D0"></span>GHK-Cu on its own remains the single-compound option for the skin and collagen side of the family.</p>
+  </div>
+</section>
+
+<!-- ================= STORAGE ================= -->
+<section>
+  <div class="band" id="storage">
+    <div class="band-t">Storage &amp; Handling</div>
+    <div class="band-sub">Peptides are fragile proteins in miniature — cold, dark, and gentle handling keeps a vial honest to the last dose.</div>
+  </div>
+  <div class="storage-grid">
+    <div class="storage-card"><h3>🧊 Unopened Vial</h3><p>Lyophilized powder keeps best refrigerated and away from light; vendor guidance for the blend is that both the powder vial and the water live in the fridge, before and after mixing. Keep the vial sealed until the day it is mixed.</p></div>
+    <div class="storage-card"><h3>💧 After Mixing</h3><p>Refrigerate at 2–8 °C and use within about <strong>30 days</strong> in common practice. Never freeze a reconstituted vial, and discard solution that turns cloudy, discolored, or shows particles.</p></div>
+    <div class="storage-card"><h3>🖐 Handling Rules</h3><p>Swirl, never shake. Fresh sterile syringe for every draw and every injection; rotate injection sites to avoid nodules; keep the stopper swabbed and the mixed vial labeled with its date and concentration.</p></div>
+  </div>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section>
+  <div class="band" id="sources">
+    <div class="band-t">Sources</div>
+    <div class="band-sub">Mechanism and dosing figures trace to the references below; protocol ranges are the published ranges of the protocol references, since no human trial of the blend exists.</div>
+  </div>
+  <div class="info-box">
+    <div class="src-group">Mechanism &amp; Animal Research</div>
+    <ul class="src-list">
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/27847966/" target="_blank" rel="noopener">Hsieh et al., Journal of Molecular Medicine (2017)</a> — BPC-157's pro-angiogenic action runs through VEGFR2 upregulation and the VEGFR2–Akt–eNOS pathway. PMID 27847966.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/25415472/" target="_blank" rel="noopener">Chang et al., Molecules (2014)</a> — BPC-157 enhances growth hormone receptor expression in tendon fibroblasts. PMID 25415472.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/21030672/" target="_blank" rel="noopener">Chang et al. (2011)</a> — BPC-157 drives tendon fibroblast outgrowth and migration via the FAK–paxillin pathway. PMID 21030672.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/14554208/" target="_blank" rel="noopener">Staresinic et al., Journal of Orthopaedic Research (2003)</a> — BPC-157 improves healing of transected rat Achilles tendon. PMID 14554208.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/23755725/" target="_blank" rel="noopener">Sikiric et al., Current Pharmaceutical Design (2014)</a> — BPC-157 and the nitric oxide system. PMID 23755725.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/21548867/" target="_blank" rel="noopener">Sikiric et al., Current Pharmaceutical Design (2011)</a> — BPC-157 in the gut: the developers' review of the ulcer and bowel literature. PMID 21548867.</li>
+      <li><span class="srcname-plain">Malinda et al., Journal of Investigative Dermatology (1999)</span> — Thymosin beta-4 accelerates dermal wound healing in rats. 113(3):364–368.</li>
+    </ul>
+    <div class="src-group">Human Evidence &amp; Safety</div>
+    <ul class="src-list">
+      <li><span class="srcname-plain">Vasireddi et al., HSS Journal (2025)</span> — Systematic review of BPC-157 in orthopaedic sports medicine: 544 articles screened, 36 included, 35 preclinical and 1 clinical.</li>
+      <li><a class="srcname" href="https://kymatahealth.com/blog/bpc-157-side-effects-human-evidence" target="_blank" rel="noopener">Kymata Health — BPC-157 side effects: what human studies actually show</a> — The three small human reports (16, 12, and 2 people) and the FDA's stated impurity and immunogenicity concerns.</li>
+      <li><a class="srcname" href="https://superpower.com/guides/peptides/bpc-157" target="_blank" rel="noopener">Superpower — BPC-157: what the research shows and its FDA status</a> — The 12-patient knee series (7 of 12, 58%, reporting relief beyond 6 months) and the October 2026 compounding picture.</li>
+      <li><a class="srcname" href="https://www.peptidex.eu/p/tb-500.html" target="_blank" rel="noopener">PeptideX — TB-500 monograph</a> — The fragment's identity (Ac-LKKTETQ), the FDA's "no human exposure data" finding, and full-length thymosin beta-4's Phase 1 record.</li>
+      <li><a class="srcname" href="https://www.evo.med/blog/wolverine-peptide-stack/" target="_blank" rel="noopener">EVO Med — Wolverine peptide stack: benefits, side effects &amp; evidence</a> — An evidence review of the blend itself, including the FDA's 2026 evaluation.</li>
+    </ul>
+    <div class="src-group">Regulatory Record</div>
+    <ul class="src-list">
+      <li><span class="srcname-plain">U.S. Food &amp; Drug Administration</span> — 503A bulk-substances pages (Category 2, September 2023; removals, April 2026) and the July 23, 2026 Pharmacy Compounding Advisory Committee briefing documents for BPC-157 and TB-500.</li>
+      <li><span class="srcname-plain">World Anti-Doping Agency</span> — 2026 Prohibited List: BPC-157 under S0 (non-approved substances), thymosin beta-4 and its derivatives including TB-500 under S2.3 (growth factors).</li>
+      <li><a class="srcname" href="https://alternativepharmpress.com/wolverine-peptide-stack/" target="_blank" rel="noopener">Alternative Pharm Press — Wolverine peptide stack</a> — The July 2026 advisory vote (8–6, one abstention) and the status of rulemaking as of October 2026.</li>
+      <li><a class="srcname" href="https://www.whatsthatpeptide.com/fda-peptide-reclassification-2026.html" target="_blank" rel="noopener">What's That Peptide — FDA peptide reclassification 2026</a> — The Category 2 removal timeline and what removal does and does not authorize.</li>
+    </ul>
+    <div class="src-group">Protocol References</div>
+    <ul class="src-list">
+      <li><a class="srcname" href="https://peptides.id/bpc-157-tb-500/" target="_blank" rel="noopener">Peptides.ID — BPC-157 &amp; TB-500 research, dosing &amp; protocols</a> — The 5 + 5 mg blend vial and the 250 → 500 mcg ramp protocol.</li>
+      <li><a class="srcname" href="https://thepeptidecatalog.com/articles/wolverine-stack-dosing-guide" target="_blank" rel="noopener">The Peptide Catalog — Wolverine stack dosage chart</a> — The steady 250 mcg-of-each daily protocol and the 10 + 10 mg vial math.</li>
+      <li><a class="srcname" href="https://hybridkyle.com/protocols/wolverine" target="_blank" rel="noopener">Peptide Supply — Wolverine protocol</a> — 10 units = 0.5 mg of each; vial life at daily dosing; refrigeration before and after mixing.</li>
+      <li><a class="srcname" href="https://www.the-peptide-breakdown.com/2026/04/wolverine-stack-dosage-reconstitution.html" target="_blank" rel="noopener">The Peptide Breakdown — Wolverine stack dosage &amp; mixing guide</a> — The 3 mL worked example and the separate-vial flexible protocol.</li>
+      <li><a class="srcname" href="https://www.bhrcenter.com/tb-500-dosage-guide-complete-protocol-for-safe-administration/" target="_blank" rel="noopener">Beverly Hills Rejuvenation Center — TB-500 dosage guide</a> — The 2–2.5 mg load-and-maintain schedule in physician-directed practice.</li>
+      <li><a class="srcname" href="https://x-peps.com/X-Peps/glow_klow_guide.html" target="_blank" rel="noopener">GLOW &amp; KLOW Research Guide</a> — The sibling blend guide: GLOW and KLOW compositions and their 30 mg vial protocol.</li>
+      <li><a class="srcname" href="https://x-peps.com/X-Peps/bpc_157_kpv_guide.html" target="_blank" rel="noopener">BPC-157 &amp; KPV Research Guide</a> — The sibling single-family guide for BPC-157 protocols and handling.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="guide-footer">Wolverine Research Guide · November 2026</div>
+</div>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+function toggleTheme(){document.documentElement.classList.toggle('dark')}
+var topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){topBtn.classList.toggle('show',window.scrollY>600)},{passive:true});
+</script>
+</body>
+</html>
