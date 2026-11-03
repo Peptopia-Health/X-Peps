@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CagriSema Research Guide — Peptopia Healthcare</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F4F6FA;--card:#FFFFFF;--border:rgba(15,23,42,.08);
+  --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+  --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+  --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+  --teal:#0F766E;--teal-dark:#115E59;--teal-tint:#E6F4F1;
+  --cyan:#0891B2;--cyan-dark:#155E75;--cyan-bright:#22D3EE;--cyan-tint:#E0F5FA;
+  --combo-grad:linear-gradient(120deg,#0F766E 0%,#0891B2 100%);
+  --orange:#F97316;--orange-dark:#EA580C;
+  --tirz:#7C3AED;--reta:#EA580C;--elora:#16A34A;
+}
+html.dark{
+  --bg:#0B1120;--card:rgba(255,255,255,.045);--border:rgba(255,255,255,.09);
+  --sh:none;--sh-h:0 0 0 0 transparent;
+  --t1:#E2E8F0;--t2:#9FB0C3;--t3:#64748B;
+  --teal:#2DD4BF;--teal-dark:#5EEAD4;--teal-tint:rgba(45,212,191,.10);
+  --cyan:#38BDF8;--cyan-dark:#7DD3FC;--cyan-tint:rgba(56,189,248,.10);
+  --orange:#FB923C;--orange-dark:#FB923C;
+  --tirz:#A78BFA;--reta:#FB923C;--elora:#4ADE80;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--t1);
+  min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+  transition:background-color .35s ease,color .35s ease;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse at 15% 20%,rgba(15,118,110,.06) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 80%,rgba(8,145,178,.05) 0%,transparent 50%);
+  pointer-events:none;z-index:0;
+}
+html.dark body::before{
+  background:
+    radial-gradient(ellipse at 15% 20%,rgba(45,212,191,.08) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 80%,rgba(56,189,248,.07) 0%,transparent 50%);
+}
+.article-container{max-width:900px;margin:0 auto;padding:28px 24px 40px;width:100%;position:relative;z-index:1;flex-grow:1}
+
+/* ── Header cluster: date pill + theme + print (raised push buttons) ── */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.kicker{font-family:'Outfit',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.14em;color:var(--teal)}
+.hdr-cluster{display:flex;gap:8px;align-items:center}
+.push-btn{
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:.82rem;color:var(--t1);
+  display:inline-flex;align-items:center;gap:7px;cursor:pointer;text-decoration:none;
+  padding:8px 14px;border-radius:999px;border:1px solid rgba(15,23,42,.22);
+  background:linear-gradient(180deg,#FFFFFF 0%,#E8EEF4 55%,#CBD8E4 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -2px 4px rgba(15,23,42,.18),0 3px 6px rgba(15,23,42,.20);
+  transition:transform .06s ease,box-shadow .06s ease;
+}
+.push-btn:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 2px rgba(15,23,42,.18),0 1px 2px rgba(15,23,42,.20)}
+html.dark .push-btn{
+  color:#E2E8F0;border-color:rgba(255,255,255,.28);
+  background:linear-gradient(180deg,#3B4B63 0%,#263449 55%,#182437 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -2px 4px rgba(0,0,0,.45),0 3px 6px rgba(0,0,0,.5);
+}
+.push-btn svg{width:16px;height:16px;flex:none}
+.push-btn .pp-sun{display:none}
+html.dark .push-btn .pp-sun{display:block}
+html.dark .push-btn .pp-moon{display:none}
+
+/* ── Guide header ── */
+.guide-header{text-align:center;margin-bottom:8px}
+.guide-header h1{font-family:'Outfit',sans-serif;font-size:clamp(2.4rem,5vw,3.4rem);font-weight:800;margin-bottom:10px;line-height:1.1}
+.guide-header h1 .grad{background:linear-gradient(120deg,var(--teal-dark) 0%,var(--teal) 45%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+html.dark .guide-header h1 .grad{background:linear-gradient(120deg,#5EEAD4 0%,#2DD4BF 45%,#38BDF8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tagline{
+  font-size:clamp(.72rem,2.55vw,1.08rem);color:var(--t2);white-space:nowrap;
+  max-width:100%;margin:0 auto;
+}
+.chip-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 4px}
+.chip-row .push-btn{font-size:.9rem;padding:10px 18px}
+.chip-row .push-btn b{color:var(--teal-dark)}
+html.dark .chip-row .push-btn b{color:#5EEAD4}
+
+/* ── Section title bands (hug their content) ── */
+.band{
+  width:fit-content;max-width:100%;margin:44px 0 18px;
+  padding:10px 20px 10px 16px;border-radius:14px;
+  background:var(--teal-tint);border:1.5px solid var(--teal);
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:1.42rem;color:var(--t1);
+  display:flex;align-items:center;gap:11px;line-height:1.25;
+}
+.band i{color:var(--teal);font-size:1.25rem}
+.band .band-sub{display:block;font-family:'DM Sans',sans-serif;font-weight:500;font-size:.92rem;color:var(--t2);max-width:52ch}
+.band-cyan{background:var(--cyan-tint);border-color:var(--cyan)}
+.band-cyan i{color:var(--cyan)}
+
+/* ── Content boxes & prose treatment ── */
+.info-box{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px;margin-bottom:24px;box-shadow:var(--sh);position:relative;overflow:hidden;
+}
+.info-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--combo-grad)}
+.info-box p{color:var(--t2)}
+.info-box p + p{margin-top:14px}
+.info-box ul{color:var(--t2);margin:10px 0 4px 20px}
+.info-box li{margin-bottom:8px}
+.info-box li:last-child{margin-bottom:0}
+.info-box strong{color:var(--t1)}
+.highlight{background:#D9FBEA;padding:0 4px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone;font-weight:700;color:var(--t1)}
+html.dark .highlight{background:rgba(16,185,129,.25)}
+.hl-teal{background:var(--teal-tint);padding:0 4px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone;font-weight:700;color:var(--t1)}
+.lead{font-size:1.06rem}
+.cmp{font-weight:700;color:#0E7C66;border-bottom:2px dotted #0E7C66}
+html.dark .cmp{color:#2DD4BF;border-bottom-color:#2DD4BF}
+
+/* ── Mechanism cards ── */
+.mech-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;margin:18px 0 6px}
+.mech-card{border-radius:16px;padding:20px;text-align:center;height:100%}
+.mech-card h3{font-family:'Outfit',sans-serif;font-size:1.08rem;margin-bottom:8px}
+.mech-card p{font-size:.9rem;color:var(--t2)}
+.mech-icon{font-size:2rem;margin-bottom:12px}
+.mech-teal{background:var(--teal-tint);border:1px solid var(--teal)}
+.mech-teal h3{color:var(--teal-dark)}
+.mech-teal .mech-icon{color:var(--teal)}
+.mech-cyan{background:var(--cyan-tint);border:1px solid var(--cyan)}
+.mech-cyan h3{color:var(--cyan-dark)}
+.mech-cyan .mech-icon{color:var(--cyan)}
+.mech-duo{background:linear-gradient(150deg,var(--teal-tint),var(--cyan-tint));border:1px solid var(--teal)}
+.mech-duo h3{color:var(--teal-dark)}
+.mech-duo .mech-icon{color:var(--cyan)}
+
+/* ── Venn ── */
+.cs-venn{margin:8px 0 4px}
+.cs-venn svg{width:100%;height:auto;display:block}
+.cs-venn figcaption{text-align:center;color:var(--t2);font-size:.92rem;margin-top:6px}
+
+/* ── Stat cards ── */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 6px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 12px;text-align:center;box-shadow:var(--sh)}
+.stat-card .stat-num{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.7rem;color:var(--teal-dark);line-height:1.1}
+html.dark .stat-card .stat-num{color:#5EEAD4}
+.stat-card .stat-label{font-size:.82rem;color:var(--t2);margin-top:5px;line-height:1.35}
+
+/* ── Fill-only result bars ── */
+.cs-bars{margin:16px 0 6px;display:flex;flex-direction:column;gap:12px}
+.cs-bar-row{display:grid;grid-template-columns:170px 1fr 64px;align-items:center;gap:12px}
+.cs-bar-name{font-weight:700;font-size:.92rem;color:var(--t1);line-height:1.3}
+.cs-bar-name span{display:block;font-weight:500;font-size:.78rem;color:var(--t3)}
+.cs-bar-fill{height:22px;border-radius:7px;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -2px 4px rgba(0,0,0,.18),0 1px 3px rgba(0,0,0,.15)}
+.cs-bar-val{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.02rem;text-align:right}
+.fill-combo{background:linear-gradient(90deg,#0F766E,#0891B2)}
+.fill-sema{background:linear-gradient(90deg,#0891B2,#22D3EE)}
+.fill-cagri{background:linear-gradient(90deg,#115E59,#0F766E)}
+.fill-pbo{background:linear-gradient(90deg,#94A3B8,#CBD5E1)}
+.fill-gi{background:linear-gradient(90deg,#B45309,#F59E0B)}
+
+/* ── Tables (rounded, outlined, one unit) ── */
+.table-wrapper{border:2.5px solid var(--teal);border-radius:12px;overflow:hidden;margin:16px 0 20px;background:var(--card)}
+.table-wrapper.tw-cyan{border-color:var(--cyan)}
+table.dosing-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.95rem}
+.dosing-table th{
+  font-family:'Outfit',sans-serif;font-weight:700;text-align:left;
+  background:var(--teal-tint);color:var(--t1);padding:12px 14px;border-bottom:2px solid var(--teal);
+}
+.tw-cyan .dosing-table th{background:var(--cyan-tint);border-bottom-color:var(--cyan)}
+.dosing-table td{padding:11px 14px;color:var(--t2);border-bottom:1px solid var(--border);vertical-align:top}
+.dosing-table tr:last-child td{border-bottom:none}
+.dosing-table td strong{color:var(--t1)}
+.dosing-table .num{font-family:'Outfit',sans-serif;font-weight:800;color:var(--teal-dark);white-space:nowrap}
+html.dark .dosing-table .num{color:#5EEAD4}
+
+/* ── Steps ── */
+.step-container{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+.step-item{display:flex;align-items:flex-start;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--sh)}
+.step-num{
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;flex:none;
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,#14B8A6 0%,#0F766E 60%,#115E59 100%);border:1.5px solid #115E59;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 4px rgba(0,0,0,.25),0 3px 6px rgba(0,0,0,.18);
+}
+.step-item h3{font-family:'Outfit',sans-serif;font-size:1.02rem;margin-bottom:5px}
+.step-item p{color:var(--t2);font-size:.95rem}
+
+/* ── Storage cards ── */
+.storage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.storage-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+.storage-card i{font-size:1.5rem;color:var(--teal);margin-bottom:10px;display:block}
+.storage-card h3{font-family:'Outfit',sans-serif;font-size:1rem;margin-bottom:6px}
+.storage-card p{color:var(--t2);font-size:.92rem}
+
+/* ── Bibliography ── */
+.src-group{font-family:'Outfit',sans-serif;font-weight:800;font-size:1rem;color:var(--teal-dark);margin:20px 0 8px}
+html.dark .src-group{color:#5EEAD4}
+.src-list{list-style:none}
+.src-list li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--t2);font-size:.95rem}
+.src-list li:last-child{border-bottom:none}
+a.srcname{font-weight:700;color:var(--teal-dark);text-decoration:none;border-bottom:1px solid var(--teal)}
+a.srcname:hover{text-decoration:underline}
+html.dark a.srcname{color:#5EEAD4}
+.srcname-plain{font-weight:700;color:var(--t1)}
+
+/* ── Footer & back-to-top ── */
+.guide-footer{text-align:center;color:var(--t3);font-size:.88rem;margin-top:44px;padding-top:18px;border-top:1px solid var(--border)}
+#topBtn{
+  position:fixed;right:20px;bottom:20px;z-index:60;width:52px;height:52px;border-radius:50%;
+  display:none;align-items:center;justify-content:center;cursor:pointer;
+  border:1.5px solid var(--teal-dark);
+  background:linear-gradient(160deg,#14B8A6 0%,#0F766E 60%,#115E59 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -3px 6px rgba(0,0,0,.28),0 5px 12px rgba(0,0,0,.28);
+}
+#topBtn:active{transform:translateY(2px)}
+#topBtn svg{width:26px;height:26px}
+</style>
+<style id="cagrisema-responsive-print-standard">
+/* Standing responsive + print standard — must stay LAST in <head> */
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+@media (max-width:640px){
+  .article-container{padding:18px 14px 32px}
+  .mech-grid-3,.stat-grid,.storage-grid{grid-template-columns:1fr}
+  .cs-bar-row{grid-template-columns:104px 1fr 54px;gap:8px}
+  .tagline{white-space:normal}
+  .band{font-size:1.12rem;padding:9px 14px 9px 12px}
+  .band .band-sub{max-width:100%}
+  table.dosing-table{font-size:12px}
+  .dosing-table th,.dosing-table td{padding:8px 9px}
+  .step-item{padding:14px}
+  .topbar{flex-wrap:wrap}
+}
+@media print{
+  @page{size:Letter;margin:0.6in}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  body::before{display:none}
+  .hdr-cluster,#topBtn{display:none !important}
+  .info-box,.mech-card,.stat-card,.storage-card,.step-item,.table-wrapper,.cs-bar-row{break-inside:avoid}
+  p{break-inside:avoid;orphans:3;widows:3}
+  h2.band{break-after:avoid}
+  .mech-grid-3,.storage-grid{grid-template-columns:repeat(3,1fr)}
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body id="top">
+<main class="article-container">
+
+  <div class="topbar">
+    <div class="kicker">PEPTOPIA RESEARCH GUIDE</div>
+    <div class="hdr-cluster">
+      <span class="push-btn" aria-label="Guide date">📅 Nov 2026</span>
+      <button type="button" class="push-btn" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme">
+        <svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button type="button" class="push-btn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1 2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print
+      </button>
+    </div>
+  </div>
+
+  <div class="guide-header">
+    <h1><span class="grad">CagriSema Guide</span></h1>
+    <p class="tagline">Cagrilintide + semaglutide — two satiety pathways in one weekly injection.</p>
+    <div class="chip-row">
+      <a class="push-btn" href="#evidence"><b>−20.4%</b>&nbsp;in REDEFINE 1</a>
+      <a class="push-btn" href="#dosing"><b>2.4 mg + 2.4 mg</b>&nbsp;once weekly</a>
+      <a class="push-btn" href="#status"><b>FDA decision</b>&nbsp;expected Q4 2026</a>
+    </div>
+  </div>
+
+  <h2 class="band" id="what"><span><i class="fa-solid fa-layer-group"></i> What Is CagriSema?</span></h2>
+  <div class="info-box">
+    <p class="lead">CagriSema is Novo Nordisk's fixed-dose combination of <strong>cagrilintide 2.4 mg</strong> and <strong>semaglutide 2.4 mg</strong> (development code <strong>NN9838</strong>) — two different satiety drugs in a <strong>single once-weekly injection</strong>. Semaglutide is the GLP-1 receptor agonist behind Ozempic and Wegovy. Cagrilintide is a long-acting analogue of <strong>amylin</strong>, the hormone the pancreas releases alongside insulin at every meal. The two hormones signal fullness through <span class="hl-teal">completely separate receptor systems</span> — which is the whole point of the combination.</p>
+    <div class="mech-grid-3">
+      <div class="mech-card mech-teal">
+        <div class="mech-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>The Amylin Pathway — Cagrilintide</h3>
+        <p>🛑 Activates amylin receptors in the hindbrain<br>⏳ Slows gastric emptying after meals<br>📉 Suppresses post-meal glucagon</p>
+      </div>
+      <div class="mech-card mech-cyan">
+        <div class="mech-icon"><i class="fa-solid fa-utensils"></i></div>
+        <h3>The GLP-1 Pathway — Semaglutide</h3>
+        <p>🍽️ Cuts appetite and food intake<br>🩸 Boosts insulin, lowers glucose<br>🔇 Quiets hunger between meals</p>
+      </div>
+      <div class="mech-card mech-duo">
+        <div class="mech-icon"><i class="fa-solid fa-plus"></i></div>
+        <h3>Why They Add Up</h3>
+        <p>🤝 No shared receptor — no duplicated effect<br>📊 Combination beat each drug alone in REDEFINE 1<br>💉 Both engineered to last a full week</p>
+      </div>
+    </div>
+    <figure class="cs-venn">
+      <svg viewBox="0 0 640 320" role="img" aria-label="Venn diagram: amylin and GLP-1 pathways overlap in one weekly injection">
+        <circle cx="228" cy="150" r="128" fill="rgba(15,118,110,.16)" stroke="#0F766E" stroke-width="3"/>
+        <circle cx="412" cy="150" r="128" fill="rgba(8,145,178,.16)" stroke="#0891B2" stroke-width="3"/>
+        <text x="158" y="126" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="21" fill="#115E59">AMYLIN</text>
+        <text x="158" y="148" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700" font-size="13" fill="#115E59">Cagrilintide</text>
+        <text x="158" y="170" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#334155">Hindbrain satiety</text>
+        <text x="158" y="188" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#334155">Slower emptying</text>
+        <text x="482" y="126" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="21" fill="#155E75">GLP-1</text>
+        <text x="482" y="148" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700" font-size="13" fill="#155E75">Semaglutide</text>
+        <text x="482" y="170" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#334155">Appetite control</text>
+        <text x="482" y="188" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#334155">Insulin &amp; glucose</text>
+        <text x="320" y="146" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="16" fill="#0F172A">2.4 + 2.4</text>
+        <text x="320" y="164" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" fill="#334155">mg · weekly</text>
+      </svg>
+      <figcaption>Two independent fullness signals, one injection. Amylin speaks to the hindbrain; GLP-1 works the gut–pancreas axis — separate channels, additive effect.</figcaption>
+    </figure>
+    <p>Each component was built for weekly dosing. Cagrilintide is a 37-amino-acid peptide with a fatty-acid side chain that binds albumin, giving it a half-life of <strong>159–195 hours</strong>; semaglutide's half-life is about <strong>165 hours</strong>. Neither drug competes for the other's receptor: cagrilintide activates the amylin receptors (AMY1R–AMY3R) and the calcitonin receptor — a profile classed as a <span class="cmp">DACRA</span> — while semaglutide activates only the GLP-1 receptor. In the phase 3 program the pair was <span class="highlight">tested head-to-head against each of its own components</span>, in the same trial, at the same doses — the cleanest possible test of whether the combination earns its place.</p>
+  </div>
+
+  <h2 class="band" id="evidence"><span><i class="fa-solid fa-chart-line"></i> The Clinical Evidence</span></h2>
+  <div class="info-box">
+    <p>The centerpiece is <strong>REDEFINE 1</strong>: <strong>3,417 adults</strong> with obesity, or overweight with a weight-related condition, and no diabetes — randomized to CagriSema, semaglutide alone, cagrilintide alone, or placebo for <strong>68 weeks</strong>, with both drugs in the combination escalated to <strong>2.4 mg</strong>. Published in <em>The New England Journal of Medicine</em> in 2025. Headline figures below count <strong>every participant randomized</strong>, whether or not they stayed on treatment (the treatment-policy estimand — the stricter, real-world number).</p>
+    <div class="table-wrapper">
+      <table class="dosing-table">
+        <thead><tr><th>REDEFINE 1 — Treatment Arm</th><th>Mean Weight Change, 68 Weeks</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CagriSema</strong><br>Cagrilintide 2.4 mg + semaglutide 2.4 mg</td><td class="num">−20.4%</td><td>The combination beat both of its components in the same trial.</td></tr>
+          <tr><td><strong>Semaglutide alone</strong><br>2.4 mg weekly</td><td class="num">−14.9%</td><td>The GLP-1 benchmark, beaten head-to-head.</td></tr>
+          <tr><td><strong>Cagrilintide alone</strong><br>2.4 mg weekly</td><td class="num">−11.5%</td><td>Double-digit loss from the amylin pathway by itself.</td></tr>
+          <tr><td><strong>Placebo</strong><br>Plus lifestyle intervention</td><td class="num">−3.0%</td><td>Every arm received lifestyle support.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cs-bars" aria-hidden="true">
+      <div class="cs-bar-row"><div class="cs-bar-name">CagriSema<span>2.4 mg + 2.4 mg</span></div><div class="cs-bar-fill fill-combo" style="width:81.6%"></div><div class="cs-bar-val">−20.4%</div></div>
+      <div class="cs-bar-row"><div class="cs-bar-name">Semaglutide<span>2.4 mg</span></div><div class="cs-bar-fill fill-sema" style="width:59.6%"></div><div class="cs-bar-val">−14.9%</div></div>
+      <div class="cs-bar-row"><div class="cs-bar-name">Cagrilintide<span>2.4 mg</span></div><div class="cs-bar-fill fill-cagri" style="width:46%"></div><div class="cs-bar-val">−11.5%</div></div>
+      <div class="cs-bar-row"><div class="cs-bar-name">Placebo<span>lifestyle only</span></div><div class="cs-bar-fill fill-pbo" style="width:12%"></div><div class="cs-bar-val">−3.0%</div></div>
+    </div>
+    <p>Among participants who <strong>stayed on treatment</strong> (the trial-product estimand), the combination reached <span class="highlight">−22.7%</span> — with <strong>60%</strong> losing at least a fifth of their body weight and <strong>40.4%</strong> losing at least a quarter. <strong>88%</strong> of participants who began the trial with prediabetes were back to normal blood sugar at week 68. In a body-composition subgroup scanned by DXA, roughly <strong>two-thirds</strong> of the weight lost was fat mass and one-third lean soft tissue.</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>REDEFINE 2 — the diabetes trial.</strong> <strong>1,206 adults</strong> with obesity or overweight <em>and</em> type 2 diabetes (starting HbA1c 7–10%), CagriSema against placebo for <strong>68 weeks</strong>, published alongside REDEFINE 1 in <em>The New England Journal of Medicine</em>. Weight loss runs lower in diabetes across this whole drug class — and the combination still separated clearly, with the strongest blood-sugar result in the program:</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">−13.7%</div><div class="stat-label">Mean weight loss, CagriSema (vs −3.4% placebo)</div></div>
+      <div class="stat-card"><div class="stat-num">−15.7%</div><div class="stat-label">Weight loss among those who stayed on treatment</div></div>
+      <div class="stat-card"><div class="stat-num">73.5%</div><div class="stat-label">Reached HbA1c ≤ 6.5% (vs 15.9% on placebo)</div></div>
+      <div class="stat-card"><div class="stat-num">1,206</div><div class="stat-label">Adults with type 2 diabetes, 68 weeks</div></div>
+    </div>
+    <p><strong>The combination was proven in stages.</strong> In the phase 1b study (<em>The Lancet</em>, 2021), cagrilintide 2.4 mg added to semaglutide produced <strong>−17.1%</strong> in just 20 weeks, against <strong>−9.8%</strong> for semaglutide with placebo. In the phase 2 diabetes study (<em>The Lancet</em>, 2023), the full-dose pair reached <strong>−15.6%</strong> at 32 weeks against <strong>−5.1%</strong> for semaglutide alone and <strong>−8.1%</strong> for cagrilintide alone, with HbA1c down <strong>2.2 points</strong>. Each step up in trial size kept the same ordering: the pair first, then the components.</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>The 2026 readouts.</strong> In <strong>REIMAGINE 2</strong> (type 2 diabetes, reported at the American Diabetes Association meeting in June 2026), full-dose CagriSema cut HbA1c by <strong>1.91 points</strong> against <strong>1.75</strong> for semaglutide alone, with weight loss of <strong>−14.2%</strong> against <strong>−10.2%</strong>. In September 2026, Novo Nordisk reported <strong>REIMAGINE 5</strong>: even the low-dose <strong>1.0 mg + 1.0 mg</strong> combination beat low-dose tirzepatide in diabetes — <strong>−12.4%</strong> against <strong>−9.1%</strong> for tirzepatide 5 mg at 60 weeks, with matching blood-sugar control — and <strong>REDEFINE 9</strong>, where the same 1.0/1.0 mg pairing reached <strong>−21.0%</strong> against <strong>−2.0%</strong> for placebo at 68 weeks. A post hoc analysis presented in October 2026 found women on CagriSema averaged <span class="highlight">−25.0%</span> on the stayed-on-treatment basis. The one readout that went the other way — the full-dose head-to-head against tirzepatide — is covered in <a href="#compares">How It Compares</a>.</p>
+  </div>
+
+  <h2 class="band" id="dosing"><span><i class="fa-solid fa-stairs"></i> Dosing &amp; Escalation</span></h2>
+  <div class="info-box">
+    <p>In the REDEFINE trials, <strong>both components started at 0.25 mg and escalated together every 4 weeks</strong>, reaching the full <strong>2.4 mg + 2.4 mg</strong> dose at week 17. The slow ladder is what keeps the gastrointestinal effects manageable — each step gives the gut four weeks to adjust before the next. Syringe units below are per component, for a <strong>10 mg vial mixed with 2.0 mL BAC water (5 mg/mL)</strong>; the same units apply to each of the two vials.</p>
+    <div class="table-wrapper">
+      <table class="dosing-table">
+        <thead><tr><th>Timeline</th><th>Dose of Each Component</th><th>Syringe (U-100), Each Vial</th><th>Phase / Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Weeks 1 – 4</strong></td><td class="num">0.25 mg</td><td>5 units</td><td>Initiation. Appetite effects begin; the GI tract acclimates.</td></tr>
+          <tr><td><strong>Weeks 5 – 8</strong></td><td class="num">0.5 mg</td><td>10 units</td><td>First escalation. Satiety strengthens.</td></tr>
+          <tr><td><strong>Weeks 9 – 12</strong></td><td class="num">1.0 mg</td><td>20 units</td><td>Mid-ladder — the dose pairing that later beat tirzepatide 5 mg in REIMAGINE 5.</td></tr>
+          <tr><td><strong>Weeks 13 – 16</strong></td><td class="num">1.7 mg</td><td>34 units</td><td>Final step before the full dose.</td></tr>
+          <tr><td><strong>Week 17 +</strong></td><td class="num">2.4 mg</td><td>48 units</td><td>Full dose — the pairing behind every REDEFINE headline result. Standard maintenance.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The trial protocols allowed a dose level to be <strong>held or stepped back</strong> whenever tolerability required it, and some participants were maintained below the top dose. The schedule serves the research, not the other way around.</p>
+  </div>
+
+  <h2 class="band band-cyan" id="reconstitution"><span><i class="fa-solid fa-vial"></i> Reconstitution &amp; Practical Use</span></h2>
+  <div class="info-box">
+    <p>CagriSema in the trials was a <strong>single fixed-dose injection</strong>. The research components are supplied as <strong>separate lyophilized vials</strong> — cagrilintide 10 mg and semaglutide 10 mg — so a research protocol reconstitutes each vial the same way and draws the matched dose of each. Both are reconstituted with <strong>Bacteriostatic Water (BAC)</strong> under standard sterile handling:</p>
+    <div class="step-container">
+      <div class="step-item"><div class="step-num">1</div><div><h3>Prep &amp; Sanitize 🧼</h3><p>Wash hands thoroughly. Pop the plastic caps off both peptide vials and the BAC water vial. Swab every rubber stopper with an alcohol prep pad and let air dry.</p></div></div>
+      <div class="step-item"><div class="step-num">2</div><div><h3>Draw BAC Water 💉</h3><p>Using a sterile mixing syringe, draw <strong>2.0 mL</strong> of Bacteriostatic Water for each 10 mg vial. That yields <strong>5 mg per mL</strong> — each 0.1 mL (10 units on a U-100 syringe) equals 0.5 mg.</p></div></div>
+      <div class="step-item"><div class="step-num">3</div><div><h3>Inject &amp; Dissolve 💧</h3><p>Pierce the peptide vial and angle the needle so the water runs slowly down the glass wall — ❗ do not spray directly onto the powder, to protect the fragile peptide bonds. Repeat for the second vial.</p></div></div>
+      <div class="step-item"><div class="step-num">4</div><div><h3>Swirl Gently 🔄</h3><p>NEVER SHAKE. Gently roll or swirl each vial between the fingers until the solution is completely clear. Refrigerate immediately. At the 2.4 mg dose, each 10 mg vial covers about four weekly doses.</p></div></div>
+    </div>
+    <p style="margin-top:16px">Working with a different vial size or water volume? Run the exact numbers through the <strong>Peptopia Reconstitution Calculator</strong> before drawing a dose.</p>
+  </div>
+
+  <h2 class="band" id="side-effects"><span><i class="fa-solid fa-heart-pulse"></i> Side Effects in the Trials</span></h2>
+  <div class="info-box">
+    <p>The safety picture is dominated by the gastrointestinal effects both components share — each slows the stomach in its own way, so the combination runs higher than either drug alone. In REDEFINE 1:</p>
+    <div class="cs-bars">
+      <div class="cs-bar-row"><div class="cs-bar-name">GI events — CagriSema<span>combination</span></div><div class="cs-bar-fill fill-gi" style="width:79.6%"></div><div class="cs-bar-val">79.6%</div></div>
+      <div class="cs-bar-row"><div class="cs-bar-name">GI events — Semaglutide<span>alone</span></div><div class="cs-bar-fill fill-gi" style="width:73.8%"></div><div class="cs-bar-val">73.8%</div></div>
+      <div class="cs-bar-row"><div class="cs-bar-name">GI events — Cagrilintide<span>alone</span></div><div class="cs-bar-fill fill-gi" style="width:54%"></div><div class="cs-bar-val">54.0%</div></div>
+      <div class="cs-bar-row"><div class="cs-bar-name">GI events — Placebo<span>lifestyle only</span></div><div class="cs-bar-fill fill-pbo" style="width:39.9%"></div><div class="cs-bar-val">39.9%</div></div>
+    </div>
+    <p>The events are the familiar set — <strong>nausea, vomiting, diarrhea, constipation, abdominal pain</strong> — clustered during dose escalation, dose-dependent, and <span class="highlight">mostly mild to moderate and temporary</span>. Only about <strong>6%</strong> of participants on the combination stopped treatment over side effects. Cagrilintide's own signature is at the injection site: <strong>16.9%</strong> on cagrilintide alone reported injection-site reactions (against 2.6% on semaglutide) — mostly bruising and redness, mild, and not dose-dependent. The pattern argues for the protocol the trials used: escalate slowly, and hold a step when the gut objects.</p>
+  </div>
+
+  <h2 class="band" id="compares"><span><i class="fa-solid fa-scale-balanced"></i> How It Compares</span></h2>
+  <div class="info-box">
+    <p>Every compound on this shelf works the appetite system from a different angle. CagriSema is the only entry that is <strong>two drugs by design</strong> — and the only one that covers the amylin pathway and the GLP-1 pathway at the same time.</p>
+    <div class="table-wrapper">
+      <table class="dosing-table">
+        <thead><tr><th>Compound</th><th>Pathway</th><th>Headline Trial Result</th><th>At Peptopia</th></tr></thead>
+        <tbody>
+          <tr><td><strong style="color:var(--teal-dark)">CagriSema</strong></td><td>Amylin + GLP-1</td><td><strong>−20.4%</strong> (REDEFINE 1, 68 wk); −22.7% among those who stayed on treatment</td><td>Components carried separately</td></tr>
+          <tr><td><strong style="color:var(--teal)">Cagrilintide</strong></td><td>Amylin + calcitonin (DACRA)</td><td><strong>−11.5%</strong> alone (REDEFINE 1, 68 wk)</td><td>10 mg · $295</td></tr>
+          <tr><td><strong style="color:var(--cyan)">Semaglutide</strong></td><td>GLP-1</td><td><strong>−14.9%</strong> (REDEFINE 1, 68 wk)</td><td>10 mg · $285</td></tr>
+          <tr><td><strong style="color:var(--tirz)">Tirzepatide</strong></td><td>GLP-1 + GIP</td><td><strong>−25.5%</strong> among those who stayed on treatment in the REDEFINE 4 head-to-head (84 wk)</td><td>30 mg · $395</td></tr>
+          <tr><td><strong style="color:var(--reta)">Retatrutide</strong></td><td>GLP-1 + GIP + glucagon</td><td><strong>−24.2%</strong> at 48 weeks (phase 2); phase 3 under way</td><td>20 mg · $435</td></tr>
+          <tr><td><strong style="color:var(--elora)">Eloralintide</strong></td><td>Selective amylin receptor</td><td><strong>−12.3%</strong> alone at 48 weeks (EloraTZP phase 2b, in type 2 diabetes)</td><td>Coming soon</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>The honest exception.</strong> In <strong>REDEFINE 4</strong> (February 2026) — an open-label, 84-week head-to-head in 809 adults — full-dose CagriSema met tirzepatide 15 mg directly and <span class="highlight">did not reach its non-inferiority goal</span>: <strong>−23.0%</strong> against <strong>−25.5%</strong> among those who stayed on treatment (<strong>−20.2%</strong> against <strong>−23.6%</strong> counting everyone). Tirzepatide keeps the raw-weight-loss crown for now. Novo Nordisk answered with a higher-dose CagriSema program. REDEFINE 4 was not part of the FDA filing, which rests on the placebo-controlled REDEFINE 1 and 2 — but any honest account of this combination includes the loss alongside the wins.</p>
+  </div>
+
+  <h2 class="band" id="status"><span><i class="fa-solid fa-landmark"></i> Development Status</span></h2>
+  <div class="info-box">
+    <p>CagriSema is an <strong>investigational combination</strong> — not an approved medicine in any country. Its regulatory position is nonetheless the most advanced of any amylin-based therapy: on <strong>December 18, 2025</strong>, Novo Nordisk filed the combination with the FDA — <span class="hl-teal">the first once-weekly GLP-1 + amylin fixed-dose combination ever submitted for approval</span> — on the strength of REDEFINE 1 and REDEFINE 2. The application also went to Health Canada in December 2025.</p>
+    <p>Novo Nordisk guides to an <strong>FDA decision in the fourth quarter of 2026</strong> (restated October 20, 2026); no public target date has been posted, and as of this writing the decision is still pending. Of the two components, semaglutide is an approved medicine in its own right (Ozempic, Wegovy); cagrilintide is approved nowhere. The wider program continues in parallel — a higher-dose CagriSema study after REDEFINE 4, a cardiovascular outcomes trial, and the REIMAGINE diabetes series — so the evidence base behind the pairing keeps growing while the first decision is awaited.</p>
+  </div>
+
+  <h2 class="band band-cyan" id="storage"><span><i class="fa-solid fa-box-archive"></i> Storage &amp; Handling</span></h2>
+  <div class="storage-grid">
+    <div class="storage-card"><i class="fa-solid fa-temperature-low"></i><h3>Temperature</h3><p>Store both vials in the refrigerator (<strong>36°F to 46°F</strong>) before and after reconstitution. ❗ Do not freeze.</p></div>
+    <div class="storage-card"><i class="fa-solid fa-eye-slash"></i><h3>Light Exposure</h3><p>Peptides are highly sensitive to UV light. Keep vials in their boxes or a dark container.</p></div>
+    <div class="storage-card"><i class="fa-solid fa-calendar-xmark"></i><h3>Shelf Life</h3><p>Once mixed with BAC water, discard each vial after <strong>28 days</strong> to ensure sterility and efficacy.</p></div>
+  </div>
+
+  <h2 class="band" id="sources"><span><i class="fa-solid fa-book-open"></i> Sources</span></h2>
+  <div class="info-box">
+    <div class="src-group">Phase 3 Trials</div>
+    <ul class="src-list">
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/40544433/" target="_blank" rel="noopener">New England Journal of Medicine</a> — Garvey WT, et al. Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity (REDEFINE 1). 2025;393:635–647.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/40544432/" target="_blank" rel="noopener">New England Journal of Medicine</a> — Davies MJ, et al. Cagrilintide–Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes (REDEFINE 2). 2025;393:648–659.</li>
+    </ul>
+    <div class="src-group">Earlier Combination Studies</div>
+    <ul class="src-list">
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/33894838/" target="_blank" rel="noopener">The Lancet</a> — Enebo LB, et al. Safety, tolerability, pharmacokinetics, and pharmacodynamics of concomitant administration of multiple doses of cagrilintide with semaglutide 2.4 mg for weight management: a randomised, controlled, phase 1b trial. 2021.</li>
+      <li><a class="srcname" href="https://pubmed.ncbi.nlm.nih.gov/37364590/" target="_blank" rel="noopener">The Lancet</a> — Frias JP, et al. Efficacy and safety of co-administered once-weekly cagrilintide 2.4 mg with once-weekly semaglutide 2.4 mg in type 2 diabetes: a multicentre, randomised, double-blind, active-controlled, phase 2 trial. 2023.</li>
+    </ul>
+    <div class="src-group">Company Announcements</div>
+    <ul class="src-list">
+      <li><a class="srcname" href="https://www.prnewswire.com/news-releases/novo-nordisk-files-for-fda-approval-of-cagrisema-the-first-once-weekly-combination-of-glp1-and-amylin-analogues-for-weight-management-302645862.html" target="_blank" rel="noopener">Novo Nordisk</a> — Novo Nordisk files for FDA approval of CagriSema, the first once-weekly combination of GLP-1 and amylin analogues for weight management. Press release, December 18, 2025.</li>
+      <li><a class="srcname" href="https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=915082" target="_blank" rel="noopener">Novo Nordisk</a> — CagriSema demonstrates superior weight loss in adults with obesity or overweight in the REDEFINE 1 trial. Press release, December 20, 2024.</li>
+      <li><a class="srcname" href="https://www.prnewswire.com/news-releases/novos-cagrisema-was-associated-with-25-weight-loss-on-average-for-women-in-a-post-hoc-analysis-of-redefine-1-presented-at-the-menopause-society-annual-meeting-302914051.html" target="_blank" rel="noopener">Novo Nordisk</a> — CagriSema associated with 25% weight loss on average for women in a post hoc analysis of REDEFINE 1. Press release, October 2026.</li>
+      <li><span class="srcname-plain">Novo Nordisk</span> — REDEFINE 4 head-to-head results (GlobeNewswire, February 23, 2026) and REIMAGINE 5 / REDEFINE 9 topline results (press release, September 21, 2026). Listed unlinked — no stable public link verified at build time.</li>
+    </ul>
+  </div>
+
+  <div class="guide-footer">CagriSema Research Guide · November 2026</div>
+</main>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5"/><path d="M4.5 11.5L12 4l7.5 7.5"/></svg>
+</button>
+
+<script>
+function toggleTheme(){document.documentElement.classList.toggle('dark')}
+var topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){topBtn.style.display=(window.scrollY>600)?'flex':'none'},{passive:true});
+</script>
+</body>
+</html>
