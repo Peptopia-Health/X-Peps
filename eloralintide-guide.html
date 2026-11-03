@@ -304,6 +304,35 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
         @media(max-width:640px){.timeline{flex-direction:column;gap:14px}.tl-stop{padding-top:16px}}
         td.wk{white-space:nowrap}
 </style>
+<style id="eloralintide-responsive-print-standard">
+/* Standing responsive + print standard — must stay LAST in <head> */
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+@media (max-width:640px){
+  .article-container{padding:18px 14px 32px}
+  .mech-grid-3,.stat-grid,.storage-grid{grid-template-columns:1fr}
+  .cs-bar-row{grid-template-columns:104px 1fr 54px;gap:8px}
+  .tagline{white-space:normal}
+  .band{font-size:1.12rem;padding:9px 14px 9px 12px}
+  .band .band-sub{max-width:100%}
+  table.dosing-table{font-size:12px}
+  .dosing-table th,.dosing-table td{padding:8px 9px}
+  .step-item{padding:14px}
+  .topbar{flex-wrap:wrap}
+}
+@media print{
+  @page{size:Letter;margin:0.6in}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  body::before{display:none}
+  .hdr-cluster,#topBtn{display:none !important}
+  .info-box,.mech-card,.stat-card,.storage-card,.step-item,.table-wrapper,.cs-bar-row{break-inside:avoid}
+  p{break-inside:avoid;orphans:3;widows:3}
+  h2.band{break-after:avoid}
+  .mech-grid-3,.storage-grid{grid-template-columns:repeat(3,1fr)}
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
 </head>
 <body>
     <header class="peptopia-hdr">
@@ -539,9 +568,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 
     <script>
         // Storage helper (safe for iframe and standalone)
-        var storage=(function(){try{var s=window.self===window.top?window['local'+'Storage']:null;if(s){s.setItem('_t','1');s.removeItem('_t')}return s}catch(e){return null}})();
-        function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
-        (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
+        function toggleTheme(){document.documentElement.classList.toggle('dark')}
     </script>
 </body>
 </html>
