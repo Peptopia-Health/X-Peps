@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" href="/X-Peps/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armodafinil Research Guide — Peptopia Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#F4F6FA;--card:#FFF;--border:rgba(15,23,42,.07);
+            --sh:0 1px 3px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.03);
+            --sh-h:0 12px 28px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.04);
+            --t1:#0F172A;--t2:#475569;--t3:#94A3B8;
+            --brand-purple:#9000F5;--pink:#FF85E1;
+            /* Amber for Cellular Health & Nootropics */
+            --primary:#F59E0B;--primary-dark:#D97706;--primary-light:#FBBF24;
+        }
+        html.dark{
+            --bg:#0B1120;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+            --sh:none; --sh-h:0 0 0 0 transparent;
+            --t1:#E2E8F0;--t2:#94A3B8;--t3:#64748B
+        }
+        body{
+            font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);
+            min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
+            transition:background-color .35s ease,color .35s ease
+        }
+
+        /* Amber background atmosphere */
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(245,158,11,.05) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(217,119,6,.04) 0%,transparent 50%);
+            pointer-events:none;z-index:0;transition:background .35s ease
+        }
+        html.dark body::before{
+            background:
+                radial-gradient(ellipse at 15% 20%,rgba(245,158,11,.08) 0%,transparent 55%),
+                radial-gradient(ellipse at 85% 80%,rgba(217,119,6,.06) 0%,transparent 50%)
+        }
+        body::after{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:radial-gradient(rgba(15,23,42,.04) 1px,transparent 1px);
+            background-size:32px 32px;pointer-events:none;z-index:0;transition:background-image .35s ease
+        }
+        html.dark body::after{
+            background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
+        }
+
+        .hdr{
+            position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
+            justify-content:space-between;max-width:1200px;margin:0 auto;width:100%
+        }
+        .hdr-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+        .logo{
+            width:42px;height:42px;border-radius:12px;
+            background:linear-gradient(135deg,var(--brand-purple),var(--pink));
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;
+            box-shadow:0 0 20px rgba(144,0,245,.3)
+        }
+        .brand{display:flex;flex-direction:column}
+        .brand-name{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;color:var(--t1);letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+        .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
+        
+        .nav{display:flex;align-items:center;gap:8px}
+        .nav a{
+            font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
+            letter-spacing:1.5px;color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;
+            transition:background .3s ease,color .3s ease
+        }
+        .nav a:hover{color:var(--t1);background:rgba(15,23,42,.03)}
+        html.dark .nav a:hover{background:rgba(255,255,255,.05)}
+        .theme-toggle{
+            width:40px;height:40px;border-radius:50%;border:1px solid rgba(15,23,42,.1);
+            background:#fff;color:var(--t2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;margin-left:4px;box-shadow:var(--sh);
+            transition:background .35s ease,border-color .35s ease,color .35s ease
+        }
+        html.dark .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+        .theme-toggle .fa-sun{display:none}
+        html.dark .theme-toggle .fa-moon{display:none}
+        html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
+
+        .article-container {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px; width: 100%;
+            position: relative; z-index: 1; flex-grow: 1;
+        }
+        .guide-header { text-align: center; margin-bottom: 40px; }
+        .guide-header h1 {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800; margin-bottom: 12px;
+        }
+        .guide-header h1 .grad {
+            background: linear-gradient(135deg, #B45309 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        html.dark .guide-header h1 .grad {
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--primary-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .guide-header p { font-size: 1.15rem; color: var(--t2); max-width: 650px; margin: 0 auto; }
+        .viz-stage { max-width: 330px; margin: 22px auto 0; }
+        html.dark text[fill="#475569"] { fill: #9FB0C9; }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800;
+            color: var(--t1); margin: 48px 0 24px; padding-bottom: 12px;
+            border-bottom: 2px solid rgba(245,158,11,.2);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-title i { color: var(--primary); }
+
+        .info-box {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 24px; box-shadow: var(--sh);
+            position: relative; overflow: hidden;
+        }
+        .info-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--primary);
+        }
+        
+        .mechanism-grid-3 {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; margin-bottom: 32px;
+        }
+        .mech-card {
+            background: rgba(245,158,11,.05); border: 1px solid rgba(245,158,11,.15);
+            padding: 20px; border-radius: 16px; text-align: center; height: 100%;
+        }
+        html.dark .mech-card { background: rgba(245,158,11,.08); border-color: rgba(245,158,11,.2); }
+        .mech-card h3 { font-family: 'Outfit', sans-serif; color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 8px; }
+        html.dark .mech-card h3 { color: var(--primary-light); }
+        .mech-card p { font-size: 0.9rem; color: var(--t2); }
+        .mech-icon { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+
+        @media (max-width: 600px) {
+            .mechanism-grid-3 { grid-template-columns: 1fr; gap: 12px; }
+        }
+
+        .step-container { display: flex; flex-direction: column; gap: 16px; }
+        .step-item {
+            display: flex; align-items: flex-start; gap: 16px; background: var(--card);
+            border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;
+            box-shadow: var(--sh); transition: transform .2s ease;
+        }
+        .step-item:hover { transform: translateX(5px); }
+        .step-num {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem;
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245,158,11,.3);
+        }
+        .step-content h4 { color: var(--t1); font-family: 'Outfit', sans-serif; font-size: 1.1rem; margin-bottom: 4px; }
+        .step-content p { color: var(--t2); font-size: 0.9rem; line-height: 1.5; }
+
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 12px; box-shadow: var(--sh); border: 1px solid var(--border); margin-bottom: 24px; }
+        .dosing-table { width: 100%; border-collapse: collapse; background: var(--card); text-align: left; min-width: 600px; }
+        .dosing-table th, .dosing-table td { padding: 16px; border-bottom: 1px solid var(--border); color: var(--t1); font-size: 0.95rem; }
+        .dosing-table th { background: rgba(245,158,11,.05); font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--primary-dark); }
+        html.dark .dosing-table th { background: rgba(245,158,11,.1); color: var(--primary-light); }
+        .dosing-table tbody tr:last-child td { border-bottom: none; }
+        .dosing-table tbody tr:hover { background: rgba(15,23,42,0.01); }
+        html.dark .dosing-table tbody tr:hover { background: rgba(255,255,255,0.01); }
+
+        .dose-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-family: 'Outfit', sans-serif; font-size: 0.85rem;
+        }
+        .b-daily { background: rgba(16,185,129,.15); color: #059669; } /* Emerald */
+        .b-split { background: rgba(245,158,11,.15); color: #D97706; } /* Amber */
+        .b-cycle { background: rgba(239,68,68,.15); color: #B91C1C; } /* Red */
+        
+        html.dark .b-daily { color: #34D399; }
+        html.dark .b-split { color: #FBBF24; }
+        html.dark .b-cycle { color: #F87171; }
+
+        .rule-box {
+            background: rgba(245,158,11,.1); border-left: 4px solid var(--primary);
+            padding: 16px; border-radius: 0 12px 12px 0; margin-bottom: 32px;
+        }
+        .rule-box h4 { color: var(--primary-dark); font-family: 'Outfit', sans-serif; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;}
+        html.dark .rule-box h4 { color: var(--primary-light); }
+        .rule-box p { color: var(--t2); font-size: 0.95rem; }
+
+        .storage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .storage-card {
+            background: var(--card); border: 1px solid var(--border); padding: 20px;
+            border-radius: 12px; text-align: center; box-shadow: var(--sh);
+        }
+        .storage-card i { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+        .storage-card h4 { color: var(--t1); font-family: 'Outfit', sans-serif; margin-bottom: 8px; }
+        .storage-card p { color: var(--t2); font-size: 0.85rem; }
+
+        .footer{
+            position:relative;z-index:1;text-align:center;padding:32px 24px;
+            border-top:1px solid rgba(15,23,42,.06); margin-top:auto;
+        }
+        html.dark .footer{border-color:rgba(255,255,255,.04)}
+        .footer-inner{ max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .footer-copy{font-size:.78rem;color:var(--t3);letter-spacing:.5px;}
+        .footer-links{display:flex;gap:20px}
+        .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
+        .footer-links a:hover{color:var(--primary)}
+        
+        @media(max-width:768px){
+            .hdr{padding:16px}
+            .brand{display:none}
+            .footer-inner{flex-direction:column;text-align:center}
+        }
+        
+        /* Utility */
+        .emoji { font-size: 1.2em; vertical-align: middle; margin-right: 4px; }
+        .highlight { color: var(--primary-dark); font-weight: 600; }
+        html.dark .highlight { color: var(--primary-light); }
+    /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
+html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
+.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
+html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
+html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
+.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
+html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
+html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
+.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
+html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
+html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
+.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
+
+/* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
+/* Dark logo (dark circle) shows on LIGHT theme; light logo (light circle) shows on DARK theme */
+.peptopia-logo.logo-light,.ftr-logo .logo-light{display:none}
+html.dark .peptopia-logo.logo-light,html.dark .ftr-logo .logo-light{display:block}
+html.dark .peptopia-logo.logo-dark,html.dark .ftr-logo .logo-dark{display:none}
+.peptopia-wordmark{display:flex;flex-direction:column;font:800 1.02rem/1.15 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;color:#1e1b4b}
+html.dark .peptopia-wordmark{color:#f1f5f9}
+.peptopia-tagline{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:#64748b}
+html.dark .peptopia-tagline{color:#94a3b8}
+.peptopia-nav{display:flex;align-items:center;gap:1.25rem}
+@media(max-width:640px){.peptopia-hdr{padding:10px 12px;gap:8px}.peptopia-brand{gap:8px}.peptopia-logo{width:38px;height:38px}.peptopia-wordmark{font-size:.85rem}.peptopia-nav{gap:.6rem}.peptopia-nav>a{font-size:.7rem;letter-spacing:.08em}.peptopia-iconbtn{width:34px;height:34px;flex:none}}
+.peptopia-nav>a{font:700 .8rem/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.12em;color:#334155;text-decoration:none}
+html.dark .peptopia-nav>a{color:#cbd5e1}
+.peptopia-nav>a:hover{color:#be185d}
+.peptopia-iconbtn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,23,42,.12);background:#fff;color:#475569;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#cbd5e1}
+.peptopia-iconbtn:hover{border-color:#ec4899;color:#be185d}
+.peptopia-iconbtn svg{width:17px;height:17px}
+.peptopia-theme-toggle .pp-sun{display:none}
+html.dark .peptopia-theme-toggle .pp-sun{display:block}
+html.dark .peptopia-theme-toggle .pp-moon{display:none}
+.peptopia-ftr{border-top:1px solid rgba(15,23,42,.08);margin-top:48px;padding:22px 24px;text-align:center;font:500 .8rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#64748b}
+html.dark .peptopia-ftr{border-color:rgba(255,255,255,.08);color:#94a3b8}
+.peptopia-ftr .ftr-email-line{text-align:center;margin:6px 0}
+.peptopia-ftr .ftr-email-line a{color:#64748b;text-decoration:none}
+html.dark .peptopia-ftr .ftr-email-line a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.peptopia-ftr .peptopia-ftr-icons a{color:#64748b;display:inline-flex}
+html.dark .peptopia-ftr .peptopia-ftr-icons a{color:#94a3b8}
+.peptopia-ftr .peptopia-ftr-icons a:hover{color:#be185d}
+.peptopia-ftr .peptopia-ftr-icons svg{width:18px;height:18px}
+.peptopia-ftr .ftr-logo img{width:18px;height:18px;border-radius:50%;filter:grayscale(1);opacity:.55}
+.peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+html.dark .peptopia-ftr .ftr-logo img{filter:grayscale(1) invert(1);opacity:.75}
+html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
+.peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
+.peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
+@media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
+
+</style>
+<style id="armodafinil-responsive-print-standard">
+/* ===== RESPONSIVE + PRINT STANDARD (guide build script §24/§25 — keep last) ===== */
+img,svg,video{max-width:100%;height:auto}
+table{max-width:100%}
+@media(max-width:640px){
+  body{overflow-x:clip}
+  .wrap{padding-left:12px;padding-right:12px}
+  .mechanism-grid-3,.mech-grid-3,.stat-grid,.storage-grid{grid-template-columns:1fr}
+  .tagline{white-space:normal}
+  .band{padding-right:16px}
+  table.dosing-table{min-width:0;font-size:.86rem}
+}
+@media print{
+  @page{margin:14mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .topbar,#topBtn{display:none!important}
+  .info-box,.mech-card,.stat-card,.storage-card,.step-item,.band{break-inside:avoid;box-shadow:none}
+  p,li{break-inside:avoid}
+  section{break-before:auto}
+}
+</style>
+</head>
+<body>
+    <header class="peptopia-hdr">
+<a class="peptopia-brand" href="https://x-peps.com/">
+<img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
+<span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
+</a>
+<nav class="peptopia-nav" aria-label="Site">
+<a href="https://x-peps.com/">HOME</a>
+<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print / Save as PDF" aria-label="Print this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+</nav>
+</header>
+
+    <main class="article-container">
+        <div class="guide-header">
+            <h1><span class="grad">Armodafinil</span></h1>
+            <p>The long-duration eugeroic. A complete guide to the purified (R)-enantiomer of modafinil — mechanism, dosing protocols, and why it is not the same compound as racemic modafinil.</p>
+            <div class="viz-stage" role="img" aria-label="Armodafinil long-duration medallion with duration, focus, and shifts satellites">
+<svg viewBox="34 2 272 250" fill="none" stroke-linecap="round" stroke-linejoin="round"><defs><radialGradient id="arm-core" cx="0.35" cy="0.3" r="0.95"><stop offset="0" stop-color="#FFB37A"/><stop offset="0.55" stop-color="#F06000"/><stop offset="1" stop-color="#C24E00"/></radialGradient><radialGradient id="arm-tl" cx="0.35" cy="0.3" r="0.95"><stop offset="0" stop-color="#FFFFC8"/><stop offset="0.55" stop-color="#F0F000"/><stop offset="1" stop-color="#D8D800"/></radialGradient><radialGradient id="arm-tr" cx="0.35" cy="0.3" r="0.95"><stop offset="0" stop-color="#7CF29A"/><stop offset="0.55" stop-color="#10C000"/><stop offset="1" stop-color="#0B8A00"/></radialGradient><radialGradient id="arm-b" cx="0.35" cy="0.3" r="0.95"><stop offset="0" stop-color="#FFB37A"/><stop offset="0.55" stop-color="#F06000"/><stop offset="1" stop-color="#C24E00"/></radialGradient></defs><path d="M104 54 C 122 64, 132 74, 140 84" stroke="#EA580C" stroke-width="3" stroke-dasharray="0.5 5.5"/><path d="M236 54 C 218 64, 208 74, 200 84" stroke="#EA580C" stroke-width="3" stroke-dasharray="0.5 5.5"/><path d="M170 182 C 170 184, 170 185, 170 186" stroke="#EA580C" stroke-width="3" stroke-dasharray="0.5 3.5"/><circle cx="170" cy="117" r="58" fill="url(#arm-core)" stroke="#0F172A" stroke-width="3"/><ellipse cx="146" cy="82" rx="20" ry="11" fill="#FFFFFF" opacity="0.35" transform="rotate(-24 146 82)"/><g transform="translate(170 117) scale(2.1)"><circle r="11" fill="none" stroke="#FFFFFF" stroke-width="3"/><path d="M0 0 v-6 M0 0 h5" stroke="#FFFFFF" stroke-width="3" fill="none"/></g><circle cx="80" cy="46" r="27" fill="url(#arm-tl)" stroke="rgba(0,0,0,.28)" stroke-width="3"/><g transform="translate(80 46)"><circle r="11" fill="none" stroke="#3A3400" stroke-width="3"/><path d="M0 0 v-6 M0 0 h5" stroke="#3A3400" stroke-width="3" fill="none"/></g><text x="80" y="88" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10.5" font-weight="800" letter-spacing="0.06em" fill="#475569">DURATION</text><circle cx="260" cy="46" r="27" fill="url(#arm-tr)" stroke="rgba(0,0,0,.28)" stroke-width="3"/><g transform="translate(260 46)"><circle r="10" fill="none" stroke="#FFFFFF" stroke-width="3"/><circle r="4.5" fill="none" stroke="#FFFFFF" stroke-width="3"/></g><text x="260" y="88" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10.5" font-weight="800" letter-spacing="0.06em" fill="#475569">FOCUS</text><circle cx="170" cy="208" r="23" fill="url(#arm-b)" stroke="rgba(0,0,0,.28)" stroke-width="3"/><g transform="translate(170 208) scale(0.88)"><path d="M11 -12 A14.5 14.5 0 1 0 11 12 A17.5 17.5 0 1 1 11 -12 Z" fill="#FFFFFF"/></g><text x="170" y="246" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10.5" font-weight="800" letter-spacing="0.06em" fill="#475569">SHIFTS</text></svg>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-brain"></i> What is Armodafinil?</h2>
+        <div class="info-box">
+            <p style="margin-bottom: 24px; color: var(--t2);">Armodafinil is the purified <strong>(R)-enantiomer</strong> of modafinil — one half of the racemic pair, isolated on its own. It is a eugeroic (wakefulness-promoting) agent sold under the brand name <strong>Nuvigil</strong> and FDA-approved in <strong>2007</strong> for excessive daytime sleepiness associated with narcolepsy, obstructive sleep apnea, and shift work disorder. Because the fast-clearing (S)-enantiomer has been removed, armodafinil holds higher, steadier plasma levels into the afternoon and evening than the same milligrams of racemic modafinil. The two compounds are close relatives — but they are <strong>not the same drug, and they are not interchangeable mg-for-mg</strong>.</p>
+            
+            <div class="mechanism-grid-3">
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-dna"></i></div>
+                    <h3>The (R)-Enantiomer</h3>
+                    <p><span class="emoji">🧬</span> The purified, long-acting half of modafinil<br><span class="emoji">💊</span> Brand name: Nuvigil<br><span class="emoji">✅</span> FDA-approved in 2007</p>
+                </div>
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Dopamine Reuptake</h3>
+                    <p><span class="emoji">🧠</span> Blocks the dopamine transporter (DAT)<br><span class="emoji">🎯</span> Increases focus &amp; motivation<br><span class="emoji">🔔</span> Drives orexin &amp; histamine wake signals</p>
+                </div>
+                <div class="mech-card">
+                    <div class="mech-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>~15-Hour Half-Life</h3>
+                    <p><span class="emoji">⏳</span> Modafinil's (S)-half clears in ~4 hours<br><span class="emoji">📈</span> Armodafinil levels stay higher, later<br><span class="emoji">🌙</span> One morning dose covers the full day</p>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="section-title"><i class="fa-solid fa-scale-balanced"></i> Armodafinil vs Modafinil</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">Same family, different compound. Racemic modafinil is a 50/50 blend of two mirror-image molecules; armodafinil is only the long-lasting one. That single difference changes the dose, the curve, and the duration.</p>
+        <div class="table-wrapper">
+            <table class="dosing-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Modafinil (Provigil)</th>
+                        <th>Armodafinil (Nuvigil)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Composition</strong></td>
+                        <td>Racemic mixture — 50% (R) + 50% (S) enantiomers</td>
+                        <td>Pure (R)-enantiomer only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Half-Life</strong></td>
+                        <td>(S)-enantiomer clears in ~4 hours; (R) in ~15 hours</td>
+                        <td>~15 hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plasma Curve</strong></td>
+                        <td>Levels fall through the day as the (S) half clears</td>
+                        <td>Higher, steadier levels later in the day at equal mg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Typical Dose</strong></td>
+                        <td>200mg once each morning</td>
+                        <td>150mg once each morning (250mg in narcolepsy / sleep apnea)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FDA Approval</strong></td>
+                        <td>1998 — narcolepsy, sleep apnea, shift work disorder</td>
+                        <td>2007 — the same three indications</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Legal Status</strong></td>
+                        <td>Schedule IV controlled substance</td>
+                        <td>Schedule IV controlled substance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Bottom Line</strong></td>
+                        <td colspan="2">Not interchangeable mg-for-mg. 150mg of armodafinil is not "150mg of modafinil" — it lasts longer and holds higher late-day levels, so protocols are dosed and timed differently.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-capsules"></i> Administration Protocols</h2>
+        <p style="color: var(--t2); margin-bottom: 20px;">Armodafinil is a synthetic small-molecule compound supplied as oral tablets. <strong>It does not require bacteriostatic water or injection.</strong> Because its ~15-hour half-life reaches deep into the evening, timing is the most critical factor in the protocol.</p>
+        
+        <div class="step-container" style="margin-bottom: 40px;">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Form Factor <span class="emoji">💊</span></h4>
+                    <p>Armodafinil is researched in 50mg, 150mg, 200mg, and 250mg oral tablets. The 150mg strength is the typical approved dose; the range exists so protocols can start low and step up deliberately.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Strict Timing <span class="emoji">⏱️</span></h4>
+                    <p>Armodafinil has a <strong>~15 hour half-life</strong> — the longest of the afinil family. It is taken <strong>once daily, immediately upon waking</strong>. For shift-work protocols, take it about 1 hour before the shift begins. A dose taken late in the morning will still be active at bedtime.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Synergy & Hydration <span class="emoji">💧</span></h4>
+                    <p>Like modafinil, armodafinil increases choline utilization in the brain, and researchers often pair it with a choline source (like Alpha-GPC) to head off headaches. It also suppresses the sensation of thirst, so deliberate water intake is mandatory.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-list-check"></i> Research Dosages</h2>
+        
+        <div class="rule-box">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> The Half-Life Rule</h4>
+            <p>Do not underestimate the duration of this compound. A 150mg dose taken at 12:00 PM (Noon) still has roughly half its strength circulating at Midnight, making natural sleep nearly impossible. Morning dosing is not a suggestion — it is the protocol.</p>
+        </div>
+        
+        <div class="table-wrapper">
+            <table class="dosing-table">
+                <thead>
+                    <tr>
+                        <th>Protocol Goal</th>
+                        <th>Dosage</th>
+                        <th>Frequency / Timing</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cognitive Enhancement</strong><br><small>(Beginner / Sensitive)</small></td>
+                        <td>50mg</td>
+                        <td><span class="dose-badge b-daily">Early AM</span></td>
+                        <td>The lowest tablet strength. A gentle introduction that favors clean alertness over intensity — the right first protocol.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standard Wakefulness</strong><br><small>(Typical Approved Dose)</small></td>
+                        <td>150mg</td>
+                        <td><span class="dose-badge b-daily">Early AM</span></td>
+                        <td>The most commonly prescribed strength for narcolepsy, obstructive sleep apnea, and shift work disorder.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maximum Wakefulness</strong><br><small>(Narcolepsy / Sleep Apnea)</small></td>
+                        <td>250mg</td>
+                        <td><span class="dose-badge b-daily">Early AM</span></td>
+                        <td>The top approved dose, used in narcolepsy and sleep apnea protocols. Expect the strongest effect and the longest tail.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shift Work Protocol</strong></td>
+                        <td>150mg</td>
+                        <td><span class="dose-badge b-split">Pre-Shift</span></td>
+                        <td>Taken about 1 hour before a night shift starts. Plan the ~15-hour tail so it winds down before daytime sleep.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cycle Frequency</strong></td>
+                        <td>N/A</td>
+                        <td><span class="dose-badge b-cycle">2-3x Per Week</span></td>
+                        <td>Approved medical regimens dose daily, but cognitive research protocols commonly cycle 2–3x per week to limit tolerance and protect sleep architecture.</td>
+                    </tbody>
+            </table>
+        </div>
+
+
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Safety, Interactions &amp; Cautions</h2>
+        <div class="info-box">
+            <p style="margin-bottom: 14px; color: var(--t2);"><strong>Common effects:</strong> headache, nausea, insomnia, dizziness, anxiety, and dry mouth — generally mild and dose-related, and the reason the lowest effective dose is the right dose.</p>
+            <p style="margin-bottom: 14px; color: var(--t2);"><strong>Stop at the first sign of a rash.</strong> Rare but serious skin reactions, including Stevens–Johnson syndrome, have been reported with this compound class. Any rash means discontinue immediately and seek medical care — do not dose through it.</p>
+            <p style="margin-bottom: 14px; color: var(--t2);"><strong>Hormonal contraception:</strong> armodafinil induces the CYP3A4 enzyme and lowers blood levels of hormonal birth control. Use an alternative or additional contraceptive method during use and for <strong>one month after the last dose</strong>.</p>
+            <p style="margin-bottom: 14px; color: var(--t2);"><strong>Other medications:</strong> armodafinil inhibits CYP2C19, which raises exposure to drugs cleared by that pathway — omeprazole, diazepam, and phenytoin among them. Doses of those medications may need adjusting.</p>
+            <p style="margin-bottom: 14px; color: var(--t2);"><strong>Mind, mood &amp; heart:</strong> use caution with any history of mania or psychosis, which wakefulness agents can aggravate, and with uncontrolled high blood pressure.</p>
+            <p style="color: var(--t2);"><strong>Controlled status:</strong> armodafinil is a <strong>Schedule IV</strong> controlled substance — lower abuse liability than classic amphetamine stimulants, but a controlled substance all the same, and handled accordingly.</p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-box-open"></i> Storage & Handling</h2>
+        <div class="storage-grid">
+            <div class="storage-card">
+                <i class="fa-solid fa-thermometer-half"></i>
+                <h4>Temperature</h4>
+                <p>Armodafinil tablets are highly stable at <strong>room temperature</strong> (68°F to 77°F). Do not refrigerate.</p>
+            </div>
+            <div class="storage-card">
+                <i class="fa-solid fa-droplet-slash"></i>
+                <h4>Moisture</h4>
+                <p>Keep tablets in their original blister packs until the exact moment of use to prevent moisture degradation.</p>
+            </div>
+            <div class="storage-card">
+                <i class="fa-regular fa-sun"></i>
+                <h4>Light Exposure</h4>
+                <p>Store in a cool, dark place (like a drawer or medicine cabinet) away from direct UV sunlight.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="peptopia-ftr">
+<div>&copy; 2026 Peptopia Health &bull; All rights reserved</div>
+<div class="ftr-email-line"><a href="mailto:Peptopia@x-peps.com?subject=From%20the%20Peptopia%20Health%20Website">Peptopia@x-peps.com</a></div>
+<div class="peptopia-ftr-icons">
+<a class="ftr-logo" href="https://x-peps.com/" title="Home" aria-label="Home"><img src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia home" class="logo-dark"><img src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia home" class="logo-light"></a>
+<a href="https://x-peps.com/X-Peps/orders/" title="Shop" aria-label="Shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
+<a href="https://discord.gg/sHAYkB5NAM" target="_blank" rel="noopener" title="Discord" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 1.98 1.98 0 0 0-.08 1.53 19.5 19.5 0 0 0-5.9 0A1.98 1.98 0 0 0 9.34 2.86a19.8 19.8 0 0 0-4.93 1.51A20.3 20.3 0 0 0 .1 18.06a19.9 19.9 0 0 0 6.07 3.03c.46-.63.87-1.3 1.22-2a12.9 12.9 0 0 1-1.93-.92c.16-.12.32-.24.47-.37a14.2 14.2 0 0 0 12.14 0c.15.13.31.25.47.37-.61.36-1.26.68-1.93.92.35.7.76 1.37 1.22 2a19.8 19.8 0 0 0 6.07-3.03 20.2 20.2 0 0 0-4.29-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
+<a href="https://youtube.com/playlist?list=PLJI0wP-Amc5mLaPG7sDBdRTYVvCOA7DUR&si=a0xNfjs4uDrBzKHh" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></a>
+</div>
+</footer>
+
+    <script>
+        // Theme is visit-only by design: light is the default on every load,
+        // the toggle flips this visit only, and nothing is ever stored.
+        function toggleTheme(){document.documentElement.classList.toggle('dark')}
+    </script>
+</body>
+</html>
