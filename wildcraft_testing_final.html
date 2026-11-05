@@ -116,7 +116,7 @@ footer{text-align:center;color:var(--sub);font-size:.85rem;margin-top:34px}
   .top-row,.band-btn,.btn-row,.chev{display:none!important}
   [hidden]{display:block!important}
   .card-body{display:block!important}
-  .session,.strain-card{break-inside:avoid}
+  
 }
  @media print{ #labModal{display:none!important} }
 </style>
@@ -135,7 +135,28 @@ html,body{overflow-x:clip}
   .top-row,.band-btn,.btn-row,.chev{display:none!important}
   [hidden]{display:block!important}
   .card-body{display:block!important}
-  .session,.strain-card,.band-sec{break-inside:avoid}
+  
+}
+</style>
+<style id="print-standard-v2">
+@media print{
+  @page{size:Letter;margin:.55in .6in}
+  html{font-size:10pt}
+  body{background:#fff;padding:0;line-height:1.45}
+  .top-row,.band-btn,.btn-row,.chev,.print-day-btn,#labModal,.modal-veil{display:none!important}
+  [hidden]{display:block!important}
+  .card-body{display:block!important}
+  h1{font-size:20pt}
+  .band{font-size:13.5pt;padding:6px 14px}
+  img{max-width:100%!important;height:auto!important}
+  figure{break-inside:avoid;max-width:80%;margin:8px auto}
+  .review-card,.verdict-card,blockquote{break-inside:avoid}
+  table{break-inside:auto}
+  tr{break-inside:avoid}
+  thead{display:table-header-group}
+  .band-wrap,.card-head,h1,h2,h3{break-after:avoid}
+  .band-sec,.strain-card,.session,.card-body{break-inside:auto}
+  p,li{orphans:2;widows:2}
 }
 </style>
 </head>
