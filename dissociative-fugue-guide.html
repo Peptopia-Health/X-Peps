@@ -623,5 +623,28 @@ window.addEventListener('load',fitBands);
 window.addEventListener('resize',fitBandsSoon);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitBandsSoon);
 </script>
+<style id="dissociative-fugue-responsive-print-standard">
+/* Standing responsive + print standard — must stay LAST in <head> */
+html,body{overflow-x:clip}
+img,svg,video{max-width:100%;height:auto}
+table{max-width:100%}
+@media (max-width:640px){
+  body{overflow-x:clip}
+  .grid,.cards,.card-grid,.stat-grid,.statgrid,.mech-grid-3,.mechanism-grid-3,.storage-grid{grid-template-columns:1fr}
+  .tagline,.band-sub{white-space:normal}
+  table{font-size:12px}
+  th,td{padding:8px 9px}
+}
+@media print{
+  @page{size:Letter;margin:0.6in}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .peptopia-nav,.peptopia-ftr-icons,.gd-tools,#topBtn{display:none!important}
+  .card,.statcard,.info-box,.mech-card,.stat-card,.step-item,.callout,figure,blockquote,pre{break-inside:avoid}
+  tr{break-inside:avoid}
+  h1,h2,h3{break-after:avoid}
+  p,li{orphans:3;widows:3}
+}
+</style>
 </body>
 </html>

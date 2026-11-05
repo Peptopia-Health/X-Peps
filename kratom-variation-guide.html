@@ -1,6 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <link rel="apple-touch-icon" href="/X-Peps/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kratom Variation — Vein Colors, Strain Names, Vendors &amp; the Science of Kratom Inconsistency</title></head><body>
+<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kratom Variation — Vein Colors, Strain Names, Vendors &amp; the Science of Kratom Inconsistency</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head><body>
 <header class="peptopia-hdr">
 <a class="peptopia-brand" href="https://x-peps.com/">
 <img class="peptopia-logo logo-dark" src="https://x-peps.com/X-Peps/IMG_3345.png" alt="Peptopia Health &amp; Wellness"><img class="peptopia-logo logo-light" src="https://x-peps.com/X-Peps/IMG_3346.png" alt="Peptopia Health &amp; Wellness">
@@ -287,10 +288,8 @@ Compiled October 2026.</p>
 </div>
 </footer>
 <script>
-/* Peptopia theme: light default, toggle persists via localStorage */
-var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
-function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
-(function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+/* Peptopia theme: light default, visit-only toggle (never persisted) */
+function toggleTheme(){document.documentElement.classList.toggle('dark');return false}
 </script>
 <div id="ptCmpOverlay" hidden><div class="pt-cmp-card">
 <div class="pt-cmp-banner" id="ptCmpTitle"></div>
@@ -308,4 +307,29 @@ if(t){var k=t.getAttribute('data-t');if(ptCmpOpen===k){ptCmpClose()}else{ptCmpSh
 if(e.target.id==='ptCmpOverlay'){ptCmpClose()}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){ptCmpClose()}});
 </script>
+<style id="kratom-variation-responsive-print-standard">
+/* Standing responsive + print standard — must stay LAST in <head> */
+body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif}
+html,body{overflow-x:clip}
+img,svg,video{max-width:100%;height:auto}
+table{max-width:100%}
+@media (max-width:640px){
+  body{overflow-x:clip}
+  .grid,.cards,.card-grid,.stat-grid,.statgrid,.mech-grid-3,.mechanism-grid-3,.storage-grid{grid-template-columns:1fr}
+  .tagline,.band-sub{white-space:normal}
+  table{font-size:12px}
+  th,td{padding:8px 9px}
+}
+@media print{
+  @page{size:Letter;margin:0.6in}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .peptopia-nav,.peptopia-ftr-icons,.gd-tools,#topBtn{display:none!important}
+  .card,.statcard,.info-box,.mech-card,.stat-card,.step-item,.callout,figure,blockquote,pre{break-inside:avoid}
+  tr{break-inside:avoid}
+  h1,h2,h3{break-after:avoid}
+  p,li{orphans:3;widows:3}
+}
+</style>
 </body></html>
