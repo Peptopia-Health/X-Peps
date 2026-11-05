@@ -473,24 +473,26 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
   <script>
 document.querySelectorAll('svg.pie').forEach(function(svg){
   var NS='http://www.w3.org/2000/svg';
+  var DK={'#FFFFFF':'#8A8A8A','#F06000':'#A63E00','#10C000':'#0A7300','#F0F000':'#8F8F00','#E01020':'#9E0C18','#0070D0':'#004E96'};
   var slices=svg.dataset.slices.split(',').map(function(s){var p=s.split(':');return{c:p[0],v:+p[1]};});
-  var r=44,cx=55,cy=55,circ=2*Math.PI*r,off=0;
+  var cx=55,cy=55,R=52;
+  function pt(a,r){return (cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*Math.sin(a)).toFixed(1);}
+  var a=-Math.PI/2;
   slices.forEach(function(sl){
-    var frac=sl.v/100;
-    if(sl.c.toUpperCase()==='#FFFFFF'){var u=document.createElementNS(NS,'circle');
-    u.setAttribute('cx',cx);u.setAttribute('cy',cy);u.setAttribute('r',r);
-    u.setAttribute('fill','none');u.setAttribute('stroke','#9A9A9A');u.setAttribute('stroke-width','26');
-    u.setAttribute('stroke-dasharray',Math.max(frac*circ-1.5,0.1)+' '+circ);
-    u.setAttribute('stroke-dashoffset',-off);
-    u.setAttribute('transform','rotate(-90 '+cx+' '+cy+')');
-    svg.appendChild(u);}
-    var c=document.createElementNS(NS,'circle');
-    c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);
-    c.setAttribute('fill','none');c.setAttribute('stroke',sl.c);c.setAttribute('stroke-width',(sl.c.toUpperCase()==='#FFFFFF'?'19':'22'));
-    c.setAttribute('stroke-dasharray',Math.max(frac*circ-1.5,0.1)+' '+circ);
-    c.setAttribute('stroke-dashoffset',-off);
-    c.setAttribute('transform','rotate(-90 '+cx+' '+cy+')');
-    svg.appendChild(c);off+=frac*circ;
+    var sw=sl.v/100*2*Math.PI;
+    if(sl.v>=99.5){
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',R);
+      c.setAttribute('fill',sl.c);c.setAttribute('stroke',DK[sl.c]||'#666');c.setAttribute('stroke-width','2');
+      svg.appendChild(c);
+    }else{
+      var laf=sw>Math.PI?1:0;
+      var p=document.createElementNS(NS,'path');
+      p.setAttribute('d','M'+cx+' '+cy+' L'+pt(a,R)+' A'+R+' '+R+' 0 '+laf+' 1 '+pt(a+sw,R)+' Z');
+      p.setAttribute('fill',sl.c);p.setAttribute('stroke',DK[sl.c]||'#666');p.setAttribute('stroke-width','2');
+      svg.appendChild(p);
+    }
+    a+=sw;
   });
 });
 </script>
