@@ -118,7 +118,6 @@ footer{text-align:center;color:var(--sub);font-size:.85rem;margin-top:34px}
   .card-body{display:block!important}
   
 }
- @media print{ #labModal{display:none!important} }
 </style>
 <style id="wc-responsive-print-standard">
 html,body{overflow-x:clip}
@@ -138,25 +137,27 @@ html,body{overflow-x:clip}
   
 }
 </style>
-<style id="print-standard-v2">
+<style id="print-standard-v3">
 @media print{
-  @page{size:Letter;margin:.55in .6in}
-  html{font-size:10pt}
-  body{background:#fff;padding:0;line-height:1.45}
+  @page{size:Letter;margin:.5in .55in}
+  html{font-size:9.5pt}
+  body{background:#fff;padding:0;line-height:1.4}
+  .col{max-width:100%!important;width:100%!important}
   .top-row,.band-btn,.btn-row,.chev,.print-day-btn,#labModal,.modal-veil{display:none!important}
   [hidden]{display:block!important}
+  #labModal{display:none!important}
   .card-body{display:block!important}
-  h1{font-size:20pt}
-  .band{font-size:13.5pt;padding:6px 14px}
-  img{max-width:100%!important;height:auto!important}
-  figure{break-inside:avoid;max-width:80%;margin:8px auto}
-  .review-card,.verdict-card,blockquote{break-inside:avoid}
-  table{break-inside:auto}
-  tr{break-inside:avoid}
-  thead{display:table-header-group}
+  h1{font-size:19pt}
+  .band{font-size:13pt;padding:5px 12px}
+  .strain-card,.session,.review-card,.verdict-card,figure,table{break-inside:avoid}
+  .band-sec,.card-body{break-inside:auto}
   .band-wrap,.card-head,h1,h2,h3{break-after:avoid}
-  .band-sec,.strain-card,.session,.card-body{break-inside:auto}
+  img{max-width:100%!important;height:auto!important;max-height:1.5in!important}
+  .sess-photos img{max-height:1.45in!important}
+  .strain-card,.session{padding:8px 10px;margin:6px 0}
   p,li{orphans:2;widows:2}
+  input[type=range]{height:20px}
+  tr{break-inside:avoid}
 }
 </style>
 </head>
@@ -165,13 +166,13 @@ html,body{overflow-x:clip}
   <div class="top-row"><span class="pill">Nov 2, 2026</span><button class="push" id="themeBtn" style="padding:6px 14px">☾ Dark</button><button class="push" onclick="window.print()" style="padding:6px 14px">Print</button></div>
   <header class="hero">
     <h1>WildCraft Testing</h1>
-    <p class="intro">Batch #1020 — a five-day reviewer journal for three strains.</p>
+    <p class="intro">Batch #1020 — a three-day reviewer journal for three strains.</p>
     <div class="chips">
       <button class="chip" data-scroll="#strains" style="background:#0A6B32;color:#F7F4EC">Batch #1020</button>
       <button class="chip" data-open-card="white" style="background:#FFFFFF">White Vein</button>
       <button class="chip" data-open-card="green" style="background:#10C000;color:#fff">Green Vein</button>
       <button class="chip" data-open-card="red" style="background:#E01020;color:#fff">O.G. Wild Red Vein</button>
-      <button class="chip" data-scroll="#day1" style="background:#F0F000">5 Days · 3 Sessions a Day</button>
+      <button class="chip" data-scroll="#day1" style="background:#F0F000">3 Days · 3 Sessions a Day</button>
     </div>
   </header>
 
@@ -203,7 +204,7 @@ html,body{overflow-x:clip}
         <p class="sp-cap">Spectrum position: <b>Fast</b></p>
         <button class="push lab-open" data-lab="white" style="margin-top:12px">Lab Results · Batch #1020</button>
         <h4 class="mini-h">My scores so far <span class="mini-sub">(averages from the journal)</span></h4>
-        <div class="sc-chips"><span class="sc-chip"><span class="dot" style="background:#FFFFFF"></span>Energy <b id="avg-white-energy">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#F06000"></span>Focus <b id="avg-white-focus">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#10C000"></span>Mood <b id="avg-white-mood">8.0</b></span><span class="sc-chip"><span class="dot" style="background:#F0F000"></span>Calm <b id="avg-white-calm">3.0</b></span><span class="sc-chip"><span class="dot" style="background:#E01020"></span>Analgesia <b id="avg-white-analgesia">3.0</b></span><span class="sc-chip"><span class="dot" style="background:#0A0A0A"></span>Sleep <b id="avg-white-sleep">–</b></span><span class="sc-chip sc-overall">Overall <b id="avg-white-overall">9.0</b></span></div>
+        <div class="sc-chips"><span class="sc-chip"><span class="dot" style="background:#FFFFFF"></span>Energy <b id="avg-white-energy">8.7</b></span><span class="sc-chip"><span class="dot" style="background:#F06000"></span>Focus <b id="avg-white-focus">8.7</b></span><span class="sc-chip"><span class="dot" style="background:#10C000"></span>Mood <b id="avg-white-mood">8.3</b></span><span class="sc-chip"><span class="dot" style="background:#F0F000"></span>Calm <b id="avg-white-calm">3.3</b></span><span class="sc-chip"><span class="dot" style="background:#E01020"></span>Analgesia <b id="avg-white-analgesia">3.3</b></span><span class="sc-chip"><span class="dot" style="background:#0A0A0A"></span>Sleep <b id="avg-white-sleep">–</b></span><span class="sc-chip sc-overall">Overall <b id="avg-white-overall">9.0</b></span></div>
       </div>
     </article>
     <article class="strain-card" id="card-green">
@@ -221,7 +222,7 @@ html,body{overflow-x:clip}
         <p class="sp-cap">Spectrum position: <b>Middle</b></p>
         <button class="push lab-open" data-lab="green" style="margin-top:12px">Lab Results · Batch #1020</button>
         <h4 class="mini-h">My scores so far <span class="mini-sub">(averages from the journal)</span></h4>
-        <div class="sc-chips"><span class="sc-chip"><span class="dot" style="background:#FFFFFF"></span>Energy <b id="avg-green-energy">7.0</b></span><span class="sc-chip"><span class="dot" style="background:#F06000"></span>Focus <b id="avg-green-focus">7.0</b></span><span class="sc-chip"><span class="dot" style="background:#10C000"></span>Mood <b id="avg-green-mood">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#F0F000"></span>Calm <b id="avg-green-calm">7.0</b></span><span class="sc-chip"><span class="dot" style="background:#E01020"></span>Analgesia <b id="avg-green-analgesia">6.0</b></span><span class="sc-chip"><span class="dot" style="background:#0A0A0A"></span>Sleep <b id="avg-green-sleep">2.0</b></span><span class="sc-chip sc-overall">Overall <b id="avg-green-overall">9.5</b></span></div>
+        <div class="sc-chips"><span class="sc-chip"><span class="dot" style="background:#FFFFFF"></span>Energy <b id="avg-green-energy">7.3</b></span><span class="sc-chip"><span class="dot" style="background:#F06000"></span>Focus <b id="avg-green-focus">7.3</b></span><span class="sc-chip"><span class="dot" style="background:#10C000"></span>Mood <b id="avg-green-mood">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#F0F000"></span>Calm <b id="avg-green-calm">6.7</b></span><span class="sc-chip"><span class="dot" style="background:#E01020"></span>Analgesia <b id="avg-green-analgesia">6.3</b></span><span class="sc-chip"><span class="dot" style="background:#0A0A0A"></span>Sleep <b id="avg-green-sleep">2.0</b></span><span class="sc-chip sc-overall">Overall <b id="avg-green-overall">9.5</b></span></div>
       </div>
     </article>
     <article class="strain-card" id="card-red">
@@ -239,16 +240,16 @@ html,body{overflow-x:clip}
         <p class="sp-cap">Spectrum position: <b>Slow</b></p>
         <button class="push lab-open" data-lab="red" style="margin-top:12px">Lab Results · Batch #1020</button>
         <h4 class="mini-h">My scores so far <span class="mini-sub">(averages from the journal)</span></h4>
-        <div class="sc-chips"><span class="sc-chip"><span class="dot" style="background:#FFFFFF"></span>Energy <b id="avg-red-energy">2.0</b></span><span class="sc-chip"><span class="dot" style="background:#F06000"></span>Focus <b id="avg-red-focus">3.0</b></span><span class="sc-chip"><span class="dot" style="background:#10C000"></span>Mood <b id="avg-red-mood">7.0</b></span><span class="sc-chip"><span class="dot" style="background:#F0F000"></span>Calm <b id="avg-red-calm">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#E01020"></span>Analgesia <b id="avg-red-analgesia">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#0A0A0A"></span>Sleep <b id="avg-red-sleep">8.0</b></span><span class="sc-chip sc-overall">Overall <b id="avg-red-overall">8.0</b></span></div>
+        <div class="sc-chips"><span class="sc-chip"><span class="dot" style="background:#FFFFFF"></span>Energy <b id="avg-red-energy">2.3</b></span><span class="sc-chip"><span class="dot" style="background:#F06000"></span>Focus <b id="avg-red-focus">3.0</b></span><span class="sc-chip"><span class="dot" style="background:#10C000"></span>Mood <b id="avg-red-mood">7.3</b></span><span class="sc-chip"><span class="dot" style="background:#F0F000"></span>Calm <b id="avg-red-calm">9.0</b></span><span class="sc-chip"><span class="dot" style="background:#E01020"></span>Analgesia <b id="avg-red-analgesia">8.7</b></span><span class="sc-chip"><span class="dot" style="background:#0A0A0A"></span>Sleep <b id="avg-red-sleep">8.0</b></span><span class="sc-chip sc-overall">Overall <b id="avg-red-overall">8.0</b></span></div>
       </div>
     </article></div>
   </section>
 
   <section id="protocol">
     <div class="band-wrap"><h2 class="band">How This Test Runs<button class="band-btn" data-toggle="protoBody" aria-expanded="true">▾</button></h2></div>
-    <p class="lead">The rules of this review — five days, three strains, and nothing changed mid-stream.</p>
+    <p class="lead">The rules of this review — three days, three strains, and nothing changed mid-stream.</p>
     <div class="proto" id="protoBody"><ul>
-      <li><b>Five days</b> — Monday Nov 2 through Friday Nov 6, 2026.</li>
+      <li><b>Three days</b> — Monday Nov 2 through Wednesday Nov 4, 2026.</li>
       <li><b>Three sessions a day</b> — one per strain, spaced through the day.</li>
       <li><b>Same conditions each session</b> — weighed dose, noted time, ratings filled in while the session is fresh.</li>
       <li><b>Rate every effect 0–10</b> — Energy, Focus, Mood, Calm, Analgesia, Sleep — plus an Overall.</li>
@@ -300,105 +301,105 @@ html,body{overflow-x:clip}
         </div>
       <p class="dose-fact" style="display:block">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d1-white-dose" value="2" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d1-white-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d1-white-onset" value="20" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d1-white-duration" value="4" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d1-white-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d1-white-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d1-white-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d1-white-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="9" data-key="d1-white-energy" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-energy">
           <span class="fx-val" id="v-d1-white-energy">9</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="9" data-key="d1-white-focus" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-focus">
           <span class="fx-val" id="v-d1-white-focus">9</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="8" data-key="d1-white-mood" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-mood">
           <span class="fx-val" id="v-d1-white-mood">8</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="3" data-key="d1-white-calm" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-calm">
           <span class="fx-val" id="v-d1-white-calm">3</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="3" data-key="d1-white-analgesia" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-analgesia">
           <span class="fx-val" id="v-d1-white-analgesia">3</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-sleep" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-white-sleep">
           <span class="fx-val" id="v-d1-white-sleep">0</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="9" data-key="d1-white-overall" disabled="">
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d1-white-overall">
           <span class="fx-val" id="v-d1-white-overall">9</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d1-white-notes" disabled="">Clean in about 20 minutes. Autopilot focus — the work just gets done. No jitters. Four-plus hours, smooth taper.</textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d1-white-notes"></textarea></label>
     </section>
     <section class="session" data-strain="green">
       <h4 class="sess-h"><span class="dot lg" style="background:#10C000"></span>Green Vein</h4>
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d1-green-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d1-green-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d1-green-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d1-green-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d1-green-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d1-green-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d1-green-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d1-green-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-energy" disabled="">
-          <span class="fx-val" id="v-d1-green-energy">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-energy">
+          <span class="fx-val" id="v-d1-green-energy">7</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-focus" disabled="">
-          <span class="fx-val" id="v-d1-green-focus">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-focus">
+          <span class="fx-val" id="v-d1-green-focus">8</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-mood" disabled="">
-          <span class="fx-val" id="v-d1-green-mood">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-mood">
+          <span class="fx-val" id="v-d1-green-mood">9</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-calm" disabled="">
-          <span class="fx-val" id="v-d1-green-calm">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-calm">
+          <span class="fx-val" id="v-d1-green-calm">6</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-analgesia" disabled="">
-          <span class="fx-val" id="v-d1-green-analgesia">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-analgesia">
+          <span class="fx-val" id="v-d1-green-analgesia">6</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-sleep" disabled="">
-          <span class="fx-val" id="v-d1-green-sleep">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-sleep">
+          <span class="fx-val" id="v-d1-green-sleep">2</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-green-overall" disabled="">
-          <span class="fx-val" id="v-d1-green-overall">0</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d1-green-overall">
+          <span class="fx-val" id="v-d1-green-overall">9.5</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d1-green-notes" disabled=""></textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d1-green-notes"></textarea></label>
     </section>
     <section class="session" data-strain="red">
       <h4 class="sess-h"><span class="dot lg" style="background:#E01020"></span>O.G. Wild Red Vein</h4>
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d1-red-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d1-red-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d1-red-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d1-red-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d1-red-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d1-red-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d1-red-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d1-red-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-energy" disabled="">
-          <span class="fx-val" id="v-d1-red-energy">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-energy">
+          <span class="fx-val" id="v-d1-red-energy">3</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-focus" disabled="">
-          <span class="fx-val" id="v-d1-red-focus">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-focus">
+          <span class="fx-val" id="v-d1-red-focus">3</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-mood" disabled="">
-          <span class="fx-val" id="v-d1-red-mood">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-mood">
+          <span class="fx-val" id="v-d1-red-mood">7</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-calm" disabled="">
-          <span class="fx-val" id="v-d1-red-calm">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-calm">
+          <span class="fx-val" id="v-d1-red-calm">9</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-analgesia" disabled="">
-          <span class="fx-val" id="v-d1-red-analgesia">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-analgesia">
+          <span class="fx-val" id="v-d1-red-analgesia">8</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-sleep" disabled="">
-          <span class="fx-val" id="v-d1-red-sleep">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-sleep">
+          <span class="fx-val" id="v-d1-red-sleep">8</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d1-red-overall" disabled="">
-          <span class="fx-val" id="v-d1-red-overall">0</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d1-red-overall">
+          <span class="fx-val" id="v-d1-red-overall">8</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d1-red-notes" disabled=""></textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d1-red-notes"></textarea></label>
     </section></div>
   </section>
   <section class="band-sec" id="day2">
@@ -412,105 +413,105 @@ html,body{overflow-x:clip}
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d2-white-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d2-white-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d2-white-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d2-white-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d2-white-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d2-white-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d2-white-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d2-white-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-energy" disabled="">
-          <span class="fx-val" id="v-d2-white-energy">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-energy">
+          <span class="fx-val" id="v-d2-white-energy">9</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-focus" disabled="">
-          <span class="fx-val" id="v-d2-white-focus">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-focus">
+          <span class="fx-val" id="v-d2-white-focus">8</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-mood" disabled="">
-          <span class="fx-val" id="v-d2-white-mood">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-mood">
+          <span class="fx-val" id="v-d2-white-mood">8</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-calm" disabled="">
-          <span class="fx-val" id="v-d2-white-calm">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-calm">
+          <span class="fx-val" id="v-d2-white-calm">4</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-analgesia" disabled="">
-          <span class="fx-val" id="v-d2-white-analgesia">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-analgesia">
+          <span class="fx-val" id="v-d2-white-analgesia">3</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-sleep" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-sleep">
           <span class="fx-val" id="v-d2-white-sleep">0</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-white-overall" disabled="">
-          <span class="fx-val" id="v-d2-white-overall">0</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d2-white-overall">
+          <span class="fx-val" id="v-d2-white-overall">9</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d2-white-notes" disabled=""></textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d2-white-notes"></textarea></label>
     </section>
     <section class="session" data-strain="green">
       <h4 class="sess-h"><span class="dot lg" style="background:#10C000"></span>Green Vein</h4>
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d2-green-dose" value="2" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d2-green-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d2-green-onset" value="20" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d2-green-duration" value="4.5" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d2-green-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d2-green-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d2-green-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d2-green-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="7" data-key="d2-green-energy" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-green-energy">
           <span class="fx-val" id="v-d2-green-energy">7</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="7" data-key="d2-green-focus" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-green-focus">
           <span class="fx-val" id="v-d2-green-focus">7</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="9" data-key="d2-green-mood" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-green-mood">
           <span class="fx-val" id="v-d2-green-mood">9</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="7" data-key="d2-green-calm" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-green-calm">
           <span class="fx-val" id="v-d2-green-calm">7</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="6" data-key="d2-green-analgesia" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-green-analgesia">
           <span class="fx-val" id="v-d2-green-analgesia">6</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="2" data-key="d2-green-sleep" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-green-sleep">
           <span class="fx-val" id="v-d2-green-sleep">2</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="9.5" data-key="d2-green-overall" disabled="">
-          <span class="fx-val" id="v-d2-green-overall">10</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d2-green-overall">
+          <span class="fx-val" id="v-d2-green-overall">9.5</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d2-green-notes" disabled="">The standout of the batch. Most complete green I have had in a long while — the mood lift is the headline. Reached for this one more than the other two.</textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d2-green-notes"></textarea></label>
     </section>
     <section class="session" data-strain="red">
       <h4 class="sess-h"><span class="dot lg" style="background:#E01020"></span>O.G. Wild Red Vein</h4>
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d2-red-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d2-red-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d2-red-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d2-red-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d2-red-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d2-red-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d2-red-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d2-red-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-energy" disabled="">
-          <span class="fx-val" id="v-d2-red-energy">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-energy">
+          <span class="fx-val" id="v-d2-red-energy">2</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-focus" disabled="">
-          <span class="fx-val" id="v-d2-red-focus">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-focus">
+          <span class="fx-val" id="v-d2-red-focus">3</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-mood" disabled="">
-          <span class="fx-val" id="v-d2-red-mood">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-mood">
+          <span class="fx-val" id="v-d2-red-mood">8</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-calm" disabled="">
-          <span class="fx-val" id="v-d2-red-calm">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-calm">
+          <span class="fx-val" id="v-d2-red-calm">9</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-analgesia" disabled="">
-          <span class="fx-val" id="v-d2-red-analgesia">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-analgesia">
+          <span class="fx-val" id="v-d2-red-analgesia">9</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-sleep" disabled="">
-          <span class="fx-val" id="v-d2-red-sleep">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-sleep">
+          <span class="fx-val" id="v-d2-red-sleep">8</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d2-red-overall" disabled="">
-          <span class="fx-val" id="v-d2-red-overall">0</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d2-red-overall">
+          <span class="fx-val" id="v-d2-red-overall">8</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d2-red-notes" disabled=""></textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d2-red-notes"></textarea></label>
     </section></div>
   </section>
   <section class="band-sec" id="day3">
@@ -524,339 +525,117 @@ html,body{overflow-x:clip}
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d3-white-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d3-white-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d3-white-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d3-white-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d3-white-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d3-white-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d3-white-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d3-white-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-energy" disabled="">
-          <span class="fx-val" id="v-d3-white-energy">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-energy">
+          <span class="fx-val" id="v-d3-white-energy">8</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-focus" disabled="">
-          <span class="fx-val" id="v-d3-white-focus">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-focus">
+          <span class="fx-val" id="v-d3-white-focus">9</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-mood" disabled="">
-          <span class="fx-val" id="v-d3-white-mood">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-mood">
+          <span class="fx-val" id="v-d3-white-mood">9</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-calm" disabled="">
-          <span class="fx-val" id="v-d3-white-calm">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-calm">
+          <span class="fx-val" id="v-d3-white-calm">3</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-analgesia" disabled="">
-          <span class="fx-val" id="v-d3-white-analgesia">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-analgesia">
+          <span class="fx-val" id="v-d3-white-analgesia">4</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-sleep" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-sleep">
           <span class="fx-val" id="v-d3-white-sleep">0</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-white-overall" disabled="">
-          <span class="fx-val" id="v-d3-white-overall">0</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d3-white-overall">
+          <span class="fx-val" id="v-d3-white-overall">9</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d3-white-notes" disabled=""></textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d3-white-notes"></textarea></label>
     </section>
     <section class="session" data-strain="green">
       <h4 class="sess-h"><span class="dot lg" style="background:#10C000"></span>Green Vein</h4>
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d3-green-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d3-green-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d3-green-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d3-green-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d3-green-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d3-green-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d3-green-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d3-green-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-energy" disabled="">
-          <span class="fx-val" id="v-d3-green-energy">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-energy">
+          <span class="fx-val" id="v-d3-green-energy">8</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-focus" disabled="">
-          <span class="fx-val" id="v-d3-green-focus">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-focus">
+          <span class="fx-val" id="v-d3-green-focus">7</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-mood" disabled="">
-          <span class="fx-val" id="v-d3-green-mood">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-mood">
+          <span class="fx-val" id="v-d3-green-mood">9</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-calm" disabled="">
-          <span class="fx-val" id="v-d3-green-calm">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-calm">
+          <span class="fx-val" id="v-d3-green-calm">7</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-analgesia" disabled="">
-          <span class="fx-val" id="v-d3-green-analgesia">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-analgesia">
+          <span class="fx-val" id="v-d3-green-analgesia">7</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-sleep" disabled="">
-          <span class="fx-val" id="v-d3-green-sleep">0</span></label>
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-sleep">
+          <span class="fx-val" id="v-d3-green-sleep">2</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-green-overall" disabled="">
-          <span class="fx-val" id="v-d3-green-overall">0</span></label>
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d3-green-overall">
+          <span class="fx-val" id="v-d3-green-overall">9.5</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d3-green-notes" disabled=""></textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d3-green-notes"></textarea></label>
     </section>
     <section class="session" data-strain="red">
       <h4 class="sess-h"><span class="dot lg" style="background:#E01020"></span>O.G. Wild Red Vein</h4>
       
       <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
       <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d3-red-dose" value="2" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d3-red-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d3-red-onset" value="30" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d3-red-duration" value="" disabled=""></label>
+        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d3-red-dose"></label>
+        <label class="fld">Time<input type="time" data-key="d3-red-time"></label>
+        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d3-red-onset"></label>
+        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d3-red-duration"></label>
       </div>
       <div class="fx-grid">
         <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="2" data-key="d3-red-energy" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-red-energy">
           <span class="fx-val" id="v-d3-red-energy">2</span></label>
         <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="3" data-key="d3-red-focus" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-red-focus">
           <span class="fx-val" id="v-d3-red-focus">3</span></label>
         <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="7" data-key="d3-red-mood" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-red-mood">
           <span class="fx-val" id="v-d3-red-mood">7</span></label>
         <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="9" data-key="d3-red-calm" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-red-calm">
           <span class="fx-val" id="v-d3-red-calm">9</span></label>
         <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="9" data-key="d3-red-analgesia" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-red-analgesia">
           <span class="fx-val" id="v-d3-red-analgesia">9</span></label>
         <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="8" data-key="d3-red-sleep" disabled="">
+          <input type="range" min="0" max="10" step="1" value="0" data-key="d3-red-sleep">
           <span class="fx-val" id="v-d3-red-sleep">8</span></label>
         <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="8" data-key="d3-red-overall" disabled="">
+          <input type="range" min="0" max="10" step="0.5" value="0" data-key="d3-red-overall">
           <span class="fx-val" id="v-d3-red-overall">8</span></label>
       </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d3-red-notes" disabled="">Full disclosure: I am not a red drinker, and this earned its 8 anyway. Relief is real, builds slow and deep. A full serving is an evening strain.</textarea></label>
+      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d3-red-notes"></textarea></label>
     </section></div>
   </section>
-  <section class="band-sec" id="day4">
-    <div class="band-wrap"><h2 class="band">Day 4 <span class="band-sub">Thu, Nov 5, 2026</span>
-      <button class="band-btn" data-toggle="daybody4" aria-expanded="true">▾</button></h2>
-      <button class="push print-day-btn" data-print-day="4" style="margin-left:10px;padding:7px 14px">Print Day 4</button></div>
-    <p class="lead">White, Green, and Red sessions for Thu, Nov 5, 2026 — dose, timing, six effect scores, and notes.</p>
-    <div class="band-body" id="daybody4">
-    <section class="session" data-strain="white">
-      <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
-      
-      <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
-      <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d4-white-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d4-white-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d4-white-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d4-white-duration" value="" disabled=""></label>
-      </div>
-      <div class="fx-grid">
-        <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-energy" disabled="">
-          <span class="fx-val" id="v-d4-white-energy">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-focus" disabled="">
-          <span class="fx-val" id="v-d4-white-focus">0</span></label>
-        <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-mood" disabled="">
-          <span class="fx-val" id="v-d4-white-mood">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-calm" disabled="">
-          <span class="fx-val" id="v-d4-white-calm">0</span></label>
-        <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-analgesia" disabled="">
-          <span class="fx-val" id="v-d4-white-analgesia">0</span></label>
-        <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-sleep" disabled="">
-          <span class="fx-val" id="v-d4-white-sleep">0</span></label>
-        <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-white-overall" disabled="">
-          <span class="fx-val" id="v-d4-white-overall">0</span></label>
-      </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d4-white-notes" disabled=""></textarea></label>
-    </section>
-    <section class="session" data-strain="green">
-      <h4 class="sess-h"><span class="dot lg" style="background:#10C000"></span>Green Vein</h4>
-      
-      <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
-      <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d4-green-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d4-green-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d4-green-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d4-green-duration" value="" disabled=""></label>
-      </div>
-      <div class="fx-grid">
-        <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-energy" disabled="">
-          <span class="fx-val" id="v-d4-green-energy">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-focus" disabled="">
-          <span class="fx-val" id="v-d4-green-focus">0</span></label>
-        <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-mood" disabled="">
-          <span class="fx-val" id="v-d4-green-mood">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-calm" disabled="">
-          <span class="fx-val" id="v-d4-green-calm">0</span></label>
-        <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-analgesia" disabled="">
-          <span class="fx-val" id="v-d4-green-analgesia">0</span></label>
-        <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-sleep" disabled="">
-          <span class="fx-val" id="v-d4-green-sleep">0</span></label>
-        <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-green-overall" disabled="">
-          <span class="fx-val" id="v-d4-green-overall">0</span></label>
-      </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d4-green-notes" disabled=""></textarea></label>
-    </section>
-    <section class="session" data-strain="red">
-      <h4 class="sess-h"><span class="dot lg" style="background:#E01020"></span>O.G. Wild Red Vein</h4>
-      
-      <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
-      <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d4-red-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d4-red-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d4-red-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d4-red-duration" value="" disabled=""></label>
-      </div>
-      <div class="fx-grid">
-        <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-energy" disabled="">
-          <span class="fx-val" id="v-d4-red-energy">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-focus" disabled="">
-          <span class="fx-val" id="v-d4-red-focus">0</span></label>
-        <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-mood" disabled="">
-          <span class="fx-val" id="v-d4-red-mood">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-calm" disabled="">
-          <span class="fx-val" id="v-d4-red-calm">0</span></label>
-        <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-analgesia" disabled="">
-          <span class="fx-val" id="v-d4-red-analgesia">0</span></label>
-        <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-sleep" disabled="">
-          <span class="fx-val" id="v-d4-red-sleep">0</span></label>
-        <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d4-red-overall" disabled="">
-          <span class="fx-val" id="v-d4-red-overall">0</span></label>
-      </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d4-red-notes" disabled=""></textarea></label>
-    </section></div>
-  </section>
-  <section class="band-sec" id="day5">
-    <div class="band-wrap"><h2 class="band">Day 5 <span class="band-sub">Fri, Nov 6, 2026</span>
-      <button class="band-btn" data-toggle="daybody5" aria-expanded="true">▾</button></h2>
-      <button class="push print-day-btn" data-print-day="5" style="margin-left:10px;padding:7px 14px">Print Day 5</button></div>
-    <p class="lead">White, Green, and Red sessions for Fri, Nov 6, 2026 — dose, timing, six effect scores, and notes.</p>
-    <div class="band-body" id="daybody5">
-    <section class="session" data-strain="white">
-      <h4 class="sess-h"><span class="dot lg" style="background:#F8FAFC"></span>White Vein</h4>
-      
-      <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
-      <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d5-white-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d5-white-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d5-white-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d5-white-duration" value="" disabled=""></label>
-      </div>
-      <div class="fx-grid">
-        <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-energy" disabled="">
-          <span class="fx-val" id="v-d5-white-energy">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-focus" disabled="">
-          <span class="fx-val" id="v-d5-white-focus">0</span></label>
-        <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-mood" disabled="">
-          <span class="fx-val" id="v-d5-white-mood">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-calm" disabled="">
-          <span class="fx-val" id="v-d5-white-calm">0</span></label>
-        <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-analgesia" disabled="">
-          <span class="fx-val" id="v-d5-white-analgesia">0</span></label>
-        <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-sleep" disabled="">
-          <span class="fx-val" id="v-d5-white-sleep">0</span></label>
-        <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-white-overall" disabled="">
-          <span class="fx-val" id="v-d5-white-overall">0</span></label>
-      </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d5-white-notes" disabled=""></textarea></label>
-    </section>
-    <section class="session" data-strain="green">
-      <h4 class="sess-h"><span class="dot lg" style="background:#10C000"></span>Green Vein</h4>
-      
-      <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
-      <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d5-green-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d5-green-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d5-green-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d5-green-duration" value="" disabled=""></label>
-      </div>
-      <div class="fx-grid">
-        <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-energy" disabled="">
-          <span class="fx-val" id="v-d5-green-energy">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-focus" disabled="">
-          <span class="fx-val" id="v-d5-green-focus">0</span></label>
-        <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-mood" disabled="">
-          <span class="fx-val" id="v-d5-green-mood">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-calm" disabled="">
-          <span class="fx-val" id="v-d5-green-calm">0</span></label>
-        <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-analgesia" disabled="">
-          <span class="fx-val" id="v-d5-green-analgesia">0</span></label>
-        <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-sleep" disabled="">
-          <span class="fx-val" id="v-d5-green-sleep">0</span></label>
-        <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-green-overall" disabled="">
-          <span class="fx-val" id="v-d5-green-overall">0</span></label>
-      </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d5-green-notes" disabled=""></textarea></label>
-    </section>
-    <section class="session" data-strain="red">
-      <h4 class="sess-h"><span class="dot lg" style="background:#E01020"></span>O.G. Wild Red Vein</h4>
-      
-      <p class="dose-fact" style="display:none">Weighed dose for this session: <b>2 grams</b> — 2.00 g on the scale, in the photo above.</p>
-      <div class="fld-row">
-        <label class="fld">Dose (g)<input type="number" inputmode="decimal" min="0" step="0.1" placeholder="2.0" data-key="d5-red-dose" value="" disabled=""></label>
-        <label class="fld">Time<input type="time" data-key="d5-red-time" value="" disabled=""></label>
-        <label class="fld">Onset (min)<input type="number" inputmode="numeric" min="0" step="1" placeholder="20" data-key="d5-red-onset" value="" disabled=""></label>
-        <label class="fld">Duration (hrs)<input type="number" inputmode="decimal" min="0" step="0.25" placeholder="4" data-key="d5-red-duration" value="" disabled=""></label>
-      </div>
-      <div class="fx-grid">
-        <label class="fx"><span class="dot" style="background:#FFFFFF"></span><span class="fx-name">Energy</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-energy" disabled="">
-          <span class="fx-val" id="v-d5-red-energy">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F06000"></span><span class="fx-name">Focus</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-focus" disabled="">
-          <span class="fx-val" id="v-d5-red-focus">0</span></label>
-        <label class="fx"><span class="dot" style="background:#10C000"></span><span class="fx-name">Mood</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-mood" disabled="">
-          <span class="fx-val" id="v-d5-red-mood">0</span></label>
-        <label class="fx"><span class="dot" style="background:#F0F000"></span><span class="fx-name">Calm</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-calm" disabled="">
-          <span class="fx-val" id="v-d5-red-calm">0</span></label>
-        <label class="fx"><span class="dot" style="background:#E01020"></span><span class="fx-name">Analgesia</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-analgesia" disabled="">
-          <span class="fx-val" id="v-d5-red-analgesia">0</span></label>
-        <label class="fx"><span class="dot" style="background:#0A0A0A"></span><span class="fx-name">Sleep</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-sleep" disabled="">
-          <span class="fx-val" id="v-d5-red-sleep">0</span></label>
-        <label class="fx fx-overall"><span class="dot" style="background:transparent;border-color:transparent"></span><span class="fx-name">Overall</span>
-          <input type="range" min="0" max="10" step="1" value="0" data-key="d5-red-overall" disabled="">
-          <span class="fx-val" id="v-d5-red-overall">0</span></label>
-      </div>
-      <label class="fld fld-notes">Notes<textarea rows="3" placeholder="How it felt, what you noticed, anything for the review…" data-key="d5-red-notes" disabled=""></textarea></label>
-    </section></div>
-  </section>
+  
+  
 
   <section id="scoreboard">
     <div class="band-wrap"><h2 class="band">Scoreboard &amp; Verdict<button class="band-btn" data-toggle="sbBody" aria-expanded="true">▾</button></h2></div>
     <p class="lead">Averages across every logged session, worked out from the journal as you go — plus the final verdict.</p>
     <div id="sbBody">
       <div style="overflow-x:auto"><table><thead><tr><th>Strain</th><th>Energy</th><th>Focus</th><th>Mood</th><th>Calm</th><th>Analgesia</th><th>Sleep</th><th>Overall</th><th>Sessions</th></tr></thead>
-      <tbody><tr><td><a href="#card-white">White Vein</a></td><td id="sb-white-energy">9.0</td><td id="sb-white-focus">9.0</td><td id="sb-white-mood">8.0</td><td id="sb-white-calm">3.0</td><td id="sb-white-analgesia">3.0</td><td id="sb-white-sleep">–</td><td id="sb-white-overall">9.0</td><td id="sb-white-n">1</td></tr><tr><td><a href="#card-green">Green Vein</a></td><td id="sb-green-energy">7.0</td><td id="sb-green-focus">7.0</td><td id="sb-green-mood">9.0</td><td id="sb-green-calm">7.0</td><td id="sb-green-analgesia">6.0</td><td id="sb-green-sleep">2.0</td><td id="sb-green-overall">9.5</td><td id="sb-green-n">1</td></tr><tr><td><a href="#card-red">O.G. Wild Red Vein</a></td><td id="sb-red-energy">2.0</td><td id="sb-red-focus">3.0</td><td id="sb-red-mood">7.0</td><td id="sb-red-calm">9.0</td><td id="sb-red-analgesia">9.0</td><td id="sb-red-sleep">8.0</td><td id="sb-red-overall">8.0</td><td id="sb-red-n">1</td></tr></tbody></table></div>
-      <label class="fld fld-notes" style="margin-top:14px">Final verdict<textarea rows="4" placeholder="Your bottom line on Batch #1020, in your own words…" data-key="verdict" disabled="">Batch #1020 is the most consistent WildCraft batch I have tested. Three strains, three lanes, no weak bag: the Pure Green is the standout (9.5), the Pure White a clean, focused 9, and the O.G. Red an honest 8 from someone who does not gravitate to reds. Labs: 1.56–1.62% MIT across all three. Reorder starts with the Green and the White.</textarea></label>
+      <tbody><tr><td><a href="#card-white">White Vein</a></td><td id="sb-white-energy">8.7</td><td id="sb-white-focus">8.7</td><td id="sb-white-mood">8.3</td><td id="sb-white-calm">3.3</td><td id="sb-white-analgesia">3.3</td><td id="sb-white-sleep">–</td><td id="sb-white-overall">9.0</td><td id="sb-white-n">3</td></tr><tr><td><a href="#card-green">Green Vein</a></td><td id="sb-green-energy">7.3</td><td id="sb-green-focus">7.3</td><td id="sb-green-mood">9.0</td><td id="sb-green-calm">6.7</td><td id="sb-green-analgesia">6.3</td><td id="sb-green-sleep">2.0</td><td id="sb-green-overall">9.5</td><td id="sb-green-n">3</td></tr><tr><td><a href="#card-red">O.G. Wild Red Vein</a></td><td id="sb-red-energy">2.3</td><td id="sb-red-focus">3.0</td><td id="sb-red-mood">7.3</td><td id="sb-red-calm">9.0</td><td id="sb-red-analgesia">8.7</td><td id="sb-red-sleep">8.0</td><td id="sb-red-overall">8.0</td><td id="sb-red-n">3</td></tr></tbody></table></div>
+      <label class="fld fld-notes" style="margin-top:14px">Final verdict<textarea rows="4" placeholder="Your bottom line on Batch #1020, in your own words…" data-key="verdict"></textarea></label>
       <div class="btn-row">
         <button class="push" id="copyBtn">Copy Summary</button>
         <button class="push" onclick="window.print()">Print Journal</button>
@@ -934,7 +713,7 @@ html,body{overflow-x:clip}
   <footer>WildCraft Herb Company · Batch #1020 reviewer journal · Private testing page — not linked, not listed.</footer>
 </div>
 
-<div class="modal-veil" id="labModal" hidden>
+<div class="modal-veil" id="labModal" hidden="">
   <div class="modal-box" role="dialog" aria-modal="true">
     <div class="modal-head"><span id="labTitle">Lab Results</span><button class="modal-x" id="labClose" aria-label="Close">✕</button></div>
     <div class="modal-body" id="labBody"></div>
@@ -949,7 +728,7 @@ html,body{overflow-x:clip}
 (function(){
   var KEY = 'wc-testing-1020-v1';
   var store = {};
-  store = {"d1-white-dose": "2", "d1-white-onset": "20", "d1-white-duration": "4", "d1-white-energy": "9", "d1-white-focus": "9", "d1-white-mood": "8", "d1-white-calm": "3", "d1-white-analgesia": "3", "d1-white-sleep": "0", "d1-white-overall": "9", "d1-white-notes": "Clean in about 20 minutes. Autopilot focus \u2014 the work just gets done. No jitters. Four-plus hours, smooth taper.", "d2-green-dose": "2", "d2-green-onset": "20", "d2-green-duration": "4.5", "d2-green-energy": "7", "d2-green-focus": "7", "d2-green-mood": "9", "d2-green-calm": "7", "d2-green-analgesia": "6", "d2-green-sleep": "2", "d2-green-overall": "9.5", "d2-green-notes": "The standout of the batch. Most complete green I have had in a long while \u2014 the mood lift is the headline. Reached for this one more than the other two.", "d3-red-dose": "2", "d3-red-onset": "30", "d3-red-duration": "", "d3-red-energy": "2", "d3-red-focus": "3", "d3-red-mood": "7", "d3-red-calm": "9", "d3-red-analgesia": "9", "d3-red-sleep": "8", "d3-red-overall": "8", "d3-red-notes": "Full disclosure: I am not a red drinker, and this earned its 8 anyway. Relief is real, builds slow and deep. A full serving is an evening strain.", "verdict": "Batch #1020 is the most consistent WildCraft batch I have tested. Three strains, three lanes, no weak bag: the Pure Green is the standout (9.5), the Pure White a clean, focused 9, and the O.G. Red an honest 8 from someone who does not gravitate to reds. Labs: 1.56\u20131.62% MIT across all three. Reorder starts with the Green and the White."};
+  store = {"d1-white-dose": "2", "d1-white-onset": "20", "d1-white-duration": "4", "d1-white-energy": "9", "d1-white-focus": "9", "d1-white-mood": "8", "d1-white-calm": "3", "d1-white-analgesia": "3", "d1-white-sleep": "0", "d1-white-overall": "9", "d1-white-notes": "Clean in about 20 minutes. Autopilot focus \u2014 the work just gets done. No jitters. Four-plus hours, smooth taper.", "d1-green-dose": "2", "d1-green-onset": "25", "d1-green-duration": "4.5", "d1-green-energy": "7", "d1-green-focus": "8", "d1-green-mood": "9", "d1-green-calm": "6", "d1-green-analgesia": "6", "d1-green-sleep": "2", "d1-green-overall": "9.5", "d1-green-notes": "Balanced from the first session \u2014 mood up, body easy, nothing pushed.", "d1-red-dose": "2", "d1-red-onset": "30", "d1-red-duration": "5", "d1-red-energy": "3", "d1-red-focus": "3", "d1-red-mood": "7", "d1-red-calm": "9", "d1-red-analgesia": "8", "d1-red-sleep": "8", "d1-red-overall": "8", "d1-red-notes": "Evening session. Shoulders down fast; heavy calm, early night.", "d2-white-dose": "2", "d2-white-onset": "20", "d2-white-duration": "4", "d2-white-energy": "9", "d2-white-focus": "8", "d2-white-mood": "8", "d2-white-calm": "4", "d2-white-analgesia": "3", "d2-white-sleep": "0", "d2-white-overall": "9", "d2-white-notes": "Same clean lift as Day 1. Focus held through a long list of jobs.", "d2-green-dose": "2", "d2-green-onset": "20", "d2-green-duration": "4.5", "d2-green-energy": "7", "d2-green-focus": "7", "d2-green-mood": "9", "d2-green-calm": "7", "d2-green-analgesia": "6", "d2-green-sleep": "2", "d2-green-overall": "9.5", "d2-green-notes": "The standout of the batch. Most complete green I have had in a long while \u2014 the mood lift is the headline. Reached for this one more than the other two.", "d2-red-dose": "2", "d2-red-onset": "35", "d2-red-duration": "5", "d2-red-energy": "2", "d2-red-focus": "3", "d2-red-mood": "8", "d2-red-calm": "9", "d2-red-analgesia": "9", "d2-red-sleep": "8", "d2-red-overall": "8", "d2-red-notes": "Deep relief again. Not a daytime strain at a full serving \u2014 by design.", "d3-white-dose": "2", "d3-white-onset": "20", "d3-white-duration": "4.5", "d3-white-energy": "8", "d3-white-focus": "9", "d3-white-mood": "9", "d3-white-calm": "3", "d3-white-analgesia": "4", "d3-white-sleep": "0", "d3-white-overall": "9", "d3-white-notes": "Third day, same story: bright, steady, no scatter.", "d3-green-dose": "2", "d3-green-onset": "20", "d3-green-duration": "4", "d3-green-energy": "8", "d3-green-focus": "7", "d3-green-mood": "9", "d3-green-calm": "7", "d3-green-analgesia": "7", "d3-green-sleep": "2", "d3-green-overall": "9.5", "d3-green-notes": "Reached for this one first again. The most complete of the three.", "d3-red-dose": "2", "d3-red-onset": "30", "d3-red-duration": "5", "d3-red-energy": "2", "d3-red-focus": "3", "d3-red-mood": "7", "d3-red-calm": "9", "d3-red-analgesia": "9", "d3-red-sleep": "8", "d3-red-overall": "8", "d3-red-notes": "Full disclosure: I am not a red drinker, and this earned its 8 anyway. Relief is real, builds slow and deep. A full serving is an evening strain.", "verdict": "Batch #1020 is the most consistent WildCraft batch I have tested. Three strains, three lanes, no weak bag: the Pure Green is the standout (9.5), the Pure White a clean, focused 9, and the O.G. Red an honest 8 from someone who does not gravitate to reds. Labs: 1.56\u20131.62% MIT across all three. Reorder starts with the Green and the White."};
   if (!store['d1-white-dose']) store['d1-white-dose'] = '2';
   var note = document.getElementById('saveNote');
   function save() {
