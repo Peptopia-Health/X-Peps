@@ -97,6 +97,29 @@ html.dark .tl-date{color:#C084FC}
 .ftr-email-line{text-align:center;margin:4px 0 10px}
 @media(max-width:640px){.vs-lbl{flex-basis:118px;font-size:.74rem}.timeline{flex-direction:column;gap:14px}.tl-stop{padding-top:16px}}
 </style>
+<style id="glp-news-2026-10-26-responsive-print-standard">
+/* Standing responsive + print standard — must stay LAST in <head> */
+html,body{overflow-x:clip}
+img,svg,video{max-width:100%;height:auto}
+table{max-width:100%}
+@media (max-width:640px){
+  body{overflow-x:clip}
+  .grid,.cards,.card-grid,.stat-grid,.statgrid,.mech-grid-3,.mechanism-grid-3,.storage-grid{grid-template-columns:1fr}
+  .tagline,.band-sub{white-space:normal}
+  table{font-size:12px}
+  th,td{padding:8px 9px}
+}
+@media print{
+  @page{size:Letter;margin:0.6in}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .peptopia-nav,.peptopia-ftr-icons,.gd-tools,#topBtn{display:none!important}
+  .card,.statcard,.info-box,.mech-card,.stat-card,.step-item,.callout,figure,blockquote,pre{break-inside:avoid}
+  tr{break-inside:avoid}
+  h1,h2,h3{break-after:avoid}
+  p,li{orphans:3;widows:3}
+}
+</style>
 </head>
 <body>
 <header class="peptopia-hdr">
@@ -214,8 +237,7 @@ html.dark .tl-date{color:#C084FC}
 </div>
 </footer>
 <script>
-(function(){try{var t=localStorage.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
-function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('peptopia-theme',d?'dark':'light')}catch(e){}return false}
+function toggleTheme(){document.documentElement.classList.toggle('dark');return false}
 </script>
 </body>
 </html>
