@@ -352,7 +352,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
  html.dark .index,html.dark .panel,html.dark .strain,html.dark table,html.dark .catintro,html.dark .biblio{background:#fff!important;color:#2e2a24!important}
 }
 </style>
-</head>
+<style id="picker-pain-standard">.qp-emo{font-size:2.4rem}.qp-node small{font-size:1.2rem}</style></head>
 <body id="top">
 <a class="toc-top" href="#top" title="Back to top" aria-label="Back to top"><svg viewBox="0 0 24 24" width="19" height="19" style="display:block;margin:auto" aria-hidden="true"><path d="M12 2.5 21.5 12h-6v9.5h-7V12h-6Z" fill="currentColor"/></svg></a>
 <div class="wrap">
@@ -535,10 +535,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
     <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M11 37C9 19 21 8 37 10c2 16-10 27-26 27Z" fill="#0070D0" stroke="#004E96" stroke-width="2"/><path d="M13.5 34.5C20 27 27 20 34.5 13.5" stroke="#F0F000" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M20.5 29.5c-2.4.2-4.6-.3-6.5-1.5M25 25c-2.4.2-4.6-.3-6.5-1.5M29.5 20.5c-2.4.2-4.6-.3-6.5-1.5" stroke="#F0F000" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></button>
     <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:var(--fx-energy);--nb:var(--fx-energy-dk)"><span class="qp-emo">⚡</span><small>Energy</small></button>
-    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk)"><span class="qp-emo">🎯</span><small>Focus</small></button>
+    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(255,34,51,.8))"><circle cx="24" cy="24" r="17" fill="#FF2233"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" fill="#FF2233"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
     <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk)"><span class="qp-emo">🧡</span><small>Mood</small></button>
     <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:var(--fx-sleep);--nb:var(--fx-sleep-dk)"><span class="qp-emo">😴</span><small>Sleep</small></button>
-    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-analgesia);--nb:var(--fx-analgesia-dk)"><span class="qp-emo"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" style="display:block"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" fill="#E01020" stroke="#9E0C18" stroke-width="1.4"/></svg></span><small>Analgesia</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-analgesia);--nb:var(--fx-analgesia-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(43,255,92,.85))"><path d="M24 7v34M7 24h34" stroke="#2BFF5C" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
     <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:var(--fx-calm);--nb:var(--fx-calm-dk)"><span class="qp-emo">😌</span><small>Calm</small></button>
   </div>
   <div id="qpResult"><p class="qp-note">Tap a feeling — the wheel reads all 19 rated WestKoast strains in this guide and shows the winner plus a rotation pick. (Elite Red carries no ratings in this guide, so it sits the wheel out.)</p></div>
