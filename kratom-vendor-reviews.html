@@ -249,7 +249,7 @@
 .card p.card-desc{flex-grow:0;margin-bottom:14px;min-height:86px}
 .chip-row{min-height:55px;align-content:flex-start}
 .card::before{background:var(--vc,#64748B)}
-.v-dte{--vc:#059669;--vcd:#065F46}.v-wk{--vc:#0284C7;--vcd:#075985}.v-tree{--vc:#B45309;--vcd:#92400E}
+.v-dte{--vc:#059669;--vcd:#065F46}.v-wk{--vc:#0284C7;--vcd:#075985}.v-tree{--vc:#B45309;--vcd:#92400E}.v-rando{--vc:#6C4FE0;--vcd:#4C35B8}
 .v-wc{--vc:#08672B;--vcd:#064E21}.v-hud{--vc:#475569;--vcd:#1E293B}.v-phan{--vc:#DB2777;--vcd:#9D174D}
 .v-bew{--vc:#7C3AED;--vcd:#5B21B6}.v-sak{--vc:#DC2626;--vcd:#991B1B}
 .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;min-height:55px;align-content:flex-start}
@@ -470,6 +470,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
 
+.hero-icon{margin:0 auto 6px;width:76px;height:76px;text-align:center}
 </style>
 <style>
 .features-row{display:flex;justify-content:center;margin:4px 0 0;padding:0}
@@ -478,6 +479,44 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .feature-icon:hover svg{transform:scale(1.08) rotate(-4deg)}
 .feature-icon span{font-size:.86rem;font-weight:700;color:#4C1D95;letter-spacing:.2px}
 .feature-icon small{font-size:.72rem;font-weight:800;letter-spacing:1.5px;color:#DB2777;text-transform:uppercase}
+</style>
+<style id="wc-responsive-print-standard">
+/* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+.panel .pbody{flex-wrap:wrap}
+.panel .pleft,.panel .pright{min-width:0}
+@media (max-width:640px){
+  .panels{grid-template-columns:1fr}
+  .panel .pbody{gap:10px;padding:12px;justify-content:center}
+  .panel .pleft,.panel .pright{font-size:12px}
+  .panel .pie{width:96px;height:96px}
+  .peffects{white-space:normal}
+  .wcsec{overflow-x:auto}
+  table{font-size:12px}
+  th,td{padding:5px 6px}
+  /* 390px fixes (Nov 1): Log button must not cover the picker title; top control cluster must not clip */
+  .wc-logbtn{position:static;float:right;margin:0 0 4px 10px}
+  .wcqp h2{min-height:34px}
+  .qp-tagline{white-space:normal}
+  .wc-toprow{flex-wrap:wrap}
+  .wc-toprow .kicker{letter-spacing:2px;font-size:12px}
+  .wc-topbtns{flex-wrap:wrap;justify-content:flex-end;margin-left:auto}
+  .wc-tbtn{padding:0 9px;font-size:.74rem}
+  /* Picker wheel fit (Nov 1): wheel capped by the card's content box and nodes
+     shrunk so every circle (Focus/Mood at 82.5%) sits fully inside the card border */
+  .wcqp{padding-left:10px;padding-right:10px}
+  .qp-wheel{width:min(312px,100%)}
+  .qp-node{width:84px;height:84px}
+  .qp-node .qp-emo{font-size:1.45rem}
+  .qp-node small{font-size:.72rem}
+}
+@media print{
+  .panels{grid-template-columns:1fr 1fr}
+  .panel .pbody{padding:10px;gap:10px}
+}
+@page{size:Letter;margin:13mm}
+@media print{*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
 </style></head>
 <body>
 <header class="peptopia-hdr">
@@ -493,6 +532,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 </nav>
 </header>
 <section class="hero">
+<div class="hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="76" height="76" fill="#43A047" stroke="#F0F000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 11 10 4 20 4c0 10-6 16-16 16Z"/><path d="M4 20c3-6 8-11 13-13" fill="none"/></svg></div>
 <h1><span class="grad">Kratom Reviews</span></h1>
 <p>Independent, In-depth Kratom reviews.</p>
 <div class="features-row"><a class="feature-icon" href="kratom-variation-guide.html" title="Why Kratom Varies So Much — the science of veins, strains, vendors and drops"><small>✦ New Feature</small><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
@@ -512,57 +552,64 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <div class="card-hdr"><h2>DTE Botanicals</h2></div>
 <p class="card-tag">Down to Earth • Colorado Springs</p>
 <p class="card-desc">The deep catalog. Real COA alkaloid tables, a farmer-code decoder, and a color-map for every drop.</p>
-<div class="chip-row"><span class="chip chip-solid">67 Strain Cards</span><span class="chip">COA Tables</span></div>
+<div class="chip-row"><span class="chip chip-solid">67 Strain Cards</span><span class="chip">COA Tables</span><span class="chip">★ 4.5 / 5</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit DTE Botanicals website" title="Visit DTE Botanicals" data-vendor="DTE Botanicals" data-url="https://dtebotanicals.com/" data-vc="#059669" data-vcd="#065F46" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/></svg></button></div>
 </a>
 <a href="westkoast-botanicals-strain-guide.html" class="card v-wk">
 <div class="card-hdr"><h2>WestKoast Botanicals</h2></div>
 <p class="card-tag">Salem, Oregon</p>
 <p class="card-desc">Small batches, big paperwork — a 26-report COA library keyed to farmer codes. Home of Red Fuzzy Blanket.</p>
-<div class="chip-row"><span class="chip chip-solid">20 Strain Cards</span><span class="chip">26 COAs</span></div>
+<div class="chip-row"><span class="chip chip-solid">20 Strain Cards</span><span class="chip">26 COAs</span><span class="chip">★ 4.2 / 5</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit WestKoast Botanicals website" title="Visit WestKoast Botanicals" data-vendor="WestKoast Botanicals" data-url="https://westkoastbotanicals.com/" data-vc="#0284C7" data-vcd="#075985" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17.5" cy="5.8" r="2.1"/><path d="M2 10.5c2.7-2.4 5.3-2.4 8 0s5.3 2.4 8 0 3.4-1.9 4-1.4"/><path d="M2 15.5c2.7-2.4 5.3-2.4 8 0s5.3 2.4 8 0 3.4-1.9 4-1.4"/><path d="M2 20.5c2.7-2.4 5.3-2.4 8 0s5.3 2.4 8 0 3.4-1.9 4-1.4"/></svg></button></div>
 </a>
 <a href="treeleaf-naturalist-strain-guide.html" class="card v-tree">
 <div class="card-hdr"><h2>TreeLeaf Naturalist</h2></div>
 <p class="card-tag">Albany, NY</p>
 <p class="card-desc">Built from DK's own emails — honest, strain-by-strain notes straight from the owner. No marketing gloss.</p>
-<div class="chip-row"><span class="chip chip-solid">44 Strain Cards</span><span class="chip">Owner-Sourced</span></div>
+<div class="chip-row"><span class="chip chip-solid">44 Strain Cards</span><span class="chip">Owner-Sourced</span><span class="chip">Scored by Category</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit TreeLeaf Naturalist website" title="Visit TreeLeaf Naturalist" data-vendor="TreeLeaf Naturalist" data-url="https://www.treeleafnaturalist.com/" data-vc="#B45309" data-vcd="#92400E" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13C12 8 9 4.5 3.5 3.5c.6 5.8 3.4 9 8.5 9.5z"/><path d="M12 11c0-4 2.2-6.8 6.8-7.6-.4 4.6-2.6 7.2-6.8 7.6z"/></svg></button></div>
 </a>
 <a href="wildcraft-herb-company-guide.html" class="card v-wc">
 <div class="card-hdr"><h2>Wildcraft Herb Company</h2></div>
 <p class="card-tag">Epping, New Hampshire</p>
 <p class="card-desc">The reference standard. Small-batch New Hampshire craft — top COA 1.70% MIT, and Batch #1020 lands Nov 4.</p>
-<div class="chip-row"><span class="chip chip-solid">38 Strain Cards</span><span class="chip">Top Test 1.70% MIT</span></div>
+<div class="chip-row"><span class="chip chip-solid">38 Strain Cards</span><span class="chip">Top Test 1.70% MIT</span><span class="chip">Reference Standard</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit Wildcraft Herb Company website" title="Visit Wildcraft Herb Company" data-vendor="Wildcraft Herb Company" data-url="https://www.wildcraftherbcompany.com/" data-vc="#08672B" data-vcd="#064E21" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5c0-6 0-11 1.5-17"/><path d="M12.6 9.5C9.8 9.8 7.6 8.6 6.4 5.9c2.8-.3 5 .9 6.2 3.6z"/><path d="M13.2 13.5c2.8.3 5-.9 6.2-3.6-2.8-.3-5 .9-6.2 3.6z"/><path d="M11.8 16.8c-2.6.2-4.7-.9-5.8-3.4 2.6-.2 4.7.9 5.8 3.4z"/></svg></button></div>
 </a>
 <a href="hudson-valley-botanicals-strain-guide.html" class="card v-hud">
 <div class="card-hdr"><h2>Hudson Valley Botanicals</h2></div>
 <p class="card-tag">New York • Est. 2017</p>
 <p class="card-desc">Lab-first and batch-traceable. ISO 17025 testing, with an effect pie chart for every strain.</p>
-<div class="chip-row"><span class="chip chip-solid">9 Strain Cards</span><span class="chip">ISO 17025 Labs</span></div>
+<div class="chip-row"><span class="chip chip-solid">9 Strain Cards</span><span class="chip">ISO 17025 Labs</span><span class="chip">★ 3.5 / 5</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit Hudson Valley Botanicals website" title="Visit Hudson Valley Botanicals" data-vendor="Hudson Valley Botanicals" data-url="https://hudsonvalleybotanicals.com/" data-vc="#475569" data-vcd="#1E293B" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17.5 9 7l3.8 6L15.5 9.5 21 17.5z"/><path d="M2.5 20.8c2.2-1.6 4.4-1.6 6.6 0s4.4 1.6 6.6 0 4-1.4 5.8-.4"/></svg></button></div>
 </a>
 <a href="phantom-herbal-strain-guide.html" class="card v-phan">
 <div class="card-hdr"><h2>Phantom Herbal</h2></div>
 <p class="card-tag">Las Vegas, NV</p>
 <p class="card-desc">The cautionary tale. Zero published COAs and claims that don't check out — read before you buy.</p>
-<div class="chip-row"><span class="chip chip-solid">4 Products Examined</span><span class="chip">⚠ Verdict: Do Not Buy</span></div>
+<div class="chip-row"><span class="chip chip-solid">4 Products Examined</span><span class="chip">⚠ Verdict: Do Not Buy</span><span class="chip">★ 2.1 / 5</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit Phantom Herbal website" title="Visit Phantom Herbal" data-vendor="Phantom Herbal" data-url="https://www.phantomherbal.com/" data-vc="#DB2777" data-vcd="#9D174D" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a7 7 0 0 1 7 7v10l-2.3-2-2.4 2-2.3-2-2.3 2-2.4-2L5 20V10a7 7 0 0 1 7-7z"/><circle cx="9.4" cy="10.6" r=".6" fill="#fff"/><circle cx="14.6" cy="10.6" r=".6" fill="#fff"/><path d="M9.6 14.4c.8.7 1.6 1 2.4 1s1.6-.3 2.4-1"/></svg></button></div>
 </a>
 <a href="bewitched-botanical-strain-guide.html" class="card v-bew">
 <div class="card-hdr"><h2>Bewitched Botanical</h2></div>
 <p class="card-tag">Tishomingo, Oklahoma</p>
 <p class="card-desc">Candis's one-woman cauldron — base strains, classic and enhanced blends, plus the Scream Queen warning.</p>
-<div class="chip-row"><span class="chip chip-solid">41 Strain Cards</span><span class="chip">One-Woman Shop</span></div>
+<div class="chip-row"><span class="chip chip-solid">41 Strain Cards</span><span class="chip">One-Woman Shop</span><span class="chip">★ 3.9 / 5</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit Bewitched Botanical website" title="Visit Bewitched Botanical" data-vendor="Bewitched Botanical" data-url="https://bewitchedbotanical.com/" data-vc="#7C3AED" data-vcd="#5B21B6" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 3.8 17.5c2.7 1.1 5.4 1.6 8.2 1.6s5.5-.5 8.2-1.6z"/><path d="M2.5 20.6c3.2-1.2 6.3-1.8 9.5-1.8s6.3.6 9.5 1.8"/><path d="M8.6 13.4h6.8l.7 2.8c-2.7.6-5.5.6-8.2 0z" fill="#fff" stroke="none" opacity=".9"/></svg></button></div>
 </a>
 <a href="sakti-botanicals-strain-guide.html" class="card v-sak">
 <div class="card-hdr"><h2>Sakti Botanicals</h2></div>
 <p class="card-tag">Asheville, NC</p>
 <p class="card-desc">One tree, three cures. Every batch lab-published — Private Reserve GMD tested at 2.1% MIT.</p>
-<div class="chip-row"><span class="chip chip-solid">4 Powder Cards</span><span class="chip">Top Test 2.1% MIT</span></div>
+<div class="chip-row"><span class="chip chip-solid">4 Powder Cards</span><span class="chip">Top Test 2.1% MIT</span><span class="chip">★ 4.0 / 5</span></div>
 <div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit Sakti Botanicals website" title="Visit Sakti Botanicals" data-vendor="Sakti Botanicals" data-url="https://www.saktibotanicals.com/" data-vc="#DC2626" data-vcd="#991B1B" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20c-3.4-2.2-5-5.2-4.6-8.8C9.7 12 11.2 13.4 12 15.6c.8-2.2 2.3-3.6 4.6-4.4.4 3.6-1.2 6.6-4.6 8.8z"/><path d="M12 15.2c-1-3 .2-6.4 0-9.4 2 1.8 2.9 4.4 2.6 7.2-.2 1.4-1 2.2-2.6 2.2z" transform="translate(0,-1)"/><path d="M4.5 19.5c2.5 1.2 5 1.8 7.5 1.8s5-.6 7.5-1.8"/></svg></button></div>
+</a>
+<a href="rando-strain-guide.html" class="card v-rando">
+<div class="card-hdr"><h2>Rando</h2></div>
+<p class="card-tag">The Secondhand Collection</p>
+<p class="card-desc">Fourteen bags that belong to no vendor guide in this series — identified as far as the evidence honestly goes, and no further.</p>
+<div class="chip-row"><span class="chip chip-solid">14 Strain Cards</span><span class="chip">No Score — On Purpose</span></div>
+<div class="card-foot"><span class="btn">Read Review</span></div>
 </a>
 </div>
 </section>
@@ -579,8 +626,8 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <script>
 /* Peptopia theme: light default, toggle persists via localStorage */
 var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window.localStorage;s.setItem('__pp_t','1');s.removeItem('__pp_t');return s}catch(e){return null}})();
-function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
-(function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
+function toggleTheme(){document.documentElement.classList.toggle('dark');return false}
+
 </script>
 
 <div class="vendor-modal" id="vendorModal" hidden role="dialog" aria-modal="true" aria-label="Vendor website">
