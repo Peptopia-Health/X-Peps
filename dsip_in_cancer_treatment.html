@@ -221,6 +221,28 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
       }
     })();
   </script>
+<style id="banner-standard-css">
+/* ===== PEPTOPIA BANNER STANDARD v2 (approved by David, Nov 11, 2026): this exact header goes on every page that carries the banner. Logo pair IMG_3345 (dark circle) on LIGHT theme / IMG_3346 (light circle) on DARK theme, both always in the markup. HOME + ORDERS are raised pill buttons, one shared width (the ORDERS pill). Print circle sits LEFT of the theme circle; printer icon magenta, moon + sun icons yellow, icons fill their circles. Both circles are shiny black like the logo disc; in dark theme the print circle takes a magenta ring and the theme circle a yellow ring. */
+.peptopia-nav{gap:.55rem}
+.peptopia-nav>a.hdrbtn{width:104px;flex:none}
+a.hdrbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;font-family:'Outfit',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:7px 0;text-decoration:none;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.34),0 9px 18px rgba(15,23,42,.38),0 2px 4px rgba(15,23,42,.35);transition:filter .2s,transform .05s}
+a.hdrbtn:hover{filter:brightness(1.12)}
+a.hdrbtn:active{transform:translateY(2px)}
+a.hdrbtn.b-purple{background:linear-gradient(135deg,#7E22CE,#9333EA);color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+a.hdrbtn.b-emerald{background:linear-gradient(135deg,#059669,#10B981);color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.45)}
+a.hdrbtn.b-cyan{background:linear-gradient(135deg,#0891B2,#06B6D4);color:#241533!important;text-shadow:0 1px 0 rgba(255,255,255,.45)}
+.peptopia-iconbtn{width:38px;height:38px;flex:none;border-radius:50%;background:linear-gradient(180deg,#3D3D49 0%,#101016 55%,#000000 100%);border:1px solid rgba(236,72,153,.4);box-shadow:inset 0 2px 3px rgba(255,255,255,.55),inset 0 -5px 8px rgba(0,0,0,.65),0 6px 12px rgba(15,23,42,.35),0 2px 3px rgba(15,23,42,.3);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+html.dark .peptopia-iconbtn{background:linear-gradient(180deg,#2A2A35 0%,#08080D 60%,#000000 100%)}
+html.dark .hdr-print{border-color:rgba(236,72,153,.75);box-shadow:inset 0 2px 3px rgba(255,255,255,.5),inset 0 -5px 8px rgba(0,0,0,.65),0 0 12px rgba(194,24,184,.45),0 2px 3px rgba(0,0,0,.5)}
+html.dark .peptopia-theme-toggle{border-color:rgba(255,196,0,.7);box-shadow:inset 0 2px 3px rgba(255,255,255,.5),inset 0 -5px 8px rgba(0,0,0,.65),0 0 12px rgba(255,196,0,.35),0 2px 3px rgba(0,0,0,.5)}
+.peptopia-iconbtn:active{transform:translateY(2px)}
+.peptopia-iconbtn svg{width:30px!important;height:30px!important}
+.peptopia-brand .peptopia-logo.logo-light,.peptopia-logo.logo-light{display:none!important}
+.peptopia-brand .peptopia-logo.logo-dark,.peptopia-logo.logo-dark{display:block!important}
+html.dark .peptopia-brand .peptopia-logo.logo-light,html.dark .peptopia-logo.logo-light{display:block!important}
+html.dark .peptopia-brand .peptopia-logo.logo-dark,html.dark .peptopia-logo.logo-dark{display:none!important}
+@media print{.peptopia-nav .peptopia-iconbtn{display:none!important}}
+</style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-teal-500 selection:text-white dark:selection:text-black">
 
@@ -240,9 +262,10 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 <span class="peptopia-wordmark">PEPTOPIA<span class="peptopia-tagline">HEALTH &amp; WELLNESS</span></span>
 </a>
 <nav class="peptopia-nav" aria-label="Site">
-<a href="https://x-peps.com/">HOME</a>
-<a href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
-<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<a class="btn hdrbtn b-purple" href="https://x-peps.com/">HOME</a>
+<a class="btn hdrbtn b-emerald" href="https://x-peps.com/X-Peps/orders/">ORDERS</a>
+<button type="button" class="peptopia-iconbtn hdr-print" onclick="window.print()" title="Print this page" aria-label="Print this page"><svg viewBox="0 0 24 24" width="30" height="30" fill="#C218B8" aria-hidden="true"><path d="M19 8h-1V3H6v5H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3zM8 5h8v3H8V5zm8 14H8v-5h8v5zm3-7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></button>
+<button type="button" class="peptopia-iconbtn peptopia-theme-toggle" onclick="toggleTheme()" title="Toggle light / dark" aria-label="Toggle theme"><svg class="pp-moon" viewBox="0 0 24 24" width="30" height="30" fill="#FFC400" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="pp-sun" viewBox="0 0 24 24" width="30" height="30" fill="#FFC400" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-15 1.2 2.6h-2.4L12 2zM12 22l-1.2-2.6h2.4L12 22zM2 12l2.6-1.2v2.4L2 12zM22 12l-2.6 1.2V10.8L22 12zM4.2 4.2l2.7.7-1.9 1.9-.8-2.6zM19.8 19.8l-2.7-.7 1.9-1.9.8 2.6zM19.8 4.2l-.8 2.6-1.9-1.9 2.7-.7zM4.2 19.8l.8-2.6 1.9 1.9-2.7.7z"/></svg></button>
 </nav>
 </header>
 
