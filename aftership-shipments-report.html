@@ -25,7 +25,7 @@ html[data-theme="dark"]{
   --todo-bg:#2C2148; --todo-bd:#57467F; --todo-tx:#B7A8D9;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:19px;line-height:1.55}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.5}
 .page{max-width:1500px;margin:0 auto;padding:26px 22px 60px}
 header.top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .titleband{width:fit-content;max-width:100%;background:linear-gradient(135deg,#4C1D95,#7C3AED);color:#fff;border-radius:16px;padding:16px 30px;border:1.5px solid rgba(15,23,42,.28);box-shadow:inset 0 2px 0 rgba(255,255,255,.45),inset 0 -3px 0 rgba(0,0,0,.18),0 10px 24px rgba(76,29,149,.35)}
@@ -42,16 +42,18 @@ html[data-theme="dark"] h2.sect{color:#FF9A3D}
 .sectsub{color:var(--muted);font-size:1rem;margin:0 0 8px}
 .legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin:14px 0 4px;font-size:1rem;font-weight:500}
 .legend i{width:15px;height:15px;border-radius:50%;display:inline-block;vertical-align:-2px;margin-right:7px;border:2px solid rgba(0,0,0,.2)}
-.sale{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:20px 22px;margin-top:22px}
+.sale{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 16px;margin-top:16px}
 .sale-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;margin-bottom:14px}
-.sale-head .who{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.45rem}
-.sale-head .amt{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.45rem;color:#C75000}
+.flow .step{min-width:118px}
+.sale-head .who{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem}
+.sale-head .amt{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#C75000}
 html[data-theme="dark"] .sale-head .amt{color:#FF9A3D}
 .sale-head .meta{color:var(--muted);font-size:1rem}
-.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;row-gap:10px;padding-bottom:6px}
-.step{flex:0 1 auto;min-width:0;border-radius:14px;border:3px solid;padding:12px 16px}
-.step .t{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.22rem;line-height:1.15;white-space:nowrap}
-.step .d{font-size:.98rem;margin-top:4px;line-height:1.3}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;padding-bottom:4px;overflow-x:auto}
+.step{flex:1 1 0;min-width:0;border-radius:12px;border:2.5px solid;padding:8px 6px;text-align:center}
+.step .t{font-family:'Outfit',sans-serif;font-weight:800;font-size:.86rem;line-height:1.15;white-space:nowrap}
+@media (max-width:600px){.step{overflow:hidden;padding:6px 2px}.step .t{font-size:.58rem}.step .d{font-size:.58rem}.arrow{padding:0 1px}.arrow svg{width:12px;height:10px}.sale{padding:12px 10px}.sale-head .who,.sale-head .amt{font-size:1rem}}
+.step .d{font-size:.78rem;margin-top:3px;line-height:1.25;white-space:nowrap}
 .done{background:var(--green-bg);border-color:var(--green-bd);color:var(--green-tx)}
 .wait{background:var(--yel-bg);border-color:var(--yel-bd);color:var(--yel-tx)}
 .todo{background:var(--todo-bg);border-color:var(--todo-bd);color:var(--todo-tx)}
@@ -123,7 +125,7 @@ img,svg{max-width:100%}
 <header class="top">
   <div class="titleband">
     <h1>Shipping &amp; Orders</h1>
-    <div class="sub">Every sale and every package — one page. Updated Nov 10, 2026, 10:20 PM.</div>
+    <div class="sub">Every sale and every package — one page. Updated Nov 10, 2026, 11:06 PM.</div>
   </div>
   <button id="themeBtn" class="pushbtn" type="button" aria-label="Toggle dark theme">&#127769;</button>
 </header>
@@ -137,97 +139,97 @@ img,svg{max-width:100%}
   <span><i style="background:#7C3AED"></i>Purple — all finished</span>
 </div>
 <div class="sale">
-  <div class="sale-head"><span class="who">Monisha Pierre</span><span class="amt">$355.50</span><span class="meta">Tirzepatide (30mg) · Order Nov 10 · 10% off the $395</span></div>
+  <div class="sale-head"><span class="who">Monisha Pierre</span><span class="amt">$355.50</span><span class="meta">Tirzepatide 30mg · Nov 10 · −10%</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 10</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10 · 6:13 PM</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Paid Nov 10 · 10:05 PM</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
-    <div class="step done"><div class="t">TRACK</div><div class="d">Label bought Nov 10</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
-    <div class="step wait"><div class="t">FINISHED</div><div class="d">Label printed — drops Thu Nov 12</div></div>
+    <div class="step done"><div class="t">TRACK</div><div class="d">Label Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="step wait"><div class="t">FINISHED</div><div class="d">Drops Thu 12</div></div>
   </div>
 </div>
 
 </div>
 <div class="sideflow">
-  <div class="downrow"><svg width="34" height="48" viewBox="0 0 30 48"><path d="M9 3 H21 V26 H28 L15 45 L2 26 H9 Z" fill="#16A34A"/></svg><span class="downlab">DISCOUNT APPLIED — side step at LINK SENT</span></div>
+  <div class="downrow"><svg width="24" height="34" viewBox="0 0 30 48"><path d="M9 3 H21 V26 H28 L15 45 L2 26 H9 Z" fill="#16A34A"/></svg><span class="downlab">−10% DISCOUNT</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">TOTAL $395</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">&minus;10% &middot; &minus;$39.50</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">NEW LINK $355.50</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">$395</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">−$39.50</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">$355.50</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">SENT 6:13 PM</div></div>
   </div>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Darci Struthwolf</span><span class="amt">$615</span><span class="meta">Retatrutide + Syringes + BAC Water · Re-paid Nov 10 · Receipt QJLV</span></div>
+  <div class="sale-head"><span class="who">Darci Struthwolf</span><span class="amt">$615</span><span class="meta">Retatrutide+Syr+BAC · Nov 10 · #QJLV</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 7</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10, 6:37 AM</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Nov 10, $615</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
     
-    <div class="step done"><div class="t">TRACK</div><div class="d">Label bought Nov 10</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
-    <div class="step wait"><div class="t">FINISHED</div><div class="d">Label printed — drops Thu Nov 12</div></div>
+    <div class="step done"><div class="t">TRACK</div><div class="d">Label Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="step wait"><div class="t">FINISHED</div><div class="d">Drops Thu 12</div></div>
   </div>
-  <span class="flag">RED FLAG: first $615 payment refunded Nov 9 — no address on file then. She replied, re-paid Nov 10.</span>
+  <span class="flag">RED FLAG: Refunded Nov 9 — no address. Re-paid Nov 10.</span>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Jacquie Armbruster</span><span class="amt">$70</span><span class="meta">Bacteriostatic Water · Paid Nov 9 · Receipt obGL</span></div>
+  <div class="sale-head"><span class="who">Jacquie Armbruster</span><span class="amt">$70</span><span class="meta">BAC Water · Nov 9 · #obGL</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 9</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 9</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Nov 9, $70</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 9</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
     
-    <div class="step done"><div class="t">TRACK</div><div class="d">Label bought Nov 10</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
-    <div class="step wait"><div class="t">FINISHED</div><div class="d">Label printed — drops Thu Nov 12</div></div>
+    <div class="step done"><div class="t">TRACK</div><div class="d">Label Nov 10</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="step wait"><div class="t">FINISHED</div><div class="d">Drops Thu 12</div></div>
   </div>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Lisa Templeton</span><span class="amt">$260</span><span class="meta">Retatrutide (20mg) · Paid Nov 6 · Receipt o1T9</span></div>
+  <div class="sale-head"><span class="who">Lisa Templeton</span><span class="amt">$260</span><span class="meta">Retatrutide 20mg · Nov 6 · #o1T9</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Nov 6, $260</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 6</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
     <div class="step done"><div class="t">TRACK</div><div class="d">Nov 6</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
-    <div class="step wait"><div class="t">FINISHED</div><div class="d">In transit — est. Nov 14</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="step wait"><div class="t">FINISHED</div><div class="d">Est. Nov 14</div></div>
   </div>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Christian Cervantes</span><span class="amt">$395</span><span class="meta">Melanotan II x3 + Wolverine · Paid Nov 6 · Receipt En9v</span></div>
+  <div class="sale-head"><span class="who">Christian Cervantes</span><span class="amt">$395</span><span class="meta">Melanotan x3+Wolv · Nov 6 · #En9v</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Nov 6, $395</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 6</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
     <div class="step done"><div class="t">TRACK</div><div class="d">Sent</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
-    <div class="step wait"><div class="t">FINISHED</div><div class="d">In transit — est. Nov 16</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
+    <div class="step wait"><div class="t">FINISHED</div><div class="d">Est. Nov 16</div></div>
   </div>
 </div>
   <div class="sale">
@@ -235,7 +237,7 @@ img,svg{max-width:100%}
     <div class="flow">
       <div class="step done"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
       <div class="arr"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M2 9h13V4l8 8-8 8v-5H2z" fill="#B9A8D9"/></svg></div>
-      <div class="step done"><div class="t">LINK SENT</div><div class="d">Sent Nov 10</div></div>
+      <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10</div></div>
       <div class="arr"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M2 9h13V4l8 8-8 8v-5H2z" fill="#EAB308"/></svg></div>
       <div class="step wait"><div class="t">PAID</div><div class="d">Waiting</div></div>
       <div class="arr"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M2 9h13V4l8 8-8 8v-5H2z" fill="#B9A8D9"/></svg></div>
@@ -251,65 +253,65 @@ img,svg{max-width:100%}
 <div id="historyBox">
   <h2 class="sect">History — finished sales</h2>
 <div class="sale">
-  <div class="sale-head"><span class="who">Olivia Othmer</span><span class="amt">$375</span><span class="meta">Paid Nov 2 · Receipt Woza · Delivered Nov 6</span></div>
+  <div class="sale-head"><span class="who">Olivia Othmer</span><span class="amt">$375</span><span class="meta">Nov 2 · #Woza · Delivered</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 2</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Nov 2, $375</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 2</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
     <div class="step done"><div class="t">TRACK</div><div class="d">Sent</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
-    <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered Nov 6</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
+    <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered</div></div>
   </div>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Christian Cervantes</span><span class="amt">$95</span><span class="meta">SLU-PP-332 · Paid Nov 1 · Receipt CGbs · Delivered Nov 7</span></div>
+  <div class="sale-head"><span class="who">Christian Cervantes</span><span class="amt">$95</span><span class="meta">SLU-PP-332 · Nov 1 · #CGbs</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Nov 1</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Nov 1, $95</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Nov 1</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
     <div class="step done"><div class="t">TRACK</div><div class="d">Sent</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
-    <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered Nov 7</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
+    <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered</div></div>
   </div>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Nancy Banner</span><span class="amt">$335</span><span class="meta">Paid Oct 29 · Receipt is26 · Delivered Nov 2</span></div>
+  <div class="sale-head"><span class="who">Nancy Banner</span><span class="amt">$335</span><span class="meta">Oct 29 · #is26 · Delivered</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Oct 29</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Oct 29, $335</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Oct 29</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
     <div class="step done"><div class="t">TRACK</div><div class="d">Sent</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
-    <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered Nov 2</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
+    <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered</div></div>
   </div>
 </div>
 
 <div class="sale">
-  <div class="sale-head"><span class="who">Jane Snell</span><span class="amt">$395</span><span class="meta">Tirzepatide (30mg) · Paid Oct 23 · Receipt 455l · Delivered</span></div>
+  <div class="sale-head"><span class="who">Jane Snell</span><span class="amt">$395</span><span class="meta">Tirzepatide 30mg · Oct 23 · #455l</span></div>
   <div class="flow">
     <div class="step done"><div class="t">ORDER</div><div class="d">Oct 23</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
-    <div class="step done"><div class="t">PAID</div><div class="d">Oct 23, $395</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
+    <div class="step done"><div class="t">PAID</div><div class="d">Oct 23</div></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     
     <div class="step done"><div class="t">TRACK</div><div class="d">Sent</div></div>
-    <div class="arrow"><svg width="48" height="30" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
+    <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#7C3AED"/></svg></div>
     <div class="step fin"><div class="t">FINISHED</div><div class="d">Delivered</div></div>
   </div>
 </div>
