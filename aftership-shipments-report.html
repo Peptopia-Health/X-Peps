@@ -44,37 +44,47 @@ html[data-theme="dark"] h2.sect{color:#FF9A3D}
 .legend i{width:15px;height:15px;border-radius:50%;display:inline-block;vertical-align:-2px;margin-right:7px;border:2px solid rgba(0,0,0,.2)}
 .sale{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 16px;margin-top:16px}
 .sale-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;margin-bottom:14px}
-.flow .step{min-width:118px}
+.flow{width:fit-content;max-width:100%}
 .sale-head .who{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem}
 .sale-head .amt{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#C75000}
 html[data-theme="dark"] .sale-head .amt{color:#FF9A3D}
 .sale-head .meta{color:var(--muted);font-size:1rem}
 .flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;padding-bottom:4px;overflow-x:auto}
-.step{flex:1 1 0;min-width:0;border-radius:12px;border:2.5px solid;padding:8px 6px;text-align:center}
+.step{flex:0 0 auto;border-radius:12px;border:2.5px solid;padding:7px 8px;text-align:center}
 .step .t{font-family:'Outfit',sans-serif;font-weight:800;font-size:.86rem;line-height:1.15;white-space:nowrap}
-@media (max-width:600px){.step{overflow:hidden;padding:6px 2px}.step .t{font-size:.58rem}.step .d{font-size:.58rem}.arrow{padding:0 1px}.arrow svg{width:12px;height:10px}.sale{padding:12px 10px}.sale-head .who,.sale-head .amt{font-size:1rem}}
+@media (max-width:600px){.step{overflow:hidden;padding:5px 6px}.step .t{font-size:.58rem}.step .d{font-size:.58rem}.arrow{padding:0 1px}.arrow svg{width:12px;height:10px}.sale{padding:12px 10px}.sale-head .who,.sale-head .amt{font-size:1rem}}
 .step .d{font-size:.78rem;margin-top:3px;line-height:1.25;white-space:nowrap}
 .done{background:var(--green-bg);border-color:var(--green-bd);color:var(--green-tx)}
+.start{background:#EDE9FE;border-color:#A78BFA;color:#4C1D95}
+html[data-theme="dark"] .start{background:#2C2148;border-color:#A78BFA;color:#EDE9FE}
+.prob{background:#FFF7ED;border-color:#EA580C;color:#9A3412}
+html[data-theme="dark"] .prob{background:#431407;border-color:#F97316;color:#FED7AA}
+.fail{background:var(--red-bg);border-color:var(--red-bd);color:var(--red-tx)}
+.resbox{display:inline-block;margin-top:10px;background:var(--yel-bg);border:2.5px solid var(--yel-bd);color:var(--yel-tx);border-radius:10px;padding:6px 12px;font-weight:700;font-size:.85rem}
 .wait{background:var(--yel-bg);border-color:var(--yel-bd);color:var(--yel-tx)}
 .todo{background:var(--todo-bg);border-color:var(--todo-bd);color:var(--todo-tx)}
 .fin{background:var(--fin-bg);border-color:var(--fin-bd);color:var(--fin-tx)}
 .arrow{flex:0 0 auto;align-self:center;padding:0 5px}
-.sideflow{margin:2px 0 10px 30px}
-.downrow{display:flex;align-items:center;gap:12px;margin:2px 0 10px 34px}
-.downlab{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;color:#16A34A}
+.side{margin-left:26px;margin-top:2px}
+.downrow{display:flex;align-items:center;gap:10px;margin:2px 0 8px 30px}
+.downlab{font-family:'Outfit',sans-serif;font-weight:800;font-size:.86rem;color:#16A34A}
 .flag{display:inline-block;margin-top:12px;background:var(--red-bg);border:2.5px solid var(--red-bd);color:var(--red-tx);border-radius:10px;padding:7px 13px;font-weight:700;font-size:.98rem}
 .shipgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;margin-top:16px}
 .ship{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px 18px}
 .ship-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.dir{font-family:'Outfit',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.vend{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem}
+.dir{font-family:'Outfit',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap;flex:0 0 auto}
+.vend{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .badge{margin-left:auto;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:999px;border:1.5px solid;white-space:nowrap}
-.b-transit{background:#DBEAFE;border-color:#3B82F6;color:#1E40AF}
+.pkgbtns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pkgbtn{font-family:'Outfit',sans-serif;font-weight:700;font-size:.78rem;padding:5px 14px;border-radius:999px;border:1.5px solid rgba(15,23,42,.28);cursor:pointer;background:linear-gradient(135deg,#059669,#10B981);color:#fff;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.34),0 9px 18px rgba(15,23,42,.38),0 2px 4px rgba(15,23,42,.35)}
+.pkgbtn.canc{background:linear-gradient(135deg,#B91C1C,#DC2626)}
+.pkgbtn.undo{background:var(--card);color:var(--muted);box-shadow:none}
+.b-transit{background:#FEF9C3;border-color:#EAB308;color:#713F12}
 .b-out{background:#FEF3C7;border-color:#F59E0B;color:#92400E}
 .b-pend{background:#E2E8F0;border-color:#64748B;color:#334155}
 .b-deliv{background:#DCFCE7;border-color:#16A34A;color:#14532D}
 .b-canc{background:#FEE2E2;border-color:#DC2626;color:#7F1D1D}
-html[data-theme="dark"] .b-transit{background:#1E3A8A;color:#BFDBFE}
+html[data-theme="dark"] .b-transit{background:#713F12;color:#FEF9C3}
 html[data-theme="dark"] .b-out{background:#713F12;color:#FEF3C7}
 html[data-theme="dark"] .b-pend{background:#334155;color:#E2E8F0}
 html[data-theme="dark"] .b-deliv{background:#14532D;color:#DCFCE7}
@@ -125,7 +135,7 @@ img,svg{max-width:100%}
 <header class="top">
   <div class="titleband">
     <h1>Shipping &amp; Orders</h1>
-    <div class="sub">Every sale and every package — one page. Updated Nov 10, 2026, 11:06 PM.</div>
+    <div class="sub">Every sale and every package — one page. Updated Nov 10, 2026, 11:30 PM.</div>
   </div>
   <button id="themeBtn" class="pushbtn" type="button" aria-label="Toggle dark theme">&#127769;</button>
 </header>
@@ -141,7 +151,7 @@ img,svg{max-width:100%}
 <div class="sale">
   <div class="sale-head"><span class="who">Monisha Pierre</span><span class="amt">$355.50</span><span class="meta">Tirzepatide 30mg · Nov 10 · −10%</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 10</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 10</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -152,10 +162,7 @@ img,svg{max-width:100%}
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
     <div class="step wait"><div class="t">FINISHED</div><div class="d">Drops Thu 12</div></div>
   </div>
-</div>
-
-</div>
-<div class="sideflow">
+<div class="side">
   <div class="downrow"><svg width="24" height="34" viewBox="0 0 30 48"><path d="M9 3 H21 V26 H28 L15 45 L2 26 H9 Z" fill="#16A34A"/></svg><span class="downlab">−10% DISCOUNT</span></div>
   <div class="flow">
     <div class="step done"><div class="t">$395</div></div>
@@ -166,29 +173,31 @@ img,svg{max-width:100%}
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">SENT 6:13 PM</div></div>
   </div>
-</div>
+<div class="downrow"><svg width="24" height="34" viewBox="0 0 30 48"><path d="M9 45 H21 V22 H28 L15 3 L2 22 H9 Z" fill="#16A34A"/></svg><span class="downlab">↑ TO FINISHED</span></div>
+</div></div>
+  
 
 <div class="sale">
   <div class="sale-head"><span class="who">Darci Struthwolf</span><span class="amt">$615</span><span class="meta">Retatrutide+Syr+BAC · Nov 10 · #QJLV</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 7</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 7</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">PAID</div><div class="d">Nov 10</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
     
-    <div class="step done"><div class="t">TRACK</div><div class="d">Label Nov 10</div></div>
+    <div class="step prob"><div class="t">REFUNDED</div><div class="d">Nov 9 · no address</div></div><div class="step done"><div class="t">TRACK</div><div class="d">Label Nov 10</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#EAB308"/></svg></div>
     <div class="step wait"><div class="t">FINISHED</div><div class="d">Drops Thu 12</div></div>
   </div>
-  <span class="flag">RED FLAG: Refunded Nov 9 — no address. Re-paid Nov 10.</span>
-</div>
+  
 
-<div class="sale">
+  <span class="resbox">RESOLVED · Re-paid Nov 10</span>
+</div><div class="sale">
   <div class="sale-head"><span class="who">Jacquie Armbruster</span><span class="amt">$70</span><span class="meta">BAC Water · Nov 9 · #obGL</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 9</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 9</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 9</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -204,7 +213,7 @@ img,svg{max-width:100%}
 <div class="sale">
   <div class="sale-head"><span class="who">Lisa Templeton</span><span class="amt">$260</span><span class="meta">Retatrutide 20mg · Nov 6 · #o1T9</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -220,7 +229,7 @@ img,svg{max-width:100%}
 <div class="sale">
   <div class="sale-head"><span class="who">Christian Cervantes</span><span class="amt">$395</span><span class="meta">Melanotan x3+Wolv · Nov 6 · #En9v</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -235,7 +244,7 @@ img,svg{max-width:100%}
   <div class="sale">
     <div class="sale-name">Lilia Maher — $1,200</div>
     <div class="flow">
-      <div class="step done"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
+      <div class="step start"><div class="t">ORDER</div><div class="d">Nov 6</div></div>
       <div class="arr"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M2 9h13V4l8 8-8 8v-5H2z" fill="#B9A8D9"/></svg></div>
       <div class="step done"><div class="t">LINK SENT</div><div class="d">Nov 10</div></div>
       <div class="arr"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M2 9h13V4l8 8-8 8v-5H2z" fill="#EAB308"/></svg></div>
@@ -248,14 +257,14 @@ img,svg{max-width:100%}
   </div>
 
 <div class="histwrap">
-  <button class="pushbtn purple" id="histBtn" type="button">Show history — 35 finished</button>
+  <button class="pushbtn purple" id="histBtn" type="button">Show history — 34 finished</button>
 </div>
 <div id="historyBox">
   <h2 class="sect">History — finished sales</h2>
 <div class="sale">
   <div class="sale-head"><span class="who">Olivia Othmer</span><span class="amt">$375</span><span class="meta">Nov 2 · #Woza · Delivered</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 2</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 2</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -271,7 +280,7 @@ img,svg{max-width:100%}
 <div class="sale">
   <div class="sale-head"><span class="who">Christian Cervantes</span><span class="amt">$95</span><span class="meta">SLU-PP-332 · Nov 1 · #CGbs</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Nov 1</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Nov 1</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -287,7 +296,7 @@ img,svg{max-width:100%}
 <div class="sale">
   <div class="sale-head"><span class="who">Nancy Banner</span><span class="amt">$335</span><span class="meta">Oct 29 · #is26 · Delivered</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Oct 29</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Oct 29</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -303,7 +312,7 @@ img,svg{max-width:100%}
 <div class="sale">
   <div class="sale-head"><span class="who">Jane Snell</span><span class="amt">$395</span><span class="meta">Tirzepatide 30mg · Oct 23 · #455l</span></div>
   <div class="flow">
-    <div class="step done"><div class="t">ORDER</div><div class="d">Oct 23</div></div>
+    <div class="step start"><div class="t">ORDER</div><div class="d">Oct 23</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">LINK SENT</div><div class="d">Done</div></div>
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
@@ -319,340 +328,347 @@ img,svg{max-width:100%}
 
   <h2 class="sect">History — delivered packages</h2>
   <div class="shipgrid">
-<div class="ship hist">
+<div class="ship hist" data-num="9334611043900240390810" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Store order Nov 1, 2026 — shipped via Pirate Ship label Nov 2</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900240390810" target="_blank" rel="noopener">9334611043900240390810</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox - SCOTTSDALE, AZ 85254 &middot; Sat, Nov 7</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9334611043900240752427" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #Woza — $375 Square sale (arranged by Cathleen Zippay for Olivia Othmer), label made Nov 2, 2026 — ship-to Dallas TX; delivered Nov 6, 2026</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900240752427" target="_blank" rel="noopener">9334611043900240752427</a></span> &middot; USPS</div>
       <div class="meta">Delivered, Parcel Locker - DALLAS, TX 75204 &middot; Fri, Nov 6</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550105795035281835" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">WestKoast Botanicals</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #20406</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550105795035281835" target="_blank" rel="noopener">9405550105795035281835</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, Martinsburg, WV &middot; Wed, Nov 4</div>
       <div class="meta">Est. delivery: <b>Nov 4</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355491778446" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">USPS - Click-N-Ship(R) Payment Confirmation</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355491778446" target="_blank" rel="noopener">9434630109355491778446</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, PALM BEACH GARDENS, FL 33418 &middot; Mon, Nov 2</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9334611043900234938691" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health (outbound)</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Store order - Jane Snell</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900234938691" target="_blank" rel="noopener">9334611043900234938691</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox, LAKE WORTH, FL 33467 &middot; Sat, Oct 31</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550106151071244934" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Bewitched Botanical</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #62267</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550106151071244934" target="_blank" rel="noopener">9405550106151071244934</a></span> &middot; USPS</div>
       <div class="meta">Delivered — confirmed by David Oct 29, 2026 (packing slip #62267 in hand) &middot; Thu, Oct 29</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355489335668" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">USPS - Click-N-Ship(R) Payment Confirmation</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355489335668" target="_blank" rel="noopener">9434630109355489335668</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, BUTLER, TN 37640 &middot; Tue, Oct 27</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355489051674" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">USPS - Click-N-Ship(R) Payment Confirmation</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355489051674" target="_blank" rel="noopener">9434630109355489051674</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, PALM BEACH GARDENS, FL 33410 &middot; Sat, Oct 24</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355488710787" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">USPS - Click-N-Ship(R) Payment Confirmation</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355488710787" target="_blank" rel="noopener">9434630109355488710787</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, PALM CITY, FL 34990 &middot; Sat, Oct 24</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355487937086" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">USPS - Click-N-Ship(R) Payment Confirmation</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355487937086" target="_blank" rel="noopener">9434630109355487937086</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, PALM BEACH GARDENS, FL 33410 &middot; Thu, Oct 22</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550105796034668917" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">WestKoast Botanicals</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #20175: Green Hulk 1026 250G x2 + White Lemon 1026 250G x1 ($78.50)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550105796034668917" target="_blank" rel="noopener">9405550105796034668917</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox, MARTINSBURG, WV 25401 &middot; Thu, Oct 22</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="1ZXG9979YW10823463" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">TreeLeaf Naturalist LLC</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Kratom order for Queeny LaRue (contents/order value unknown from shipment email)</div>
       <div class="meta"><span class="mono"><a href="https://www.ups.com/track?tracknum=1ZXG9979YW10823463" target="_blank" rel="noopener">1ZXG9979YW10823463</a></span> &middot; ups</div>
       <div class="meta">Package delivered by local post office &middot; Tue, Oct 20</div>
       <div class="meta">Est. delivery: <b>early next week</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550106151069310771" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Bewitched Botanical</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #100908 for Queeny LaRue (kratom)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550106151069310771" target="_blank" rel="noopener">9405550106151069310771</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Mon, Oct 19</div>
       <div class="meta">Est. delivery: <b>Oct 17</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550206217151698246" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Hudson Valley Botanicals</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #24940 - Four Way Split Kratom Powder KG (Super Maeng Da, Super Green, White Maeng Da, Red Bali) $74.52</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550206217151698246" target="_blank" rel="noopener">9405550206217151698246</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Mon, Oct 19</div>
       <div class="meta">Est. delivery: <b>Oct 17-18</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355486783523" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">USPS - Click-N-Ship(R) Payment Confirmation</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355486783523" target="_blank" rel="noopener">9434630109355486783523</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, PORT SAINT LUCIE, FL 34953 &middot; Sat, Oct 17</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="AM697374835CN" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Angel Luo group buy (peptides)</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">CNY Blowout GB lab order</div>
       <div class="meta"><span class="mono">AM697374835CN</span> &middot; yunexpress</div>
       <div class="meta">Delivered &middot; Thu, Oct 15</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9400111899560319517807" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Rapidfinil</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #19637 (peptides)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9400111899560319517807" target="_blank" rel="noopener">9400111899560319517807</a></span> &middot; usps</div>
       <div class="meta">Delivered &middot; Thu, Oct 15</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9200190384450100037952" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Angel Luo group buy (peptides)</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">New Lab Launch GB order</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9200190384450100037952" target="_blank" rel="noopener">9200190384450100037952</a></span> &middot; usps</div>
       <div class="meta">Delivered &middot; Thu, Oct 15</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9214490374019704282327" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Angel Luo group buy (peptides)</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">WWB China Fall Frenzy order</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9214490374019704282327" target="_blank" rel="noopener">9214490374019704282327</a></span> &middot; usps</div>
       <div class="meta">Delivered &middot; Thu, Oct 15</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="1ZW155F3A812578113" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Mr. Nice Ky Kratom</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Order #HPOTC (kratom; signature-required delivery issue)</div>
       <div class="meta"><span class="mono"><a href="https://www.ups.com/track?tracknum=1ZW155F3A812578113" target="_blank" rel="noopener">1ZW155F3A812578113</a></span> &middot; ups</div>
       <div class="meta">Delivered &middot; Thu, Oct 15</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9400150206217946556949" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Phantom Herbal</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Kratom order (tracking chased Oct 9)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9400150206217946556949" target="_blank" rel="noopener">9400150206217946556949</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Tue, Oct 13</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405530109355603926407" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Customer order #1004 — Kristin Bates, Dunedin FL ($418.70; GoDaddy dispute 81e667d0)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405530109355603926407" target="_blank" rel="noopener">9405530109355603926407</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox — DUNEDIN, FL 34698 &middot; Thu, Oct 1</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355478422546" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Store order — shipped Sep 12, 2026 (Click-N-Ship label record supplied by David Nov 2, 2026)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355478422546" target="_blank" rel="noopener">9434630109355478422546</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox, SCOTTSDALE, AZ 85254 &middot; Sat, Sep 19</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355211865012" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Tirzepatide (Mounjaro) 30mg kit, customer Gina</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355211865012" target="_blank" rel="noopener">9434630109355211865012</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Tue, Sep 8</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550105796032226324" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">WestKoast Botanicals</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Kratom order (Sep 2026)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550105796032226324" target="_blank" rel="noopener">9405550105796032226324</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Tue, Sep 8</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9205590324992812915544" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">DTE Botanicals</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Kratom order (PirateShip, Priority Mail)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9205590324992812915544" target="_blank" rel="noopener">9205590324992812915544</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Sat, Aug 15</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9405550106151056087334" data-status="Delivered">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Wildcraft Herb Company</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Private Garden Green 250g x2, Here Comes the Sun 250g, PS Green 500g, PS White 250g (kratom)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550106151056087334" target="_blank" rel="noopener">9405550106151056087334</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Thu, Aug 13</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355254499823" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Customer order #1023 ($325.00)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355254499823" target="_blank" rel="noopener">9434630109355254499823</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Mon, Aug 3</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9434630109355254496242" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Customer order #1022</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434630109355254496242" target="_blank" rel="noopener">9434630109355254496242</a></span> &middot; usps</div>
       <div class="meta">Delivered, In/At Mailbox &middot; Sat, Aug 1</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
-<div class="ship hist">
+<div class="ship hist" data-num="9334611043900235024997" data-status="Delivered">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-deliv">Delivered</span></div>
       <div class="item">Replacement shipment — Pirate Ship label, created Oct 23, 2026, shipped Oct 24</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900235024997" target="_blank" rel="noopener">9334611043900235024997</a></span> &middot; USPS</div>
       <div class="meta">Delivered, In/At Mailbox — JUPITER, FL 33458 (Oct 29, 2026, per Pirate Ship audit Nov 2) &middot; -</div>
       <div class="meta">Est. delivery: <b>-</b></div>
-    </div>
-<div class="ship hist">
-      <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Succulents Depot</span><span class="badge b-canc">Cancelled</span></div>
-      <div class="item">Order #247957 (succulents; David reported wrong address)</div>
-      <div class="meta"><span class="mono">9261290411534409155324</span> &middot; dhl-global-mail</div>
-      <div class="meta">Order cancelled — wrong address, per David &middot; -</div>
-      <div class="meta">Est. delivery: <b>-</b></div>
+      
     </div>
   </div>
 </div>
 
 <h2 class="sect">Packages in motion</h2>
-<p class="sectsub">16 packages not yet delivered — inbound to us and outbound to customers. Each package appears once, here or in History.</p>
+<p class="sectsub">12 packages not yet delivered — inbound to us and outbound to customers. Each package appears once, here or in History.</p>
 <div class="shipgrid">
-<div class="ship">
+<div class="ship" data-num="1Z2J19G00228812934" data-status="In transit">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">DTE Botanicals</span><span class="badge b-transit">In transit</span></div>
       <div class="item">Full Oct 30 order ($248.31) re-batched and reshipped free with freebies after USPS lost the first box; $30 off next order code LOSTBATCH30</div>
       <div class="meta"><span class="mono"><a href="https://www.ups.com/track?tracknum=1Z2J19G00228812934" target="_blank" rel="noopener">1Z2J19G00228812934</a></span> &middot; UPS</div>
       <div class="meta">Dropped off at The UPS Store by Customer - COLORADO SPRINGS, CO &middot; Tue, Nov 10</div>
       <div class="meta">Est. delivery: <b>Nov 12-13, 2026</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
-      <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Bewitched Botanical</span><span class="badge b-pend">Pending</span></div>
-      <div class="item">Order #62267</div>
-      <div class="meta"><span class="mono">3046202576</span> &middot; DHL</div>
-      <div class="meta">Label created / no carrier scan yet &middot; -</div>
-      <div class="meta">Est. delivery: <b>-</b></div>
-    </div>
-<div class="ship">
-      <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Bewitched Botanical</span><span class="badge b-pend">Pending</span></div>
-      <div class="item">Order #62330</div>
-      <div class="meta"><span class="mono">3046672196</span> &middot; DHL</div>
-      <div class="meta">Label created / no carrier scan yet &middot; -</div>
-      <div class="meta">Est. delivery: <b>-</b></div>
-    </div>
-<div class="ship">
-      <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Peptopia Health</span><span class="badge b-pend">Pending</span></div>
-      <div class="item">Order #100908</div>
-      <div class="meta"><span class="mono">4799740843</span> &middot; DHL</div>
-      <div class="meta">Label created / no carrier scan yet &middot; -</div>
-      <div class="meta">Est. delivery: <b>-</b></div>
-    </div>
-<div class="ship">
+<div class="ship" data-num="536412309213030" data-status="Pending">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Wildcraft Herb Company</span><span class="badge b-pend">Pending</span></div>
       <div class="item">Order #1020</div>
       <div class="meta"><span class="mono"><a href="https://www.fedex.com/fedextrack/?trknbr=536412309213030" target="_blank" rel="noopener">536412309213030</a></span> &middot; FedEx</div>
       <div class="meta">Tracking number not found - FedEx shows no data for this number &middot; -</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9305511043900014790342" data-status="In transit">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">DTE Botanicals</span><span class="badge b-transit">In transit</span></div>
       <div class="item">DTE shipment - Priority Mail Medium Flat Rate Box; contents not stated in notice | REPLACED by UPS reshipment 1Z2J19G00228812934 (Nov 10)</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9305511043900014790342" target="_blank" rel="noopener">9305511043900014790342</a></span> &middot; USPS</div>
       <div class="meta">Shipment Received, Package Acceptance Pending - COLORADO SPRINGS, CO 80910 &middot; Mon, Nov 2</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
-      <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Ankit Gupta</span><span class="badge b-pend">Pending</span></div>
-      <div class="item">State of VA New-Job DOC - IT Security Analyst 2 JOB ID-814125 (Urgent)(Remote)</div>
-      <div class="meta"><span class="mono">9365701977</span> &middot; DHL</div>
-      <div class="meta">Label created / no carrier scan yet &middot; -</div>
-      <div class="meta">Est. delivery: <b>-</b></div>
-    </div>
-<div class="ship">
+<div class="ship" data-num="9405550206217156310174" data-status="In transit">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Bewitched Botanical</span><span class="badge b-transit">In transit</span></div>
       <div class="item">Order #62330</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405550206217156310174" target="_blank" rel="noopener">9405550206217156310174</a></span> &middot; USPS</div>
       <div class="meta">Arrived at USPS Facility, CHARLESTON WV PROCESSING CENTER &middot; Mon, Nov 9</div>
       <div class="meta">Est. delivery: <b>Nov 10</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9434650206217320563398" data-status="In transit">
       <div class="ship-top"><span class="dir">Inbound</span><span class="vend">Wildcraft Herb Company</span><span class="badge b-transit">In transit</span></div>
       <div class="item">Wildcraft order placed Nov 5, 2026 — label created Nov 6, 2026 (Epping NH); contents/amount not yet recorded in shop-order-history.csv</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9434650206217320563398" target="_blank" rel="noopener">9434650206217320563398</a></span> &middot; USPS</div>
       <div class="meta">Departed USPS Facility, MIDDLESEX-ESSEX MA DISTRIBUTION CENTER &middot; Tue, Nov 10</div>
       <div class="meta">Est. delivery: <b>Nov 13</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9334611043900241164588" data-status="In transit">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-transit">In transit</span></div>
       <div class="item">Melanotan II x3 + Wolverine 50mg — $395 order, paid Nov 6, 2026 (David-reported); label made Nov 3, 2026 by David via Pirate Ship duplicate — ship-to Scottsdale AZ</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900241164588" target="_blank" rel="noopener">9334611043900241164588</a></span> &middot; USPS</div>
       <div class="meta">USPS picked up item, MARTINSBURG, WV 25401 &middot; Mon, Nov 9</div>
       <div class="meta">Est. delivery: <b>Nov 16</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9334611043900243709503" data-status="In transit">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-transit">In transit</span></div>
       <div class="item">Retatrutide 20mg — label bought Nov 6, 2026 via Pirate Ship ($6.65); ship-to Gallatin TN; recipient email entered at creation for tracking notices</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900243709503" target="_blank" rel="noopener">9334611043900243709503</a></span> &middot; USPS</div>
       <div class="meta">USPS picked up item, MARTINSBURG, WV 25401 &middot; Mon, Nov 9</div>
       <div class="meta">Est. delivery: <b>Nov 14</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9334611043900246166617" data-status="Pending">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-pend">Pending</span></div>
       <div class="item">Outbound customer order — Darci Struthwolf, Jupiter FL</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900246166617" target="_blank" rel="noopener">9334611043900246166617</a></span> &middot; USPS</div>
       <div class="meta">Shipping label created — drops Thu Nov 12 (USPS closed Veterans Day Nov 11) &middot; Tue, Nov 10</div>
       <div class="meta">Est. delivery: <b>Nov 16</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9334611043900246167836" data-status="Pending">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-pend">Pending</span></div>
       <div class="item">Outbound customer order — Jacquelyn Armbruster, West Palm Beach FL</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900246167836" target="_blank" rel="noopener">9334611043900246167836</a></span> &middot; USPS</div>
       <div class="meta">Shipping label created — drops Thu Nov 12 (USPS closed Veterans Day Nov 11) &middot; Tue, Nov 10</div>
       <div class="meta">Est. delivery: <b>Nov 16</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9334611043900246183188" data-status="Pending">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">Peptopia Health</span><span class="badge b-pend">Pending</span></div>
       <div class="item">Outbound customer order — Monisha Pierre, Boynton Beach FL</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9334611043900246183188" target="_blank" rel="noopener">9334611043900246183188</a></span> &middot; USPS</div>
       <div class="meta">Shipping label created — drops Thu Nov 12 (USPS closed Veterans Day Nov 11) &middot; Tue, Nov 10</div>
       <div class="meta">Est. delivery: <b>Nov 16</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9400111105501062110004" data-status="Pending">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">PayPal Shipping</span><span class="badge b-pend">Pending</span></div>
       <div class="item">Shipment to Abigail Barkeley, Sinks Grove WV</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9400111105501062110004" target="_blank" rel="noopener">9400111105501062110004</a></span> &middot; usps</div>
       <div class="meta">Tracking not available - USPS shows no data for this number &middot; -</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
-<div class="ship">
+<div class="ship" data-num="9405530109355136365476" data-status="Pending">
       <div class="ship-top"><span class="dir">Outbound</span><span class="vend">USPS Click-N-Ship</span><span class="badge b-pend">Pending</span></div>
       <div class="item">Shipment to Antony Pando, Palm Beach Gardens FL</div>
       <div class="meta"><span class="mono"><a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=9405530109355136365476" target="_blank" rel="noopener">9405530109355136365476</a></span> &middot; usps</div>
       <div class="meta">Tracking not available - USPS shows no data for this number &middot; -</div>
       <div class="meta">Est. delivery: <b>-</b></div>
+      <div class="pkgbtns"><button type="button" class="pkgbtn" data-act="Delivered">✓ Complete — delivered</button><button type="button" class="pkgbtn canc" data-act="Cancelled">✕ Cancelled</button></div>
     </div>
 </div>
 
@@ -672,10 +688,33 @@ document.getElementById('themeBtn').addEventListener('click',function(){
   h.setAttribute('data-theme',dark?'dark':'light');
   this.innerHTML=dark?'&#9728;&#65038;':'&#127769;';
 });
+document.querySelectorAll('.ship[data-num]').forEach(function(card){
+  var num=card.getAttribute('data-num'), key='pkgdone:'+num, mark=null;
+  try{ mark=localStorage.getItem(key); }catch(e){}
+  var badge=card.querySelector('.badge');
+  function apply(m){
+    if(!badge) return;
+    if(m==='Delivered'){ badge.textContent='Delivered'; badge.className='badge b-deliv'; }
+    else if(m==='Cancelled'){ badge.textContent='Cancelled'; badge.className='badge b-canc'; }
+  }
+  if(mark) apply(mark);
+  card.addEventListener('click', function(ev){
+    var b=ev.target.closest('.pkgbtn'); if(!b) return;
+    var wrap=card.querySelector('.pkgbtns'); if(!wrap) return;
+    if(b.classList.contains('undo')){
+      try{ localStorage.removeItem(key); }catch(e){}
+      location.reload(); return;
+    }
+    var act=b.getAttribute('data-act');
+    try{ localStorage.setItem(key, act); }catch(e){}
+    apply(act);
+    wrap.innerHTML='<button type="button" class="pkgbtn undo">Marked '+act+' \u2014 undo</button>';
+  });
+});
 var hb=document.getElementById('histBtn'),hx=document.getElementById('historyBox');
 hb.addEventListener('click',function(){
   var open=hx.classList.toggle('open');
-  hb.textContent=open?'Hide history':'Show history — 35 finished';
+  hb.textContent=open?'Hide history':'Show history — 34 finished';
 });
 </script>
 </body>
