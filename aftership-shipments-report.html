@@ -65,7 +65,10 @@ html[data-theme="dark"] .prob{background:#431407;border-color:#F97316;color:#FED
 .todo{background:var(--todo-bg);border-color:var(--todo-bd);color:var(--todo-tx)}
 .fin{background:var(--fin-bg);border-color:var(--fin-bd);color:var(--fin-tx)}
 .arrow{flex:0 0 auto;align-self:center;padding:0 5px}
-.side{margin-left:26px;margin-top:2px}
+.side{margin-left:26px;margin-top:2px;display:flex;align-items:stretch;gap:0}
+.side .sbody{flex:0 1 auto;min-width:0}
+.retcol{flex:0 0 auto;margin-left:auto;display:flex;flex-direction:column;align-items:center;gap:2px;padding-left:10px}
+.endcap{margin-top:8px}
 .downrow{display:flex;align-items:center;gap:10px;margin:2px 0 8px 30px}
 .downlab{font-family:'Outfit',sans-serif;font-weight:800;font-size:.86rem;color:#16A34A}
 .flag{display:inline-block;margin-top:12px;background:var(--red-bg);border:2.5px solid var(--red-bd);color:var(--red-tx);border-radius:10px;padding:7px 13px;font-weight:700;font-size:.98rem}
@@ -135,7 +138,7 @@ img,svg{max-width:100%}
 <header class="top">
   <div class="titleband">
     <h1>Shipping &amp; Orders</h1>
-    <div class="sub">Every sale and every package — one page. Updated Nov 10, 2026, 11:30 PM.</div>
+    <div class="sub">Every sale and every package — one page. Updated Nov 10, 2026, 11:34 PM.</div>
   </div>
   <button id="themeBtn" class="pushbtn" type="button" aria-label="Toggle dark theme">&#127769;</button>
 </header>
@@ -163,6 +166,7 @@ img,svg{max-width:100%}
     <div class="step wait"><div class="t">FINISHED</div><div class="d">Drops Thu 12</div></div>
   </div>
 <div class="side">
+<div class="sbody">
   <div class="downrow"><svg width="24" height="34" viewBox="0 0 30 48"><path d="M9 3 H21 V26 H28 L15 45 L2 26 H9 Z" fill="#16A34A"/></svg><span class="downlab">−10% DISCOUNT</span></div>
   <div class="flow">
     <div class="step done"><div class="t">$395</div></div>
@@ -173,10 +177,11 @@ img,svg{max-width:100%}
     <div class="arrow"><svg width="30" height="20" viewBox="0 0 48 30"><path d="M3 9 H28 V2 L45 15 L28 28 V21 H3 Z" fill="#16A34A"/></svg></div>
     <div class="step done"><div class="t">SENT 6:13 PM</div></div>
   </div>
-<div class="downrow"><svg width="24" height="34" viewBox="0 0 30 48"><path d="M9 45 H21 V22 H28 L15 3 L2 22 H9 Z" fill="#16A34A"/></svg><span class="downlab">↑ TO FINISHED</span></div>
-</div></div>
-  
 
+</div>
+</div>
+<div class="retcol"><div class="upcell"><svg width="24" height="34" viewBox="0 0 30 48"><path d="M9 45 H21 V22 H28 L15 3 L2 22 H9 Z" fill="#16A34A"/></svg></div><div class="step fin endcap"><div class="t">FINISHED</div></div></div>
+</div>
 <div class="sale">
   <div class="sale-head"><span class="who">Darci Struthwolf</span><span class="amt">$615</span><span class="meta">Retatrutide+Syr+BAC · Nov 10 · #QJLV</span></div>
   <div class="flow">
