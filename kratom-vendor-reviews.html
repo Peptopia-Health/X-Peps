@@ -536,6 +536,25 @@ html.dark .peptopia-theme-toggle .pp-sun{display:block}
 html.dark .peptopia-theme-toggle .pp-moon{display:none}
 @media print{.peptopia-nav .peptopia-iconbtn{display:none!important}}
 </style>
+<style id="dte-card-standard">
+/* ===== Reviews hero icon row + DTE CARD STANDARD PASS (David, Nov 11, 2026 - REVIEWS_CARD_CHANGE_LIST items 1,3-7; DTE card only, all other cards untouched) ===== */
+.feature-kicker{text-align:center;font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:1.5px;color:#DB2777;text-transform:uppercase;margin:8px 0 4px}
+.features-row{align-items:flex-start;gap:20px}
+.hero-icon.leaf-inline{margin:0;width:64px;height:64px;flex:none}
+.hero-icon.leaf-inline svg{display:block}
+.v-dte .chip{cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.34),0 9px 18px rgba(15,23,42,.38),0 2px 4px rgba(15,23,42,.35);transition:transform .05s ease,box-shadow .05s ease,filter .2s ease}
+.v-dte .chip:hover{filter:brightness(1.08)}
+.v-dte .chip:active{transform:translateY(2px);box-shadow:inset 0 1px 2px rgba(255,255,255,.5),inset 0 -1px 3px rgba(0,0,0,.3),0 2px 4px rgba(15,23,42,.30)}
+.v-dte .chip-solid{border-color:rgba(15,23,42,.28)}
+.v-dte .chip.dte-coas{text-transform:none}
+.v-dte .card-foot .btn{border:1.5px solid rgba(15,23,42,.28);border-radius:999px;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.34),0 9px 18px rgba(15,23,42,.38),0 2px 4px rgba(15,23,42,.35);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.v-dte:active .card-foot .btn{transform:translateY(2px);box-shadow:inset 0 1px 2px rgba(255,255,255,.5),inset 0 -1px 3px rgba(0,0,0,.3),0 2px 4px rgba(15,23,42,.30)}
+/* Sizing correction (David, Nov 11, 2026): vendor button height = header pill height; globe icon = banner print/theme icon size */
+.v-dte .vendor-btn{background:none;border:none;box-shadow:none;padding:0;overflow:visible;height:25.84375px}
+.v-dte .vendor-btn img{width:38px;height:38px;display:block;filter:drop-shadow(0 10px 16px rgba(15,23,42,.5)) drop-shadow(0 3px 5px rgba(15,23,42,.4))}
+.v-dte .vendor-btn:hover{filter:none}
+.v-dte .vendor-btn:active{transform:translateY(2px);box-shadow:none}
+</style>
 </head>
 <body>
 <header class="peptopia-hdr">
@@ -551,10 +570,9 @@ html.dark .peptopia-theme-toggle .pp-moon{display:none}
 </nav>
 </header>
 <section class="hero">
-<div class="hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="76" height="76" fill="#43A047" stroke="#F0F000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 11 10 4 20 4c0 10-6 16-16 16Z"/><path d="M4 20c3-6 8-11 13-13" fill="none"/></svg></div>
 <h1><span class="grad">Kratom Reviews</span></h1>
-<p>Independent, In-depth Kratom reviews.</p>
-<div class="features-row"><a class="feature-icon" href="kratom-variation-guide.html" title="Why Kratom Varies So Much — the science of veins, strains, vendors and drops"><small>✦ New Feature</small><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+<div class="feature-kicker">✦ New Feature</div>
+<div class="features-row"><div class="hero-icon leaf-inline" aria-hidden="true"><svg viewBox="0 0 24 24" width="64" height="64" fill="#43A047" stroke="#F0F000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 11 10 4 20 4c0 10-6 16-16 16Z"/><path d="M4 20c3-6 8-11 13-13" fill="none"/></svg></div><a class="feature-icon" href="kratom-variation-guide.html" title="Why Kratom Varies So Much — the science of veins, strains, vendors and drops"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
 <circle cx="32" cy="32" r="30" fill="#fff"/>
 <path d="M32 4 A28 28 0 0 1 60 32 L32 32 Z" fill="#2E7D4F"/>
 <path d="M60 32 A28 28 0 0 1 32 60 L32 32 Z" fill="#B03A3A"/>
@@ -571,8 +589,8 @@ html.dark .peptopia-theme-toggle .pp-moon{display:none}
 <div class="card-hdr"><h2>DTE Botanicals</h2></div>
 <p class="card-tag">Down to Earth • Colorado Springs</p>
 <p class="card-desc">The deep catalog. Real COA alkaloid tables, a farmer-code decoder, and a color-map for every drop.</p>
-<div class="chip-row"><span class="chip chip-solid">67 Strain Cards</span><span class="chip">COA Tables</span><span class="chip">★ 4.5 / 5</span></div>
-<div class="card-foot"><span class="btn">Read Review</span><button type="button" class="vendor-btn" aria-label="Visit DTE Botanicals website" title="Visit DTE Botanicals" data-vendor="DTE Botanicals" data-url="https://dtebotanicals.com/" data-vc="#059669" data-vcd="#065F46" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3.2 9h17.6M3.2 15h17.6"/></svg></button></div>
+<div class="chip-row"><button type="button" class="chip chip-solid" aria-label="71 strains — jump to the DTE strain matrix" onclick="event.preventDefault();event.stopPropagation();window.location.href='https://x-peps.com/X-Peps/DTE.html#matrix'">71 strains</button><button type="button" class="chip dte-coas" aria-label="COAs — jump to the DTE certificates of analysis" onclick="event.preventDefault();event.stopPropagation();window.location.href='https://x-peps.com/X-Peps/DTE.html#coa'">COAs</button><button type="button" class="chip" aria-label="Rated 4.5 out of 5 — jump to reviewer voices" onclick="event.preventDefault();event.stopPropagation();window.location.href='https://x-peps.com/X-Peps/DTE.html#voices'">★ 4.5 / 5</button></div>
+<div class="card-foot"><span class="btn">REVIEWS</span><button type="button" class="vendor-btn" aria-label="Visit DTE Botanicals website" title="Visit DTE Botanicals" data-vendor="DTE Botanicals" data-url="https://dtebotanicals.com/" data-vc="#059669" data-vcd="#065F46" onclick="event.preventDefault();event.stopPropagation();openVendor(this)"><img src="https://x-peps.com/X-Peps/btn-globe-dte.png" alt="" aria-hidden="true"></button></div>
 </a>
 <a href="westkoast-botanicals-strain-guide.html" class="card v-wk">
 <div class="card-hdr"><h2>WestKoast Botanicals</h2></div>
