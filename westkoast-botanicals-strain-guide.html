@@ -1693,7 +1693,7 @@ html.dark .pchart-hint{color:#A9B39B}
       }).filter(function(x){return x.score<=4;}).sort(function(a,b){return a.score-b.score;}).slice(0,8);
       hits.forEach(function(x){
         var b=document.createElement('button');b.type='button';b.className='wc-sres';b.textContent=x.name;
-        b.addEventListener('click',function(){ location.hash=x.c.id; panel.hidden=true; input.value=''; res.innerHTML=''; });
+        b.addEventListener('click',function(){ var el=x.c; var sec=el.closest?el.closest('.wcsec'):null; if(sec&&sec._wcBand)sec._wcBand._wcSet(true); if(window.__wkOpenCard)window.__wkOpenCard(el); try{history.replaceState(null,'','#'+el.id);}catch(err){} if(panel.id==='wcSearch')panel.hidden=true; input.value=''; res.innerHTML=''; setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60); });
         res.appendChild(b);
       });
       if(!hits.length){var d=document.createElement('div');d.className='wc-nores';d.textContent='No strain matches — try fewer letters.';res.appendChild(d);}
