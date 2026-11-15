@@ -401,6 +401,7 @@ html.dark .wc-logrow small,html.dark .wc-logempty{color:var(--muted)}
     <li><a href="#shipping">Where WestKoast Ships — State by State</a></li>
     <li><a href="#verdict">The Verdict — Scorecard</a></li>
     <li><a href="#biblio">Sources &amp; Bibliography</a></li>
+    <li><a href="#extractcalc">Extract Calculator</a></li>
   </ol>
 </div>
 
@@ -1311,6 +1312,49 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
 
 
 
+<!-- ================= EXTRACT CALCULATOR ================= -->
+<div class="colorband band-neutral" id="extractcalc">
+  <h2>🧮 Extract Calculator</h2>
+  <p>Leaf dose in, extract equivalent out — and back again.</p>
+  <button type="button" class="bigicon wc-tgl" style="--bb:#e6f2ea;--bm:#9cc7a8;--bd:#23402f" aria-expanded="false" title="Open this section">🧮</button>
+</div>
+<div class="xc-head">
+  <h3 class="xc-headline">2 grams of powder = this much extract</h3>
+  <p class="xc-eqline">WestKoast 7% extract — <b>0.43 g</b></p>
+  <p class="xc-eqline">DTE Astral Amber · 72% — <b>0.042 g</b></p>
+  <p class="xc-eqline">DTE Solar Flare · 78.4% — <b>0.038 g</b></p>
+</div>
+<div class="catintro">
+  <p>Extracts concentrate the leaf's mitragynine, so a fraction of a gram of extract can carry what several grams of powder carry. The whole conversion is one piece of arithmetic: <span class="hlg">dose × strength going in = dose × strength coming out</span>. Plain leaf powder averages about <b>1.5%</b> mitragynine, so the leaf field starts at 1.5 — where a lab panel gives a batch's measured number, that number belongs in the field instead.</p>
+</div>
+<div class="xc-card">
+  <div class="xc-seg" role="group" aria-label="Conversion direction">
+    <button type="button" class="xc-segbtn on" id="xcDirLeaf" aria-pressed="true">Leaf → Extract</button>
+    <button type="button" class="xc-segbtn" id="xcDirExt" aria-pressed="false">Extract → Leaf</button>
+  </div>
+  <div class="xc-grid">
+    <label class="xc-field"><span class="xc-lab" id="xcDoseLab">Dose — leaf powder (grams)</span>
+      <input type="number" id="xcDose" value="3" min="0" step="any" inputmode="decimal"></label>
+    <label class="xc-field"><span class="xc-lab">Leaf mitragynine %</span>
+      <input type="number" id="xcLeaf" value="1.5" min="0" step="any" inputmode="decimal"></label>
+    <label class="xc-field"><span class="xc-lab">Extract mitragynine %</span>
+      <input type="number" id="xcExt" value="7" min="0" step="any" inputmode="decimal"></label>
+  </div>
+  <div class="xc-presets">
+    <span class="xc-presets-lab">Extract presets:</span>
+    <button type="button" class="xc-preset" data-pct="7">WestKoast 7% Extract</button>
+    <button type="button" class="xc-preset" data-pct="72">DTE Astral Amber · 72%</button>
+    <button type="button" class="xc-preset" data-pct="78.4">DTE Solar Flare · 78.4%</button>
+  </div>
+  <div class="xc-result" aria-live="polite">
+    <div class="xc-eq" id="xcEq">0.643 g of extract</div>
+    <div class="xc-mg" id="xcMg">carrying ≈ 45 mg mitragynine</div>
+  </div>
+  <div class="xc-chartbox"><canvas id="xcChart" role="img" aria-label="Bar chart comparing the entered dose with its equivalent dose"></canvas></div>
+  <p class="xc-formula"><b>How it works:</b> <span id="xcFormula">extract grams = leaf grams × leaf % ÷ extract %</span>.</p>
+</div>
+<div class="popbox"><b>🧪 Worked example — Solar Flare at 78.4%</b><p>One gram of average leaf at <b>1.5%</b> carries about <b>15 mg</b> of mitragynine. At <b>78.4%</b>, the same 15 mg sits in 1 × 1.5 ÷ 78.4 ≈ <b>0.019 g</b> of extract — roughly a fiftieth of a gram. A 3 g leaf dose converts to <b>0.057 g</b>. At numbers that small, the dose is weighed, never spooned.</p></div>
+<div class="popbox"><b>⚖️ Measure like it matters</b><p>An extract's printed strength is the maker's claim until a lab panel confirms it, and real potency varies by batch and by vendor. At extract doses measured in hundredths of a gram, a small measuring error is a large share of the dose — a milligram scale is the right tool for this end of the shelf.</p></div>
 <div class="wc-search2" id="wcSearch2">
   <h4>🔍 Search Strains</h4>
   <input id="wcSearchInput2" type="text" placeholder="Search strains — spelling doesn't have to be perfect" autocomplete="off" aria-label="Search strains">
@@ -1862,6 +1906,45 @@ html.dark a.wc-tbtn{color:#23402F}
 html.dark a.pill{color:#23402F}
 @media print{.fxchip .fx-meter i,.legs-track,.legs-dot{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
+<style id="extract-calc-style">
+/* ===== Extract Calculator section ===== */
+.xc-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 18px rgba(60,50,30,.08);padding:20px 20px 16px;margin:6px 0 18px}
+html.dark .xc-card{background:#1C211C}
+.xc-seg{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 0 16px}
+.xc-segbtn,.xc-preset{font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-weight:700;font-size:.92rem;color:#14301F;border:2px solid #08672B;border-radius:999px;padding:9px 18px;min-height:44px;cursor:pointer;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(8,103,43,.28),0 4px 8px rgba(30,77,59,.28);transition:transform .07s ease,box-shadow .07s ease}
+.xc-segbtn:active,.xc-preset:active{transform:translateY(2px);box-shadow:inset 0 2px 5px rgba(8,103,43,.35),0 1px 2px rgba(30,77,59,.25)}
+.xc-segbtn.on{background:radial-gradient(circle at 32% 28%,#ffffff,#dcecfb 48%,#a9cdf2);border-color:#004E96;color:#0B2E59;box-shadow:inset 0 3px 7px rgba(0,78,150,.35),inset 0 -1px 2px rgba(255,255,255,.5),0 1px 2px rgba(30,77,59,.25)}
+html.dark .xc-segbtn,html.dark .xc-preset{background:radial-gradient(circle at 32% 28%,#46543f,#2A332A 55%,#171c12);color:#E9F3E4;border-color:#7FB069}
+html.dark .xc-segbtn.on{background:radial-gradient(circle at 32% 28%,#3d5a7d,#274b73 55%,#17334f);color:#EAF4FF;border-color:#7CC4FF;box-shadow:inset 0 3px 7px rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.4)}
+.xc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 14px}
+.xc-field{display:block}
+.xc-lab{display:block;font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-weight:700;font-size:.85rem;margin:0 0 6px;color:var(--ink)}
+.xc-field input{width:100%;box-sizing:border-box;padding:11px 13px;border:2px solid #08672B;border-radius:12px;font:500 1rem 'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#111;background:#fff}
+html.dark .xc-field input{color:#111;background:#fff;border-color:#7FB069}
+.xc-presets{display:flex;gap:9px;flex-wrap:wrap;align-items:center;justify-content:center;margin:0 0 16px}
+.xc-presets-lab{font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-weight:700;font-size:.85rem;color:var(--muted)}
+.xc-preset{font-size:.85rem;min-height:40px;padding:7px 15px}
+.xc-result{text-align:center;border:1.5px solid var(--line);border-radius:14px;padding:14px 12px 12px;margin:0 0 14px;background:linear-gradient(160deg,rgba(255,255,255,.88),rgba(230,242,234,.72))}
+html.dark .xc-result{background:linear-gradient(160deg,rgba(60,70,58,.55),rgba(29,35,28,.85))}
+.xc-eq{font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:1.65rem;line-height:1.15;color:#C75000}
+html.dark .xc-eq{color:#FF9A3D}
+.xc-mg{font-size:.98rem;color:var(--muted);margin-top:3px}
+.xc-chartbox{position:relative;width:100%;height:250px;background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:10px;box-sizing:border-box}
+.xc-formula{margin:12px 0 2px;font-size:.92rem;color:var(--muted)}
+.xc-formula b{color:var(--ink);font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+@media(max-width:640px){.xc-grid{grid-template-columns:1fr}.xc-eq{font-size:1.4rem}.xc-chartbox{height:220px}}
+@media print{.xc-card{break-inside:avoid}.xc-chartbox{break-inside:avoid}}
+/* ===== Extract Calculator headline block ===== */
+.xc-head{background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(230,242,234,.78));border:1.5px solid var(--line);border-radius:16px;box-shadow:0 4px 18px rgba(60,50,30,.08);padding:20px 20px 16px;margin:6px 0 18px}
+html.dark .xc-head{background:linear-gradient(160deg,rgba(60,70,58,.55),rgba(29,35,28,.9))}
+.xc-headline{font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:1.5rem;line-height:1.2;color:#C75000;margin:0 0 12px}
+html.dark .xc-headline{color:#FF9A3D}
+.xc-eqline{margin:0 0 8px;font-size:1.3rem;line-height:1.35;color:var(--ink)}
+.xc-eqline:last-child{margin-bottom:2px}
+.xc-eqline b{font-family:'Outfit','DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-weight:800}
+@media(max-width:640px){.xc-headline{font-size:1.28rem}.xc-eqline{font-size:1.12rem}}
+@media print{.xc-head{break-inside:avoid}}
+</style>
 <style id="wk-responsive-print-standard">
 /* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
 html,body{overflow-x:clip}
@@ -2016,5 +2099,62 @@ var LAW1={
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+(function(){
+  var dir='leaf';
+  var dose=document.getElementById('xcDose'), leaf=document.getElementById('xcLeaf'), ext=document.getElementById('xcExt');
+  var eq=document.getElementById('xcEq'), mg=document.getElementById('xcMg'), doseLab=document.getElementById('xcDoseLab'), formula=document.getElementById('xcFormula');
+  var bLeaf=document.getElementById('xcDirLeaf'), bExt=document.getElementById('xcDirExt');
+  if(!dose||!leaf||!ext||!eq)return;
+  var chart=null, lastD=0, lastO=0;
+  function num(el){var v=parseFloat(el.value);return (isNaN(v)||v<0)?0:v;}
+  function fmt(v){if(v<=0)return '0';if(v<1)return v.toFixed(3);if(v<10)return v.toFixed(2);return String(Math.round(v*10)/10);}
+  function fmtMg(v){return v>=10?String(Math.round(v)):String(Math.round(v*10)/10);}
+  function darkOn(){return document.documentElement.classList.contains('dark');}
+  function draw(dv,ev){
+    if(!window.Chart)return;
+    var canvas=document.getElementById('xcChart'); if(!canvas)return;
+    var dk=darkOn();
+    var tick=dk?'#CBD5E1':'#6f675a', grid=dk?'rgba(171,162,145,.25)':'rgba(60,50,30,.10)';
+    var labels=dir==='leaf'?['Leaf dose (g)','Extract equivalent (g)']:['Extract dose (g)','Leaf equivalent (g)'];
+    if(chart){
+      chart.data.labels=labels; chart.data.datasets[0].data=[dv,ev];
+      chart.options.scales.x.ticks.color=tick; chart.options.scales.y.ticks.color=tick; chart.options.scales.y.grid.color=grid;
+      chart.update(); return;
+    }
+    chart=new Chart(canvas.getContext('2d'),{type:'bar',
+      data:{labels:labels,datasets:[{label:'Grams',data:[dv,ev],backgroundColor:['rgba(0,112,208,.85)','#10C000'],borderColor:['#004E96','#0A7300'],borderWidth:1.5,borderRadius:6}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:function(x){return ' '+x.parsed.y+' g';}}}},
+        scales:{x:{ticks:{color:tick,font:{family:"'DM Sans',sans-serif",weight:'600'}},grid:{display:false}},
+                y:{beginAtZero:true,ticks:{color:tick},grid:{color:grid}}}}});
+  }
+  function calc(){
+    var d=num(dose), l=num(leaf), e=num(ext), out=0, mgv=0;
+    if(dir==='leaf'){ out=e>0?d*l/e:0; mgv=d*l*10; }
+    else{ out=l>0?d*e/l:0; mgv=d*e*10; }
+    eq.textContent=fmt(out)+(dir==='leaf'?' g of extract':' g of leaf powder');
+    mg.textContent='carrying \u2248 '+fmtMg(mgv)+' mg mitragynine';
+    lastD=d; lastO=out;
+    draw(d,out);
+  }
+  function setDir(nw){
+    dir=nw;
+    bLeaf.classList.toggle('on',dir==='leaf'); bExt.classList.toggle('on',dir==='ext');
+    bLeaf.setAttribute('aria-pressed',dir==='leaf'?'true':'false');
+    bExt.setAttribute('aria-pressed',dir==='ext'?'true':'false');
+    doseLab.textContent=dir==='leaf'?'Dose \u2014 leaf powder (grams)':'Dose \u2014 extract (grams)';
+    formula.textContent=dir==='leaf'?'extract grams = leaf grams \u00d7 leaf % \u00f7 extract %':'leaf grams = extract grams \u00d7 extract % \u00f7 leaf %';
+    calc();
+  }
+  bLeaf.addEventListener('click',function(){setDir('leaf');});
+  bExt.addEventListener('click',function(){setDir('ext');});
+  [dose,leaf,ext].forEach(function(el){el.addEventListener('input',calc);el.addEventListener('change',calc);});
+  document.querySelectorAll('.xc-preset').forEach(function(b){b.addEventListener('click',function(){ext.value=b.getAttribute('data-pct');calc();});});
+  if(window.MutationObserver){new MutationObserver(function(){draw(lastD,lastO);}).observe(document.documentElement,{attributes:true,attributeFilter:['class']});}
+  calc();
+})();
+</script>
 </body>
 </html>
