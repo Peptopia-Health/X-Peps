@@ -664,6 +664,12 @@ html.dark .oh7x-line{background:linear-gradient(165deg,rgba(18,48,28,.9),rgba(10
  .kl-bar{ padding:10px 13px }
  .kl-map text.stlab{ font-size:15px }
 }
+@media (max-width:640px){
+ /* mobile: the top bubble buttons (date / theme / print) take their own line,
+    centered as a group; the kicker stays left on the line above (David, Nov 17) */
+ .wc-toprow{ flex-wrap:wrap }
+ .wc-toprow .wc-topbtns{ flex:1 1 100%; justify-content:center }
+}
 @media print{
  @page{ size:letter portrait; margin:.3in }
  @page klmap{ size:letter landscape; margin:.3in }
