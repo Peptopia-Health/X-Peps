@@ -542,6 +542,10 @@ html.dark .peptopia-theme-toggle .pp-moon{display:none}
 .features-row{align-items:flex-start;gap:20px}
 .hero-icon.leaf-inline{margin:0;width:64px;height:64px;flex:none}
 .hero-icon.leaf-inline svg{display:block}
+/* Title leaf (David, Nov 16, 2026): the curing leaf moves out of the features row into the h1, between the two title words, flanked by ✦ separators */
+.hero h1 .title-leaf{display:inline-block;width:1.04em;height:1.04em;vertical-align:-0.15em}
+.hero h1 .title-leaf svg{display:block;width:100%;height:100%}
+.hero h1 .title-sep{font-size:.48em;color:#DB2777;vertical-align:.22em}
 .v-dte .chip{cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.34),0 9px 18px rgba(15,23,42,.38),0 2px 4px rgba(15,23,42,.35);transition:transform .05s ease,box-shadow .05s ease,filter .2s ease}
 .v-dte .chip:hover{filter:brightness(1.08)}
 .v-dte .chip:active{transform:translateY(2px);box-shadow:inset 0 1px 2px rgba(255,255,255,.5),inset 0 -1px 3px rgba(0,0,0,.3),0 2px 4px rgba(15,23,42,.30)}
@@ -574,9 +578,9 @@ html.dark .peptopia-theme-toggle .pp-moon{display:none}
 </nav>
 </header>
 <section class="hero">
-<h1><span class="grad">Kratom Reviews</span></h1>
+<h1><span class="grad">Kratom</span> <span class="title-sep" aria-hidden="true">✦</span> <span class="title-leaf" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#43A047" stroke="#F0F000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 11 10 4 20 4c0 10-6 16-16 16Z"/><path d="M4 20c3-6 8-11 13-13" fill="none"/></svg></span> <span class="title-sep" aria-hidden="true">✦</span> <span class="grad">Reviews</span></h1>
 <div class="feature-kicker">✦ New Feature</div>
-<div class="features-row"><div class="hero-icon leaf-inline" aria-hidden="true"><svg viewBox="0 0 24 24" width="64" height="64" fill="#43A047" stroke="#F0F000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 11 10 4 20 4c0 10-6 16-16 16Z"/><path d="M4 20c3-6 8-11 13-13" fill="none"/></svg></div><a class="feature-icon" href="https://x-peps.com/X-Peps/kratom-legality-by-state.html" title="Kratom Legality by State — which states ban, regulate or allow kratom, on one clickable map" aria-label="Kratom legality by state"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+<div class="features-row"><a class="feature-icon" href="https://x-peps.com/X-Peps/kratom-legality-by-state.html" title="Kratom Legality by State — which states ban, regulate or allow kratom, on one clickable map" aria-label="Kratom legality by state"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
 <defs>
 <radialGradient id="lawGlass" cx="35%" cy="28%" r="82%">
 <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".96"/>
