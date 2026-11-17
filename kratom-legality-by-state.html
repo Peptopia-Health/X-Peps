@@ -626,6 +626,29 @@ html.dark .bp-cap{color:#a9c4ae}
 .bp-gov p{font-size:.92rem;line-height:1.45;margin:4px 0 9px}
 .bp-gov .bp-tag{text-align:left}
 .bp-vote .hb-num{flex:0 0 66px}
+/* ---- Why 7-OH Is Treated Differently: full-spectrum extract vs refined 7-OH (schematic ratio bars) ---- */
+.oh7x-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 4px}
+@media (max-width:640px){ .oh7x-grid{grid-template-columns:1fr} }
+.oh7x-card{border-radius:15px;padding:12px 14px 11px;color:#20302a;
+ background:linear-gradient(160deg,rgba(255,255,255,.88),rgba(255,255,255,.5) 50%,rgba(0,0,0,.05));
+ border:2px solid var(--bd,#08672B);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 8px rgba(0,0,0,.10),0 6px 14px rgba(0,0,0,.16)}
+html.dark .oh7x-card{background:linear-gradient(160deg,rgba(38,56,45,.94),rgba(20,32,25,.96));color:#e8f2e9}
+.oh7x-card h3{font-family:'Outfit',sans-serif;margin:0 0 2px;font-size:1rem;text-align:center}
+.oh7x-sub{text-align:center;font:700 .8rem 'Outfit',sans-serif;color:#44564a;margin:0 0 8px}
+html.dark .oh7x-sub{color:#a9c4ae}
+.oh7x-bar{display:flex;height:26px;border-radius:10px;overflow:hidden;border:2px solid rgba(10,25,15,.5);
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.55),inset 0 -4px 7px rgba(0,0,0,.22)}
+.oh7x-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font:800 .72rem 'Outfit',sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.45);white-space:nowrap;overflow:hidden;min-width:0}
+.oh7x-mit{background:linear-gradient(180deg,#4cb877,#35A05F)}
+.oh7x-oh7{background:linear-gradient(180deg,#57ff8a,#2BFF5C);color:#0B3D1E!important;text-shadow:none!important}
+.oh7x-cap{font-size:.74rem;color:#44564a;text-align:center;margin:4px 0 8px}
+html.dark .oh7x-cap{color:#a9c4ae}
+.oh7x-card ul{margin:0;padding-left:18px}
+.oh7x-card li{font-size:.9rem;line-height:1.45;margin:4px 0}
+.oh7x-line{border:2px solid #2BFF5C;border-radius:14px;padding:10px 14px;margin:10px 0 4px;
+ background:linear-gradient(165deg,rgba(240,255,244,.92),rgba(214,246,222,.75));color:#20302a}
+html.dark .oh7x-line{background:linear-gradient(165deg,rgba(18,48,28,.9),rgba(10,28,16,.92));color:#e8f2e9}
+.oh7x-line p{margin:3px 0 0;font-size:.92rem;line-height:1.5}
 @media (max-width:640px){
  .hz-list::before{left:29px}
  .hz-node{flex-basis:46px;width:46px;height:46px;font-size:1.55rem}
@@ -741,6 +764,20 @@ html.dark .bp-cap{color:#a9c4ae}
  .bp-vote .hb-track{ height:11px!important }
  .bp-vote .hb-num{ font-size:.72rem!important }
  #bipartisan .hz-state{ display:none!important }
+ /* Why 7-OH Is Treated Differently prints in portrait with the other sections */
+ #oh7panel{ padding:8px 14px!important }
+ #oh7panel h2{ font-size:1.25rem!important; margin:2px 0 6px!important }
+ #oh7panel > h2, #oh7panel > p{ break-after:avoid!important }
+ .oh7x-grid{ gap:6px!important; margin:4px 0 2px!important }
+ .oh7x-card{ padding:5px 9px!important; box-shadow:none!important; break-inside:avoid!important }
+ .oh7x-card h3{ font-size:.8rem!important; margin:0 0 2px!important }
+ .oh7x-sub{ font-size:.62rem!important; margin:0 0 3px!important }
+ .oh7x-bar{ height:15px!important }
+ .oh7x-bar div{ font-size:.55rem!important }
+ .oh7x-cap{ font-size:.6rem!important; margin:2px 0 3px!important }
+ .oh7x-card li{ font-size:.68rem!important; line-height:1.28!important; margin:1px 0!important }
+ .oh7x-line{ padding:5px 9px!important; box-shadow:none!important; break-inside:avoid!important }
+ .oh7x-line p{ font-size:.68rem!important; line-height:1.28!important }
 }
 </style>
 
@@ -796,6 +833,15 @@ html.dark .bp-cap{color:#a9c4ae}
   <div class="panel"><div class="phead" style="background:#8a6d1a"><span class="icobtn bead bead-gold" aria-hidden="true">⚠️</span> Local Bans &amp; Traps</div><div class="pbody"><ul><li><strong>Denver, Colorado</strong> bans kratom sales citywide even though Colorado regulates it statewide.</li><li><strong>Sarasota County, Florida</strong> bans it inside an otherwise regulated state; <strong>San Diego, Oceanside and Newport Beach, California</strong> ban it locally too.</li><li><strong>California trap:</strong> no state statute — but the state health department treats kratom sold for human consumption as unlawful, so most retailers will not ship there.</li><li><strong>Spokane, Washington</strong> banned sales in March 2026; some Mississippi counties and New York counties (Rensselaer, Oneida) have local bans as well.</li><li><strong>Travel rule:</strong> possession laws follow the state you are standing in — a legal-state purchase is still contraband across a banned-state line.</li></ul></div></div>
   <div class="panel"><div class="phead" style="background:#0E7A2E"><span class="icobtn bead bead-purple" aria-hidden="true">👀</span> Watch List — What Changes Next</div><div class="pbody"><ul class="kl-watch"><li><strong>Kentucky — July 1, 2027:</strong> a 2026 law (HB 757) ends all kratom sales statewide on that date; possession is not criminalized. Kentucky is regulated until then.</li><li><strong>Federal 7-OH order — any day:</strong> the DEA temporary scheduling order for high-potency 7-OH and MP could publish any weekday on or after November 13, 2026. Natural leaf below the thresholds is expressly excluded.</li><li><strong>North Dakota — 2027:</strong> licensed 21+ sales of natural kratom begin once the Attorney General&#8217;s licensing rules are finished (expected around March 2027); sales stay prohibited until then.</li><li><strong>Massachusetts — August 2027:</strong> the emergency ban expires unless lawmakers replace it; it is already being challenged in court.</li><li><strong>Pending ban bills:</strong> Michigan (passed the House), Hawaii and Iowa have live ban proposals — all three states are legal today.</li></ul></div></div>
  </div>
+
+ <div class="index" id="oh7panel">
+  <h2><span class="icobtn bead bead-purple" aria-hidden="true">◆</span> Why 7-OH Is Treated Differently</h2>
+  <p style="text-align:center;margin:2px 0 8px">An extract and a 7-OH product are not the same kind of thing. The difference is which alkaloids get concentrated — and the law keys on exactly that.</p>
+  <div class="oh7x-grid"><div class="oh7x-card"><h3>🌿 Full-Spectrum Extract</h3><p class="oh7x-sub">Concentrated leaf — the whole spectrum, together</p><div class="oh7x-bar" role="img" aria-label="Alkaloid profile of leaf and true extracts: mitragynine dominant, 7-OH a trace"><div class="oh7x-mit" style="width:92%">Mitragynine — dominant</div><div class="oh7x-oh7" style="width:8%"></div></div><p class="oh7x-cap">Schematic: in leaf — and in anything honestly extracted from it — 7-OH is a trace sliver of the alkaloid profile.</p><ul><li>Made by extracting leaf, so every alkaloid concentrates together, in roughly the proportions the leaf grew with.</li><li>Mitragynine stays dominant and 7-hydroxymitragynine (7-OH) stays a trace — the same balance as the plant itself.</li><li>Regulators treat a true extract as concentrated leaf, because the ratio is the leaf's own.</li></ul></div><div class="oh7x-card"><h3>◆ Refined 7-OH</h3><p class="oh7x-sub">One compound, isolated and amplified</p><div class="oh7x-bar" role="img" aria-label="Alkaloid profile of refined 7-OH products: 7-OH pushed far past leaf levels"><div class="oh7x-mit" style="width:22%"></div><div class="oh7x-oh7" style="width:78%">7-OH — the main event</div></div><p class="oh7x-cap">Schematic: refined products invert the leaf&#x27;s ratio — proportions vary by product, the inversion does not.</p><ul><li>Made by singling out 7-OH — usually by converting mitragynine into it — and pushing it far beyond anything leaf contains.</li><li>Because 7-OH is a much more potent opioid-receptor agonist than mitragynine, inverting the ratio changes the character of the product, not just its strength.</li><li>That inversion is what laws target when they regulate 7-OH as a substance of its own.</li></ul></div></div>
+  <div class="oh7x-line"><strong>⚖️ The federal line</strong><p>The DEA's pending 7-OH action draws the boundary by ratio: more than 1 mg of 7-OH per gram, or a mitragynine-to-7-OH ratio under 100:1, counts as a concentrated product rather than leaf. Natural leaf and true extracts sit far on the other side of that line.</p></div>
+  <p style="text-align:center;margin:8px 0 0">That is why the map carries two kinds of marks: 8 jurisdictions in this guide flag 7-OH separately while leaf stays legal there. The legal split runs along the ratio — not the plant.</p>
+ </div>
+
 
  <div class="index" id="bipartisan">
   <h2><span class="icobtn bead bead-gold" aria-hidden="true">🤝</span> A Bipartisan Issue</h2>
