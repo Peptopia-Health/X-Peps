@@ -1294,7 +1294,7 @@ const rDiv = document.getElementById(rId);
         csSpan.innerHTML = '<span class="incorrect-feedback-label"><span class="feedback-emoticon">❌</span> INCORRECT</span> ';
     }
 
-    caSpan.innerHTML = `<span class="correct-letter-highlight">Correct Order: ${correctSequence.join(', ')}</span>`;
+    caSpan.innerHTML = `<span class="correct-letter-highlight">Correct Sequence: ${correctSequence.join(', ')}</span>`;
     rDiv.innerHTML = processRationale(qid, qData.r, isCorrect);
     feedbackDiv.style.display = 'block';
 const sectionBlock = feedbackDiv.closest('.section-block');
