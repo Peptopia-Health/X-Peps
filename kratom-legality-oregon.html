@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+<title>Oregon Kratom Law — Addendum to Kratom Legality by State</title>
+<style>
+:root{
+  --paper:#faf7ef; --paper2:#f3eee1; --ink:#2e2a24; --muted:#6f675a;
+  --red:#b03a2e; --red-dk:#7e241a; --red-soft:#f7e8e4;
+  --green:#398555; --green-dk:#054A1F; --green-soft:#e6f2ea;
+  --gold:#b8860b; --gold-dk:#7d5f06; --gold-soft:#faf3dd;
+  --accent:#08672B; --line:#ddd3bd; --leaf:#2BFF5C;
+  --card:#ffffff;
+  /* Effect palette (David, Nov 1 round 2): defined ONCE here; every effect use routes through these. */
+  --fx-energy:#FFFFFF; --fx-focus:#F06000; --fx-mood:#10C000; --fx-sleep:#0A0A0A;
+  --fx-calm:#F0F000; --fx-analgesia:#E01020; --fx-default:#0070D0;
+  --fx-energy-dk:#8A8A8A; --fx-focus-dk:#A63E00; --fx-mood-dk:#0A7300; --fx-sleep-dk:#5A5A5A;
+  --fx-calm-dk:#8F8F00; --fx-analgesia-dk:#9E0C18; --fx-default-dk:#004E96;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;line-height:1.65}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-.01em}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+/* ---------- title page ---------- */
+.titlepage{display:flex;flex-direction:column;justify-content:flex-start;align-items:center;
+  text-align:center;padding:26px 24px 12px;position:relative;overflow:hidden;
+  background:radial-gradient(1200px 600px at 50% -10%,#e9f3e4 0%,var(--paper) 60%)}
+.wc-toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-bottom:8px}
+.wc-toprow .kicker{margin:0;text-align:left}
+.wc-topbtns{display:flex;gap:8px;align-items:center;flex:none}
+.wc-tbtn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:999px;border:2px solid #08672B;background:#F7F4EC;color:#08672B;font:700 .78rem/1 'Outfit',sans-serif;letter-spacing:.03em;box-shadow:0 2px 5px rgba(30,77,59,.25),inset 0 1px 0 rgba(255,255,255,.7);cursor:pointer;white-space:nowrap;text-decoration:none}
+button.wc-tbtn:active,.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(30,77,59,.3)}
+.wc-tbtn.static{cursor:default}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:14px;font-family:'Outfit',sans-serif;font-weight:700}
+.titlepage h1{font-size:clamp(38px,6vw,64px);margin:0 0 10px;color:#08672B;line-height:1.05}
+.titlepage .sub{font-size:clamp(16px,2.3vw,21px);color:#44564a;max-width:62ch;margin:0 0 8px;line-height:1.35;font-weight:600}
+.or-verified{display:inline-block;margin:6px 0 2px;font:700 .8rem 'Outfit',sans-serif;color:#0B5A24;
+  background:linear-gradient(160deg,#eafff1,#d9f7e2);border:2px solid var(--leaf);border-radius:999px;padding:4px 14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 3px 8px rgba(11,90,36,.18)}
+.or-backrow{margin:12px 0 0}
+.or-back{display:inline-flex;align-items:center;gap:7px;font:800 .82rem 'Outfit',sans-serif;color:#17301f;text-decoration:none;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:1.8px solid #08672B;border-radius:999px;padding:6px 16px;
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.or-back:active{transform:translateY(2px)}
+/* ---------- short answer / index box ---------- */
+.index{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin:22px 0 8px;
+  box-shadow:0 4px 18px rgba(60,50,30,.06)}
+.index h2{margin-top:0;color:#08672B}
+.index p{margin:8px 0}
+.kl-hl{background:#FEF08A;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 3px;border-radius:2px}
+/* ---------- stat cards ---------- */
+.kl-stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0 6px}
+.kl-stat{flex:1 1 150px;max-width:230px;text-align:center;border-radius:16px;padding:12px 10px 10px;color:#12241a;
+ background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(255,255,255,.55) 45%,rgba(0,0,0,.06));
+ border:2px solid var(--bd,#08672B);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 9px rgba(0,0,0,.16),0 6px 14px rgba(0,0,0,.22)}
+.kl-stat b{display:block;font:800 2rem 'Outfit',sans-serif;line-height:1}
+.kl-stat span{font:700 .8rem 'Outfit',sans-serif;letter-spacing:.02em}
+.kl-stat small{display:block;margin-top:3px;color:#3d4a41;font-size:.74rem;line-height:1.3}
+/* ---------- section bands ---------- */
+.colorband{border-radius:12px;padding:9px 14px;padding-right:70px;margin:26px 0 12px;color:#fff;position:relative;overflow:hidden;width:fit-content;max-width:100%}
+.colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;color:#fff}
+.colorband p{margin:0;opacity:.94;font-size:.92rem;max-width:56ch}
+.colorband .bigicon{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:44px;opacity:.16}
+.band-green{background:linear-gradient(120deg,var(--green-dk),var(--green))}
+.band-gold{background:linear-gradient(120deg,var(--gold-dk),#cf9a1b)}
+.band-red{background:linear-gradient(120deg,var(--red-dk),var(--red))}
+.band-neutral{background:linear-gradient(120deg,#08672B,#1f6f5c)}
+.catintro{background:#fff;border:1px solid var(--line);border-left:6px solid var(--accent);
+  border-radius:10px;padding:16px 20px;margin:0 0 20px;font-size:16px}
+.catintro p{margin:6px 0}
+/* ---------- tables (one cohesive unit) ---------- */
+.ortable{border:2.5px solid var(--accent);border-radius:12px;overflow:hidden;margin:14px 0 20px;background:#fff}
+.ortable .ort-head{background:linear-gradient(120deg,var(--green-dk),var(--green));color:#fff;padding:8px 14px;font:800 1rem 'Outfit',sans-serif}
+.ortable table{width:100%;border-collapse:collapse;font-size:.94rem}
+.ortable th{background:var(--paper2);text-align:left;padding:8px 12px;font-family:'Outfit',sans-serif;font-size:.85rem;border-bottom:2px solid var(--line)}
+.ortable td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ortable tr:last-child td{border-bottom:none}
+.ortable td:first-child{font-weight:700;white-space:nowrap}
+tr.wash-g td{background:#eef7f0}
+tr.wash-y td{background:#fdf6e0}
+tr.wash-r td{background:#fbeeec}
+/* ---------- quotes ---------- */
+.quote{border-left:4px solid var(--line);margin:10px 0;padding:8px 14px;background:var(--paper2);
+  border-radius:0 8px 8px 0;font-style:italic;color:#4a4438;font-size:14.5px}
+.quote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:4px}
+.pullq{border:2px solid var(--leaf);border-radius:14px;padding:18px 22px;margin:18px 0;background:linear-gradient(160deg,#f4fff6,#e6f9ec);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.9),0 6px 14px rgba(11,90,36,.14)}
+.pullq p{font-size:1.12rem;line-height:1.5;margin:0 0 6px;font-weight:500}
+.pullq cite{font-size:.85rem;color:var(--muted);font-style:normal}
+/* ---------- popboxes ---------- */
+.zzpopbox{border-radius:12px;padding:16px 20px;margin:16px 0;border:1px solid}
+.zzpopbox.tip{background:#eef7f0;border-color:#bfe0c9}
+.zzpopbox.tip::before{content:"🌿 Field note — ";font-weight:700;color:var(--green-dk)}
+.zzpopbox.deep{background:#f4efe4;border-color:#e0d3ae}
+.zzpopbox.deep::before{content:"🔍 The detail — ";font-weight:700;color:var(--gold-dk)}
+.zzpopbox p{margin:4px 0}
+/* ---------- timeline (hz family, cloned from the legality guide) ---------- */
+.hz-list{position:relative;margin:4px 0 2px;padding-left:8px}
+.hz-list::before{content:"";position:absolute;left:36px;top:14px;bottom:14px;width:5px;border-radius:99px;
+ background:linear-gradient(180deg,#35A05F,#E8A33D 45%,#2BFF5C 78%,#F06000);box-shadow:inset 0 1px 2px rgba(255,255,255,.7),0 1px 3px rgba(0,0,0,.3)}
+.hz-item{position:relative;display:flex;gap:14px;align-items:flex-start;margin:0 0 14px}
+.hz-node{flex:0 0 58px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:1.7rem;position:relative;z-index:1;color:#12241a;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);
+ border:2px solid #08672B;box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 8px rgba(0,0,0,.14),0 4px 10px rgba(0,0,0,.2);
+ -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.hz-card{flex:1;min-width:0;border-radius:15px;padding:10px 13px 11px;color:#20302a;
+ background:linear-gradient(160deg,rgba(255,255,255,.88),rgba(255,255,255,.5) 50%,rgba(0,0,0,.05));
+ border:2px solid var(--bd,#08672B);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 8px rgba(0,0,0,.10),0 6px 14px rgba(0,0,0,.16)}
+.hz-top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:3px}
+.hz-jur{font:800 1rem 'Outfit',sans-serif}
+.hz-when{font:800 .78rem 'Outfit',sans-serif;border-radius:999px;padding:3px 10px;color:#17301f;
+ background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:1.8px solid #08672B;
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.hz-lab{font-size:.93rem;line-height:1.42;margin:1px 0 8px}
+.hz-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hz-stage{font:800 .76rem 'Outfit',sans-serif;border-radius:999px;padding:5px 12px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);
+ border:2px solid rgba(10,25,15,.4);box-shadow:inset 0 2px 3px rgba(255,255,255,.55),inset 0 -4px 7px rgba(0,0,0,.22),0 4px 8px rgba(0,0,0,.22)}
+.hz-src{font:700 .8rem 'Outfit',sans-serif;border-radius:999px;padding:4px 12px;cursor:pointer;color:#17301f;text-decoration:none;
+ background:radial-gradient(circle at 32% 28%,#ffffff,#fdf3e3 48%,#ecc887);border:1.5px solid #9a6b14;
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.hz-src:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.25)}
+.hz-more{font:700 .8rem 'Outfit',sans-serif;border-radius:999px;padding:4px 12px;cursor:pointer;color:#17301f;
+ background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:1.5px solid #08672B;
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.hz-more:active{transform:translateY(2px)}
+.hz-detail{display:none;margin-top:9px;border-top:1px dashed var(--line);padding-top:8px;font-size:.9rem;line-height:1.5}
+.hz-item.open .hz-detail{display:block}
+/* ---------- comparison panel ---------- */
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0 20px}
+.cmp-card{border-radius:14px;overflow:hidden;border:2.5px solid;background:#fff;box-shadow:0 4px 12px rgba(60,50,30,.07)}
+.cmp-card h3{margin:0;padding:9px 14px;color:#fff;font-size:1.02rem}
+.cmp-card ul{margin:8px 0 12px;padding-left:20px;padding-right:10px;font-size:.9rem}
+.cmp-card li{margin:5px 0}
+.cmp-reg{border-color:var(--gold-dk)} .cmp-reg h3{background:linear-gradient(120deg,var(--gold-dk),#cf9a1b)}
+.cmp-ban{border-color:var(--red-dk)} .cmp-ban h3{background:linear-gradient(120deg,var(--red-dk),var(--red))}
+.cmp-free{border-color:var(--green-dk)} .cmp-free h3{background:linear-gradient(120deg,var(--green-dk),var(--green))}
+/* ---------- key-value law rows ---------- */
+.orkv{display:grid;grid-template-columns:190px 1fr;gap:6px 16px;margin:10px 0 18px;font-size:.95rem}
+.orkv dt{font-family:'Outfit',sans-serif;font-weight:700;color:var(--green-dk)}
+.orkv dd{margin:0}
+/* ---------- sources ---------- */
+.srcs{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 26px;margin:16px 0 8px;box-shadow:0 4px 18px rgba(60,50,30,.06)}
+.srcs h2{margin-top:0;color:#08672B}
+.srcs ul{margin:6px 0;padding-left:20px}
+.srcs li{margin:6px 0;font-size:.93rem}
+.srcs a{font-weight:700}
+/* ---------- footer / misc ---------- */
+footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;z-index:60;
+ background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #08672B;color:#08672B;
+ display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.25);text-decoration:none}
+.secbody p{margin:8px 0}
+.secbody ul{margin:8px 0;padding-left:22px}
+.secbody li{margin:4px 0}
+/* ---------- dark theme ---------- */
+html.dark{--paper:#131a14;--paper2:#1c261d;--ink:#e9e5d8;--muted:#a79e8b;--line:#37452f;--card:#1a231b;
+ --red-soft:#2c1a17;--green-soft:#16281b;--gold-soft:#2a2410}
+html.dark body{background:var(--paper)}
+html.dark a{color:#7CC4FF}
+html.dark .titlepage{background:radial-gradient(1200px 600px at 50% -10%,#1E3325 0%,var(--paper) 72%)}
+html.dark .titlepage h1{color:#E9F3E4}
+html.dark .titlepage .sub{color:#9CC7A8}
+html.dark .index,html.dark .catintro,html.dark .srcs,html.dark .ortable,html.dark .cmp-card{background:#1a231b}
+html.dark .kl-stat{background:linear-gradient(160deg,rgba(255,255,255,.97),rgba(238,245,240,.93) 45%,rgba(205,220,210,.88))}
+html.dark .kl-stat small{color:#33463a}
+html.dark .hz-card{background:linear-gradient(160deg,rgba(38,56,45,.94),rgba(20,32,25,.96));color:#e8f2e9}
+html.dark .quote{background:var(--paper2);color:#cfc9b8}
+html.dark .zzpopbox.tip{background:#16281b;border-color:#2c5238}
+html.dark .zzpopbox.deep{background:#262012;border-color:#57481f}
+html.dark .pullq{background:linear-gradient(160deg,#16281b,#122416);color:#e8f2e9}
+html.dark .pullq cite{color:#a79e8b}
+html.dark .orkv dt{color:#7ed492}
+html.dark tr.wash-g td{background:#182a1d}
+html.dark tr.wash-y td{background:#2a2410}
+html.dark tr.wash-r td{background:#2c1a17}
+html.dark .ortable th{background:#22301f}
+/* ---------- print ---------- */
+@page{size:Letter;margin:.6in}
+@media print{
+ *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ html{font-size:10pt}
+ body{background:#fff!important}
+ .wc-topbtns,.toc-top,.hz-more{display:none!important}
+ .hz-detail{display:block!important}
+ .strain,.kl-stat,.panel,.quote,.zzpopbox,.pullq,.cmp-card,.hz-item,.ortable,table,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+ h1,h2,h3,h4{break-after:avoid!important;page-break-after:avoid!important}
+ p,li{orphans:3;widows:3}
+ a{color:inherit;text-decoration:none}
+ html.dark .titlepage{background:#fff!important}
+ html.dark .titlepage h1{color:#08672B!important}
+ html.dark .titlepage .sub{color:#44564a!important}
+ html.dark .index,html.dark .catintro,html.dark .srcs,html.dark .hz-card,html.dark .cmp-card{background:#fff!important;color:#2e2a24!important}
+}
+</style>
+
+<style id="kl-responsive-print-standard">
+/* Standing responsive + print standard — LAST style block; wins every tie. */
+html,body{overflow-x:clip}
+img,svg,table{max-width:100%}
+@media (max-width:640px){
+  .wrap{padding:0 12px}
+  .titlepage{padding:18px 10px 8px}
+  .titlepage h1{font-size:34px}
+  .wc-toprow{flex-wrap:wrap}
+  .cmp-grid{grid-template-columns:1fr}
+  .orkv{grid-template-columns:1fr}
+  .orkv dt{margin-top:6px}
+  .ortable{overflow-x:auto}
+  .ortable table{min-width:520px}
+  .hz-node{flex-basis:46px;width:46px;height:46px;font-size:1.3rem}
+  .hz-list::before{left:29px}
+  .colorband{padding-right:14px}
+  .colorband .bigicon{display:none}
+  .kl-stat{flex-basis:44%}
+  .index,.srcs{padding:16px}
+  .wc-tbtn{white-space:normal}
+}
+@media print{
+  .wc-topbtns,.toc-top,.hz-more{display:none!important}
+  .hz-detail{display:block!important}
+}
+</style>
+</head>
+<body id="top">
+<a class="toc-top" href="#top" title="Back to top"><svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path d="M24 43 V15" stroke="#0B5A24" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M24 3 L11 20 H37 Z" fill="#0B5A24"/></svg></a>
+<div class="wrap">
+<header class="titlepage">
+  <div class="wc-toprow">
+    <p class="kicker">Kratom Legality by State — State Addendum</p>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 Nov 20, 2026</span>
+      <button class="wc-tbtn" id="wcThemeBtn" type="button" aria-label="Toggle dark theme">🌙</button>
+      <button class="wc-tbtn" type="button" onclick="window.print()">🖨 Print / PDF</button>
+    </div>
+  </div>
+  <h1>Oregon Kratom Law</h1>
+  <p class="sub">Legal to buy, sell, and possess — under one of the lightest consumer-protection frameworks in the country: a 21-and-over age floor for buyers, and a registration desk for processors at the Department of Revenue.</p>
+  <span class="or-verified">✓ Last verified November 20, 2026 — read against ORS 475.392–475.404, OLIS bill records, and Department of Revenue rules</span>
+  <p class="or-backrow"><a class="or-back" href="https://x-peps.com/X-Peps/kratom-legality-by-state.html">← Kratom Legality by State — the full 50-state tracker</a></p>
+</header>
+
+<div class="index" id="short-answer">
+  <h2>The short answer</h2>
+  <p>Oregon is a <span class="kl-hl"><strong>regulated</strong> state — not a ban state, and not a free-for-all.</span> Kratom is <strong>not a controlled substance</strong> in Oregon: neither the plant, mitragynine, nor 7-hydroxymitragynine appears in the state schedules, and possessing a kratom product is not an offense. What Oregon regulates is the <em>sale</em>. Under the <strong>Oregon Kratom Consumer Protection Act</strong> (ORS 475.392–475.404, enacted 2022), a retailer may not sell kratom to anyone under 21, and a processor — the wholesale seller — may not sell at all until it has registered with the Department of Revenue and certified that its products are third-party tested.</p>
+  <p>Oregon got here the long way: a pharmacy-board study bill in 2017, two failed consumer-protection bills in 2019 and 2020, a full Kratom Consumer Protection Act that passed both chambers in 2021 and was <strong>vetoed</strong>, and finally the stripped-down 2022 act that the same governor signed. The labeling rules, alkaloid caps, and synthetic bans from the vetoed bill are <span class="kl-hl">not</span> Oregon law — a distinction most national trackers get wrong.</p>
+  <div class="kl-stats">
+    <div class="kl-stat" style="--bd:#E8A33D"><b>21+</b><span>Minimum age to buy</span><small>ORS 475.398 — sale to anyone younger is a Class C misdemeanor</small></div>
+    <div class="kl-stat" style="--bd:#398555"><b>Legal</b><span>Possession</span><small>Kratom is not scheduled in Oregon (OAR 855-080-0021)</small></div>
+    <div class="kl-stat" style="--bd:#E8A33D"><b>2022</b><span>KCPA enacted</span><small>HB 4010 — Chapter 41, 2022 Oregon Laws</small></div>
+    <div class="kl-stat" style="--bd:#E8A33D"><b>$500→$1,000</b><span>Processor penalties</span><small>Civil penalty for selling unregistered (ORS 475.396)</small></div>
+    <div class="kl-stat" style="--bd:#398555"><b>None</b><span>7-OH cap in state law</span><small>The 2% cap died with the 2021 veto</small></div>
+    <div class="kl-stat" style="--bd:#E8A33D"><b>DOR</b><span>Run by the tax agency</span><small>Registration sits at the Department of Revenue, not a health body</small></div>
+  </div>
+  <p><strong>On this page:</strong> <a href="#law">The law today</a> · <a href="#timeline">How Oregon got here — the timeline</a> · <a href="#compare">Three regulatory models compared</a> · <a href="#local">Local rules &amp; enforcement</a> · <a href="#neighbors">The neighborhood</a> · <a href="#watch">What to watch</a> · <a href="#sources">Sources</a></p>
+</div>
+
+<div class="colorband band-green"><h2>The Law Today</h2><p>The Oregon Kratom Consumer Protection Act, section by section</p><span class="bigicon">⚖️</span></div>
+<div class="catintro" id="law">
+  <p>The whole of Oregon's kratom statute is seven short sections — ORS 475.392 through 475.404, enacted as chapter 41 of the 2022 Oregon Laws (HB 4010). It does three things: it sets an <strong>age floor</strong>, it creates a <strong>processor registration</strong>, and it hands the details to the <strong>Department of Revenue</strong>. Everything else commonly attributed to it — labels, alkaloid caps, product bans — was in the 2021 bill that never became law.</p>
+</div>
+<div class="secbody">
+  <dl class="orkv">
+    <dt>Status</dt><dd><strong>Regulated</strong> — legal market under a consumer protection act</dd>
+    <dt>Controlling law</dt><dd>Oregon Kratom Consumer Protection Act, ORS 475.392–475.404 [2022 c.41]</dd>
+    <dt>Possession</dt><dd>Not an offense. Kratom, mitragynine, and 7-hydroxymitragynine are absent from Oregon's controlled-substance schedules (Board of Pharmacy, OAR 855-080-0021)</dd>
+    <dt>Minimum age</dt><dd>21 to purchase. A retailer who sells, distributes, or exposes a kratom product for sale to anyone under 21 is guilty of a <strong>Class C misdemeanor for each violation</strong> — punishable by up to 30 days' imprisonment, a $1,250 fine, or both (ORS 475.398)</dd>
+    <dt>Who must register</dt><dd><strong>Processors</strong> — businesses that sell, distribute, or expose kratom products for sale on a wholesale basis to retailers. Selling before registering is prohibited (ORS 475.396). Registration is annual, through the Department of Revenue</dd>
+    <dt>Testing</dt><dd>To register, a processor must certify that all its kratom products are <strong>third-party tested</strong> to satisfy industry standards for adulteration (ORS 475.404). The Department's rule, OAR 150-475-6020, lets processors test batches of unfinished or finished product for contaminants</dd>
+    <dt>Labeling</dt><dd><strong>No kratom-specific labeling requirement</strong> in the Act. Because the Act defines a kratom product as a food or dietary supplement, general food law applies on top — Oregon adopts the federal food and labeling regulations at OAR 603-025-0190</dd>
+    <dt>Alkaloid caps</dt><dd><strong>None.</strong> No ceiling on 7-hydroxymitragynine, no ban on synthetic alkaloids, no alkaloid-content disclosure rule anywhere in Oregon law</dd>
+    <dt>Processor penalty</dt><dd>Civil penalty of not more than <strong>$500</strong> for a first offense and <strong>$1,000</strong> for a second or subsequent offense, appealable as a contested case under ORS chapter 183 (ORS 475.396)</dd>
+    <dt>Administrator</dt><dd>Oregon Department of Revenue — registration, fees (capped at the cost of administering the Act), testing standards, and penalties (ORS 475.400, 475.404)</dd>
+    <dt>Registration live since</dt><dd>July 1, 2023 — a processor may not sell into Oregon without a certificate of registration for sales on or after that date</dd>
+  </dl>
+  <div class="pullq">
+    <p>“ORS 475.394 to 475.404 shall be known and may be cited as the Oregon Kratom Consumer Protection Act.”</p>
+    <cite>— ORS 475.392, the Act's short-title section [2022 c.41 §1]</cite>
+  </div>
+  <div class="zzpopbox deep">
+    <p>a drafting quirk worth knowing: every section of the Act carries the printed note that it “was enacted into law by the Legislative Assembly but was not added to or made a part of ORS chapter 475 or any series therein by legislative action” — standard Oregon practice for free-standing acts printed alongside the chapter. And the short-title section, 475.392, sits just <em>outside</em> the range it names (475.394 to 475.404). Neither quirk affects the Act's force: it is the law, and the Department of Revenue enforces it.</p>
+  </div>
+  <p><strong>What the Act deliberately leaves out.</strong> The 2021 bill (below) would have prohibited adulterated and contaminated products outright, capped 7-hydroxymitragynine at 2% of the alkaloid fraction, banned synthetic alkaloids entirely, and imposed labeling with alkaloid content. The enacted 2022 act contains <span class="kl-hl">none of those product rules</span>. Product safety in Oregon runs through one gate instead: a processor cannot legally sell unless it has certified third-party testing to the Department of Revenue. Retailers face the age law; consumers face nothing at all.</p>
+</div>
+
+<div class="colorband band-neutral"><h2>How Oregon Got Here</h2><p>Nine years, five bills, one veto — the interactive timeline</p><span class="bigicon">🗓️</span></div>
+<div class="secbody" id="timeline">
+  <p>Oregon's path to regulation ran <em>against</em> scheduling from the start: the state's first kratom bill asked whether the plant should be banned, and every serious bill after it chose consumer protection instead. Tap <strong>Details</strong> on any card for the full record.</p>
+  <div class="hz-list">
+    <div class="hz-item">
+      <div class="hz-node">📜</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">SB 518 — the scheduling study</span><span class="hz-when">2017 session</span></div>
+        <p class="hz-lab">Filed at the request of the Senate Interim Committee on Judiciary, SB 518 would have directed the State Board of Pharmacy to study whether <em>Mitragyna speciosa</em> and its derivatives should be scheduled as controlled substances. It never left committee — and no Oregon bill since has proposed scheduling the plant itself.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Died in committee</span><a class="hz-src" href="https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB518" target="_blank" rel="noopener">OLIS record ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">Context: SB 518 arrived months after the DEA's August 2016 notice of intent to place mitragynine and 7-hydroxymitragynine in federal Schedule I — a notice the DEA withdrew that October after public backlash. Oregon's study bill was the state-level echo of that federal move, and it met the same fate: the Board of Pharmacy never scheduled kratom, and to this day Oregon's Schedule I rule (OAR 855-080-0021) does not list the plant or its alkaloids.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">⚖️</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">SB 1005 — the first KCPA run</span><span class="hz-when">2019 session</span></div>
+        <p class="hz-lab">The Kratom Consumer Protection Act first moved as amendments to SB 1005: the package passed the Senate Judiciary Committee <strong>unanimously</strong> in May 2019, with agency-regulation details negotiated with the Department of Agriculture — then the kratom provisions were stripped by amendment before the session ended.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">Stripped by amendment</span><a class="hz-src" href="https://speciosa.org/nevada-state-senate-unanimously-approves-the-kratom-consumer-protection-act-concurrence-by-the-house-on-amendments-is-expected-soon-then-on-to-the-governor-for-signature/" target="_blank" rel="noopener">AKA legislative update ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The American Kratom Association's May 2019 legislative update reported SB 1005-A7 “passed unanimously out of the Senate Judiciary Committee with recommendations for clarifying how state agencies would regulate adulterated kratom products,” with the AKA's lobbyist negotiating directly with the Department of Agriculture. The bill went to Ways &amp; Means, and in June 2019 the kratom language was amended out. Oregon would wait three more years for a KCPA.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🏛️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">HB 4013-A — the short-session plan</span><span class="hz-when">2020 session</span></div>
+        <p class="hz-lab">Chief sponsors Reps. Post, Clem, and Barker proposed a two-step approach: ban purchases by anyone under 21 immediately, and direct the Health Authority, Liquor Control Commission, Department of Agriculture, and the Governor's Office to build a full regulatory plan with the industry by December 31, 2020. The House passed it; the bill was not enacted as the short session collapsed.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Not enacted</span><a class="hz-src" href="https://www.oregonlegislature.gov/lpro/Publications/2020%20-%20Summary%20of%20Legislation.pdf" target="_blank" rel="noopener">LPRO 2020 Summary ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The Legislative Policy and Research Office's official 2020 Summary of Legislation records HB 4013-A under “Kratom Regulatory Authority” as Not Enacted, through House Economic Development and Senate Judiciary. The 2020 short session ended abruptly amid a partisan walkout, killing most pending bills; the kratom plan died with them — but its age-21 floor and agency-plan structure became the template for 2021.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🌿</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">HB 2646 — the full KCPA passes both chambers</span><span class="hz-when">2021 session</span></div>
+        <p class="hz-lab">The complete Kratom Consumer Protection Act: processor registration at the Department of Agriculture, labeling and testing standards, a 2% cap on 7-hydroxymitragynine, bans on adulterated products and synthetic alkaloids, a 21+ age floor, and a $1,099,977 appropriation to run the program. Sponsored by Reps. Post, Lively, and Smith DB with a bipartisan bench, it passed the House on June 24, 2021 and the Senate on June 26.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Passed — then vetoed</span><a class="hz-src" href="http://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/HB2646" target="_blank" rel="noopener">Enrolled bill text ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">HB 2646 was the national-model KCPA in full: registration before any sale; no adulterated or contaminated products; no product over 2% 7-OH in the alkaloid fraction; no synthetic mitragynine or 7-OH; civil penalties of $500/$1,000; and a first-year registration fee capped at $2,500, with the program to become operative July 1, 2022. It reached Governor Kate Brown's desk with broad bipartisan support — and stopped there.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">✒️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">The veto — Governor Brown says no</span><span class="hz-when">August 6, 2021</span></div>
+        <p class="hz-lab">Governor Kate Brown announced her intent on August 1 and vetoed HB 2646 on August 6, 2021. She backed the under-21 ban but objected to creating a regulatory program at the Department of Agriculture, arguing kratom oversight belonged to the federal FDA — and she named the shape of a bill she <em>would</em> sign.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Vetoed</span><a class="hz-src" href="https://legiscan.com/OR/bill/HB2646/2021" target="_blank" rel="noopener">LegiScan record ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">From the Governor's statement: “The Governor supports efforts to prevent this product from reaching the hands of young Oregonians. However, the portion of this bill that creates a regulatory function at the Oregon Department of Agriculture is problematic… Governor Brown believes that the federal Food and Drug Administration is the appropriate regulatory body to oversee the importation and use of this product.” She added: “I would entertain further legislation to limit youth access without the state agency regulatory function included in this bill.” The 2022 legislature took her at her word.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">✅</div>
+      <div class="hz-card" style="--bd:#398555">
+        <div class="hz-top"><span class="hz-jur">HB 4010 — the KCPA, stripped to fit the veto</span><span class="hz-when">2022 session</span></div>
+        <p class="hz-lab">Chief sponsors Reps. Stark, Lively, and Smith DB brought the KCPA back in the short 2022 session — rebuilt to the Governor's specifications. Registration moved from Agriculture to the <strong>Department of Revenue</strong>; the labeling rules, alkaloid cap, and product bans came out; the 21+ age floor, registration, testing certification, and penalties stayed. Governor Brown signed it in March 2022: Chapter 41, 2022 Oregon Laws.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#398555">Signed into law</span><a class="hz-src" href="https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/HB4010" target="_blank" rel="noopener">OLIS record ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">HB 4010 is the act in force today, codified at ORS 475.392–475.404. It took effect on the 91st day after the session adjourned, but its registration duty was phased: the Department of Revenue built the program through 2022–23, and the prohibition on unregistered sales applies to sales on or after July 1, 2023.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🧪</div>
+      <div class="hz-card" style="--bd:#398555">
+        <div class="hz-top"><span class="hz-jur">The rules go live — registration &amp; batch testing</span><span class="hz-when">2023</span></div>
+        <p class="hz-lab">The Department of Revenue adopted the kratom rules — OAR 150-475-6010 to 150-475-6030 — on May 10, 2023, effective June 1, 2023. From July 1, 2023, no processor may sell, distribute, or expose kratom products for sale in Oregon without a certificate of registration, and registered processors certify third-party batch testing for contaminants.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#398555">In force</span><a class="hz-src" href="https://www.oregon.gov/dor/programs/businesses/Pages/Kratom-Processor-Registration.aspx" target="_blank" rel="noopener">Dept. of Revenue ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The Department's registration page states the operative rule plainly: “The legislation requires all processors to register with the Department of Revenue for sales occurring after July 1, 2023,” and registrants “must certify that all kratom products that the registrant will sell, distribute, or expose for sale are third-party tested to satisfy industry standards for adulteration.” OAR 150-475-6020 allows batch testing of unfinished or finished products — the testing backbone the statute itself only sketches.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🔍</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">The open question — synthetics &amp; 7-OH</span><span class="hz-when">2026</span></div>
+        <p class="hz-lab">Oregon law still sets no cap on 7-hydroxymitragynine and bans no synthetic alkaloids — but the ground is moving. The DEA temporarily placed three synthetic kratom-derived compounds in federal Schedule I on August 26, 2026, and Oregon's own Schedule I incorporates the federal list only as of its April 1, 2025 edition, leaving the synthetics' Oregon status genuinely unsettled. In November 2026, county officials began organizing for a 2027 bill aimed at 7-OH.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">Unsettled — watch 2027</span><a class="hz-src" href="https://www.wikikratom.com/legal/united-states/oregon/" target="_blank" rel="noopener">Statute &amp; rules analysis ↗</a><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">Two instruments point in different directions: the Board of Pharmacy's Schedule I rule (OAR 855-080-0021) pins the federal list to the April 1, 2025 edition of 21 CFR 1308.11 — before the synthetics were added — while ORS 475.005(6) defines “controlled substance” by reference to the federal schedules more generally. Natural leaf, mitragynine, and 7-OH are unaffected either way: none is listed in any Oregon schedule. The concentrated-7-OH and synthetic products are the exposed flank, and they are exactly what the 2027 effort targets.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pullq">
+    <p>“I would entertain further legislation to limit youth access without the state agency regulatory function included in this bill.”</p>
+    <cite>— Governor Kate Brown, veto statement on HB 2646, August 2021 — the sentence that designed the 2022 act</cite>
+  </div>
+</div>
+
+<div class="colorband band-gold"><h2>Three Models, Side by Side</h2><p>What Oregon has, what it almost had, and what ban states do instead</p><span class="bigicon">🔀</span></div>
+<div class="secbody" id="compare">
+  <div class="cmp-grid">
+    <div class="cmp-card cmp-free">
+      <h3>✅ In force — Oregon's registration model (2022)</h3>
+      <ul>
+        <li><strong>Sale:</strong> legal statewide; possession never an offense</li>
+        <li><strong>Age:</strong> 21+ at retail — Class C misdemeanor to sell under-age</li>
+        <li><strong>Sellers:</strong> processors register annually with the Dept. of Revenue</li>
+        <li><strong>Testing:</strong> third-party testing certified at registration; batch testing by rule</li>
+        <li><strong>Labels:</strong> no kratom-specific label law</li>
+        <li><strong>Alkaloid caps:</strong> none — no 7-OH ceiling, no synthetics ban</li>
+        <li><strong>Penalties:</strong> civil, $500 → $1,000 (processors)</li>
+      </ul>
+    </div>
+    <div class="cmp-card cmp-reg">
+      <h3>📜 Vetoed — the full KCPA (HB 2646, 2021)</h3>
+      <ul>
+        <li><strong>Sale:</strong> legal, registered processors only</li>
+        <li><strong>Age:</strong> 21+ at retail — Class C misdemeanor</li>
+        <li><strong>Sellers:</strong> registration at the Dept. of <em>Agriculture</em></li>
+        <li><strong>Testing:</strong> statutory testing standards + state lab program</li>
+        <li><strong>Labels:</strong> mandatory labeling incl. alkaloid content</li>
+        <li><strong>Alkaloid caps:</strong> 7-OH capped at 2% of alkaloid fraction; synthetic alkaloids banned; adulterated products banned</li>
+        <li><strong>Cost:</strong> $1,099,977 appropriation; first-year fee cap $2,500</li>
+      </ul>
+    </div>
+    <div class="cmp-card cmp-ban">
+      <h3>⛔ The ban model — Schedule I states</h3>
+      <ul>
+        <li><strong>Sale:</strong> prohibited statewide</li>
+        <li><strong>Possession:</strong> a criminal offense, not just a sale rule</li>
+        <li><strong>Mechanism:</strong> mitragynine / 7-OH listed as controlled substances</li>
+        <li><strong>Market:</strong> driven out of state or underground</li>
+        <li><strong>Oregon's verdict:</strong> considered once — the 2017 study bill, SB 518 — and never seriously again</li>
+        <li><strong>Count:</strong> 11 states ban kratom outright on the tracker's current count</li>
+      </ul>
+    </div>
+  </div>
+  <div class="zzpopbox tip">
+    <p>Oregon is the clearest case in the country of a veto <em>designing</em> a law. Every difference between the first two columns above traces to Governor Brown's stated objection: no state-agency regulatory program. The 2022 act kept the consumer-facing rules (age floor, registration, testing certification, penalties) and deleted the product-facing ones (labels, caps, bans) — which is why Oregon's KCPA is simultaneously real and the lightest in the nation.</p>
+  </div>
+</div>
+
+<div class="colorband band-red"><h2>Local Rules &amp; Enforcement</h2><p>One reported city restriction, a quiet enforcement record</p><span class="bigicon">🏙️</span></div>
+<div class="secbody" id="local">
+  <p><strong>Ontario, Oregon.</strong> Multiple national vendors refuse to ship kratom to Ontario, on the Idaho border, reporting a local ordinance restricting kratom sales there. That is the only Oregon locality that appears in vendor no-ship records; the ordinance text itself could not be verified against the city's published code for this addendum, so treat Ontario as <em>vendor-reported — verify locally before selling or shipping there</em>. No other Oregon city or county kratom ordinance appears in the sources reviewed.</p>
+  <p><strong>Enforcement.</strong> The Act's enforcement is administrative, not criminal, on the supply side: the Department of Revenue collects registration fees and civil penalties (held in the Department's suspense account under ORS 475.400, with tax-law procedures applied by ORS 475.402), and an assessed processor can appeal as a contested case. The only crime the Act creates is the retailer's — selling to someone under 21. No contested-case penalty, prosecution, or appellate court decision under the Oregon KCPA has been reported in the sources reviewed for this addendum; the program's first three years have been quiet.</p>
+  <p><strong>The scheduling backstop.</strong> Oregon's controlled-substance schedules are maintained by the Board of Pharmacy at OAR chapter 855, division 80. A full read of that division confirms what the statute implies: kratom, <em>Mitragyna speciosa</em>, mitragynine, and 7-hydroxymitragynine appear nowhere in it. Any future Oregon ban would have to arrive either by legislation or by Board rulemaking — neither is pending as of this writing.</p>
+</div>
+
+<div class="colorband band-neutral"><h2>The Neighborhood</h2><p>Oregon against its four bordering states</p><span class="bigicon">🧭</span></div>
+<div class="secbody" id="neighbors">
+  <div class="ortable">
+    <div class="ort-head">The Pacific Northwest &amp; the Great Basin — status at a glance</div>
+    <table>
+      <tr><th>State</th><th>Status</th><th>The rule in one line</th></tr>
+      <tr class="wash-y"><td>Oregon</td><td><strong>Regulated</strong></td><td>KCPA: 21+, processor registration + certified testing at the Dept. of Revenue; no caps or label law. <em>This addendum.</em></td></tr>
+      <tr class="wash-g"><td>Washington</td><td><strong>Legal</strong></td><td>No state framework and not scheduled — but Spokane banned sales in March 2026, with other local rules in Spokane Valley and Grant County.</td></tr>
+      <tr class="wash-y"><td>California</td><td><strong>Legal — contested</strong></td><td>No statewide ban statute and possession is not a crime, but the Dept. of Public Health treats kratom sold for consumption as unlawful and has taken retail enforcement action; several cities ban sales outright.</td></tr>
+      <tr class="wash-y"><td>Idaho</td><td><strong>Legal — patchwork</strong></td><td>No state framework (a KCPA stalled in 2026), but city bans are spreading: Idaho Falls (July 2026), Kellogg, and Pocatello (November 2026); Coeur d'Alene permits sellers and caps 7-OH.</td></tr>
+      <tr class="wash-y"><td>Nevada</td><td><strong>Regulated</strong></td><td>A fuller KCPA than Oregon's: labeling, testing, and age standards (18+) for sellers under the Nevada Kratom Consumer Protection Act.</td></tr>
+    </table>
+  </div>
+  <p>The regional picture: Oregon is the only state on its own borders where kratom is regulated by a <em>state</em> framework that a seller can actually read in one sitting — seven sections of statute and three administrative rules. Washington and Idaho leave the field to city councils; California leaves it to health-department enforcement; Nevada regulates more heavily and at a lower age floor.</p>
+</div>
+
+<div class="colorband band-gold"><h2>What to Watch</h2><p>The 2027 session is already taking shape</p><span class="bigicon">👀</span></div>
+<div class="secbody" id="watch">
+  <ul>
+    <li><strong>A 2027 Oregon bill aimed at 7-OH.</strong> In November 2026, Marion County Commissioner Danielle Bethell warned county officials statewide about kratom, 7-OH, and nitrous oxide at the Association of Oregon Counties conference, and is working with State Representative Jules Walters on legislation for the 2027 session “to strengthen Oregon's response.” The gap she named is the real one: Oregon law limits sales to adults 21+ but “sets no limit on 7-OH potency.” Expect a bill that adds the product rules the 2021 veto stripped out.</li>
+    <li><strong>The federal synthetics question.</strong> The DEA's August 26, 2026 temporary order placed three synthetic kratom-derived compounds (mitragynine pseudoindoxyl, MGM-15, MGM-16) in federal Schedule I, and federal movement on concentrated 7-OH continues. Whether those compounds are controlled <em>in Oregon</em> turns on the incorporation-by-reference question in the timeline above — a Board of Pharmacy rule update could settle it either way.</li>
+    <li><strong>The advocacy landscape.</strong> The American Kratom Association backed Oregon's KCPA path from the 2019 committee fight through the 2022 signing, and Oregon remains a showcase state for the regulate-don't-ban model. Any 2027 bill will be fought on the same ground: age and registration rules are settled law here; potency caps and product bans are the contested frontier.</li>
+    <li><strong>Registration enforcement.</strong> The Department of Revenue's program has run since July 2023 on certification and fees. The first contested penalty case — whenever it comes — will be the first real test of how the Act's light framework holds up.</li>
+  </ul>
+</div>
+
+<div class="srcs" id="sources">
+  <h2>Sources</h2>
+  <p>Every fact in this addendum traces to one of these. Primary sources first.</p>
+  <ul>
+    <li><a href="https://www.oregonlegislature.gov/bills_laws/ors/ors475.html" target="_blank" rel="noopener">Oregon Revised Statutes, Chapter 475</a> — the Oregon Kratom Consumer Protection Act, ORS 475.392–475.404, read in full (Oregon Legislative Assembly).</li>
+    <li><a href="https://olis.oregonlegislature.gov/liz/2022R1/Measures/Overview/HB4010" target="_blank" rel="noopener">OLIS — HB 4010 (2022)</a> — sponsors (Stark, Lively, Smith DB), catchline, Chapter 41 assignment (Oregon Legislative Information System).</li>
+    <li><a href="http://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/HB2646" target="_blank" rel="noopener">OLIS — HB 2646 (2021), enrolled text</a> — the vetoed full KCPA: ODA registration, labeling, 2% 7-OH cap, synthetics ban, passage dates June 24 &amp; 26, 2021.</li>
+    <li><a href="https://olis.oregonlegislature.gov/liz/2017R1/Measures/Overview/SB518" target="_blank" rel="noopener">OLIS — SB 518 (2017)</a> — Board of Pharmacy scheduling-study directive; died in Senate Judiciary.</li>
+    <li><a href="https://www.oregonlegislature.gov/lpro/Publications/2020%20-%20Summary%20of%20Legislation.pdf" target="_blank" rel="noopener">LPRO 2020 Summary of Legislation</a> — HB 4013-A “Kratom Regulatory Authority,” recorded Not Enacted (Legislative Policy and Research Office).</li>
+    <li><a href="https://www.oregon.gov/dor/programs/businesses/Pages/Kratom-Processor-Registration.aspx" target="_blank" rel="noopener">Oregon Department of Revenue — Kratom Processor Registration</a> — registration for sales after July 1, 2023; testing certification; OAR 150-475-6020.</li>
+    <li><a href="https://1059thebrew.iheart.com/content/2021-08-01-governor-intends-to-veto-two-bills/" target="_blank" rel="noopener">Governor Brown's veto statement (Aug 1, 2021)</a> — the FDA-regulatory-authority rationale and the “further legislation” invitation, as released.</li>
+    <li><a href="https://legiscan.com/OR/bill/HB2646/2021" target="_blank" rel="noopener">LegiScan — OR HB 2646 (2021)</a> — status record: vetoed August 6, 2021; measure summary.</li>
+    <li><a href="https://www.wikikratom.com/legal/united-states/oregon/" target="_blank" rel="noopener">WikiKratom — Kratom in Oregon</a> — full read of ORS 475.392–475.404, OAR 150-475-6010 to -6030, and OAR chapter 855 division 80 (schedules check).</li>
+    <li><a href="https://www.recordinglaw.com/us-laws/kratom-laws/" target="_blank" rel="noopener">RecordingLaw — Kratom Laws by State (verified Oct 12, 2026)</a> — LAPPA-based audit: Oregon “not scheduled; sales regulated,” cross-check on schedules and penalties.</li>
+    <li><a href="https://capsuleverdict.com/guides/is-kratom-legal-in-oregon" target="_blank" rel="noopener">CapsuleVerdict — Is Kratom Legal in Oregon? (Nov 13, 2026)</a> — independent statute read: no labeling requirement, no 7-OH cap in the Act.</li>
+    <li><a href="https://www.marioncountynews.org/news/commissioner-danielle-bethell-warns-counties-about-kratom-7-oh-and-nitrous-oxide-at-aoc-annual-conference" target="_blank" rel="noopener">Marion County News (Nov 2026)</a> — Commissioner Bethell's county warning and the Walters 2027 legislation effort.</li>
+    <li><a href="https://speciosa.org/nevada-state-senate-unanimously-approves-the-kratom-consumer-protection-act-concurrence-by-the-house-on-amendments-is-expected-soon-then-on-to-the-governor-for-signature/" target="_blank" rel="noopener">American Kratom Association legislative update (May 2019)</a> — SB 1005-A7's unanimous Senate Judiciary vote and ODA negotiations.</li>
+    <li><a href="https://www.marijuanamoment.net/oregon-governor-plans-to-veto-bill-to-regulate-kratom-sales-that-advocates-say-would-protect-consumers/" target="_blank" rel="noopener">Marijuana Moment (Aug 2021)</a> — contemporaneous coverage of the HB 2646 veto.</li>
+    <li><a href="https://hudsonvalleybotanicals.com/is-kratom-legal-in-oregon/" target="_blank" rel="noopener">Hudson Valley Botanicals — Oregon local rules</a> and <a href="https://sabai-kratom.com/kratom-legality-in-the-united-states/" target="_blank" rel="noopener">Sabai Kratom no-ship list</a> — vendor records reporting the Ontario, Oregon restriction (ordinance text unverified).</li>
+    <li><a href="https://x-peps.com/X-Peps/kratom-legality-by-state.html">Kratom Legality by State</a> — this site's 50-state tracker; neighbor-state entries and ban-state count as of November 20, 2026.</li>
+  </ul>
+</div>
+
+<footer class="site">Oregon Kratom Law — Addendum to Kratom Legality by State · Independent Research Guide · November 2026</footer>
+
+</div>
+<script>
+/* ---- theme (light/dark): light is ALWAYS the default; dark lasts only for the current visit and is never persisted ---- */
+(function(){
+function upd(){var b=document.getElementById('wcThemeBtn');if(b){b.textContent=document.documentElement.classList.contains('dark')?'☀️':'🌙';}}
+document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wcThemeBtn');if(b){b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');upd();});}});
+/* ---- timeline: tap a card's "Details" pill to expand its record ---- */
+document.addEventListener('click',function(e){
+  var t=e.target.closest('.hz-more'); if(!t) return;
+  var item=t.closest('.hz-item'); if(!item) return;
+  var open=item.classList.toggle('open');
+  t.textContent=open?'▾ Details':'▸ Details';
+});
+})();
+</script>
+</body>
+</html>
