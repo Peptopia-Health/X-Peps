@@ -1253,7 +1253,7 @@ consistent with unadulterated leaf. No yellow-vein or extract-specific COAs are 
   </ul>
   <button type="button" class="wc-tbtn" id="mapEnlarge">⛶ Enlarge the map</button>
 </div>
-<div id="mapModal" class="wc-labmodal" hidden><div class="wc-mapbox"><div class="wc-labbar"><span>🗺️ Where WestKoast Ships — State by State</span><span><button type="button" id="mapZoomOut" aria-label="Zoom out">−</button><button type="button" id="mapZoomIn" aria-label="Zoom in">+</button><button type="button" id="mapZoomReset" aria-label="Reset view">⟲</button><button type="button" id="mapClose" aria-label="Close map">✕</button></span></div><div class="wc-mapview" id="mapView"><div class="wc-mapstage" id="mapStage"></div></div><p class="wc-mapnote" id="mapReadout">Drag to move the map · use + / − to zoom · tap a state for its status.</p></div></div>
+<div id="mapModal" class="wc-labmodal" hidden><div class="wc-mapbox"><div class="wc-labbar"><span>🗺️ Where WestKoast Ships — State by State</span><span><button type="button" id="mapZoomOut" aria-label="Zoom out">−</button><button type="button" id="mapZoomIn" aria-label="Zoom in">+</button><button type="button" id="mapZoomReset" aria-label="Reset view">⟲</button><button class="iconbtn" type="button" id="mapClose" aria-label="Close map"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></span></div><div class="wc-mapview" id="mapView"><div class="wc-mapstage" id="mapStage"></div></div><p class="wc-mapnote" id="mapReadout">Drag to move the map · use + / − to zoom · tap a state for its status.</p></div></div>
 
 <!-- ================= VERDICT ================= -->
 <div class="colorband band-neutral" id="verdict">
@@ -1400,7 +1400,7 @@ var COLORS = (function(){var fb={energy:'#FFFFFF',mood:'#10C000',focus:'#F06000'
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.style.display='none'; });
 })();
 </script>
-<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Kratom Picker Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
+<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Kratom Picker Log</span><button class="iconbtn" type="button" id="logClose" aria-label="Close log"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
 
 <script>
 /* ---- theme: light is ALWAYS the default; dark lasts only for this visit, never persisted ---- */
@@ -1960,7 +1960,7 @@ var CMAP={'#FFFFFF':'energy','#F06000':'focus','#10C000':'mood','#F0F000':'calm'
   });
 });
 </script>
-<div id="tlModal" class="wc-labmodal" hidden><div class="wc-mapbox"><div class="wc-labbar"><span>🛣️ Batch Timeline</span><span><button type="button" id="tlClose" aria-label="Close timeline">✕</button></span></div><div id="tlStage" style="padding:20px 22px;overflow:auto"></div></div></div>
+<div id="tlModal" class="wc-labmodal" hidden><div class="wc-mapbox"><div class="wc-labbar"><span>🛣️ Batch Timeline</span><span><button class="iconbtn" type="button" id="tlClose" aria-label="Close timeline"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></span></div><div id="tlStage" style="padding:20px 22px;overflow:auto"></div></div></div>
 <script>
 /* ---- batch story timelines: Enlarge opens the same timeline, larger ---- */
 document.addEventListener('DOMContentLoaded',function(){
@@ -1974,7 +1974,7 @@ document.addEventListener('DOMContentLoaded',function(){
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)modal.hidden=true;});
 });
 </script>
-<div id="lawModal" class="wc-labmodal" hidden><div class="wc-factbox"><div class="wc-labbar"><span id="lawTitle">State law</span><span><a id="lawOpen" href="#" target="_blank" rel="noopener">Open the source ↗</a><button type="button" id="lawClose" aria-label="Close">✕</button></span></div><div class="wc-factbody"><p id="lawBody" style="margin:0"></p></div></div></div>
+<div id="lawModal" class="wc-labmodal" hidden><div class="wc-factbox"><div class="wc-labbar"><span id="lawTitle">State law</span><span><a id="lawOpen" href="#" target="_blank" rel="noopener">Open the source ↗</a><button class="iconbtn" type="button" id="lawClose" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></span></div><div class="wc-factbody"><p id="lawBody" style="margin:0"></p></div></div></div>
 <script>
 /* ---- state law popups (template system; law data vendor-neutral) ---- */
 var FR='https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2026.1925809/full';
@@ -2057,5 +2057,9 @@ var LAW1={
 <script id="peptopia-banner-js">
 (function(){if(window.__ppThemeBound)return;window.__ppThemeBound=1;document.addEventListener('click',function(e){var b=e.target.closest('.peptopia-theme-toggle');if(!b)return;var h=document.documentElement;var dark=!(h.classList.contains('dark')||h.getAttribute('data-theme')==='dark');h.classList.toggle('dark',dark);h.setAttribute('data-theme',dark?'dark':'light');});})();
 </script>
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+</style>
 </body>
 </html>
