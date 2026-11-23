@@ -488,7 +488,7 @@
     <h3 id="poptitle"></h3>
     <div class="stepof" id="popstep"></div>
     <p id="popdetail"></p>
-    <button class="close" id="popclose">Done</button>
+    <button class="close iconbtn" id="popclose" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
   </div>
 </div>
 
@@ -516,5 +516,10 @@
 <script>
 (function(){var r=document.documentElement,b=document.getElementById('gd-themebtn');if(!b)return;function paint(){b.textContent=r.classList.contains('dark')?'☀️ Light':'🌙 Dark';}try{if(localStorage.getItem('gd-theme')==='dark'){r.classList.add('dark');}}catch(e){}b.addEventListener('click',function(){r.classList.toggle('dark');try{localStorage.setItem('gd-theme',r.classList.contains('dark')?'dark':'light');}catch(e){}paint();});paint();})();
 </script>
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.close{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+</style>
 </body>
 </html>

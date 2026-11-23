@@ -1253,7 +1253,7 @@
                     <p class="help-text">Some documents in the Private folder require a password to access. Enter the correct password when prompted to unlock and view these files.</p>
                 </div>
 
-                <button class="help-close-btn" onclick="hideUserGuide()">Got It!</button>
+                <button class="help-close-btn iconbtn" onclick="hideUserGuide()" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
             </div>
         </div>
 
@@ -1287,7 +1287,7 @@
                     <p class="help-text">• On mobile devices, use the navigation buttons below the PDF for easy control.</p>
                 </div>
 
-                <button class="help-close-btn" onclick="hideKeyboardShortcuts()">Close</button>
+                <button class="help-close-btn iconbtn" onclick="hideKeyboardShortcuts()" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
             </div>
         </div>
 
@@ -1319,7 +1319,7 @@
                             <button class="pdf-nav-zoom-btn" id="library-zoom-out-btn">−</button>
                             <span class="pdf-nav-zoom-level" id="library-zoom-level">100%</span>
                             <button class="pdf-nav-zoom-btn" id="library-zoom-in-btn">+</button>
-                            <button class="pdf-nav-close-btn" id="library-close-btn">✕ Close</button>
+                            <button class="pdf-nav-close-btn iconbtn" id="library-close-btn" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
                         </div>
                     </div>
                     <div class="video-wrapper hidden" id="library-video-content">
@@ -1328,7 +1328,7 @@
                         </div>
                         <div class="video-nav">
                             <span class="video-title" id="video-title">Now Playing</span>
-                            <button class="video-close-btn" id="video-close-btn">✕ Close</button>
+                            <button class="video-close-btn iconbtn" id="video-close-btn" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
                         </div>
                     </div>
                 </div>
@@ -1358,7 +1358,7 @@
                             <button class="pdf-nav-zoom-btn" id="upload-zoom-out-btn">−</button>
                             <span class="pdf-nav-zoom-level" id="upload-zoom-level">100%</span>
                             <button class="pdf-nav-zoom-btn" id="upload-zoom-in-btn">+</button>
-                            <button class="pdf-nav-close-btn" id="upload-close-btn">✕ Close</button>
+                            <button class="pdf-nav-close-btn iconbtn" id="upload-close-btn" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
                         </div>
                     </div>
                 </div>
@@ -1857,4 +1857,11 @@
 
 
 
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.help-close-btn{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+.iconbtn.pdf-nav-close-btn{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+.iconbtn.video-close-btn{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+</style>
 </body></html>

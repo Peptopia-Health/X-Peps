@@ -258,7 +258,7 @@ html.dark .peptopia-theme-toggle .pp-moon{display:none}
 </div>
 <div class="chart-overlay" id="chart-overlay">
 <div class="chart-modal" id="chart-modal">
-<button class="chart-close" id="chart-close" aria-label="Close">&times;</button>
+<button class="chart-close iconbtn" id="chart-close" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
 <h3 style="font-size:1rem;margin-bottom:6px">&#x1F4C8; Weight over time (starting at 200 lbs)</h3>
 <div id="wl-chart-big"></div>
 <div class="chart-legend">
@@ -336,5 +336,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
 (function(){try{var t=localStorage.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
 function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('peptopia-theme',d?'dark':'light')}catch(e){}return false}
 </script>
-<style>.peptopia-hdr{max-width:860px!important}</style></body>
+<style>.peptopia-hdr{max-width:860px!important}</style><style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.chart-close{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+</style>
+</body>
 </html>

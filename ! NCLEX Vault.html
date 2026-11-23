@@ -2822,7 +2822,7 @@
                     <p class="help-text">Some documents in the Private folder require a password to access. Enter the correct password when prompted to unlock and view these files.</p>
                 </div>
 
-                <button class="help-close-btn" onclick="hideUserGuide()">Got It!</button>
+                <button class="help-close-btn iconbtn" onclick="hideUserGuide()" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
             </div>
         </div>
 
@@ -2856,7 +2856,7 @@
                     <p class="help-text">• On mobile devices, use the navigation buttons below the PDF for easy control.</p>
                 </div>
 
-                <button class="help-close-btn" onclick="hideKeyboardShortcuts()">Close</button>
+                <button class="help-close-btn iconbtn" onclick="hideKeyboardShortcuts()" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
             </div>
         </div>
 
@@ -2898,7 +2898,7 @@
                             <div class="pdf-nav-divider"></div>
                             <div class="pdf-nav-section">
                                 <a class="pdf-nav-download-btn" id="library-download-btn" href="#" download="">🔽 Download</a>
-                                <button class="pdf-nav-close-btn" id="library-close-btn">✕ Close</button>
+                                <button class="pdf-nav-close-btn iconbtn" id="library-close-btn" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
                             </div>
                         </div>
                     </div>
@@ -2945,7 +2945,7 @@
                             <div class="pdf-nav-divider"></div>
                             <div class="pdf-nav-section">
                                 <a class="pdf-nav-download-btn" id="upload-download-btn" href="#" download="">🔽 Download</a>
-                                <button class="pdf-nav-close-btn" id="upload-close-btn">✕ Close</button>
+                                <button class="pdf-nav-close-btn iconbtn" id="upload-close-btn" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
                             </div>
                         </div>
                     </div>
@@ -7594,7 +7594,7 @@
 
     <!-- Quiz Modal -->
     <div class="quiz-modal" id="quiz-modal">
-        <button class="quiz-close-btn" onclick="closeQuiz()">✕</button>
+        <button class="quiz-close-btn iconbtn" onclick="closeQuiz()" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
         <div class="quiz-container">
             <div class="quiz-header">
                 <h1 class="quiz-title" id="quiz-title">Topic Quiz</h1>
@@ -7691,4 +7691,11 @@
 
 
 
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.help-close-btn{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+.iconbtn.pdf-nav-close-btn{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+.iconbtn.quiz-close-btn{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+</style>
 </body></html>
