@@ -748,7 +748,7 @@ html,body{overflow-x:clip}
 
 <div class="modal-veil" id="labModal" hidden="">
   <div class="modal-box" role="dialog" aria-modal="true">
-    <div class="modal-head"><span id="labTitle">Lab Results</span><button class="modal-x" id="labClose" aria-label="Close">✕</button></div>
+    <div class="modal-head"><span id="labTitle">Lab Results</span><button class="modal-x iconbtn" id="labClose" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></div>
     <div class="modal-body" id="labBody"></div>
     <div class="modal-foot">
       <button class="push" id="labPrint">Print Lab Sheet</button>
@@ -913,4 +913,9 @@ html,body{overflow-x:clip}
 (function(){if(window.__ppThemeBound)return;window.__ppThemeBound=1;document.addEventListener('click',function(e){var b=e.target.closest('.peptopia-theme-toggle');if(!b)return;var h=document.documentElement;var dark=!(h.classList.contains('dark')||h.getAttribute('data-theme')==='dark');h.classList.toggle('dark',dark);h.setAttribute('data-theme',dark?'dark':'light');});})();
 </script>
 <script id="peptopia-bodydark-sync">new MutationObserver(function(){document.body.classList.toggle("dark",document.documentElement.classList.contains("dark"));}).observe(document.documentElement,{attributes:true,attributeFilter:["class"]});</script>
-<style>.peptopia-hdr{max-width:880px!important}</style></body></html>
+<style>.peptopia-hdr{max-width:880px!important}</style><style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.modal-x{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+</style>
+</body></html>
