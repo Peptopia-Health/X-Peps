@@ -389,5 +389,5 @@ var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window
 function toggleTheme(){var d=document.documentElement.classList.toggle('dark');if(ppStore){try{ppStore.setItem('peptopia-theme',d?'dark':'light')}catch(e){}}return false}
 (function(){try{var t=ppStore&&ppStore.getItem('peptopia-theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})();
 </script>
-</body>
+<style>.peptopia-hdr{max-width:816px!important}</style></body>
 </html>
