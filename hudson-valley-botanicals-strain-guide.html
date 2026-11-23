@@ -154,7 +154,7 @@ footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 4
 .leafdiv{text-align:center;color:#b9ac8d;font-size:20px;letter-spacing:14px;margin:30px 0 10px}
 
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:960px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 
@@ -187,7 +187,7 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 
 
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:960px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 
@@ -1865,7 +1865,7 @@ document.addEventListener('DOMContentLoaded',function(){
   function measure(){
     var wrap=document.querySelector('.wrap');
     if(!wrap)return;
-    document.documentElement.style.setProperty('--uw',wrap.clientWidth+'px');
+    var cs=getComputedStyle(wrap);document.documentElement.style.setProperty('--uw',(wrap.clientWidth-(parseFloat(cs.paddingLeft)||0)-(parseFloat(cs.paddingRight)||0))+'px');
   }
   function go(){requestAnimationFrame(measure);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
@@ -1996,7 +1996,7 @@ document.addEventListener('DOMContentLoaded',function(){
 });</script>
 <style id="peptopia-banner-css">
 /* ===== STANDARD HEADER / BANNER (GUIDE_BUILD_SCRIPT S53 + HEADER_STANDARD.md; approved by David Nov 20, 2026) ===== */
-.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;z-index:50;max-width:1200px;margin:0 auto;padding:14px 24px}
+.peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;z-index:50;max-width:960px;margin:0 auto;padding:14px 24px}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .peptopia-logo{width:46px;height:46px;border-radius:50%;flex:none;box-shadow:0 0 10px 2px rgba(236,72,153,.55),0 0 26px 8px rgba(236,72,153,.18)}
 .peptopia-wordmark{display:flex;flex-direction:column;font-family:'Outfit',sans-serif;font-weight:800;font-size:.82rem;line-height:1.15;letter-spacing:.14em;color:#1e1b4b}
@@ -2015,6 +2015,11 @@ html.dark .peptopia-theme-toggle .pp-moon,html[data-theme="dark"] .peptopia-them
 @media(max-width:640px){.peptopia-hdr{padding:10px 0;gap:8px}.peptopia-brand{gap:8px;min-width:0}.peptopia-logo{width:38px;height:38px}.peptopia-wordmark{font-size:.68rem;min-width:0}.peptopia-nav{gap:5px;flex:none}.peptopia-iconbtn{width:34px;height:34px}.peptopia-iconbtn img{width:34px;height:34px}#themeBtn.peptopia-iconbtn{width:34px;height:34px}}
 @media(max-width:400px){.peptopia-hdr{gap:6px}.peptopia-brand{gap:6px}.peptopia-logo{width:34px;height:34px}.peptopia-iconbtn{width:32px;height:32px}.peptopia-iconbtn img{width:32px;height:32px}#themeBtn.peptopia-iconbtn{width:32px;height:32px}}
 </style>
+<style>/* WIDTH-FIX: no section may exceed the wrap content box */
+.wcsec,.index,.legend,.panels,.wk-lead{max-width:100%!important}</style>
+<style>/* INDEX-SLIM: skinny, streamlined index bar */
+.index{min-height:0!important;padding:8px 16px!important;margin:12px 0 0!important}
+.index h2{margin:0!important;line-height:1.2!important}</style>
 <style id="wc-responsive-print-standard">
 /* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
 html,body{overflow-x:clip}
