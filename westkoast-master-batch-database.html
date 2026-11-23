@@ -532,5 +532,9 @@ var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window
 <script id="peptopia-banner-js">
 (function(){if(window.__ppThemeBound)return;window.__ppThemeBound=1;document.addEventListener('click',function(e){var b=e.target.closest('.peptopia-theme-toggle');if(!b)return;var h=document.documentElement;var dark=!(h.classList.contains('dark')||h.getAttribute('data-theme')==='dark');h.classList.toggle('dark',dark);h.setAttribute('data-theme',dark?'dark':'light');});})();
 </script>
+<style id="hdr-width-clamp">
+/* Nov 23, 2026: header line == body content width */
+body .peptopia-hdr{width:100%;max-width:1400px;padding-left:20px;padding-right:20px}
+</style>
 </body>
 </html>
