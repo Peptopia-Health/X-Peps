@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+<title>California Kratom Law — Addendum to Kratom Legality by State</title>
+<link rel="apple-touch-icon" href="/Tuscarora_Arboretum/apple-touch-icon.png">
+<style>
+:root{
+  --paper:#faf7ef; --paper2:#f3eee1; --ink:#2e2a24; --muted:#6f675a;
+  --red:#b03a2e; --red-dk:#7e241a; --red-soft:#f7e8e4;
+  --green:#398555; --green-dk:#054A1F; --green-soft:#e6f2ea;
+  --gold:#b8860b; --gold-dk:#7d5f06; --gold-soft:#faf3dd;
+  --accent:#08672B; --line:#ddd3bd; --leaf:#2BFF5C;
+  --card:#ffffff;
+  /* Effect palette (David, Nov 1 round 2): defined ONCE here; every effect use routes through these. */
+  --fx-energy:#FFFFFF; --fx-focus:#F06000; --fx-mood:#10C000; --fx-sleep:#0A0A0A;
+  --fx-calm:#F0F000; --fx-analgesia:#E01020; --fx-default:#0070D0;
+  --fx-energy-dk:#8A8A8A; --fx-focus-dk:#A63E00; --fx-mood-dk:#0A7300; --fx-sleep-dk:#5A5A5A;
+  --fx-calm-dk:#8F8F00; --fx-analgesia-dk:#9E0C18; --fx-default-dk:#004E96;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;line-height:1.65}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-.01em}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+/* ---------- title page ---------- */
+.titlepage{display:flex;flex-direction:column;justify-content:flex-start;align-items:center;
+  text-align:center;padding:26px 24px 12px;position:relative;overflow:hidden;
+  background:radial-gradient(1200px 600px at 50% -10%,#e9f3e4 0%,var(--paper) 60%)}
+.wc-toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-bottom:8px}
+.wc-toprow .kicker{margin:0;text-align:left}
+.wc-topbtns{display:flex;gap:8px;align-items:center;flex:none}
+.wc-tbtn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;border-radius:999px;border:2px solid #08672B;background:#F7F4EC;color:#08672B;font:700 .78rem/1 'Outfit',sans-serif;letter-spacing:.03em;box-shadow:0 2px 5px rgba(30,77,59,.25),inset 0 1px 0 rgba(255,255,255,.7);cursor:pointer;white-space:nowrap;text-decoration:none}
+button.wc-tbtn:active,.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(30,77,59,.3)}
+.wc-tbtn.static{cursor:default}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--accent);margin-bottom:14px;font-family:'Outfit',sans-serif;font-weight:700}
+.titlepage h1{font-size:clamp(38px,6vw,64px);margin:0 0 10px;color:#08672B;line-height:1.05}
+.titlepage .sub{font-size:clamp(16px,2.3vw,21px);color:#44564a;max-width:62ch;margin:0 0 8px;line-height:1.35;font-weight:600}
+.or-verified{display:inline-block;margin:6px 0 2px;font:700 .8rem 'Outfit',sans-serif;color:#0B5A24;
+  background:linear-gradient(160deg,#eafff1,#d9f7e2);border:2px solid var(--leaf);border-radius:999px;padding:4px 14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 3px 8px rgba(11,90,36,.18)}
+.or-backrow{margin:12px 0 0}
+.or-back{display:inline-flex;align-items:center;gap:7px;font:800 .82rem 'Outfit',sans-serif;color:#17301f;text-decoration:none;
+  background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:1.8px solid #08672B;border-radius:999px;padding:6px 16px;
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.or-back:active{transform:translateY(2px)}
+/* ---------- short answer / index box ---------- */
+.index{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin:22px 0 8px;
+  box-shadow:0 4px 18px rgba(60,50,30,.06)}
+.index h2{margin-top:0;color:#08672B}
+.index p{margin:8px 0}
+.kl-hl{background:#FEF08A;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 3px;border-radius:2px}
+/* ---------- stat cards ---------- */
+.kl-stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0 6px}
+.kl-stat{flex:1 1 150px;max-width:230px;text-align:center;border-radius:16px;padding:12px 10px 10px;color:#12241a;
+ background:linear-gradient(160deg,rgba(255,255,255,.92),rgba(255,255,255,.55) 45%,rgba(0,0,0,.06));
+ border:2px solid var(--bd,#08672B);box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 9px rgba(0,0,0,.16),0 6px 14px rgba(0,0,0,.22)}
+.kl-stat b{display:block;font:800 2rem 'Outfit',sans-serif;line-height:1}
+.kl-stat span{font:700 .8rem 'Outfit',sans-serif;letter-spacing:.02em}
+.kl-stat small{display:block;margin-top:3px;color:#3d4a41;font-size:.74rem;line-height:1.3}
+/* ---------- section bands ---------- */
+.colorband{border-radius:12px;padding:9px 14px;padding-right:70px;margin:26px 0 12px;color:#fff;position:relative;overflow:hidden;width:fit-content;max-width:100%}
+.colorband h2{margin:0 0 2px;font-size:24px;line-height:1.1;color:#fff}
+.colorband p{margin:0;opacity:.94;font-size:.92rem;max-width:56ch}
+.colorband .bigicon{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:44px;opacity:.16}
+.band-green{background:linear-gradient(120deg,var(--green-dk),var(--green))}
+.band-gold{background:linear-gradient(120deg,var(--gold-dk),#cf9a1b)}
+.band-red{background:linear-gradient(120deg,var(--red-dk),var(--red))}
+.band-neutral{background:linear-gradient(120deg,#08672B,#1f6f5c)}
+.catintro{background:#fff;border:1px solid var(--line);border-left:6px solid var(--accent);
+  border-radius:10px;padding:16px 20px;margin:0 0 20px;font-size:16px}
+.catintro p{margin:6px 0}
+/* ---------- tables (one cohesive unit) ---------- */
+.ortable{border:2.5px solid var(--accent);border-radius:12px;overflow:hidden;margin:14px 0 20px;background:#fff}
+.ortable .ort-head{background:linear-gradient(120deg,var(--green-dk),var(--green));color:#fff;padding:8px 14px;font:800 1rem 'Outfit',sans-serif}
+.ortable table{width:100%;border-collapse:collapse;font-size:.94rem}
+.ortable th{background:var(--paper2);text-align:left;padding:8px 12px;font-family:'Outfit',sans-serif;font-size:.85rem;border-bottom:2px solid var(--line)}
+.ortable td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ortable tr:last-child td{border-bottom:none}
+.ortable td:first-child{font-weight:700;white-space:nowrap}
+tr.wash-g td{background:#eef7f0}
+tr.wash-y td{background:#fdf6e0}
+tr.wash-r td{background:#fbeeec}
+/* ---------- quotes ---------- */
+.quote{border-left:4px solid var(--line);margin:10px 0;padding:8px 14px;background:var(--paper2);
+  border-radius:0 8px 8px 0;font-style:italic;color:#4a4438;font-size:14.5px}
+.quote cite{display:block;font-style:normal;font-size:12.5px;color:var(--muted);margin-top:4px}
+.pullq{border:2px solid var(--leaf);border-radius:14px;padding:18px 22px;margin:18px 0;background:linear-gradient(160deg,#f4fff6,#e6f9ec);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.9),0 6px 14px rgba(11,90,36,.14)}
+.pullq p{font-size:1.12rem;line-height:1.5;margin:0 0 6px;font-weight:500}
+.pullq cite{font-size:.85rem;color:var(--muted);font-style:normal}
+/* ---------- popboxes ---------- */
+.zzpopbox{border-radius:12px;padding:16px 20px;margin:16px 0;border:1px solid}
+.zzpopbox.tip{background:#eef7f0;border-color:#bfe0c9}
+.zzpopbox.tip::before{content:"🌿 Field note — ";font-weight:700;color:var(--green-dk)}
+.zzpopbox.deep{background:#f4efe4;border-color:#e0d3ae}
+.zzpopbox.deep::before{content:"🔍 The detail — ";font-weight:700;color:var(--gold-dk)}
+.zzpopbox p{margin:4px 0}
+/* ---------- timeline (hz family, cloned from the legality guide) ---------- */
+.hz-list{position:relative;margin:4px 0 2px;padding-left:8px}
+.hz-list::before{content:"";position:absolute;left:36px;top:14px;bottom:14px;width:5px;border-radius:99px;
+ background:linear-gradient(180deg,#35A05F,#E8A33D 45%,#2BFF5C 78%,#F06000);box-shadow:inset 0 1px 2px rgba(255,255,255,.7),0 1px 3px rgba(0,0,0,.3)}
+.hz-item{position:relative;display:flex;gap:14px;align-items:flex-start;margin:0 0 14px}
+.hz-node{flex:0 0 58px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:1.7rem;position:relative;z-index:1;color:#12241a;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);
+ border:2px solid #08672B;box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 8px rgba(0,0,0,.14),0 4px 10px rgba(0,0,0,.2);
+ -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.hz-card{flex:1;min-width:0;border-radius:15px;padding:10px 13px 11px;color:#20302a;
+ background:linear-gradient(160deg,rgba(255,255,255,.88),rgba(255,255,255,.5) 50%,rgba(0,0,0,.05));
+ border:2px solid var(--bd,#08672B);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 8px rgba(0,0,0,.10),0 6px 14px rgba(0,0,0,.16)}
+.hz-top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:3px}
+.hz-jur{font:800 1rem 'Outfit',sans-serif}
+.hz-when{font:800 .78rem 'Outfit',sans-serif;border-radius:999px;padding:3px 10px;color:#17301f;
+ background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:1.8px solid #08672B;
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.hz-lab{font-size:.93rem;line-height:1.42;margin:1px 0 8px}
+.hz-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hz-stage{font:800 .76rem 'Outfit',sans-serif;border-radius:999px;padding:5px 12px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);
+ border:2px solid rgba(10,25,15,.4);box-shadow:inset 0 2px 3px rgba(255,255,255,.55),inset 0 -4px 7px rgba(0,0,0,.22),0 4px 8px rgba(0,0,0,.22)}
+.hz-src{font:700 .8rem 'Outfit',sans-serif;border-radius:999px;padding:4px 12px;cursor:pointer;color:#17301f;text-decoration:none;
+ background:radial-gradient(circle at 32% 28%,#ffffff,#fdf3e3 48%,#ecc887);border:1.5px solid #9a6b14;
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.hz-src:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.25)}
+.hz-more{font:700 .8rem 'Outfit',sans-serif;border-radius:999px;padding:4px 12px;cursor:pointer;color:#17301f;
+ background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:1.5px solid #08672B;
+ box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -4px 7px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.2)}
+.hz-more:active{transform:translateY(2px)}
+.hz-detail{display:none;margin-top:9px;border-top:1px dashed var(--line);padding-top:8px;font-size:.9rem;line-height:1.5}
+.hz-item.open .hz-detail{display:block}
+/* ---------- comparison panel ---------- */
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0 20px}
+.cmp-card{border-radius:14px;overflow:hidden;border:2.5px solid;background:#fff;box-shadow:0 4px 12px rgba(60,50,30,.07)}
+.cmp-card h3{margin:0;padding:9px 14px;color:#fff;font-size:1.02rem}
+.cmp-card ul{margin:8px 0 12px;padding-left:20px;padding-right:10px;font-size:.9rem}
+.cmp-card li{margin:5px 0}
+.cmp-reg{border-color:var(--gold-dk)} .cmp-reg h3{background:linear-gradient(120deg,var(--gold-dk),#cf9a1b)}
+.cmp-ban{border-color:var(--red-dk)} .cmp-ban h3{background:linear-gradient(120deg,var(--red-dk),var(--red))}
+.cmp-free{border-color:var(--green-dk)} .cmp-free h3{background:linear-gradient(120deg,var(--green-dk),var(--green))}
+/* ---------- key-value law rows ---------- */
+.orkv{display:grid;grid-template-columns:190px 1fr;gap:6px 16px;margin:10px 0 18px;font-size:.95rem}
+.orkv dt{font-family:'Outfit',sans-serif;font-weight:700;color:var(--green-dk)}
+.orkv dd{margin:0}
+/* ---------- sources ---------- */
+.srcs{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 26px;margin:16px 0 8px;box-shadow:0 4px 18px rgba(60,50,30,.06)}
+.srcs h2{margin-top:0;color:#08672B}
+.srcs ul{margin:6px 0;padding-left:20px}
+.srcs li{margin:6px 0;font-size:.93rem}
+.srcs a{font-weight:700}
+/* ---------- footer / misc ---------- */
+footer.site{text-align:center;color:var(--muted);font-size:13px;padding:26px 0 40px}
+.toc-top{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;z-index:60;
+ background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),#a7d3b4 46%,#7fb069);border:2px solid #08672B;color:#08672B;
+ display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.25);text-decoration:none}
+.secbody p{margin:8px 0}
+.secbody ul{margin:8px 0;padding-left:22px}
+.secbody li{margin:4px 0}
+/* ---------- dark theme ---------- */
+html.dark{--paper:#131a14;--paper2:#1c261d;--ink:#e9e5d8;--muted:#a79e8b;--line:#37452f;--card:#1a231b;
+ --red-soft:#2c1a17;--green-soft:#16281b;--gold-soft:#2a2410}
+html.dark body{background:var(--paper)}
+html.dark a{color:#7CC4FF}
+html.dark .titlepage{background:radial-gradient(1200px 600px at 50% -10%,#1E3325 0%,var(--paper) 72%)}
+html.dark .titlepage h1{color:#E9F3E4}
+html.dark .titlepage .sub{color:#9CC7A8}
+html.dark .index,html.dark .catintro,html.dark .srcs,html.dark .ortable,html.dark .cmp-card{background:#1a231b}
+html.dark .kl-stat{background:linear-gradient(160deg,rgba(255,255,255,.97),rgba(238,245,240,.93) 45%,rgba(205,220,210,.88))}
+html.dark .kl-stat small{color:#33463a}
+html.dark .hz-card{background:linear-gradient(160deg,rgba(38,56,45,.94),rgba(20,32,25,.96));color:#e8f2e9}
+html.dark .quote{background:var(--paper2);color:#cfc9b8}
+html.dark .zzpopbox.tip{background:#16281b;border-color:#2c5238}
+html.dark .zzpopbox.deep{background:#262012;border-color:#57481f}
+html.dark .pullq{background:linear-gradient(160deg,#16281b,#122416);color:#e8f2e9}
+html.dark .pullq cite{color:#a79e8b}
+html.dark .orkv dt{color:#7ed492}
+html.dark tr.wash-g td{background:#182a1d}
+html.dark tr.wash-y td{background:#2a2410}
+html.dark tr.wash-r td{background:#2c1a17}
+html.dark .ortable th{background:#22301f}
+/* ---------- print ---------- */
+@page{size:Letter;margin:.6in}
+@media print{
+ *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ html{font-size:10pt}
+ body{background:#fff!important}
+ .wc-topbtns,.toc-top,.hz-more{display:none!important}
+ .hz-detail{display:block!important}
+ .strain,.kl-stat,.panel,.quote,.zzpopbox,.pullq,.cmp-card,.hz-item,.ortable,table,tr{break-inside:avoid!important;page-break-inside:avoid!important}
+ h1,h2,h3,h4{break-after:avoid!important;page-break-after:avoid!important}
+ p,li{orphans:3;widows:3}
+ a{color:inherit;text-decoration:none}
+ html.dark .titlepage{background:#fff!important}
+ html.dark .titlepage h1{color:#08672B!important}
+ html.dark .titlepage .sub{color:#44564a!important}
+ html.dark .index,html.dark .catintro,html.dark .srcs,html.dark .hz-card,html.dark .cmp-card{background:#fff!important;color:#2e2a24!important}
+}
+</style>
+
+<style id="kl-responsive-print-standard">
+/* Standing responsive + print standard — LAST style block; wins every tie. */
+html,body{overflow-x:clip}
+img,svg,table{max-width:100%}
+@media (max-width:640px){
+  .wrap{padding:0 12px}
+  .titlepage{padding:18px 10px 8px}
+  .titlepage h1{font-size:34px}
+  .wc-toprow{flex-wrap:wrap}
+  .cmp-grid{grid-template-columns:1fr}
+  .orkv{grid-template-columns:1fr}
+  .orkv dt{margin-top:6px}
+  .ortable{overflow-x:auto}
+  .ortable table{min-width:520px}
+  .hz-node{flex-basis:46px;width:46px;height:46px;font-size:1.3rem}
+  .hz-list::before{left:29px}
+  .colorband{padding-right:14px}
+  .colorband .bigicon{display:none}
+  .kl-stat{flex-basis:44%}
+  .index,.srcs{padding:16px}
+  .wc-tbtn{white-space:normal}
+}
+@media print{
+  .wc-topbtns,.toc-top,.hz-more{display:none!important}
+  .hz-detail{display:block!important}
+}
+</style>
+</head>
+<body id="top">
+<a class="toc-top" href="#top" title="Back to top"><svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path d="M24 43 V15" stroke="#0B5A24" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M24 3 L11 20 H37 Z" fill="#0B5A24"/></svg></a>
+<div class="wrap">
+<header class="titlepage">
+  <div class="wc-toprow">
+    <p class="kicker">Kratom Legality by State — State Addendum</p>
+    <div class="wc-topbtns">
+      <span class="wc-tbtn static">📅 Nov 22, 2026</span>
+      <button class="wc-tbtn" id="wcThemeBtn" type="button" aria-label="Toggle dark theme">🌙</button>
+      <button class="wc-tbtn" type="button" onclick="window.print()">🖨 Print / PDF</button>
+    </div>
+  </div>
+  <h1>California Kratom Law</h1>
+  <p class="sub">No kratom statute at all — possession is not a crime, but state health officials treat every kratom product sold for consumption as adulterated and unlawful to sell, and the 2026 enforcement push has emptied most store shelves.</p>
+  <span class="or-verified">✓ Last verified November 22, 2026 — read against CDPH Food &amp; Drug Branch guidance, Health &amp; Safety Code §110555, and 2025–26 California bill records</span>
+  <p class="or-backrow"><a class="or-back" href="https://x-peps.com/X-Peps/kratom-legality-by-state.html">← Kratom Legality by State — the full 50-state tracker</a></p>
+</header>
+
+<div class="index" id="short-answer">
+  <h2>The short answer</h2>
+  <p>California is a <span class="kl-hl"><strong>legal state on paper</strong></span> — with no framework at all. There is no consumer protection act and no ban statute: kratom, mitragynine, and 7-hydroxymitragynine are <strong>not scheduled</strong> under the California Uniform Controlled Substances Act, and possessing kratom is not an offense. What California has instead is an enforcement position. The <strong>California Department of Public Health (CDPH)</strong>, enforcing the Sherman Food, Drug, and Cosmetic Law, treats any kratom or 7-OH product sold or made for consumption as <span class="kl-hl">adulterated and unlawful — at any age</span> — and since late 2025 it has run a statewide push of retailer letters, embargoes, seizures, and an Attorney General lawsuit that functions as a de facto commercial ban.</p>
+  <p>Local bans stack on top: San Diego and Oceanside were among the first cities in the nation to prohibit kratom, in 2016, and Los Angeles County and San Mateo County have followed in the current enforcement era. The result is the strangest posture of any large state — a product an adult may lawfully possess, that no store may lawfully sell for consumption, and that the Legislature has neither banned nor regulated despite repeated bills trying to do the second.</p>
+  <div class="kl-stats">
+    <div class="kl-stat" style="--bd:#E8A33D"><b>None</b><span>State kratom statute</span><small>No KCPA and no ban law on the books</small></div>
+    <div class="kl-stat" style="--bd:#398555"><b>Legal</b><span>Possession</span><small>Kratom is not a controlled substance in California</small></div>
+    <div class="kl-stat" style="--bd:#b03a2e"><b>Unlawful</b><span>Sale for consumption</span><small>CDPH: adulterated under Health &amp; Safety Code §110555</small></div>
+    <div class="kl-stat" style="--bd:#b03a2e"><b>2026</b><span>The enforcement era</span><small>CDPH retailer letter Jan 9, 2026; ABC licensee warning Jan 15, 2026</small></div>
+    <div class="kl-stat" style="--bd:#b03a2e"><b>$5M+</b><span>Product seized</span><small>CDPH-reported seizures in the 2026 compliance push</small></div>
+    <div class="kl-stat" style="--bd:#E8A33D"><b>21+</b><span>Proposed, not law</span><small>AB 1088's age floor stalled in the Senate</small></div>
+  </div>
+  <p><strong>On this page:</strong> <a href="#law">The law today</a> · <a href="#timeline">How California got here — the timeline</a> · <a href="#compare">Three models compared</a> · <a href="#local">Local rules &amp; enforcement</a> · <a href="#neighbors">The neighborhood</a> · <a href="#watch">What to watch</a> · <a href="#sources">Sources</a></p>
+</div>
+
+<div class="colorband band-green"><h2>The Law Today</h2><p>No kratom statute of its own — one health-code section does all the work</p><span class="bigicon">⚖️</span></div>
+<div class="catintro" id="law">
+  <p>California has <strong>no kratom-specific statute</strong> — nothing to read the way Oregon's seven sections can be read. The state's whole position runs through the <strong>Sherman Food, Drug, and Cosmetic Law</strong>, the state counterpart to the federal food and drug acts: because kratom is not an approved food additive, dietary supplement, or drug, CDPH treats every kratom or 7-OH product sold or made for consumption as <strong>adulterated</strong> under Health &amp; Safety Code §110555, and therefore unlawful to sell or manufacture. Possession sits outside that machinery entirely.</p>
+</div>
+<div class="secbody">
+  <dl class="orkv">
+    <dt>Status</dt><dd><strong>Legal — no state framework;</strong> sale treated as unlawful by CDPH</dd>
+    <dt>Controlling law</dt><dd>No kratom-specific statute. CDPH acts under the Sherman Food, Drug, and Cosmetic Law, citing Health &amp; Safety Code §110555 (adulterated food/drug)</dd>
+    <dt>Possession</dt><dd>Not an offense — kratom, mitragynine, and 7-OH are not scheduled under the California Uniform Controlled Substances Act</dd>
+    <dt>Sale &amp; manufacture</dt><dd><strong>Unlawful for consumption</strong> per CDPH — products are adulterated because kratom is not an approved food additive, dietary supplement, or drug. CDPH claims statewide authority to embargo, seize, and impound</dd>
+    <dt>Minimum age</dt><dd><strong>None in state law.</strong> CDPH's position makes sale unlawful at any age; AB 1088 proposed a 21+ floor</dd>
+    <dt>Testing &amp; labeling</dt><dd>No state kratom framework exists to comply with — that is the core problem for sellers: there is no registration, standard, or label rule that makes a kratom product lawful to sell</dd>
+    <dt>7-OH</dt><dd>No cap in force. AB 1088 proposed capping 7-OH at 2% of total alkaloids; SB 758 (Umberg) proposes Schedule I for isolated 7-OH, with an exception for 7-OH naturally occurring in the plant</dd>
+    <dt>Enforcers</dt><dd>CDPH Food &amp; Drug Branch, with the Department of Alcoholic Beverage Control (licensee warnings) and the Attorney General (litigation)</dd>
+    <dt>Penalties</dt><dd>State enforcement runs through embargo, seizure, and civil litigation. Ban cities and counties add misdemeanor penalties of their own</dd>
+  </dl>
+  <div class="pullq">
+    <p>“Foods and supplements containing kratom or 7-OH are illegal to sell or manufacture.”</p>
+    <cite>— California Department of Public Health, statewide consumer warning, October 24, 2025</cite>
+  </div>
+  <div class="zzpopbox deep">
+    <p>the structural problem, in one line: in a KCPA state a seller can read the statute and comply; in a ban state a seller can read the statute and stay out. In California there is no kratom statute to comply with — only an agency's reading of a general adulteration law, applied to sellers while the product itself remains unscheduled and lawful to possess. Every fight in the timeline below is, at bottom, a fight over whether the Legislature will replace that posture with a law of its own.</p>
+  </div>
+  <p><strong>What the enforcement position deliberately leaves untouched.</strong> CDPH's authority runs to products in commerce — manufacture, sale, and marketing for consumption. It does not schedule the plant, and it creates no possession offense. An adult in California who has kratom has broken no state law; the store that sold it to them, on CDPH's reading, has. That asymmetry — lawful to hold, unlawful to sell — is <span class="kl-hl">the defining fact of California kratom law</span>, and it is why the state's status reads "legal" on most national trackers while its store shelves empty.</p>
+</div>
+
+<div class="colorband band-neutral"><h2>How California Got Here</h2><p>Local bans first, regulation bills second, enforcement last — the interactive timeline</p><span class="bigicon">🗓️</span></div>
+<div class="secbody" id="timeline">
+  <p>California's path is the reverse of Oregon's: where Oregon legislated first and enforced lightly, California's cities legislated, its Legislature stalled, and its health department enforced anyway. Tap <strong>Details</strong> on any card for the full record.</p>
+  <div class="hz-list">
+    <div class="hz-item">
+      <div class="hz-node">🏙️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">San Diego &amp; Oceanside — among the first local bans in the U.S.</span><span class="hz-when">2016</span></div>
+        <p class="hz-lab">San Diego and Oceanside adopt some of the first local kratom bans in the country — a full decade before the state itself takes any position. San Diego's prohibition, written into its psychoactive-drug ordinance, covers both sale and possession.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Local bans adopted</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">These two cities were early movers nationally: at a time when most states had never legislated on kratom at all, San Diego and Oceanside wrote it into local law. San Diego's approach — treating kratom under a broader psychoactive-substances ordinance — remains one of the strictest local postures in the state, because it reaches possession and not just retail sale.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🌊</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">Newport Beach prohibits sale &amp; distribution</span><span class="hz-when">March 2024</span></div>
+        <p class="hz-lab">Newport Beach prohibits kratom sale and distribution, adding an Orange County beach city to the local-ban map eight years after the San Diego County ordinances.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Local ban adopted</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The Newport Beach prohibition is a sale-and-distribution ban: it targets the retail market rather than possession, the pattern most later California local rules follow. Its 2024 date matters — local bans were still accumulating in the years when Sacramento was considering, and shelving, statewide regulation bills.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🏛️</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">AB 2365 &amp; AB 3029 — the regulation bills stall</span><span class="hz-when">2024 session</span></div>
+        <p class="hz-lab">Two Assembly bills that would have regulated kratom statewide — AB 2365 (Haney) and AB 3029 (Bains) — are held in Senate Appropriations, the committee where California bills quietly die without a floor vote.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">Held in Senate Appropriations</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">Being "held in Appropriations" is the standard California mechanism for killing a bill on cost grounds without any legislator voting against it on the floor. The 2024 holds set the pattern the next cycle repeated: regulation bills can pass the Assembly, but the Senate has so far declined to move any of them to the Governor.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🌿</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">AB 1088 (Bains) passes the Assembly</span><span class="hz-when">2025 session</span></div>
+        <p class="hz-lab">AB 1088, the cycle's main regulation bill, passes the Assembly: a 21+ age floor, child-resistant packaging, a ban on child-attractive products, and 7-OH capped at 2% of total alkaloids. It is referred to Senate Health on June 11, 2025.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">Passed Assembly — to Senate Health</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">AB 1088 is recognizably a consumer-protection act in the national KCPA family — age floor, packaging rules, an alkaloid cap — rather than a ban. Its committee analysis in the Assembly traces the now-familiar argument: a regulated market with product standards versus an unregulated one. The bill's Senate journey is the rest of this timeline.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">⚠️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">CDPH issues its statewide consumer warning</span><span class="hz-when">October 24, 2025</span></div>
+        <p class="hz-lab">The California Department of Public Health issues a statewide consumer warning: foods and supplements containing kratom or 7-OH are illegal to sell or manufacture in California. The enforcement era begins.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Statewide warning issued</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The October 2025 warning (press release NR25-016) is the moment the state's posture becomes public and explicit. CDPH's theory is adulteration: kratom is not an approved food additive, dietary supplement, or drug, so any product containing it that is sold for consumption is adulterated under the Sherman Law — no kratom-specific statute required.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🏙️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">Los Angeles County bans kratom &amp; 7-OH sales</span><span class="hz-when">November 2025</span></div>
+        <p class="hz-lab">Los Angeles County — the largest county in the United States — bans kratom and 7-OH sales, and county inspectors begin retail checks. Local law now covers the state's biggest consumer market.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">County ban + retail inspections</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The Los Angeles County action pairs the prohibition with active inspection: county inspectors began visiting retailers to check compliance, rather than waiting for complaints. Coming weeks after the CDPH warning, it showed local governments moving in the same direction as the state agency — restriction by enforcement, ahead of any statute.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">📜</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">CDPH letter to processed-food registrants</span><span class="hz-when">January 9, 2026</span></div>
+        <p class="hz-lab">CDPH writes directly to processed-food registrants: the sale and marketing of kratom and 7-OH for consumption is unlawful, citing Health &amp; Safety Code §110555. The warning becomes a direct instruction to the regulated industry.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Sale declared unlawful — HSC §110555</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The January 9, 2026 letter (sourced in full below) is the enforcement push's central document: addressed to the businesses CDPH already licenses and registers, it states the adulteration position as a compliance directive. For sellers, this letter — not any statute — is the operative law of California kratom today.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">⚖️</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">SB 758 (Umberg) — Schedule I for isolated 7-OH</span><span class="hz-when">January 13, 2026</span></div>
+        <p class="hz-lab">Senator Umberg's SB 758, which would add isolated 7-OH to Schedule I, is heard in Senate Health. The bill carves out an exception for 7-OH naturally occurring in the plant itself.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">Heard in Senate Health</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">SB 758 is the ban-side counterpart to AB 1088's regulation: instead of standards for a legal market, it would schedule the isolated compound. The natural-occurrence exception is the bill's key drafting choice — it aims at concentrated and synthetic 7-OH products while leaving the plant's own chemistry outside Schedule I. Its progress is tracked in What to Watch, below.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🏷️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">ABC warns its licensees</span><span class="hz-when">January 15, 2026</span></div>
+        <p class="hz-lab">The Department of Alcoholic Beverage Control warns its licensees — bars, restaurants, liquor and convenience stores — to remove kratom and 7-OH products, putting license discipline behind the health department's position.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Licensee warning issued</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The ABC warning six days after the CDPH letter widened the push beyond health-code enforcement: for any business holding a liquor license, stocking kratom now risks the license itself. Alcohol licensees are among the most compliance-sensitive retailers in the state, and the warning is a major reason shelves emptied as fast as they did in early 2026.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">📊</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">The compliance count — 95% and 3,300 products</span><span class="hz-when">March 2026</span></div>
+        <p class="hz-lab">The Governor's office reports the push is working: 95% of businesses have complied, and more than 3,300 kratom and 7-OH products have been pulled from store shelves statewide.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">3,300+ products pulled</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The March 2026 figures are the administration's own scorecard for enforcement-without-a-statute: near-total retail compliance achieved through letters, embargoes, license pressure, and inspections. Whatever the Legislature eventually does, the retail market the bills were written to regulate has already been largely dismantled.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">🗳️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">San Mateo County votes 5–0 to ban sales</span><span class="hz-when">April 21, 2026</span></div>
+        <p class="hz-lab">San Mateo County's Board of Supervisors votes 5–0 to ban the sale and distribution of kratom in unincorporated areas of the county, with violations punishable as a misdemeanor — the Bay Area joins the ban map.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Passed 5–0 — misdemeanor</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">San Mateo matters beyond its borders: a unanimous vote in a Bay Area county signals the local-ban movement spreading north from its Southern California base. Its misdemeanor penalty also makes it one of the stronger local rules — most California local bans rely on administrative enforcement rather than criminal exposure for sellers.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">⚖️</div>
+      <div class="hz-card" style="--bd:#b03a2e">
+        <div class="hz-top"><span class="hz-jur">CDPH &amp; Attorney General Bonta sue a manufacturer</span><span class="hz-when">May 1, 2026</span></div>
+        <p class="hz-lab">CDPH and Attorney General Bonta sue a kratom manufacturer, Krave, in San Diego County Superior Court. CDPH reports more than $5 million in product seized across the 2026 compliance push.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b03a2e">Litigation filed — $5M+ seized</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">The lawsuit escalates the push from retail compliance to manufacturer litigation, in the county where California's local bans began a decade earlier. The $5 million seizure figure, reported by CDPH alongside the filing, is the administration's headline measure of the campaign's scale. The case is pending — see What to Watch.</div>
+      </div>
+    </div>
+    <div class="hz-item">
+      <div class="hz-node">⏸️</div>
+      <div class="hz-card" style="--bd:#b8860b">
+        <div class="hz-top"><span class="hz-jur">AB 1088's Senate hearing is canceled</span><span class="hz-when">June 17, 2026</span></div>
+        <p class="hz-lab">AB 1088's scheduled Senate hearing is canceled at the author's request. The regulation path — the only live bill that would have created a lawful, regulated California market — stalls.</p>
+        <div class="hz-row"><span class="hz-stage" style="background:#b8860b">Regulation path stalls</span><button class="hz-more" type="button">▸ Details</button></div>
+        <div class="hz-detail">A hearing canceled "at the request of the author" usually means the votes were not there. With AB 1088 stalled, California ends the 2025–26 cycle where it began it: no ban statute, no consumer protection act, and an enforcement position doing the work of both. Whether the bill returns, and in what form, leads What to Watch.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pullq">
+    <p>“95% of businesses complied; more than 3,300 products pulled from shelves.”</p>
+    <cite>— Governor's office, reporting the enforcement push, March 2026</cite>
+  </div>
+</div>
+
+<div class="colorband band-gold"><h2>Three Models, Side by Side</h2><p>Ban states, KCPA states, and California's third way</p><span class="bigicon">🔀</span></div>
+<div class="secbody" id="compare">
+  <div class="cmp-grid">
+    <div class="cmp-card cmp-ban">
+      <h3>⛔ The ban model — statute states</h3>
+      <ul>
+        <li><strong>Mechanism:</strong> a statute schedules kratom or its alkaloids as controlled substances</li>
+        <li><strong>Sale:</strong> prohibited statewide, by law</li>
+        <li><strong>Possession:</strong> a criminal offense, not just a sale rule</li>
+        <li><strong>Market:</strong> driven out of state or underground</li>
+        <li><strong>Clarity:</strong> total — the law is on the books for anyone to read</li>
+        <li><strong>Count:</strong> 11 states ban kratom outright on the tracker's current count</li>
+      </ul>
+    </div>
+    <div class="cmp-card cmp-free">
+      <h3>✅ The KCPA model — regulated legal market</h3>
+      <ul>
+        <li><strong>Mechanism:</strong> a Kratom Consumer Protection Act legalizes and regulates the market</li>
+        <li><strong>Sale:</strong> legal, under state product standards</li>
+        <li><strong>Possession:</strong> lawful</li>
+        <li><strong>Age:</strong> a statutory floor — 21+ in Oregon; Nevada (2019) and Arizona (2021) also regulate</li>
+        <li><strong>Sellers:</strong> registration, testing, and labeling duties set by statute</li>
+        <li><strong>Clarity:</strong> high — a seller can read the act and comply</li>
+      </ul>
+    </div>
+    <div class="cmp-card cmp-reg">
+      <h3>🗂️ California's third way — no statute at all</h3>
+      <ul>
+        <li><strong>Mechanism:</strong> no kratom law — an agency enforces general food-and-drug law against sellers</li>
+        <li><strong>Sale:</strong> treated as unlawful — products are "adulterated" under HSC §110555</li>
+        <li><strong>Possession:</strong> lawful — kratom is not scheduled</li>
+        <li><strong>Age:</strong> no state floor; sale is opposed at any age</li>
+        <li><strong>Sellers:</strong> no framework to comply with — enforcement is letters, embargoes, seizures, license pressure, and litigation</li>
+        <li><strong>Clarity:</strong> the lowest of the three — the operative rule is an agency position, not a statute</li>
+      </ul>
+    </div>
+  </div>
+  <div class="zzpopbox tip">
+    <p>California is the only large state running the third model, and the comparison shows its oddity: it reaches a ban-like retail outcome — emptied shelves, seized product, a sued manufacturer — without a ban, while leaving possession as lawful as it is in Oregon. Supporters of the approach call it using the law already on the books; the bills in the timeline are the Legislature's so-far-unsuccessful attempts to replace it with a model of its own.</p>
+  </div>
+</div>
+
+<div class="colorband band-red"><h2>Local Rules &amp; Enforcement</h2><p>Five named local bans on top of one statewide enforcement push</p><span class="bigicon">🏙️</span></div>
+<div class="secbody" id="local">
+  <p><strong>San Diego (2016).</strong> Among the first local kratom bans in the nation: the city's psychoactive-drug ordinance reaches both sale and possession — still the broadest local posture in California. <strong>Oceanside (2016)</strong>, its San Diego County neighbor, banned kratom the same year. <strong>Newport Beach (2024)</strong> prohibits sale and distribution. <strong>Los Angeles County (November 2025)</strong> banned kratom and 7-OH sales across the county and backed the ban with retail inspections. <strong>San Mateo County (April 2026)</strong> banned sale and distribution in unincorporated areas, punishable as a misdemeanor, on a unanimous 5–0 Board of Supervisors vote.</p>
+  <p><strong>Also reported:</strong> local restrictions in <strong>Riverside County</strong> and <strong>Jurupa Valley</strong>, and in <strong>Anaheim</strong> a different instrument — a 2%-of-alkaloids limit on 7-OH rather than a full ban, the same cap AB 1088 proposed statewide. Local rules change faster than state law here; anyone selling or shipping into a California city should verify its municipal code directly, because the patchwork — not Sacramento — is where most California kratom prohibitions actually live.</p>
+  <p><strong>Statewide enforcement.</strong> Above the patchwork sits the CDPH campaign: the October 2025 consumer warning, the January 9, 2026 letter to processed-food registrants declaring sale and marketing unlawful under Health &amp; Safety Code §110555, embargoes and seizures of product (more than $5 million worth, by CDPH's report), the ABC's January 15, 2026 warning putting liquor licensees' licenses behind the policy, the Attorney General's May 2026 manufacturer lawsuit, and a CDPH consumer hotline taking reports of continued sales. By the Governor's office's March 2026 count, 95% of businesses had complied and more than 3,300 products had been pulled. No possession arrests are part of this picture — the campaign runs entirely against sellers, which is precisely what makes California's model distinct.</p>
+</div>
+
+<div class="colorband band-neutral"><h2>The Neighborhood</h2><p>California against its three bordering states</p><span class="bigicon">🧭</span></div>
+<div class="secbody" id="neighbors">
+  <div class="ortable">
+    <div class="ort-head">The West — status at a glance</div>
+    <table>
+      <tr><th>State</th><th>Status</th><th>The rule in one line</th></tr>
+      <tr class="wash-y"><td>California</td><td><strong>Legal — no framework</strong></td><td>No statute either way; CDPH treats sale for consumption as unlawful adulteration while possession stays lawful. <em>This addendum.</em></td></tr>
+      <tr class="wash-g"><td>Oregon</td><td><strong>Regulated</strong></td><td>Full KCPA (ORS 475.392–475.404): 21+, processor registration and certified testing. <a href="https://x-peps.com/X-Peps/kratom-legality-oregon.html">Oregon addendum</a>.</td></tr>
+      <tr class="wash-g"><td>Nevada</td><td><strong>Regulated</strong></td><td>KCPA (2019): a legal market under state consumer-protection standards.</td></tr>
+      <tr class="wash-g"><td>Arizona</td><td><strong>Regulated</strong></td><td>KCPA (2021): a legal market under state consumer-protection standards.</td></tr>
+    </table>
+  </div>
+  <p>The border tells the story in one look: <span class="kl-hl">every state bordering California regulates a legal kratom market by statute</span> — Oregon to the north, Nevada and Arizona to the east. California alone polices sales through food-and-drug enforcement with no statute at all. A product that crosses the state line in a delivery truck moves between three reading-and-complying legal markets and one enforcement position.</p>
+</div>
+
+<div class="colorband band-gold"><h2>What to Watch</h2><p>Two stalled bills, a live lawsuit, and a county-by-county spread</p><span class="bigicon">👀</span></div>
+<div class="secbody" id="watch">
+  <ul>
+    <li><strong>AB 1088 — the regulation bill.</strong> The 2025–26 cycle's KCPA-style measure (21+, child-resistant packaging, no child-attractive products, 7-OH capped at 2% of total alkaloids) passed the Assembly and stalled in the Senate, its June 17, 2026 hearing canceled at the author's request. Whether it returns — in the next session, and with its coalition intact — decides whether California ever gets a lawful regulated market.</li>
+    <li><strong>SB 758 — the 7-OH Schedule I bill.</strong> Senator Umberg's proposal to schedule isolated 7-OH, with an exception for 7-OH naturally occurring in the plant, was heard in Senate Health in January 2026. It is the ban-side vehicle to AB 1088's regulation, and the two bills' fates will show which model the Senate prefers — if either.</li>
+    <li><strong>More county ordinances.</strong> San Mateo's unanimous April 2026 vote moved the local-ban map into the Bay Area. Watch for neighboring counties to take up similar measures; California's local patchwork has grown in every recent year and shows no sign of stopping while the state has no law of its own.</li>
+    <li><strong>The CDPH / Attorney General litigation.</strong> The May 1, 2026 suit against the manufacturer Krave, in San Diego County Superior Court, is the enforcement model's first big court test. A ruling on CDPH's adulteration theory — upholding it or cutting it back — would do more to define California kratom law than any document since the January letter.</li>
+    <li><strong>Federal 7-OH scheduling spillover.</strong> Federal movement on concentrated and synthetic 7-OH continues. California's bills already distinguish isolated 7-OH from the plant; a federal scheduling action would pressure Sacramento to align state law, and could revive one or both stalled bills.</li>
+  </ul>
+</div>
+
+<div class="srcs" id="sources">
+  <h2>Sources</h2>
+  <p>Every fact in this addendum traces to one of these. Primary sources first.</p>
+  <ul>
+    <li><a href="https://www.cdph.ca.gov/Programs/CEH/DFDCS/CDPH%20Document%20Library/FDB/FoodSafetyProgram/KratomLetterPFRandLicensees.pdf" target="_blank" rel="noopener">CDPH — Letter to Processed Food Registrants (Jan 9, 2026)</a> — sale and marketing of kratom and 7-OH for consumption declared unlawful under Health &amp; Safety Code §110555 (California Department of Public Health, Food &amp; Drug Branch).</li>
+    <li><a href="https://www.cdph.ca.gov/Programs/OPA/Pages/NR25-016.aspx" target="_blank" rel="noopener">CDPH Press Release NR25-016 (Oct 24, 2025)</a> — the statewide consumer warning: foods and supplements containing kratom or 7-OH are illegal to sell or manufacture.</li>
+    <li><a href="https://ctweb.capitoltrack.com/Bills/25Bills/asm/ab_1051-1100/ab_1088_cfa_385178_asm_comm.html" target="_blank" rel="noopener">AB 1088 (Bains, 2025) — Committee Analysis</a> — the regulation bill's terms: 21+, child-resistant packaging, 7-OH capped at 2% of total alkaloids (CapitolTrack).</li>
+    <li><a href="https://ctweb.capitoltrack.com/Bills/25Bills/sen/sb_0751-0800/sb_758_cfa_393838_sen_comm.html" target="_blank" rel="noopener">SB 758 (Umberg) — Senate Health Analysis</a> — isolated 7-OH proposed for Schedule I, with the natural-occurrence exception (CapitolTrack).</li>
+    <li><a href="https://krakenkratom.com/advocacy-hub" target="_blank" rel="noopener">Kraken Kratom — State Advocacy Tracker</a> — state-by-state status cross-check, including California's local ordinances.</li>
+    <li><a href="https://legalincali.com/is-kratom-legal-in-california/" target="_blank" rel="noopener">LegalInCali — Is Kratom Legal in California? (2026 review)</a> — independent review of California's statute-free posture and local bans.</li>
+    <li><a href="https://x-peps.com/X-Peps/kratom-legality-by-state.html">Kratom Legality by State</a> — this site's 50-state tracker; neighbor-state entries and ban-state count as of November 22, 2026.</li>
+  </ul>
+</div>
+
+<footer class="site">California Kratom Law — Addendum to Kratom Legality by State · Independent Research Guide · November 2026</footer>
+
+</div>
+<script>
+/* ---- theme (light/dark): light is ALWAYS the default; dark lasts only for the current visit and is never persisted ---- */
+(function(){
+function upd(){var b=document.getElementById('wcThemeBtn');if(b){b.textContent=document.documentElement.classList.contains('dark')?'☀️':'🌙';}}
+document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wcThemeBtn');if(b){b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');upd();});}});
+/* ---- timeline: tap a card's "Details" pill to expand its record ---- */
+document.addEventListener('click',function(e){
+  var t=e.target.closest('.hz-more'); if(!t) return;
+  var item=t.closest('.hz-item'); if(!item) return;
+  var open=item.classList.toggle('open');
+  t.textContent=open?'▾ Details':'▸ Details';
+});
+})();
+</script>
+</body>
+</html>
