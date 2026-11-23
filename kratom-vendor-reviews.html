@@ -693,7 +693,7 @@ var ppStore=(function(){try{if(window.self!==window.top)return null;var s=window
 <div><div class="vm-title" id="vendorName">Vendor</div><div class="vm-url" id="vendorUrl"></div></div>
 <div class="vendor-modal-actions">
 <a class="vm-btn" id="vendorOpen" href="#" target="_blank" rel="noopener">Open site in a new tab</a>
-<button type="button" class="vm-btn vm-close" onclick="closeVendor()">✕ Close</button>
+<button type="button" class="vm-btn vm-close iconbtn" onclick="closeVendor()" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
 </div>
 </div>
 <div style="font-size:.74rem;color:#64748B;padding:6px 16px;border-bottom:1px solid rgba(15,23,42,.07)">If the shop does not load in this window — some block embedding — tap &ldquo;Open site in a new tab&rdquo; above.</div>
@@ -723,6 +723,11 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=docum
 <style id="hdr-width-clamp">
 /* Nov 23, 2026: header line == body content width */
 body .peptopia-hdr{width:100%}
+</style>
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.vm-btn.vm-close{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
 </style>
 </body>
 </html>

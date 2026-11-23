@@ -515,7 +515,7 @@ img,svg{max-width:100%}
 
 <div class="modal" id="routeModal" role="dialog" aria-modal="true" aria-label="The route, enlarged">
   <div class="mbox">
-    <button type="button" class="mclose" id="routeClose" aria-label="Close">✕</button>
+    <button type="button" class="mclose iconbtn" id="routeClose" aria-label="Close"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button>
     <div id="routeBig"></div>
   </div>
 </div>
@@ -554,5 +554,10 @@ img,svg{max-width:100%}
   top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 })();
 </script>
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+.iconbtn.mclose{background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important}
+</style>
 </body>
 </html>
