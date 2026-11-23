@@ -1648,7 +1648,7 @@ document.addEventListener('DOMContentLoaded',function(){
   function measure(){
     var wrap=document.querySelector('.wrap');
     if(!wrap)return;
-    document.documentElement.style.setProperty('--uw',wrap.clientWidth+'px');
+    var cs=getComputedStyle(wrap);document.documentElement.style.setProperty('--uw',(wrap.clientWidth-(parseFloat(cs.paddingLeft)||0)-(parseFloat(cs.paddingRight)||0))+'px');
   }
   function go(){requestAnimationFrame(measure);}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
@@ -2007,6 +2007,11 @@ html.dark .xx-card{background:#1C211C}
 .xx-cap{font-size:.78rem!important;color:var(--muted);text-align:center;margin:5px 0 10px!important}
 @media print{.xx-card{break-inside:avoid}}
 </style>
+<style>/* WIDTH-FIX: no section may exceed the wrap content box */
+.wcsec,.index,.legend,.panels,.wk-lead{max-width:100%!important}</style>
+<style>/* INDEX-SLIM: skinny, streamlined index bar */
+.index{min-height:0!important;padding:8px 16px!important;margin:12px 0 0!important}
+.index h2{margin:0!important;line-height:1.2!important}</style>
 <style id="wk-responsive-print-standard">
 /* ===== STANDING STANDARD: responsive (mobile + desktop) + print — always last, always wins ===== */
 html,body{overflow-x:clip}
