@@ -575,5 +575,9 @@ html.dark .peptopia-theme-toggle .pp-moon{display:none}
         function toggleTheme(){document.documentElement.classList.toggle('dark');var d=document.documentElement.classList.contains('dark');if(storage)storage.setItem('peptopia-theme',d?'dark':'light')}
         (function(){var s=storage?storage.getItem('peptopia-theme'):null;if(s==='dark')document.documentElement.classList.add('dark')})();
     </script>
+<style id="hdr-width-clamp">
+/* Nov 23, 2026: header line == body content width */
+body .peptopia-hdr{width:100%;max-width:900px}
+</style>
 </body>
 </html>
