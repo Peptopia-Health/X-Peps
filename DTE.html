@@ -463,9 +463,9 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 .strain.blend .strain-foot{background:linear-gradient(100deg,#4A3369,#6A4C93);color:#fff}
 html.dark .titlepage h1{color:#FF8A1E}
 </style>
-<div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button type="button" id="labClose" aria-label="Close lab report">✕</button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
-<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Kratom Picker Log</span><button type="button" id="logClose" aria-label="Close log">✕</button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
-<div id="factModal" class="wc-labmodal" hidden><div class="wc-factbox"><div class="wc-labbar"><span id="factTitle">✓ Fact check</span><span><a id="factOpen" href="#" target="_blank" rel="noopener">Open the source ↗</a><button type="button" id="factClose" aria-label="Close fact check">✕</button></span></div><div class="wc-factbody"><blockquote id="factQuote"></blockquote><p class="wc-factsrc" id="factSrc"></p></div></div></div>
+<div id="labModal" class="wc-labmodal" hidden><div class="wc-labbox"><div class="wc-labbar"><span id="labTitle">Lab report</span><span><a id="labOpen" href="#" target="_blank" rel="noopener">Open in a new tab ↗</a><button class="iconbtn" type="button" id="labClose" aria-label="Close lab report"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></span></div><iframe id="labFrame" title="Lab report"></iframe></div></div>
+<div id="logModal" class="wc-logmodal" hidden><div class="wc-logbox"><div class="wc-logbar"><span>📓 Your Kratom Picker Log</span><button class="iconbtn" type="button" id="logClose" aria-label="Close log"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></div><div class="wc-loglist" id="logList"></div><div class="wc-logfoot"><button type="button" class="wc-tbtn" id="logClear">Clear all</button><button type="button" class="wc-tbtn" id="logDone">Close</button></div></div></div>
+<div id="factModal" class="wc-labmodal" hidden><div class="wc-factbox"><div class="wc-labbar"><span id="factTitle">✓ Fact check</span><span><a id="factOpen" href="#" target="_blank" rel="noopener">Open the source ↗</a><button class="iconbtn" type="button" id="factClose" aria-label="Close fact check"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></span></div><div class="wc-factbody"><blockquote id="factQuote"></blockquote><p class="wc-factsrc" id="factSrc"></p></div></div></div>
 <button type="button" class="toc-back" id="wcBackBtn" title="Back to where you were reading" hidden><svg viewBox="0 0 48 48" width="38" height="38" aria-hidden="true"><defs><marker id="wcRetArr" viewBox="0 0 16 16" refX="12" refY="8" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L15 8L1 15z" fill="#08672B"/></marker></defs><path d="M29.1 9.9 A15 15 0 1 1 13.4 13.4" fill="none" stroke="#08672B" stroke-width="6.5" stroke-linecap="round" marker-end="url(#wcRetArr)"/></svg></button>
 <a class="toc-top" href="#top" title="Back to top"><svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true"><path d="M24 43 V15" stroke="#08672B" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M24 3 L11 20 H37 Z" fill="#08672B"/></svg></a>
 <div class="wrap">
@@ -2665,7 +2665,7 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 })();
 </script>
-<div id="tlModal" class="wc-labmodal" hidden><div class="wc-tlbox"><div class="wc-labbar"><span>🛣️ The DTE Harvest Rounds</span><span><button type="button" id="tlClose" aria-label="Close timeline">✕</button></span></div><div class="wc-tlbig" id="tlStage"></div></div></div>
+<div id="tlModal" class="wc-labmodal" hidden><div class="wc-tlbox"><div class="wc-labbar"><span>🛣️ The DTE Harvest Rounds</span><span><button class="iconbtn" type="button" id="tlClose" aria-label="Close timeline"><img src="https://x-peps.com/btn-close-holo.png" alt="Close"></button></span></div><div class="wc-tlbig" id="tlStage"></div></div></div>
 <style id="wc-rev2-202611">
 /* ===== Nov 1, 2026 revision ROUND 2 — David's 32-point pass ===== */
 /* fixes 6+7: picker circles are true push buttons; hub matches the node size; icons fill their circles */
@@ -3231,5 +3231,9 @@ document.addEventListener('DOMContentLoaded',function(){
     setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60);});
 });
 </script>
+<style id="close-icon-css">
+.iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
+.iconbtn img{width:38px;height:38px;border-radius:50%;object-fit:cover;display:block}
+</style>
 </body>
 </html>
