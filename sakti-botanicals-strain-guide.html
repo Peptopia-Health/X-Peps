@@ -27,9 +27,9 @@
   --accent:#08672B; --line:#ddd3bd;
   /* Effect palette (David, Nov 1 round 2): defined ONCE here; every effect use routes through these. */
   --fx-energy:#FFFFFF; --fx-focus:#F06000; --fx-mood:#10C000; --fx-sleep:#0A0A0A;
-  --fx-calm:#F0F000; --fx-analgesia:#E01020; --fx-default:#0070D0;
+  --fx-calm:#F0F000; --fx-pain:#E01020; --fx-default:#0070D0;
   --fx-energy-dk:#8A8A8A; --fx-focus-dk:#A63E00; --fx-mood-dk:#0A7300; --fx-sleep-dk:#5A5A5A;
-  --fx-calm-dk:#8F8F00; --fx-analgesia-dk:#9E0C18; --fx-default-dk:#004E96;
+  --fx-calm-dk:#8F8F00; --fx-pain-dk:#9E0C18; --fx-default-dk:#004E96;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -410,6 +410,9 @@ html.dark .hl-purp{background:#4A3369;color:#EDE6D6}
 .wc-docicon{display:block;margin:0 auto}
 a.wc-doclink{cursor:pointer}
 </style>
+<style>/* template round 2026-11-24: timeline icons fill their circles (change #5) */
+.wc-tl2 .wc-tm{font-size:40px}
+.wc-tlbig .wc-tm{font-size:55px}</style>
 </head>
 <body id="top">
 <header class="peptopia-hdr">
@@ -506,7 +509,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
       <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
     </div>
   </div>
-  <div class="wc-search" id="wcSearch" hidden><input id="wcSearchInput" type="text" placeholder="Search strains — spelling doesn't have to be perfect" autocomplete="off" aria-label="Search strains"><div class="wc-sresults" id="wcSearchResults"></div></div>
+  <div class="wc-search" id="wcSearch" hidden><input id="wcSearchInput" type="text" placeholder="Search strains..." autocomplete="off" aria-label="Search strains"><div class="wc-sresults" id="wcSearchResults"></div></div>
   <h1>Sakti Botanicals</h1>
   <div class="sub">Three cures, one sacred forest — the smallest, most lab-transparent menu in kratom, checked bag by bag.</div>
   
@@ -520,7 +523,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
     <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(240,96,0,.8))"><circle cx="24" cy="24" r="17" fill="#F06000"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" fill="#F06000"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
     <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk)"><span class="qp-emo">🧡</span><small>Mood</small></button>
     <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:var(--fx-sleep);--nb:var(--fx-sleep-dk)"><span class="qp-emo">😴</span><small>Sleep</small></button>
-    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-analgesia);--nb:var(--fx-analgesia-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(43,255,92,.85))"><path d="M24 7v34M7 24h34" stroke="#2BFF5C" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-pain);--nb:var(--fx-pain-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(43,255,92,.85))"><path class="qp-outline" d="M24 7v34M7 24h34" stroke="#000000" stroke-width="17" stroke-linecap="round" fill="none" style="stroke:#000000;fill:none"/><path d="M24 7v34M7 24h34" stroke="#2BFF5C" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
     <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:var(--fx-calm);--nb:var(--fx-calm-dk)"><span class="qp-emo">😌</span><small>Calm</small></button>
   </div>
   <div id="qpResult"><p class="qp-note">Sakti's whole menu is four powders — the picker ranks the three cures and the Private Reserve.</p></div>
@@ -578,7 +581,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <p>Find Your Color · Jump to Your Section.</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧭</button>
 </div>
-<div class="legend"><span><i style="background:var(--fx-energy);border:1.5px solid #9a9a9a"></i>Energy</span><span><i style="background:var(--fx-focus)"></i>Focus</span><span><i style="background:var(--fx-mood)"></i>Mood</span><span><i style="background:var(--fx-sleep);border:1.5px solid #8a8a8a"></i>Sleep</span><span><i style="background:var(--fx-calm);border:1.5px solid #9a9a00"></i>Calm</span><span><i style="background:var(--fx-analgesia)"></i>Analgesia</span></div>
+<div class="legend"><span><i style="background:var(--fx-energy);border:1.5px solid #9a9a9a"></i>Energy</span><span><i style="background:var(--fx-focus)"></i>Focus</span><span><i style="background:var(--fx-mood)"></i>Mood</span><span><i style="background:var(--fx-sleep);border:1.5px solid #8a8a8a"></i>Sleep</span><span><i style="background:var(--fx-calm);border:1.5px solid #9a9a00"></i>Calm</span><span><i style="background:var(--fx-pain)"></i>Pain relief</span></div>
 <div class="panels">
 <div class="panel p-white">
     <div class="phead">White</div>
@@ -610,7 +613,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
     <div class="phead">Red</div>
     <div class="pbody"><a href="#strain-red-maeng-da" title="Jump to this vein's strains"><svg class="pie" data-slices="#E01020:37,#F0F000:36,#10C000:27" width="110" height="110" viewBox="0 0 110 110"></svg></a>
     </div>
-    <div class="peffects">🌙 Analgesia <b>37%</b> · 🧘 Calm <b>36%</b> · 😊 Mood <b>27%</b></div>
+    <div class="peffects">🌙 Pain relief <b>37%</b> · 🧘 Calm <b>36%</b> · 😊 Mood <b>27%</b></div>
     <div class="pchart-hint">👆 Tap the pie for this vein’s typical effect mix</div>
     <div class="pfoot">A deliberately mild red — sun, then shade, for the end of the day.</div>
     <a class="golink" href="#strain-red-maeng-da">→ Browse red strains</a>
@@ -857,7 +860,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">📊</button>
 </div>
 <table class="wc-table wc-sortable wc-matrix">
-<tr><th class="sortable" data-k="0">Strain</th><th class="sortable" data-k="1">Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🎯 Focus</th><th class="sortable" data-k="5">🧘 Calm</th><th class="sortable" data-k="6">🌙 Analgesia</th><th class="sortable" data-k="7">MIT</th><th class="sortable" data-k="8">Price</th></tr>
+<tr><th class="sortable" data-k="0">Strain</th><th class="sortable" data-k="1">Line</th><th class="sortable" data-k="2">😊 Mood</th><th class="sortable" data-k="3">⚡ Energy</th><th class="sortable" data-k="4">🎯 Focus</th><th class="sortable" data-k="5">🧘 Calm</th><th class="sortable" data-k="6">🌙 Pain relief</th><th class="sortable" data-k="7">MIT</th><th class="sortable" data-k="8">Price</th></tr>
 <tr><td><a href='#strain-green-maeng-da'><b>Green Maeng Da</b></a></td><td>The Green Cure</td><td>23%</td><td>24%</td><td>23%</td><td>15%</td><td>15%</td><td>1.79%</td><td>$7.99–$90.00</td></tr>
 <tr><td><a href='#strain-private-reserve-gmd'><b>Private Reserve GMD</b></a></td><td>The Green Cure</td><td>20%</td><td>27%</td><td>27%</td><td>13%</td><td>13%</td><td>2.1%</td><td>$18.00–$120.00</td></tr>
 <tr><td><a href='#strain-white-borneo'><b>White Borneo</b></a></td><td>The White Cure</td><td>23%</td><td>30%</td><td>31%</td><td>8%</td><td>8%</td><td>1.71%</td><td>$7.99–$90.00</td></tr>
@@ -1023,7 +1026,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="wc-search2" id="wcSearch2">
   <h4>🔍 Search Strains</h4>
-  <input id="wcSearchInput2" type="text" placeholder="Search strains — spelling doesn't have to be perfect" autocomplete="off" aria-label="Search strains">
+  <input id="wcSearchInput2" type="text" placeholder="Search strains..." autocomplete="off" aria-label="Search strains">
   <div class="wc-sresults" id="wcSearchResults2"></div>
 </div>
 <footer class="site">Complete Strain Guide for Sakti Botanicals · Independent Customer Research · November 2026</footer>
@@ -1215,7 +1218,7 @@ html.dark .wc-idxpanel a{color:#9CC7A8}
 #donut-modal-box{width:50vw!important;max-width:640px!important}
 @media(max-width:768px){#donut-modal-box{width:94vw!important}}
 /* spectrum lane labels — readable text colors in both themes (fix 19) */
-.wc-lane-white{color:#6E6E6E}.wc-lane-green{color:#398555}.wc-lane-gold{color:#8F8F00}.wc-lane-red{color:var(--fx-analgesia)}.wc-lane-blend{color:#7A4C93}
+.wc-lane-white{color:#6E6E6E}.wc-lane-green{color:#398555}.wc-lane-gold{color:#8F8F00}.wc-lane-red{color:var(--fx-pain)}.wc-lane-blend{color:#7A4C93}
 html.dark .wc-lane-white{color:#B0BEC5}html.dark .wc-lane-green{color:#9CC7A8}html.dark .wc-lane-gold{color:#E3E36A}html.dark .wc-lane-red{color:#FF8A80}html.dark .wc-lane-blend{color:#C9A8E0}
 /* fix 19: readability audit — light/dark contrast fixes */
 .panel.p-white .phead{background:#527A28}
@@ -1529,14 +1532,14 @@ html.dark .wc-labref{border-bottom-color:#7CC4FF}
   var COLORS = (function(){var fb={energy:'#FFFFFF',mood:'#10C000',focus:'#F06000',calm:'#F0F000',relief:'#E01020',sleep:'#0A0A0A'};
     try{var cs=getComputedStyle(document.documentElement);
       ['energy','mood','focus','calm'].forEach(function(k){var v=cs.getPropertyValue('--fx-'+k).trim();if(v)fb[k]=v;});
-      var a=cs.getPropertyValue('--fx-analgesia').trim();if(a)fb.relief=a;
+      var a=cs.getPropertyValue('--fx-pain').trim();if(a)fb.relief=a;
     }catch(e){} return fb;})();
-  var LABELS = {energy:'Energy', mood:'Mood', focus:'Focus', calm:'Calm', relief:'Analgesia', sleep:'Sleep'};
+  var LABELS = {energy:'Energy', mood:'Mood', focus:'Focus', calm:'Calm', relief:'Pain relief', sleep:'Sleep'};
   var VEIN = {green:['#B5C49A','#2F3A24','#7A8F6A'], red:['#D98C8C','#4A1414','#E01020'], white:['#EDEDED','#333333','#BDBDBD'], gold:['#F2C94C','#4A3A10','#F2C94C'], yellow:['#F2C94C','#4A3A10','#F2C94C']};
   var modal = document.getElementById('donut-modal');
   var box = document.getElementById('donut-modal-box');
   function fxSummary(data){
-    var L={energy:'energy',mood:'mood',focus:'focus',calm:'calm',relief:'analgesia',sleep:'sleep'};
+    var L={energy:'energy',mood:'mood',focus:'focus',calm:'calm',relief:'pain relief',sleep:'sleep'};
     var es=data.effects.slice().sort(function(a,b){return b[1]-a[1];});
     if(es.length>=3)return L[es[0][0]]+' and '+L[es[1][0]]+' in front, '+L[es[2][0]]+' in a supporting role';
     if(es.length===2)return L[es[0][0]]+' and '+L[es[1][0]]+' in front';
@@ -1664,8 +1667,8 @@ document.addEventListener('DOMContentLoaded',function(){
 (function(){
 var S=[{"n": "Green Maeng Da", "v": "The Green Cure", "b": "Batch #118 · The Green Cure", "e": 3, "m": 3, "c": 3, "ca": 2, "r": 2, "col": "green", "sp": "Mid-Fast", "w": "The popular green — bright, balanced, tension-easing.", "x": false}, {"n": "Private Reserve GMD", "v": "The Green Cure", "b": "Batch #115 · Private Reserve", "e": 4, "m": 3, "c": 4, "ca": 2, "r": 2, "col": "green", "sp": "Mid-Fast", "w": "The flagship — the same green, hand-selected at 2.1%.", "x": false}, {"n": "White Borneo", "v": "The White Cure", "b": "Batch #117 · The White Cure", "e": 4, "m": 3, "c": 4, "ca": 1, "r": 1, "col": "white", "sp": "Fast", "w": "The potent white — focus-forward, and the reviewers' favorite.", "x": false}, {"n": "Red Maeng Da", "v": "The Red Cure", "b": "Batch #117 · The Red Cure", "e": 1, "m": 3, "c": 1, "ca": 4, "r": 4, "col": "red", "sp": "Slow", "w": "The mild red — sun-cured calm for the end of the day.", "x": false}];
 var W={calm:{e:-3,m:1,c:0,ca:3,r:0},energy:{e:3,m:1,c:1,ca:-1,r:0},focus:{e:1,m:0,c:3,ca:1,r:0},mood:{e:1,m:3,c:0,ca:1,r:0},relief:{e:0,m:0,c:0,ca:1,r:3},sleep:{e:-3,m:0,c:0,ca:3,r:2}};
-var DIMS=[['e','Energy','var(--fx-energy)'],['c','Focus','var(--fx-focus)'],['m','Mood','var(--fx-mood)'],['s','Sleep','var(--fx-sleep)'],['ca','Calm','var(--fx-calm)'],['r','Analgesia','var(--fx-analgesia)']];
-var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Analgesia',calm:'Calm'};
+var DIMS=[['e','Energy','var(--fx-energy)'],['c','Focus','var(--fx-focus)'],['m','Mood','var(--fx-mood)'],['s','Sleep','var(--fx-sleep)'],['ca','Calm','var(--fx-calm)'],['r','Pain relief','var(--fx-pain)']];
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Pain relief',calm:'Calm'};
 var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
 function score(s,w){return s.e*w.e+s.m*w.m+s.c*w.c+s.ca*w.ca+s.r*w.r;}
 function rankedFor(sit){var w=W[sit];return S.map(function(s,i){return{s:s,i:i,sc:score(s,w)};}).sort(function(a,b){return b.sc-a.sc||a.i-b.i;}).map(function(x){return x.s;});}
@@ -1752,7 +1755,7 @@ document.addEventListener('DOMContentLoaded',function(){var modal=document.getEl
 (function(){
 function hist(){try{return JSON.parse(localStorage.getItem('wcQpHistory')||'[]');}catch(e){return[];}}
 function save(h){try{localStorage.setItem('wcQpHistory',JSON.stringify(h));}catch(e){}}
-var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Analgesia',calm:'Calm'};
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Pain relief',calm:'Calm'};
 var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 function render(){var H=hist();var el=document.getElementById('logList');if(!el)return;
