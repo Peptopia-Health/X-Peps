@@ -27,9 +27,9 @@
   --accent:#08672B; --line:#ddd3bd;
   /* Effect palette (David, Nov 1 round 2): defined ONCE here; every effect use routes through these. */
   --fx-energy:#FFFFFF; --fx-focus:#F06000; --fx-mood:#10C000; --fx-sleep:#0A0A0A;
-  --fx-calm:#F0F000; --fx-analgesia:#E01020; --fx-default:#0070D0;
+  --fx-calm:#F0F000; --fx-pain:#E01020; --fx-default:#0070D0;
   --fx-energy-dk:#8A8A8A; --fx-focus-dk:#A63E00; --fx-mood-dk:#0A7300; --fx-sleep-dk:#5A5A5A;
-  --fx-calm-dk:#8F8F00; --fx-analgesia-dk:#9E0C18; --fx-default-dk:#004E96;
+  --fx-calm-dk:#8F8F00; --fx-pain-dk:#9E0C18; --fx-default-dk:#004E96;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -404,6 +404,9 @@ html.dark .strain-head h3{color:#EDEAE0}
 .wc-stats-co .wc-stat{padding:11px 14px 6px}
 .wc-stats-co .wc-stat span{white-space:nowrap;display:block;line-height:1.3}
 </style>
+<style>/* template round 2026-11-24: timeline icons fill their circles (change #5) */
+.wc-tl2 .wc-tm{font-size:40px}
+.wc-tlbig .wc-tm{font-size:55px}</style>
 </head>
 <body id="top">
 <header class="peptopia-hdr">
@@ -499,7 +502,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
       <button type="button" class="wc-tbtn" onclick="window.print()" title="Print or save as PDF">🖨 Print / PDF</button>
     </div>
   </div>
-  <div class="wc-search" id="wcSearch" hidden><input id="wcSearchInput" type="text" placeholder="Search strains — spelling doesn't have to be perfect" autocomplete="off" aria-label="Search strains"><div class="wc-sresults" id="wcSearchResults"></div></div>
+  <div class="wc-search" id="wcSearch" hidden><input id="wcSearchInput" type="text" placeholder="Search strains..." autocomplete="off" aria-label="Search strains"><div class="wc-sresults" id="wcSearchResults"></div></div>
   <h1>Rando</h1>
   <div class="sub">Fourteen bags, one collection, no vendor guide — as far as evidence goes.</div>
   
@@ -513,7 +516,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
     <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(240,96,0,.8))"><circle cx="24" cy="24" r="17" fill="#F06000"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" fill="#F06000"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
     <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk)"><span class="qp-emo">🧡</span><small>Mood</small></button>
     <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:var(--fx-sleep);--nb:var(--fx-sleep-dk)"><span class="qp-emo">😴</span><small>Sleep</small></button>
-    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-analgesia);--nb:var(--fx-analgesia-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(43,255,92,.85))"><path d="M24 7v34M7 24h34" stroke="#2BFF5C" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-pain);--nb:var(--fx-pain-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(43,255,92,.85))"><path class="qp-outline" d="M24 7v34M7 24h34" stroke="#000000" stroke-width="17" stroke-linecap="round" fill="none" style="stroke:#000000;fill:none"/><path d="M24 7v34M7 24h34" stroke="#2BFF5C" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
     <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:var(--fx-calm);--nb:var(--fx-calm-dk)"><span class="qp-emo">😌</span><small>Calm</small></button>
   </div>
   <div id="qpResult"><p class="qp-note">Fourteen bags, five sections, one collection — the picker ranks every bag in this guide from its own card&rsquo;s chart.</p></div>
@@ -576,7 +579,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <p>Find Your Color · Jump to Your Section.</p>
   <button type="button" class="bigicon wc-tgl" aria-expanded="false" title="Open this section">🧭</button>
 </div>
-<div class="legend"><span><i style="background:var(--fx-energy);border:1.5px solid #9a9a9a"></i>Energy</span><span><i style="background:var(--fx-focus)"></i>Focus</span><span><i style="background:var(--fx-mood)"></i>Mood</span><span><i style="background:var(--fx-sleep);border:1.5px solid #8a8a8a"></i>Sleep</span><span><i style="background:var(--fx-calm);border:1.5px solid #9a9a00"></i>Calm</span><span><i style="background:var(--fx-analgesia)"></i>Analgesia</span></div>
+<div class="legend"><span><i style="background:var(--fx-energy);border:1.5px solid #9a9a9a"></i>Energy</span><span><i style="background:var(--fx-focus)"></i>Focus</span><span><i style="background:var(--fx-mood)"></i>Mood</span><span><i style="background:var(--fx-sleep);border:1.5px solid #8a8a8a"></i>Sleep</span><span><i style="background:var(--fx-calm);border:1.5px solid #9a9a00"></i>Calm</span><span><i style="background:var(--fx-pain)"></i>Pain relief</span></div>
 <div class="catintro">
   <p><b>Why &ldquo;Rando&rdquo;:</b> these bags do not belong to any vendor guide already published in this series — they are not Tree Leaf, not DTE, not Phantom, and not any other profiled vendor&rsquo;s confirmed product. They are the remainder of the shelf, and they get a guide of their own rather than being forced into someone else&rsquo;s.</p>
   <p><b>The labels used on every card:</b> <b>CONFIRMED</b> — the vendor or product is directly attested. <b>PROBABLE</b> — the evidence points one way and is stated with its basis. <b>POSSIBLE</b> — a family resemblance only. <b>Unattributed</b> — said plainly where the research caps there; several sellers were never found, and that result stands as the finding. <b>Class-level profile</b> — the chart and the effect notes describe the strain name or class across vendors, not this bag, and the card says so.</p>
@@ -584,7 +587,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <p><b>The generic template family:</b> most of the unattributed bags share one printed template — a vein line and a size ladder with the choices underlined in pen, and the name hand-written. That template family is tied, at the levels stated on each card, to Smiley Time Herbals and its era of 28 g sample packs. The template can support a family reading; it cannot name the person who supplied any single bag.</p>
 </div>
 <div class="catintro">
-  <p><b>How the effects map:</b> the original research scored five axes — Energy, Mood, Clarity, Calm and Relief. This guide&rsquo;s six-effect standard shows <b>Clarity as Focus</b> and <b>Relief as Analgesia</b>, and derives <b>Sleep as (Calm + Analgesia) &divide; 2</b>, computed before any renormalization. Every card states its chart basis in the open and carries a &ldquo;How this chart was derived&rdquo; note, so the conversion is never hidden.</p>
+  <p><b>How the effects map:</b> the original research scored five axes — Energy, Mood, Clarity, Calm and Relief. This guide&rsquo;s six-effect standard shows <b>Clarity as Focus</b> and <b>Relief as Pain relief</b>, and derives <b>Sleep as (Calm + Pain relief) &divide; 2</b>, computed before any renormalization. Every card states its chart basis in the open and carries a &ldquo;How this chart was derived&rdquo; note, so the conversion is never hidden.</p>
 </div>
 <div class="panels"><div class="panel p-white">
     <div class="phead">White</div>
@@ -648,10 +651,10 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 });
 </script>
 <h4 class="wk-spectitle">🧭 The Spectrum Map — Every Carded Strain, Slow to Fast</h4>
-<div class="wc-spec"><div class="wc-shead"><span>← Slow · Relaxing</span><span>Fast · Energizing →</span></div><div class="wc-lane"><span class="wc-lane-white">WHITE</span><div class="wc-track"><a class="wc-dot" href="#strain-white-kali-06" style="left:65%;border-color:#9E9E9E" title="White Kali “06”"></a><a class="wc-dot" href="#strain-white-mountain" style="left:75%;border-color:#9E9E9E" title="White Mountain"></a><a class="wc-dot" href="#strain-white-panda" style="left:42%;border-color:#9E9E9E" title="White Panda"></a></div></div><div class="wc-lane"><span class="wc-lane-green">GREEN</span><div class="wc-track"><a class="wc-dot" href="#strain-tribe-super-green" style="left:50%;border-color:#398555" title="Tribe Super Green"></a><a class="wc-dot" href="#strain-pmd" style="left:60%;border-color:#398555" title="Pmd"></a><a class="wc-dot" href="#strain-green-malay-top" style="left:40%;border-color:#398555" title="Green Malay"></a><a class="wc-dot" href="#strain-monster-y25" style="left:55%;border-color:#398555" title="Monster Y25"></a></div></div><div class="wc-lane"><span class="wc-lane-gold">GOLD</span><div class="wc-track"><a class="wc-dot" href="#strain-yellow-vietnam" style="left:36%;border-color:#B8860B" title="Yellow Vietnam"></a><a class="wc-dot" href="#strain-thai-md" style="left:27%;border-color:#B8860B" title="THAI MD"></a><a class="wc-dot" href="#strain-orange-vein-maeng-da" style="left:40%;border-color:#B8860B" title="Orange Vein Maeng Da"></a></div></div><div class="wc-lane"><span class="wc-lane-red">RED</span><div class="wc-track"><a class="wc-dot" href="#strain-glow" style="left:50%;border-color:#E01020" title="Glow"></a></div></div><div class="wc-lane"><span class="wc-lane-blend">BLEND</span><div class="wc-track"><a class="wc-dot" href="#strain-blue-flame" style="left:50%;border-color:#6a4c93" title="Blue Flame"></a><a class="wc-dot" href="#strain-silver-dragon" style="left:48%;border-color:#6a4c93" title="Silver Dragon"></a><a class="wc-dot" href="#strain-kuno-jiwa-maeng-da" style="left:50%;border-color:#6a4c93" title="Kuno Jiwa Maeng Da"></a></div></div><div class="wc-lane"><span class="wc-lane-sleep">SLEEP</span><div class="wc-track"><a class="wc-dot" href="#strain-white-kali-06" style="left:8%;border-color:#0A0A0A" title="White Kali “06” — Sleep"></a><a class="wc-dot" href="#strain-white-mountain" style="left:3%;border-color:#0A0A0A" title="White Mountain — Sleep"></a><a class="wc-dot" href="#strain-white-panda" style="left:18%;border-color:#0A0A0A" title="White Panda — Sleep"></a><a class="wc-dot" href="#strain-tribe-super-green" style="left:12%;border-color:#0A0A0A" title="Tribe Super Green — Sleep"></a><a class="wc-dot" href="#strain-pmd" style="left:10%;border-color:#0A0A0A" title="Pmd — Sleep"></a><a class="wc-dot" href="#strain-green-malay-top" style="left:20%;border-color:#0A0A0A" title="Green Malay — Sleep"></a><a class="wc-dot" href="#strain-monster-y25" style="left:8%;border-color:#0A0A0A" title="Monster Y25 — Sleep"></a><a class="wc-dot" href="#strain-yellow-vietnam" style="left:16%;border-color:#0A0A0A" title="Yellow Vietnam — Sleep"></a><a class="wc-dot" href="#strain-thai-md" style="left:22%;border-color:#0A0A0A" title="THAI MD — Sleep"></a><a class="wc-dot" href="#strain-orange-vein-maeng-da" style="left:15%;border-color:#0A0A0A" title="Orange Vein Maeng Da — Sleep"></a><a class="wc-dot" href="#strain-glow" style="left:20%;border-color:#0A0A0A" title="Glow — Sleep"></a><a class="wc-dot" href="#strain-blue-flame" style="left:20%;border-color:#0A0A0A" title="Blue Flame — Sleep"></a><a class="wc-dot" href="#strain-silver-dragon" style="left:12%;border-color:#0A0A0A" title="Silver Dragon — Sleep"></a><a class="wc-dot" href="#strain-kuno-jiwa-maeng-da" style="left:12%;border-color:#0A0A0A" title="Kuno Jiwa Maeng Da — Sleep"></a></div></div><p class="wc-specnote">Every bag in this guide, plotted from its own card&rsquo;s chart: dot position is the (Energy + Focus) share of the chart. Glow and Blue Flame sit at 50% — their charts are equal-split placeholders and claim nothing. The Sleep lane plots each bag&rsquo;s derived Sleep share, (Calm + Analgesia) &divide; 2. Tap a dot to jump to its card.</p></div>
+<div class="wc-spec"><div class="wc-shead"><span>← Slow · Relaxing</span><span>Fast · Energizing →</span></div><div class="wc-lane"><span class="wc-lane-white">WHITE</span><div class="wc-track"><a class="wc-dot" href="#strain-white-kali-06" style="left:65%;border-color:#9E9E9E" title="White Kali “06”"></a><a class="wc-dot" href="#strain-white-mountain" style="left:75%;border-color:#9E9E9E" title="White Mountain"></a><a class="wc-dot" href="#strain-white-panda" style="left:42%;border-color:#9E9E9E" title="White Panda"></a></div></div><div class="wc-lane"><span class="wc-lane-green">GREEN</span><div class="wc-track"><a class="wc-dot" href="#strain-tribe-super-green" style="left:50%;border-color:#398555" title="Tribe Super Green"></a><a class="wc-dot" href="#strain-pmd" style="left:60%;border-color:#398555" title="Pmd"></a><a class="wc-dot" href="#strain-green-malay-top" style="left:40%;border-color:#398555" title="Green Malay"></a><a class="wc-dot" href="#strain-monster-y25" style="left:55%;border-color:#398555" title="Monster Y25"></a></div></div><div class="wc-lane"><span class="wc-lane-gold">GOLD</span><div class="wc-track"><a class="wc-dot" href="#strain-yellow-vietnam" style="left:36%;border-color:#B8860B" title="Yellow Vietnam"></a><a class="wc-dot" href="#strain-thai-md" style="left:27%;border-color:#B8860B" title="THAI MD"></a><a class="wc-dot" href="#strain-orange-vein-maeng-da" style="left:40%;border-color:#B8860B" title="Orange Vein Maeng Da"></a></div></div><div class="wc-lane"><span class="wc-lane-red">RED</span><div class="wc-track"><a class="wc-dot" href="#strain-glow" style="left:50%;border-color:#E01020" title="Glow"></a></div></div><div class="wc-lane"><span class="wc-lane-blend">BLEND</span><div class="wc-track"><a class="wc-dot" href="#strain-blue-flame" style="left:50%;border-color:#6a4c93" title="Blue Flame"></a><a class="wc-dot" href="#strain-silver-dragon" style="left:48%;border-color:#6a4c93" title="Silver Dragon"></a><a class="wc-dot" href="#strain-kuno-jiwa-maeng-da" style="left:50%;border-color:#6a4c93" title="Kuno Jiwa Maeng Da"></a></div></div><div class="wc-lane"><span class="wc-lane-sleep">SLEEP</span><div class="wc-track"><a class="wc-dot" href="#strain-white-kali-06" style="left:8%;border-color:#0A0A0A" title="White Kali “06” — Sleep"></a><a class="wc-dot" href="#strain-white-mountain" style="left:3%;border-color:#0A0A0A" title="White Mountain — Sleep"></a><a class="wc-dot" href="#strain-white-panda" style="left:18%;border-color:#0A0A0A" title="White Panda — Sleep"></a><a class="wc-dot" href="#strain-tribe-super-green" style="left:12%;border-color:#0A0A0A" title="Tribe Super Green — Sleep"></a><a class="wc-dot" href="#strain-pmd" style="left:10%;border-color:#0A0A0A" title="Pmd — Sleep"></a><a class="wc-dot" href="#strain-green-malay-top" style="left:20%;border-color:#0A0A0A" title="Green Malay — Sleep"></a><a class="wc-dot" href="#strain-monster-y25" style="left:8%;border-color:#0A0A0A" title="Monster Y25 — Sleep"></a><a class="wc-dot" href="#strain-yellow-vietnam" style="left:16%;border-color:#0A0A0A" title="Yellow Vietnam — Sleep"></a><a class="wc-dot" href="#strain-thai-md" style="left:22%;border-color:#0A0A0A" title="THAI MD — Sleep"></a><a class="wc-dot" href="#strain-orange-vein-maeng-da" style="left:15%;border-color:#0A0A0A" title="Orange Vein Maeng Da — Sleep"></a><a class="wc-dot" href="#strain-glow" style="left:20%;border-color:#0A0A0A" title="Glow — Sleep"></a><a class="wc-dot" href="#strain-blue-flame" style="left:20%;border-color:#0A0A0A" title="Blue Flame — Sleep"></a><a class="wc-dot" href="#strain-silver-dragon" style="left:12%;border-color:#0A0A0A" title="Silver Dragon — Sleep"></a><a class="wc-dot" href="#strain-kuno-jiwa-maeng-da" style="left:12%;border-color:#0A0A0A" title="Kuno Jiwa Maeng Da — Sleep"></a></div></div><p class="wc-specnote">Every bag in this guide, plotted from its own card&rsquo;s chart: dot position is the (Energy + Focus) share of the chart. Glow and Blue Flame sit at 50% — their charts are equal-split placeholders and claim nothing. The Sleep lane plots each bag&rsquo;s derived Sleep share, (Calm + Pain relief) &divide; 2. Tap a dot to jump to its card.</p></div>
 <div class="catintro">
   <p><b>Reading a strain card</b></p>
-  <ul class="wc-howlist"><li><b>Effect chips</b> — six chips under each card head, one per effect, carrying this guide&rsquo;s own picker record for the bag: its recorded effect mix rescaled to the 0&ndash;5 chip scale (share &divide; 20, rounded), with Sleep derived as (Calm + Analgesia) &divide; 2, exactly as the charts derive it. 0 = not scored in the public record.</li><li><b>Legs</b> — the line under the chips is how long a bag runs. No bag in this collection carries a reported duration, so every card shows the guide&rsquo;s default, 3h.</li><li><b>Placeholders</b> — Glow and Blue Flame have no effect reports at all. Their charts are equal splits that claim nothing, and their cards carry a plain no-reports note instead of effect chips for the same reason — a placeholder, not a profile.</li></ul>
+  <ul class="wc-howlist"><li><b>Effect chips</b> — six chips under each card head, one per effect, carrying this guide&rsquo;s own picker record for the bag: its recorded effect mix rescaled to the 0&ndash;5 chip scale (share &divide; 20, rounded), with Sleep derived as (Calm + Pain relief) &divide; 2, exactly as the charts derive it. 0 = not scored in the public record.</li><li><b>Legs</b> — the line under the chips is how long a bag runs. No bag in this collection carries a reported duration, so every card shows the guide&rsquo;s default, 3h.</li><li><b>Placeholders</b> — Glow and Blue Flame have no effect reports at all. Their charts are equal splits that claim nothing, and their cards carry a plain no-reports note instead of effect chips for the same reason — a placeholder, not a profile.</li></ul>
 </div>
 <div class="colorband band-neutral" id="science">
   <h2>Vein Color Feedback</h2>
@@ -719,7 +722,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">A daytime white on the class record: taken, in kratom.org&rsquo;s words, as people take coffee — for revitalization and increased focus.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — White Kali as sold across vendors; no reports for this bag.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -739,7 +742,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox deep">The one scored reception located anywhere is an on-site 4.80/5 from 10 reviews for the &ldquo;Super&rdquo; variant at a different vendor — its individual review texts could not be retrieved, so it is noted here and not built on.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Vendor-copy profile only — calm and relief were not claimed in the research.</p>
-    <p class="coa-note">How this chart was derived: the vendor-description profile from the research, carried over at its original percentages — calm and relief were not claimed in the research and carry no share. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the vendor-description profile from the research, carried over at its original percentages — calm and relief were not claimed in the research and carry no share. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -759,7 +762,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">The mood-forward end of the whites in this guide — the opposite corner from the fast, zippy whites.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Converted from That One Place’s published tester scores for this product.</p>
-    <p class="coa-note">How this chart was derived: converted from That One Place&rsquo;s published tester scores for this product (the scores are on this card), expressed as percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: converted from That One Place&rsquo;s published tester scores for this product (the scores are on this card), expressed as percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -785,7 +788,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">The most straightforward bag in the set — a current, small vendor&rsquo;s green in its own retail bag. Its gap is the reverse of most here: the vendor is easy to identify, independent reporting on its green barely exists yet.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — Super Green generally; Tribe-specific reports are scarce.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -805,7 +808,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">DTE&rsquo;s own placement for its PMD is &ldquo;Mid-Upper&rdquo; — daytime energy and motivation, in its words.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — green Maeng Da, anchored by DTE’s PMD14 description.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -825,7 +828,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">Not the vendor&rsquo;s separate &ldquo;Super Green Gold Malay,&rdquo; which it describes as mildly enhanced — a different product with a different profile. This pouch is the plain Green Malay.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Converted from That One Place’s published tester scores for this product.</p>
-    <p class="coa-note">How this chart was derived: converted from That One Place&rsquo;s published tester scores for this product (the scores are on this card), expressed as percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: converted from That One Place&rsquo;s published tester scores for this product (the scores are on this card), expressed as percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -845,7 +848,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">&ldquo;Fast but not jittery, awesome mood boost, and long legs&rdquo; — an on-site reviewer on WestKoast Botanicals&rsquo; Nano Green Monster, quoted in that vendor&rsquo;s research.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Name-class profile — Green Monster across vendors; relief was not reported for the name.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -871,7 +874,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">&ldquo;This was the best Yellow Vietnam I&rsquo;ve had. It&rsquo;s very smooth, has great mood lift, provided comfort and a slight energy boost but I was still able to relax if I wanted to.&rdquo; — a Mount Kratom customer review of its own Yellow Vietnam, quoted in research.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — Yellow Vietnam as sold across vendors; no reports for this bag.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -891,7 +894,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox deep">Do not profile this bag from classic fast green Thai material — the gold marking and the exact-name attestation both point toward the slow end.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — Thai MD as attested by DTE, with the Gold Maeng Da class.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -911,7 +914,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox deep">The only other &ldquo;orange vein&rdquo; trace in community history is a skeptical complaint about a different, unrelated vendor&rsquo;s claim — no connection to this bag was found, and the two are not merged here.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Analogue profile — built on Yellow/Gold Maeng Da, labeled; no orange-specific reports exist.</p>
-    <p class="coa-note">How this chart was derived: the analogue profile built on Yellow/Gold Maeng Da, carried over at its original percentages and labeled as an analogue on this card. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the analogue profile built on Yellow/Gold Maeng Da, carried over at its original percentages and labeled as an analogue on this card. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -937,7 +940,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox deep">The honest card for this bag is a short one: a red marking, a green namesake, and no effect record. Everything beyond that would be invention.</div>
   
     <p class="coa-note"><b>Chart basis:</b> No effect profile in research — equal split is a no-claim placeholder, not a rating.</p>
-    <p class="coa-note">How this chart was derived: no effect record exists for this bag, so the chart is an equal split across all five axes — a no-claim placeholder, not a rating. Clarity is shown as Focus and Relief as Analgesia under this guide&rsquo;s standard.</p>
+    <p class="coa-note">How this chart was derived: no effect record exists for this bag, so the chart is an equal split across all five axes — a no-claim placeholder, not a rating. Clarity is shown as Focus and Relief as Pain relief under this guide&rsquo;s standard.</p>
   </div>
   </div>
 </div>
@@ -963,7 +966,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox deep">The same review&rsquo;s standing counterweight for that vendor: with no batch numbers provided, consistency from purchase to purchase is a gamble. Noted here because it is part of this bag&rsquo;s record too.</div>
   
     <p class="coa-note"><b>Chart basis:</b> No effect reports in research — equal split is a no-claim placeholder, not a rating.</p>
-    <p class="coa-note">How this chart was derived: no effect record exists for this bag, so the chart is an equal split across all five axes — a no-claim placeholder, not a rating. Clarity is shown as Focus and Relief as Analgesia under this guide&rsquo;s standard.</p>
+    <p class="coa-note">How this chart was derived: no effect record exists for this bag, so the chart is an equal split across all five axes — a no-claim placeholder, not a rating. Clarity is shown as Focus and Relief as Pain relief under this guide&rsquo;s standard.</p>
   </div>
   </div>
 </div>
@@ -983,7 +986,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox deep">The honest ceiling for this bag is a directional, class-level profile under an unattested hand-name — and the card says exactly that, rather than dressing the name up as a product.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — the Dragon class, weighted to its green/white forms.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -1003,7 +1006,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
     <div class="popbox tip">The interest of this bag is exactly its obscurity: the Maeng Da style is well documented — this named lot is documented by its label alone.</div>
   
     <p class="coa-note"><b>Chart basis:</b> Class-level profile — Maeng Da in general; the bag states no vein.</p>
-    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Analgesia; Sleep, where the picker needs it, is derived as (Calm + Analgesia) &divide; 2.</p>
+    <p class="coa-note">How this chart was derived: the research chart for the strain class, carried over at its original percentages. Under this guide&rsquo;s six-effect standard, Clarity is shown as Focus and Relief as Pain relief; Sleep, where the picker needs it, is derived as (Calm + Pain relief) &divide; 2.</p>
   </div>
   </div>
 </div>
@@ -1108,7 +1111,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 <div class="catintro">
   <p><b>No numeric score is given for this guide.</b> A verdict score rates a vendor — its leaf, its testing, its service. Rando is not a vendor: it is a mixed secondhand collection whose bags carry five different levels of evidence, and a single number would pretend to a precision the record does not support. The honest summary is the count itself:</p>
 </div>
-<div class="popbox"><b>⭐ How These Scores Were Earned</b><ul class="wc-howlist"><li><b>No vendor score is issued for this guide</b> — a verdict score rates a vendor, and Rando is not one; the count in the next block is the honest summary, and it is the only one given.</li><li><b>Card charts</b> — each bag&rsquo;s recorded five-axis research profile (Energy, Mood, Clarity, Calm, Relief), shown in this guide&rsquo;s six-effect standard with Clarity as Focus, Relief as Analgesia, and Sleep derived as (Calm + Analgesia) &divide; 2 — the conversion is stated on every card.</li><li><b>Picker and chip scores</b> — the picker&rsquo;s 0&ndash;5 record for each bag is that same profile rescaled (share &divide; 20, rounded); the chips on each card carry the identical record, so the picker and the cards can never disagree.</li><li><b>Placeholders</b> — Glow and Blue Flame rest on no effect reports at all; their equal-split charts and flat scores claim nothing, and both cards say so.</li></ul></div>
+<div class="popbox"><b>⭐ How These Scores Were Earned</b><ul class="wc-howlist"><li><b>No vendor score is issued for this guide</b> — a verdict score rates a vendor, and Rando is not one; the count in the next block is the honest summary, and it is the only one given.</li><li><b>Card charts</b> — each bag&rsquo;s recorded five-axis research profile (Energy, Mood, Clarity, Calm, Relief), shown in this guide&rsquo;s six-effect standard with Clarity as Focus, Relief as Pain relief, and Sleep derived as (Calm + Pain relief) &divide; 2 — the conversion is stated on every card.</li><li><b>Picker and chip scores</b> — the picker&rsquo;s 0&ndash;5 record for each bag is that same profile rescaled (share &divide; 20, rounded); the chips on each card carry the identical record, so the picker and the cards can never disagree.</li><li><b>Placeholders</b> — Glow and Blue Flame rest on no effect reports at all; their equal-split charts and flat scores claim nothing, and both cards say so.</li></ul></div>
 <div class="catintro">
   <ul class="wc-howlist">
     <li><b>3 confirmed</b> — That One Place (White Panda, Green Malay) and Tribe Botanicals (Tribe Super Green).</li>
@@ -1159,7 +1162,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </div>
 <div class="wc-search2" id="wcSearch2">
   <h4>🔍 Search Strains</h4>
-  <input id="wcSearchInput2" type="text" placeholder="Search strains — spelling doesn't have to be perfect" autocomplete="off" aria-label="Search strains">
+  <input id="wcSearchInput2" type="text" placeholder="Search strains..." autocomplete="off" aria-label="Search strains">
   <div class="wc-sresults" id="wcSearchResults2"></div>
 </div>
 <footer class="site">Complete Strain Guide for Rando · Independent Customer Research · November 2026</footer>
@@ -1351,7 +1354,7 @@ html.dark .wc-idxpanel a{color:#9CC7A8}
 #donut-modal-box{width:50vw!important;max-width:640px!important}
 @media(max-width:768px){#donut-modal-box{width:94vw!important}}
 /* spectrum lane labels — readable text colors in both themes (fix 19) */
-.wc-lane-white{color:#6E6E6E}.wc-lane-green{color:#398555}.wc-lane-gold{color:#8F8F00}.wc-lane-red{color:var(--fx-analgesia)}.wc-lane-blend{color:#7A4C93}
+.wc-lane-white{color:#6E6E6E}.wc-lane-green{color:#398555}.wc-lane-gold{color:#8F8F00}.wc-lane-red{color:var(--fx-pain)}.wc-lane-blend{color:#7A4C93}
 html.dark .wc-lane-white{color:#B0BEC5}html.dark .wc-lane-green{color:#9CC7A8}html.dark .wc-lane-gold{color:#E3E36A}html.dark .wc-lane-red{color:#FF8A80}html.dark .wc-lane-blend{color:#C9A8E0}
 /* fix 19: readability audit — light/dark contrast fixes */
 .panel.p-white .phead{background:#527A28}
@@ -1631,14 +1634,14 @@ html.dark .wc-labref{border-bottom-color:#7CC4FF}
   var COLORS = (function(){var fb={energy:'#FFFFFF',mood:'#10C000',focus:'#F06000',calm:'#F0F000',relief:'#E01020',sleep:'#0A0A0A'};
     try{var cs=getComputedStyle(document.documentElement);
       ['energy','mood','focus','calm'].forEach(function(k){var v=cs.getPropertyValue('--fx-'+k).trim();if(v)fb[k]=v;});
-      var a=cs.getPropertyValue('--fx-analgesia').trim();if(a)fb.relief=a;
+      var a=cs.getPropertyValue('--fx-pain').trim();if(a)fb.relief=a;
     }catch(e){} return fb;})();
-  var LABELS = {energy:'Energy', mood:'Mood', focus:'Focus', calm:'Calm', relief:'Analgesia', sleep:'Sleep'};
+  var LABELS = {energy:'Energy', mood:'Mood', focus:'Focus', calm:'Calm', relief:'Pain relief', sleep:'Sleep'};
   var VEIN = {green:['#B5C49A','#2F3A24','#7A8F6A'], red:['#D98C8C','#4A1414','#E01020'], white:['#EDEDED','#333333','#BDBDBD'], gold:['#F2C94C','#4A3A10','#F2C94C'], yellow:['#F2C94C','#4A3A10','#F2C94C']};
   var modal = document.getElementById('donut-modal');
   var box = document.getElementById('donut-modal-box');
   function fxSummary(data){
-    var L={energy:'energy',mood:'mood',focus:'focus',calm:'calm',relief:'analgesia',sleep:'sleep'};
+    var L={energy:'energy',mood:'mood',focus:'focus',calm:'calm',relief:'pain relief',sleep:'sleep'};
     var es=data.effects.slice().sort(function(a,b){return b[1]-a[1];});
     if(es.length>=3)return L[es[0][0]]+' and '+L[es[1][0]]+' in front, '+L[es[2][0]]+' in a supporting role';
     if(es.length===2)return L[es[0][0]]+' and '+L[es[1][0]]+' in front';
@@ -1766,8 +1769,8 @@ document.addEventListener('DOMContentLoaded',function(){
 (function(){
 var S=[{"n": "White Kali “06”", "v": "White Bags", "b": "Unattributed · White · ~40 g", "e": 2, "m": 1, "c": 2, "ca": 1, "r": 0, "col": "white", "sp": "Mid-Fast", "w": "The daytime white on the class record — energy first, focus close behind.", "x": false}, {"n": "White Mountain", "v": "White Bags", "b": "Unattributed · White · 40 g", "e": 2, "m": 1, "c": 2, "ca": 0, "r": 0, "col": "white", "sp": "Mid-Fast", "w": "Vendor copy only: energy, mood and focus as the three headline traits.", "x": false}, {"n": "White Panda", "v": "White Bags", "b": "That One Place · White · 20 g", "e": 1, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "white", "sp": "Mid-Slow", "w": "Relaxed energy with a formidable mood boost — the mood-forward white.", "x": false}, {"n": "Tribe Super Green", "v": "Green Bags", "b": "Tribe Botanicals · Green · 1 oz", "e": 2, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "green", "sp": "Mid", "w": "Daytime energy and a social pick-me-up, on the vendor-hosted record.", "x": false}, {"n": "Pmd", "v": "Green Bags", "b": "Unattributed · Green Maeng Da · Probable", "e": 2, "m": 1, "c": 1, "ca": 0, "r": 1, "col": "green", "sp": "Mid-Fast", "w": "Crisp, motivating clarity — DTE places its PMD at Mid-Upper.", "x": false}, {"n": "Green Malay", "v": "Green Bags", "b": "That One Place · Green · 20 g", "e": 1, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "green", "sp": "Mid", "w": "Potent, reliable, and happy — the balanced, long-lasting green.", "x": false}, {"n": "Monster Y25", "v": "Green Bags", "b": "Unattributed · Green · Probable Green Monster", "e": 2, "m": 2, "c": 1, "ca": 1, "r": 0, "col": "green", "sp": "Fast", "w": "Highly stimulating with a euphoric lean, per the name-class record.", "x": false}, {"n": "Yellow Vietnam", "v": "Golds & Yellows", "b": "Unattributed · Yellow · 28 g", "e": 1, "m": 2, "c": 1, "ca": 1, "r": 1, "col": "gold", "sp": "Mid-Slow", "w": "Warm, golden mood elevation — onset slower than most strains.", "x": false}, {"n": "THAI MD", "v": "Golds & Yellows", "b": "Unattributed · Gold · 40 g", "e": 1, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "gold", "sp": "Slow", "w": "Slow, mellow evenings — DTE rates its Thai MD Mid to Mid-Low.", "x": false}, {"n": "Orange Vein Maeng Da", "v": "Golds & Yellows", "b": "EntheoFarm · Maeng Da · 50 g", "e": 1, "m": 2, "c": 1, "ca": 1, "r": 1, "col": "gold", "sp": "Mid", "w": "The Gold Maeng Da analogue: mood first, gentle attentiveness alongside.", "x": false}, {"n": "Glow", "v": "Red-Marked", "b": "Unattributed · Red-marked · 28 g", "e": 1, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "red", "sp": "Unknown", "w": "No effect record exists for this bag — the chart claims nothing.", "x": false}, {"n": "Blue Flame", "v": "Blends & Unresolved", "b": "Unattributed · Blend · 28 g", "e": 1, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "blend", "sp": "Unknown", "w": "No effect reports exist for this blend — the chart claims nothing.", "x": false}, {"n": "Silver Dragon", "v": "Blends & Unresolved", "b": "Unattributed · Blend-marked · 40 g", "e": 2, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "blend", "sp": "Mid", "w": "The Dragon class: energy and mood lift, daytime-leaning.", "x": false}, {"n": "Kuno Jiwa Maeng Da", "v": "Blends & Unresolved", "b": "EntheoFarm · Vein unstated · 25 g", "e": 2, "m": 1, "c": 1, "ca": 1, "r": 1, "col": "blend", "sp": "Mid", "w": "Maeng Da in general: energizing forms, mood lift, relief on record.", "x": false}];
 var W={calm:{e:-3,m:1,c:0,ca:3,r:0},energy:{e:3,m:1,c:1,ca:-1,r:0},focus:{e:1,m:0,c:3,ca:1,r:0},mood:{e:1,m:3,c:0,ca:1,r:0},relief:{e:0,m:0,c:0,ca:1,r:3},sleep:{e:-3,m:0,c:0,ca:3,r:2}};
-var DIMS=[['e','Energy','var(--fx-energy)'],['c','Focus','var(--fx-focus)'],['m','Mood','var(--fx-mood)'],['s','Sleep','var(--fx-sleep)'],['ca','Calm','var(--fx-calm)'],['r','Analgesia','var(--fx-analgesia)']];
-var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Analgesia',calm:'Calm'};
+var DIMS=[['e','Energy','var(--fx-energy)'],['c','Focus','var(--fx-focus)'],['m','Mood','var(--fx-mood)'],['s','Sleep','var(--fx-sleep)'],['ca','Calm','var(--fx-calm)'],['r','Pain relief','var(--fx-pain)']];
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Pain relief',calm:'Calm'};
 var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
 function score(s,w){return s.e*w.e+s.m*w.m+s.c*w.c+s.ca*w.ca+s.r*w.r;}
 function rankedFor(sit){var w=W[sit];return S.map(function(s,i){return{s:s,i:i,sc:score(s,w)};}).sort(function(a,b){return b.sc-a.sc||a.i-b.i;}).map(function(x){return x.s;});}
@@ -1854,7 +1857,7 @@ document.addEventListener('DOMContentLoaded',function(){var modal=document.getEl
 (function(){
 function hist(){try{return JSON.parse(localStorage.getItem('wcQpHistory')||'[]');}catch(e){return[];}}
 function save(h){try{localStorage.setItem('wcQpHistory',JSON.stringify(h));}catch(e){}}
-var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Analgesia',calm:'Calm'};
+var SITN={energy:'Energy',focus:'Focus',mood:'Mood',sleep:'Sleep',relief:'Pain relief',calm:'Calm'};
 var COLN={white:'White',green:'Green',gold:'Gold / Yellow',red:'Red',blend:'Blend'};
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 function render(){var H=hist();var el=document.getElementById('logList');if(!el)return;
