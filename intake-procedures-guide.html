@@ -147,7 +147,7 @@
 <body>
 <div class="wrap">
 
-  <div class="printbar"><button class="themebtn" type="button" id="gd-themebtn" title="Switch light / dark theme">🌙 Dark</button><button class="printbtn" onclick="window.print()">🖨 Print / Save PDF</button></div>
+  <div class="printbar"><button class="themebtn" type="button" id="gd-themebtn" title="Switch light / dark theme">🌙 Dark</button><button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print or save as PDF" aria-label="Print"><img src="https://x-peps.com/btn-print-holo.png" alt="" width="38" height="38"></button></div>
 
   <header>
     <span class="kicker">VA · Mental Health Unit · 6A</span>
@@ -514,7 +514,7 @@
   overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.classList.remove('open'); });
 </script>
 <script>
-(function(){var r=document.documentElement,b=document.getElementById('gd-themebtn');if(!b)return;function paint(){b.textContent=r.classList.contains('dark')?'☀️ Light':'🌙 Dark';}try{if(localStorage.getItem('gd-theme')==='dark'){r.classList.add('dark');}}catch(e){}b.addEventListener('click',function(){r.classList.toggle('dark');try{localStorage.setItem('gd-theme',r.classList.contains('dark')?'dark':'light');}catch(e){}paint();});paint();})();
+(function(){var r=document.documentElement,b=document.getElementById('gd-themebtn');if(!b)return;function paint(){b.textContent=r.classList.contains('dark')?'☀️ Light':'🌙 Dark';}/* §54: visit-only theme — never stored */b.addEventListener('click',function(){r.classList.toggle('dark');paint();});paint();})();
 </script>
 <style id="close-icon-css">
 .iconbtn{background:transparent;border:0;padding:0;cursor:pointer;line-height:0;border-radius:50%}
