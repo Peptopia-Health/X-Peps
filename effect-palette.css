@@ -44,7 +44,8 @@
   --fx-sleep:#9040FF;
   --fx-sleep-dk:#3D1FA8;
   --fx-sleep-lt:#DFD3FF;
-  /* Default — cobalt (NOT an effect; the unassigned/default color) */
-  --fx-default:#0070D0;
-  --fx-default-dk:#004E96;
+  /* Default — the unassigned/default color IS Focus blue (the old
+     cobalt #0070D0 / #004E96 default is RETIRED, Nov 26, 2026) */
+  --fx-default:#0090FF;
+  --fx-default-dk:#0057B8;
 }
