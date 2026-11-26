@@ -371,6 +371,12 @@ html.dark .peptopia-theme-toggle .pp-moon,html[data-theme="dark"] .peptopia-them
 </style>
 <style>/* WIDTH-FIX: wide tables scroll inside the column, never stretch it */
 .wrap>table{display:block;overflow-x:auto;max-width:100%}</style>
+<style id="autofit-std">
+/* AUTO-FIT — GDS (David, Nov 26, 2026): page opens fitted to the screen; §57 type tokens */
+:root{--uw:100%;--fs-body:1rem;--fs-small:0.8125rem}
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+</style>
 <style id="kratom-variation-responsive-print-standard">
 /* Standing responsive + print standard — must stay LAST in <head> */
 body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
@@ -400,4 +406,14 @@ table{max-width:100%}
 (function(){if(window.__ppThemeBound)return;window.__ppThemeBound=1;document.addEventListener('click',function(e){var b=e.target.closest('.peptopia-theme-toggle');if(!b)return;var h=document.documentElement;var dark=!(h.classList.contains('dark')||h.getAttribute('data-theme')==='dark');h.classList.toggle('dark',dark);h.setAttribute('data-theme',dark?'dark':'light');});})();
 </script>
 <script type="application/json" id="a6-compound-data">{"compounds": {"mitragynine": ["Mitragynine", "Kratom's dominant alkaloid — roughly 60% of the leaf's total alkaloid content and typically 0.5–2% or more of plain leaf by weight. A partial agonist at μ-opioid receptors: stimulant-like at low doses, sedating at higher ones. It is the number most COAs report."], "7-hydroxymitragynine": ["7-Hydroxymitragynine (7-OH)", "A far more potent μ-opioid agonist than mitragynine. Fresh leaf holds only traces (about 0.01–0.04%) — most 7-OH forms after harvest by oxidation, and in the body when the liver enzyme CYP3A4 converts mitragynine. Noticeably elevated levels are a fingerprint of fortified or extract products."], "7-oh": ["7-Hydroxymitragynine (7-OH)", "A far more potent μ-opioid agonist than mitragynine. Fresh leaf holds only traces (about 0.01–0.04%) — most 7-OH forms after harvest by oxidation, and in the body when the liver enzyme CYP3A4 converts mitragynine. Noticeably elevated levels are a fingerprint of fortified or extract products."], "speciociliatine": ["Speciociliatine", "Kratom's second-most abundant alkaloid and a close chemical mirror of mitragynine (a diastereomer). In lab assays it is a stronger partial μ-opioid agonist than mitragynine itself, so its share of the mix helps set a lot's character."], "speciogynine": ["Speciogynine", "One of kratom's major alkaloids. A smooth-muscle relaxant that acts as a competitive antagonist at opioid receptors in lab models — part of the leaf's built-in balancing chemistry."], "paynantheine": ["Paynantheine", "Among the three most abundant kratom alkaloids. In lab models it competes at μ- and κ-opioid receptors without activating them, quietly moderating the overall effect of the mix."], "corynantheidine": ["Corynantheidine", "A minor kratom alkaloid that functions as a μ-opioid antagonist in lab assays — one of the leaf's natural counterweights to its own agonists."], "cyp3a4": ["CYP3A4", "The liver enzyme chiefly responsible for converting mitragynine into 7-hydroxymitragynine. Its activity differs from person to person and shifts with other medications — one reason the same dose can hit two people very differently."]}}</script>
+<script>
+/* AUTO-FIT: unified width — --uw set from the .wrap CONTENT box */
+(function(){
+  function measure(){var wrap=document.querySelector('.wrap');if(!wrap)return;var cs=getComputedStyle(wrap);document.documentElement.style.setProperty('--uw',(wrap.clientWidth-(parseFloat(cs.paddingLeft)||0)-(parseFloat(cs.paddingRight)||0))+'px');}
+  function go(){requestAnimationFrame(measure);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(measure,30);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(measure,180);});
+})();
+</script>
 </body></html>
