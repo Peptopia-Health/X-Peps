@@ -333,9 +333,9 @@ a.batch:active{transform:translateY(1px)}
 .wcqp .sub2{margin:0 0 4px;color:var(--mut);font-size:.92rem;text-align:left}
 .qp-wheel{position:relative;width:min(390px,94vw);aspect-ratio:1/1;margin:6px auto 2px}
 .qp-spoke{position:absolute;left:50%;top:50%;width:37.5%;height:2px;background:var(--line);transform-origin:0 50%;border-radius:2px}
-.qp-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:color-mix(in srgb,#398555 13%,var(--card));border:3px solid #054A1F;display:flex;align-items:center;justify-content:center;font-size:58px;z-index:2;cursor:pointer;padding:0;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease}
+.qp-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:var(--fx-focus-lt);border:3px solid #054A1F;display:flex;align-items:center;justify-content:center;font-size:58px;z-index:2;cursor:pointer;padding:0;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease}
 .qp-hub:active{transform:translate(-50%,-50%) translateY(3px) scale(.96);box-shadow:inset 0 2px 5px rgba(0,0,0,.28),0 1px 2px rgba(0,0,0,.25)}
-.qp-node{position:absolute;transform:translate(-50%,-50%);width:106px;height:106px;border-radius:50%;background:color-mix(in srgb,var(--nc) 13%,var(--card));border:3px solid var(--nb,var(--nc));color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;z-index:3;padding:0;font-family:Outfit,sans-serif;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease,background .15s ease}
+.qp-node{position:absolute;transform:translate(-50%,-50%);width:106px;height:106px;border-radius:50%;background:var(--nl,var(--nc));border:3px solid var(--nb,var(--nc));color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;z-index:3;padding:0;font-family:Outfit,sans-serif;box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 7px rgba(0,0,0,.15),0 5px 9px rgba(0,0,0,.22);transition:transform .07s ease,box-shadow .07s ease,background .15s ease}
 .qp-node .qp-emo{font-size:29px;line-height:1}
 .qp-node small{font-size:24px;font-weight:700;letter-spacing:.03em}
 .qp-node.on{background:var(--nc);color:#fff}
@@ -506,12 +506,12 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <div class="qp-wheel" id="qpWheel">
     <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
     <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="80" height="80" aria-hidden="true"><path d="M24 45 C24 32 24 20 24 9" stroke="#0057B8" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M24 23 C29 11 38 5.5 45 5 C45.5 15 39.5 23.5 29.5 25.5 C26.8 26 24 24.8 24 23Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M24 29 C19.5 19 12 14.5 5.5 14 C5 22 9.5 28.5 17 30.5 C20 31.2 24 30.6 24 29Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M25.5 21.5 C29 16 33.5 12 38.5 9.5M22.5 27 C19 22.5 14.5 19 10 17" stroke="#F0F000" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></button>
-    <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:var(--fx-energy);--nb:var(--fx-energy-dk)"><span class="qp-emo">⚡</span><small>Energy</small></button>
-    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(0,144,255,.8))"><circle cx="24" cy="24" r="17" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
-    <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk)"><span class="qp-emo">🧡</span><small>Mood</small></button>
-    <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:var(--fx-sleep);--nb:var(--fx-sleep-dk)"><span class="qp-emo">😴</span><small>Sleep</small></button>
-    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-pain);--nb:var(--fx-pain-dk)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(255,195,204,.85))"><path class="qp-outline" d="M24 7v34M7 24h34" stroke="#000000" stroke-width="17" stroke-linecap="round" fill="none" style="stroke:#000000;fill:none"/><path d="M24 7v34M7 24h34" style="stroke:var(--fx-pain-lt)" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
-    <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:var(--fx-calm);--nb:var(--fx-calm-dk)"><span class="qp-emo">😌</span><small>Calm</small></button>
+    <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:var(--fx-energy);--nb:var(--fx-energy-dk);--nl:var(--fx-energy-lt)"><span class="qp-emo">⚡</span><small>Energy</small></button>
+    <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk);--nl:var(--fx-focus-lt)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(0,144,255,.8))"><circle cx="24" cy="24" r="17" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
+    <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk);--nl:var(--fx-mood-lt)"><span class="qp-emo">🧡</span><small>Mood</small></button>
+    <button type="button" class="qp-node" data-sit="sleep" style="left:50%;top:87.5%;--nc:var(--fx-sleep);--nb:var(--fx-sleep-dk);--nl:var(--fx-sleep-lt)"><span class="qp-emo">😴</span><small>Sleep</small></button>
+    <button type="button" class="qp-node" data-sit="relief" style="left:17.5%;top:68.7%;--nc:var(--fx-pain);--nb:var(--fx-pain-dk);--nl:var(--fx-pain-lt)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 3.5px rgba(255,195,204,.85))"><path class="qp-outline" d="M24 7v34M7 24h34" stroke="#000000" stroke-width="17" stroke-linecap="round" fill="none" style="stroke:#000000;fill:none"/><path d="M24 7v34M7 24h34" style="stroke:var(--fx-analgesia)" stroke-width="11" stroke-linecap="round" fill="none"/></svg></span><small>Pain</small></button>
+    <button type="button" class="qp-node" data-sit="calm" style="left:17.5%;top:31.3%;--nc:var(--fx-calm);--nb:var(--fx-calm-dk);--nl:var(--fx-calm-lt)"><span class="qp-emo">😌</span><small>Calm</small></button>
   </div>
   <div id="qpResult"></div>
 </div>
@@ -1178,7 +1178,7 @@ a.batch{display:inline-block;padding:3px 12px;border-radius:999px;background:rad
 .qp-tagline{color:var(--mut);font-size:.92rem;font-weight:500;font-family:'DM Sans',sans-serif;letter-spacing:0;white-space:nowrap}
 .wcqp{width:100%;max-width:640px;margin-left:auto;margin-right:auto}
 .titlepage .badges{width:100%;max-width:640px;margin-left:auto;margin-right:auto;justify-content:center}
-.qp-hub{background:color-mix(in srgb,#0047AB 13%,var(--card));border:3px solid #002E6E}
+.qp-hub{background:var(--fx-focus-lt);border:3px solid #002E6E}
 .qp-node[data-sit="energy"].on{color:#22252a}
 html.dark .qp-node[data-sit="sleep"]{border-color:#6b6b6b}
 #wcThemeBtn{font-size:1.28rem;padding:0 10px;line-height:1}
@@ -1271,7 +1271,7 @@ html.dark .wc-mapwrap h4{color:#9CC7A8}
 .wcqp .qp-node:active{transform:translate(-50%,-50%) translateY(3px);box-shadow:inset 0 2px 6px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.3)}
 .wcqp .qp-node .qp-emo{font-size:2.35rem}
 .wcqp .qp-node small{font-size:.8rem;font-weight:700}
-.wcqp .qp-hub{width:90px;height:90px;background:color-mix(in srgb,var(--fx-default) 13%,var(--card));border:3px solid var(--fx-default-dk);box-shadow:inset 0 3px 5px rgba(255,255,255,.75),inset 0 -6px 9px rgba(0,0,0,.22),0 7px 13px rgba(0,0,0,.32)}
+.wcqp .qp-hub{width:90px;height:90px;background:var(--fx-focus-lt);border:3px solid var(--fx-default-dk);box-shadow:inset 0 3px 5px rgba(255,255,255,.75),inset 0 -6px 9px rgba(0,0,0,.22),0 7px 13px rgba(0,0,0,.32)}
 .wcqp .qp-hub:active{transform:translate(-50%,-50%) translateY(3px);box-shadow:inset 0 2px 6px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.3)}
 .wcqp .qp-hub svg{width:80px;height:80px}
 @media(max-width:640px){.wcqp .qp-hub{width:84px;height:84px}.wcqp .qp-hub svg{width:74px;height:74px}.wcqp .qp-node .qp-emo{font-size:2rem}}
