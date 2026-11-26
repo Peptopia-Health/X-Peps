@@ -24,7 +24,7 @@
   --gold:#b8860b; --gold-dk:#7d5f06; --gold-soft:#faf3dd;
   --blend:#6a4c93; --blend-dk:#4a3369; --blend-soft:#efe9f7;
   --accent:#08672B; --line:#ddd3bd;
-  /* Effect palette (David, Nov 1 round 2): defined ONCE here; every effect use routes through these. */
+  /* Effect palette (Nov 1 round 2): defined ONCE here; every effect use routes through these. */
   --fx-energy:#FF6700; --fx-focus:#0090FF; --fx-mood:#FFE500; --fx-sleep:#9040FF;
   --fx-calm:#00E065; --fx-analgesia:#FF073A; --fx-default:#0090FF;
   --fx-energy-dk:#C25200; --fx-energy-lt:#FFD8AD; --fx-focus-dk:#0057B8; --fx-focus-lt:#C0E5FF; --fx-mood-dk:#8A6D00; --fx-mood-lt:#FFF6A5; --fx-sleep-dk:#3D1FA8; --fx-sleep-lt:#DFD3FF;
@@ -231,10 +231,10 @@ html.dark .peptopia-iconbtn{background:rgba(255,255,255,.06);border-color:rgba(2
 .peptopia-iconbtn svg{width:17px;height:17px}
 .peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}
 /* injected standard header CSS */
-/* ===== Emphatic highlights (David 2026-10-24) ===== */
+/* ===== Emphatic highlights (2026-10-24) ===== */
 .hlr,.hlg,.hlw,.hly,.hlb{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;border-radius:2px}
 .hlr{background:#fbe3de}.hlg{background:#e0f1e4}.hlw{background:#eef4dc}.hly{background:#fdf0cd}.hlb{background:#e9e2f7}
-/* ===== Raised circular icon buttons (David 2026-10-24) ===== */
+/* ===== Raised circular icon buttons (2026-10-24) ===== */
 .icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95),var(--bb) 46%,var(--bm));border:2px solid var(--bd);color:var(--bd);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.35);font-size:19px;line-height:1}
 
 /* ---------- WildCraft flagship additions (wc-) ---------- */
@@ -290,7 +290,7 @@ html.dark .titlepage .sub{color:#9CC7A8}
 .oos{display:inline-block;background:#f7e8e4;color:#7e241a;border:1px solid #e3b7ae;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
 .avail{display:inline-block;background:#e6f2ea;color:#08672B;border:1px solid #bfe0c9;border-radius:999px;font-size:11.5px;padding:2px 9px;margin-left:8px;vertical-align:2px}
 @media print{.wc-stat,.wc-card{break-inside:avoid}}
-/* ================= v2 overhaul (David, Oct 30) ================= */
+/* ================= v2 overhaul (Oct 30) ================= */
 .colorband{padding-right:124px}
 .colorband p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:none;font-size:clamp(.7rem,2.5vw,.97rem)}
 .colorband .bigicon{opacity:1;font-size:39px;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:2px solid #04331A;border-radius:50%;width:76px;height:76px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 10px rgba(0,0,0,.35);cursor:pointer;padding:0;font-family:inherit;transition:transform .07s ease,box-shadow .07s ease}
@@ -418,7 +418,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 @media print{.wc-gate-body{display:block!important}.wc-gate-lock{display:none!important}.wc-labmodal{display:none!important}.wc-return{display:none!important}}
 </style>
 <style>
-/* V4 (Oct 31, David): slim section bands - minimum height, standardized */
+/* V4 (Oct 31): slim section bands - minimum height, standardized */
 .colorband{padding:9px 14px;padding-right:70px;margin:22px 0 12px;border-radius:12px}
 .colorband h2{font-size:24px;line-height:1.1;margin:0 0 2px}
 .colorband p{line-height:1.25}
@@ -426,7 +426,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 .bigicon{width:44px;height:44px;font-size:23px;right:12px}
 </style>
 <style>
-/* V5 (Oct 31, David): centered slim bands, gloss push-button, width cap, log viewer */
+/* V5 (Oct 31): centered slim bands, gloss push-button, width cap, log viewer */
 .wcqp{position:relative}
 .wc-logbtn{position:absolute;top:10px;right:10px;font:700 .82rem 'Outfit',sans-serif;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);border:2px solid #08672B;border-radius:999px;padding:5px 12px;cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -4px 7px rgba(0,0,0,.18),0 4px 8px rgba(0,0,0,.25);z-index:3}
 .wc-logbtn:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.25)}
@@ -448,7 +448,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 @media print{.colorband{width:auto!important}.wc-logbtn{display:none!important}.wc-logmodal{display:none!important}}
 </style>
 <style>
-/* V6 (Oct 31, David): each band hugs its own content (fit-content), centered in the column.
+/* V6 (Oct 31): each band hugs its own content (fit-content), centered in the column.
    No band can exceed the widest band's width, and none is stretched to the full column.
    Left padding returns to 16px (the old symmetric 70px was pure width inflation);
    the right keeps 70px for the push-button. Print keeps full-width bands. */
@@ -468,6 +468,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
 .kl-stat span{font:700 .8rem 'Outfit',sans-serif;letter-spacing:.02em}
 .kl-stat small{display:block;margin-top:3px;color:#3d4a41;font-size:.74rem;line-height:1.3}
 .kl-pie{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:8px 0 2px}
+.kl-pie svg.pie{width:118px;height:118px;flex:none}
 .kl-pie figcaption{font-size:.86rem;line-height:1.55}
 .kl-hl{background:#FEF08A;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 3px;border-radius:3px;color:#14230f}
 html.dark .kl-hl{color:#14230f}
@@ -631,7 +632,7 @@ html.dark .bp-cap{color:#a9c4ae}
 .kl-fedlist a{color:#0B6B34;font-weight:600;text-decoration:underline;text-decoration-color:rgba(11,107,52,.45);text-underline-offset:2px}
 html.dark .kl-fedlist a{color:#7BD88F;text-decoration-color:rgba(123,216,143,.5)}
 .kl-fedlist a.kl-hl{color:#14230f;text-decoration-color:rgba(20,35,15,.55)}
-/* ---- First-mention location links (David, Nov 17): same treatment as the federal list ---- */
+/* ---- First-mention location links (Nov 17): same treatment as the federal list ---- */
 .kl-loc{color:#0B6B34;font-weight:600;text-decoration:underline;text-decoration-color:rgba(11,107,52,.45);text-underline-offset:2px}
 html.dark .kl-loc{color:#7BD88F;text-decoration-color:rgba(123,216,143,.5)}
 .kl-fedtl::before{background:linear-gradient(90deg,#35A05F,#2BFF5C 55%,#0B6B34)}
@@ -639,7 +640,7 @@ html.dark .kl-loc{color:#7BD88F;text-decoration-color:rgba(123,216,143,.5)}
 html.dark .kl-fedtl .bp-tag{color:#7BD88F}
 .kl-fedtl .bp-year{font-size:1.08rem}
 /* ---- Back-to-top arrow: hard-pinned to the viewport's lower right at every
-   scroll position (David, Nov 17) — position only; size/art unchanged ---- */
+   scroll position (Nov 17) — position only; size/art unchanged ---- */
 .toc-top{position:fixed;right:16px;bottom:16px;z-index:999}
 /* ---- Why 7-OH Is Treated Differently: full-spectrum extract vs refined 7-OH (schematic ratio bars) ---- */
 .oh7x-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 4px}
@@ -681,11 +682,11 @@ html.dark .oh7x-line{background:linear-gradient(165deg,rgba(18,48,28,.9),rgba(10
 }
 @media (max-width:640px){
  /* mobile: the top bubble buttons (date / theme / print) take their own line,
-    centered as a group; the kicker stays left on the line above (David, Nov 17) */
+    centered as a group; the kicker stays left on the line above (Nov 17) */
  .wc-toprow{ flex-wrap:wrap }
  .wc-toprow .wc-topbtns{ flex:1 1 100%; justify-content:center }
 }
-/* TIGHT VERTICAL STACK (David, Nov 18, 2026 — repeat correction, permanent):
+/* TIGHT VERTICAL STACK (Nov 18, 2026 — repeat correction, permanent):
    no empty-line dead space anywhere in the title stack. Measured before:
    titlepage pad-top 26, kicker line-height 1.65 (19.8px box), toprow gap 10,
    H1 line-height 1.12 + margin-bottom 10, sub line-height 1.65 +
@@ -698,7 +699,7 @@ html.dark .oh7x-line{background:linear-gradient(165deg,rgba(18,48,28,.9),rgba(10
 .titlepage h1{ line-height:1.05; margin:0 0 8px }
 .titlepage .sub{ line-height:1.3; margin-bottom:0 }
 .titlepage + .index{ margin-top:10px; padding-top:16px }
-/* SLIM BUTTONS (David, Nov 18, 2026 — fifth ask, 26px HARD CEILING on every
+/* SLIM BUTTONS (Nov 18, 2026 — fifth ask, 26px HARD CEILING on every
    button/chip/pill/bubble in every build): measured before — top chips
    (.wc-tbtn) 34px, heading bead buttons (.icobtn.bead) 36px, floating
    back-to-top (.toc-top) 46px, horizon source pills (.hz-src) 40-55px.
@@ -855,7 +856,7 @@ html.dark .oh7x-line{background:linear-gradient(165deg,rgba(18,48,28,.9),rgba(10
   </div>
   <div class="kl-stack" role="img" aria-label="All 51 jurisdictions: 11 banned, 21 regulated, 19 legal"><div style="width:21.6%;background:linear-gradient(180deg,#e05844,#D43D2A)">⛔ 11 BANNED</div><div style="width:41.2%;background:linear-gradient(180deg,#f2bc58,#E8A33D)">🛡️ 21 REGULATED</div><div style="width:37.3%;background:linear-gradient(180deg,#4cb877,#35A05F)">✅ 19 LEGAL</div></div><p class="kl-stack-cap">Every jurisdiction in America, by status — 51 in all (50 states + D.C.)</p>
   <figure class="kl-pie">
-   <svg class="pie" data-size="118" data-slices="#D43D2A:11,#E8A33D:21,#35A05F:19" data-hole=".55" role="img" aria-label="Share of states and D.C. by kratom status: 11 banned, 21 regulated, 19 legal"></svg>
+   <svg class="pie" viewBox="0 0 110 110" data-size="118" data-slices="#D43D2A:11,#E8A33D:21,#35A05F:19" data-hole=".55" role="img" aria-label="Share of states and D.C. by kratom status: 11 banned, 21 regulated, 19 legal"></svg>
    <figcaption><strong>51 jurisdictions:</strong> 11 banned (22%) · 21 regulated (41%) · 19 legal (37%).<br>Separately, 16 states that allow leaf kratom restrict or ban concentrated 7-OH — tap a state on the map for its rule.</figcaption>
   </figure>
   
@@ -978,7 +979,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
 </script>
 <script>
 /* ---- theme (light/dark, persisted) ---- */
-(function(){/* Light theme is ALWAYS the default (David, Oct 31): page loads light; dark lasts only for the current visit and is never persisted. */
+(function(){/* Light theme is ALWAYS the default (Oct 31): page loads light; dark lasts only for the current visit and is never persisted. */
 function upd(){var b=document.getElementById('wcThemeBtn');if(b){b.textContent=document.documentElement.classList.contains('dark')?'☀️':'🌙';}}
 document.addEventListener('DOMContentLoaded',function(){upd();var b=document.getElementById('wcThemeBtn');if(b){b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');upd();});}});
 })();
