@@ -204,6 +204,22 @@ img,svg{max-width:100%}
  .bandbody{display:block!important}
  svg{max-height:340px}
 }
+/* Floating nav: index button + return arrow (bottom-right stack) */
+.mkt-fab{position:fixed;right:16px;width:48px;height:48px;border-radius:50%;border:2px solid rgb(238,85,253);background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.9),var(--card) 52%,var(--wash));color:var(--ink);font-size:21px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;box-shadow:inset 0 2px 3px rgba(255,255,255,.8),inset 0 -4px 7px rgba(0,0,0,.18),0 5px 12px rgba(0,0,0,.30);padding:0;font-family:'DM Sans',sans-serif}
+.mkt-fab:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.25)}
+#mktIdxBtn{bottom:16px}
+#mktBackBtn{bottom:74px}
+#mktBackBtn[hidden]{display:none}
+.mkt-idx-wrap{position:fixed;inset:0;z-index:55}
+.mkt-idx-wrap[hidden]{display:none}
+.mkt-idx-backdrop{position:absolute;inset:0;background:rgba(10,14,12,.35)}
+.mkt-idx-card{position:absolute;right:16px;bottom:74px;width:min(320px,calc(100vw - 32px));max-height:min(70vh,560px);overflow-y:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 34px rgba(0,0,0,.28);padding:10px}
+.mkt-idx-card h3{font-family:'Outfit',sans-serif;font-weight:800;font-size:17px;margin:2px 36px 8px 6px}
+.mkt-idx-x{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:15px;font-weight:700;cursor:pointer;line-height:1;padding:0}
+.mkt-idx-x:hover{border-color:rgb(238,85,253)}
+.mkt-idx-item{display:block;width:100%;text-align:left;background:none;border:0;border-radius:10px;padding:9px 10px;font:700 var(--fs-body) 'Outfit',sans-serif;color:var(--ink);cursor:pointer}
+.mkt-idx-item:hover,.mkt-idx-item:focus-visible{background:var(--wash)}
+@media print{.mkt-fab,.mkt-idx-wrap{display:none!important}}
 </style>
 
 </head>
@@ -476,10 +492,12 @@ img,svg{max-width:100%}
    setTimeout(function(){sec.classList.remove('mkt-flash');},1350);
  }
  function goTo(sec){
+   if(window.mktNavNote)window.mktNavNote();
    if(!secOpen(sec))setOpen(sec,true);
    sec.scrollIntoView({behavior:'smooth',block:'start'});
    setTimeout(function(){flash(sec);},400);
  }
+ window.mktGoTo=goTo;
  document.querySelectorAll('.icobtn').forEach(function(btn){
    btn.addEventListener('click',function(ev){
      ev.stopPropagation();
@@ -576,5 +594,43 @@ var STLAW={"AL":{"name":"Alabama","cite":"Ala. Code § 20-2-23 (2016)","detail":
 })();
 </script>
 
+
+<button type="button" class="mkt-fab" id="mktBackBtn" hidden aria-label="Back to where you were">↑</button>
+<button type="button" class="mkt-fab" id="mktIdxBtn" aria-label="Open the page index" aria-haspopup="dialog">☰</button>
+<div class="mkt-idx-wrap" id="mktIdx" hidden>
+ <div class="mkt-idx-backdrop" data-idxclose></div>
+ <div class="mkt-idx-card" role="dialog" aria-modal="true" aria-label="Page index">
+  <button type="button" class="mkt-idx-x" data-idxclose aria-label="Close the index">✕</button>
+  <h3>Index</h3>
+  <div id="mktIdxList"></div>
+ </div>
+</div>
+<script>
+(function(){
+ var backBtn=document.getElementById('mktBackBtn'),
+     idxBtn=document.getElementById('mktIdxBtn'),
+     wrap=document.getElementById('mktIdx'),
+     list=document.getElementById('mktIdxList'),
+     lastY=null;
+ window.mktNavNote=function(){lastY=window.scrollY;backBtn.hidden=false;};
+ backBtn.addEventListener('click',function(){
+   if(lastY===null)return;
+   var y=lastY; lastY=null; backBtn.hidden=true;
+   window.scrollTo({top:y,behavior:'smooth'});
+ });
+ document.querySelectorAll('section[id]').forEach(function(sec){
+   var h=sec.querySelector('.colorband h2'); if(!h)return;
+   var b=document.createElement('button');
+   b.type='button'; b.className='mkt-idx-item'; b.textContent=h.textContent;
+   b.addEventListener('click',function(){closeIdx();if(window.mktGoTo)window.mktGoTo(sec);});
+   list.appendChild(b);
+ });
+ function onKey(e){if(e.key==='Escape')closeIdx();}
+ function openIdx(){wrap.hidden=false;document.addEventListener('keydown',onKey);wrap.querySelector('.mkt-idx-x').focus();}
+ function closeIdx(){if(wrap.hidden)return;wrap.hidden=true;document.removeEventListener('keydown',onKey);idxBtn.focus();}
+ idxBtn.addEventListener('click',function(){if(wrap.hidden)openIdx();else closeIdx();});
+ wrap.querySelectorAll('[data-idxclose]').forEach(function(el){el.addEventListener('click',closeIdx);});
+})();
+</script>
 </body>
 </html>
