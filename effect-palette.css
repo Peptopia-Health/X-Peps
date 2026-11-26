@@ -1,0 +1,50 @@
+/* ============================================================
+   PEPTOPIA EFFECT PALETTE — THE SINGLE SOURCE OF TRUTH
+   Finalized by David, Nov 26, 2026 (PERMANENT). Supersedes the
+   Nov 1, 2026 effect standard (GUIDE_BUILD_SCRIPT §9).
+
+   THIS FILE IS THE ONLY PLACE THE EFFECT PALETTE IS EDITED.
+   Hosted copy: https://x-peps.com/effect-palette.css
+   Every page that shows effect colors LINKS the hosted copy
+   AFTER its local styles, so these values win. Local --fx-*
+   definitions in a page are fallback only and must match
+   these values character-for-character.
+   A palette change = edit this file + effect-palette.json,
+   republish the one hosted CSS. No per-guide edits, ever.
+
+   Three locked values per effect:
+     STANDARD  fills, bars, pies, selectors
+     -dk DARK  text, borders, icons on light fills
+     -lt LIGHT washes, card backgrounds
+   No hand-lightening or darkening — a shade that is not in
+   this file does not exist.
+   ============================================================ */
+:root{
+  /* Energy — neon orange */
+  --fx-energy:#FF6700;
+  --fx-energy-dk:#C25200;
+  --fx-energy-lt:#FFD8AD;
+  /* Focus — electric blue */
+  --fx-focus:#0090FF;
+  --fx-focus-dk:#0057B8;
+  --fx-focus-lt:#C0E5FF;
+  /* Mood — neon yellow */
+  --fx-mood:#FFE500;
+  --fx-mood-dk:#8A6D00;
+  --fx-mood-lt:#FFF6A5;
+  /* Calm — neon mint */
+  --fx-calm:#00E065;
+  --fx-calm-dk:#007A3D;
+  --fx-calm-lt:#B5FFD9;
+  /* Pain — neon blood red */
+  --fx-analgesia:#FF073A;
+  --fx-analgesia-dk:#8F0218;
+  --fx-analgesia-lt:#FFC3CC;
+  /* Sleep — neon violet */
+  --fx-sleep:#9040FF;
+  --fx-sleep-dk:#3D1FA8;
+  --fx-sleep-lt:#DFD3FF;
+  /* Default — cobalt (NOT an effect; the unassigned/default color) */
+  --fx-default:#0070D0;
+  --fx-default-dk:#004E96;
+}
