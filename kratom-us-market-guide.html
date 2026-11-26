@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The U.S. Kratom Market — Growth, Bans &amp; the New Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --fx-energy:#FF6700;--fx-energy-dk:#C25200;--fx-energy-lt:#FFD8AD;
+ --fx-focus:#0090FF;--fx-focus-dk:#0057B8;--fx-focus-lt:#C0E5FF;
+ --fx-mood:#FFE500;--fx-mood-dk:#8A6D00;--fx-mood-lt:#FFF6A5;
+ --fx-calm:#00E065;--fx-calm-dk:#007A3D;--fx-calm-lt:#B5FFD9;
+ --fx-analgesia:#FF073A;--fx-analgesia-dk:#8F0218;--fx-analgesia-lt:#FFC3CC;
+ --fx-sleep:#9040FF;--fx-sleep-dk:#3D1FA8;--fx-sleep-lt:#DFD3FF;
+ --fx-default:#0090FF;--fx-default-dk:#0057B8;
+ --paper:#F7F4EC;--card:#FFFFFF;--ink:#1C2420;--muted:#5A6660;--line:#D9D2C0;
+ --accent:#08672B;--deep:#1E4D3B;--orange:#E85D00;--link:#0B5CAD;
+ --band-ink:#FFFFFF;--wash:#EFF3EA;--chips-nolaw:#E8E6DF;
+}
+html[data-theme="dark"]{
+ --paper:#101613;--card:#1A211D;--ink:#EDF2EE;--muted:#A9B8AE;--line:#33413A;
+ --accent:#7CC98F;--deep:#2E7D5B;--orange:#FF8A3D;--link:#7CC4FF;--wash:#1E2A23;--chips-nolaw:#2A332D;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.55}
+h1,h2,h3{font-family:'Outfit','DM Sans',sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:4px 22px 0}
+.wrap>section:first-of-type .colorband{margin-top:2px}
+img,svg{max-width:100%}
+/* ---- hero (kratom-guide titlepage construction) ---- */
+.titlepage{text-align:center;padding:22px 24px 0;background:radial-gradient(1100px 520px at 50% -10%,var(--fx-calm-lt) 0%,var(--paper) 62%)}
+html[data-theme="dark"] .titlepage{background:radial-gradient(1100px 520px at 50% -10%,#1E2A23 0%,var(--paper) 62%)}
+.wc-toprow{display:flex;justify-content:space-between;align-items:center;gap:10px;max-width:1152px;margin:0 auto}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:13px;font-weight:700;color:var(--accent)}
+.wc-topbtns{display:flex;gap:8px;align-items:center}
+.wc-tbtn{font:700 .82rem 'DM Sans',sans-serif;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.7),inset 0 -3px 5px rgba(0,0,0,.12),0 3px 6px rgba(0,0,0,.15)}
+.wc-tbtn:active{transform:translateY(2px);box-shadow:inset 0 3px 6px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.2)}
+.peptopia-iconbtn{background:none;border:none;padding:0;cursor:pointer;border-radius:50%;line-height:0}
+.peptopia-iconbtn img{border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.peptopia-iconbtn:active{transform:translateY(2px)}
+.titlepage h1{font-size:clamp(36px,6vw,62px);font-weight:800;margin:8px 0 4px;color:var(--deep);line-height:1.08}
+.titlepage h1 .o{color:var(--orange)}
+.titlepage .sub{font-size:clamp(15px,2.6vw,21px);color:var(--muted);margin:0 auto 12px;max-width:900px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 2px}
+.pill{border:1.5px solid var(--accent);border-radius:999px;padding:5px 14px;font-size:13.5px;font-weight:700;background:var(--card);color:var(--accent);text-decoration:none;box-shadow:inset 0 2px 3px rgba(255,255,255,.7),inset 0 -3px 5px rgba(0,0,0,.10)}
+.pill:active{transform:translateY(2px)}
+/* ---- section bands ---- */
+.colorband{width:fit-content;max-width:100%;margin:20px auto 10px;padding:9px 70px 9px 16px;border-radius:12px;position:relative;text-align:center;color:var(--band-ink);cursor:pointer}
+.colorband h2{font-size:clamp(20px,3.4vw,25px);font-weight:800;margin:0;line-height:1.15}
+.colorband p{margin:1px 0 0;font-size:13.5px;opacity:.92}
+.colorband .icobtn{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:2px solid rgba(0,0,0,.35);background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 48%,#bcd8c4);font-size:20px;cursor:pointer;box-shadow:inset 0 2px 3px rgba(255,255,255,.95),inset 0 -5px 8px rgba(0,0,0,.22),0 5px 10px rgba(0,0,0,.35)}
+.colorband .icobtn:active{transform:translateY(calc(-50% + 3px)) scale(.95)}
+.band-green{background:linear-gradient(135deg,#0B7A33,#08672B)} .band-orange{background:linear-gradient(135deg,#E85D00,var(--fx-energy-dk))}
+.band-violet{background:linear-gradient(135deg,#5B2EE5,var(--fx-sleep-dk))} .band-red{background:linear-gradient(135deg,#C40B2C,var(--fx-analgesia-dk))}
+.band-blue{background:linear-gradient(135deg,#0B74D9,var(--fx-focus-dk))} .band-calm{background:linear-gradient(135deg,#0B9E57,var(--fx-calm-dk))}
+.band-gold{background:linear-gradient(135deg,#B98A00,var(--fx-mood-dk))} .band-deep{background:linear-gradient(135deg,#27694E,var(--deep))}
+.band-grey{background:linear-gradient(135deg,#5A6660,#3E4A44)}
+.bandbody{margin:0 auto}
+/* ---- cards & figures ---- */
+.mkt-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:4px 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:14px;padding:12px 14px 10px;box-shadow:0 3px 10px rgba(60,50,30,.07)}
+.stat .n{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(26px,4.4vw,38px);line-height:1.05}
+.stat .l{font-weight:700;font-size:14.5px;margin-top:2px}
+.stat .s{color:var(--muted);font-size:13px;margin-top:2px}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px 8px;margin:6px 0 10px;box-shadow:0 3px 10px rgba(60,50,30,.06)}
+.fig h3{margin:0 0 2px;font-size:19px;font-weight:800}
+.fig .cap{color:var(--muted);font-size:13.5px;margin:2px 0 4px}
+.grid line{stroke:var(--line);stroke-width:1}
+.axl{fill:var(--muted);font-size:13.5px;font-family:'DM Sans',sans-serif}
+.axnote{fill:var(--muted);font-size:12.5px;font-family:'DM Sans',sans-serif}
+.barlab{fill:var(--ink);font-size:16px;font-weight:700;font-family:'Outfit',sans-serif}
+.linelab{fill:var(--fx-focus-dk);font-size:14.5px;font-weight:700;font-family:'Outfit',sans-serif;paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+html[data-theme="dark"] .linelab{fill:var(--fx-focus-lt)}
+.linelab2{fill:var(--fx-calm-dk);font-size:14.5px;font-weight:700;font-family:'Outfit',sans-serif;paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+html[data-theme="dark"] .linelab2{fill:var(--fx-calm-lt)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;font-weight:700;margin:2px 0 6px}
+.legend .sw{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:5px}
+.callout{border-radius:12px;padding:11px 15px;margin:8px 0;font-size:15px}
+.callout b{font-family:'Outfit',sans-serif}
+.co-wash{background:var(--wash);border:1.5px solid var(--accent)}
+.co-red{background:var(--fx-analgesia-lt);border:1.5px solid var(--fx-analgesia-dk);color:#4A0A16}
+html[data-theme="dark"] .co-red{background:#3A0A14;border-color:var(--fx-analgesia);color:#FFD9DE}
+.co-blue{background:var(--fx-focus-lt);border:1.5px solid var(--fx-focus-dk);color:#0A2C4A}
+html[data-theme="dark"] .co-blue{background:#0B2745;border-color:var(--fx-focus);color:#D9ECFF}
+.hl{background:#FEF08A;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 3px;border-radius:3px;color:#1C2420}
+/* ---- timeline ---- */
+.tl{position:relative;margin:6px 0 4px;padding-left:26px}
+.tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;border-radius:2px;background:var(--line)}
+.tl-item{position:relative;padding:5px 0 5px 6px}
+.tl-item:before{content:"";position:absolute;left:-24px;top:11px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3.5px solid var(--accent)}
+.tl-item.ban:before{border-color:var(--fx-analgesia)} .tl-item.fed:before{border-color:var(--fx-focus)}
+.tl-item.reg:before{border-color:var(--fx-calm)} .tl-item.rev:before{border-color:var(--fx-sleep)}
+.tl-item .d{font-family:'Outfit',sans-serif;font-weight:800;font-size:14px;color:var(--accent)}
+.tl-item.ban .d{color:var(--fx-analgesia-dk)} html[data-theme="dark"] .tl-item.ban .d{color:var(--fx-analgesia-lt)}
+.tl-item .t{font-size:15px}
+/* ---- chips ---- */
+.chipgroup{margin:8px 0}
+.chipgroup h3{margin:0 0 5px;font-size:17px;font-weight:800}
+.mkt-chip{display:inline-block;border-radius:999px;padding:4px 11px;margin:0 5px 6px 0;font-size:13.5px;font-weight:700;border:1.5px solid}
+.chip-open{background:var(--fx-calm-lt);border-color:var(--fx-calm-dk);color:#0A3D21}
+.chip-reg{background:var(--fx-focus-lt);border-color:var(--fx-focus-dk);color:#0A2C4A}
+.chip-res{background:var(--fx-analgesia);border-color:var(--fx-analgesia-dk);color:#FFFFFF}
+html[data-theme="dark"] .chip-open{color:#0A3D21} html[data-theme="dark"] .chip-reg{color:#0A2C4A}
+/* ---- population bars ---- */
+.popbar{display:flex;height:52px;border-radius:12px;overflow:hidden;border:1.5px solid var(--line);margin:6px 0 4px}
+.popbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(12px,2.6vw,16px);text-align:center;padding:2px}
+.pb-open{background:var(--fx-calm-dk)} .pb-reg{background:var(--fx-focus-dk)} .pb-res{background:var(--fx-analgesia-dk)}
+.hbar{display:grid;grid-template-columns:118px 1fr 74px;align-items:center;gap:9px;margin:5px 0;font-size:14.5px}
+.hbar .track{height:20px;background:var(--chips-nolaw);border-radius:7px;overflow:hidden}
+.hbar .fill{height:100%;border-radius:7px}
+.hbar .v{font-family:'Outfit',sans-serif;font-weight:800;text-align:right}
+/* ---- prose ---- */
+.prose{font-size:16px;margin:6px 0}
+.prose p{margin:7px 0}
+.srcs{font-size:14.5px}
+.srcs h3{margin:12px 0 3px;font-size:16px;color:var(--accent)}
+.srcs p{margin:3px 0}
+.srcs a{color:var(--link);font-weight:700;text-decoration:none}
+.srcs a:hover{text-decoration:underline}
+.footline{text-align:center;color:var(--muted);font-size:13.5px;padding:16px 0 22px}
+details.jsonbox{margin:10px 0}
+details.jsonbox summary{cursor:pointer;font-weight:700;color:var(--accent)}
+details.jsonbox pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;overflow-x:auto;font-size:12px}
+@media print{
+ @page{size:Letter;margin:.55in}
+ *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ body{background:#fff}
+ .wc-topbtns,.colorband .icobtn,.pill{display:none!important}
+ .stat,.fig,.callout,.tl-item,.chipgroup{break-inside:avoid}
+ h2,h3{break-after:avoid}
+}
+</style>
+<link rel="stylesheet" href="https://x-peps.com/effect-palette.css">
+
+<style id="mkt-responsive-print-standard">
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+@media (max-width:640px){
+ .wrap{padding:4px 12px 0}
+ .mkt-stats{grid-template-columns:1fr}
+ .colorband{padding:9px 60px 9px 12px}
+ .colorband p{white-space:normal}
+ .fig{padding:10px 10px 6px}
+ .stat .n{font-size:30px}
+ .hbar{grid-template-columns:92px 1fr 62px;font-size:13.5px}
+ .popbar{height:64px}
+ .titlepage{padding:16px 12px 2px}
+ .kicker{letter-spacing:2.5px;font-size:11.5px}
+}
+@media print{
+ .bandbody{display:block!important}
+ svg{max-height:340px}
+}
+</style>
+
+</head>
+<body id="top">
+
+<div class="titlepage">
+ <div class="wc-toprow">
+  <div class="kicker">Independent Customer Research</div>
+  <div class="wc-topbtns">
+   <button type="button" class="wc-tbtn" title="November 2026">📅 11/26</button>
+   <button type="button" class="wc-tbtn" id="mktThemeBtn" title="Switch light / dark theme" aria-label="Switch light or dark theme">🌙</button>
+   <button type="button" class="peptopia-iconbtn" onclick="window.print()" title="Print or save as PDF" aria-label="Print"><img src="https://x-peps.com/btn-print-holo.png" alt="" width="38" height="38"></button>
+  </div>
+ </div>
+ <h1>The U.S. <span class="o">Kratom</span> Market</h1>
+ <div class="sub">Sales are climbing, users are holding — and the map is redrawing where kratom can be sold.</div>
+ <div class="badges">
+  <a class="pill" href="#numbers">📊 The Numbers</a>
+  <a class="pill" href="#growth">📈 Growth</a>
+  <a class="pill" href="#squeeze">⚖️ Bans &amp; Rules</a>
+  <a class="pill" href="#map">🗺️ The Map</a>
+  <a class="pill" href="#meaning">🔮 What It Means</a>
+ </div>
+</div>
+<div class="wrap">
+
+<section id="numbers"><div class="colorband band-green"><h2>The Headline Numbers</h2><p>The market in six figures</p><button type="button" class="icobtn" data-t="b-numbers" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-numbers">
+ <div class="mkt-stats">
+  <div class="stat" style="border-top-color:var(--fx-energy)"><div class="n" style="color:var(--fx-energy-dk)">$441.4M</div><div class="l">U.S. mainstream retail sales, 2024</div><div class="s">SPINS multi-outlet scan data, 52 weeks ending Oct 6, 2024</div></div>
+  <div class="stat" style="border-top-color:var(--fx-energy)"><div class="n" style="color:var(--fx-energy-dk)">+21.9%</div><div class="l">Sales growth vs. 2023</div><div class="s">Same SPINS channel — kratom ranked among the top functional ingredients in natural retail</div></div>
+  <div class="stat" style="border-top-color:var(--fx-focus)"><div class="n" style="color:var(--fx-focus-dk)">1.85M</div><div class="l">Past-year users, 2024</div><div class="s">NSDUH (age 12+), up from 1.63M in 2023; lifetime use hit a record 1.9% of the population</div></div>
+  <div class="stat" style="border-top-color:var(--fx-sleep)"><div class="n" style="color:var(--fx-sleep-dk)">$7.8B</div><div class="l">Projected global market, 2032</div><div class="s">Analyst estimate (Fortune Business Insights) — forecasts disagree widely; see below</div></div>
+  <div class="stat" style="border-top-color:var(--fx-analgesia)"><div class="n" style="color:var(--fx-analgesia-dk)">11</div><div class="l">States closed to legal sale</div><div class="s">10 outright bans + North Dakota, where sales are suspended until licensing rules exist</div></div>
+  <div class="stat" style="border-top-color:var(--fx-calm)"><div class="n" style="color:var(--fx-calm-dk)">86%</div><div class="l">Of Americans live outside the ban states</div><div class="s">The full-ban states hold ≈47.9M people of a 341.8M nation</div></div>
+ </div>
+ <div class="callout co-wash"><b>The one-sentence version:</b> demand and revenue are <b>not shrinking</b> — what is shrinking is the share of the country where kratom can be sold <b>without rules</b>.</div>
+</div></section>
+
+<section id="growth"><div class="colorband band-orange"><h2>Growth: The Money</h2><p>Measured retail sales vs. counted users</p><button type="button" class="icobtn" data-t="b-growth" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-growth">
+ <div class="fig"><h3>Mainstream sales jumped; the user count held its line</h3>
+ <div class="legend"><span><span class="sw" style="background:var(--fx-energy)"></span>Retail sales (SPINS)</span><span><span class="sw" style="background:var(--fx-focus)"></span>Past-year users (NSDUH)</span></div>
+ <svg viewBox="0 0 920 458" role="img" aria-label="Bar chart of U.S. mainstream retail kratom sales with a line for past-year users"><line x1="66" y1="384" x2="852" y2="384" class="grid"/><text x="58" y="388" class="axl" text-anchor="end">$0</text><text x="860" y="388" class="axl">0.0M</text><line x1="66" y1="313" x2="852" y2="313" class="grid"/><text x="58" y="317" class="axl" text-anchor="end">$100</text><line x1="66" y1="242" x2="852" y2="242" class="grid"/><text x="58" y="246" class="axl" text-anchor="end">$200</text><text x="860" y="246" class="axl">1.0M</text><line x1="66" y1="172" x2="852" y2="172" class="grid"/><text x="58" y="176" class="axl" text-anchor="end">$300</text><line x1="66" y1="101" x2="852" y2="101" class="grid"/><text x="58" y="105" class="axl" text-anchor="end">$400</text><text x="860" y="105" class="axl">2.0M</text><line x1="66" y1="30" x2="852" y2="30" class="grid"/><text x="58" y="34" class="axl" text-anchor="end">$500</text><text x="66" y="406" class="axl" text-anchor="middle">2019</text><text x="178" y="406" class="axl" text-anchor="middle">2020</text><text x="291" y="406" class="axl" text-anchor="middle">2021</text><text x="403" y="406" class="axl" text-anchor="middle">2022</text><text x="515" y="406" class="axl" text-anchor="middle">2023</text><text x="627" y="406" class="axl" text-anchor="middle">2024</text><text x="740" y="406" class="axl" text-anchor="middle">2025</text><text x="852" y="406" class="axl" text-anchor="middle">2026</text><rect x="486" y="128" width="58" height="256" rx="5" fill="var(--fx-energy)"/><text x="515" y="119" class="barlab" text-anchor="middle">$362M*</text><rect x="598" y="71" width="58" height="313" rx="5" fill="var(--fx-energy)"/><text x="627" y="62" class="barlab" text-anchor="middle">$441M</text><polyline points="66,101 291,143 515,153 627,122" fill="none" stroke="var(--fx-focus)" stroke-width="3.5" stroke-linejoin="round"/><circle cx="66" cy="101" r="6" fill="var(--fx-focus)" stroke="var(--card)" stroke-width="2.5"/><text x="66" y="87" class="linelab" text-anchor="middle">2M</text><circle cx="291" cy="143" r="6" fill="var(--fx-focus)" stroke="var(--card)" stroke-width="2.5"/><text x="291" y="129" class="linelab" text-anchor="middle">1.7M</text><circle cx="515" cy="153" r="6" fill="var(--fx-focus)" stroke="var(--card)" stroke-width="2.5"/><text x="478" y="158" class="linelab" text-anchor="end">1.63M</text><circle cx="627" cy="122" r="6" fill="var(--fx-focus)" stroke="var(--card)" stroke-width="2.5"/><text x="664" y="126" class="linelab" text-anchor="start">1.85M</text><text x="66" y="430" class="axnote">Bars: mainstream retail sales, $M (left). Line: past-year users, millions (right).</text><text x="66" y="448" class="axnote">*2023 bar implied by SPINS’ published +21.9% growth.</text></svg>
+ <p class="cap">SPINS tracks mainstream multi-outlet retail only — grocery, drug, and natural chains. Online and specialty-shop sales sit on top of these figures; industry estimates put the <b>total</b> U.S. market near <b>$1 billion</b>. Survey counts of users have stayed in a <b>1.6–2.1 million</b> band across six NSDUH survey years while measured retail revenue climbed — growth is coming from wider distribution and higher-value products, not from a surge in users.</p></div>
+</div></section>
+
+<section id="global"><div class="colorband band-violet"><h2>The Global Outlook</h2><p>Every forecaster points up — they just disagree on the altitude</p><button type="button" class="icobtn" data-t="b-global" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-global">
+ <div class="fig"><h3>Global market size: estimates today, projection for 2032</h3>
+ <svg viewBox="0 0 920 300" role="img" aria-label="Bar chart of global kratom market size estimates and 2032 projection"><line x1="66" y1="246" x2="880" y2="246" class="grid"/><text x="58" y="250" class="axl" text-anchor="end">$0B</text><line x1="66" y1="194" x2="880" y2="194" class="grid"/><text x="58" y="198" class="axl" text-anchor="end">$2B</text><line x1="66" y1="142" x2="880" y2="142" class="grid"/><text x="58" y="146" class="axl" text-anchor="end">$4B</text><line x1="66" y1="91" x2="880" y2="91" class="grid"/><text x="58" y="95" class="axl" text-anchor="end">$6B</text><line x1="66" y1="39" x2="880" y2="39" class="grid"/><text x="58" y="43" class="axl" text-anchor="end">$8B</text><rect x="66" y="189" width="150" height="57" rx="6" fill="var(--fx-sleep)"/><text x="141" y="179" class="barlab" text-anchor="middle">$2.19B</text><text x="141" y="268" class="axl" text-anchor="middle">2024 · estimate</text><rect x="398" y="180" width="150" height="66" rx="6" fill="var(--fx-sleep)"/><text x="473" y="170" class="barlab" text-anchor="middle">$2.56B</text><text x="473" y="268" class="axl" text-anchor="middle">2025 · estimate</text><rect x="730" y="44" width="150" height="202" rx="6"  fill="url(#hatch32)"/><text x="805" y="34" class="barlab" text-anchor="middle">$7.8B</text><text x="805" y="268" class="axl" text-anchor="middle">2032 · projection</text><defs><pattern id="hatch32" width="9" height="9" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="var(--fx-sleep-lt)"/><line x1="0" y1="0" x2="0" y2="9" stroke="var(--fx-sleep)" stroke-width="4"/></pattern></defs></svg>
+ <p class="cap">Fortune Business Insights values the global market at <b>$2.19B (2024)</b> and <b>$2.56B (2025)</b>, reaching <b>$7.80B by 2032</b> — a <b>17.2%</b> compound annual growth rate. North America is the largest region, and the U.S. is its engine.</p></div>
+ <div class="callout co-blue"><b>Read forecasts with care:</b> Market Research Future values the same market at <b>$6.31B in 2024</b> on its way to <b>$22.51B by 2035</b> — roughly <b>3× higher</b> than the Fortune figures at both ends. The direction (strong double-digit growth) is consistent across analysts; the levels are <span class="hl">estimates, not measurements</span>, and this page labels them that way wherever they appear.</div>
+</div></section>
+
+<section id="squeeze"><div class="colorband band-red"><h2>The Squeeze: Bans Catch Up</h2><p>Eight quiet years — then five states closed in eighteen months</p><button type="button" class="icobtn" data-t="b-squeeze" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-squeeze">
+ <div class="fig"><h3>Two lanes, both moving: states closing vs. states regulating</h3>
+ <div class="legend"><span><span class="sw" style="background:var(--fx-analgesia)"></span>Closed to legal sale (cumulative)</span><span><span class="sw" style="background:var(--fx-calm)"></span>KCPA-style rules (verified endpoints)</span></div>
+ <svg viewBox="0 0 920 388" role="img" aria-label="Bars for cumulative states closed to kratom sales and a line for states with consumer-protection rules"><line x1="66" y1="318" x2="880" y2="318" class="grid"/><text x="58" y="322" class="axl" text-anchor="end">0</text><line x1="66" y1="260" x2="880" y2="260" class="grid"/><text x="58" y="264" class="axl" text-anchor="end">5</text><line x1="66" y1="203" x2="880" y2="203" class="grid"/><text x="58" y="207" class="axl" text-anchor="end">10</text><line x1="66" y1="145" x2="880" y2="145" class="grid"/><text x="58" y="149" class="axl" text-anchor="end">15</text><line x1="66" y1="88" x2="880" y2="88" class="grid"/><text x="58" y="92" class="axl" text-anchor="end">20</text><line x1="66" y1="30" x2="880" y2="30" class="grid"/><text x="58" y="34" class="axl" text-anchor="end">25</text><rect x="49" y="295" width="34" height="23" rx="4" fill="var(--fx-analgesia)"/><text x="66" y="282" class="barlab" text-anchor="middle">2</text><rect x="117" y="295" width="34" height="23" rx="4" fill="var(--fx-analgesia)"/><text x="134" y="282" class="barlab" text-anchor="middle">2</text><rect x="185" y="260" width="34" height="58" rx="4" fill="var(--fx-analgesia)"/><text x="202" y="247" class="barlab" text-anchor="middle">5</text><rect x="253" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="270" y="236" class="barlab" text-anchor="middle">6</text><rect x="320" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="337" y="236" class="barlab" text-anchor="middle">6</text><rect x="388" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="405" y="236" class="barlab" text-anchor="middle">6</text><rect x="456" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="473" y="236" class="barlab" text-anchor="middle">6</text><rect x="524" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="541" y="236" class="barlab" text-anchor="middle">6</text><rect x="592" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="609" y="236" class="barlab" text-anchor="middle">6</text><rect x="659" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="676" y="236" class="barlab" text-anchor="middle">6</text><rect x="727" y="249" width="34" height="69" rx="4" fill="var(--fx-analgesia)"/><text x="744" y="236" class="barlab" text-anchor="middle">6</text><rect x="795" y="237" width="34" height="81" rx="4" fill="var(--fx-analgesia)"/><text x="812" y="224" class="barlab" text-anchor="middle">7</text><rect x="863" y="191" width="34" height="127" rx="4" fill="var(--fx-analgesia)"/><text x="880" y="178" class="barlab" text-anchor="middle">11</text><text x="66" y="340" class="axl" text-anchor="middle">’14</text><text x="134" y="340" class="axl" text-anchor="middle">’15</text><text x="202" y="340" class="axl" text-anchor="middle">’16</text><text x="270" y="340" class="axl" text-anchor="middle">’17</text><text x="337" y="340" class="axl" text-anchor="middle">’18</text><text x="405" y="340" class="axl" text-anchor="middle">’19</text><text x="473" y="340" class="axl" text-anchor="middle">’20</text><text x="541" y="340" class="axl" text-anchor="middle">’21</text><text x="609" y="340" class="axl" text-anchor="middle">’22</text><text x="676" y="340" class="axl" text-anchor="middle">’23</text><text x="744" y="340" class="axl" text-anchor="middle">’24</text><text x="812" y="340" class="axl" text-anchor="middle">’25</text><text x="880" y="340" class="axl" text-anchor="middle">’26</text><line x1="405" y1="272" x2="880" y2="42" stroke="var(--fx-calm)" stroke-width="3.5" stroke-dasharray="8 6"/><circle cx="405" cy="272" r="6.5" fill="var(--fx-calm)" stroke="var(--card)" stroke-width="2.5"/><text x="395" y="260" class="linelab2" text-anchor="end">4 states · 2019</text><circle cx="880" cy="42" r="6.5" fill="var(--fx-calm)" stroke="var(--card)" stroke-width="2.5"/><text x="870" y="30" class="linelab2" text-anchor="end">24 states + DC · 2026</text><text x="66" y="362" class="axnote">Red bars: cumulative states closed to legal sale. Green: states with KCPA-style rules — verified endpoints only;</text><text x="66" y="380" class="axnote">the dashed line connects them, it is not yearly data.</text></svg>
+ <p class="cap">The ban count sat at <b>six states from 2017 to 2025</b>. Louisiana broke the stall in <b>August 2025</b>; Connecticut, Kansas, Tennessee, and Massachusetts followed in 2026, and North Dakota's sales stopped the same year — <b>11 states closed</b> by the fall of 2026. Over the same span the regulated lane grew from the first four KCPA states (2019) to <b>24 states plus D.C.</b> with consumer-protection rules on the books.</p></div>
+ <div class="tl">
+  <div class="tl-item fed"><span class="d">Feb 2014</span> — <span class="t"><b>FDA Import Alert 54-15</b>: kratom shipments can be detained at the border without examination. Still in force today.</span></div>
+  <div class="tl-item ban"><span class="d">2014</span> — <span class="t"><b>Indiana and Wisconsin</b> enact the first state bans.</span></div>
+  <div class="tl-item fed"><span class="d">Aug 2016</span> — <span class="t"><b>DEA announces intent</b> to emergency-schedule mitragynine and 7-hydroxymitragynine in Schedule I.</span></div>
+  <div class="tl-item fed"><span class="d">Oct 2016</span> — <span class="t"><b>DEA withdraws the plan</b> after a flood of public comment — the market's defining reprieve.</span></div>
+  <div class="tl-item ban"><span class="d">2016–17</span> — <span class="t"><b>Alabama, Arkansas, Vermont</b> (2016) and <b>Rhode Island</b> (2017) ban kratom. The count stalls at six for eight years.</span></div>
+  <div class="tl-item reg"><span class="d">2019</span> — <span class="t"><b>Utah passes the first Kratom Consumer Protection Act</b>; Arizona, Georgia, and Nevada follow the same year. Regulation becomes the second lane.</span></div>
+  <div class="tl-item fed"><span class="d">Jul 29, 2025</span> — <span class="t"><b>FDA recommends Schedule I for concentrated 7-OH</b> products — explicitly <b>not</b> natural kratom leaf.</span></div>
+  <div class="tl-item ban"><span class="d">Aug 2025</span> — <span class="t"><b>Louisiana</b> bans kratom statewide (SB 154) — the first new state ban in eight years.</span></div>
+  <div class="tl-item ban"><span class="d">Feb 2026</span> — <span class="t"><b>Connecticut</b> places kratom and its derivatives in Schedule I by regulation (approved Feb 24).</span></div>
+  <div class="tl-item rev"><span class="d">Apr 1, 2026</span> — <span class="t"><b>Rhode Island reverses its 2017 ban</b> — the first reversal in the country — replacing it with 21+ KCPA-style rules.</span></div>
+  <div class="tl-item ban"><span class="d">Apr 2026</span> — <span class="t"><b>Kansas</b> bans kratom (two laws, April). <b>Spokane, Washington</b>'s local sales ban takes effect Apr 8 — cities begin acting where states have not.</span></div>
+  <div class="tl-item ban"><span class="d">Jul 1, 2026</span> — <span class="t"><b>Tennessee</b>'s ban takes effect (“Matthew Davenport's Law,” signed May 7).</span></div>
+  <div class="tl-item fed"><span class="d">Jul 6, 2026</span> — <span class="t"><b>DEA publishes a notice of intent</b> to temporarily schedule 7-OH above a set threshold.</span></div>
+  <div class="tl-item ban"><span class="d">Aug 2026</span> — <span class="t"><b>Massachusetts</b> places kratom in Schedule 1 by <b>temporary</b> emergency regulation (Aug 13).</span></div>
+  <div class="tl-item fed"><span class="d">Aug 26, 2026</span> — <span class="t">Three <b>synthetic</b> kratom relatives (MGPI, MGM-15, MGM-16) enter federal Schedule I temporarily. The leaf itself remains unscheduled.</span></div>
+  <div class="tl-item reg"><span class="d">Sep 2026</span> — <span class="t"><b>North Dakota</b>'s licensing law passes — but no sale is lawful until the Attorney General's rules exist.</span></div>
+  <div class="tl-item fed"><span class="d">Oct 14, 2026</span> — <span class="t"><b>DEA replaces its 7-OH notice</b> with a broader one (7-OH and mitragynine pseudoindoxyl above a new threshold). No scheduling order has issued yet.</span></div>
+  <div class="tl-item ban"><span class="d">Jul 1, 2027</span> — <span class="t"><b>Kentucky</b>'s enacted sales ban takes effect — the next closure is already on the calendar.</span></div>
+ </div>
+</div></section>
+
+<section id="map"><div class="colorband band-blue"><h2>The Map, State by State</h2><p>Every state and D.C., one of three lanes — as of Nov 26, 2026</p><button type="button" class="icobtn" data-t="b-map" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-map">
+ <div class="chipgroup"><h3 style="color:var(--fx-calm-dk)">🟢 Open market — no statewide product rules · 18 states · ≈92.3M people</h3>
+ <span class="mkt-chip chip-open">Pennsylvania</span><span class="mkt-chip chip-open">Illinois</span><span class="mkt-chip chip-open">North Carolina</span><span class="mkt-chip chip-open">Michigan</span><span class="mkt-chip chip-open">New Jersey</span><span class="mkt-chip chip-open">Washington</span><span class="mkt-chip chip-open">Missouri</span><span class="mkt-chip chip-open">Minnesota</span><span class="mkt-chip chip-open">Iowa</span><span class="mkt-chip chip-open">New Mexico</span><span class="mkt-chip chip-open">Idaho</span><span class="mkt-chip chip-open">Hawaii</span><span class="mkt-chip chip-open">New Hampshire</span><span class="mkt-chip chip-open">Maine</span><span class="mkt-chip chip-open">Montana</span><span class="mkt-chip chip-open">Delaware</span><span class="mkt-chip chip-open">South Dakota</span><span class="mkt-chip chip-open">Alaska</span><p class="cap" style="color:var(--muted);font-size:13.5px">Age floors in IL (18+), NC (18+), NH (18+), MN (21+), DE (21+), SD (21+). Cities and counties may add their own rules.</p></div>
+ <div class="chipgroup"><h3 style="color:var(--fx-focus-dk)">🔵 Regulated — KCPA-style consumer protection · 19 states · ≈150.2M people</h3>
+ <span class="mkt-chip chip-reg">Arizona</span><span class="mkt-chip chip-reg">Colorado</span><span class="mkt-chip chip-reg">Florida</span><span class="mkt-chip chip-reg">Georgia</span><span class="mkt-chip chip-reg">Kentucky</span><span class="mkt-chip chip-reg">Maryland</span><span class="mkt-chip chip-reg">Mississippi</span><span class="mkt-chip chip-reg">Nebraska</span><span class="mkt-chip chip-reg">Nevada</span><span class="mkt-chip chip-reg">New York</span><span class="mkt-chip chip-reg">Oklahoma</span><span class="mkt-chip chip-reg">Oregon</span><span class="mkt-chip chip-reg">Rhode Island</span><span class="mkt-chip chip-reg">South Carolina</span><span class="mkt-chip chip-reg">Texas</span><span class="mkt-chip chip-reg">Utah</span><span class="mkt-chip chip-reg">Virginia</span><span class="mkt-chip chip-reg">West Virginia</span><span class="mkt-chip chip-reg">Wyoming</span><p class="cap" style="color:var(--muted);font-size:13.5px">Age 21+ in most; labeling, testing, and 2% 7-OH caps are the common KCPA pattern. Kentucky is regulated today — its sales ban takes effect Jul 1, 2027. Rhode Island reversed its ban on Apr 1, 2026 and joined this group.</p></div>
+ <div class="chipgroup"><h3 style="color:var(--fx-analgesia-dk)">🔴 Banned or product-restricted · 13 states + D.C. · ≈100.0M people</h3>
+ <span class="mkt-chip chip-res">Alabama</span><span class="mkt-chip chip-res">Arkansas</span><span class="mkt-chip chip-res">California</span><span class="mkt-chip chip-res">Connecticut</span><span class="mkt-chip chip-res">Indiana</span><span class="mkt-chip chip-res">Kansas</span><span class="mkt-chip chip-res">Louisiana</span><span class="mkt-chip chip-res">Massachusetts</span><span class="mkt-chip chip-res">North Dakota</span><span class="mkt-chip chip-res">Ohio</span><span class="mkt-chip chip-res">Tennessee</span><span class="mkt-chip chip-res">Vermont</span><span class="mkt-chip chip-res">Wisconsin</span><span class="mkt-chip chip-res">District of Columbia</span><p class="cap" style="color:var(--muted);font-size:13.5px">Full bans: AL, AR, CT, IN, KS, LA, MA (temporary), TN, VT, WI. Product-restricted: CA (state food-law enforcement against commercial sale + local bans), OH (natural leaf only — extracts and 7-OH scheduled), ND (sales suspended until licensing rules exist). D.C. restricts 7-OH compounds.</p></div>
+ <div class="callout co-blue"><b>How the counts differ:</b> trackers that count only outright bans say <b>10 states</b> — <b>11</b> counting North Dakota's suspension. This page's wider lens also flags <b>California</b> and <b>Ohio</b>, where the plant is legal but the products most stores sell are restricted or unsellable today. However you count it, the direction is the same: <span class="hl">the unregulated map is the one that is shrinking</span>.</div>
+</div></section>
+
+<section id="sizing"><div class="colorband band-calm"><h2>Market Sizing: People, Not Just States</h2><p>Where the customers actually live</p><button type="button" class="icobtn" data-t="b-sizing" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-sizing">
+ <div class="fig"><h3>U.S. population by market lane (Census Vintage 2025)</h3>
+ <div class="popbar"><div class="pb-open" style="width:27.0%">Open · 27%</div><div class="pb-reg" style="width:43.9%">Regulated · 44%</div><div class="pb-res" style="width:29.2%">Banned / restricted · 29%</div></div>
+ <p class="cap">Open states hold <b>92,288,270</b> people (<b>27.0%</b> of the U.S. total of 341,784,857, July 1, 2025). The full-ban states alone hold ≈<b>47.9M</b> — the rest of the red lane is California, Ohio, and North Dakota, where leaf or nothing-at-all rules apply product by product. Category shares are computed from Census estimates and may not sum to exactly 100% due to rounding.</p></div>
+ <div class="fig"><h3>The five biggest sellable states</h3>
+ <div class="hbar"><span><b>Texas</b></span><span class="track"><span class="fill" style="display:block;width:100%;background:var(--fx-focus)"></span></span><span class="v">≈32M</span></div><div class="hbar"><span><b>Florida</b></span><span class="track"><span class="fill" style="display:block;width:74%;background:var(--fx-focus)"></span></span><span class="v">≈24M</span></div><div class="hbar"><span><b>New York</b></span><span class="track"><span class="fill" style="display:block;width:62%;background:var(--fx-focus)"></span></span><span class="v">≈20M</span></div><div class="hbar"><span><b>Pennsylvania</b></span><span class="track"><span class="fill" style="display:block;width:41%;background:var(--fx-focus)"></span></span><span class="v">≈13M</span></div><div class="hbar"><span><b>Illinois</b></span><span class="track"><span class="fill" style="display:block;width:40%;background:var(--fx-focus)"></span></span><span class="v">≈13M</span></div>
+ <p class="cap"><b>Texas</b> — KCPA since 2023, 18+. <b>Florida</b> — 21+, with an emergency rule restricting concentrated 7-OH (2026). <b>New York</b> — 21+ since Dec 2025, labeling law follows. <b>Pennsylvania</b> — no statewide law; a KCPA bill passed the House in Oct 2026. <b>Illinois</b> — an 18+ age floor only, on the books since 2015.</p></div>
+ <div class="callout co-wash"><b>California is its own story:</b> ≈<b>39M people</b> — the largest state market on paper. No statute bans the plant, but the Dept. of Public Health treats kratom products as adulterated food, retail enforcement is active, and San Diego, Oceanside, and Newport Beach ban sales locally. Size says opportunity; the rulebook says caution.</div>
+</div></section>
+
+<section id="pressure"><div class="colorband band-gold"><h2>The Pressure Gauge</h2><p>Why regulators keep moving: the case counts</p><button type="button" class="icobtn" data-t="b-pressure" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-pressure">
+ <div class="fig"><h3>Poison-center exposures climbed with the market</h3>
+ <svg viewBox="0 0 920 268" role="img" aria-label="Slope chart of poison-center kratom exposures, 2015 to 2024"><line x1="66" y1="196" x2="880" y2="196" class="grid"/><text x="58" y="200" class="axl" text-anchor="end">0</text><line x1="66" y1="154" x2="880" y2="154" class="grid"/><text x="58" y="158" class="axl" text-anchor="end">400</text><line x1="66" y1="111" x2="880" y2="111" class="grid"/><text x="58" y="115" class="axl" text-anchor="end">800</text><line x1="66" y1="68" x2="880" y2="68" class="grid"/><text x="58" y="72" class="axl" text-anchor="end">1,200</text><line x1="66" y1="26" x2="880" y2="26" class="grid"/><text x="58" y="30" class="axl" text-anchor="end">1,600</text><line x1="66" y1="169" x2="880" y2="34" stroke="var(--fx-mood-dk)" stroke-width="3.5" stroke-dasharray="2 0"/><circle cx="66" cy="169" r="7" fill="var(--fx-mood)"/><circle cx="880" cy="34" r="7" fill="var(--fx-mood)"/><text x="66" y="153" class="barlab">258 · 2015</text><text x="880" y="18" class="barlab" text-anchor="end">1,524 · 2024</text><text x="473" y="83" class="linelab2" text-anchor="middle">×5.9 in nine years</text><text x="66" y="240" class="axnote">Medically attended kratom exposures reported to the National Poison Data System. Endpoints are the published</text><text x="66" y="258" class="axnote">series values; the slope between them is drawn straight.</text></svg>
+ <p class="cap">The National Poison Data System logged <b>11,015</b> medically attended kratom exposures from 2015–2024. The earlier series tells the same story from the start of the decade: poison centers took <b>13</b> kratom calls in <b>2011</b> and <b>682</b> in <b>2017</b>. A CDC analysis of the same system found exposures up roughly <b>1,200%</b> from 2015 to <b>record levels in 2025</b>. Rising case counts — increasingly tied to concentrated <b>7-OH</b> products rather than plain leaf — are the stated fuel for nearly every 2025–26 ban and for the federal 7-OH scheduling push.</p></div>
+ <div class="callout co-red"><b>The fault line is 7-OH:</b> the FDA's July 2025 scheduling recommendation, the DEA's 2026 notices, Florida's emergency rule, Ohio's pharmacy rule, and Utah's 2026 law all draw the same line — <span class="hl">concentrated and synthetic alkaloids on one side, natural leaf on the other</span>. Which side of that line a product sits on increasingly decides whether it can be sold at all.</div>
+</div></section>
+
+<section id="meaning"><div class="colorband band-deep"><h2>What It Means</h2><p>The thesis, and the four reads behind it</p><button type="button" class="icobtn" data-t="b-meaning" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-meaning">
+ <div class="prose">
+ <p><b>The U.S. market for kratom is not shrinking in demand or revenue.</b> Mainstream retail sales grew <b>21.9%</b> in the last measured year, lifetime use stands at a survey record (<b>1.9%</b> of Americans 12+, more than <b>5 million</b> people), and every major forecaster projects continued global growth. What is shrinking — quickly — is the territory where kratom can be sold <b>freely</b>.</p>
+ <p><b>1 · Growth changed shape.</b> Revenue is outrunning user counts. The user base has been essentially flat at <b>1.6–2.1 million</b> past-year users across six survey years, so the sales curve is being carried by mainstream distribution, extracts, shots, and other higher-value products — the same products now drawing the rules.</p>
+ <p><b>2 · The map narrowed in a hurry.</b> After eight years without a single new state ban, <b>five states closed in eighteen months</b>, a sixth suspended sales, cities like Spokane began banning on their own, and Kentucky is already scheduled to close on <b>Jul 1, 2027</b>. Michigan's ban bill is still alive. None of that has yet dented the national sales line — the closed states hold only about <b>14%</b> of the population.</p>
+ <p><b>3 · Regulation is becoming the operating system.</b> The biggest markets in America — Texas, Florida, New York — are KCPA states. <b>≈44%</b> of Americans now live under consumer-protection kratom laws, against <b>27%</b> in no-rule states. For sellers, compliance (age gates, labeling, testing, 7-OH caps) is no longer a niche cost; it is the price of access to most of the market.</p>
+ <p><b>4 · The leaf and the extract are splitting into two markets.</b> Federal action in 2025–26 targeted concentrated 7-OH and synthetic relatives while leaving natural leaf unscheduled, and Rhode Island showed a ban can be traded for rules. The industry's center of gravity is moving toward plain leaf sold under KCPA frameworks — and away from the unregulated potency race that built the pressure in the first place.</p>
+ </div>
+</div></section>
+
+<section id="sources"><div class="colorband band-grey"><h2>Sources & Bibliography</h2><p>Every figure on this page traces to a named source</p><button type="button" class="icobtn" data-t="b-sources" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
+<div class="bandbody" id="b-sources">
+ <div class="srcs">
+ <p style="color:var(--muted)">Law and status data as of <b>Nov 26, 2026</b>. Populations: U.S. Census Bureau Vintage 2025 estimates (July 1, 2025). Figures labeled “estimate” or “projection” are analyst figures, not measurements.</p>
+ <h3>Market &amp; Sales Data</h3>
+ <p><a href="https://www.dailyuw.com/article/an-honest-look-at-kratom-s-surging-popularity-20260520" target="_blank" rel="noopener">The Daily UW — “An honest look at kratom's surging popularity”</a> — SPINS mainstream sales of $441.4M (52 weeks ending Oct 6, 2024), +21.9% year over year.</p>
+ <p><a href="https://www.swell.is/content/kratom-ecommerce-statistics" target="_blank" rel="noopener">Swell — Kratom Ecommerce Statistics</a> — SPINS figure; global market $2.19B (2024) → $7.80B (2032) at 17.2% CAGR; industry user estimates.</p>
+ <p><a href="https://ezkratom.com/kratom-wholesale-statistics/" target="_blank" rel="noopener">EZ Kratom — Kratom Wholesale Statistics</a> — Fortune Business Insights global series ($2.19B 2024, $2.56B 2025, $7.80B 2032).</p>
+ <p><a href="https://www.marketresearchfuture.com/reports/kratom-market-40495" target="_blank" rel="noopener">Market Research Future — Kratom Market Report</a> — the higher forecast family: $6.31B (2024) → $22.51B (2035), 12.26% CAGR.</p>
+ <h3>Use &amp; Prevalence</h3>
+ <p><a href="https://thedrugreport.org/2026/06/18/friday-fact-teen-past-year-kratom-use-jumped-up-51-from-2023-to-2024/" target="_blank" rel="noopener">The Drug Report — NSDUH 2023–2024</a> — past-year users 1.63M (2023) → 1.85M (2024), National Survey on Drug Use and Health.</p>
+ <p><a href="https://www.asam.org/news/detail/2026/11/24/guest-editorial---stable-prevalence-in-a-rapidly-changing-kratom-marketplace--what-national-surveillance-might-be-missing" target="_blank" rel="noopener">ASAM — “Stable Prevalence in a Rapidly Changing Kratom Marketplace” (Nov 2026)</a> — NSDUH 2021–2023 adult prevalence ≈0.68%; 2019 ≈2M past-year users; federal scheduling status.</p>
+ <p><a href="https://doi.org/10.1111/add.15082" target="_blank" rel="noopener">Schimmel et al., Addiction (2021)</a> — past-year prevalence ≈2.03M U.S. adults (NMURx, 2018–19).</p>
+ <h3>Health-System Signals</h3>
+ <p><a href="https://www.cambridge.org/core/journals/european-psychiatry/article/rising-kratom-use-and-toxicity-an-observational-study-20152024/D930ED7F11102E148BB0C356BCB0CF34" target="_blank" rel="noopener">European Psychiatry — “Rising Kratom Use and Toxicity, 2015–2024”</a> — NPDS medically attended exposures 258 (2015) → 1,524 (2024); 11,015 total; NSDUH lifetime use 4.0M → 5.1M (2019–2023).</p>
+ <p><a href="https://www.nationwidechildrens.org/newsroom/news-releases/2019/02/kratom-exposures" target="_blank" rel="noopener">Nationwide Children's Hospital — Post et al., Clinical Toxicology (2019)</a> — poison-center kratom calls 13 (2011) → 682 (2017); 1,807 total, 2011–2017.</p>
+ <p><a href="https://www.vdh.virginia.gov/environmental-health/tag/kratom/" target="_blank" rel="noopener">Virginia Dept. of Health — Kratom</a> — CDC analysis of NPDS 2015–2025: exposures up ≈1,200%, record levels in 2025.</p>
+ <h3>Law &amp; Regulation</h3>
+ <p><a href="https://www.fda.gov/news-events/press-announcements/fda-takes-steps-restrict-7-oh-opioid-products-threatening-american-consumers" target="_blank" rel="noopener">FDA — “FDA Takes Steps to Restrict 7-OH Opioid Products” (Jul 29, 2025)</a> — Schedule I recommendation for concentrated 7-OH; natural leaf expressly not the target.</p>
+ <p><a href="https://www.accessdata.fda.gov/CMS_IA/importalert_1137.html" target="_blank" rel="noopener">FDA Import Alert 54-15</a> — detention without physical examination of kratom products; first issued Feb 28, 2014, still in force.</p>
+ <p><a href="https://www.govinfo.gov/content/pkg/FR-2016-10-13/html/2016-24659.htm" target="_blank" rel="noopener">Federal Register (Oct 13, 2016)</a> — DEA withdrawal of the notice of intent to temporarily schedule mitragynine and 7-hydroxymitragynine.</p>
+ <p><a href="https://restoration-recovery.com/resources/kratom-laws-by-state-2026.html" target="_blank" rel="noopener">Restoration Recovery — Kratom Laws by State (updated Nov 2026)</a> — state-by-state tracker checked against legislatures and the LAPPA January 2026 survey: ban dates, KCPA states, Kentucky's Jul 1, 2027 sales end, North Dakota licensing.</p>
+ <p><a href="https://krakenkratom.com/advocacy-hub" target="_blank" rel="noopener">Kraken Kratom — Kratom Legality by State</a> — independent tracker count: 11 states ban (incl. North Dakota), 17 KCPA-style frameworks (Jul 2026).</p>
+ <p><a href="https://my.spokanecity.org/smc/?Section=10.83.010&Find=rec" target="_blank" rel="noopener">Spokane Municipal Code ch. 10.83</a> — Ordinance C36820: sale and distribution prohibited; passed Mar 2, 2026, effective Apr 8, 2026.</p>
+ <p><a href="https://moritzlaw.osu.edu/research/regulating-kratom-ohio-and-beyond" target="_blank" rel="noopener">Ohio State Moritz College of Law — “Regulating Kratom in Ohio and Beyond”</a> — federal 7-OH timeline: FDA recommendation, DEA July 2026 notice of intent, August 2026 temporary scheduling of three related compounds.</p>
+ <p><a href="https://disa.com/news/7-oh-kratom-risks-for-employers-an-emerging-threat-in-workplace-testing/" target="_blank" rel="noopener">DISA Global Solutions — Federal Kratom and 7-OH Actions Through October 2026</a> — Aug 26, 2026 Schedule I order for MGPI, MGM-15, MGM-16.</p>
+ <h3>Population</h3>
+ <p><b>U.S. Census Bureau — National State Population Estimates, Vintage 2025</b> (July 1, 2025; national total 341,784,857) — the population basis for the market-sizing section; state table as republished by <a href="https://worldpopulationreview.com/states" target="_blank" rel="noopener">World Population Review — U.S. States by Population</a>. Category framework cross-checked against the Legislative Analysis and Public Policy Association's Summary of State Laws (Feb 2026).</p>
+ </div>
+ <details class="jsonbox"><summary>📦 The data behind this page (JSON)</summary><pre>{
+ "asOf": "2026-11-26",
+ "usPopulationVintage2025": 341784857,
+ "spinsMainstreamSalesUSDm": {
+  "2023": 362.10008203445443,
+  "2024": 441.4
+ },
+ "nsduhPastYearUsersMillions": {
+  "2019": 2.0,
+  "2021": 1.7,
+  "2023": 1.63,
+  "2024": 1.85
+ },
+ "globalMarketUSDbFortuneBI": {
+  "2024": 2.19,
+  "2025": 2.56,
+  "2032": 7.8
+ },
+ "cumulativeClosedStates": {
+  "2014": 2,
+  "2016": 5,
+  "2017": 6,
+  "2025": 7,
+  "2026": 11
+ },
+ "npdsMedicallyAttendedExposures": {
+  "2015": 258,
+  "2024": 1524
+ },
+ "categories": {
+  "openNoStatewideProductRules": [
+   "PA",
+   "IL",
+   "NC",
+   "MI",
+   "NJ",
+   "WA",
+   "MO",
+   "MN",
+   "IA",
+   "NM",
+   "ID",
+   "HI",
+   "NH",
+   "ME",
+   "MT",
+   "DE",
+   "SD",
+   "AK"
+  ],
+  "regulatedKCPA": [
+   "AZ",
+   "CO",
+   "FL",
+   "GA",
+   "KY",
+   "MD",
+   "MS",
+   "NE",
+   "NV",
+   "NY",
+   "OK",
+   "OR",
+   "RI",
+   "SC",
+   "TX",
+   "UT",
+   "VA",
+   "WV",
+   "WY"
+  ],
+  "bannedOrProductRestricted": [
+   "AL",
+   "AR",
+   "CA",
+   "CT",
+   "IN",
+   "KS",
+   "LA",
+   "MA",
+   "ND",
+   "OH",
+   "TN",
+   "VT",
+   "WI",
+   "DC"
+  ]
+ }
+}</pre></details>
+</div></section>
+
+<div class="footline">The U.S. Kratom Market · Independent Customer Research · November 2026</div>
+</div>
+<script>
+(function(){
+ var b=document.getElementById('mktThemeBtn');
+ b.addEventListener('click',function(){
+   var d=document.documentElement;
+   if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');b.textContent='🌙';}
+   else{d.setAttribute('data-theme','dark');b.textContent='☀️';}
+ });
+ document.querySelectorAll('.icobtn').forEach(function(btn){
+   btn.addEventListener('click',function(ev){
+     ev.stopPropagation();
+     var body=document.getElementById(btn.getAttribute('data-t'));
+     if(!body)return;
+     var hide=body.style.display!=='none';
+     body.style.display=hide?'none':'';
+     btn.textContent=hide?'▸':'▾';
+     btn.setAttribute('aria-expanded',hide?'false':'true');
+   });
+ });
+ document.querySelectorAll('.colorband').forEach(function(band){
+   band.addEventListener('click',function(){
+     var btn=band.querySelector('.icobtn'); if(btn) btn.click();
+   });
+ });
+})();
+</script>
+
+</body>
+</html>
