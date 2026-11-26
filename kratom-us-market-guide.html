@@ -63,6 +63,15 @@ html[data-theme="dark"] .titlepage{background:radial-gradient(1100px 520px at 50
 .band-gold{background:linear-gradient(135deg,#B98A00,var(--fx-mood-dk))} .band-deep{background:linear-gradient(135deg,#27694E,var(--deep))}
 .band-grey{background:linear-gradient(135deg,#5A6660,#3E4A44)}
 .bandbody{margin:0 auto}
+.colorband{transition:filter .15s ease}
+.colorband:hover{filter:brightness(1.08)}
+.stat[data-jump]{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.stat[data-jump]:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(60,50,30,.14)}
+.stat[data-jump]:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.mkt-hint{font-size:var(--fs-small);color:var(--muted);margin:0 0 4px}
+section.mkt-flash{animation:mktflash 1.25s ease-out;border-radius:12px}
+@keyframes mktflash{0%{box-shadow:0 0 0 5px var(--accent)}100%{box-shadow:0 0 0 5px rgba(0,0,0,0)}}
+@media print{section.mkt-flash{animation:none!important;box-shadow:none!important}}
 /* ---- cards & figures ---- */
 .mkt-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:4px 0 6px}
 .stat{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:14px;padding:12px 14px 10px;box-shadow:0 3px 10px rgba(60,50,30,.07)}
@@ -224,13 +233,14 @@ img,svg{max-width:100%}
 <section id="numbers"><div class="colorband band-green"><h2>The Headline Numbers</h2><p>The market in six figures</p><button type="button" class="icobtn" data-t="b-numbers" aria-expanded="true" aria-label="Collapse or reopen this section">▾</button></div>
 <div class="bandbody" id="b-numbers">
  <p class="mkt-legend"><span class="dot" style="background:var(--fx-energy)"></span>Orange = money ·<span class="dot" style="background:var(--fx-focus)"></span>Blue = people ·<span class="dot" style="background:var(--fx-analgesia)"></span>Red = closed to legal sale ·<span class="dot" style="background:var(--fx-calm)"></span>Green = open ground</p>
+ <p class="mkt-hint">Tap a card to jump to the chart behind the number.</p>
  <div class="mkt-stats">
-  <div class="stat money"><div class="n">$441.4M</div><div class="l">U.S. mainstream retail sales, 2024</div><div class="s">SPINS multi-outlet scan data, 52 weeks ending Oct 6, 2024</div></div>
-  <div class="stat money"><div class="n">+21.9%</div><div class="l">Sales growth vs. 2023</div><div class="s">Same SPINS channel — kratom ranked among the top functional ingredients in natural retail</div></div>
-  <div class="stat people"><div class="n">1.85M</div><div class="l">Past-year users, 2024</div><div class="s">NSDUH (age 12+), up from 1.63M in 2023; lifetime use hit a record 1.9% of the population</div></div>
-  <div class="stat money"><div class="n">$7.8B</div><div class="l">Projected global market, 2032</div><div class="s">Analyst estimate (Fortune Business Insights) — forecasts disagree widely; see below</div></div>
-  <div class="stat closed"><div class="n">11</div><div class="l">States closed to legal sale</div><div class="s">10 outright bans + North Dakota, where sales are suspended until licensing rules exist</div></div>
-  <div class="stat open"><div class="n">86%</div><div class="l">Of Americans live outside the ban states</div><div class="s">The full-ban states hold ≈47.9M people of a 341.8M nation</div></div>
+  <div class="stat money" data-jump="growth" tabindex="0"><div class="n">$441.4M</div><div class="l">U.S. mainstream retail sales, 2024</div><div class="s">SPINS multi-outlet scan data, 52 weeks ending Oct 6, 2024</div></div>
+  <div class="stat money" data-jump="growth" tabindex="0"><div class="n">+21.9%</div><div class="l">Sales growth vs. 2023</div><div class="s">Same SPINS channel — kratom ranked among the top functional ingredients in natural retail</div></div>
+  <div class="stat people" data-jump="growth" tabindex="0"><div class="n">1.85M</div><div class="l">Past-year users, 2024</div><div class="s">NSDUH (age 12+), up from 1.63M in 2023; lifetime use hit a record 1.9% of the population</div></div>
+  <div class="stat money" data-jump="global" tabindex="0"><div class="n">$7.8B</div><div class="l">Projected global market, 2032</div><div class="s">Analyst estimate (Fortune Business Insights) — forecasts disagree widely; see below</div></div>
+  <div class="stat closed" data-jump="squeeze" tabindex="0"><div class="n">11</div><div class="l">States closed to legal sale</div><div class="s">10 outright bans + North Dakota, where sales are suspended until licensing rules exist</div></div>
+  <div class="stat open" data-jump="map" tabindex="0"><div class="n">86%</div><div class="l">Of Americans live outside the ban states</div><div class="s">The full-ban states hold ≈47.9M people of a 341.8M nation</div></div>
  </div>
  <div class="callout co-wash"><b>The one-sentence version:</b> demand and revenue are <b>not shrinking</b> — what is shrinking is the share of the country where kratom can be sold <b>without rules</b>.</div>
 </div></section>
@@ -451,22 +461,60 @@ img,svg{max-width:100%}
    if(d.getAttribute('data-theme')==='dark'){d.removeAttribute('data-theme');b.textContent='🌙';}
    else{d.setAttribute('data-theme','dark');b.textContent='☀️';}
  });
+ function secBtn(sec){return sec.querySelector('.icobtn');}
+ function secBody(sec){return document.getElementById('b-'+sec.id);}
+ function secOpen(sec){var bd=secBody(sec);return !!bd&&bd.style.display!=='none';}
+ function setOpen(sec,open){
+   var bd=secBody(sec),btn=secBtn(sec); if(!bd)return;
+   bd.style.display=open?'':'none';
+   if(btn){btn.textContent=open?'\u25be':'\u25b8';btn.setAttribute('aria-expanded',open?'true':'false');}
+ }
+ function flash(sec){
+   sec.classList.remove('mkt-flash');
+   void sec.offsetWidth;
+   sec.classList.add('mkt-flash');
+   setTimeout(function(){sec.classList.remove('mkt-flash');},1350);
+ }
+ function goTo(sec){
+   if(!secOpen(sec))setOpen(sec,true);
+   sec.scrollIntoView({behavior:'smooth',block:'start'});
+   setTimeout(function(){flash(sec);},400);
+ }
  document.querySelectorAll('.icobtn').forEach(function(btn){
    btn.addEventListener('click',function(ev){
      ev.stopPropagation();
-     var body=document.getElementById(btn.getAttribute('data-t'));
-     if(!body)return;
-     var hide=body.style.display!=='none';
-     body.style.display=hide?'none':'';
-     btn.textContent=hide?'▸':'▾';
-     btn.setAttribute('aria-expanded',hide?'false':'true');
+     var sec=btn.closest('section'); if(!sec)return;
+     setOpen(sec,!secOpen(sec));
    });
  });
  document.querySelectorAll('.colorband').forEach(function(band){
-   band.addEventListener('click',function(){
-     var btn=band.querySelector('.icobtn'); if(btn) btn.click();
+   band.addEventListener('click',function(ev){
+     if(ev.target.closest('.icobtn'))return;
+     var sec=band.closest('section'); if(!sec)return;
+     setOpen(sec,!secOpen(sec));
    });
  });
+ document.querySelectorAll('a[href^="#"]').forEach(function(a){
+   a.addEventListener('click',function(ev){
+     var sec=document.getElementById(a.getAttribute('href').slice(1));
+     if(!sec||sec.tagName!=='SECTION')return;
+     ev.preventDefault();
+     if(window.history&&history.pushState)history.pushState(null,'','#'+sec.id);
+     goTo(sec);
+   });
+ });
+ document.querySelectorAll('.stat[data-jump]').forEach(function(card){
+   function jump(){var sec=document.getElementById(card.getAttribute('data-jump'));if(sec)goTo(sec);}
+   card.addEventListener('click',jump);
+   card.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();jump();}});
+ });
+ function fromHash(){
+   if(!location.hash)return;
+   var sec=document.getElementById(location.hash.slice(1));
+   if(sec&&sec.tagName==='SECTION'){if(!secOpen(sec))setOpen(sec,true);flash(sec);}
+ }
+ window.addEventListener('hashchange',fromHash);
+ fromHash();
 })();
 </script>
 
