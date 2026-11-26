@@ -95,7 +95,7 @@ h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.18rem;margin:14px
     </div>
   </div>
 
-  <span class="datebubble">November 2026</span>
+  <div><span class="datebubble">November 2026</span></div>
   <div class="hero">
     <p class="kicker">For our suppliers in Indonesia</p>
     <h1>🌿 How We Buy Kratom</h1>
@@ -156,6 +156,24 @@ h2{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.18rem;margin:14px
 </div>
 <script>
 (function(){var b=document.getElementById('themeBtn');if(!b)return;b.addEventListener('click',function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')})})();
+</script>
+<style id="autofit-std">
+/* AUTO-FIT — GDS (David, Nov 26, 2026): page opens fitted to the screen; §57 type tokens */
+:root{--uw:100%;--fs-body:1rem;--fs-small:0.8125rem}
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+</style>
+<style>/* WIDTH-FIX: no section may exceed the wrap content box */
+.wrap>*{max-width:100%!important}.wrap>table{display:block;overflow-x:auto;max-width:100%}</style>
+<script>
+/* AUTO-FIT: unified width — --uw set from the .wrap CONTENT box */
+(function(){
+  function measure(){var wrap=document.querySelector('.wrap');if(!wrap)return;var cs=getComputedStyle(wrap);document.documentElement.style.setProperty('--uw',(wrap.clientWidth-(parseFloat(cs.paddingLeft)||0)-(parseFloat(cs.paddingRight)||0))+'px');}
+  function go(){requestAnimationFrame(measure);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(measure,30);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(measure,180);});
+})();
 </script>
 </body>
 </html>

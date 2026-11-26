@@ -185,6 +185,9 @@ details.jsonbox pre{background:var(--card);border:1px solid var(--line);border-r
 </style>
 <link rel="stylesheet" href="https://x-peps.com/effect-palette.css">
 
+<style>/* WIDTH-FIX: no section may exceed the wrap content box */
+.wcsec,.index,.legend,.panels,.wk-lead{max-width:100%!important}.wrap>table{display:block;overflow-x:auto;max-width:100%}</style>
+<style id="autofit-fix">:root{--uw:100%}.colorband{width:var(--uw,fit-content);margin-left:auto;margin-right:auto}.legend{width:var(--uw);max-width:none!important;margin-left:calc((100% - var(--uw))/2);margin-right:calc((100% - var(--uw))/2)}</style>
 <style id="mkt-responsive-print-standard">
 html,body{overflow-x:clip}
 img,svg{max-width:100%}
@@ -630,6 +633,16 @@ var STLAW={"AL":{"name":"Alabama","cite":"Ala. Code § 20-2-23 (2016)","detail":
  function closeIdx(){if(wrap.hidden)return;wrap.hidden=true;document.removeEventListener('keydown',onKey);idxBtn.focus();}
  idxBtn.addEventListener('click',function(){if(wrap.hidden)openIdx();else closeIdx();});
  wrap.querySelectorAll('[data-idxclose]').forEach(function(el){el.addEventListener('click',closeIdx);});
+})();
+</script>
+<script>
+/* AUTO-FIT: unified width — --uw set from the .wrap CONTENT box */
+(function(){
+  function measure(){var wrap=document.querySelector('.wrap');if(!wrap)return;var cs=getComputedStyle(wrap);document.documentElement.style.setProperty('--uw',(wrap.clientWidth-(parseFloat(cs.paddingLeft)||0)-(parseFloat(cs.paddingRight)||0))+'px');}
+  function go(){requestAnimationFrame(measure);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(measure,30);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(measure,180);});
 })();
 </script>
 </body>

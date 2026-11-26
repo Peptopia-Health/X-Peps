@@ -642,6 +642,12 @@ html.dark .peptopia-theme-toggle .pp-moon,html[data-theme="dark"] .peptopia-them
 <script id="peptopia-banner-js">
 (function(){if(window.__ppThemeBound)return;window.__ppThemeBound=1;document.addEventListener('click',function(e){var b=e.target.closest('.peptopia-theme-toggle');if(!b)return;var h=document.documentElement;var dark=!(h.classList.contains('dark')||h.getAttribute('data-theme')==='dark');h.classList.toggle('dark',dark);h.setAttribute('data-theme',dark?'dark':'light');});})();
 </script>
+<style id="autofit-std">
+/* AUTO-FIT — GDS (David, Nov 26, 2026): page opens fitted to the screen; §57 type tokens */
+:root{--fs-body:1rem;--fs-small:0.8125rem}
+html,body{overflow-x:clip}
+img,svg{max-width:100%}
+</style>
 </body>
 </html>
 ```eof
