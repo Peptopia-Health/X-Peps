@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="apple-touch-icon" href="/Tuscarora_Arboretum/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
+
+<link rel="icon" type="image/png" href="/X-Peps/btn-guides-holo.png">
+<link rel="apple-touch-icon" href="/X-Peps/btn-guides-holo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kratom Potentiators Protocol | Peptopia Guides</title>
-  
   <!-- Google Fonts & Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -47,14 +45,12 @@
       }
     }
   </script>
-
   <style>
     /* Light Mode Background & Ambient Glow */
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-
     html:not(.dark) body {
       background-color: #f1f5f9; 
       color: #0f172a;
@@ -63,7 +59,6 @@
         radial-gradient(circle at 90% 10%, rgba(20, 184, 166, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
     }
-
     /* Dark Mode Background & Ambient Glow */
     html.dark body {
       background-color: #0b1221; 
@@ -73,32 +68,27 @@
         radial-gradient(circle at 90% 10%, rgba(20, 184, 166, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
     }
-
     /* Custom Glassmorphism & Adaptive Card Styles */
     .pep-card {
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
     html:not(.dark) .pep-card {
       background: #ffffff;
       border: 1px solid #cbd5e1;
       box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.06);
     }
-
     html.dark .pep-card {
       background: linear-gradient(145deg, rgba(24, 36, 58, 0.8) 0%, rgba(18, 27, 45, 0.9) 100%);
       border: 1px solid rgba(56, 189, 248, 0.12);
       backdrop-filter: blur(16px);
       box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
     }
-
     /* Flip Card Mechanics */
     .flip-card {
       background-color: transparent;
       perspective: 1000px;
       cursor: pointer;
     }
-    
     .flip-card-inner {
       position: relative;
       width: 100%;
@@ -106,11 +96,9 @@
       transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
       transform-style: preserve-3d;
     }
-    
     .flip-card.flipped .flip-card-inner {
       transform: rotateY(180deg);
     }
-    
     .flip-card-front, .flip-card-back {
       position: absolute;
       width: 100%;
@@ -119,13 +107,11 @@
       backface-visibility: hidden;
       border-radius: 1rem;
     }
-    
     .flip-card-back {
       transform: rotateY(180deg);
       display: flex;
       flex-direction: column;
     }
-
     /* Standard Card Hover (Applied only to front for flip cards) */
     html:not(.dark) .flip-card:hover .flip-card-front {
       border-color: #22c55e;
@@ -139,7 +125,6 @@
       transform: translateY(-2px);
       transition: all 0.25s ease;
     }
-
     .gradient-text-green {
       background: linear-gradient(135deg, #15803d 0%, #22c55e 50%, #10b981 100%);
       -webkit-background-clip: text;
@@ -150,7 +135,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     /* Accordion Styles */
     .accordion-content {
       max-height: 0;
@@ -167,7 +151,6 @@
     .accordion-toggle:checked ~ label .chevron {
       transform: rotate(180deg);
     }
-    
     /* Intro paragraph specific indent */
     .intro-text {
       text-indent: 1.5rem; 
@@ -207,7 +190,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @page{size:letter;margin:.5in}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -245,7 +227,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -287,9 +268,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 </style>
-
   <script>
     // Theme Initializer defaulting to light
     (function() {
@@ -304,13 +283,11 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
         document.documentElement.classList.remove('dark');
       }
     })();
-
     // Flip Card Function
     function flipCard(element) {
         element.classList.toggle('flipped');
     }
   </script>
-
 <style id="banner-standard-css">
 /* ===== PEPTOPIA BANNER STANDARD v2 (approved by David, Nov 11, 2026): this exact header goes on every page that carries the banner. Logo pair IMG_3345 (dark circle) on LIGHT theme / IMG_3346 (light circle) on DARK theme, both always in the markup. HOME + PHARMA are raised pill buttons, one shared width (the PHARMA pill). Print circle sits LEFT of the theme circle; printer icon magenta, moon + sun icons yellow, icons fill their circles. Both circles are shiny black like the logo disc, lit the SAME way as the logo: the light falls from the UPPER LEFT as a soft diagonal window reflection with two faint pane streaks - never a bright centered dome on top; in dark theme the print circle takes a magenta ring and the theme circle a yellow ring. */
 .peptopia-nav{gap:.55rem}
