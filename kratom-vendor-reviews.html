@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="apple-touch-icon" href="/Tuscarora_Arboretum/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
+<link rel="icon" type="image/png" href="/X-Peps/btn-guides-holo.png">
+<link rel="apple-touch-icon" href="/X-Peps/btn-guides-holo.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +15,6 @@
 <meta property="og:image:height" content="512">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://x-peps.com/X-Peps/IMG_3345.png">
-
 <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -43,7 +43,6 @@
             min-height:100vh;line-height:1.6;display:flex;flex-direction:column;
             transition:background-color .35s ease,color .35s ease
         }
-
         /* Background atmosphere */
         body::before{
             content:'';position:fixed;top:0;left:0;width:100%;height:100%;
@@ -67,7 +66,6 @@
         html.dark body::after{
             background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px)
         }
-
         /* Header */
         .hdr{
             position:relative;z-index:10;padding:20px 24px;display:flex;align-items:center;
@@ -87,7 +85,6 @@
             letter-spacing:2px;text-transform:uppercase;line-height:1.1;transition:color .35s ease
         }
         .brand-tag{font-size:.7rem;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;transition:color .35s ease}
-        
         .nav{display:flex;align-items:center;gap:8px}
         .nav a{
             font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;text-transform:uppercase;
@@ -108,7 +105,6 @@
         .theme-toggle .fa-sun{display:none}
         html.dark .theme-toggle .fa-moon{display:none}
         html.dark .theme-toggle .fa-sun{display:inline-block;color:#FBBF24}
-
         /* Hero */
         .hero{text-align:center;padding:32px 24px;max-width:800px;margin:0 auto;position:relative;z-index:1}
         .hero h1{font-family:'Outfit',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:12px}
@@ -121,7 +117,6 @@
             -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
         }
         .hero p{font-size:1.05rem;color:var(--t2);transition:color .35s ease}
-
         /* Sections */
         .section{max-width:1200px;margin:0 auto;padding:0 24px 48px;width:100%;position:relative;z-index:1}
         .section-title{
@@ -130,10 +125,8 @@
             transition:color .35s ease,border-color .35s ease
         }
         html.dark .section-title{border-color:rgba(255,255,255,.06)}
-
         /* Grid */
         .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
-
         /* Cards */
         .card{
             background:var(--card);border:1px solid var(--border);border-radius:16px;
@@ -144,7 +137,6 @@
         }
         .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;transition:height .3s ease}
         .card:hover{transform:translateY(-4px);box-shadow:var(--sh-h)}
-
         .card-hdr{display:flex;align-items:center;gap:16px;margin-bottom:6px;width:100%}
         .card-ico{
             width:48px;height:48px;min-width:48px;border-radius:12px;
@@ -152,40 +144,31 @@
             font-size:1.25rem;transition:transform .3s ease
         }
         .card:hover .card-ico{transform:scale(1.05)}
-
         /* Cyan accent */
         .card.ac-cyan::before{background:var(--cyan)}
         .card.ac-cyan .card-ico{background:rgba(6,182,212,.12);color:var(--cyan)}
-
         /* Emerald accent */
         .card.ac-emerald::before{background:var(--emerald)}
         .card.ac-emerald .card-ico{background:rgba(16,185,129,.12);color:var(--emerald)}
-
         /* Amber accent */
         .card.ac-amber::before{background:var(--amber)}
         .card.ac-amber .card-ico{background:rgba(245,158,11,.12);color:var(--amber)}
-
         /* Dark Green accent */
         .card.ac-dark-green::before{background:var(--dark-green);}
         .card.ac-dark-green .card-ico{background:rgba(20,83,45,.12);color:var(--dark-green)}
-
         /* Bright Ribbon Pink accent (Oncology) */
         .card.ac-pink::before{background:var(--bright-pink)}
         .card.ac-pink .card-ico{background:rgba(237,75,158,.14);color:var(--bright-pink)}
         html.dark .card.ac-pink .card-ico{background:rgba(237,75,158,.24);color:var(--bright-pink-light)}
-        
         /* Vivid Purple accent (Gene Transcription) */
         .card.ac-purple::before{background:var(--vivid-purple)}
         .card.ac-purple .card-ico{background:rgba(139,92,246,.14);color:var(--vivid-purple)}
         html.dark .card.ac-purple .card-ico{background:rgba(139,92,246,.24);color:var(--vivid-purple-light)}
-
         /* Slate accent */
         .card.ac-slate::before{background:var(--slate)}
         .card.ac-slate .card-ico{background:rgba(100,116,139,.12);color:var(--slate)}
-
         .card h2{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;line-height:1.3;transition:color .35s ease}
         .card p{color:var(--t2);font-size:.9rem;line-height:1.5;margin-bottom:24px;flex-grow:1;transition:color .35s ease}
-
         .btn{
             display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;
             border-radius:8px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:700;
@@ -193,13 +176,10 @@
         }
         .b-cyan{background:linear-gradient(135deg,var(--cyan-dark),var(--cyan))}
         .b-emerald{background:linear-gradient(135deg,#059669,var(--emerald))}
-        
         /* Dark Green Button */
         .b-dark-green{background:linear-gradient(135deg,var(--dark-green-dark),var(--dark-green))}
-        
         /* Oncology Pink Button */
         .b-pink{background:linear-gradient(135deg,var(--bright-pink-dark),var(--bright-pink))}
-        
         /* Vivid Purple Button */
         .b-purple{background:linear-gradient(135deg,var(--vivid-purple-dark),var(--vivid-purple))}
         /* Charcoal accent (Research News) */
@@ -210,12 +190,10 @@
         .b-charcoal{background:linear-gradient(135deg,var(--charcoal-dark),#374151)}
         .tile-week{font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--t3);margin:0 0 14px}
         .grid.center{justify-content:center}
-        
         .b-amber{background:linear-gradient(135deg,#D97706,var(--amber))}
         .b-yellow{background:linear-gradient(135deg,#CA8A04,var(--yellow))}
         .b-slate{background:linear-gradient(135deg,#475569,var(--slate))}
         .card:hover .btn{filter:brightness(1.1)}
-
         /* Footer */
         .footer{
             position:relative;z-index:1;text-align:center;padding:32px 24px;
@@ -231,7 +209,6 @@
         .footer-links{display:flex;gap:20px}
         .footer-links a{color:var(--t3);text-decoration:none;font-size:1.05rem;transition:color .3s ease}
         .footer-links a:hover{color:var(--cyan)}
-
         /* Responsive */
         @media(max-width:768px){
             .hdr{padding:16px}
@@ -239,13 +216,11 @@
             .nav a{padding:8px 10px;font-size:.72rem;letter-spacing:1px}
             .footer-inner{flex-direction:column;text-align:center}
         }
-
         /* Scrollbar */
         ::-webkit-scrollbar{width:6px}
         ::-webkit-scrollbar-track{background:var(--bg)}
         ::-webkit-scrollbar-thumb{background:rgba(148,163,184,.25);border-radius:3px}
         ::-webkit-scrollbar-thumb:hover{background:rgba(148,163,184,.4)}
-    
 
 /* ===== Kratom Reviews hub overhaul 11-02-26: compact cards, unique colors, vendor push-buttons ===== */
 .grid{align-items:stretch}
@@ -288,7 +263,6 @@ html.dark .vendor-modal-panel{background:#0F172A}
 .vendor-modal iframe{flex:1;width:100%;border:0;background:#fff}
 @media(max-width:640px){.vendor-modal{padding:8px}.vendor-modal-panel{height:92vh}.vendor-btn{width:56px;height:56px}}
 @media print{.vendor-btn,.vendor-modal{display:none!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -322,7 +296,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -359,7 +332,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -396,7 +368,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -434,7 +405,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 /* ===== Peptopia site chrome: logo / nav / print / theme toggle / footer ===== */
 .peptopia-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 24px;position:relative;z-index:50}
 .peptopia-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -476,7 +446,6 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 .hero-icon{margin:0 auto 6px;width:76px;height:76px;text-align:center}
 </style>
 <style>
