@@ -123,7 +123,7 @@ table.grid tr:nth-child(even) td{background:#fbf9f3}
 .panel a.golink{display:block;text-align:center;padding:9px;background:rgba(0,0,0,.06);
   color:#08672B;font-weight:700;text-decoration:none;font-size:14px}
 .p-white .phead{background:#7cb342}.p-green .phead{background:#398555}
-.p-yellow .phead{background:#F0F000}.p-red .phead{background:#E01020}
+.p-yellow .phead{background:#FFE500}.p-red .phead{background:#E01020}
 .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:14px 0;font-size:13px}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:-2px}
 /* ---------- misc ---------- */
@@ -274,7 +274,7 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(30,77,
 .panel .pbody{padding:10px 12px 0}
 .pfoot{padding:0 14px 9px}
 .panel a.golink{color:#fff;padding:10px}
-.p-white a.golink{background:#7cb342}.p-green a.golink{background:#398555}.p-yellow a.golink{background:#F0F000}.p-red a.golink{background:#E01020}
+.p-white a.golink{background:#7cb342}.p-green a.golink{background:#398555}.p-yellow a.golink{background:#FFE500}.p-red a.golink{background:#E01020}
 .batch{font-size:12px;font-weight:700;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #08672B;padding:4px 13px;border-radius:999px;white-space:nowrap;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.22);text-decoration:none;display:inline-block}
 a.batch:active{transform:translateY(1px)}
 .wc-batchbtn{display:inline-block;font:700 .86em/1.4 'Outfit',system-ui,sans-serif;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #08672B;border-radius:999px;padding:0 10px;margin:0 1px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.2);text-decoration:none;white-space:nowrap}
@@ -361,7 +361,7 @@ html.dark .strain-head h3{color:#EDEAE0}
 .fam-bar{display:flex;align-items:center;gap:10px;margin-top:26px;padding:9px 14px;border-radius:10px;font-weight:800;font-size:16px;color:#fff;box-shadow:inset 0 1px 2px rgba(255,255,255,.35),inset 0 -2px 4px rgba(0,0,0,.22)}
 .fam-bar.fam-green{background:linear-gradient(100deg,#0A7300,#10C000)}
 .fam-bar.fam-red{background:linear-gradient(100deg,#9E0C18,#E01020)}
-.fam-bar.fam-gold{background:linear-gradient(100deg,#D8D800,#F0F000);color:#141414}
+.fam-bar.fam-gold{background:linear-gradient(100deg,#D8D800,#FFE500);color:#141414}
 .fam-bar.fam-white{background:linear-gradient(100deg,#C6C6C6,#E7E7E7);color:#141414}
 .fam-count{margin-left:auto;font-size:12.5px;font-weight:800;background:rgba(255,255,255,.85);color:#14301F;padding:2px 10px;border-radius:999px;border:1.5px solid rgba(20,48,31,.35)}
 .fam-note{font-size:14px;color:var(--muted);margin:8px 0 4px}
@@ -958,7 +958,7 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 <style id="wc-final-pass">
 /* ===== FINAL TEMPLATE PASS — David's 26 changes (mockup) ===== */
 /* items 4/6/16: palette-true vein colors. White = pale gray (the Energy satellite's border gray family), never green. */
-:root{--white:#E7E7E7;--white-dk:#C6C6C6;--white-soft:#F1F1F1;--red:#E01020;--red-dk:#9E0C18;--green:#10C000;--green-dk:#0A7300;--gold:#F0F000;--gold-dk:#D8D800}
+:root{--white:#E7E7E7;--white-dk:#C6C6C6;--white-soft:#F1F1F1;--red:#E01020;--red-dk:#9E0C18;--green:#10C000;--green-dk:#0A7300;--gold:#FFE500;--gold-dk:#D8D800}
 /* item 3: tight title bars — no dead space above/below the text */
 .colorband{padding-top:7px;padding-bottom:7px;margin-top:20px}
 .colorband h2{margin:0;line-height:1.08}
@@ -966,11 +966,11 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 /* items 4/6: pale-gray and palette-yellow fills always take black text */
 .band-white,.band-gold{color:#141414}
 .band-white h2,.band-gold h2{color:#141414}
-.band-gold{background:linear-gradient(120deg,#D8D800,#F0F000)}
+.band-gold{background:linear-gradient(120deg,#D8D800,#FFE500)}
 .strain.white .strain-head,.strain.gold .strain-head{color:#141414}
 .strain.white .strain-head h3,.strain.gold .strain-head h3{color:#141414}
 html.dark .strain.white .strain-head h3,html.dark .strain.gold .strain-head h3{color:#141414}
-.strain.gold .strain-head{background:linear-gradient(100deg,#D8D800,#F0F000)}
+.strain.gold .strain-head{background:linear-gradient(100deg,#D8D800,#FFE500)}
 /* vein words routed to the palette family */
 .vw-w{color:#6E6E6E}.vw-y{color:#8F8F00}.vw-g{color:#0A7300}.vw-r{color:#E01020}
 /* items 4/5: the vein color panels — White is gray top AND bottom, black font; Focus slice already palette orange */
@@ -979,7 +979,7 @@ html.dark .strain.white .strain-head h3,html.dark .strain.gold .strain-head h3{c
 .panel.p-green .phead{background:#10C000}
 .panel.p-green a.golink{background:#10C000;color:#141414}
 .panel.p-yellow .phead{color:#141414}
-.panel.p-yellow a.golink{background:#F0F000;color:#141414}
+.panel.p-yellow a.golink{background:#FFE500;color:#141414}
 /* item 1: search box + results — black font in BOTH themes */
 .wc-search input,.wc-search2 input{color:#111!important;background:#fff!important}
 .wc-search input::placeholder,.wc-search2 input::placeholder{color:#555!important}
@@ -998,7 +998,7 @@ html.dark .wc-sresults a,html.dark .wc-sresults .wc-sres{color:#111!important;ba
 .wc-mapstage .wc-mapgrid{max-width:760px;width:auto}
 .wc-mapstage .wc-st{height:44px;font-size:14px}
 /* item 11: the strain-count container becomes an announcement */
-.wc-stat.announce{background:linear-gradient(135deg,#FFF6C8,#F0F000);border:2.5px solid #0090FF;color:#141414;box-shadow:0 6px 16px rgba(0,112,208,.35);transform:scale(1.04)}
+.wc-stat.announce{background:linear-gradient(135deg,#FFF6C8,#FFE500);border:2.5px solid #0090FF;color:#141414;box-shadow:0 6px 16px rgba(0,112,208,.35);transform:scale(1.04)}
 .wc-stat.announce b{color:#141414;font-size:32px}
 .wc-stat.announce span{color:#141414;font-weight:800}
 /* item 2: picker labels enlarged to fill their circles */

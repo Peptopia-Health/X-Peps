@@ -123,7 +123,7 @@ table.grid tr:nth-child(even) td{background:#fbf9f3}
 .panel a.golink{display:block;text-align:center;padding:9px;background:rgba(0,0,0,.06);
   color:#08672B;font-weight:700;text-decoration:none;font-size:14px}
 .p-white .phead{background:#7cb342}.p-green .phead{background:#398555}
-.p-yellow .phead{background:#F0F000}.p-red .phead{background:#E01020}
+.p-yellow .phead{background:#FFE500}.p-red .phead{background:#E01020}
 .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:14px 0;font-size:13px}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:-2px}
 /* ---------- misc ---------- */
@@ -274,7 +274,7 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(30,77,
 .panel .pbody{padding:10px 12px 0}
 .pfoot{padding:0 14px 9px}
 .panel a.golink{color:#fff;padding:10px}
-.p-white a.golink{background:#7cb342}.p-green a.golink{background:#398555}.p-yellow a.golink{background:#F0F000}.p-red a.golink{background:#E01020}
+.p-white a.golink{background:#7cb342}.p-green a.golink{background:#398555}.p-yellow a.golink{background:#FFE500}.p-red a.golink{background:#E01020}
 .batch{font-size:12px;font-weight:700;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #08672B;padding:4px 13px;border-radius:999px;white-space:nowrap;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.22);text-decoration:none;display:inline-block}
 a.batch:active{transform:translateY(1px)}
 .wc-batchbtn{display:inline-block;font:700 .86em/1.4 'Outfit',system-ui,sans-serif;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #08672B;border-radius:999px;padding:0 10px;margin:0 1px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.2);text-decoration:none;white-space:nowrap}
@@ -492,7 +492,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <h2>🌿 Kratom Picker <span class="qp-tagline">| Tap the Effect — Show the Leaf</span></h2>
   <div class="qp-wheel" id="qpWheel">
     <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
-    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="80" height="80" aria-hidden="true"><path d="M24 45 C24 32 24 20 24 9" stroke="#0057B8" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M24 23 C29 11 38 5.5 45 5 C45.5 15 39.5 23.5 29.5 25.5 C26.8 26 24 24.8 24 23Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M24 29 C19.5 19 12 14.5 5.5 14 C5 22 9.5 28.5 17 30.5 C20 31.2 24 30.6 24 29Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M25.5 21.5 C29 16 33.5 12 38.5 9.5M22.5 27 C19 22.5 14.5 19 10 17" stroke="#F0F000" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></button>
+    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="80" height="80" aria-hidden="true"><path d="M24 45 C24 32 24 20 24 9" stroke="#0057B8" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M24 23 C29 11 38 5.5 45 5 C45.5 15 39.5 23.5 29.5 25.5 C26.8 26 24 24.8 24 23Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M24 29 C19.5 19 12 14.5 5.5 14 C5 22 9.5 28.5 17 30.5 C20 31.2 24 30.6 24 29Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M25.5 21.5 C29 16 33.5 12 38.5 9.5M22.5 27 C19 22.5 14.5 19 10 17" stroke="#FFE500" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></button>
     <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:var(--fx-energy);--nb:var(--fx-energy-dk);--nl:var(--fx-energy-lt)"><span class="qp-emo">⚡</span><small>Energy</small></button>
     <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk);--nl:var(--fx-focus-lt)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(0,144,255,.8))"><circle cx="24" cy="24" r="17" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
     <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk);--nl:var(--fx-mood-lt)"><span class="qp-emo">🧡</span><small>Mood</small></button>
@@ -1032,7 +1032,7 @@ document.querySelectorAll('svg.pie').forEach(function(svg){
   <p>Four streams make up the public record — Reddit, independent review sites, the vendor's own pages,
   and the published lab data. They overlap: each one feeds the next.</p>
   <div class="wc-venns"><div class="wc-venn"><h5>Key Review Sources</h5><svg class="wc-venn2" viewBox="0 0 400 340" role="img" aria-label="Four overlapping review sources: Reddit, review sites, the vendor site, and lab COAs"><a href="https://www.reddit.com/r/kratom/" target="_blank" rel="noopener"><circle cx="142" cy="112" r="80" fill="#FF4500" fill-opacity="0.42" stroke="#B22E00" stroke-width="2.5"/><text x="102" y="102" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="17" fill="#7A1E00">Reddit</text></a><a href="https://qkratom.com" target="_blank" rel="noopener"><circle cx="258" cy="112" r="80" fill="#0E7C7B" fill-opacity="0.42" stroke="#084F4E" stroke-width="2.5"/><text x="298" y="94" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#063F3E"><tspan x="298" dy="0">Review</tspan><tspan x="298" dy="19">Sites</tspan></text></a><a href="https://hudsonvalleybotanicals.com" target="_blank" rel="noopener"><circle cx="142" cy="228" r="80" fill="#7C4DBD" fill-opacity="0.42" stroke="#4A2A75" stroke-width="2.5"/><text x="112" y="236" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#3A2160"><tspan x="112" dy="0">Vendor</tspan><tspan x="112" dy="19">Site</tspan></text></a><a href="https://hudsonvalleybotanicals.com" target="_blank" rel="noopener"><circle cx="258" cy="228" r="80" fill="#5B7C99" fill-opacity="0.42" stroke="#38506B" stroke-width="2.5"/><text x="288" y="236" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="16" fill="#2C4258"><tspan x="288" dy="0">Lab</tspan><tspan x="288" dy="19">COAs</tspan></text></a></svg></div><div class="wc-venn"><h5>Key Review Factors</h5><div class="wc-trio" role="img" aria-label="Three overlapping themes: consistency, lab transparency, and value">
-  <svg viewBox="0 0 380 250" width="380" style="max-width:92vw;height:auto;display:block;margin:2px auto"><defs><marker id="wcArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#08672B"/></marker></defs><circle cx="125" cy="95" r="70" fill="#398555" fill-opacity="0.45" stroke="#054A1F" stroke-width="2"/><circle cx="255" cy="95" r="70" fill="#F0F000" fill-opacity="0.45" stroke="#8A6D1A" stroke-width="2"/><circle cx="190" cy="158" r="70" fill="#7A4C93" fill-opacity="0.42" stroke="#4A3369" stroke-width="2"/><path d="M163 24 A79 79 0 0 1 219 22" fill="none" stroke="#08672B" stroke-width="2.4" marker-end="url(#wcArr)"/><path d="M312 130 A79 79 0 0 1 268 198" fill="none" stroke="#08672B" stroke-width="2.4" marker-end="url(#wcArr)"/><path d="M112 202 A79 79 0 0 1 74 128" fill="none" stroke="#08672B" stroke-width="2.4" marker-end="url(#wcArr)"/><text x="97" y="86" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#054A1F">1</text><text x="283" y="86" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#6d5410">2</text><text x="190" y="178" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#3c2757">3</text><text x="97" y="104" text-anchor="middle" font-size="10.5" font-weight="700" fill="#054A1F">CONSISTENT</text><text x="283" y="104" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6d5410">LAB DATA</text><text x="190" y="196" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3c2757">VALUE</text></svg>
+  <svg viewBox="0 0 380 250" width="380" style="max-width:92vw;height:auto;display:block;margin:2px auto"><defs><marker id="wcArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#08672B"/></marker></defs><circle cx="125" cy="95" r="70" fill="#398555" fill-opacity="0.45" stroke="#054A1F" stroke-width="2"/><circle cx="255" cy="95" r="70" fill="#FFE500" fill-opacity="0.45" stroke="#8A6D1A" stroke-width="2"/><circle cx="190" cy="158" r="70" fill="#7A4C93" fill-opacity="0.42" stroke="#4A3369" stroke-width="2"/><path d="M163 24 A79 79 0 0 1 219 22" fill="none" stroke="#08672B" stroke-width="2.4" marker-end="url(#wcArr)"/><path d="M312 130 A79 79 0 0 1 268 198" fill="none" stroke="#08672B" stroke-width="2.4" marker-end="url(#wcArr)"/><path d="M112 202 A79 79 0 0 1 74 128" fill="none" stroke="#08672B" stroke-width="2.4" marker-end="url(#wcArr)"/><text x="97" y="86" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#054A1F">1</text><text x="283" y="86" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#6d5410">2</text><text x="190" y="178" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#3c2757">3</text><text x="97" y="104" text-anchor="middle" font-size="10.5" font-weight="700" fill="#054A1F">CONSISTENT</text><text x="283" y="104" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6d5410">LAB DATA</text><text x="190" y="196" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3c2757">VALUE</text></svg>
   </div></div></div>
   <p><b>1 · Consistency.</b> The record's strongest thread: a buyer pattern indexed by qkratom.com reports <button type="button" class="wc-fact" data-fq="8" title="Fact-check this quote">✓</button> <span class="qinline">"Six purchases over seven months, consistent every time."</span> — the harder trick in a harvest-driven catalog, and the one repeat buyers name first.</p>
   <p><b>2 · Lab transparency.</b> A QR code on every pouch, a public archive searchable by batch, and two published panels that agree within 0.03% on the main alkaloid. The paperwork is the marketing.</p>
@@ -1461,7 +1461,7 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 <style id="wc-final-pass">
 /* ===== FINAL TEMPLATE PASS — David's 26 changes (mockup) ===== */
 /* items 4/6/16: palette-true vein colors. White = pale gray (the Energy satellite's border gray family), never green. */
-:root{--white:#E7E7E7;--white-dk:#C6C6C6;--white-soft:#F1F1F1;--red:#E01020;--red-dk:#9E0C18;--green:#10C000;--green-dk:#0A7300;--gold:#F0F000;--gold-dk:#D8D800}
+:root{--white:#E7E7E7;--white-dk:#C6C6C6;--white-soft:#F1F1F1;--red:#E01020;--red-dk:#9E0C18;--green:#10C000;--green-dk:#0A7300;--gold:#FFE500;--gold-dk:#D8D800}
 /* item 3: tight title bars — no dead space above/below the text */
 .colorband{padding-top:7px;padding-bottom:7px;margin-top:20px}
 .colorband h2{margin:0;line-height:1.08}
@@ -1469,11 +1469,11 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 /* items 4/6: pale-gray and palette-yellow fills always take black text */
 .band-white,.band-gold{color:#141414}
 .band-white h2,.band-gold h2{color:#141414}
-.band-gold{background:linear-gradient(120deg,#D8D800,#F0F000)}
+.band-gold{background:linear-gradient(120deg,#D8D800,#FFE500)}
 .strain.white .strain-head,.strain.gold .strain-head{color:#141414}
 .strain.white .strain-head h3,.strain.gold .strain-head h3{color:#141414}
 html.dark .strain.white .strain-head h3,html.dark .strain.gold .strain-head h3{color:#141414}
-.strain.gold .strain-head{background:linear-gradient(100deg,#D8D800,#F0F000)}
+.strain.gold .strain-head{background:linear-gradient(100deg,#D8D800,#FFE500)}
 /* vein words routed to the palette family */
 .vw-w{color:#6E6E6E}.vw-y{color:#8F8F00}.vw-g{color:#0A7300}.vw-r{color:#E01020}
 /* items 4/5: the vein color panels — White is gray top AND bottom, black font; Focus slice already palette orange */
@@ -1482,7 +1482,7 @@ html.dark .strain.white .strain-head h3,html.dark .strain.gold .strain-head h3{c
 .panel.p-green .phead{background:#10C000}
 .panel.p-green a.golink{background:#10C000;color:#141414}
 .panel.p-yellow .phead{color:#141414}
-.panel.p-yellow a.golink{background:#F0F000;color:#141414}
+.panel.p-yellow a.golink{background:#FFE500;color:#141414}
 /* item 1: search box + results — black font in BOTH themes */
 .wc-search input,.wc-search2 input{color:#111!important;background:#fff!important}
 .wc-search input::placeholder,.wc-search2 input::placeholder{color:#555!important}
@@ -1501,7 +1501,7 @@ html.dark .wc-sresults a,html.dark .wc-sresults .wc-sres{color:#111!important;ba
 .wc-mapstage .wc-mapgrid{max-width:760px;width:auto}
 .wc-mapstage .wc-st{height:44px;font-size:14px}
 /* item 11: the strain-count container becomes an announcement */
-.wc-stat.announce{background:linear-gradient(135deg,#FFF6C8,#F0F000);border:2.5px solid #0090FF;color:#141414;box-shadow:0 6px 16px rgba(0,112,208,.35);transform:scale(1.04)}
+.wc-stat.announce{background:linear-gradient(135deg,#FFF6C8,#FFE500);border:2.5px solid #0090FF;color:#141414;box-shadow:0 6px 16px rgba(0,112,208,.35);transform:scale(1.04)}
 .wc-stat.announce b{color:#141414;font-size:32px}
 .wc-stat.announce span{color:#141414;font-weight:800}
 /* item 2: picker labels enlarged to fill their circles */
