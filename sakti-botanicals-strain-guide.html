@@ -123,7 +123,7 @@ table.grid tr:nth-child(even) td{background:#fbf9f3}
 .panel a.golink{display:block;text-align:center;padding:9px;background:rgba(0,0,0,.06);
   color:#08672B;font-weight:700;text-decoration:none;font-size:14px}
 .p-white .phead{background:#7cb342}.p-green .phead{background:#398555}
-.p-yellow .phead{background:#F0F000}.p-red .phead{background:#E01020}
+.p-yellow .phead{background:#FFE500}.p-red .phead{background:#E01020}
 .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:14px 0;font-size:13px}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:-2px}
 /* ---------- misc ---------- */
@@ -274,7 +274,7 @@ button.wc-tbtn:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(30,77,
 .panel .pbody{padding:10px 12px 0}
 .pfoot{padding:0 14px 9px}
 .panel a.golink{color:#fff;padding:10px}
-.p-white a.golink{background:#7cb342}.p-green a.golink{background:#398555}.p-yellow a.golink{background:#F0F000}.p-red a.golink{background:#E01020}
+.p-white a.golink{background:#7cb342}.p-green a.golink{background:#398555}.p-yellow a.golink{background:#FFE500}.p-red a.golink{background:#E01020}
 .batch{font-size:12px;font-weight:700;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #08672B;padding:4px 13px;border-radius:999px;white-space:nowrap;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.22);text-decoration:none;display:inline-block}
 a.batch:active{transform:translateY(1px)}
 .wc-batchbtn{display:inline-block;font:700 .86em/1.4 'Outfit',system-ui,sans-serif;color:#08672B;background:radial-gradient(circle at 32% 28%,#ffffff,#e6f2ea 50%,#bcd8c4);border:2px solid #08672B;border-radius:999px;padding:0 10px;margin:0 1px;box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 2px 4px rgba(0,0,0,.2);text-decoration:none;white-space:nowrap}
@@ -509,7 +509,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   <h2>🌿 Kratom Picker <span class="qp-tagline">| Tap the Effect — Show the Leaf</span></h2>
   <div class="qp-wheel" id="qpWheel">
     <span class="qp-spoke" style="transform:rotate(-90deg)"></span><span class="qp-spoke" style="transform:rotate(-30deg)"></span><span class="qp-spoke" style="transform:rotate(30deg)"></span><span class="qp-spoke" style="transform:rotate(90deg)"></span><span class="qp-spoke" style="transform:rotate(150deg)"></span><span class="qp-spoke" style="transform:rotate(210deg)"></span>
-    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="80" height="80" aria-hidden="true"><path d="M24 45 C24 32 24 20 24 9" stroke="#0057B8" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M24 23 C29 11 38 5.5 45 5 C45.5 15 39.5 23.5 29.5 25.5 C26.8 26 24 24.8 24 23Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M24 29 C19.5 19 12 14.5 5.5 14 C5 22 9.5 28.5 17 30.5 C20 31.2 24 30.6 24 29Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M25.5 21.5 C29 16 33.5 12 38.5 9.5M22.5 27 C19 22.5 14.5 19 10 17" stroke="#F0F000" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></button>
+    <button class="qp-hub" id="qpHub" type="button" title="Reset the wheel"><svg viewBox="0 0 48 48" width="80" height="80" aria-hidden="true"><path d="M24 45 C24 32 24 20 24 9" stroke="#0057B8" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M24 23 C29 11 38 5.5 45 5 C45.5 15 39.5 23.5 29.5 25.5 C26.8 26 24 24.8 24 23Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M24 29 C19.5 19 12 14.5 5.5 14 C5 22 9.5 28.5 17 30.5 C20 31.2 24 30.6 24 29Z" fill="#0090FF" stroke="#0057B8" stroke-width="1.8"/><path d="M25.5 21.5 C29 16 33.5 12 38.5 9.5M22.5 27 C19 22.5 14.5 19 10 17" stroke="#FFE500" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></button>
     <button type="button" class="qp-node" data-sit="energy" style="left:50%;top:12.5%;--nc:var(--fx-energy);--nb:var(--fx-energy-dk);--nl:var(--fx-energy-lt)"><span class="qp-emo">⚡</span><small>Energy</small></button>
     <button type="button" class="qp-node" data-sit="focus" style="left:82.5%;top:31.3%;--nc:var(--fx-focus);--nb:var(--fx-focus-dk);--nl:var(--fx-focus-lt)"><span class="qp-emo"><svg viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" style="display:block;filter:drop-shadow(0 0 4px rgba(0,144,255,.8))"><circle cx="24" cy="24" r="17" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="12" fill="#FFFFFF"/><circle cx="24" cy="24" r="7.5" style="fill:var(--fx-focus)"/><circle cx="24" cy="24" r="3.2" fill="#FFFFFF"/></svg></span><small>Focus</small></button>
     <button type="button" class="qp-node" data-sit="mood" style="left:82.5%;top:68.7%;--nc:var(--fx-mood);--nb:var(--fx-mood-dk);--nl:var(--fx-mood-lt)"><span class="qp-emo">🧡</span><small>Mood</small></button>
@@ -594,7 +594,7 @@ table.wc-sortable th.sortable[data-dir="asc"]::after{content:' ▲';opacity:1}
   </div>
 <div class="panel p-yellow">
     <div class="phead">Yellow</div>
-    <div class="pbody"><a class="wc-doclink" data-mode="doc" href="https://www.saktibotanicals.com/blog/do-kratom-strains-exist" target="_blank" rel="noopener" title="Read the vendor’s printed argument" aria-label="Open the vendor’s printed argument in a popup"><svg class="wc-docicon" width="110" height="110" viewBox="0 0 110 110" role="img" aria-label="A printed document making the vendor’s argument"><rect x="25" y="15" width="62" height="86" rx="5" fill="#D8D2B8"/><rect x="18" y="8" width="62" height="88" rx="5" fill="#FFFEF9" stroke="#8F8F00" stroke-width="2.5"/><path d="M64 8 L80 24 L64 24 Z" fill="#E9E2C4" stroke="#8F8F00" stroke-width="2"/><rect x="27" y="18" width="36" height="8" rx="2" fill="#3D3400"/><rect x="27" y="31" width="44" height="4" rx="2" fill="#A8A800"/><rect x="27" y="42" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="51" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="60" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="69" width="30" height="3.4" rx="1.7" fill="#8F8F6A"/><circle cx="76" cy="80" r="16" fill="#F0F000" stroke="#8F8F00" stroke-width="2.5"/><text x="76" y="88" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#3D3400">3</text></svg></a>
+    <div class="pbody"><a class="wc-doclink" data-mode="doc" href="https://www.saktibotanicals.com/blog/do-kratom-strains-exist" target="_blank" rel="noopener" title="Read the vendor’s printed argument" aria-label="Open the vendor’s printed argument in a popup"><svg class="wc-docicon" width="110" height="110" viewBox="0 0 110 110" role="img" aria-label="A printed document making the vendor’s argument"><rect x="25" y="15" width="62" height="86" rx="5" fill="#D8D2B8"/><rect x="18" y="8" width="62" height="88" rx="5" fill="#FFFEF9" stroke="#8F8F00" stroke-width="2.5"/><path d="M64 8 L80 24 L64 24 Z" fill="#E9E2C4" stroke="#8F8F00" stroke-width="2"/><rect x="27" y="18" width="36" height="8" rx="2" fill="#3D3400"/><rect x="27" y="31" width="44" height="4" rx="2" fill="#A8A800"/><rect x="27" y="42" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="51" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="60" width="44" height="3.4" rx="1.7" fill="#8F8F6A"/><rect x="27" y="69" width="30" height="3.4" rx="1.7" fill="#8F8F6A"/><circle cx="76" cy="80" r="16" fill="#FFE500" stroke="#8F8F00" stroke-width="2.5"/><text x="76" y="88" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="800" font-size="21" fill="#3D3400">3</text></svg></a>
     </div>
     <div class="peffects">Not on this menu</div>
     <div class="pfoot">Sakti sells no yellow or gold powder — the three-cure menu stops at three, and the vendor argues the point in print.</div>
@@ -1352,7 +1352,7 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 <style id="wc-final-pass">
 /* ===== FINAL TEMPLATE PASS — David's 26 changes (mockup) ===== */
 /* items 4/6/16: palette-true vein colors. White = pale gray (the Energy satellite's border gray family), never green. */
-:root{--white:#E7E7E7;--white-dk:#C6C6C6;--white-soft:#F1F1F1;--red:#E01020;--red-dk:#9E0C18;--green:#10C000;--green-dk:#0A7300;--gold:#F0F000;--gold-dk:#D8D800}
+:root{--white:#E7E7E7;--white-dk:#C6C6C6;--white-soft:#F1F1F1;--red:#E01020;--red-dk:#9E0C18;--green:#10C000;--green-dk:#0A7300;--gold:#FFE500;--gold-dk:#D8D800}
 /* item 3: tight title bars — no dead space above/below the text */
 .colorband{padding-top:7px;padding-bottom:7px;margin-top:20px}
 .colorband h2{margin:0;line-height:1.08}
@@ -1360,11 +1360,11 @@ html.dark .wc-shoplink a{color:#9CC7A8}
 /* items 4/6: pale-gray and palette-yellow fills always take black text */
 .band-white,.band-gold{color:#141414}
 .band-white h2,.band-gold h2{color:#141414}
-.band-gold{background:linear-gradient(120deg,#D8D800,#F0F000)}
+.band-gold{background:linear-gradient(120deg,#D8D800,#FFE500)}
 .strain.white .strain-head,.strain.gold .strain-head{color:#141414}
 .strain.white .strain-head h3,.strain.gold .strain-head h3{color:#141414}
 html.dark .strain.white .strain-head h3,html.dark .strain.gold .strain-head h3{color:#141414}
-.strain.gold .strain-head{background:linear-gradient(100deg,#D8D800,#F0F000)}
+.strain.gold .strain-head{background:linear-gradient(100deg,#D8D800,#FFE500)}
 /* vein words routed to the palette family */
 .vw-w{color:#6E6E6E}.vw-y{color:#8F8F00}.vw-g{color:#0A7300}.vw-r{color:#E01020}
 /* items 4/5: the vein color panels — White is gray top AND bottom, black font; Focus slice already palette orange */
@@ -1373,7 +1373,7 @@ html.dark .strain.white .strain-head h3,html.dark .strain.gold .strain-head h3{c
 .panel.p-green .phead{background:#10C000}
 .panel.p-green a.golink{background:#10C000;color:#141414}
 .panel.p-yellow .phead{color:#141414}
-.panel.p-yellow a.golink{background:#F0F000;color:#141414}
+.panel.p-yellow a.golink{background:#FFE500;color:#141414}
 /* item 1: search box + results — black font in BOTH themes */
 .wc-search input,.wc-search2 input{color:#111!important;background:#fff!important}
 .wc-search input::placeholder,.wc-search2 input::placeholder{color:#555!important}
@@ -1392,7 +1392,7 @@ html.dark .wc-sresults a,html.dark .wc-sresults .wc-sres{color:#111!important;ba
 .wc-mapstage .wc-mapgrid{max-width:760px;width:auto}
 .wc-mapstage .wc-st{height:44px;font-size:14px}
 /* item 11: the strain-count container becomes an announcement */
-.wc-stat.announce{background:linear-gradient(135deg,#FFF6C8,#F0F000);border:2.5px solid #0090FF;color:#141414;box-shadow:0 6px 16px rgba(0,112,208,.35);transform:scale(1.04)}
+.wc-stat.announce{background:linear-gradient(135deg,#FFF6C8,#FFE500);border:2.5px solid #0090FF;color:#141414;box-shadow:0 6px 16px rgba(0,112,208,.35);transform:scale(1.04)}
 .wc-stat.announce b{color:#141414;font-size:32px}
 .wc-stat.announce span{color:#141414;font-weight:800}
 /* item 2: picker labels enlarged to fill their circles */
