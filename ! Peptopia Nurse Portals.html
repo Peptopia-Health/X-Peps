@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="apple-touch-icon" href="/Tuscarora_Arboretum/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/X-Peps/favicon-32x32.png">
+
+<link rel="icon" type="image/png" href="/X-Peps/btn-guides-holo.png">
+<link rel="apple-touch-icon" href="/X-Peps/btn-guides-holo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEPTOPIA Portals</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -39,7 +40,6 @@
          *
          * ═══════════════════════════════════════════════════════════════
          */
-
         :root {
             /* Base Colors */
             --bg-primary: #0F172A;
@@ -49,20 +49,16 @@
             --text-secondary: #94A3B8;
             --text-muted: #64748B;
             --border-subtle: #475569;
-
             /* Portal Theme Colors */
             --gold: #FFD700;
             --gold-light: #FFE44D;
             --gold-glow: rgba(255, 215, 0, 0.4);
-
             --pink: #FF85E1;
             --pink-light: #FF9FE8;
             --pink-glow: rgba(255, 133, 225, 0.4);
-
             --cyan: #00CCFF;
             --cyan-light: #33D6FF;
             --cyan-glow: rgba(0, 204, 255, 0.4);
-
             /* Category Colors */
             --coral: #FF7B7B;
             --lime: #00FF66;
@@ -72,20 +68,17 @@
             --hotpink: #FF69B4;
             --yellow: #E6FF00;
         }
-
         *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             font-size: 16px;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
@@ -101,11 +94,9 @@
             padding: 30px 20px 40px;
             overflow-x: hidden;
         }
-
         body.loaded {
             opacity: 1;
         }
-
         /* Animated Background - Purple/Pink/Blue gradient orbs */
         body::before {
             content: '';
@@ -121,7 +112,6 @@
             pointer-events: none;
             z-index: -1;
         }
-
         /* ═══════════════════════════════════════════════════════════════
            LOGO SECTION
            ═══════════════════════════════════════════════════════════════ */
@@ -132,7 +122,6 @@
             margin-bottom: 35px;
             animation: fadeInDown 0.6s ease-out;
         }
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -143,7 +132,6 @@
                 transform: translateY(0);
             }
         }
-
         .logo-image {
             width: 160px;
             height: 160px;
@@ -153,7 +141,6 @@
             clip-path: circle(45% at center);
             animation: pulse-glow 4s ease-in-out infinite;
         }
-
         @keyframes pulse-glow {
             0%, 100% {
                 filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.4));
@@ -165,7 +152,6 @@
                 filter: drop-shadow(0 0 30px rgba(0, 204, 255, 0.5));
             }
         }
-
         /* Title Pill - Pink/White theme (matches PEPTOPIA branding) */
         .title-pill {
             position: relative;
@@ -182,7 +168,6 @@
             box-shadow: 0 0 20px var(--pink-glow);
             margin-bottom: 12px;
         }
-
         .title-pill::before {
             content: "";
             position: absolute;
@@ -199,18 +184,15 @@
             transform: skewX(-20deg);
             animation: shimmer 3.5s infinite;
         }
-
         @keyframes shimmer {
             0% { left: -150%; }
             50% { left: 150%; }
             100% { left: 150%; }
         }
-
         .title-icon {
             font-size: 1.2rem;
             filter: drop-shadow(0 0 6px var(--pink));
         }
-
         .title-text {
             color: #FFFFFF;
             font-family: 'Space Grotesk', sans-serif;
@@ -220,7 +202,6 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             text-transform: uppercase;
         }
-
         .subtitle {
             color: rgba(255, 255, 255, 0.75);
             font-family: 'Inter', sans-serif;
@@ -231,12 +212,10 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             animation: fadeIn 0.8s ease-out 0.3s both;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         /* ═══════════════════════════════════════════════════════════════
            PORTAL BUTTONS - Auto-width pills
            ═══════════════════════════════════════════════════════════════ */
@@ -246,7 +225,6 @@
             align-items: center;
             gap: 14px;
         }
-
         /* Base Portal Button - compact pill style */
         .portal-btn {
             position: relative;
@@ -272,11 +250,9 @@
             animation: slideInUp 0.5s ease-out both;
             white-space: nowrap;
         }
-
         .portal-btn:nth-child(1) { animation-delay: 0.15s; }
         .portal-btn:nth-child(2) { animation-delay: 0.25s; }
         .portal-btn:nth-child(3) { animation-delay: 0.35s; }
-
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -287,15 +263,12 @@
                 transform: translateY(0);
             }
         }
-
         .portal-icon {
             font-size: 1.1rem;
         }
-
         .portal-text {
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
         }
-
         /* Hover shimmer effect */
         .portal-btn::before {
             content: "";
@@ -312,19 +285,15 @@
             );
             transition: left 0.5s ease;
         }
-
         .portal-btn:hover::before {
             left: 100%;
         }
-
         .portal-btn:active {
             transform: translateY(0) scale(0.97);
         }
-
         .portal-btn:focus {
             outline: none;
         }
-
         /* ─────────────────────────────────────────────────────────────────
            GOLD THEME - Pro-Nurse Portal
            ───────────────────────────────────────────────────────────────── */
@@ -333,18 +302,15 @@
             color: #FFFFFF;
             box-shadow: 0 0 12px var(--gold-glow);
         }
-
         .portal-btn.theme-gold:hover {
             background: rgba(255, 215, 0, 0.12);
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.15);
             transform: translateY(-2px) scale(1.02);
             border-color: var(--gold-light);
         }
-
         .portal-btn.theme-gold .portal-icon {
             filter: drop-shadow(0 0 5px var(--gold));
         }
-
         /* ─────────────────────────────────────────────────────────────────
            PINK THEME - NCLEX Vault
            ───────────────────────────────────────────────────────────────── */
@@ -353,18 +319,15 @@
             color: #FFFFFF;
             box-shadow: 0 0 12px var(--pink-glow);
         }
-
         .portal-btn.theme-pink:hover {
             background: rgba(255, 133, 225, 0.12);
             box-shadow: 0 0 20px rgba(255, 133, 225, 0.5), 0 0 40px rgba(255, 133, 225, 0.15);
             transform: translateY(-2px) scale(1.02);
             border-color: var(--pink-light);
         }
-
         .portal-btn.theme-pink .portal-icon {
             filter: drop-shadow(0 0 5px var(--pink));
         }
-
         /* ─────────────────────────────────────────────────────────────────
            CYAN THEME - HESI Vault
            ───────────────────────────────────────────────────────────────── */
@@ -373,22 +336,18 @@
             color: #FFFFFF;
             box-shadow: 0 0 12px var(--cyan-glow);
         }
-
         .portal-btn.theme-cyan:hover {
             background: rgba(0, 204, 255, 0.12);
             box-shadow: 0 0 20px rgba(0, 204, 255, 0.5), 0 0 40px rgba(0, 204, 255, 0.15);
             transform: translateY(-2px) scale(1.02);
             border-color: var(--cyan-light);
         }
-
         .portal-btn.theme-cyan .portal-icon {
             filter: drop-shadow(0 0 5px var(--cyan));
         }
-
         /* ═══════════════════════════════════════════════════════════════
            ADDITIONAL THEME COLORS (for future use)
            ═══════════════════════════════════════════════════════════════ */
-
         /* Coral Theme */
         .portal-btn.theme-coral {
             border-color: var(--coral);
@@ -400,7 +359,6 @@
             box-shadow: 0 0 20px rgba(255, 123, 123, 0.5);
             transform: translateY(-2px) scale(1.02);
         }
-
         /* Lime Theme */
         .portal-btn.theme-lime {
             border-color: var(--lime);
@@ -412,7 +370,6 @@
             box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
             transform: translateY(-2px) scale(1.02);
         }
-
         /* Purple Theme */
         .portal-btn.theme-purple {
             border-color: var(--purple);
@@ -424,7 +381,6 @@
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
             transform: translateY(-2px) scale(1.02);
         }
-
         /* Blue Theme */
         .portal-btn.theme-blue {
             border-color: var(--blue);
@@ -436,7 +392,6 @@
             box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
             transform: translateY(-2px) scale(1.02);
         }
-
         /* Orange Theme */
         .portal-btn.theme-orange {
             border-color: var(--orange);
@@ -448,7 +403,6 @@
             box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
             transform: translateY(-2px) scale(1.02);
         }
-
         /* ═══════════════════════════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════════════════════════ */
@@ -459,14 +413,12 @@
             text-align: center;
             animation: fadeIn 1s ease-out 0.5s both;
         }
-
         .footer-text {
             color: var(--text-muted);
             font-size: 0.8rem;
             font-style: italic;
             letter-spacing: 1px;
         }
-
         /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE DESIGN
            ═══════════════════════════════════════════════════════════════ */
@@ -474,56 +426,45 @@
             body {
                 padding: 25px 15px 35px;
             }
-
             .logo-image {
                 width: 130px;
                 height: 130px;
             }
-
             .title-pill {
                 padding: 8px 22px;
             }
-
             .title-icon {
                 font-size: 1rem;
             }
-
             .title-text {
                 font-size: 1.2rem;
                 letter-spacing: 1.5px;
             }
-
             .subtitle {
                 font-size: 0.85rem;
                 margin-bottom: 25px;
             }
-
             .portals-container {
                 gap: 12px;
             }
-
             .portal-btn {
                 padding: 11px 24px;
                 font-size: 0.9rem;
                 letter-spacing: 1px;
             }
-
             .portal-icon {
                 font-size: 1rem;
             }
         }
-
         @media (max-width: 380px) {
             .title-text {
                 font-size: 1.1rem;
             }
-
             .portal-btn {
                 padding: 10px 20px;
                 font-size: 0.85rem;
             }
         }
-
         /* Touch feedback for mobile */
         @media (hover: none) {
             .portal-btn:active {

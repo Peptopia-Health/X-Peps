@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
 <title>Nighttime Reds at WestKoast Botanicals</title>
-<link rel="apple-touch-icon" href="/Tuscarora_Arboretum/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/X-Peps/btn-guides-holo.png">
+<link rel="apple-touch-icon" href="/X-Peps/btn-guides-holo.png">
 <style>
 :root{
   --paper:#faf7ef; --paper2:#f3eee1; --ink:#2e2a24; --muted:#6f675a;
@@ -24,7 +25,6 @@
   --track:#F1E7DB; --blend-line:#C9BFF5; --gold-line:#EBD9A0;
   --night1:#2A1530; --night2:#47102E; --night3:#5C1030; --gold-grad:#F6C453; --rose:#B84A6E; --night-ink:#23233F; --peach-dim:#D9C6B8;
 }
-
 /* ---------- shared standard: wrap / title page / top row (from the WestKoast strain guide) ---------- */
 .wrap{max-width:960px;margin:0 auto;padding:0 22px}
 .titlepage{display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 24px 4px;position:relative;overflow:hidden;background:radial-gradient(1200px 600px at 50% -10%,var(--red-soft) 0%,var(--paper) 60%)}
@@ -44,15 +44,12 @@
 @media print{.toc-top,.peptopia-iconbtn{display:none!important}.wrap{max-width:none;padding:0}}
 
 
-
-
 @page { size: Letter; margin: 9mm 11mm 6.5mm 11mm; }
 * { box-sizing: border-box; margin:0; padding:0; }
 body { font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--paper); font-size:10.1pt; line-height:1.33; }
 h1,h2,h3 { font-family:'Outfit','DM Sans',sans-serif; }
 a { color:var(--fx-default-dk); text-decoration:none; }
 b { font-weight:700; }
-
 /* top 3 panel */
 .panel { background:linear-gradient(135deg,var(--night1) 0%,var(--night2) 58%,var(--night3) 100%); border-radius:16px; padding:11px 16px 4px; color:var(--cream); }
 .panel h2 { font-size:13.8pt; font-weight:800; color:var(--gold-pale); display:flex; align-items:center; gap:8px; }
@@ -82,7 +79,6 @@ b { font-weight:700; }
 .sbfill { display:block; height:100%; border-radius:5px; background:linear-gradient(90deg,var(--gold-grad),var(--rose) 55%,var(--night-ink)); }
 .sbval { flex:0 0 26px; font-size:10pt; font-weight:700; color:var(--fx-calm); font-family:'Outfit','DM Sans',sans-serif; }
 .sbends { display:flex; justify-content:space-between; font-size:8.4pt; color:var(--peach-dim); margin:1px 34px 0 166px; }
-
 /* sections */
 .sec { margin-top:10px; }
 .sec h2, .samp h2 { break-after:avoid; }
@@ -94,7 +90,6 @@ b { font-weight:700; }
 .step { flex:1; background:#FFFFFF; border:1.5px solid var(--line-soft); border-radius:11px; padding:6px 11px; font-size:9.6pt; }
 .step .n { font-family:'Outfit','DM Sans',sans-serif; font-weight:800; color:var(--red); font-size:12pt; }
 .url { font-weight:700; color:var(--fx-default-dk); word-break:break-all; font-size:8.8pt; }
-
 /* list cards */
 .lrow { display:flex; gap:11px; margin-bottom:11px; break-inside:avoid; }
 .lrow .lcard { flex:1; }
@@ -111,14 +106,12 @@ b { font-weight:700; }
 .lnote { font-size:9.5pt; margin:3px 0; }
 .lstats { font-size:9.1pt; color:var(--ink-soft); border-top:1px dashed var(--line-dash); padding-top:4px; }
 .readnote { font-size:9.2pt; color:var(--muted); margin-top:5px; }
-
 /* notes strip */
 .notes { display:flex; gap:10px; margin-top:9px; }
 .note { flex:1; border-radius:11px; padding:7px 11px; font-size:9.4pt; }
 .note.watch { background:var(--blend-soft); border:1.5px solid var(--blend-line); }
 .note.moth { background:var(--gold-soft); border:1.5px solid var(--gold-bright); }
 .note b.t { color:var(--red-dk); }
-
 /* sampler */
 .samp { background:var(--gold-soft); border:1.5px solid var(--gold-bright); border-radius:14px; padding:9px 14px 7px; margin-top:9px; }
 .samp h2 { font-size:13pt; font-weight:800; color:var(--gold-dk); display:flex; align-items:center; gap:8px; }
@@ -130,7 +123,6 @@ b { font-weight:700; }
 .ssteps { font-size:10pt; margin-left:16px; }
 .ssteps li { margin:2px 0; }
 .preset { font-size:9.2pt; color:var(--muted); margin-top:4px; }
-
 .close { text-align:center; font-size:10.8pt; color:var(--red-dk); margin-top:7px; font-weight:500; }
 .foot { text-align:center; font-size:8.4pt; color:var(--muted); margin-top:6px; border-top:1px solid var(--line-dash); padding-top:5px; }
 <style id="nr-responsive-print-standard">
@@ -147,7 +139,6 @@ img,svg{max-width:100%}
   .tgrid,.lrow,.splitgrid{grid-template-columns:1fr 1fr}
   .tcard,.lcard,.spl,.panel,.sec,.samp{break-inside:avoid}
 }
-
 </style>
 <style id="autofit-std">
 /* AUTO-FIT — GDS (David, Nov 26, 2026): page opens fitted to the screen; §57 type tokens */

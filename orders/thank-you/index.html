@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharma — PEPTOPIA Health</title>
-<link rel="apple-touch-icon" href="/Tuscarora_Arboretum/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/X-Peps/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/X-Peps/apple-touch-icon.png">
     <meta name="description" content="Email Peptopia Health about peptide therapeutics and supplements.">
     <meta name="author" content="Peptopia Health">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -17,7 +18,6 @@
          * Hosted on GitHub Pages
          * ═══════════════════════════════════════════════════════════════
          */
-
         /* ═══════════════════════════════════════════
            THEME VARIABLES — Light (Default)
            ═══════════════════════════════════════════ */
@@ -45,7 +45,6 @@
             --toggle-bg: #FFFFFF;
             --toggle-border: rgba(15, 23, 42, 0.10);
             --toggle-hover-bg: #F1F5F9;
-
             /* Brand colors (shared across themes) */
             --brand-green: #059669;
             --brand-green-hover: #10B981;
@@ -65,7 +64,6 @@
             --slate: #94A3B8;
             --slate-glow: rgba(148, 163, 184, 0.25);
         }
-
         /* ═══════════════════════════════════════════
            THEME VARIABLES — Dark (Toggle)
            ═══════════════════════════════════════════ */
@@ -94,7 +92,6 @@
             --toggle-border: rgba(255, 255, 255, 0.10);
             --toggle-hover-bg: rgba(255, 255, 255, 0.12);
         }
-
         /* ═══════════════════════════════════════════
            BASE RESET
            ═══════════════════════════════════════════ */
@@ -103,13 +100,11 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             font-size: 16px;
             -webkit-text-size-adjust: 100%;
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-page);
@@ -119,7 +114,6 @@
             overflow-x: hidden;
             transition: background-color 0.35s ease, color 0.35s ease;
         }
-
         /* ═══════════════════════════════════════════
            BACKGROUND ATMOSPHERE
            ═══════════════════════════════════════════ */
@@ -138,14 +132,12 @@
             z-index: 0;
             transition: background 0.35s ease;
         }
-
         html.dark body::before {
             background:
                 radial-gradient(ellipse at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 55%),
                 radial-gradient(ellipse at 85% 80%, rgba(5, 150, 105, 0.06) 0%, transparent 50%),
                 radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 60%);
         }
-
         /* Dot grid */
         body::after {
             content: '';
@@ -160,11 +152,9 @@
             z-index: 0;
             transition: background-image 0.35s ease;
         }
-
         html.dark body::after {
             background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
-
         /* ═══════════════════════════════════════════
            SMOOTH THEME TRANSITIONS
            ═══════════════════════════════════════════ */
@@ -178,7 +168,6 @@
             transition: background-color 0.35s ease, border-color 0.35s ease,
                         box-shadow 0.35s ease, color 0.35s ease;
         }
-
         /* ═══════════════════════════════════════════
            HEADER
            ═══════════════════════════════════════════ */
@@ -192,14 +181,12 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .header-brand {
             display: flex;
             align-items: center;
             gap: 14px;
             text-decoration: none;
         }
-
         .brand-mark {
             width: 42px;
             height: 42px;
@@ -215,12 +202,10 @@
             letter-spacing: -1px;
             box-shadow: 0 0 20px rgba(144, 0, 245, 0.3);
         }
-
         .brand-text {
             display: flex;
             flex-direction: column;
         }
-
         .brand-name {
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
@@ -231,7 +216,6 @@
             line-height: 1.1;
             transition: color 0.35s ease;
         }
-
         .brand-tagline {
             font-size: 0.7rem;
             color: var(--text-muted);
@@ -239,13 +223,11 @@
             text-transform: uppercase;
             transition: color 0.35s ease;
         }
-
         .header-nav {
             display: flex;
             align-items: center;
             gap: 8px;
         }
-
         .nav-link {
             font-family: 'Outfit', sans-serif;
             font-size: 0.8rem;
@@ -257,17 +239,14 @@
             padding: 8px 16px;
             border-radius: 8px;
         }
-
         .nav-link:hover {
             color: var(--text-primary);
             background: var(--btn-contact-bg);
         }
-
         .nav-link.active {
             color: var(--emerald);
             background: var(--badge-bg);
         }
-
         /* ═══════════════════════════════════════════
            THEME TOGGLE (Sun/Moon)
            ═══════════════════════════════════════════ */
@@ -286,27 +265,22 @@
             margin-left: 4px;
             box-shadow: var(--shadow-card);
         }
-
         .theme-toggle:hover {
             background: var(--toggle-hover-bg);
             color: var(--text-primary);
             border-color: var(--border-card-hover);
         }
-
         /* Moon visible in light mode, Sun visible in dark mode */
         .theme-toggle .fa-sun {
             display: none;
         }
-
         html.dark .theme-toggle .fa-moon {
             display: none;
         }
-
         html.dark .theme-toggle .fa-sun {
             display: inline-block;
             color: #FBBF24;
         }
-
         /* ═══════════════════════════════════════════
            HERO SECTION
            ═══════════════════════════════════════════ */
@@ -318,7 +292,6 @@
             max-width: 720px;
             margin: 0 auto;
         }
-
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -336,11 +309,9 @@
             margin-bottom: 24px;
             animation: fadeSlideUp 0.6s ease-out both;
         }
-
         .hero-badge i {
             font-size: 0.65rem;
         }
-
         .hero h1 {
             font-family: 'Outfit', sans-serif;
             font-size: clamp(2rem, 5vw, 3.2rem);
@@ -350,7 +321,6 @@
             margin-bottom: 16px;
             animation: fadeSlideUp 0.6s ease-out 0.1s both;
         }
-
         /* Light mode heading gradient */
         .hero h1 .gradient-text {
             background: linear-gradient(135deg, #0F172A 0%, var(--brand-green) 50%, var(--emerald) 100%);
@@ -358,7 +328,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         /* Dark mode heading gradient */
         html.dark .hero h1 .gradient-text {
             background: linear-gradient(135deg, #FFFFFF 0%, var(--emerald) 50%, var(--brand-green) 100%);
@@ -366,7 +335,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .hero p {
             font-size: 1.05rem;
             color: var(--text-secondary);
@@ -375,12 +343,10 @@
             line-height: 1.65;
             animation: fadeSlideUp 0.6s ease-out 0.2s both;
         }
-
         @keyframes fadeSlideUp {
             from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
         }
-
         /* ═══════════════════════════════════════════
            PRODUCT GRID
            ═══════════════════════════════════════════ */
@@ -391,13 +357,11 @@
             margin: 0 auto;
             padding: 32px 24px 64px;
         }
-
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
         }
-
         /* ═══════════════════════════════════════════
            PRODUCT CARD
            ═══════════════════════════════════════════ */
@@ -413,7 +377,6 @@
             animation: cardEnter 0.5s ease-out both;
             overflow: hidden;
         }
-
         .product-card::before {
             content: '';
             position: absolute;
@@ -424,18 +387,15 @@
             border-radius: 16px 16px 0 0;
             transition: height 0.3s ease;
         }
-
         .product-card:hover {
             background: var(--bg-card-hover);
             border-color: var(--border-card-hover);
             box-shadow: var(--shadow-card-hover);
             transform: translateY(-4px);
         }
-
         .product-card:hover::before {
             height: 4px;
         }
-
         /* Staggered entry */
         .product-card:nth-child(1) { animation-delay: 0.05s; }
         .product-card:nth-child(2) { animation-delay: 0.10s; }
@@ -444,12 +404,10 @@
         .product-card:nth-child(5) { animation-delay: 0.25s; }
         .product-card:nth-child(6) { animation-delay: 0.30s; }
         .product-card:nth-child(7) { animation-delay: 0.35s; }
-
         @keyframes cardEnter {
             from { opacity: 0; transform: translateY(24px) scale(0.97); }
             to   { opacity: 1; transform: translateY(0) scale(1); }
         }
-
         /* Accent top-border colors */
         .product-card.accent-purple::before  { background: linear-gradient(90deg, var(--purple), rgba(168, 85, 247, 0.3)); }
         .product-card.accent-cyan::before    { background: linear-gradient(90deg, var(--cyan), rgba(6, 182, 212, 0.3)); }
@@ -458,7 +416,6 @@
         .product-card.accent-emerald::before { background: linear-gradient(90deg, var(--emerald), rgba(16, 185, 129, 0.3)); }
         .product-card.accent-indigo::before  { background: linear-gradient(90deg, var(--indigo), rgba(129, 140, 248, 0.3)); }
         .product-card.accent-slate::before   { background: linear-gradient(90deg, var(--slate), rgba(148, 163, 184, 0.2)); }
-
         /* Card header */
         .card-header {
             display: flex;
@@ -466,7 +423,6 @@
             gap: 16px;
             margin-bottom: 16px;
         }
-
         .card-icon {
             width: 48px;
             height: 48px;
@@ -477,11 +433,9 @@
             justify-content: center;
             font-size: 1.2rem;
         }
-
         .product-card:hover .card-icon {
             transform: scale(1.08);
         }
-
         .accent-purple .card-icon  { background: rgba(168, 85, 247, 0.10); color: var(--purple); box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.18); }
         .accent-cyan .card-icon    { background: rgba(6, 182, 212, 0.10); color: var(--cyan); box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.18); }
         .accent-amber .card-icon   { background: rgba(245, 158, 11, 0.10); color: var(--amber); box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.18); }
@@ -489,16 +443,13 @@
         .accent-emerald .card-icon { background: rgba(16, 185, 129, 0.10); color: var(--emerald); box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.18); }
         .accent-indigo .card-icon  { background: rgba(129, 140, 248, 0.10); color: var(--indigo); box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.18); }
         .accent-slate .card-icon   { background: rgba(148, 163, 184, 0.08); color: var(--slate); box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.15); }
-
         .product-card:hover.accent-purple .card-icon  { box-shadow: 0 0 16px var(--purple-glow); }
         .product-card:hover.accent-cyan .card-icon    { box-shadow: 0 0 16px var(--cyan-glow); }
         .product-card:hover.accent-amber .card-icon   { box-shadow: 0 0 16px var(--amber-glow); }
         .product-card:hover.accent-rose .card-icon    { box-shadow: 0 0 16px var(--rose-glow); }
         .product-card:hover.accent-emerald .card-icon { box-shadow: 0 0 16px var(--emerald-glow); }
         .product-card:hover.accent-indigo .card-icon  { box-shadow: 0 0 16px var(--indigo-glow); }
-
         .card-title-block { flex: 1; }
-
         .card-title {
             font-family: 'Outfit', sans-serif;
             font-size: 1.2rem;
@@ -508,7 +459,6 @@
             margin-bottom: 2px;
             transition: color 0.35s ease;
         }
-
         .card-dosage {
             font-family: 'Outfit', sans-serif;
             font-size: 0.8rem;
@@ -516,7 +466,6 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-
         .accent-purple .card-dosage  { color: var(--purple); }
         .accent-cyan .card-dosage    { color: var(--cyan); }
         .accent-amber .card-dosage   { color: var(--amber); }
@@ -524,7 +473,6 @@
         .accent-emerald .card-dosage { color: var(--emerald); }
         .accent-indigo .card-dosage  { color: var(--indigo); }
         .accent-slate .card-dosage   { color: var(--slate); }
-
         .card-description {
             font-size: 0.9rem;
             color: var(--text-secondary);
@@ -533,7 +481,6 @@
             margin-bottom: 20px;
             transition: color 0.35s ease;
         }
-
         /* Card footer */
         .card-footer {
             display: flex;
@@ -543,7 +490,6 @@
             padding-top: 16px;
             border-top: 1px solid var(--separator);
         }
-
         .card-price {
             font-family: 'Outfit', sans-serif;
             font-size: 1.65rem;
@@ -552,7 +498,6 @@
             letter-spacing: -0.5px;
             transition: color 0.35s ease;
         }
-
         .card-price .currency {
             font-size: 1rem;
             font-weight: 500;
@@ -560,7 +505,6 @@
             vertical-align: super;
             margin-right: 1px;
         }
-
         .card-price-note {
             font-family: 'DM Sans', sans-serif;
             font-size: 0.8rem;
@@ -568,7 +512,6 @@
             font-style: italic;
             transition: color 0.35s ease;
         }
-
         /* Buy button */
         .btn-buy {
             display: inline-flex;
@@ -591,19 +534,15 @@
             white-space: nowrap;
             box-shadow: 0 2px 12px rgba(16, 185, 129, 0.25);
         }
-
         .btn-buy:hover {
             background: linear-gradient(135deg, var(--brand-green-hover), #34D399);
             box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
             transform: translateY(-1px);
         }
-
         .btn-buy:active {
             transform: translateY(0);
         }
-
         .btn-buy i { font-size: 0.8rem; }
-
         /* Contact / Inquire button */
         .btn-contact {
             display: inline-flex;
@@ -624,13 +563,11 @@
             cursor: pointer;
             white-space: nowrap;
         }
-
         .btn-contact:hover {
             border-color: var(--btn-contact-hover-border);
             color: var(--text-primary);
             background: var(--btn-contact-hover-bg);
         }
-
         /* ═══════════════════════════════════════════
            INFO BANNER
            ═══════════════════════════════════════════ */
@@ -642,7 +579,6 @@
             padding: 0 24px 48px;
             animation: fadeSlideUp 0.6s ease-out 0.5s both;
         }
-
         .info-banner-inner {
             display: flex;
             align-items: center;
@@ -652,32 +588,27 @@
             background: var(--banner-bg);
             border: 1px solid var(--banner-border);
         }
-
         .info-banner i {
             font-size: 1.1rem;
             color: var(--emerald);
             min-width: 20px;
             text-align: center;
         }
-
         .info-banner p {
             font-size: 0.88rem;
             color: var(--text-secondary);
             line-height: 1.55;
             transition: color 0.35s ease;
         }
-
         .info-banner a {
             color: var(--emerald);
             text-decoration: none;
             font-weight: 500;
         }
-
         .info-banner a:hover {
             color: var(--brand-green-hover);
             text-decoration: underline;
         }
-
         /* ═══════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════ */
@@ -688,7 +619,6 @@
             padding: 32px 24px;
             border-top: 1px solid var(--footer-border);
         }
-
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -698,30 +628,25 @@
             flex-wrap: wrap;
             gap: 16px;
         }
-
         .footer-copy {
             font-size: 0.78rem;
             color: var(--text-muted);
             letter-spacing: 0.5px;
             transition: color 0.35s ease;
         }
-
         .footer-links {
             display: flex;
             gap: 20px;
         }
-
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 1.05rem;
             transition: color 0.3s ease;
         }
-
         .footer-links a:hover {
             color: var(--emerald);
         }
-
         /* ═══════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════ */
@@ -729,76 +654,61 @@
             .site-header {
                 padding: 16px;
             }
-
             .brand-text {
                 display: none;
             }
-
             .nav-link {
                 padding: 8px 10px;
                 font-size: 0.72rem;
                 letter-spacing: 1px;
             }
-
             .hero {
                 padding: 32px 16px 24px;
             }
-
             .products-section {
                 padding: 24px 16px 48px;
             }
-
             .products-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-
             .product-card {
                 padding: 22px;
             }
-
             .card-footer {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 12px;
             }
-
             .card-price {
                 text-align: center;
             }
-
             .card-price-note {
                 text-align: center;
             }
-
             .btn-buy, .btn-contact {
                 text-align: center;
                 justify-content: center;
                 padding: 12px 24px;
             }
-
             .info-banner {
                 padding: 0 16px 40px;
             }
-
             .info-banner-inner {
                 flex-direction: column;
                 text-align: center;
                 padding: 16px 18px;
             }
-
             .footer-content {
                 flex-direction: column;
                 text-align: center;
             }
         }
-
         @media (min-width: 769px) and (max-width: 1060px) {
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
         /* ═══════════════════════════════════════════
            SCROLLBAR
            ═══════════════════════════════════════════ */
@@ -839,9 +749,7 @@ html.dark .peptopia-ftr .ftr-logo:hover img{filter:none;opacity:1}
 .peptopia-ftr a.ftr-email{color:inherit;text-decoration:none}
 .peptopia-ftr a.ftr-email:hover{color:#be185d;text-decoration:underline}
 @media print{.peptopia-nav .peptopia-iconbtn,.peptopia-ftr-icons{display:none!important}.statcard,.statgrid,table,thead,tbody,tr,figure,figcaption,blockquote,.coa-callout,.card,.strain-card,pre,.callout,img{break-inside:avoid!important;page-break-inside:avoid!important}h1,h2,h3,h4,h5,h6{break-after:avoid!important;page-break-after:avoid!important}p,li{orphans:3;widows:3}a{color:inherit;text-decoration:none}body{background:#fff!important}}
-
 </style>
-
 <style id="banner-standard-css">
 /* ===== PEPTOPIA BANNER STANDARD v2 (approved by David, Nov 11, 2026): this exact header goes on every page that carries the banner. Logo pair IMG_3345 (dark circle) on LIGHT theme / IMG_3346 (light circle) on DARK theme, both always in the markup. HOME + PHARMA are raised pill buttons, one shared width (the PHARMA pill). Print circle sits LEFT of the theme circle; printer icon magenta, moon + sun icons yellow, icons fill their circles. Both circles are shiny black like the logo disc, lit the SAME way as the logo: the light falls from the UPPER LEFT as a soft diagonal window reflection with two faint pane streaks - never a bright centered dome on top; in dark theme the print circle takes a magenta ring and the theme circle a yellow ring. */
 .peptopia-nav{gap:.55rem}
